@@ -1,0 +1,1 @@
+"use strict";barba.init({debug:!0,transitions:[{name:"index",beforeOnce:function(){console.log("beforeOnce")},once:function(){console.log("once")},afterOnce:function(){console.log("aftereOnce")}},{name:"blog",to:{namespace:["blog"]},leave:function(){},enter:function(){}}]});

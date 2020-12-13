@@ -1,0 +1,134 @@
+@import "./normalize.scss";
+@import "./colors.scss";
+@import "./media.scss";
+@import "./fonts.scss";
+@import "./libs/libs.scss";
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+html {
+  height: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  font-size: 16px;
+
+  @media (max-width: 1023px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: $black;
+  font-weight: normal;
+  overflow: hidden;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: auto;
+  padding: 0 330px 0px;
+  box-sizing: border-box;
+
+  @media (max-width:1023px) {
+    padding: 0 15px 30px;
+  }
+}
+
+img {
+  vertical-align: bottom;
+}
+
+.bgi {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  transition: linear 0.3s;
+}
+
+.clearfix::after,
+.clearfix::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.title-1 {
+  font-size: 3rem;
+  line-height: 3.125rem;
+
+  @media (max-width:1023px) {
+    font-size: 2rem;
+    line-height: 2.125rem;
+  }
+}
+
+.title-2 {
+  font-size: 2.5rem;
+  line-height: 2.75rem;
+
+  @media (max-width:1023px) {
+    font-size: 2rem;
+    line-height: 2.125rem;
+  }
+}
+
+.title-3 {
+  font-size: 2rem;
+  line-height: 2.125rem;
+
+  @media (max-width:1023px) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
+.title-4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+
+  @media (max-width:1023px) {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+  }
+}
+
+.b-svg {
+  width: auto;
+  height: auto;
+}
+
+@import "./components/bildboard.scss";
+@import "./components/header.scss";
+@import "./link.scss";
+@import "./btn.scss";

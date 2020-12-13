@@ -1,0 +1,49 @@
+.header {
+    position: relative;
+    z-index: 1;
+    min-height: 73px;
+    color: white;
+
+    &__inner {
+        min-height: 73px;
+    }
+
+    &__logo {
+        height: 43px;
+        width: 165px;
+        margin-right: 40px;
+
+        .b-svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-right: 35px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    .link--phone {
+        margin-left: auto;
+        margin-right: 30px;
+    }
+}

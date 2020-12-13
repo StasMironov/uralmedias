@@ -1,0 +1,46 @@
+.bildboard {
+    position: relative;
+    min-height: 100vh;
+    max-height: 900px;
+    margin-top: -80px;
+
+
+    &__container {
+        color: white;
+        padding-top: 250px;
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    &__title {
+        font-size: 80px;
+        line-height: 89px;
+        margin-top: 37px;
+        max-width: 610px;
+        width: 100%;
+    }
+
+    &__quote {
+        font-size: 29px;
+        line-height: 43px;
+        margin-top: 25px;
+        max-width: 727px;
+        width: 100%;
+    }
+
+    &__video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+    }
+}

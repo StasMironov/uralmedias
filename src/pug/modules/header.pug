@@ -1,0 +1,15 @@
+include ../mixins
+header.header
+    .header__inner
+        .header__container.container
+            a(href="javascript:void(0);").header__logo
+                +svg('logo')
+            .header__nav
+                a(href="javascript:void(0);").header__item Услуги
+                a(href="javascript:void(0);").header__item Портфолио
+                a(href="blog.html").header__item Блог
+                a(href="javascript:void(0);").header__item Контакты
+            .header__phone
+            a(href="tel:+7 (908) 064-35-63").link.link--phone +7 (908) 064-35-63
+            a(href="javascript:void(0);").btn.btn--call Оставить заявку 
+            .burger
