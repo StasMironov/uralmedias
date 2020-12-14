@@ -1,7 +1,7 @@
-
+// require("@babel/polyfill");
 global.$ = {
 	gulp: require('gulp'),
-	gp : require('gulp-load-plugins')(),
+	gp: require('gulp-load-plugins')(),
 	bs: require('browser-sync').create(),
 
 	path: {

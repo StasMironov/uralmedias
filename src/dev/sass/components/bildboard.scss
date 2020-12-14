@@ -1,26 +1,40 @@
 .bildboard {
     position: relative;
     min-height: 100vh;
-    max-height: 900px;
     margin-top: -80px;
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 6, 25, 0) 50.56%, rgba(0, 6, 25, 0.46287) 69.79%, #000619 99.99%);
+        z-index: -1;
+    }
 
 
     &__container {
         color: white;
-        padding-top: 250px;
+        padding-top: 256px;
     }
 
     &__text {
         font-size: 20px;
         line-height: 24px;
+        font-weight: 400;
     }
 
     &__title {
         font-size: 80px;
         line-height: 89px;
         margin-top: 37px;
-        max-width: 610px;
+        max-width: 900px;
         width: 100%;
+        font-weight: 900;
+        letter-spacing: 1px;
     }
 
     &__quote {
@@ -29,6 +43,8 @@
         margin-top: 25px;
         max-width: 727px;
         width: 100%;
+        font-weight: 400;
+        letter-spacing: 0.2px;
     }
 
     &__video {
