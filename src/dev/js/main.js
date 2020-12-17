@@ -1,34 +1,5 @@
 
 
-// barba.init({
-//     debug: true,
-//     transitions: [{
-//         name: 'index',
-//         beforeOnce() {
-//             console.log('beforeOnce');
-//         },
-//         once() {
-//             console.log('once');
-//         },
-//         afterOnce() {
-//             console.log('aftereOnce');
-//         }
-//     },
-//     {
-//         name: 'blog',
-//         to: {
-//             namespace: ['blog']
-//         },
-
-//         leave() { },
-//         enter() { },
-
-//     },
-//     ]
-// });
-
-
-
 function init() {
 
     const loader = document.querySelector('.loader');
@@ -73,6 +44,10 @@ function init() {
         });
     }
 
+    function loaderTl() {
+        return animateBildboard();
+    }
+
     // do something before the transition starts
     barba.hooks.before(() => {
 
@@ -97,27 +72,20 @@ function init() {
     });
 
     barba.init({
-        // transitions: [{
-        //     async leave() {
-        //         await loaderIn();
-
-        //     },
-        //     enter() {
-        //         loaderAway();
-        //     }
-        // }]
-
         debug: true,
         transitions: [{
             name: 'index',
-            beforeOnce() {
-                console.log('beforeOnce');
+            to: {
+                namespace: ['index']
             },
-            once() {
-                console.log('once');
+
+            async leave() {
+                await loaderIn();
+
             },
-            afterOnce() {
-                console.log('aftereOnce');
+            enter() {
+                loaderAway();
+                animateBildboard();
             }
         },
         {
@@ -132,6 +100,7 @@ function init() {
             },
             enter() {
                 loaderAway();
+                animateBildboard();
             }
 
         },
@@ -188,4 +157,160 @@ $(".link").on("mouseenter", function () {
 $(".link").on("mouseleave", function () {
     cursor.removeClass("active");
     follower.removeClass("active");
+});
+
+
+
+gsap.set(
+    ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'],
+    {
+        autoAlpha: 0
+    }
+);
+
+gsap.set(
+    '.bildboard__text',
+    {
+        y: -20
+    }
+);
+gsap.set(
+    '.bildboard__title',
+    {
+        x: -70
+    }
+);
+
+gsap.set(
+    '.bildboard__quote',
+    {
+        y: -20
+    }
+);
+
+function animateBildboard() {
+    let bildboardTL = new TimelineMax({
+    });
+
+    let video = document.querySelector('.bildboard__video');
+    video.currentTime = 0;
+    video.load();
+
+    bildboardTL
+        .set(
+            ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'],
+            {
+                autoAlpha: 0
+            }
+        )
+        .set(
+            '.bildboard__text',
+            {
+                y: -20
+            }
+        )
+        .set(
+            '.bildboard__title',
+            {
+                x: -70
+            }
+        )
+
+        .set(
+            '.bildboard__quote',
+            {
+                y: -20
+            }
+        )
+        .to(
+            '.bildboard__video',
+            {
+                autoAlpha: 1,
+                duration: 4,
+                ease: "power2.out",
+            },
+            "+=1"
+        )
+        .to(
+            '.header__container',
+            {
+                autoAlpha: 1,
+                duration: 1,
+                ease: "power2.out",
+            },
+            "-=3"
+        )
+        .to(
+            '.bildboard__container',
+            {
+                autoAlpha: 1,
+                duration: 1,
+                ease: "power2.out",
+            },
+            "-=3"
+        )
+        .to(
+            '.bildboard__text',
+            {
+                autoAlpha: 1,
+                y: 0,
+                ease: "power2.out",
+            },
+            "-=2.5"
+        )
+        .to(
+            '.bildboard__title',
+            {
+                autoAlpha: 1,
+                x: 0,
+                ease: "power2.out",
+                duration: 1,
+            },
+            "-=2"
+        )
+        .to(
+            '.bildboard__quote',
+            {
+                autoAlpha: 1,
+                y: 0,
+                ease: "power2.out",
+                duration: 1,
+            },
+            "-=1"
+        );
+
+}
+
+animateBildboard();
+
+gsap.set('.bildboard__video', { yPercent: 0 })
+
+const uncover = gsap.timeline({ paused: true });
+
+uncover
+    .to('.bildboard__video', { yPercent: 50, ease: 'none' });
+
+ScrollTrigger.create({
+    trigger: '.bildboard',
+    start: 'top top',
+    end: 'bottom',
+    animation: uncover,
+    scrub: true,
+});
+
+//portfolio__item
+gsap.set('.portfolio__item', { yPercent: -7, autoAlpha: 0 });
+
+const itemW = gsap.timeline({ paused: true });
+
+itemW
+    .to('.portfolio__item', { yPercent: 0, autoAlpha: 1, stagger: 1 });
+
+ScrollTrigger.create({
+    trigger: '.portfolio',
+    start: 'top-=40% top',
+    end: 'bottom-=40%',
+    animation: itemW,
+    scrub: true,
+    markers: true
 });

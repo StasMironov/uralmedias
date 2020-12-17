@@ -24,10 +24,10 @@ html {
 body {
   font-family: 'GothamPro', sans-serif;
   color: $black;
-  font-weight: normal;
+  font-weight: 400;
   overflow: hidden;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 16px;
+  line-height: 25px;
   background-color: #fff;
   word-wrap: break-word;
 }
@@ -84,44 +84,15 @@ input::-ms-clear {
 }
 
 .title-1 {
-  font-size: 3rem;
-  line-height: 3.125rem;
-
-  @media (max-width:1023px) {
-    font-size: 2rem;
-    line-height: 2.125rem;
-  }
+  font-size: 60px;
+  line-height: 89px;
 }
 
-.title-2 {
-  font-size: 2.5rem;
-  line-height: 2.75rem;
+.title-2 {}
 
-  @media (max-width:1023px) {
-    font-size: 2rem;
-    line-height: 2.125rem;
-  }
-}
+.title-3 {}
 
-.title-3 {
-  font-size: 2rem;
-  line-height: 2.125rem;
-
-  @media (max-width:1023px) {
-    font-size: 1.5rem;
-    line-height: 1.75rem;
-  }
-}
-
-.title-4 {
-  font-size: 1.75rem;
-  line-height: 2rem;
-
-  @media (max-width:1023px) {
-    font-size: 1.125rem;
-    line-height: 1.25rem;
-  }
-}
+.title-4 {}
 
 .b-svg {
   width: auto;
@@ -200,6 +171,37 @@ input::-ms-clear {
 
 }
 
+.sad-link {
+  position: relative;
+  display: inline-block;
+  color: white;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0px;
+    left: -.035em;
+    width: calc(100% + .3em);
+    height: .035em;
+    background: white;
+    transition: all .3s ease-in-out;
+    max-height: 35px;
+  }
+
+  &:hover:after {
+    height: calc(100% + 0.3em);
+  }
+
+  &:hover {
+    color: $black-2;
+  }
+}
+
+
+@import "./components/index/services.scss";
+@import "./components/index/portfolio";
 @import "./components/bildboard.scss";
 @import "./components/header.scss";
 @import "./link.scss";

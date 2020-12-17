@@ -2,6 +2,7 @@
     position: relative;
     min-height: 100vh;
     margin-top: -80px;
+    overflow: hidden;
 
     &:after {
         position: absolute;
@@ -11,20 +12,24 @@
         right: 0;
         left: 0;
         margin: auto;
-        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 6, 25, 0) 50.56%, rgba(0, 6, 25, 0.46287) 69.79%, #000619 99.99%);
+        background-color: #010920;
         z-index: -1;
     }
 
 
     &__container {
+        position: relative;
+        z-index: 1;
         color: white;
         padding-top: 256px;
+        //opacity: 0;
     }
 
     &__text {
         font-size: 20px;
         line-height: 24px;
         font-weight: 400;
+        opacity: 0;
     }
 
     &__title {
@@ -35,16 +40,18 @@
         width: 100%;
         font-weight: 900;
         letter-spacing: 1px;
+        opacity: 0;
     }
 
     &__quote {
         font-size: 29px;
         line-height: 43px;
-        margin-top: 25px;
+        margin-top: 27px;
         max-width: 727px;
         width: 100%;
         font-weight: 400;
         letter-spacing: 0.2px;
+        opacity: 0;
     }
 
     &__video {
@@ -57,6 +64,6 @@
         right: 0;
         bottom: 0;
         margin: auto;
-        z-index: -1;
+        z-index: 0;
     }
 }

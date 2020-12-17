@@ -1,0 +1,28 @@
+.portfolio {
+    margin-top: 56px;
+
+    &__title {
+        letter-spacing: 0.6px;
+    }
+
+    &__quote {
+        font-size: 18px;
+        line-height: 30px;
+        max-width: 760px;
+        width: 100%;
+    }
+
+    &__item {
+        min-height: 550px;
+        background-color: #0E4F95;
+        opacity: 0;
+
+        &:not(:first-child) {
+            margin-top: 55px;
+        }
+    }
+
+    &__items {
+        margin-top: 34px;
+    }
+}
