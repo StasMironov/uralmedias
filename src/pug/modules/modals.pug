@@ -1,0 +1,27 @@
+.request-popup
+    .request-popup__close
+    .request-popup__inner
+        .request-popup__left
+            .request-popup__title Время покорять новые вершины!
+            form.request-popup__form
+                .request-popup__wrapper
+                    .request-popup__btn
+                        .request-popup__txt Разработка сайтов
+                        .request-popup__icon
+                            +svg('arr')
+                    //- .request-popup__list
+                input.request-popup__field(placeholder="Ваше имя")
+                input.request-popup__field(placeholder="Ваш телефон")
+                a(href="#").btn.btn--submit Отправить заявку
+            .request-popup__quote Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a>
+        .request-popup__right(style="background-image: url(img/bg.jpg)")
+
+.grace-popup
+    .grace-popup__close
+    .grace-popup__inner
+        .grace-popup__pic
+            +svg('heart')
+        .grace-popup__title Ваше сообщение отправлено!
+        .grace-popup__quote В ближайшее время наш менеджер свяжется с Вами.
+
+

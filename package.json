@@ -11,8 +11,10 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "gsap": "^3.5.1",
     "jquery-parallax.js": "^1.5.0",
+    "lightgallery.js": "^1.4.0",
     "object-fit-polyfill": "^0.1.0",
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "swiper": "^5.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

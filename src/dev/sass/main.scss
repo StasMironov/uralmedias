@@ -88,7 +88,11 @@ input::-ms-clear {
   line-height: 89px;
 }
 
-.title-2 {}
+.title-2 {
+  font-size: 54px;
+  line-height: 60px;
+  font-weight: 900;
+}
 
 .title-3 {}
 
@@ -200,9 +204,20 @@ input::-ms-clear {
 }
 
 
+
+@import "./components/bildboard/bildboard-data.scss";
+
+@import "./components/popup.scss";
+@import "./components/overlay.scss";
+@import "./components/call.scss";
+@import "./components/index/place.scss";
+@import "./components/index/partners.scss";
+@import "./components/index/client.scss";
 @import "./components/index/services.scss";
 @import "./components/index/portfolio";
-@import "./components/bildboard.scss";
+@import "./components/bildboard/bildboard.scss";
 @import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/helper.scss";
 @import "./link.scss";
 @import "./btn.scss";

@@ -1,0 +1,145 @@
+.request-popup {
+    position: fixed;
+    max-width: 1011px;
+    width: 100%;
+    min-height: 587px;
+    height: 1px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    border-radius: 10px;
+
+    &__left {
+        max-width: 505px;
+        width: calc(100% - 506px);
+        background-color: white;
+        padding: 78px 87px 79px 68px;
+    }
+
+    &__right {
+        width: 506px;
+    }
+
+    &__inner {
+        display: flex;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 43px;
+        font-weight: 900;
+    }
+
+    &__form {
+        max-width: 294px;
+        width: 100%;
+    }
+
+    &__field {
+        height: 46px;
+        padding: 15px;
+        border: 1px solid $grey-7;
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+    &__form {
+        margin-top: 22px;
+
+        .btn {
+            margin-top: 30px;
+        }
+    }
+
+    &__quote {
+        font-size: 10px;
+        line-height: 14px;
+        max-width: 290px;
+        width: 100%;
+        margin-top: 20px;
+        color: $grey-6;
+
+        a {
+            color: $black;
+        }
+    }
+
+    &__icon {
+        fill: transparent;
+        stroke: black;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        width: 10px;
+        height: 10px;
+
+        .b-svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: -33px;
+        right: -33px;
+        width: 27px;
+        height: 27px;
+        cursor: pointer;
+
+        &:after,
+        &:before {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 3px;
+            background-color: white;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &:after {
+            transform: rotate(45deg);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        height: 46px;
+        padding: 15px;
+        box-sizing: border-box;
+        border: 1px solid rgb(221, 221, 221);
+        cursor: pointer;
+    }
+
+    &__list {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 170px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-top: none;
+        top: 44px;
+        z-index: 1;
+    }
+
+    &__wrapper {
+        position: relative;
+    }
+}

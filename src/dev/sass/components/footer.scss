@@ -1,0 +1,59 @@
+.footer {
+    margin-top: 90px;
+
+    &__item {
+        font-size: 16px;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: $green-1;
+
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        padding-top: 81px;
+        padding-bottom: 60px;
+    }
+
+    &__logo {
+        margin-left: auto;
+        width: 165px;
+        height: 38px;
+
+        .b-svg {
+            height: 100%;
+            width: 100%;
+            fill: $green-1;
+        }
+    }
+
+    &__bottom {
+        background-color: $ochre;
+        padding-top: 40px;
+        padding-bottom: 38px;
+    }
+
+    &__soc {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-right: 22px;
+        }
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+    }
+}

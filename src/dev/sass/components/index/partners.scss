@@ -1,0 +1,21 @@
+.partners {
+    max-width: 1093px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 78px;
+
+
+
+    .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        height: 44px;
+
+        img {
+            height: auto;
+            width: auto;
+            object-fit: contain;
+        }
+    }
+}

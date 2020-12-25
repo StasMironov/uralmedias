@@ -1,0 +1,41 @@
+.place {
+    position: relative;
+    min-height: 428px;
+    overflow: hidden;
+    margin-top: 122px;
+    padding-top: 84px;
+    padding-bottom: 80px;
+    background-color: $ochre;
+
+    &__bg {
+        position: absolute;
+        content: "";
+        top: -47%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 0;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__text {
+        max-width: 1067px;
+        width: 100%;
+        margin-top: 17px;
+        font-size: 18px;
+        line-height: 30px;
+        opacity: 0;
+    }
+
+    &__title {
+        letter-spacing: 0.6px;
+    }
+}

@@ -1,8 +1,24 @@
 "use strict";
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+jQuery.fn.exists = function () {
+  return $(this).length;
+};
+
+var projectFunc = {
+  hidePopup: function hidePopup() {
+    console.log(1);
+  }
+};
 
 function init() {
   var loader = document.querySelector('.loader'); // reset position of the loading screen
@@ -89,6 +105,7 @@ function init() {
         }))();
       },
       enter: function enter() {
+        checkPage();
         loaderAway();
         animateBildboard();
       }
@@ -117,11 +134,49 @@ function init() {
         }))();
       },
       enter: function enter() {
+        checkPage();
+        loaderAway();
+        animateBildboard();
+      }
+    }, {
+      name: 'about',
+      to: {
+        namespace: ['about']
+      },
+      leave: function leave() {
+        return _asyncToGenerator(
+        /*#__PURE__*/
+        regeneratorRuntime.mark(function _callee3() {
+          return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  _context3.next = 2;
+                  return loaderIn();
+
+                case 2:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3);
+        }))();
+      },
+      enter: function enter() {
+        checkPage();
         loaderAway();
         animateBildboard();
       }
     }]
   });
+}
+
+function checkPage() {
+  if (window.location.pathname == '/') {
+    console.log('main');
+  } else {
+    $('.header').addClass('mf-style');
+  }
 }
 
 window.addEventListener('load', function () {
@@ -259,3 +314,148 @@ ScrollTrigger.create({
   scrub: true,
   markers: true
 });
+$('#certificate').lightGallery();
+var partners = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination'
+  },
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  },
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar'
+  }
+});
+
+var Slider =
+/*#__PURE__*/
+function () {
+  function Slider(init, name, view, space, column, ratio) {
+    _classCallCheck(this, Slider);
+
+    this.init = init;
+    this.name = name;
+    this.view = view;
+    this.space = space;
+    this.column = column;
+    this.ratio = ratio;
+  }
+
+  _createClass(Slider, [{
+    key: "createSlider",
+    value: function createSlider() {
+      var slider = new Swiper(this.name, {
+        slidesPerView: this.view,
+        spaceBetween: this.space,
+        slidesPerColumn: this.column,
+        slidesPerColumnFill: 'row',
+        touchRatio: this.ratio
+      });
+      return slider;
+    }
+  }]);
+
+  return Slider;
+}();
+
+var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
+partnerSlider.createSlider();
+gsap.set('.place__bg', {
+  yPercent: 0,
+  transformOrigin: 'left center'
+});
+var place = gsap.timeline({
+  paused: true
+});
+var placeContent = gsap.timeline({
+  paused: true
+});
+gsap.set('.place__title', {
+  yPercent: -40,
+  autoAlpha: 0
+});
+gsap.set('.place__text', {
+  autoAlpha: 0
+});
+place.to('.place__bg', {
+  yPercent: -30,
+  ease: 'none'
+});
+placeContent.to('.place__title', {
+  yPercent: 0,
+  autoAlpha: 1,
+  duration: 1
+}).to('.place__text', {
+  autoAlpha: 1
+});
+ScrollTrigger.create({
+  trigger: '.place',
+  start: 'top-=150% top',
+  end: 'bottom',
+  animation: place,
+  scrub: true
+});
+ScrollTrigger.create({
+  trigger: '.place',
+  start: 'top-=150% top',
+  end: 'bottom-=80',
+  animation: placeContent,
+  markers: true
+}); //services__items
+
+gsap.set('.services__item', {
+  xPercent: -5,
+  autoAlpha: 0
+});
+var service = gsap.timeline({
+  paused: true
+});
+service.to('.services__item', {
+  xPercent: 0,
+  autoAlpha: 1,
+  stagger: 0.3,
+  duration: 0.5
+});
+ScrollTrigger.create({
+  trigger: '.services__items',
+  start: 'top-=230% top',
+  end: 'bottom',
+  animation: service,
+  // scrub: true,
+  markers: true
+}); //place
+
+gsap.set('.call__grid', {
+  xPercent: -100,
+  autoAlpha: 0,
+  duration: 1
+});
+var call = gsap.timeline({
+  paused: true
+});
+call.to('.call__grid', {
+  xPercent: 0,
+  autoAlpha: 1,
+  duration: 2,
+  ease: Back.easeOut.config(1.7)
+});
+ScrollTrigger.create({
+  trigger: '.call',
+  start: 'top-=80% top',
+  end: 'bottom',
+  animation: call,
+  markers: true
+});
+
+if ($('.request-popup__close').exists()) {
+  $('.request-popup__close').on('click', function () {
+    projectFunc.hidePopup();
+  });
+}

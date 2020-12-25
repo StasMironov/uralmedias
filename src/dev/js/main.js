@@ -1,3 +1,14 @@
+jQuery.fn.exists = function () {
+    return $(this).length;
+}
+
+const projectFunc = {
+    hidePopup: function () {
+        console.log(1);
+    }
+};
+
+
 
 
 function init() {
@@ -16,20 +27,18 @@ function init() {
 
     function loaderIn() {
         // GSAP tween to stretch the loading screen across the whole screen
-        return gsap.fromTo(loader,
-            {
-                rotation: 10,
-                scaleX: 0,
-                xPercent: -5
-            },
-            {
-                duration: 0.8,
-                xPercent: 0,
-                scaleX: 1,
-                rotation: 0,
-                ease: 'Power4.inOut',
-                transformOrigin: 'left center'
-            });
+        return gsap.fromTo(loader, {
+            rotation: 10,
+            scaleX: 0,
+            xPercent: -5
+        }, {
+            duration: 0.8,
+            xPercent: 0,
+            scaleX: 1,
+            rotation: 0,
+            ease: 'Power4.inOut',
+            transformOrigin: 'left center'
+        });
     }
 
     function loaderAway() {
@@ -84,6 +93,7 @@ function init() {
 
             },
             enter() {
+                checkPage();
                 loaderAway();
                 animateBildboard();
             }
@@ -99,6 +109,24 @@ function init() {
 
             },
             enter() {
+                checkPage();
+                loaderAway();
+                animateBildboard();
+            }
+
+        },
+        {
+            name: 'about',
+            to: {
+                namespace: ['about']
+            },
+
+            async leave() {
+                await loaderIn();
+
+            },
+            enter() {
+                checkPage();
                 loaderAway();
                 animateBildboard();
             }
@@ -107,6 +135,15 @@ function init() {
         ]
     })
 
+}
+
+function checkPage() {
+    if (window.location.pathname == '/') {
+        console.log('main')
+    }
+    else {
+        $('.header').addClass('mf-style');
+    }
 }
 
 window.addEventListener('load', function () {
@@ -162,35 +199,30 @@ $(".link").on("mouseleave", function () {
 
 
 gsap.set(
-    ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'],
-    {
-        autoAlpha: 0
-    }
+    ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'], {
+    autoAlpha: 0
+}
 );
 
 gsap.set(
-    '.bildboard__text',
-    {
-        y: -20
-    }
+    '.bildboard__text', {
+    y: -20
+}
 );
 gsap.set(
-    '.bildboard__title',
-    {
-        x: -70
-    }
+    '.bildboard__title', {
+    x: -70
+}
 );
 
 gsap.set(
-    '.bildboard__quote',
-    {
-        y: -20
-    }
+    '.bildboard__quote', {
+    y: -20
+}
 );
 
 function animateBildboard() {
-    let bildboardTL = new TimelineMax({
-    });
+    let bildboardTL = new TimelineMax({});
 
     let video = document.querySelector('.bildboard__video');
     video.currentTime = 0;
@@ -198,84 +230,74 @@ function animateBildboard() {
 
     bildboardTL
         .set(
-            ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'],
-            {
-                autoAlpha: 0
-            }
+            ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'], {
+            autoAlpha: 0
+        }
         )
         .set(
-            '.bildboard__text',
-            {
-                y: -20
-            }
+            '.bildboard__text', {
+            y: -20
+        }
         )
         .set(
-            '.bildboard__title',
-            {
-                x: -70
-            }
+            '.bildboard__title', {
+            x: -70
+        }
         )
 
         .set(
-            '.bildboard__quote',
-            {
-                y: -20
-            }
+            '.bildboard__quote', {
+            y: -20
+        }
         )
         .to(
-            '.bildboard__video',
-            {
-                autoAlpha: 1,
-                duration: 4,
-                ease: "power2.out",
-            },
+            '.bildboard__video', {
+            autoAlpha: 1,
+            duration: 4,
+            ease: "power2.out",
+        },
             "+=1"
         )
         .to(
-            '.header__container',
-            {
-                autoAlpha: 1,
-                duration: 1,
-                ease: "power2.out",
-            },
+            '.header__container', {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power2.out",
+        },
             "-=3"
         )
         .to(
-            '.bildboard__container',
-            {
-                autoAlpha: 1,
-                duration: 1,
-                ease: "power2.out",
-            },
+            '.bildboard__container', {
+            autoAlpha: 1,
+            duration: 1,
+            ease: "power2.out",
+        },
             "-=3"
         )
         .to(
-            '.bildboard__text',
-            {
-                autoAlpha: 1,
-                y: 0,
-                ease: "power2.out",
-            },
+            '.bildboard__text', {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power2.out",
+        },
             "-=2.5"
         )
         .to(
-            '.bildboard__title',
-            {
-                autoAlpha: 1,
-                x: 0,
-                ease: "power2.out",
-                duration: 1,
-            },
+            '.bildboard__title', {
+            autoAlpha: 1,
+            x: 0,
+            ease: "power2.out",
+            duration: 1,
+        },
             "-=2"
         )
         .to(
-            '.bildboard__quote',
-            {
-                autoAlpha: 1,
-                y: 0,
-                ease: "power2.out",
-                duration: 1,
-            },
+            '.bildboard__quote', {
+            autoAlpha: 1,
+            y: 0,
+            ease: "power2.out",
+            duration: 1,
+        },
             "-=1"
         );
 
@@ -283,12 +305,19 @@ function animateBildboard() {
 
 animateBildboard();
 
-gsap.set('.bildboard__video', { yPercent: 0 })
+gsap.set('.bildboard__video', {
+    yPercent: 0
+})
 
-const uncover = gsap.timeline({ paused: true });
+const uncover = gsap.timeline({
+    paused: true
+});
 
 uncover
-    .to('.bildboard__video', { yPercent: 50, ease: 'none' });
+    .to('.bildboard__video', {
+        yPercent: 50,
+        ease: 'none'
+    });
 
 ScrollTrigger.create({
     trigger: '.bildboard',
@@ -299,12 +328,21 @@ ScrollTrigger.create({
 });
 
 //portfolio__item
-gsap.set('.portfolio__item', { yPercent: -7, autoAlpha: 0 });
+gsap.set('.portfolio__item', {
+    yPercent: -7,
+    autoAlpha: 0
+});
 
-const itemW = gsap.timeline({ paused: true });
+const itemW = gsap.timeline({
+    paused: true
+});
 
 itemW
-    .to('.portfolio__item', { yPercent: 0, autoAlpha: 1, stagger: 1 });
+    .to('.portfolio__item', {
+        yPercent: 0,
+        autoAlpha: 1,
+        stagger: 1
+    });
 
 ScrollTrigger.create({
     trigger: '.portfolio',
@@ -314,3 +352,180 @@ ScrollTrigger.create({
     scrub: true,
     markers: true
 });
+
+
+
+
+$('#certificate').lightGallery();
+
+var partners = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+})
+
+
+class Slider {
+    constructor(init, name, view, space, column, ratio) {
+        this.init = init;
+        this.name = name;
+        this.view = view;
+        this.space = space;
+        this.column = column;
+        this.ratio = ratio;
+    }
+
+    createSlider() {
+        let slider = new Swiper(this.name, {
+            slidesPerView: this.view,
+            spaceBetween: this.space,
+            slidesPerColumn: this.column,
+            slidesPerColumnFill: 'row',
+            touchRatio: this.ratio,
+        });
+
+        return slider;
+    }
+}
+
+let partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
+
+
+partnerSlider.createSlider();
+
+gsap.set('.place__bg', {
+    yPercent: 0,
+    transformOrigin: 'left center',
+});
+
+const place = gsap.timeline({
+    paused: true
+});
+
+const placeContent = gsap.timeline({
+    paused: true
+});
+
+gsap.set('.place__title', {
+    yPercent: -40,
+    autoAlpha: 0
+});
+
+gsap.set('.place__text', {
+    autoAlpha: 0
+})
+
+place
+    .to('.place__bg', {
+        yPercent: -30,
+        ease: 'none'
+    })
+
+
+placeContent
+    .to('.place__title', {
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: 1
+    })
+    .to('.place__text', {
+        autoAlpha: 1
+    });
+
+ScrollTrigger.create({
+    trigger: '.place',
+    start: 'top-=150% top',
+    end: 'bottom',
+    animation: place,
+    scrub: true,
+});
+
+ScrollTrigger.create({
+    trigger: '.place',
+    start: 'top-=150% top',
+    end: 'bottom-=80',
+    animation: placeContent,
+    markers: true
+});
+
+//services__items
+
+gsap.set('.services__item', {
+    xPercent: -5,
+    autoAlpha: 0
+});
+
+const service = gsap.timeline({
+    paused: true
+});
+
+service
+    .to('.services__item', {
+        xPercent: 0,
+        autoAlpha: 1,
+        stagger: 0.3,
+        duration: 0.5
+
+    });
+
+ScrollTrigger.create({
+    trigger: '.services__items',
+    start: 'top-=230% top',
+    end: 'bottom',
+    animation: service,
+    // scrub: true,
+    markers: true
+});
+
+//place
+
+gsap.set('.call__grid', {
+    xPercent: -100,
+    autoAlpha: 0,
+    duration: 1
+});
+
+const call = gsap.timeline({
+    paused: true
+});
+
+call
+    .to('.call__grid', {
+        xPercent: 0,
+        autoAlpha: 1,
+        duration: 2,
+        ease: Back.easeOut.config(1.7)
+    });
+
+ScrollTrigger.create({
+    trigger: '.call',
+    start: 'top-=80% top',
+    end: 'bottom',
+    animation: call,
+    markers: true
+});
+
+
+
+if ($('.request-popup__close').exists()) {
+    $('.request-popup__close').on('click', function () {
+        projectFunc.hidePopup();
+    });
+}
+

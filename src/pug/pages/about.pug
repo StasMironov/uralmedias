@@ -1,0 +1,18 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+	- var setTitle = 'МЫ URALMEDIAS'
+
+block content
+	div(data-barba="container" data-barba-namespace="about")
+		.bildboard-data(style="background-image: url(img/dataBild/img1.jpg);")
+			.bildboard-data__container.container
+				.bildboard-data__title #{setTitle}
+
+
+				
+		
+
+block script
