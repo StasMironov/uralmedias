@@ -1,1 +1,7 @@
-.link {}
+.link {
+    &--crumbs {
+        display: inline-flex;
+        font-size: 12px;
+        line-height: 25px;
+    }
+}

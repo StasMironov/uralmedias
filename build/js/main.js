@@ -173,7 +173,7 @@ function init() {
 
 function checkPage() {
   if (window.location.pathname == '/') {
-    console.log('main');
+    $('.header').removeClass('mf-style');
   } else {
     $('.header').addClass('mf-style');
   }

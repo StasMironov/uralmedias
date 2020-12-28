@@ -1,0 +1,32 @@
+.breadcrumbs {
+    margin-top: 31px;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__link {
+        position: relative;
+        color: $grey-8;
+
+        
+
+        &:not(:last-child){
+            padding-right: 7px;
+            margin-right: 5px;
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 3px;
+                height: 2px;
+                background-color: $grey-8;
+                right: -2px;
+                top: 2px;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+    }
+}

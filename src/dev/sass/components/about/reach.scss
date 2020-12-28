@@ -1,0 +1,74 @@
+.reach {
+    background-color: $black-2;
+    margin-top: 76px;
+    padding: 75px 0 82px;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 67px;
+        width: calc(25% - 67px);
+    }
+    
+    &__items {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: -67px;
+    }
+
+    &__pic {
+        width: 155px;
+        height: 155px;
+    }
+
+    &__txt {
+        max-width: 264px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 21px;
+        color: white;
+        margin-top: 20px;
+    }
+
+    &__title,
+    &__text {
+        color: white;
+        text-align: center;
+    }
+
+    &__title {
+        position: relative;
+        padding-bottom: 40px;
+        margin-bottom: 40px;   
+        
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: auto;
+            margin: auto;
+            max-width: 80px;
+            width: 100%;
+            background-color: $red-1;
+            height: 2px;
+        }
+    }
+
+
+    &__text {
+        max-width: 700px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    &__cover {
+        margin-top: 47px;
+    }
+}

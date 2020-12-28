@@ -84,17 +84,21 @@ input::-ms-clear {
 }
 
 .title-1 {
-  font-size: 60px;
+  font-size: 62px;
   line-height: 89px;
 }
 
 .title-2 {
-  font-size: 54px;
-  line-height: 60px;
-  font-weight: 900;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
 }
 
-.title-3 {}
+.title-3 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+}
 
 .title-4 {}
 
@@ -203,10 +207,12 @@ input::-ms-clear {
   }
 }
 
-
-
+@import "./components/about/reach.scss";
+@import "./components/about/team.scss";
+@import "./components/about/progress.scss";
+@import "./components/quote.scss";
 @import "./components/bildboard/bildboard-data.scss";
-
+@import "./components/breadcrumbs.scss";
 @import "./components/popup.scss";
 @import "./components/overlay.scss";
 @import "./components/call.scss";
