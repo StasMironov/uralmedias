@@ -11,7 +11,13 @@
         display: flex;
         margin-left: 37px;
         width: calc(20% - 37px);
-        filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+        transition: .3s ease-in;
+
+
+        &:hover {
+            filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.3));
+        }
 
         img {
             width: 100%;
@@ -21,13 +27,38 @@
     }
 
     &__quote {
-        margin-top: 16px;
-        max-width: 574px;
+        max-width: 100%;
         font-size: 18px;
         line-height: 30px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 16px;
     }
 
     &__cover {
-        margin-top: 20px;
+        margin-top: 40px;
+    }
+
+    &__title {
+        position: relative;
+        letter-spacing: 0.6px;
+        text-align: center;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: auto;
+            margin: auto;
+            max-width: 80px;
+            width: 100%;
+            background-color: $red-2;
+            height: 2px;
+        }
     }
 }

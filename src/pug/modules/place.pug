@@ -1,0 +1,14 @@
+.place
+    .place__bg(style="background-image: url(img/decor/dec1.png)")
+    .place__container.container
+        .place__title.title-3 Хотите свой сайт? Оставьте заявку 
+        .place__text Мы находим лучшие решения для Вас. Ваши пожелания и мнения будут учтены на всех этапах разработки проекта. Мы придерживаемся среднего ценового сегмента по рынку – это позволяет нам создавать качественный и доступный продукт. Заказывая разработку сайта любой сложности в Uralmedias, вы принимаете правильное решение.
+        if include == 'btn'
+            a(href="https://uralmedias.ru/articles/").btn.btn--special
+                .btn__special
+                    span Заказать проект
+                .btn__text Заказать проект
+        else
+            .place__bloc
+                a(href="javascript:void(0);").place__link.link.link--detail Бриф на разработку сайта
+                a(href="javascript:void(0);").place__link.link.link--detail Бриф на продвижение сайта

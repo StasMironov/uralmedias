@@ -4,4 +4,28 @@
         font-size: 12px;
         line-height: 25px;
     }
+
+    &--detail {
+        color: $red-2;
+        font-family: 'OpenSans', sans-serif;
+        position: relative;
+        margin-top: auto;
+        padding-right: 15px;
+        transition: .3s;
+        font-size: 10px;
+        line-height: 10px;
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-image: url(../img/icon/arrow-small.svg);
+            width: 11px;
+            height: 9px;
+            background-repeat: no-repeat;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 0;
+        }
+    }
 }

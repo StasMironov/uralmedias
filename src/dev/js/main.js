@@ -8,7 +8,55 @@ const projectFunc = {
     }
 };
 
+if ($('.header__inner').exists) {
+    try {
+        let $window = $(window),
+            $target = $(".header__inner"),
+            $h = $target.offset().top;
+        $window.on('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > $h) {
+                $target.addClass("mf-fixed");
+                return;
+            } else {
+                $target.removeClass("mf-fixed");
+            }
+            return;
+        });
+    } catch (err) {
+        console.log(err);
+    }
+}
 
+checkPage();
+
+class Slider {
+    constructor(init, name, view, space, column, ratio) {
+        this.init = init;
+        this.name = name;
+        this.view = view;
+        this.space = space;
+        this.column = column;
+        this.ratio = ratio;
+    }
+
+    createSlider() {
+        let slider = new Swiper(this.name, {
+            slidesPerView: this.view,
+            spaceBetween: this.space,
+            slidesPerColumn: this.column,
+            slidesPerColumnFill: 'row',
+            touchRatio: this.ratio,
+        });
+
+        return slider;
+    }
+}
+
+if ($('.partners').exists()) {
+    let partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
+    partnerSlider.createSlider();
+}
 
 
 function init() {
@@ -151,6 +199,8 @@ window.addEventListener('load', function () {
 });
 
 
+
+
 var cursor = $(".cursor"),
     follower = $(".cursor-follower");
 
@@ -224,9 +274,13 @@ gsap.set(
 function animateBildboard() {
     let bildboardTL = new TimelineMax({});
 
-    let video = document.querySelector('.bildboard__video');
-    video.currentTime = 0;
-    video.load();
+    if ($('.bildboard__video').exists()) {
+        let video = document.querySelector('.bildboard__video');
+        video.currentTime = 0;
+        video.load();
+    }
+
+
 
     bildboardTL
         .set(
@@ -350,8 +404,15 @@ ScrollTrigger.create({
     end: 'bottom-=40%',
     animation: itemW,
     scrub: true,
-    markers: true
 });
+
+if ($('.btn--special').exists()) {
+    let widthhEl = $('.btn__text').width();
+    $('.btn--special').css({
+        'max-width': widthhEl + 94 + 'px'
+    });
+    console.log(widthhEl);
+}
 
 
 
@@ -380,35 +441,6 @@ var partners = new Swiper('.swiper-container', {
     },
 })
 
-
-class Slider {
-    constructor(init, name, view, space, column, ratio) {
-        this.init = init;
-        this.name = name;
-        this.view = view;
-        this.space = space;
-        this.column = column;
-        this.ratio = ratio;
-    }
-
-    createSlider() {
-        let slider = new Swiper(this.name, {
-            slidesPerView: this.view,
-            spaceBetween: this.space,
-            slidesPerColumn: this.column,
-            slidesPerColumnFill: 'row',
-            touchRatio: this.ratio,
-        });
-
-        return slider;
-    }
-}
-
-let partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
-
-
-partnerSlider.createSlider();
-
 gsap.set('.place__bg', {
     yPercent: 0,
     transformOrigin: 'left center',
@@ -431,12 +463,6 @@ gsap.set('.place__text', {
     autoAlpha: 0
 })
 
-place
-    .to('.place__bg', {
-        yPercent: -30,
-        ease: 'none'
-    })
-
 
 placeContent
     .to('.place__title', {
@@ -451,20 +477,9 @@ placeContent
 ScrollTrigger.create({
     trigger: '.place',
     start: 'top-=150% top',
-    end: 'bottom',
-    animation: place,
-    scrub: true,
-});
-
-ScrollTrigger.create({
-    trigger: '.place',
-    start: 'top-=150% top',
     end: 'bottom-=80',
     animation: placeContent,
-    markers: true
 });
-
-//services__items
 
 gsap.set('.services__item', {
     xPercent: -5,
@@ -490,7 +505,6 @@ ScrollTrigger.create({
     end: 'bottom',
     animation: service,
     // scrub: true,
-    markers: true
 });
 
 //place
@@ -518,14 +532,13 @@ ScrollTrigger.create({
     start: 'top-=80% top',
     end: 'bottom',
     animation: call,
-    markers: true
 });
 
 
 
-if ($('.request-popup__close').exists()) {
-    $('.request-popup__close').on('click', function () {
-        projectFunc.hidePopup();
-    });
-}
+// if ($('.request-popup__close').exists()) {
+//     $('.request-popup__close').on('click', function () {
+//         projectFunc.hidePopup();
+//     });
+// }
 

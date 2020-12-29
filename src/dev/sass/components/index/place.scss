@@ -1,25 +1,26 @@
 .place {
     position: relative;
-    min-height: 428px;
+    min-height: 480px;
     overflow: hidden;
     margin-top: 122px;
-    padding-top: 84px;
-    padding-bottom: 80px;
-    background-color: $ochre;
+    padding-top: 73px;
+    padding-bottom: 88px;
+    background-color: white;
 
     &__bg {
         position: absolute;
         content: "";
-        top: -47%;
-        bottom: 0;
         left: 0;
         right: 0;
         margin: auto;
         height: 100%;
         width: 100%;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
+        background-position: 50% 0;
         z-index: 0;
+        top: auto;
+        bottom: 0px;
     }
 
     &__container {
@@ -27,15 +28,55 @@
     }
 
     &__text {
-        max-width: 1067px;
+        max-width: 835px;
         width: 100%;
-        margin-top: 17px;
         font-size: 18px;
-        line-height: 30px;
+        line-height: 25px;
         opacity: 0;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 16px;
     }
 
     &__title {
+        position: relative;
         letter-spacing: 0.6px;
+        text-align: center;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: auto;
+            margin: auto;
+            max-width: 80px;
+            width: 100%;
+            background-color: $red-2;
+            height: 2px;
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+        text-transform: uppercase;
+        font-weight: 700;
+
+        &:not(:last-child) {
+            margin-right: 70px;
+        }
+    }
+
+    &__bloc {
+        display: flex;
+        justify-content: center;
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 55px;
     }
 }

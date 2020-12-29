@@ -1,0 +1,84 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+	- var setTitle = 'НАШИ УСЛУГИ';
+	- var include = 'link';
+	- var quote = 'services'
+	- var bildboard_img = "background-image: url(img/dataBild/img2.jpg);"
+
+block content
+	div(data-barba="container" data-barba-namespace="about")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+
+		.offer
+			.offer__container.container
+				.offer__cover
+					.offer__items
+						.offer__item 
+							.offer__pic
+								+svg('ic1')
+							.offer__content
+								.offer__article Лендинг
+								.offer__txt веб-страница, основной задачей которой является сбор контактных данных целевой аудитории
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic9')
+							.offer__content
+								.offer__article Корпоративный сайт
+								.offer__txt полноценное представительство компании в интернете, помогающее привлечь новых коиентов
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic10')
+							.offer__content
+								.offer__article  интернет-магазин
+								.offer__txt Сайт, который содержит товары или услуги компании
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic11')
+							.offer__content
+								.offer__article Мобильное приложение
+								.offer__txt Программное обеспечение,  разработанное под конкретную мобильную платформу
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+
+						.offer__item 
+							.offer__pic
+								+svg('ic5')
+							.offer__content
+								.offer__article SEO-оптимизация
+								.offer__txt Повышение позиций сайта в поисковых системах для привлечения целевой аудитории
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic12')
+							.offer__content
+								.offer__article Продвижение
+								.offer__txt Комплекс мер по обеспечению посещаемости сайта целевыми посетителями
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic13')
+							.offer__content
+								.offer__article  Реклама
+								.offer__txt Продуктивный механизм для роста продаж и привлечения новых клиентов
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+						.offer__item 
+							.offer__pic
+								+svg('ic1')
+							.offer__content
+								.offer__article Шаблонная разработка
+								.offer__txt Используется в качестве готового решения для создания сайтов
+							a(href="javascript:void(0);").offer__link.link.link--detail ПОДРОБНЕЕ
+		include ../modules/place
+	   
+
+
+
+		
+block script

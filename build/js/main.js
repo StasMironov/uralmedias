@@ -1,14 +1,14 @@
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 jQuery.fn.exists = function () {
   return $(this).length;
@@ -19,6 +19,66 @@ var projectFunc = {
     console.log(1);
   }
 };
+
+if ($('.header__inner').exists) {
+  try {
+    var $window = $(window),
+        $target = $(".header__inner"),
+        $h = $target.offset().top;
+    $window.on('scroll', function () {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > $h) {
+        $target.addClass("mf-fixed");
+        return;
+      } else {
+        $target.removeClass("mf-fixed");
+      }
+
+      return;
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+checkPage();
+
+var Slider =
+/*#__PURE__*/
+function () {
+  function Slider(init, name, view, space, column, ratio) {
+    _classCallCheck(this, Slider);
+
+    this.init = init;
+    this.name = name;
+    this.view = view;
+    this.space = space;
+    this.column = column;
+    this.ratio = ratio;
+  }
+
+  _createClass(Slider, [{
+    key: "createSlider",
+    value: function createSlider() {
+      var slider = new Swiper(this.name, {
+        slidesPerView: this.view,
+        spaceBetween: this.space,
+        slidesPerColumn: this.column,
+        slidesPerColumnFill: 'row',
+        touchRatio: this.ratio
+      });
+      return slider;
+    }
+  }]);
+
+  return Slider;
+}();
+
+if ($('.partners').exists()) {
+  var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
+  partnerSlider.createSlider();
+}
 
 function init() {
   var loader = document.querySelector('.loader'); // reset position of the loading screen
@@ -235,9 +295,13 @@ gsap.set('.bildboard__quote', {
 
 function animateBildboard() {
   var bildboardTL = new TimelineMax({});
-  var video = document.querySelector('.bildboard__video');
-  video.currentTime = 0;
-  video.load();
+
+  if ($('.bildboard__video').exists()) {
+    var video = document.querySelector('.bildboard__video');
+    video.currentTime = 0;
+    video.load();
+  }
+
   bildboardTL.set(['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'], {
     autoAlpha: 0
   }).set('.bildboard__text', {
@@ -311,9 +375,17 @@ ScrollTrigger.create({
   start: 'top-=40% top',
   end: 'bottom-=40%',
   animation: itemW,
-  scrub: true,
-  markers: true
+  scrub: true
 });
+
+if ($('.btn--special').exists()) {
+  var widthhEl = $('.btn__text').width();
+  $('.btn--special').css({
+    'max-width': widthhEl + 94 + 'px'
+  });
+  console.log(widthhEl);
+}
+
 $('#certificate').lightGallery();
 var partners = new Swiper('.swiper-container', {
   // Optional parameters
@@ -333,40 +405,6 @@ var partners = new Swiper('.swiper-container', {
     el: '.swiper-scrollbar'
   }
 });
-
-var Slider =
-/*#__PURE__*/
-function () {
-  function Slider(init, name, view, space, column, ratio) {
-    _classCallCheck(this, Slider);
-
-    this.init = init;
-    this.name = name;
-    this.view = view;
-    this.space = space;
-    this.column = column;
-    this.ratio = ratio;
-  }
-
-  _createClass(Slider, [{
-    key: "createSlider",
-    value: function createSlider() {
-      var slider = new Swiper(this.name, {
-        slidesPerView: this.view,
-        spaceBetween: this.space,
-        slidesPerColumn: this.column,
-        slidesPerColumnFill: 'row',
-        touchRatio: this.ratio
-      });
-      return slider;
-    }
-  }]);
-
-  return Slider;
-}();
-
-var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
-partnerSlider.createSlider();
 gsap.set('.place__bg', {
   yPercent: 0,
   transformOrigin: 'left center'
@@ -384,10 +422,6 @@ gsap.set('.place__title', {
 gsap.set('.place__text', {
   autoAlpha: 0
 });
-place.to('.place__bg', {
-  yPercent: -30,
-  ease: 'none'
-});
 placeContent.to('.place__title', {
   yPercent: 0,
   autoAlpha: 1,
@@ -398,18 +432,9 @@ placeContent.to('.place__title', {
 ScrollTrigger.create({
   trigger: '.place',
   start: 'top-=150% top',
-  end: 'bottom',
-  animation: place,
-  scrub: true
-});
-ScrollTrigger.create({
-  trigger: '.place',
-  start: 'top-=150% top',
   end: 'bottom-=80',
-  animation: placeContent,
-  markers: true
-}); //services__items
-
+  animation: placeContent
+});
 gsap.set('.services__item', {
   xPercent: -5,
   autoAlpha: 0
@@ -427,9 +452,8 @@ ScrollTrigger.create({
   trigger: '.services__items',
   start: 'top-=230% top',
   end: 'bottom',
-  animation: service,
-  // scrub: true,
-  markers: true
+  animation: service // scrub: true,
+
 }); //place
 
 gsap.set('.call__grid', {
@@ -450,12 +474,9 @@ ScrollTrigger.create({
   trigger: '.call',
   start: 'top-=80% top',
   end: 'bottom',
-  animation: call,
-  markers: true
-});
-
-if ($('.request-popup__close').exists()) {
-  $('.request-popup__close').on('click', function () {
-    projectFunc.hidePopup();
-  });
-}
+  animation: call
+}); // if ($('.request-popup__close').exists()) {
+//     $('.request-popup__close').on('click', function () {
+//         projectFunc.hidePopup();
+//     });
+// }

@@ -39,8 +39,12 @@ body {
   padding: 0 330px 0px;
   box-sizing: border-box;
 
-  @media (max-width:1023px) {
-    padding: 0 15px 30px;
+  @media (max-width:1600px) {
+    padding: 0 40px 0px;
+  }
+
+  @media (max-width:1024px) {
+    padding: 0 20px 0px;
   }
 }
 
@@ -116,6 +120,12 @@ input::-ms-clear {
   z-index: 1;
   visibility: hidden;
   opacity: 0;
+}
+
+.b-page {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 271px;
 }
 
 
@@ -207,6 +217,8 @@ input::-ms-clear {
   }
 }
 
+@import "./components/contacts/contacts.scss";
+@import "./components/servicess/offer.scss";
 @import "./components/about/reach.scss";
 @import "./components/about/team.scss";
 @import "./components/about/progress.scss";

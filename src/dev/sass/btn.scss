@@ -18,4 +18,82 @@
         font-weight: 700;
     }
 
+    &--special {
+        position: relative;
+        display: flex;
+        height: 65px;
+        align-items: center;
+        font-family: 'OpenSans', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        margin: 35px auto 0;
+
+        .btn {
+            &__special {
+                display: flex;
+                position: absolute;
+                align-items: center;
+                border-radius: 32.5px;
+                bottom: 0;
+                left: 0;
+                width: 65px;
+                height: 65px;
+                background-color: #ff7369;
+                white-space: nowrap;
+                overflow: hidden;
+                z-index: 2;
+                padding-left: 23px;
+                padding-right: 23px;
+                color: #fff;
+                transition: .3s;
+
+                span {
+                    position: relative;
+                    padding-right: 39px;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-image: url(../img/icon/arrow-white.svg);
+                        width: 30px;
+                        height: 10px;
+                        background-repeat: no-repeat;
+                        top: 9px;
+                        bottom: 0;
+                        margin: 0 auto;
+                        right: 0px;
+                        display: block;
+                        fill: white;
+                    }
+                }
+            }
+
+            &__text {
+                position: relative;
+                padding-left: 23px;
+                padding-right: 39px;
+                color: $red-2;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    background-image: url(../img/icon/arrow.svg);
+                    width: 30px;
+                    height: 10px;
+                    background-repeat: no-repeat;
+                    top: 9px;
+                    bottom: 0;
+                    margin: 0 auto;
+                    right: 0px;
+                    display: block;
+                }
+            }
+        }
+
+        &:hover {
+            .btn__special {
+                width: 100%;
+            }
+        }
+    }
 }
