@@ -217,6 +217,8 @@ input::-ms-clear {
   }
 }
 
+@import "./components/blog/blog.scss";
+@import "./components/map.scss";
 @import "./components/contacts/contacts.scss";
 @import "./components/servicess/offer.scss";
 @import "./components/about/reach.scss";

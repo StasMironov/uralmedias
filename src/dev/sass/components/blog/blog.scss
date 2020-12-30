@@ -1,0 +1,139 @@
+.blog {
+    margin-top: 58px;
+
+    &__ref {
+        position: relative;
+        background-image: url('../img/icon/arrow.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 10px;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+
+    &__date {
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    &__cover {
+        margin-top: 47px;
+    }
+
+    &__item {
+        width: calc(33.333% - 50px);
+        margin-left: 50px;
+        margin-top: 50px;
+
+        &:hover {
+            .blog__ref {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -50px;
+        margin-top: -50px;
+        min-height: 428px;
+    }
+
+    &__menu {
+        max-width: 336px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__pic {
+        min-height: 257px;
+        height: 1px;
+        border-radius: 12px 12px 0px 0px;
+        overflow: hidden;
+    }
+
+    &__popup {
+        height: 100%;
+        background-color: rgba($color: #00A4AD, $alpha: 0.9);
+        padding: 30px;
+        padding-top: 25px;
+        transform: translateX(-100%);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 27px 30px 40px;
+        min-height: 177px;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    &__txt {
+        font-size: 14px;
+        line-height: 21px;
+        color: white;
+        max-width: 275px;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 700;
+        max-width: 280px;
+        line-height: 27px;
+    }
+
+    &__link {
+        position: relative;
+        font-size: 14px;
+        color: $black;
+        transition: .3s ease-in;
+        padding-bottom: 4px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0%;
+            height: 1px;
+            transition: .3s ease-in;
+            background-color: $green-1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &--active {
+            color: $green-1;
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+
+        }
+
+        &:hover {
+            color: $green-1;
+        }
+
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+}

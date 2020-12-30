@@ -1,14 +1,81 @@
 extends ../layout/main
 
 block variables
-	- var title = 'Главная страница'
 	- var pageClass = 'index-page';
+	- var setTitle = 'КОНТАКТНЫЕ ДАННЫЕ';
+	- var include = 'btn';
+	- var quote = 'services'
+	- var bildboard_img = "background-image: url(img/dataBild/img3.jpg);"
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
-		.bildboard
-			.bildboard__container.container
-				
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		.blog
+			.blog__container.container
+				.blog__menu
+					a(href="javascript:void(0);").blog__link.blog__link--active Статьи
+					a(href="javascript:void(0);").blog__link Кейсы
+					a(href="javascript:void(0);").blog__link События
+					a(href="javascript:void(0);").blog__link Все
+				.blog__cover
+					.blog__items
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+						a(href="javascript:void(0);").blog__item
+							.blog__pic(style="background-image: url(img/dataBild/img3.jpg);")
+								.blog__popup
+									.blog__txt В этой статье мы разберемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть в “тренде”.
+							.blog__content
+								.blog__text Как юзабилити сайта влияет на решение о покупке?
+								.blog__bottom 
+									.blog__date 30 Апреля 2020
+									.blog__ref
+
+
 		
 
 block script

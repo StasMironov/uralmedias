@@ -47,4 +47,24 @@
             margin-top: 55px;
         }
     }
+
+    &__header {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+    }
+
+    &__info {
+        margin-top: 70px;
+    }
+
+    &__cover {
+        margin-top: 20px;
+    }
+
+    &__word {
+        &:not(:first-child) {
+            margin-top: 7px;
+        }
+    }
 }

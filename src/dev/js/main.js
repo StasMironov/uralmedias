@@ -5,8 +5,79 @@ jQuery.fn.exists = function () {
 const projectFunc = {
     hidePopup: function () {
         console.log(1);
+    },
+    showBlogPopup: function (element) {
+        let blogPopup = $(element).find('.blog__popup');
+        let blogText = $(element).find('.blog__txt');
+
+        console.log(blogPopup);
+
+        const popupBlog = gsap.timeline({
+            paused: true
+        });
+
+        popupBlog
+            .to(blogPopup, {
+                x: 0,
+                xPercent: 0,
+                duration: 1,
+                ease: "power2.out"
+            })
+            .to(blogText, {
+                autoAlpha: 1,
+                y: 0,
+                ease: "power2.out",
+                delay: -0.2
+            });
+
+        popupBlog.play();
+    },
+    hideBlogPopup: function (element) {
+        let blogPopup = $(element).find('.blog__popup');
+        let blogText = $(element).find('.blog__txt');
+
+
+        const popupBlog = gsap.timeline({
+            paused: true
+        });
+
+        popupBlog
+            .to(blogPopup, {
+                xPercent: -100,
+                duration: 1,
+                ease: "power2.out"
+            })
+            .to(blogText, {
+                autoAlpha: 0,
+                y: -20,
+                ease: "power2.out"
+            });
+
+        popupBlog.play();
     }
 };
+
+
+
+if ($('.blog__item').exists()) {
+
+    gsap.to(
+        '.blog__item', {
+        autoAlpha: 1,
+        stagger: 1,
+        duration: 1
+    }
+    )
+    $('.blog__item').each(function () {
+        $(this).on('mouseenter', function () {
+            projectFunc.showBlogPopup(this);
+        });
+
+        $(this).on('mouseleave', function () {
+            projectFunc.hideBlogPopup(this);
+        });
+    });
+}
 
 if ($('.header__inner').exists) {
     try {
@@ -541,4 +612,45 @@ ScrollTrigger.create({
 //         projectFunc.hidePopup();
 //     });
 // }
+
+
+$(window).on('load', function () {
+    if ($('#map').exists()) {
+        ymaps.ready(init);
+
+        function init() {
+
+            // Создание карты.
+            var myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                center: [53.377146, 58.985573],
+                zoom: 17,
+                controls: []
+            }),
+                myPlacemark = new ymaps.Placemark(myMap.getCenter(), {}, {
+                    // Необходимо указать данный тип макета.
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    iconImageHref: '/img/icon/marker.svg',
+                    // Размеры метки.
+                    iconImageSize: [48, 64],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-24, -64],
+                    openBalloonOnClick: false,
+                    hasHint: false,
+                    hasBalloon: false,
+                    cursor: 'INHERIT'
+                });
+
+            myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom');
+        }
+    }
+});
+
+
+
+
 
