@@ -27,7 +27,6 @@ body {
   font-weight: 400;
   overflow: hidden;
   font-size: 16px;
-  line-height: 25px;
   background-color: #fff;
   word-wrap: break-word;
 }
@@ -217,7 +216,16 @@ input::-ms-clear {
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
 
+@import "./components/arrow.scss";
+@import "./components/seo/works.scss";
+@import "./components/seo/seo.scss";
+@import "./components/brief/brief.scss";
 @import "./components/portfolio/case.scss";
 @import "./components/include-menu.scss";
 @import "./components/blog/blog.scss";

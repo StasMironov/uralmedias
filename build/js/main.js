@@ -101,6 +101,9 @@ var Slider =
 /*#__PURE__*/
 function () {
   function Slider(init, name, view, space, column, ratio) {
+    var pagination = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
+    var arrow = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+
     _classCallCheck(this, Slider);
 
     this.init = init;
@@ -109,18 +112,44 @@ function () {
     this.space = space;
     this.column = column;
     this.ratio = ratio;
+    this.pagination = pagination;
+    this.arrow = arrow;
   }
 
   _createClass(Slider, [{
     key: "createSlider",
     value: function createSlider() {
-      var slider = new Swiper(this.name, {
-        slidesPerView: this.view,
-        spaceBetween: this.space,
-        slidesPerColumn: this.column,
-        slidesPerColumnFill: 'row',
-        touchRatio: this.ratio
-      });
+      var slider;
+
+      if (this.pagination || this.arrow) {
+        var pagEl = $(this.name).find('.pagination');
+        var arrowNext = $(this.name).find('.arrow__link--next');
+        var arrowPrev = $(this.name).find('.arrow__link--prev');
+        slider = new Swiper(this.name, {
+          slidesPerView: this.view,
+          spaceBetween: this.space,
+          slidesPerColumn: this.column,
+          slidesPerColumnFill: 'row',
+          touchRatio: this.ratio,
+          pagination: {
+            el: pagEl,
+            clickable: true
+          },
+          navigation: {
+            nextEl: arrowNext,
+            prevEl: arrowPrev
+          }
+        });
+      } else {
+        slider = new Swiper(this.name, {
+          slidesPerView: this.view,
+          spaceBetween: this.space,
+          slidesPerColumn: this.column,
+          slidesPerColumnFill: 'row',
+          touchRatio: this.ratio
+        });
+      }
+
       return slider;
     }
   }]);
@@ -129,8 +158,14 @@ function () {
 }();
 
 if ($('.partners').exists()) {
-  var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false);
+  var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);
   partnerSlider.createSlider();
+}
+
+if ($('.works').exists()) {
+  var _partnerSlider = new Slider(true, '.works', 2, 48, 1, true, true, true);
+
+  _partnerSlider.createSlider();
 }
 
 function init() {

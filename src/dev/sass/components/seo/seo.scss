@@ -1,0 +1,128 @@
+.seo {
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__cover {
+        margin-top: 62px;
+    }
+
+    &__item {
+        position: relative;
+        font-size: 14px;
+        padding-left: 24px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 12px;
+            height: 12px;
+            background-color: $green-1;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1080px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__article {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &__note {
+        font-size: 14px;
+        color: $grey-9;
+        margin-top: 10px;
+        text-transform: uppercase;
+    }
+
+    &__right {
+        max-width: 440px;
+        width: 100%;
+    }
+
+    &__left {
+        max-width: 573px;
+        width: 100%;
+    }
+
+    &__bloc {
+        display: block;
+        padding: 30px 33px 33px;
+        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+
+        &:not(:first-child) {
+            margin-top: 35px;
+        }
+
+        &:hover {
+            .seo__href {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__price {
+        font-size: 30px;
+        font-weight: 900;
+        color: $green-1;
+    }
+
+    &__bottom {
+        display: flex;
+        margin-top: 45px;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__href {
+        position: relative;
+        font-size: 10px;
+        text-transform: uppercase;
+        opacity: 0;
+        transition: opacity .3s ease-in;
+        color: $red-2;
+        padding-right: 16px;
+        font-family: 'OpenSans', sans-serif;
+        font-weight: 700;
+
+        &:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            bottom: 0;
+            top: 0px;
+            margin: auto;
+            position: absolute;
+            background-image: url(../img/icon/arrow-link.svg);
+            width: 13px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__slider {
+        margin-top: 75px;
+
+        .title-3 {
+            text-align: center;
+        }
+    }
+}

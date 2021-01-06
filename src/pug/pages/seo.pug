@@ -1,0 +1,122 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Мы являемся SEO-компанией №1 в Магнитогорске по версии cms magazine';
+	- var include = 'btn';
+	- var quote = 'seo'
+	- var bildboard_img = "background-image: url(img/dataBild/img6.jpg);";
+	- var bildboard_include = 'seo'
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+
+		.seo
+			.seo__container.container
+				.seo__grid
+					.seo__right
+						.seo__cover
+							.seo__items
+								.seo__item Проверка текста на сайте
+								.seo__item Проверка и корректировка семантического ядра
+								.seo__item Проверка скорости загрузки сайта
+								.seo__item Написание SEO-текстов
+								.seo__item Оптимизация контента страницы и ключевых слов
+								.seo__item Создание и ведение блогов
+								.seo__item Адаптация под смартфоны и планшеты
+								.seo__item Увеличение скорости загрузки сайта
+								.seo__item Оптимизация тегов
+								.seo__item Размещение контента
+								.seo__item Регистрация в каталогах поисковых сетей
+								.seo__item Проверка и корректировка семантической разметки Shema.org и Open Graph
+								.seo__item Проверка наличия корректных файлов robots.txt и sitemap. При необходимости их генерация и настройка
+					.seo__left
+						.seo__cover
+							.seo__blocs
+								a(href="javascript:void(0);").seo__bloc
+									.seo__article SEO-оптимизация Лендинга/сайта визитки
+									.seo__note от 7 дней на разработку
+									.seo__bottom
+										.seo__price от 8 000₽
+										.seo__href заказать seo-продвижение
+								a(href="javascript:void(0);").seo__bloc
+									.seo__article SEO-оптимизация Корпоративного сайта
+									.seo__note от 7 дней на разработку
+									.seo__bottom
+										.seo__price от 17 000₽
+										.seo__href заказать seo-продвижение
+								a(href="javascript:void(0);").seo__bloc
+									.seo__article SEO-оптимизация Интернет-магазина
+									.seo__note от от 7 дней на разработку
+									.seo__bottom
+										.seo__price от 25 000₽
+										.seo__href заказать seo-продвижение
+
+				.seo__slider
+					.title-3 Наши работы по SEO-оптимизации сайта
+					.works
+						.swiper-wrapper
+							a(href="javascript:void(0);").works__item.swiper-slide
+								.works__pic
+									img(src="./img/portfolio/p1.png" alt="")
+								.works__content
+									.works__top
+										.works__unit.works__unit--title Корпоративный сайт
+										.works__unit.works__unit--href mgkapobeda.com
+									.works__midle
+										.works__article МГКА “ПОБЕДА”
+										.works__txt Сайт для московской коллегии адвокатов
+									.works__bottom
+										.works__link СМОТРЕТЬ ПРОЕКТ
+							a(href="javascript:void(0);").works__item.swiper-slide
+								.works__pic
+									img(src="./img/portfolio/p1.png" alt="")
+								.works__content
+									.works__top
+										.works__unit.works__unit--title Корпоративный сайт
+										.works__unit.works__unit--href mgkapobeda.com
+									.works__midle
+										.works__article МГКА “ПОБЕДА”
+										.works__txt Сайт для московской коллегии адвокатов
+									.works__bottom
+										.works__link СМОТРЕТЬ ПРОЕКТ
+							a(href="javascript:void(0);").works__item.swiper-slide
+								.works__pic
+									img(src="./img/portfolio/p1.png" alt="")
+								.works__content
+									.works__top
+										.works__unit.works__unit--title Корпоративный сайт
+										.works__unit.works__unit--href mgkapobeda.com
+									.works__midle
+										.works__article МГКА “ПОБЕДА”
+										.works__txt Сайт для московской коллегии адвокатов
+									.works__bottom
+										.works__link СМОТРЕТЬ ПРОЕКТ
+							a(href="javascript:void(0);").works__item.swiper-slide
+								.works__pic
+									img(src="./img/portfolio/p1.png" alt="")
+								.works__content
+									.works__top
+										.works__unit.works__unit--title Корпоративный сайт
+										.works__unit.works__unit--href mgkapobeda.com
+									.works__midle
+										.works__article МГКА “ПОБЕДА”
+										.works__txt Сайт для московской коллегии адвокатов
+									.works__bottom
+										.works__link СМОТРЕТЬ ПРОЕКТ
+						.arrow
+							.arrow__link.arrow__link--prev
+								+svg('arr-slider')
+							.arrow__link.arrow__link--next
+								+svg('arr-slider')
+
+						.pagination
+						
+
+		include ../modules/place
+		
+
+block script

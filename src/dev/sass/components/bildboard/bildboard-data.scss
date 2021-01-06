@@ -20,6 +20,21 @@
         font-weight: 700;
         text-align: center;
         color: white;
+
+        &--seo {
+            text-transform: uppercase;
+            font-weight: 700;
+            max-width: 1230px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+
+            span {
+                background-color: $red-3;
+                color: white;
+                padding: 0 8px;
+            }
+        }
     }
 
     &__container {
@@ -27,5 +42,20 @@
         z-index: 1;
         padding-top: 126px;
         padding-bottom: 131px;
+    }
+
+    &--seo {
+        .bildboard-data__container {
+            padding-top: 72px;
+            padding-bottom: 91px
+        }
+
+        .bildboard-data__title {
+            line-height: 77px;
+        }
+
+        .btn {
+            margin: 76px auto 0;
+        }
     }
 }

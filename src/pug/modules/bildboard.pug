@@ -1,3 +1,13 @@
-.bildboard-data(style=`${bildboard_img}`)
-    .bildboard-data__container.container
-        .bildboard-data__title #{setTitle}
+case bildboard_include
+  when 'seo'
+     .bildboard-data.bildboard-data--seo(style=`${bildboard_img}`)
+        .bildboard-data__container.container
+            .bildboard-data__title.bildboard-data__title--seo Мы являемся SEO-компанией №1 в Магнитогорске по версии <br><span>cms</span> magazine  
+            a(href="https://uralmedias.ru/articles/").btn.btn--special
+                .btn__special
+                    span Отправить заявку менеджеру
+                .btn__text Отправить заявку менеджеру
+  default
+    .bildboard-data(style=`${bildboard_img}`)
+        .bildboard-data__container.container
+            .bildboard-data__title #{setTitle}

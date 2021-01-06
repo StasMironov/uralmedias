@@ -1,0 +1,107 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Бриф на разработку сайта';
+	- var include = 'btn';
+	- var quote = 'services'
+	- var bildboard_img = "background-image: url(img/dataBild/img5.jpg);"
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		.brief
+			.brief__conyainer.container
+				.brief__quote Бриф на продвижение сайта
+				.brief__title Анкета для заказа услуг по созданию сайта
+				.brief__text Для более четкого определения целей, стоящих перед будущим сайтом, необходимо заполнить анкету максимально подробно. Ваши ответы помогут сформировать представление о Вас, Ваших клиентах, а также собственных предпочтениях и вкусах.
+
+				.brief__form
+					.brief__bloc
+						.brief__title Общая информация
+						.brief__unit
+							.brief__label Контактное лицо*
+							input(type="text" placeholder="Будем рады, если Вы представитесь").brief__field
+						.brief__unit
+							.brief__label E-mail*
+							input(type="text" placeholder="Электронный адрес").brief__field
+						.brief__unit
+							.brief__label Телефон*
+							input(type="text" placeholder="Номер телефона").brief__field
+						.brief__unit
+							.brief__label Название организации (Бренд)*
+							input(type="text" placeholder="Полное или сокращенное название Вашей компании").brief__field
+						.brief__unit
+							.brief__label Действующий сайт, если имеется
+							input(type="text" placeholder="Адрес сайта").brief__field
+						.brief__unit
+							.brief__label Область деятельности компании
+							input(type="text" placeholder="Напишите, в какой сфере Вы работаете").brief__field
+						.brief__unit
+							.brief__label Опишите кратко задачу
+							input(type="text" placeholder="Например: разработать новый сайт для оптового направления, ре-дизайн действующего сайта и т.д.").brief__field
+						.brief__unit
+							.brief__label Предполагаемый бюджет проекта*
+							input(type="text" placeholder="Укажите планируемый бюджет на разработку").brief__field
+					.brief__bloc
+						.brief__title Подробнее о задаче
+						.brief__module
+							.brief__header Тип Сайта который вам нужен
+							.brief__items
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Интернет-магазин
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Каталог товаров (Без корзины, Личного кабинета и онлайн оплаты)
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Промо сайт/ лендинг
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Корпоративный сайт
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Сервис/ Портал
+								.brief__item
+									input(id="radio-1" type="radio" name="radio" value="1" checked)
+									label(for="radio-1") Другое:
+
+								.brief__unit
+									.brief__label Адреса сайтов или компании конкурентов
+									input(type="text" placeholder="Опишите основных конкурентов, их преимущества или недостатки").brief__field
+								.brief__unit
+									.brief__label Предположительное количество товаров/услуг на сайте
+									input(type="text" placeholder="Укажите количество товаров/услуг на сайте ").brief__field
+
+								.brief__module
+									.brief__header Ценовой сегмент Ваших товаров/услуг
+									.brief__items
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Бюджетный
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Средний
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Высокий
+								
+								.brief__module
+									.brief__header Нужна ли мобильная версия Вашего сайта или адаптивный дизайн
+									.brief__items
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Нет, не нужна
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Нужна мобильная версия сайта
+										.brief__item
+											input(id="radio-1" type="radio" name="radio" value="1" checked)
+											label(for="radio-1") Адаптивный дизайн
+
+		include ../modules/place
+		
+
+block script
