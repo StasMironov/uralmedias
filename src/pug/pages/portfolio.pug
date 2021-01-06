@@ -1,0 +1,71 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'НАШЕ Портфолио';
+	- var include = 'btn';
+	- var quote = 'services'
+	- var bildboard_img = "background-image: url(img/dataBild/.jpg);"
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		.case
+			.case__container.container
+				include ../modules/include-menu
+				.case__cover
+					.case__items
+						a(href="javascript:void(0);").case__item
+							.case__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.case__content
+								.case__top
+									.case__unit.case__unit--title Корпоративный сайт
+									.case__unit.case__unit--href mgkapobeda.com
+								.case__midle
+									.case__article МГКА “ПОБЕДА”
+									.case__txt Сайт для московской коллегии адвокатов
+								.case__bottom
+									.case__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").case__item
+							.case__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.case__content
+								.case__top
+									.case__unit.case__unit--title Корпоративный сайт
+									.case__unit.case__unit--href mgkapobeda.com
+								.case__midle
+									.case__article МГКА “ПОБЕДА”
+									.case__txt Сайт для московской коллегии адвокатов
+								.case__bottom
+									.case__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").case__item
+							.case__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.case__content
+								.case__top
+									.case__unit.case__unit--title Корпоративный сайт
+									.case__unit.case__unit--href mgkapobeda.com
+								.case__midle
+									.case__article МГКА “ПОБЕДА”
+									.case__txt Сайт для московской коллегии адвокатов
+								.case__bottom
+									.case__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").case__item
+							.case__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.case__content
+								.case__top
+									.case__unit.case__unit--title Корпоративный сайт
+									.case__unit.case__unit--href mgkapobeda.com
+								.case__midle
+									.case__article МГКА “ПОБЕДА”
+									.case__txt Сайт для московской коллегии адвокатов
+								.case__bottom
+									.case__link СМОТРЕТЬ ПРОЕКТ
+				
+		include ../modules/place
+		
+
+block script

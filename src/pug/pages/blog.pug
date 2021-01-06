@@ -2,10 +2,10 @@ extends ../layout/main
 
 block variables
 	- var pageClass = 'index-page';
-	- var setTitle = 'КОНТАКТНЫЕ ДАННЫЕ';
+	- var setTitle = 'БЛОГ';
 	- var include = 'btn';
 	- var quote = 'services'
-	- var bildboard_img = "background-image: url(img/dataBild/img3.jpg);"
+	- var bildboard_img = "background-image: url(img/dataBild/img4.jpg);"
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -13,11 +13,7 @@ block content
 		include ../modules/breadcrumbs
 		.blog
 			.blog__container.container
-				.blog__menu
-					a(href="javascript:void(0);").blog__link.blog__link--active Статьи
-					a(href="javascript:void(0);").blog__link Кейсы
-					a(href="javascript:void(0);").blog__link События
-					a(href="javascript:void(0);").blog__link Все
+				include ../modules/include-menu
 				.blog__cover
 					.blog__items
 						a(href="javascript:void(0);").blog__item
@@ -74,8 +70,8 @@ block content
 								.blog__bottom 
 									.blog__date 30 Апреля 2020
 									.blog__ref
-
-
+				a(href="javascript:void(0);").blog__more.js-more Больше статей
+		include ../modules/place
 		
 
 block script

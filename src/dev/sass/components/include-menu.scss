@@ -1,0 +1,51 @@
+.include-menu {
+    &__menu {
+        max-width: max-content;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__link {
+        position: relative;
+        font-size: 14px;
+        color: $black;
+        transition: .3s ease-in;
+        padding-bottom: 4px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0%;
+            height: 1px;
+            transition: .3s ease-in;
+            background-color: $green-1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        &--active {
+            color: $green-1;
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        &:hover {
+            &:after {
+                width: 100%;
+            }
+
+        }
+
+        &:hover {
+            color: $green-1;
+        }
+
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+}
