@@ -57,7 +57,26 @@ const projectFunc = {
     }
 };
 
+//===========Accordion=============
+if($('.accordion__panel').exists()) {
+    var accordions = document.getElementsByClassName("accordion__panel");
 
+    for (var i = 0; i < accordions.length; i++) {
+        accordions[i].onclick = function() {
+            this.classList.toggle('is-open');
+            $(this).find('.accordion__pic').toggleClass('accordion__pic--active');
+
+
+            var content = this.nextElementSibling;
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+    }
+}
 
 if ($('.blog__item').exists()) {
 

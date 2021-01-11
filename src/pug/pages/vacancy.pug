@@ -1,0 +1,35 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+	- var setTitle = 'Вакансии';
+	- var quote = 'vacancy';
+	- var bildboard_img = "background-image: url(img/dataBild/img8.jpg);"
+	- var includeBloc = 'vacancy'
+
+block content
+	div(data-barba="container" data-barba-namespace="about")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+		include ../modules/include
+		.demand
+			.demand__container.container
+				.demand__title.title-3 Мы ждем тебя, если ты 
+				.demand__cover
+					.demand__items
+						.demand__item
+							.demand__header Целеустремленный
+							.demand__txt Постоянно стремишься узнать что-то новое, незнакомые задачи кажутся тебе приключением, а не припятствием. 
+						.demand__item
+							.demand__header отвественный
+							.demand__txt Если берешься за какое-то задание и обещаешь сделать его в срок, то вовремя завершаешь задачу. 
+						.demand__item
+							.demand__header открытый
+							.demand__txt Всегда готов к командной работе. Не боишься попросить помощь или оказать ее другим участникам агентства.
+						.demand__item
+							.demand__header обучаемый
+							.demand__txt Ты быстро учишься и никогда не задаешь дважды один и тот же вопрос.
+		include ../modules/place
+block script

@@ -28,4 +28,35 @@
             right: 0;
         }
     }
+
+    &--look {
+        color: $red-2;
+        font-family: 'OpenSans', sans-serif;
+        position: relative;
+        margin-top: auto;
+        transition: .3s;
+        font-size: 10px;
+        line-height: 10px;
+        display: flex;
+        align-items: center;
+        
+
+        .link__icon {
+            width: 11px;
+            height: 11px;
+
+            .b-svg {
+                height: 100%;
+                width: 100%;
+                fill: white;
+            }
+        }
+
+        .link__txt {
+            text-transform:uppercase;
+            font-weight: 700;
+            margin-right: 5px;
+            line-height: 11px;
+        }
+    }
 }

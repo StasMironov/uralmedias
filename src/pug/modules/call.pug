@@ -1,0 +1,34 @@
+.call
+    .call__container.container
+        .call__grid
+            .call__left
+                .call__top
+                    .call__title.title-3 Оставьте завку
+                    .call__note для консультации
+                    .call__txt мы ответим на все Ваши вопросы
+                .call__bottom
+                    .call__img
+                        img(src="img/team/t1.png" alt="")
+                    .call__name Константин
+                    .call__status Руководитель компании
+            .call__right
+                form.call__form
+                    .call__group
+                        .call__unit
+                            .call__label Какая услуга Вас интересует?
+                            input.call__field(placeholder="Веб")
+                        .call__unit
+                            .call__label Контактный телефон
+                            input.call__field(placeholder="+7 (___) ___-__-__")
+                    .call__group
+                        .call__unit
+                            .call__label Ваше имя
+                            input.call__field(placeholder="Введите имя")
+                        .call__unit
+                            .call__label Ваша почта
+                            input.call__field(placeholder="Email")
+                    .call__group.call__group--textarea
+                        .call__label Комментарий
+                        textarea(placeholder="Дополнительная информация")
+                a(href="javascript:void(0);").btn.btn--submit Отправить заявку
+                .call__quote Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a>

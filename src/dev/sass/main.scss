@@ -12,13 +12,7 @@
 html {
   height: 100%;
   min-width: 320px;
-  overflow-x: hidden;
-  font-size: 16px;
-
-  @media (max-width: 1023px) {
-    font-size: 14px;
-    line-height: 20px;
-  }
+  overflow-x: hidden; 
 }
 
 body {
@@ -29,6 +23,11 @@ body {
   font-size: 16px;
   background-color: #fff;
   word-wrap: break-word;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 .container {
@@ -44,6 +43,10 @@ body {
 
   @media (max-width:1024px) {
     padding: 0 20px 0px;
+  }
+
+  @media (max-width:620px) {
+    padding: 0 15px 0px;
   }
 }
 
@@ -89,18 +92,48 @@ input::-ms-clear {
 .title-1 {
   font-size: 62px;
   line-height: 89px;
+
+  @media(max-width: 1024px){
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  @media(max-width: 620px){
+    font-size: 30px;
+    line-height: 39px;
+  }
 }
 
 .title-2 {
   font-size: 48px;
   line-height: 48px;
   font-weight: 700;
+
+  @media(max-width: 1024px) {
+    font-size: 38px;
+    line-height: 38px;
+  }
+
+  @media(max-width: 620px){
+    font-size: 26px;
+    line-height: 26px;
+  }
 }
 
 .title-3 {
   font-size: 40px;
   line-height: 40px;
   font-weight: 700;
+
+  @media(max-width: 1024px) {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  @media(max-width: 620px){
+    font-size: 26px;
+    line-height: 26px;
+  }
 }
 
 .title-4 {}
@@ -125,6 +158,17 @@ input::-ms-clear {
   min-height: 100vh;
   position: relative;
   padding-bottom: 271px;
+
+  @media(max-width: 1024px) {
+    padding-bottom: 205px;
+  }
+
+  @media(max-width: 768px) {
+    padding-bottom: 338px;
+  }
+  @media(max-width: 580px) {
+    padding-bottom: 514px;
+  }
 }
 
 
@@ -205,6 +249,14 @@ input::-ms-clear {
     background: white;
     transition: all .3s ease-in-out;
     max-height: 35px;
+
+    @media(max-width: 1024px) {
+      bottom: 3px;
+    }
+
+    @media(max-width: 620px) {
+      max-height: 20px;
+    }
   }
 
   &:hover:after {
@@ -222,7 +274,25 @@ input::-ms-clear {
   margin-top: 50px;
 }
 
+.swiper-pagination-bullet {
+  background-color: $grey-6;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $red-2;
+}
+
+
+@import "./components/demand/demand.scss";
+@import "./components/include.scss";
+@import "./components/advertising/advertising-price.scss";
+@import "./components/advertising/advertising.scss";
+@import "./components/burger.scss";
+@import "./components/accordion.scss";
 @import "./components/arrow.scss";
+@import "./components/seo/seo-methods.scss";
+@import "./components/seo/seo-result.scss";
 @import "./components/seo/works.scss";
 @import "./components/seo/seo.scss";
 @import "./components/brief/brief.scss";

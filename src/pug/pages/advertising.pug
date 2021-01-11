@@ -1,0 +1,93 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Найдём новых клиентов для вашего бизнеса';
+	- var include = 'link';
+	- var quote = 'advertising'
+	- var bildboard_img = "background-image: url(img/dataBild/img7.jpg);";
+	- var bildboard_include = 'advertising'
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+
+		.advertising
+			.advertising__container.container
+				.advertising__cover
+					.advertising__items 
+						.advertising__item
+							.advertising__pic(style="background-image: url(./img/icon/set-adv.svg)")
+							.advertising__txt Показ рекламы аудтиории, уже заинтересованнной в опредленном Вашем товаре или услуге
+						.advertising__item
+							.advertising__pic(style="background-image: url(./img/icon/set-adv.svg)")
+							.advertising__txt Показ рекламы аудтиории, уже заинтересованнной в опредленном Вашем товаре или услуге
+						.advertising__item
+							.advertising__pic(style="background-image: url(./img/icon/set-adv.svg)")
+							.advertising__txt Показ рекламы аудтиории, уже заинтересованнной в опредленном Вашем товаре или услуге
+						.advertising__item
+							.advertising__pic(style="background-image: url(./img/icon/set-adv.svg)")
+							.advertising__txt Показ рекламы аудтиории, уже заинтересованнной в опредленном Вашем товаре или услуге
+		.advertising-price(style="background-image: url(./img/decor/dec15.png)")
+			.advertising-price__container.container
+				.advertising-price__title.title-3 Стоимость контекстной рекламы
+				.advertising-price__cover
+					.advertising-price__items
+						.advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header ПОЛНЫЙ Аудит рекламных компаний
+								.advertising-price__period от 2 дней на разработку
+							.advertising-price__list
+								.advertising-price__ref Проверяем рекламные кампании по чек-листам Яндекс и Google;
+								.advertising-price__ref Составляем список рекомендаций по улучшению кампаний;
+								.advertising-price__ref Перераспределяем рекламный бюджет для результативности;
+								.advertising-price__ref Внедряем рекомендации по результатам аудита.
+							.advertising-price__bottom
+								.advertising-price__price бесплатно
+								.advertising-price__href 
+						.advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header Настройка и запуск рекламных кампаний
+								.advertising-price__period от 5 дней на разработку
+							.advertising-price__list
+								.advertising-price__ref Cогласовываем список поисковых запросов, объявления, посадочные страницы;
+								.advertising-price__ref Настраиваем рекламные кампании в Директ и/или AdWords;
+								.advertising-price__ref Подключаем систему автоматической регулировки ставок Marilyn.
+							.advertising-price__bottom
+								.advertising-price__price от 10 000₽
+								.advertising-price__href 
+						.advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header Ведение рекламной кампании и оптимизация
+								.advertising-price__period от 5 дней на разработку
+							.advertising-price__list
+								.advertising-price__ref Используем брокер ставок и оптимизатор конверсий;
+								.advertising-price__ref Еженедельный контроль расходов и основных метрик;
+								.advertising-price__ref Расчет цены конверсии и корректировка рекламных настроек;
+								.advertising-price__ref Ежемесячный отчет.
+							.advertising-price__bottom
+								.advertising-price__price от 4 000₽/мес
+								.advertising-price__href 
+		
+		.include 
+			.include__container.container
+				.include__title Если у Вас уже настроена контекстная реклама, но эффекта нет
+				.include__txt Мы с удовольствием исследуем Ваши рекламные кампании и качество трафика, используя данные статистики. Предоставьте гостевой доступ в метрику и Analytics и отправьте Вашу заявку на аудит
+				a(href="https://uralmedias.ru/articles/").btn.btn--special
+					.btn__special
+						span Заказать проект
+					.btn__text Заказать проект
+				
+
+		.quote
+			.quote__container.container
+				.quote__title.title-3 Контекстная реклама
+				.quote__bloc
+					.quote__par В команде “Uralmedias” работает 10 специалистов, в нашем портфолио уже около 300 проектов. C 2011 года мы эффективно настраиваем и оказываем услуги по ведению кампаний контекстной рекламы в системах Яндекс Директ и Google Adwords для бизнеса различной направленности: от лендингов одной услуги до крупных интернет-магазинов.
+					.quote__par Digital-агентство “Uralmedias” является Партнером Google и Сертифицированным агентством Яндекса. Раз в три месяца мы проходим сертификацию. Сотрудники ежегодно сдают аттестационные экзамены Google и Яндекс.
+		include ../modules/partners
+		include ../modules/place
+
+block script

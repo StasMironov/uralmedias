@@ -21,8 +21,17 @@
         position: relative;
         z-index: 1;
         color: white;
-        padding-top: 256px;
+        padding-top: 280px;
         //opacity: 0;
+
+        @media(max-width: 1024px){
+            text-align: center;
+            padding-top: 188px;
+        }
+
+        @media(max-width: 620px){
+            padding-top: 163px;
+        }
     }
 
     &__text {
@@ -30,28 +39,62 @@
         line-height: 24px;
         font-weight: 400;
         opacity: 0;
+
+        @media(max-width: 1024px){
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @media(max-width: 620px){
+            font-size: 14px;
+            line-height: 14px;
+        }
     }
 
     &__title {
-        font-size: 80px;
-        line-height: 89px;
-        margin-top: 37px;
+        margin-top: 20px;
         max-width: 900px;
         width: 100%;
-        font-weight: 900;
-        letter-spacing: 1px;
+        font-weight: 700;
+        letter-spacing: 0;
         opacity: 0;
+        text-transform: uppercase;
+        line-height: 81px;
+
+        @media(max-width: 1024px) {
+            max-width: 100%;
+            line-height: 66px;
+            margin-top: 26px;
+        }
+
+        @media(max-width: 620px){
+            line-height: 39px;
+          }
     }
 
     &__quote {
-        font-size: 29px;
-        line-height: 43px;
-        margin-top: 27px;
         max-width: 727px;
         width: 100%;
         font-weight: 400;
         letter-spacing: 0.2px;
         opacity: 0;
+        font-size: 25px;
+        line-height: 40px;
+        margin-top: 18px;
+
+        @media(max-width: 1024px) {
+            margin: 0 auto;
+            margin-top: 9px;
+            font-size: 20px;
+            line-height: 33px;
+            max-width: 625px;
+        }
+
+        @media(max-width: 620px) {
+            font-size: 18px;
+            line-height: 26px;
+            margin-top: 18px;
+        }
     }
 
     &__video {

@@ -26,6 +26,7 @@
 
     &__par {
         text-align: center;
+        line-height: 25px;
 
         &:first-child {
             letter-spacing: 0px;
@@ -44,5 +45,11 @@
         max-width: 930px;
         width: 100%;
         margin: 0 auto;
+    }
+
+    &--advertising {
+        .quote__par {
+            line-height: 25px;
+        }
     }
 }
