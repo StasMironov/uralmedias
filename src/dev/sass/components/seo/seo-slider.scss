@@ -1,0 +1,29 @@
+.seo-slider {
+    margin-top: 80px;
+
+    &__title {
+        position: relative;
+        text-align: center;
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: auto;
+            margin: auto;
+            max-width: 80px;
+            width: 100%;
+            background-color: $red-2;
+            height: 2px;
+        }
+    }
+
+    &__note {
+        text-align: center;
+    }
+}

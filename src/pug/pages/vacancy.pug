@@ -5,8 +5,9 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'Вакансии';
 	- var quote = 'vacancy';
-	- var bildboard_img = "background-image: url(img/dataBild/img8.jpg);"
-	- var includeBloc = 'vacancy'
+	- var bildboard_img = "background-image: url(img/dataBild/img8.jpg);";
+	- var includeBloc = 'vacancy';
+	- var include = "vacancy";
 
 block content
 	div(data-barba="container" data-barba-namespace="about")
@@ -31,5 +32,34 @@ block content
 						.demand__item
 							.demand__header обучаемый
 							.demand__txt Ты быстро учишься и никогда не задаешь дважды один и тот же вопрос.
+		.vacancy
+			.vacancy__container.container
+				.vacancy__title.title-3 Открытые вакансии
+				.vacancy__cover
+					.vacancy__items
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article Web-разработчик
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article UX-дизайнер
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article Интернет-маркетолог
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article Front-end разработчик
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article SEO-специалист
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
+						a(href="javascript:void(0);").vacancy__item
+							.vacancy__article проектировщик
+							.vacancy__txt Город: Магнитогорск
+							.vacancy__href.link.link--detail узнать подробнее о вакансии
 		include ../modules/place
 block script

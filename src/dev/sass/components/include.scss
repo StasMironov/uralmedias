@@ -5,7 +5,6 @@
     padding-bottom: 75px;
 
     &__title {
-        font-size: 45px;
         line-height: 64px;
         text-align: center;
         max-width: 930px;
@@ -26,34 +25,153 @@
     }
 
     &--vacancy {
-        margin-top: 80px;
-        
+        margin-top: 84px;
+        padding-top: 71px;
+        padding-bottom: 104px;
+
+        .include__header {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
         .include__items {
             display: flex;
             flex-wrap: wrap;
-            margin-left: -100px;
+            margin-left: -90px;
+            margin-top: -50px;
         }
 
         .include__item {
             display: flex;
             justify-content: space-between;
-            width: calc(33.333% - 100px);
-            margin-left: 100px;
+            width: calc(33.333% - 90px);
+            margin-left: 90px;
+            margin-top: 50px;
+
+            &:nth-child(1) {
+                .include__pic {
+                    background-position-y: -4%;
+                }
+            }
+
+            &:nth-child(2) {
+                .include__pic {
+                    background-position-x: 49.5%;
+                }
+            }
+
+            &:nth-child(3) {
+                .include__pic {
+                    background-position-x: 100%;
+                }
+            }
+
+            &:nth-child(4) {
+                .include__pic {
+                    background-position-x: 0%;
+                    background-position-y: 100%;
+                }
+            }
+
+            &:nth-child(5) {
+                .include__pic {
+                    background-position-x: 49.7%;
+                    background-position-y: 100%;
+                }
+            }
+
+            &:nth-child(6) {
+                .include__pic {
+                    background-position-x: 100%;
+                    background-position-y: 100%;
+                }
+            }
         }
 
         .include__cover {
+            max-width: 1184px;
+            width: 100%;
+            margin: 0 auto;
             margin-top: 60px;
         }
 
         .include__right {
-            max-width: 220px;
+            max-width: 244px;
             width: 100%;
+            padding-top: 5px;
         }
 
         .include__pic {
             min-width: 68px;
             width: 68px;
             height: 68px;
+            background-repeat: no-repeat;
+            background-position-y: -4%;
+        }
+
+        .include__txt {
+            text-align: left;
+            max-width: 958px;
+            width: 100%;
+            margin: 11px auto 0;
+            line-height: 22px;
+            font-size: 14px;
+        }
+    }
+
+    &--landing {
+        margin-top: 85px;
+        padding-top: 67px;
+        padding-bottom: 71px;
+
+        .include {
+            &__item {
+                position: relative;
+                width: calc(50% - 45px);
+                margin-left: 45px;
+                margin-top: 34px;
+                padding-left: 24px;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 3px;
+                    margin: auto;
+                    width: 12px;
+                    height: 12px;
+                    background-color: $red-2;
+                    border-radius: 6px;
+                }
+            }
+
+            &__items {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -45px;
+                margin-top: -34px;
+            }
+
+            &__cover {
+                max-width: 1225px;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+
+            &__header {
+                font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: -0.1px;
+            }
+
+            &__txt {
+                margin: 7px auto 0;
+                line-height: 22px;
+                text-align: left;
+            }
         }
     }
 }

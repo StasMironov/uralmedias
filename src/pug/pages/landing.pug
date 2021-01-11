@@ -1,0 +1,151 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+	- var setTitle = 'Разработка лендингов и посадочных страниц';
+	- var quote = 'landing';
+	- var bildboard_img = "background-image: url(img/dataBild/img9.jpg);";
+	- var includeBloc = 'landing';
+	- var include = "landing";
+	- var bildboard_include = 'landing';
+
+block content
+	div(data-barba="container" data-barba-namespace="about")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+		.advertising-price.advertising-price--landing(style="background-image: url(./img/decor/dec15.png)")
+			.advertising-price__container.container
+				.advertising-price__title.title-3 Варианты разработки продукта
+				.advertising-price__cover
+					.advertising-price__items
+						a(href="javascript:void(0);").advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header Создание лендинга на конструкторе
+								.advertising-price__period от 7 дней на разработку
+							.advertising-price__note Готовим контент и делаем одностраничник на популярном конструкторе
+							.advertising-price__list
+								.advertising-price__ref Готовые решения на 1С-Битрикс;
+								.advertising-price__ref Конструкторы Tilda и PlatformaLP.
+							.advertising-price__bottom
+								.advertising-price__price от 60 000₽
+								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+						a(href="javascript:void(0);").advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header Индивидуальная разработка
+								.advertising-price__period от 7 дней на разработку
+							.advertising-price__note Полный цикл производства
+							.advertising-price__list
+								.advertising-price__ref Сбор требований и концепция страницы;
+								.advertising-price__ref Дизайн, пользовательские сценарии;
+								.advertising-price__ref Адаптивная вёрстка;
+								.advertising-price__ref Программирование и тестирование;
+								.advertising-price__ref Интеграция с CRM и системами аналитики.
+							.advertising-price__bottom
+								.advertising-price__price от 100 000₽
+								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+		.landing-stages
+			.landing-stages__container.container
+				.landing-stages__title.title-3 Этапы разработки
+				.landing-stages__cover
+					.elements
+						.element
+							img(src="./img/decor/dec16.png" alt="")
+						.element
+							img(src="./img/decor/dec17.png" alt="")
+					.landing-stages__items
+						.landing-stages__item 
+							.landing-stages__num 1
+							.landing-stages__bottom
+								.landing-stages__header Обсуждение с закакзчиком
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+						.landing-stages__item 
+							.landing-stages__num 2
+							.landing-stages__bottom
+								.landing-stages__header Аналитика
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+						.landing-stages__item 
+							.landing-stages__num 3
+							.landing-stages__bottom
+								.landing-stages__header Техническое задание
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+						.landing-stages__item 
+							.landing-stages__num 4
+							.landing-stages__bottom
+								.landing-stages__header Разработка лендинга
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+						.landing-stages__item 
+							.landing-stages__num 5
+							.landing-stages__bottom
+								.landing-stages__header Тестирование
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+						.landing-stages__item 
+							.landing-stages__num 6
+							.landing-stages__bottom
+								.landing-stages__header Подгогтовка к выгрузке
+								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
+		include ../modules/include
+		.seo-slider.seo-slider--landing
+			.seo-slider__container.container
+				.seo-slider__title.title-3 Примеры одностраничных сайтов
+				.seo-slider__note Мы стараемся удовлетворить абсолютно все требования заказчика и создать сайт, который радует глаз и приносит прибыль.
+				.works
+					.swiper-wrapper
+						a(href="javascript:void(0);").works__item.swiper-slide
+							.works__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.works__content
+								.works__top
+									.works__unit.works__unit--title Корпоративный сайт
+									.works__unit.works__unit--href mgkapobeda.com
+								.works__midle
+									.works__article МГКА “ПОБЕДА”
+									.works__txt Сайт для московской коллегии адвокатов
+								.works__bottom
+									.works__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").works__item.swiper-slide
+							.works__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.works__content
+								.works__top
+									.works__unit.works__unit--title Корпоративный сайт
+									.works__unit.works__unit--href mgkapobeda.com
+								.works__midle
+									.works__article МГКА “ПОБЕДА”
+									.works__txt Сайт для московской коллегии адвокатов
+								.works__bottom
+									.works__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").works__item.swiper-slide
+							.works__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.works__content
+								.works__top
+									.works__unit.works__unit--title Корпоративный сайт
+									.works__unit.works__unit--href mgkapobeda.com
+								.works__midle
+									.works__article МГКА “ПОБЕДА”
+									.works__txt Сайт для московской коллегии адвокатов
+								.works__bottom
+									.works__link СМОТРЕТЬ ПРОЕКТ
+						a(href="javascript:void(0);").works__item.swiper-slide
+							.works__pic
+								img(src="./img/portfolio/p1.png" alt="")
+							.works__content
+								.works__top
+									.works__unit.works__unit--title Корпоративный сайт
+									.works__unit.works__unit--href mgkapobeda.com
+								.works__midle
+									.works__article МГКА “ПОБЕДА”
+									.works__txt Сайт для московской коллегии адвокатов
+								.works__bottom
+									.works__link СМОТРЕТЬ ПРОЕКТ
+					.arrow
+						.arrow__link.arrow__link--prev
+							+svg('arr-slider')
+						.arrow__link.arrow__link--next
+							+svg('arr-slider')
+					.pagination
+		include ../modules/accordion
+		include ../modules/call
+block script

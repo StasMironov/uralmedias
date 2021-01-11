@@ -12,7 +12,7 @@
 html {
   height: 100%;
   min-width: 320px;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
@@ -93,12 +93,12 @@ input::-ms-clear {
   font-size: 62px;
   line-height: 89px;
 
-  @media(max-width: 1024px){
+  @media(max-width: 1024px) {
     font-size: 48px;
     line-height: 48px;
   }
 
-  @media(max-width: 620px){
+  @media(max-width: 620px) {
     font-size: 30px;
     line-height: 39px;
   }
@@ -114,7 +114,7 @@ input::-ms-clear {
     line-height: 38px;
   }
 
-  @media(max-width: 620px){
+  @media(max-width: 620px) {
     font-size: 26px;
     line-height: 26px;
   }
@@ -130,7 +130,7 @@ input::-ms-clear {
     line-height: 30px;
   }
 
-  @media(max-width: 620px){
+  @media(max-width: 620px) {
     font-size: 26px;
     line-height: 26px;
   }
@@ -166,6 +166,7 @@ input::-ms-clear {
   @media(max-width: 768px) {
     padding-bottom: 338px;
   }
+
   @media(max-width: 580px) {
     padding-bottom: 514px;
   }
@@ -283,7 +284,9 @@ input::-ms-clear {
   background-color: $red-2;
 }
 
-
+@import "./components/seo/seo-slider.scss";
+@import "./components/landing/landing-stages.scss";
+@import "./components/demand/vacancy.scss";
 @import "./components/demand/demand.scss";
 @import "./components/include.scss";
 @import "./components/advertising/advertising-price.scss";

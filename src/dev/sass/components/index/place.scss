@@ -15,6 +15,20 @@
         padding-bottom: 27px;
     }
 
+    &__file {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        text-align: center;
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
     &__bg {
         position: absolute;
         content: "";
@@ -25,7 +39,7 @@
         width: 100%;
         background-repeat: no-repeat;
         background-size: auto;
-        background-position: 50% 0;
+        background-position: 50% 100%;
         z-index: 0;
         top: auto;
         bottom: 0px;
@@ -49,7 +63,7 @@
         text-align: center;
         margin-top: 16px;
 
-        @media(max-width: 1024px){
+        @media(max-width: 1024px) {
             font-size: 14px;
             line-height: 25px;
             max-width: 711px;
@@ -122,5 +136,44 @@
         width: 100%;
         margin: 0 auto;
         margin-top: 55px;
+    }
+
+    &--vacancy {
+        margin-top: 66px;
+        padding-top: 62px;
+
+        .place {
+            &__text {
+                max-width: 760px;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            &__title {
+                line-height: 62px;
+                letter-spacing: 0.3px;
+                margin-bottom: 29px;
+            }
+
+            &__file {
+                margin-top: 20px;
+                font-size: 12px;
+                color: $grey-6;
+                cursor: pointer;
+
+                input {
+                    cursor: pointer;
+                }
+            }
+
+            &__note {
+                text-align: center;
+                margin-top: 44px;
+
+                a {
+                    font-weight: 700;
+                }
+            }
+        }
     }
 }
