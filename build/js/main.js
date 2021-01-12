@@ -132,18 +132,18 @@ function () {
     this.ratio = ratio;
     this.pagination = pagination;
     this.arrow = arrow;
+    this.slider = '';
   }
 
   _createClass(Slider, [{
     key: "createSlider",
     value: function createSlider() {
-      var slider;
-
+      //  let slider;
       if (this.pagination || this.arrow) {
         var pagEl = $(this.name).find('.pagination');
         var arrowNext = $(this.name).find('.arrow__link--next');
         var arrowPrev = $(this.name).find('.arrow__link--prev');
-        slider = new Swiper(this.name, {
+        this.slider = new Swiper(this.name, {
           slidesPerView: this.view,
           spaceBetween: this.space,
           slidesPerColumn: this.column,
@@ -159,7 +159,7 @@ function () {
           }
         });
       } else {
-        slider = new Swiper(this.name, {
+        this.slider = new Swiper(this.name, {
           slidesPerView: this.view,
           spaceBetween: this.space,
           slidesPerColumn: this.column,
@@ -168,7 +168,19 @@ function () {
         });
       }
 
-      return slider;
+      return this.slider;
+    }
+  }, {
+    key: "updateSlider",
+    value: function updateSlider(props) {
+      var res = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+      switch (props) {
+        case 'space':
+          this.slider.params.spaceBetween = res;
+          this.slider.update();
+          break;
+      }
     }
   }]);
 
@@ -181,9 +193,17 @@ if ($('.partners').exists()) {
 }
 
 if ($('.works').exists()) {
-  var _partnerSlider = new Slider(true, '.works', 2, 48, 1, true, true, true);
+  var workSlider = new Slider(true, '.js-works', 2, 48, 1, true, true, true);
+  workSlider.createSlider();
+  $(window).on('resize load', function () {
+    if ($(this).width() <= 1300) {
+      workSlider.updateSlider('space', 30);
+    }
 
-  _partnerSlider.createSlider();
+    if ($(this).width() <= 1024) {
+      workSlider.updateSlider('space', 20);
+    }
+  });
 }
 
 function init() {

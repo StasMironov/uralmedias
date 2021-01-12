@@ -15,8 +15,8 @@
     }
 
     &__title {
-        font-size: 62px;
-        line-height: 72px;
+        // font-size: 62px;
+        // line-height: 72px;
         font-weight: 700;
         text-align: center;
         color: white;
@@ -48,15 +48,41 @@
     &--seo {
         .bildboard-data__container {
             padding-top: 72px;
-            padding-bottom: 91px
+            padding-bottom: 91px;
+
+            @media(max-width: 1024px) {
+                padding-top: 50px;
+                padding-bottom: 58px;
+            }
+
+            @media(max-width: 620px) {
+                padding-top: 60px;
+                padding-bottom: 100px;
+            }
         }
 
         .bildboard-data__title {
             line-height: 77px;
+
+            @media(max-width: 1024px) {
+                line-height: 66px;
+            }
+
+            @media(max-width: 620px) {
+                line-height: 40px;
+            }
         }
 
         .btn {
             margin: 76px auto 0;
+
+            @media(max-width: 1024px) {
+                margin: 26px auto 0;
+            }
+
+            @media(max-width: 620px) {
+                margin: 43px auto 0;
+            }
         }
     }
 

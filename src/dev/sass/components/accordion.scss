@@ -1,6 +1,10 @@
 .accordion {
     margin-top: 75px;
 
+    @media(max-width: 1024px) {
+        margin-top: 56px;
+    }
+
     &__panel {
         display: flex;
         justify-content: space-between;
@@ -13,6 +17,14 @@
         background-color: white;
         cursor: pointer;
         transition: .4s ease-in-out;
+
+        @media(max-width: 1024px) {
+            line-height: 142%;
+            padding: 10px 16px 12px;
+            padding-right: 5px;
+            font-size: 16px;
+            line-height: 16px;
+        }
     }
 
     &__list {
@@ -24,6 +36,10 @@
         overflow: hidden;
         transition: .4s ease-in-out;
         background-color: #fff;
+
+        @media(max-width: 1024px) {
+            padding: 0px 16px;
+        }
     }
 
     &__content {
@@ -38,6 +54,10 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
+        }
+
+        & p {
+            line-height: 22px;
         }
     }
 
@@ -77,17 +97,29 @@
 
     &__cover {
         margin-top: 32px;
+
+        @media(max-width: 1024px) {
+            margin-top: 45px;
+        }
+    }
+
+    &__item {
+        &:not(:first-child) {
+            @media(max-width: 1024px) {
+                margin-top: 23px;
+            }
+        }
     }
 
     .is-open {
         background-color: $ochre;
-      
-        & + .accordion__list {
-          background-color: $ochre;
+
+        &+.accordion__list {
+            background-color: $ochre;
         }
 
         .accordion__pic--active {
             background-image: url('../img/icon/minus.svg');
         }
-      }
+    }
 }

@@ -1,18 +1,27 @@
 .breadcrumbs {
     margin-top: 31px;
 
+    @media(max-width: 620px) {
+        margin-top: 22px;
+    }
+
     &__container {
         display: flex;
         justify-content: center;
+
+        @media(max-width: 620px) {
+            text-align: left;
+            justify-content: flex-start;
+        }
     }
 
     &__link {
         position: relative;
         color: $grey-8;
 
-        
 
-        &:not(:last-child){
+
+        &:not(:last-child) {
             padding-right: 7px;
             margin-right: 5px;
 

@@ -58,11 +58,11 @@ const projectFunc = {
 };
 
 //===========Accordion=============
-if($('.accordion__panel').exists()) {
+if ($('.accordion__panel').exists()) {
     var accordions = document.getElementsByClassName("accordion__panel");
 
     for (var i = 0; i < accordions.length; i++) {
-        accordions[i].onclick = function() {
+        accordions[i].onclick = function () {
             this.classList.toggle('is-open');
             $(this).find('.accordion__pic').toggleClass('accordion__pic--active');
 
@@ -130,19 +130,18 @@ class Slider {
         this.ratio = ratio;
         this.pagination = pagination;
         this.arrow = arrow;
+        this.slider = '';
     }
 
-
-
     createSlider() {
-        let slider;
+        //  let slider;
 
         if (this.pagination || this.arrow) {
             let pagEl = $(this.name).find('.pagination');
             let arrowNext = $(this.name).find('.arrow__link--next');
             let arrowPrev = $(this.name).find('.arrow__link--prev');
 
-            slider = new Swiper(this.name, {
+            this.slider = new Swiper(this.name, {
                 slidesPerView: this.view,
                 spaceBetween: this.space,
                 slidesPerColumn: this.column,
@@ -158,7 +157,7 @@ class Slider {
                 },
             });
         } else {
-            slider = new Swiper(this.name, {
+            this.slider = new Swiper(this.name, {
                 slidesPerView: this.view,
                 spaceBetween: this.space,
                 slidesPerColumn: this.column,
@@ -168,7 +167,17 @@ class Slider {
 
         }
 
-        return slider;
+        return this.slider;
+    }
+
+    updateSlider(props, res = '') {
+        switch (props) {
+            case 'space':
+                this.slider.params.spaceBetween = res;
+                this.slider.update();
+                break;
+        }
+
     }
 }
 
@@ -178,8 +187,17 @@ if ($('.partners').exists()) {
 }
 
 if ($('.works').exists()) {
-    let partnerSlider = new Slider(true, '.works', 2, 48, 1, true, true, true);
-    partnerSlider.createSlider();
+    let workSlider = new Slider(true, '.js-works', 2, 48, 1, true, true, true);
+    workSlider.createSlider();
+
+    $(window).on('resize load', function () {
+        if ($(this).width() <= 1300) {
+            workSlider.updateSlider('space', 30);
+        }
+        if ($(this).width() <= 1024) {
+            workSlider.updateSlider('space', 20);
+        }
+    });
 }
 
 
