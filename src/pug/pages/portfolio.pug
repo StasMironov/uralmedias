@@ -4,7 +4,8 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'НАШЕ Портфолио';
 	- var include = 'btn';
-	- var quote = 'services'
+	- var quote = 'services';
+	- var bildboard_include = 'empty'
 	- var bildboard_img = "background-image: url(img/dataBild/.jpg);"
 
 block content
@@ -27,7 +28,7 @@ block content
 									.case__article МГКА “ПОБЕДА”
 									.case__txt Сайт для московской коллегии адвокатов
 								.case__bottom
-									.case__link СМОТРЕТЬ ПРОЕКТ
+									.case__link.link.link--detail СМОТРЕТЬ ПРОЕКТ
 						a(href="javascript:void(0);").case__item
 							.case__pic
 								img(src="./img/portfolio/p1.png" alt="")
@@ -39,7 +40,7 @@ block content
 									.case__article МГКА “ПОБЕДА”
 									.case__txt Сайт для московской коллегии адвокатов
 								.case__bottom
-									.case__link СМОТРЕТЬ ПРОЕКТ
+									.case__link.link.link--detail СМОТРЕТЬ ПРОЕКТ
 						a(href="javascript:void(0);").case__item
 							.case__pic
 								img(src="./img/portfolio/p1.png" alt="")
@@ -51,7 +52,7 @@ block content
 									.case__article МГКА “ПОБЕДА”
 									.case__txt Сайт для московской коллегии адвокатов
 								.case__bottom
-									.case__link СМОТРЕТЬ ПРОЕКТ
+									.case__link.link.link--detail СМОТРЕТЬ ПРОЕКТ
 						a(href="javascript:void(0);").case__item
 							.case__pic
 								img(src="./img/portfolio/p1.png" alt="")
@@ -63,8 +64,8 @@ block content
 									.case__article МГКА “ПОБЕДА”
 									.case__txt Сайт для московской коллегии адвокатов
 								.case__bottom
-									.case__link СМОТРЕТЬ ПРОЕКТ
-				
+									.case__link.link.link--detail СМОТРЕТЬ ПРОЕКТ
+				a(href="javascript:void(0);").case__more.link.link--detail Больше проектов
 		include ../modules/place
 		
 

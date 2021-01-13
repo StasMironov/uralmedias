@@ -1,6 +1,10 @@
 .breadcrumbs {
     margin-top: 31px;
 
+    @media(max-width: 1024px) {
+        margin-top: 24px;
+    }
+
     @media(max-width: 620px) {
         margin-top: 22px;
     }

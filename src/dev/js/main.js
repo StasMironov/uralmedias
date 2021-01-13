@@ -176,8 +176,11 @@ class Slider {
                 this.slider.params.spaceBetween = res;
                 this.slider.update();
                 break;
+            case 'view':
+                this.slider.params.slidesPerView = res;
+                this.slider.update();
+                break;
         }
-
     }
 }
 
@@ -196,6 +199,12 @@ if ($('.works').exists()) {
         }
         if ($(this).width() <= 1024) {
             workSlider.updateSlider('space', 20);
+        }
+        if ($(this).width() <= 620) {
+            workSlider.updateSlider('view', 1);
+        }
+        else {
+            workSlider.updateSlider('view', 2);
         }
     });
 }
@@ -719,6 +728,32 @@ $(window).on('load', function () {
             myMap.geoObjects.add(myPlacemark);
             myMap.behaviors.disable('scrollZoom');
         }
+    }
+});
+
+$(window).on('resize load', function () {
+    if ($(this).width() <= 500) {
+        if ($('.seo-result__items').exists()) {
+            $(function () {
+                var csObj = new Object();
+                csObj.axis = "x";
+                csObj.theme = "my-theme";
+                csObj.advanced = {
+                    autoExpandHorizontalScroll: true
+                };
+                csObj.scrollButtons = {
+                    scrollType: "pixels",
+                    scrollAmount: 300
+                };
+                csObj.mouseWheel = {
+                    invert: true
+                };
+                $(".seo-result__items").mCustomScrollbar(csObj);
+            });
+        }
+    }
+    else {
+        $(".seo-result__items").mCustomScrollbar('destroy');
     }
 });
 

@@ -1,5 +1,8 @@
 .header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 999;
     min-height: 73px;
     color: white;
@@ -58,6 +61,7 @@
 
     &__item {
         font-size: 14px;
+        text-transform: uppercase;
 
         &:not(:last-child) {
             margin-right: 35px;

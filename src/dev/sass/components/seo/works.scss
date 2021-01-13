@@ -29,7 +29,7 @@
         height: 323px;
         width: 100%;
         overflow: hidden;
-        border-radius: 12px 12px 0px 0px;
+        border-radius: 7px 7px 0 0;
 
         @media(max-width: 1300px) {
             height: 270px;
@@ -37,6 +37,10 @@
 
         @media(max-width: 1024px) {
             height: 188px;
+        }
+
+        @media(max-width: 620px) {
+            height: 174px;
         }
 
         img {
@@ -60,6 +64,11 @@
             padding: 18px 16px 32px;
             min-height: 198px;
         }
+
+        @media(max-width: 620px) {
+            padding: 18px 20px 32px;
+            min-height: 181px;
+        }
     }
 
     &__top {
@@ -70,6 +79,11 @@
 
     &__unit {
         font-size: 12px;
+
+        @media(max-width: 620px) {
+            font-size: 10px;
+            line-height: 10px;
+        }
     }
 
     &__article {
@@ -94,6 +108,10 @@
             font-size: 12px;
             line-height: 12px;
             margin-top: 14px;
+        }
+
+        @media(max-width: 620px) {
+            line-height: 16px;
         }
     }
 

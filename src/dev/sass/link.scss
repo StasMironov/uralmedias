@@ -6,6 +6,7 @@
     }
 
     &--detail {
+        display: inline-block;
         color: $red-2;
         font-family: 'OpenSans', sans-serif;
         position: relative;
@@ -14,6 +15,7 @@
         transition: .3s;
         font-size: 10px;
         line-height: 10px;
+        font-weight: bold;
 
         &::after {
             position: absolute;
@@ -39,7 +41,7 @@
         line-height: 10px;
         display: flex;
         align-items: center;
-        
+
 
         .link__icon {
             width: 11px;
@@ -53,7 +55,7 @@
         }
 
         .link__txt {
-            text-transform:uppercase;
+            text-transform: uppercase;
             font-weight: 700;
             margin-right: 5px;
             line-height: 11px;

@@ -1,7 +1,6 @@
 .bildboard {
     position: relative;
     min-height: 100vh;
-    margin-top: -80px;
     overflow: hidden;
 
     &:after {
@@ -24,12 +23,12 @@
         padding-top: 280px;
         //opacity: 0;
 
-        @media(max-width: 1024px){
+        @media(max-width: 1024px) {
             text-align: center;
             padding-top: 188px;
         }
 
-        @media(max-width: 620px){
+        @media(max-width: 620px) {
             padding-top: 163px;
         }
     }
@@ -40,12 +39,12 @@
         font-weight: 400;
         opacity: 0;
 
-        @media(max-width: 1024px){
+        @media(max-width: 1024px) {
             font-size: 16px;
             line-height: 16px;
         }
 
-        @media(max-width: 620px){
+        @media(max-width: 620px) {
             font-size: 14px;
             line-height: 14px;
         }
@@ -67,9 +66,9 @@
             margin-top: 26px;
         }
 
-        @media(max-width: 620px){
+        @media(max-width: 620px) {
             line-height: 39px;
-          }
+        }
     }
 
     &__quote {

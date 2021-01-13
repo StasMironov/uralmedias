@@ -21,7 +21,11 @@ case bildboard_include
                 .btn__special
                     span Получить SEO-аудит сайта
                 .btn__text Получить SEO-аудит сайта
+  when 'empty'
+    .bildboard-data.bildboard-data--empty(style=`${bildboard_img}`)
+        .bildboard-data__container.container
+            .bildboard-data__title.title-1 #{setTitle}
   default
     .bildboard-data(style=`${bildboard_img}`)
         .bildboard-data__container.container
-            .bildboard-data__title #{setTitle}
+            .bildboard-data__title.title-1 #{setTitle}

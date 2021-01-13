@@ -15,6 +15,12 @@
         padding-bottom: 27px;
     }
 
+    @media(max-width: 620px) {
+        margin-top: 65px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
     &__file {
         position: relative;
         overflow: hidden;
@@ -93,8 +99,8 @@
 
         @media(max-width: 620px) {
             text-align: left;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            padding-bottom: 24px;
+            margin-bottom: 11px;
             line-height: 30px;
         }
 
@@ -174,6 +180,12 @@
                     font-weight: 700;
                 }
             }
+        }
+    }
+
+    .btn--special {
+        @media(max-width: 620px) {
+            margin: 22px 0 0;
         }
     }
 }
