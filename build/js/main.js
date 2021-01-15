@@ -121,6 +121,8 @@ function () {
   function Slider(init, name, view, space, column, ratio) {
     var pagination = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
     var arrow = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
+    var effect = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : '';
+    var custom = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : false;
 
     _classCallCheck(this, Slider);
 
@@ -133,31 +135,59 @@ function () {
     this.pagination = pagination;
     this.arrow = arrow;
     this.slider = '';
+    this.effect = effect;
+    this.custom = custom;
   }
 
   _createClass(Slider, [{
     key: "createSlider",
     value: function createSlider() {
-      //  let slider;
       if (this.pagination || this.arrow) {
         var pagEl = $(this.name).find('.pagination');
         var arrowNext = $(this.name).find('.arrow__link--next');
         var arrowPrev = $(this.name).find('.arrow__link--prev');
-        this.slider = new Swiper(this.name, {
+        var settings = {
           slidesPerView: this.view,
           spaceBetween: this.space,
           slidesPerColumn: this.column,
           slidesPerColumnFill: 'row',
           touchRatio: this.ratio,
-          pagination: {
-            el: pagEl,
-            clickable: true
-          },
+          effect: this.effect,
           navigation: {
             nextEl: arrowNext,
             prevEl: arrowPrev
+          },
+          pagination: {
+            el: pagEl,
+            type: "custom",
+            renderCustom: function renderCustom(swiper, current, total) {
+              var i = current ? current : 0;
+              return "".concat(("0" + i).slice(-2), " / ").concat(("0" + total).slice(-2));
+            }
           }
-        });
+        };
+
+        if (this.custom === true) {
+          console.log(this.custom);
+          this.slider = new Swiper(this.name, settings);
+        } else {
+          this.slider = new Swiper(this.name, {
+            slidesPerView: this.view,
+            spaceBetween: this.space,
+            slidesPerColumn: this.column,
+            slidesPerColumnFill: 'row',
+            touchRatio: this.ratio,
+            effect: this.effect,
+            pagination: {
+              el: pagEl,
+              clickable: true
+            },
+            navigation: {
+              nextEl: arrowNext,
+              prevEl: arrowPrev
+            }
+          });
+        }
       } else {
         this.slider = new Swiper(this.name, {
           slidesPerView: this.view,
@@ -191,6 +221,18 @@ function () {
 
   return Slider;
 }();
+
+if ($('.js-info-slider').exists()) {
+  var infoSlider = new Slider(true, '.js-info-slider', 1, 10, 1, true, true, true, 'fade', true);
+  infoSlider.createSlider();
+
+  if ($('.js-graph-slider').exists()) {
+    var graphSlider = new Slider(true, '.js-graph-slider', 1, 10, 1, true, false, true, 'fade', false);
+    graphSlider.createSlider();
+    graphSlider.slider.controller.control = infoSlider.slider;
+    infoSlider.slider.controller.control = graphSlider.slider;
+  }
+}
 
 if ($('.partners').exists()) {
   var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);

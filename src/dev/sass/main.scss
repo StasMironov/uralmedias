@@ -314,6 +314,11 @@ input::-ms-clear {
   background-color: $red-2;
 }
 
+
+@import "./components/table.scss";
+@import "./components/promotion/promotion-slider.scss";
+@import "./components/promotion/promotion-works.scss";
+@import "./components/promotion/promotion-price.scss";
 @import "./components/seo/seo-slider.scss";
 @import "./components/landing/landing-stages.scss";
 @import "./components/demand/vacancy.scss";

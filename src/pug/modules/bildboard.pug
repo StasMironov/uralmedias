@@ -25,6 +25,16 @@ case bildboard_include
     .bildboard-data.bildboard-data--empty(style=`${bildboard_img}`)
         .bildboard-data__container.container
             .bildboard-data__title.title-1 #{setTitle}
+ 
+  when 'promotion'
+    .bildboard-data.bildboard-data.bildboard-data--promotion(style=`${bildboard_img}`)
+        .bildboard-data__container.container
+            .bildboard-data__title.title-1 #{setTitle}
+            .bildboard-data__txt Наше агентство не просто продвигает сайт в топ поисковой выдачи, а делает из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google.
+            a(href="https://uralmedias.ru/articles/").btn.btn--special
+                .btn__special
+                    span Получить SEO-аудит сайта
+                .btn__text Получить SEO-аудит сайта
   default
     .bildboard-data(style=`${bildboard_img}`)
         .bildboard-data__container.container

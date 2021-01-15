@@ -121,7 +121,7 @@ if ($('.header__inner').exists) {
 checkPage();
 
 class Slider {
-    constructor(init, name, view, space, column, ratio, pagination = false, arrow = false) {
+    constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false) {
         this.init = init;
         this.name = name;
         this.view = view;
@@ -131,31 +131,59 @@ class Slider {
         this.pagination = pagination;
         this.arrow = arrow;
         this.slider = '';
+        this.effect = effect;
+        this.custom = custom;
     }
 
     createSlider() {
-        //  let slider;
-
         if (this.pagination || this.arrow) {
             let pagEl = $(this.name).find('.pagination');
             let arrowNext = $(this.name).find('.arrow__link--next');
             let arrowPrev = $(this.name).find('.arrow__link--prev');
 
-            this.slider = new Swiper(this.name, {
+            let settings = {
                 slidesPerView: this.view,
                 spaceBetween: this.space,
                 slidesPerColumn: this.column,
                 slidesPerColumnFill: 'row',
                 touchRatio: this.ratio,
-                pagination: {
-                    el: pagEl,
-                    clickable: true,
-                },
+                effect: this.effect,
                 navigation: {
                     nextEl: arrowNext,
                     prevEl: arrowPrev,
                 },
-            });
+                pagination: {
+                    el: pagEl,
+                    type: "custom",
+                    renderCustom: function (swiper, current, total) {
+                        let i = current ? current : 0;
+                        return `${("0" + i).slice(-2)} / ${("0" + total).slice(-2)}`;
+                    }
+                },
+            };
+
+            if (this.custom === true) {
+                console.log(this.custom);
+                this.slider = new Swiper(this.name, settings);
+            }
+            else {
+                this.slider = new Swiper(this.name, {
+                    slidesPerView: this.view,
+                    spaceBetween: this.space,
+                    slidesPerColumn: this.column,
+                    slidesPerColumnFill: 'row',
+                    touchRatio: this.ratio,
+                    effect: this.effect,
+                    pagination: {
+                        el: pagEl,
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: arrowNext,
+                        prevEl: arrowPrev,
+                    },
+                });
+            }
         } else {
             this.slider = new Swiper(this.name, {
                 slidesPerView: this.view,
@@ -164,9 +192,7 @@ class Slider {
                 slidesPerColumnFill: 'row',
                 touchRatio: this.ratio,
             });
-
         }
-
         return this.slider;
     }
 
@@ -183,6 +209,20 @@ class Slider {
         }
     }
 }
+
+if ($('.js-info-slider').exists()) {
+    var infoSlider = new Slider(true, '.js-info-slider', 1, 10, 1, true, true, true, 'fade', true);
+    infoSlider.createSlider();
+
+    if ($('.js-graph-slider').exists()) {
+        let graphSlider = new Slider(true, '.js-graph-slider', 1, 10, 1, true, false, true, 'fade', false);
+        graphSlider.createSlider();
+
+        graphSlider.slider.controller.control = infoSlider.slider;
+        infoSlider.slider.controller.control = graphSlider.slider;
+    }
+}
+
 
 if ($('.partners').exists()) {
     let partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);

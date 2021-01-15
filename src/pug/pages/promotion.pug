@@ -1,0 +1,419 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Мы разрабатываем и продвигаем веб-сайты для всех сфер бизнеса';
+	- var include = 'btn';
+	- var quote = 'promotion';
+	- var bildboard_include = 'promotion'
+	- var bildboard_img = "background-image: url(img/dataBild/img10.jpg);"
+	- var includeBloc = 'promotion';
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		include ../modules/quote
+		include ../modules/include
+
+		.promotion-price
+			.promotion-price__container.container
+				.promotion-price__title.title-4 Стоимость продвижения сайтов в Магнитогорске
+				.promotion-price__quote Мы собрали самые эффективные инструменты продвижения вашего бизнеса в интернете и сделали его дешевле!  
+		
+		.promotion-works(style="background-image: url(img/pic.jpg);")
+			.promotion-works__container.container
+				.promotion-works__grid
+					.promotion-slider.promotion-slider--chart.js-graph-slider
+						.swiper-wrapper
+							.swiper-slide
+								.promotion-slider__grid
+									.promotion-slider__left
+										.promotion-slider__title Графики
+										.promotion-slider__cover
+											svg(id="chart")
+									.promotion-slider__right
+										.promotion-slider__header Рекламный бюджет
+										.promotion-slider__items
+											.promotion-slider__item.promotion-slider__item--last
+												.promotion-slider__num 22k
+												.promotion-slider__info -0,75% из бюджета в прошлом месяце
+											.promotion-slider__item.promotion-slider__item--today
+												.promotion-slider__num +12,5%
+												.promotion-slider__info +0,75% за последний месяц
+							.swiper-slide
+								.promotion-slider__grid
+									.promotion-slider__left
+										.promotion-slider__title Графики 2
+										.promotion-slider__cover
+											svg(id="chart")
+									.promotion-slider__right
+										.promotion-slider__header Рекламный бюджет
+										.promotion-slider__items
+											.promotion-slider__item.promotion-slider__item--last
+												.promotion-slider__num 22k
+												.promotion-slider__info -0,75% из бюджета в прошлом месяце
+											.promotion-slider__item.promotion-slider__item--today
+												.promotion-slider__num +12,5%
+												.promotion-slider__info +0,75% за последний месяц
+					.promotion-slider.promotion-slider--info.js-info-slider
+						.swiper-wrapper
+							.swiper-slide
+								.promotion-slider__header Наши работы
+								.promotion-slider__wrap
+									.promotion-slider__bloc
+										.promotion-slider__section
+											.promotion-slider__unit
+												.promotion-slider__char Клиент:
+												.promotion-slider__txt Uralmedias
+											.promotion-slider__unit
+												.promotion-slider__char Тематика:
+												.promotion-slider__txt Веб-разработка
+										.promotion-slider__section
+											.promotion-slider__unit
+												.promotion-slider__char Тип продвижения:
+												.promotion-slider__txt SEO
+											.promotion-slider__unit
+												.promotion-slider__char Тип сайта:
+												.promotion-slider__txt Корпоративный
+									.promotion-slider__section.promotion-slider__section--text
+										.promotion-slider__unit
+											.promotion-slider__char Результат:
+											.promotion-slider__txt Выстроили performance-стратегию и работали со всей воронкой продаж. За три месяца ведения рекламной кампании увеличили объем транзакций на 65% и снизили стоимость лида на 20%.
+							.swiper-slide
+								.promotion-slider__header Наши работы 2
+								.promotion-slider__wrap
+									.promotion-slider__bloc
+										.promotion-slider__section
+											.promotion-slider__unit
+												.promotion-slider__char Клиент:
+												.promotion-slider__txt Uralmedias
+											.promotion-slider__unit
+												.promotion-slider__char Тематика:
+												.promotion-slider__txt Веб-разработка
+										.promotion-slider__section
+											.promotion-slider__unit
+												.promotion-slider__char Тип продвижения:
+												.promotion-slider__txt SEO
+											.promotion-slider__unit
+												.promotion-slider__char Тип сайта:
+												.promotion-slider__txt Корпоративный
+									.promotion-slider__section.promotion-slider__section--text
+										.promotion-slider__unit
+											.promotion-slider__char Результат:
+											.promotion-slider__txt Выстроили performance-стратегию и работали со всей воронкой продаж. За три месяца ведения рекламной кампании увеличили объем транзакций на 65% и снизили стоимость лида на 20%.
+						.promotion-slider__func
+							.pagination
+							.arrow
+								.arrow__link.arrow__link--prev
+									+svg('arr-slider')
+								.arrow__link.arrow__link--next
+									+svg('arr-slider')
+		.calling
+			.calling__container.container
+				.calling
+		.table
+			.table__container.container
+				table
+					tr.table__header
+						th Название программы
+						th Базовый
+						th Продвижение+
+						th Продвинутый
+					tr.table__colaps
+						td(colspan = "4") Подготовительные работы
+					tr
+						td Проверка на санкции
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на аффилиаты
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на вирусы
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Регистрация в справочнике поисковой системы
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Регистрация в сервисе для вебмастеров
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Регистрация счетчиков посещаемости
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Настройка целей
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Отчет
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr.table__colaps
+						td(colspan = "4") Оптимизация CMS
+					tr
+						td Настройка файлов .htacess
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Настройка файлов robots.txt
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Настройка ЧПУ (SEF)
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Обновление CMS
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr.table__colaps
+						td(colspan = "4") Оптимизация HTML
+					tr
+						td Проверка на валидность
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на наличие метатегов
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на наличие фавикона
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на кроссбраузерность
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на адаптивность
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr.table__colaps
+						td(colspan = "4") Оптимизация  контента
+					tr
+						td Группировка (кластеризация) запросов
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Определение целевых страниц
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на уникальность
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Проверка на достаточность контента
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Написание текстов
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Поисковая оптимизация
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Удаление дублей страниц
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Создание карты сайта sitemap.xml
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+
+
+					tr.table__colaps
+						td(colspan = "4") Контекстная реклама
+					tr
+						td Прогноз бюджета
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Анализ конкурентов
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Составление обявлений
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Настройка показов
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Ведение рекламной кампании
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Анализ эффективности
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Оптимизация контекстной рекламы
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr.table__colaps
+						td(colspan = "4") SMM
+					tr
+						td Оформление группы
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Настройка рекламы
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Постинг
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+					tr
+						td Отчет
+						td
+						td
+							+svg("ok")
+						td
+							+svg("ok")
+
+		include ../modules/accordion
+		include ../modules/call
+		
+
+block script

@@ -1,8 +1,58 @@
 .include-menu {
+
+    @media(max-width: 1024px) {
+        position: relative;
+        max-width: 361px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     &__menu {
         max-width: max-content;
         width: 100%;
         margin: 0 auto;
+
+        @media(max-width: 1024px) {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            background-color: $ochre;
+            max-width: 100%;
+            padding: 0px 15px 10px;
+        }
+    }
+
+    &__btn {
+        display: none;
+        background-color: $ochre;
+
+        @media(max-width: 1024px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            padding-right: 17px;
+        }
+    }
+
+    &__icon {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 3px 0 3px;
+        border-color: $grey-10 transparent transparent transparent;
+    }
+
+    &__text {
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            line-height: 12px;
+            color: $grey-10;
+        }
     }
 
     &__link {
@@ -11,6 +61,11 @@
         color: $black;
         transition: .3s ease-in;
         padding-bottom: 4px;
+
+        @media(max-width: 1024px) {
+            font-size: 12px;
+            padding-bottom: 0;
+        }
 
         &:after {
             position: absolute;
@@ -23,6 +78,10 @@
             right: 0;
             bottom: 0;
             margin: auto;
+
+            @media(max-width: 1024px) {
+                content: none;
+            }
         }
 
         &--active {
@@ -46,6 +105,16 @@
 
         &:not(:last-child) {
             margin-right: 50px;
+
+            @media(max-width: 1024px) {
+                margin-right: 0;
+            }
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 1024px) {
+                margin-top: 6px;
+            }
         }
     }
 }

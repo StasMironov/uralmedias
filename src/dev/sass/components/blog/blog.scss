@@ -1,6 +1,14 @@
 .blog {
     margin-top: 58px;
 
+    @media(max-width: 1024px) {
+        margin-top: 41px;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 30px;
+    }
+
     &__more {
         position: relative;
         display: block;
@@ -48,6 +56,10 @@
 
     &__cover {
         margin-top: 47px;
+
+        @media(max-width: 620px) {
+            margin-top: 25px;
+        }
     }
 
     &__item {
@@ -69,6 +81,12 @@
 
         @media(max-width: 882px) {
             width: calc(50% - 20px);
+        }
+
+        @media(max-width: 620px) {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 35px;
         }
 
         &:hover {
@@ -94,6 +112,11 @@
             margin-left: -20px;
             margin-top: -20px;
         }
+
+        @media(max-width: 620px) {
+            margin-left: 0;
+            margin-top: -35px;
+        }
     }
 
 
@@ -110,6 +133,10 @@
 
         @media(max-width: 1024px) {
             min-height: 224px;
+        }
+
+        @media(max-width: 620px) {
+            min-height: 193px;
         }
     }
 
