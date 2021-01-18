@@ -222,6 +222,11 @@ function () {
   return Slider;
 }();
 
+if ($('.js-rate').exists()) {
+  var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
+  rateSlider.createSlider();
+}
+
 if ($('.js-info-slider').exists()) {
   var infoSlider = new Slider(true, '.js-info-slider', 1, 10, 1, true, true, true, 'fade', true);
   infoSlider.createSlider();

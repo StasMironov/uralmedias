@@ -45,30 +45,58 @@
         padding-top: 190px;
         padding-bottom: 123px;
 
-        @media(max-width: 1024px) {
-            padding-top: 123px;
-            padding-bottom: 58px;
+        // @media(max-width: 1024px) {
+        //     padding-top: 123px;
+        //     padding-bottom: 58px;
+        // }
+
+        @media(max-width: 620px) {
+            padding-top: 122px;
+            padding-bottom: 108px;
         }
     }
 
-    &--seo {
-        .bildboard-data__container {
-            padding-top: 72px;
-            padding-bottom: 91px;
+    &--big {
+        .bildboard-data {
+            &__container {
+                padding-top: 142px;
+                padding-bottom: 88px;
 
-            @media(max-width: 1024px) {
-                padding-top: 50px;
-                padding-bottom: 58px;
+                @media(max-width: 1024px) {
+                    padding-top: 115px;
+                    padding-bottom: 60px;
+                }
+
+                @media(max-width: 620px) {
+                    padding-top: 120px;
+                    padding-bottom: 100px;
+                }
             }
 
-            @media(max-width: 620px) {
-                padding-top: 60px;
-                padding-bottom: 100px;
+            &__txt {
+                font-size: 20px;
+                color: white;
+                text-align: center;
+                max-width: 740px;
+                line-height: 28px;
+
+                @media(max-width: 620px) {
+                    text-align: center;
+                    font-size: 18px;
+                    margin-top: 10px;
+                    line-height: 23px;
+                }
+            }
+
+            .btn {
+                @media(max-width: 620px) {
+                    margin-top: 34px;
+                }
             }
         }
 
         .bildboard-data__title {
-            line-height: 77px;
+            line-height: 78px;
 
             @media(max-width: 1024px) {
                 line-height: 66px;
@@ -76,9 +104,12 @@
 
             @media(max-width: 620px) {
                 line-height: 40px;
+                letter-spacing: -0.2px;
             }
         }
+    }
 
+    &--seo {
         .btn {
             margin: 76px auto 0;
 
@@ -93,25 +124,11 @@
     }
 
     &--advertising {
-        .bildboard-data__container {
-            padding-top: 74px;
-            padding-bottom: 90px;
-        }
 
         .bildboard-data__title {
             max-width: 950px;
             margin: 0 auto;
             line-height: 77px;
-        }
-
-        .bildboard-data__txt {
-            font-size: 20px;
-            max-width: 788px;
-            margin: 0 auto;
-            margin-top: 33px;
-            text-align: center;
-            color: white;
-            line-height: 31px;
         }
 
         .btn {
@@ -122,24 +139,11 @@
     &--landing {
         .bildboard-data {
             &__title {
-                line-height: 78px;
                 letter-spacing: 0.4px;
             }
 
             &__container {
-                padding-top: 70px;
                 padding-bottom: 116px;
-            }
-
-            &__txt {
-                font-size: 20px;
-                color: white;
-                text-align: center;
-                max-width: 740px;
-                margin: 0 auto;
-                margin-top: 38px;
-                line-height: 28px;
-                margin: 34px auto 0;
             }
         }
     }
@@ -187,26 +191,45 @@
                 text-align: left;
                 line-height: 81px;
                 max-width: 890px;
+
+                @media(max-width: 620px) {
+                    text-align: center;
+                    line-height: 40px;
+                    letter-spacing: -0.2px;
+                }
             }
 
             &__container {
                 padding-top: 142px;
                 padding-bottom: 88px;
 
+                @media(max-width: 620px) {
+                    padding-top: 73px;
+                    padding-bottom: 53px;
+                }
+
                 .btn--special {
                     margin: initial;
                     margin-top: 66px;
+
+                    @media(max-width: 620px) {
+                        margin-top: 34px;
+                    }
                 }
             }
 
             &__txt {
-                font-size: 20px;
                 margin-top: 25px;
-                line-height: 31px;
                 max-width: 788px;
                 width: 100%;
-                color: white;
+                text-align: left;
+
+                @media(max-width: 620px) {
+                    margin-top: 8px;
+                    text-align: center;
+                }
             }
         }
     }
+
 }

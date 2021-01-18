@@ -93,6 +93,7 @@ input::-ms-clear {
 .title-1 {
   font-size: 62px;
   line-height: 89px;
+  text-align: center;
 
   @media(max-width: 1024px) {
     font-size: 48px;
@@ -102,6 +103,7 @@ input::-ms-clear {
   @media(max-width: 620px) {
     font-size: 30px;
     line-height: 39px;
+    text-align: left;
   }
 }
 
@@ -109,6 +111,7 @@ input::-ms-clear {
   font-size: 48px;
   line-height: 48px;
   font-weight: 700;
+  text-align: center;
 
   @media(max-width: 1024px) {
     font-size: 38px;
@@ -118,6 +121,7 @@ input::-ms-clear {
   @media(max-width: 620px) {
     font-size: 28px;
     line-height: 28px;
+    text-align: left;
   }
 }
 
@@ -125,6 +129,7 @@ input::-ms-clear {
   font-size: 42px;
   line-height: 42px;
   font-weight: 700;
+  text-align: center;
 
   @media(max-width: 1024px) {
     font-size: 34px;
@@ -134,6 +139,7 @@ input::-ms-clear {
   @media(max-width: 620px) {
     font-size: 26px;
     line-height: 26px;
+    text-align: left;
   }
 }
 
@@ -141,6 +147,7 @@ input::-ms-clear {
   font-size: 40px;
   line-height: 40px;
   font-weight: 700;
+  text-align: center;
 
   @media(max-width: 1024px) {
     font-size: 30px;
@@ -314,7 +321,8 @@ input::-ms-clear {
   background-color: $red-2;
 }
 
-
+@import "./components/rate.scss";
+@import "./components/request.scss";
 @import "./components/table.scss";
 @import "./components/promotion/promotion-slider.scss";
 @import "./components/promotion/promotion-works.scss";

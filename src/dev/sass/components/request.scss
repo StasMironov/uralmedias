@@ -1,0 +1,23 @@
+.request {
+    margin-top: 78px;
+
+    &__note {
+        text-align: center;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 700;
+        color: $grey-9;
+    }
+
+    &__title {
+        text-align: center;
+        margin-top: 27px;
+        line-height: 60px;
+
+
+    }
+
+    .btn {
+        margin: 31px auto 0px;
+    }
+}

@@ -1,4 +1,6 @@
 .table {
+    margin-top: 77px;
+
     &__header {
         background-color: $black-3;
         color: white;
@@ -7,6 +9,10 @@
     &__colaps {
         background-color: $ochre;
         font-weight: bold;
+
+        td {
+            font-weight: bold !important;
+        }
     }
 
     table {

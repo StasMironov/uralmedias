@@ -8,6 +8,7 @@ block variables
 	- var bildboard_include = 'promotion'
 	- var bildboard_img = "background-image: url(img/dataBild/img10.jpg);"
 	- var includeBloc = 'promotion';
+	- var request = 'audit';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -16,11 +17,107 @@ block content
 		include ../modules/quote
 		include ../modules/include
 
-		.promotion-price
-			.promotion-price__container.container
-				.promotion-price__title.title-4 Стоимость продвижения сайтов в Магнитогорске
-				.promotion-price__quote Мы собрали самые эффективные инструменты продвижения вашего бизнеса в интернете и сделали его дешевле!  
-		
+		.rate
+			.rate__container.container
+				.rate__title.title-4 Стоимость продвижения сайтов в Магнитогорске
+				.rate__info Мы собрали самые эффективные инструменты продвижения вашего бизнеса в интернете и сделали его дешевле!
+				.rate__mf
+					.rate__items.js-rate
+						.swiper-wrapper
+							.swiper-slide.rate__item
+								.rate__cover
+									.rate__top Базовый
+									.rate__content
+										.rate__article Время продвижения: 1 месяц
+										.rate__list
+											.rate__link Аудит сайта и рекомендации;
+											.rate__link Повышение скорости загрузки сайта;
+											.rate__link Изменение разметки сайта (добавление атрибутов семантической разметки страниц);
+											.rate__link Автоматическое заполнение мета-полей;
+											.rate__link Создание и редактирование мета-полей; 
+											.rate__link Оптимизация страниц по итогам месячного анализа (изменение ключевых слов, добавление запросов);
+											.rate__link Техническая поддержка.
+											
+										.rate__select
+											.rate__p Дополнительные услуги к пакету:
+											.rate__box
+												<input type="checkbox" data-for="check3" class="switch" id="checkbox" value="1" />
+												<label for="checkbox">Контекстная реклама</label>
+											.rate__box
+												<input type="checkbox" data-for="check2" class="switch" id="checkbox2" />
+												<label for="checkbox2">SMM</label>
+								.rate__bottom
+									.rate__grid
+										.rate__left
+											.rate__txt Стоимость без пакета:
+											.rate__number 38 400₽
+										.rate__right
+											.rate__txt Стоимость с пакетом:
+											.rate__number 26 880₽
+							.swiper-slide.rate__item
+								.rate__cover
+									.rate__top Продвижение +
+									.rate__content
+										.rate__article Время продвижения: 3 месяца
+										.rate__list
+											.rate__link Создание семанического ядра;
+											.rate__link Написание текстов для SEO страниц 10 -20;
+											.rate__link Отчетность по завершению работы;
+											.rate__link SEO: 30-70 запросов;
+											.rate__link SEO: 1 регион;
+											.rate__link Внутренняя перелинковка страниц сайта;
+											.rate__link Модернизация сайта, 8 часов программиста;
+											.rate__link Написание статей для НЧ запросов 4-6;
+											.rate__link Техническая поддержка.
+											
+										.rate__select
+											.rate__p Дополнительные услуги к пакету:
+											.rate__box
+												<input type="checkbox" data-for="check3" class="switch" id="checkbox3" />
+												<label for="checkbox3">Контекстная реклама</label>
+											.rate__box
+												<input type="checkbox" data-for="check2" class="switch" id="checkbox4" />
+												<label for="checkbox4">SMM</label>
+								.rate__bottom
+									.rate__grid
+										.rate__left
+											.rate__txt Стоимость без пакета:
+											.rate__number 48 000₽
+										.rate__right
+											.rate__txt Стоимость с пакетом:
+											.rate__number 38 400₽
+							.swiper-slide.rate__item
+								.rate__cover
+									.rate__top Продвинутый
+									.rate__content
+										.rate__article Время продвижения: 6 месяцев
+										.rate__list
+											.rate__link Создание семанического ядра;
+											.rate__link Написание текстов для SEO страниц 10 -20;
+											.rate__link Отчетность по завершению работы;
+											.rate__link SEO: 70-100 запросов;
+											.rate__link SEO: 1 регион;
+											.rate__link Внутренняя перелинковка страниц сайта;
+											.rate__link Модернизация сайта, 16 часов программиста;
+											.rate__link Написание статей для НЧ запросов 10-20;
+											.rate__link Техническая поддержка.
+											
+										.rate__select
+											.rate__p Дополнительные услуги к пакету:
+											.rate__box
+												<input type="checkbox" data-for="check3" class="switch" id="checkbox5" />
+												<label for="checkbox5">Контекстная реклама</label>
+											.rate__box
+												<input type="checkbox" data-for="check2" class="switch" id="checkbox6" />
+												<label for="checkbox6">SMM</label>
+								.rate__bottom
+									.rate__grid
+										.rate__left
+											.rate__txt Стоимость без пакета:
+											.rate__number 116 000 ₽
+										.rate__right
+											.rate__txt Стоимость с пакетом:
+											.rate__number 92 800₽
 		.promotion-works(style="background-image: url(img/pic.jpg);")
 			.promotion-works__container.container
 				.promotion-works__grid
@@ -112,6 +209,7 @@ block content
 		.calling
 			.calling__container.container
 				.calling
+		include ../modules/request
 		.table
 			.table__container.container
 				table
