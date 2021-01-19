@@ -5,6 +5,10 @@
         margin-top: 40px;
     }
 
+    &__bottom {
+        margin-top: 50px;
+    }
+
     &__title {
         position: relative;
         padding-bottom: 50px;
@@ -67,6 +71,7 @@
         box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
         width: 406px;
+        overflow: hidden;
 
         @media(max-width: 1235px) {
             padding: 20px 20px 25px 15px;
@@ -80,8 +85,8 @@
     &__txt {
         font-style: normal;
         font-weight: normal;
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 13px;
+        line-height: 23px;
         text-align: center;
 
         @media(max-width: 1300px) {
@@ -98,10 +103,11 @@
 
     .rate__number {
         font-style: normal;
-        font-weight: normal;
         font-size: 25px;
-        line-height: 36px;
-        font-family: "GothamPro-Black", sans-serif;
+        line-height: 25px;
+        font-weight: 900;
+        margin-top: 14px;
+
 
         @media(max-width: 620px) {
             font-size: 20px;
@@ -179,13 +185,11 @@
 
     &__right {
         transition: .3s easy-in-out;
+        padding-right: 12px;
         //pointer-events: none;
 
         .rate__number {
             font-style: normal;
-            font-weight: normal;
-            font-size: 25px;
-            line-height: 36px;
             color: $green-1;
         }
 
@@ -195,12 +199,12 @@
 
         &--active {
             transition: .3s ease-in-out;
-            padding: 15px 25px 10px 15px;
-            margin-right: -20px;
-            margin-bottom: -10px;
+            padding: 23px 20px 0 12px;
+            transform: translate(16px, -15px);
             background-color: $green-1;
             cursor: pointer;
             pointer-events: auto;
+            margin-bottom: -15PX;
 
 
             @media(max-width: 1235px) {
@@ -248,6 +252,7 @@
         display: flex;
         flex-direction: column;
         align-self: flex-end;
+        padding-bottom: 30px;
     }
 
     &__top {
@@ -308,12 +313,14 @@
     }
 
     &__p {
-        margin-bottom: 15px;
+        margin-bottom: 18px;
+        font-size: 14px;
+        font-weight: 700;
     }
 
     &__box {
         &:last-child {
-            margin-top: 10px;
+            margin-top: 16px;
         }
 
         .switch {
@@ -325,14 +332,14 @@
 
         .switch+label {
             position: relative;
-            padding: 0 0 0 30px;
+            padding: 0 0 0 24px;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
-            color: $grey-7;
+            color: $black;
             font-style: normal;
             font-weight: normal;
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 12px;
+            line-height: 16px;
             transition: .2s;
 
             @media(max-width: 620px) {
@@ -346,8 +353,8 @@
             top: 0;
             bottom: 0;
             left: 0;
-            width: 20px;
-            height: 20px;
+            width: 17px;
+            height: 17px;
             transition: .2s;
             border: 2px solid $grey-7;
             box-sizing: border-box;
@@ -374,6 +381,7 @@
 
         .switch:checked+label:before {
             border: 2px solid $green-1;
+            background-color: $green-1;
         }
 
         .switch:checked+label:after {
@@ -395,7 +403,6 @@
 
     &__grid {
         display: flex;
-        padding-bottom: 10px;
         justify-content: space-between;
         min-height: 100px;
 

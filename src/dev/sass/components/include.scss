@@ -186,6 +186,10 @@
                 flex-wrap: wrap;
                 margin-left: -145px;
                 margin-top: -50px;
+
+                @media(max-width: 1700px) {
+                    margin-left: -50px;
+                }
             }
 
             &__item {
@@ -194,6 +198,11 @@
                 width: calc(33.333% - 145px);
                 margin-left: 145px;
                 margin-top: 50px;
+
+                @media(max-width: 1700px) {
+                    width: calc(33.333% - 50px);
+                    margin-left: 50px;
+                }
             }
 
             &__num {
@@ -234,7 +243,11 @@
             .element {
                 position: absolute;
                 width: 100%;
-
+                // height: 10px;
+                // top: 88px;
+                // left: 46px;
+                // background-position: left center;
+                // background-repeat: no-repeat;
             }
         }
     }

@@ -15,10 +15,17 @@
         @media(max-width: 1024px) {
             max-width: 405px;
             margin: 0 AUTO;
+            line-height: 50px;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
         @media(max-width: 620px) {
             text-align: left;
+            line-height: 35px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            max-width: 100%;
         }
 
         &:after {
@@ -95,5 +102,9 @@
 
     &--promotion {
         margin-top: 69px;
+
+        @media(max-width: 1024px) {
+            margin-top: 35px;
+        }
     }
 }
