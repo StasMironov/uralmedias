@@ -3,46 +3,90 @@
     margin-top: 87px;
     padding: 30px 0 41px;
 
+    @media(max-width: 620px) {
+        margin-top: 47px;
+        padding: 50px 0 41px;
+    }
+
     &__items {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         padding-left: 28px;
+
+        @media(max-width: 620px) {
+            padding-left: 0;
+        }
     }
 
     &__item {
         text-align: center;
 
+        @media(max-width: 620px) {
+            width: 100%;
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 620px) {
+                margin-top: 29px;
+            }
+        }
+
         &:not(:last-child) {
             margin-right: 90px;
+
+            @media(max-width: 620px) {
+                margin-right: 0;
+            }
         }
 
         &:first-child {
             margin-right: 115px;
+
+            @media(max-width: 620px) {
+                margin-right: 0;
+            }
         }
 
         &:nth-child(3) {
             margin-right: 87px;
 
+            @media(max-width: 620px) {
+                margin-right: 0;
+            }
+
             .progress__text {
                 max-width: 196px;
+
+                @media(max-width: 620px) {
+                    max-width: 187px;
+                }
             }
         }
 
         &:last-child {
             .progress__text {
                 max-width: 170px;
-                margin: 0 auto;            
+                margin: 0 auto;
+
+                @media(max-width: 620px) {
+                    margin-top: 10px;
+                }
             }
         }
 
-        
+
     }
 
     &__num {
         font-size: 120px;
         line-height: 120px;
         color: $green-1;
+
+        @media(max-width: 620px) {
+            font-size: 83px;
+            line-height: 63px;
+        }
     }
 
     &__text {
@@ -52,5 +96,11 @@
         width: 100%;
         text-align: center;
         margin: 5px 0px 0;
+
+        @media(max-width: 620px) {
+            margin: 10px auto 0;
+            font-size: 17px;
+            max-width: 187px;
+        }
     }
 }

@@ -23,9 +23,10 @@
         @media(max-width: 620px) {
             text-align: left;
             line-height: 35px;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
+            padding-bottom: 15px;
+            margin-bottom: 12px;
             max-width: 100%;
+            letter-spacing: -.2px;
         }
 
         &:after {
@@ -57,15 +58,18 @@
         width: 100%;
         margin: 0 auto;
 
-
-
         &:not(:first-child) {
             margin-top: 24px;
+
+            @media(max-width: 620px) {
+                margin-top: 14px;
+            }
         }
 
         @media(max-width: 620px) {
             text-align: left;
             max-width: 100%;
+            letter-spacing: -0.2px;
         }
     }
 

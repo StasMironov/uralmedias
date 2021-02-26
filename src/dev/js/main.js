@@ -384,12 +384,12 @@ function init() {
 }
 
 function checkPage() {
-    if (window.location.pathname == '/') {
-        $('.header').removeClass('mf-style');
-    }
-    else {
-        $('.header').addClass('mf-style');
-    }
+    // if (window.location.pathname == '/') {
+    //     $('.header').removeClass('mf-style');
+    // }
+    // else {
+    //     $('.header').addClass('mf-style');
+    // }
 }
 
 window.addEventListener('load', function () {
