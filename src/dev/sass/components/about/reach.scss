@@ -3,6 +3,11 @@
     margin-top: 76px;
     padding: 75px 0 82px;
 
+    @media(max-width: 620px) {
+        margin-top: 49px;
+        padding: 47px 0 20px;
+    }
+
     &__item {
         display: flex;
         align-items: center;
@@ -10,18 +15,37 @@
         flex-direction: column;
         margin-left: 67px;
         width: calc(25% - 67px);
+        min-height: 238px;
+
+        @media(max-width: 1300px) {
+            margin-left: 30px;
+            width: calc(25% - 30px);
+        }
     }
 
     &__items {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: wrap;
         margin-left: -67px;
+
+        @media(max-width: 1300px) {
+            margin-left: -30px;
+            min-width: 1015px;
+        }
     }
 
     &__pic {
         width: 155px;
         height: 155px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @media(max-width: 620px) {
+            width: 123px;
+            height: 123px;
+            background-size: contain;
+        }
     }
 
     &__txt {
@@ -32,6 +56,13 @@
         line-height: 21px;
         color: white;
         margin-top: 20px;
+        margin-bottom: auto;
+
+        @media(max-width: 620px) {
+            font-size: 12px;
+            line-height: 18px;
+            margin-top: 5px;
+        }
     }
 
     &__title,
@@ -43,7 +74,7 @@
     &__title {
         position: relative;
         padding-bottom: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 38px;
 
         &:after {
             position: absolute;
@@ -58,6 +89,17 @@
             width: 100%;
             background-color: $red-2;
             height: 2px;
+
+            @media(max-width: 620px) {
+                right: auto;
+                max-width: 50px;
+            }
+        }
+
+        @media(max-width: 620px) {
+            text-align: left;
+            padding-bottom: 24px;
+            margin-bottom: 11px;
         }
     }
 
@@ -66,9 +108,20 @@
         max-width: 700px;
         text-align: center;
         margin: 0 auto;
+        line-height: 24px;
+
+        @media(max-width: 620px) {
+            text-align: left;
+            line-height: 25px;
+        }
     }
 
     &__cover {
+        display: block;
         margin-top: 47px;
+
+        @media(max-width: 620px) {
+            margin-top: 27px;
+        }
     }
 }

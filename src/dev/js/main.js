@@ -804,6 +804,23 @@ $(window).on('resize load', function () {
 });
 
 
+$(window).on('resize load', function () {
+    if ($(this).width() <= 1024) {
+        if ($('.reach__cover').exists()) {
+            try {
+                Scrollbar.init(document.querySelector('#inner-scrollbar'), {
+                damping: 0.3,
+                alwaysShowTracks: false
+            });
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+    }
+});
+
+
 
 
 
