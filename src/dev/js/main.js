@@ -57,9 +57,13 @@ const projectFunc = {
     }
 };
 
+setTimeout(() => {
+    $('.contacts__grid').css('opacity', '1');
+}, 1000);
+
 //===========Accordion=============
 if ($('.accordion__panel').exists()) {
-    var accordions = document.getElementsByClassName("accordion__panel");
+    let accordions = document.getElementsByClassName("accordion__panel");
 
     for (var i = 0; i < accordions.length; i++) {
         accordions[i].onclick = function () {
@@ -67,7 +71,7 @@ if ($('.accordion__panel').exists()) {
             $(this).find('.accordion__pic').toggleClass('accordion__pic--active');
 
 
-            var content = this.nextElementSibling;
+            let content = this.nextElementSibling;
 
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
@@ -77,6 +81,67 @@ if ($('.accordion__panel').exists()) {
         }
     }
 }
+
+
+//=======Accordion-Contacts===========
+
+if ($('.js-ac-contacts').exists()) {
+    try {
+        let accordions = document.querySelectorAll(".contacts__panel");
+
+
+        $(window).on('resize load', function () {
+            if ($(this).width() > 620) {
+                accordions.forEach((element, index) => {
+                    let content = element.nextElementSibling;
+
+                    if (!content.style.maxHeight) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            }
+            else {
+                accordions.forEach((element, index) => {
+                    let content = element.nextElementSibling;
+
+                    if (!content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+        });
+
+
+
+        for (var i = 0; i < accordions.length; i++) {
+            accordions[i].onclick = function () {
+                this.classList.toggle('is-open');
+                $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
+
+
+                let content = this.nextElementSibling;
+                console.log(content);
+
+                if (!content.style.maxHeight) {
+                    console.log('777')
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            }
+        }
+
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+
 
 if ($('.blog__item').exists()) {
 
@@ -809,14 +874,34 @@ $(window).on('resize load', function () {
         if ($('.reach__cover').exists()) {
             try {
                 Scrollbar.init(document.querySelector('#inner-scrollbar'), {
-                damping: 0.3,
-                alwaysShowTracks: false
-            });
+                    damping: 0.3,
+                    alwaysShowTracks: false
+                });
             }
-            catch(err){
+            catch (err) {
                 console.log(err);
             }
         }
+    }
+});
+
+
+$(window).on('resize load', function () {
+    if ($(this).width() <= 1100 && $(this).width() > 620) {
+        if ($('.progress__cover').exists()) {
+            try {
+                Scrollbar.init(document.querySelector('#progress-scrollbar'), {
+                    damping: 0.3,
+                    alwaysShowTracks: false
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    }
+    else {
+        Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
 });
 

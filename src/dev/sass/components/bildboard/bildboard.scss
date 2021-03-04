@@ -1,7 +1,15 @@
 .bildboard {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 373px - 188px);
     overflow: hidden;
+
+    @media(max-width: 1024px) {
+        min-height: calc(100vh - 737px);
+    }
+
+    @media(max-width: 620px) {
+        min-height: calc(100vh - 568px);
+    }
 
     &:after {
         position: absolute;
@@ -20,23 +28,25 @@
         position: relative;
         z-index: 1;
         color: white;
-        padding-top: 280px;
+        padding-top: 274px;
+        padding-bottom: 382px;
         //opacity: 0;
 
         @media(max-width: 1024px) {
             text-align: center;
-            padding-top: 188px;
+            padding-top: 175px;
+            padding-bottom: 171px;
         }
 
         @media(max-width: 620px) {
-            padding-top: 163px;
+            padding-top: 142px;
+            padding-bottom: 160px;
         }
     }
 
     &__text {
-        font-size: 20px;
+        font-size: 17px;
         line-height: 24px;
-        font-weight: 400;
         opacity: 0;
 
         @media(max-width: 1024px) {
@@ -65,6 +75,7 @@
             max-width: 100%;
             line-height: 66px;
             margin-top: 26px;
+            text-align: center;
         }
 
         @media(max-width: 620px) {
@@ -75,7 +86,7 @@
     &__quote {
         max-width: 727px;
         width: 100%;
-        font-weight: 400;
+        font-weight: 300;
         letter-spacing: 0.2px;
         opacity: 0;
         font-size: 25px;

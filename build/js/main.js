@@ -55,7 +55,10 @@ var projectFunc = {
     });
     popupBlog.play();
   }
-}; //===========Accordion=============
+};
+setTimeout(function () {
+  $('.contacts__grid').css('opacity', '1');
+}, 1000); //===========Accordion=============
 
 if ($('.accordion__panel').exists()) {
   var accordions = document.getElementsByClassName("accordion__panel");
@@ -72,6 +75,55 @@ if ($('.accordion__panel').exists()) {
         content.style.maxHeight = content.scrollHeight + "px";
       }
     };
+  }
+} //=======Accordion-Contacts===========
+
+
+if ($('.js-ac-contacts').exists()) {
+  try {
+    var _accordions = document.querySelectorAll(".contacts__panel");
+
+    $(window).on('resize load', function () {
+      if ($(this).width() > 620) {
+        _accordions.forEach(function (element, index) {
+          var content = element.nextElementSibling;
+
+          if (!content.style.maxHeight) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      } else {
+        _accordions.forEach(function (element, index) {
+          var content = element.nextElementSibling;
+
+          if (!content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
+    });
+
+    for (var i = 0; i < _accordions.length; i++) {
+      _accordions[i].onclick = function () {
+        this.classList.toggle('is-open');
+        $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
+        var content = this.nextElementSibling;
+        console.log(content);
+
+        if (!content.style.maxHeight) {
+          console.log('777');
+          content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+          content.style.maxHeight = null;
+        }
+      };
+    }
+  } catch (err) {
+    console.log(err);
   }
 }
 
@@ -734,5 +786,21 @@ $(window).on('resize load', function () {
         console.log(err);
       }
     }
+  }
+});
+$(window).on('resize load', function () {
+  if ($(this).width() <= 1100 && $(this).width() > 620) {
+    if ($('.progress__cover').exists()) {
+      try {
+        Scrollbar.init(document.querySelector('#progress-scrollbar'), {
+          damping: 0.3,
+          alwaysShowTracks: false
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  } else {
+    Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
   }
 });

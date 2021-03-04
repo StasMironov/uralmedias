@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     z-index: 999;
-    min-height: 73px;
+    min-height: 79px;
     color: white;
 
     @media(max-width: 1024px) {
@@ -16,7 +16,7 @@
     }
 
     &__inner {
-        min-height: 73px;
+        min-height: 79px;
 
         @media(max-width: 1024px) {
             min-height: 66px;
@@ -62,7 +62,6 @@
 
     &__item {
         font-size: 14px;
-        text-transform: uppercase;
 
         &:not(:last-child) {
             margin-right: 35px;

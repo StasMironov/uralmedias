@@ -25,3 +25,7 @@
     transition: .2s ease-out;
     padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 }
+
+.svg-transparent {
+    fill: none;
+}

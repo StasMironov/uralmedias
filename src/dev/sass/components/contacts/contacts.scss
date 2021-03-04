@@ -1,24 +1,113 @@
 .contacts {
     margin-top: 65px;
 
+    @media(max-width: 620px) {
+        margin-top: 37px;
+    }
+
+    &__pic {
+        padding-bottom: 6px;
+        transform: scale(1, -1);
+        transform-origin: center;
+        transition: .4s ease-in-out;
+
+        &--active {
+            transform: none;
+        }
+    }
+
+    &__right {
+        .contacts__text {
+            color: $black;
+        }
+
+        .contacts__item {
+            .contacts__txt {
+                @media(max-width: 620px) {
+                    color: $red-2;
+                }
+            }
+        }
+    }
+
+    &__wrp {
+        margin-top: 21px;
+    }
+
+    &__panel {
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 142%;
+        color: #2d2d2d;
+        background-color: #fff;
+        cursor: pointer;
+        transition: .4s ease-in-out;
+        display: none;
+
+        @media(max-width: 620px) {
+            display: inline-flex;
+            font-size: 14px;
+            line-height: 14px;
+            color: #2d2d2d;
+            padding: 0px 0 5px;
+        }
+    }
+
+    &__list {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 25px;
+        max-height: 0;
+        overflow: hidden;
+        transition: .4s ease-in-out;
+        background-color: #fff;
+
+        .contacts__article {
+            @media(max-width: 620px) {
+                display: none;
+            }
+        }
+    }
+
     &__grid {
-        max-width: 930px;
+        max-width: 977px;
         width: 100%;
         display: flex;
         justify-content: space-between;
+        opacity: 0;
+        transition: .3s;
+
+        @media(max-width: 620px) {
+            flex-direction: column;
+        }
+
+        a {
+            &:hover {
+                color: #333;
+            }
+        }
     }
 
     &__article {
         font-size: 14px;
         line-height: 28px;
         color: $grey-6;
+        font-weight: 300;
     }
 
     &__bloc {
         font-weight: 700;
 
+        &:first-child {
+            @media(max-width: 620px) {
+                margin-top: 13px;
+            }
+        }
+
         &:not(:first-child) {
-            margin-top: 21px;
+            margin-top: 22px;
         }
 
         &--color {
@@ -29,7 +118,15 @@
     }
 
     &__txt {
-        margin-top: 3px;
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: 500;
+
+        @media(max-width: 620px) {
+            font-size: 16px;
+            margin-top: 3px;
+        }
     }
 
     &__unit {
@@ -51,20 +148,83 @@
     &__header {
         font-size: 18px;
         line-height: 25px;
-        font-weight: 700;
+        font-weight: 500;
+
+        @media(max-width: 620px) {
+            font-size: 16px;
+        }
     }
 
     &__info {
         margin-top: 70px;
+
+        @media(max-width: 620px) {
+            margin-top: 40px;
+        }
     }
 
     &__cover {
         margin-top: 20px;
+
+        @media(max-width: 620px) {
+            margin-top: 10px;
+        }
     }
 
     &__word {
+        @media(max-width: 620px) {
+            line-height: 25px;
+        }
+
         &:not(:first-child) {
             margin-top: 7px;
+
+            @media(max-width: 620px) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__item {
+
+        &:not(:first-child) {
+            margin-top: 55px;
+
+            @media(max-width: 620px) {
+                margin-top: 20px;
+            }
+        }
+
+        .contacts__txt {
+            margin-top: 3px;
+
+            @media(max-width: 620px) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__left {
+        @media(max-width: 620px) {
+            margin-top: 35px;
+        }
+
+        .contacts__pic path {
+            fill: #cbcbcb;
+        }
+    }
+
+    &__text {
+        color: $grey-6;
+
+        @media(max-width: 620px) {
+            margin-right: 5px;
+        }
+    }
+
+    &+.place {
+        @media(max-width: 620px) {
+            margin-top: 71px;
         }
     }
 }

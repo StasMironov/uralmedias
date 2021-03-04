@@ -16,9 +16,9 @@
     }
 
     @media(max-width: 620px) {
-        margin-top: 65px;
+        margin-top: 55px;
         padding-top: 0px;
-        padding-bottom: 0px;
+        padding-bottom: 233px;
     }
 
     &__file {
@@ -50,8 +50,15 @@
         top: auto;
         bottom: 0px;
 
-        @media(max-width: 1024px) {
-            background-image: none !important;
+        @media(max-width: 620px) {
+            background-size: 880px;
+            background-position: center;
+            background-position: 0% 100%;
+        }
+
+        @media(max-width: 320px) {
+            background-image: url(../img/decor/dec19.png) !important;
+            background-size: auto;
         }
     }
 
@@ -60,9 +67,10 @@
     }
 
     &__text {
-        max-width: 835px;
         width: 100%;
-        font-size: 18px;
+        max-width: 935px;
+        width: 100%;
+        font-size: 16px;
         line-height: 25px;
         opacity: 0;
         margin: 0 auto;
@@ -130,8 +138,25 @@
         text-transform: uppercase;
         font-weight: 700;
 
+
+
         &:not(:last-child) {
             margin-right: 70px;
+        }
+
+        &:not(:first-child) {
+            @media(max-width: 620px) {
+                margin-top: 22px;
+            }
+        }
+
+
+
+        &.link--detail {
+            @media(max-width: 620px) {
+                display: flex;
+                align-self: flex-start;
+            }
         }
     }
 
@@ -142,6 +167,12 @@
         width: 100%;
         margin: 0 auto;
         margin-top: 55px;
+
+        @media(max-width: 620px) {
+            flex-direction: column;
+            margin: 30px auto 0;
+            max-width: initial;
+        }
     }
 
     &--vacancy {
@@ -186,6 +217,23 @@
     .btn--special {
         @media(max-width: 620px) {
             margin: 22px 0 0;
+        }
+    }
+
+    &--transparent {
+        background-color: $grey-13;
+
+        @media(max-width: 620px) {
+            padding-top: 45px;
+            padding-bottom: 48px;
+        }
+
+        .place {
+            &__bg {
+                @media(max-width: 1024px) {
+                    background-image: none !important;
+                }
+            }
         }
     }
 }
