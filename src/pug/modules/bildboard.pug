@@ -1,4 +1,13 @@
 case bildboard_include
+  when 'corporate'
+    .bildboard-data.bildboard-data--big.bildboard-data--advertising(style=`${bildboard_img}`)
+        .bildboard-data__container.container
+            .bildboard-data__title.title-1 #{setTitle}
+            .bildboard-data__txt Современный корпоративный портал высокого уровня, являющийся официальным представителем Вашей компании в интернете.
+            a(href="https://uralmedias.ru/articles/").btn.btn--special
+                .btn__special
+                    span Отправить заявку менеджеру
+                .btn__text Отправить заявку менеджеру
   when 'advertising'
     .bildboard-data.bildboard-data--big.bildboard-data--advertising(style=`${bildboard_img}`)
         .bildboard-data__container.container

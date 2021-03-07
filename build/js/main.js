@@ -615,11 +615,13 @@ ScrollTrigger.create({
 });
 
 if ($('.btn--special').exists()) {
-  var widthhEl = $('.btn__text').width();
-  $('.btn--special').css({
-    'max-width': widthhEl + 94 + 'px'
-  });
-  console.log(widthhEl);
+  var btnSpecial = document.querySelectorAll('.btn--special');
+  btnSpecial.forEach(function (element, _) {
+    var widthhEl = $(element).find('.btn__text').width();
+    $(element).css({
+      'max-width': widthhEl + 90 + 'px'
+    });
+  }); // console.log(widthhEl);
 }
 
 $('#certificate').lightGallery();

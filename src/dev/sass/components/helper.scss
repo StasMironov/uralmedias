@@ -21,9 +21,27 @@
     right: 0;
     top: 0;
     z-index: 1;
-    //box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
     transition: .2s ease-out;
     padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+    background-color: white;
+    color: $green-1;
+
+    .btn--call {
+        border-color: $green-1;
+    }
+
+    .burger {
+        .line {
+            stroke: $green-1;
+        }
+    }
+
+    .header__logo {
+        svg path {
+            fill: $green-1;
+        }
+    }
 }
 
 .svg-transparent {

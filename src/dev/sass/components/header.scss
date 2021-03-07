@@ -8,22 +8,22 @@
     color: white;
 
     @media(max-width: 1024px) {
-        min-height: 66px;
+        min-height: 63px;
     }
 
     @media(max-width: 620px) {
-        min-height: 65px;
+        min-height: 53px;
     }
 
     &__inner {
         min-height: 79px;
 
         @media(max-width: 1024px) {
-            min-height: 66px;
+            min-height: 63px;
         }
 
         @media(max-width: 620px) {
-            min-height: 65px;
+            min-height: 53px;
         }
     }
 
@@ -87,6 +87,10 @@
         margin-left: auto;
         margin-right: 30px;
         font-size: 14px;
+
+        @media(max-width: 1024px) {
+            margin-right: 24px;
+        }
 
         @media(max-width: 620px) {
             margin-right: 20px;

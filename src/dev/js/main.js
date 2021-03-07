@@ -670,11 +670,20 @@ ScrollTrigger.create({
 });
 
 if ($('.btn--special').exists()) {
-    let widthhEl = $('.btn__text').width();
-    $('.btn--special').css({
-        'max-width': widthhEl + 94 + 'px'
+    
+    let btnSpecial = document.querySelectorAll('.btn--special');
+
+    
+    btnSpecial.forEach((element, _) => {
+         let widthhEl = $(element).find('.btn__text').width();
+         
+        $(element).css({
+            'max-width': widthhEl + 90 + 'px'
+        });
     });
-    console.log(widthhEl);
+
+   
+    // console.log(widthhEl);
 }
 
 
