@@ -54,12 +54,65 @@ const projectFunc = {
             });
 
         popupBlog.play();
+    },
+
+    hiddenTabs: function (index) {
+        if ($('.include--app').exists()) {
+            try {
+                let includeBloc = document.querySelector('.include--app'),
+                    tabsEl = includeBloc.querySelectorAll('.include__item'),
+                    btnTab = includeBloc.querySelectorAll('.include__btn');
+
+                tabsEl.forEach((element, i) => {
+                    if (i != index) {
+                        element.classList.remove('mf-show');
+                        btnTab[i].classList.remove('mf-active');
+                    }
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    },
+
+    showTabs: function (index) {
+        if ($('.include--app').exists()) {
+            try {
+                let includeBloc = document.querySelector('.include--app'),
+                    tabsEl = includeBloc.querySelectorAll('.include__item');
+                tabsEl[index].classList.add('mf-show');
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
     }
 };
 
+if ($('.include__btn').exists()) {
+    try {
+        let includeBloc = document.querySelector('.include--app'),
+            btnTab = includeBloc.querySelectorAll('.include__btn');
+
+        projectFunc.hiddenTabs(0);
+
+        btnTab.forEach((element, index) => {
+            element.addEventListener('click', function () {
+                this.classList.add('mf-active');
+                projectFunc.showTabs(index);
+                projectFunc.hiddenTabs(index);
+            });
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
 setTimeout(() => {
     $('.contacts__grid').css('opacity', '1');
-}, 1000);
+}, 500);
 
 //===========Accordion=============
 if ($('.accordion__panel').exists()) {
@@ -127,7 +180,6 @@ if ($('.js-ac-contacts').exists()) {
                 console.log(content);
 
                 if (!content.style.maxHeight) {
-                    console.log('777')
                     content.style.maxHeight = content.scrollHeight + "px";
                 } else {
                     content.style.maxHeight = null;
@@ -170,7 +222,7 @@ if ($('.header__inner').exists) {
             $h = $target.offset().top;
         $window.on('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > $h) {
+            if ((scrollTop - 10) > $h) {
                 $target.addClass("mf-fixed");
                 return;
             } else {
@@ -670,19 +722,21 @@ ScrollTrigger.create({
 });
 
 if ($('.btn--special').exists()) {
-    
+
     let btnSpecial = document.querySelectorAll('.btn--special');
 
-    
+
     btnSpecial.forEach((element, _) => {
-         let widthhEl = $(element).find('.btn__text').width();
-         
+        let widthhEl = $(element).find('.btn__text').innerWidth();
+
+        console.log(widthhEl);
+
         $(element).css({
-            'max-width': widthhEl + 90 + 'px'
+            'width': widthhEl + 39 + 'px'
         });
     });
 
-   
+
     // console.log(widthhEl);
 }
 
@@ -847,6 +901,7 @@ $(window).on('load', function () {
 
             myMap.geoObjects.add(myPlacemark);
             myMap.behaviors.disable('scrollZoom');
+            myMap.behaviors.disable('drag');
         }
     }
 });
@@ -913,6 +968,7 @@ $(window).on('resize load', function () {
         Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
 });
+
 
 
 

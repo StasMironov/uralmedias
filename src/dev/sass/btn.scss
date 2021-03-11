@@ -1,14 +1,19 @@
 .btn {
     &--call {
         padding: 7px 21px;
-        border: 1px solid white;
+        border: 2px solid white;
         border-radius: 42px;
         font-size: 14px;
         line-height: 25px;
 
-        @media(max-width: 1024px){
+        @media(max-width: 1024px) {
             padding: 7px 22px;
             margin-right: 10px;
+        }
+
+        &:hover {
+            background-color: white;
+            color: $green-1;
         }
     }
 

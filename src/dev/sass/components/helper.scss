@@ -22,13 +22,19 @@
     top: 0;
     z-index: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
-    transition: .2s ease-out;
+    transition: linear .3s;
     padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
     background-color: white;
-    color: $green-1;
+    color: $black;
 
     .btn--call {
-        border-color: $green-1;
+        border-color: $red-2;
+        color: $red-2;
+
+        &:hover {
+            background-color: $red-2;
+            color: white;
+        }
     }
 
     .burger {

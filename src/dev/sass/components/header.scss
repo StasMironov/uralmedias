@@ -17,6 +17,7 @@
 
     &__inner {
         min-height: 79px;
+        transition: linear .3s;
 
         @media(max-width: 1024px) {
             min-height: 63px;
@@ -66,6 +67,14 @@
         &:not(:last-child) {
             margin-right: 35px;
         }
+
+        &:hover {
+            color: $green-1;
+        }
+
+        &--active {
+            color: $green-1;
+        }
     }
 
     &__inner {
@@ -98,6 +107,10 @@
 
         @media(max-width: 600px) {
             display: none;
+        }
+
+        &:hover {
+            color: $green-1;
         }
     }
 

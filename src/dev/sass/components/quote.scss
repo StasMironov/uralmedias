@@ -15,7 +15,7 @@
         @media(max-width: 1024px) {
             max-width: 405px;
             margin: 0 AUTO;
-            line-height: 50px;
+            line-height: 38px;
             padding-bottom: 30px;
             margin-bottom: 30px;
         }
@@ -84,6 +84,16 @@
         }
     }
 
+    &--chart {
+        margin-top: 0;
+
+        .quote {
+            &__bloc {
+                max-width: 955px;
+            }
+        }
+    }
+
     &--seo {
         .quote {
             &__title {
@@ -115,6 +125,30 @@
         .quote {
             &__bloc {
                 max-width: 994px;
+            }
+
+            &__title {
+                @media(max-width: 1024px) {
+                    max-width: 640px;
+                }
+            }
+        }
+    }
+
+    &--app {
+        .quote {
+            &__bloc {
+                max-width: 905px;
+            }
+        }
+    }
+
+    &--adp {
+        margin-top: 75px;
+
+        .quote {
+            &__bloc {
+                max-width: 670px;
             }
         }
     }

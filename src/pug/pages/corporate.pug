@@ -6,12 +6,19 @@ block variables
 	- var include = 'link';
 	- var quote = 'corporate';
 	- var bildboard_img = "background-image: url(img/dataBild/img11.jpg);";
-	- var bildboard_include = 'corporate';
+	- var bildboard_include = 'special-btn';
 	- var includeBloc = 'corporate';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
-		include ../modules/bildboard
+		.bildboard-data.bildboard-data--special-btn(style=`${bildboard_img}`)
+			.bildboard-data__container.container
+				.bildboard-data__title.title-1 создание корпоративных&nbsp;сайтов
+				.bildboard-data__quote Современный корпоративный портал высокого уровня, являющийся официальным представителем Вашей компании в интернете.
+				a(href="https://uralmedias.ru/articles/").btn.btn--special
+					.btn__special
+						span Отправить заявку менеджеру
+					.btn__text Отправить заявку менеджеру
 		include ../modules/breadcrumbs
 		include ../modules/quote
 
@@ -45,7 +52,12 @@ block content
 								.advertising-price__ref Интеграция с CRM и системами аналитики.
 							.advertising-price__bottom
 								.advertising-price__price от 250 000₽
-								.advertising-price__href.lik.link--detail ЗАКАЗАТЬ разработку сайта
+								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+		.chart 
+			- var quote = 'chart'
+			include ../modules/quote
+			.chart__container.container
+				img(src="./img/chart.jpg" alt="" title="").chart__img
 		- var includeBloc = 'corporate-list';
 		include ../modules/include
 		include ../modules/seo-slider

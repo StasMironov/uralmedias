@@ -54,11 +54,57 @@ var projectFunc = {
       ease: "power2.out"
     });
     popupBlog.play();
+  },
+  hiddenTabs: function hiddenTabs(index) {
+    if ($('.include--app').exists()) {
+      try {
+        var includeBloc = document.querySelector('.include--app'),
+            tabsEl = includeBloc.querySelectorAll('.include__item'),
+            btnTab = includeBloc.querySelectorAll('.include__btn');
+        tabsEl.forEach(function (element, i) {
+          if (i != index) {
+            element.classList.remove('mf-show');
+            btnTab[i].classList.remove('mf-active');
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  },
+  showTabs: function showTabs(index) {
+    if ($('.include--app').exists()) {
+      try {
+        var includeBloc = document.querySelector('.include--app'),
+            tabsEl = includeBloc.querySelectorAll('.include__item');
+        tabsEl[index].classList.add('mf-show');
+      } catch (err) {
+        console.log(err);
+      }
+    }
   }
 };
+
+if ($('.include__btn').exists()) {
+  try {
+    var includeBloc = document.querySelector('.include--app'),
+        btnTab = includeBloc.querySelectorAll('.include__btn');
+    projectFunc.hiddenTabs(0);
+    btnTab.forEach(function (element, index) {
+      element.addEventListener('click', function () {
+        this.classList.add('mf-active');
+        projectFunc.showTabs(index);
+        projectFunc.hiddenTabs(index);
+      });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 setTimeout(function () {
   $('.contacts__grid').css('opacity', '1');
-}, 1000); //===========Accordion=============
+}, 500); //===========Accordion=============
 
 if ($('.accordion__panel').exists()) {
   var accordions = document.getElementsByClassName("accordion__panel");
@@ -115,7 +161,6 @@ if ($('.js-ac-contacts').exists()) {
         console.log(content);
 
         if (!content.style.maxHeight) {
-          console.log('777');
           content.style.maxHeight = content.scrollHeight + "px";
         } else {
           content.style.maxHeight = null;
@@ -151,7 +196,7 @@ if ($('.header__inner').exists) {
     $window.on('scroll', function () {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > $h) {
+      if (scrollTop - 10 > $h) {
         $target.addClass("mf-fixed");
         return;
       } else {
@@ -617,9 +662,10 @@ ScrollTrigger.create({
 if ($('.btn--special').exists()) {
   var btnSpecial = document.querySelectorAll('.btn--special');
   btnSpecial.forEach(function (element, _) {
-    var widthhEl = $(element).find('.btn__text').width();
+    var widthhEl = $(element).find('.btn__text').innerWidth();
+    console.log(widthhEl);
     $(element).css({
-      'max-width': widthhEl + 90 + 'px'
+      'width': widthhEl + 39 + 'px'
     });
   }); // console.log(widthhEl);
 }
@@ -747,6 +793,7 @@ $(window).on('load', function () {
       });
       myMap.geoObjects.add(myPlacemark);
       myMap.behaviors.disable('scrollZoom');
+      myMap.behaviors.disable('drag');
     };
 
     ymaps.ready(_init);

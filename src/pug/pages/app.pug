@@ -1,0 +1,93 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Главная страница'
+	- var pageClass = 'index-page';
+	- var setTitle = 'Разработка мобильного приложения';
+	- var bildboard_quote = 'Специально разработанное под функциональные возможности гаджетов программное обеспечение, которое поможет привлечь большое количество пользователей.';
+	- var quote = 'app';
+	- var bildboard_img = "background-image: url(img/dataBild/img12.jpg);";
+	- var includeBloc = 'app';
+	- var include = "landing";
+	- var bildboard_include = 'special-btn';
+
+block content
+	div(data-barba="container" data-barba-namespace="about")
+		.bildboard-data.bildboard-data--special-btn(style=`${bildboard_img}`)
+			.bildboard-data__container.container
+				.bildboard-data__title.title-1 Разработка мобильного&nbsp;приложения
+				.bildboard-data__quote #{bildboard_quote}
+				a(href="https://uralmedias.ru/articles/").btn.btn--special
+					.btn__special
+						span Отправить заявку менеджеру
+					.btn__text Отправить заявку менеджеру
+
+		include ../modules/breadcrumbs
+		include ../modules/quote
+		include ../modules/include
+		.quote.quote--adp
+			.quote__container.container
+				.quote__title.title-4 Зачем Вашему бизнесу мобильное приложение?
+				.quote__bloc
+					.quote__par Разработка мобильного приложения - это современное решение, которое сделает ваших клиентов лояльнее и поможет увеличить доход. 
+		.advantages-app
+			.advantages-app__container.container 
+				.advantages-app__wrapper 
+					.advantages-app__cover
+						.advantages-app__items
+							.advantages-app__item
+								.advantages-app__article юзабилити  
+								.advantages-app__txt В современном мире мобильные приложения намного популярнее адаптированных сайтов. Все потому, что приложение имеет продуманный пользовательский интерфейс - это удобно.
+							.advantages-app__item
+								.advantages-app__article Уведомления
+								.advantages-app__txt Приложение выгоднее статичного сайта потому, что после закрытия страницы Вы теряете связь с клиентом. В приложении же можно присылать пользователям различные уведомления. 
+							.advantages-app__item
+								.advantages-app__article Продажи
+								.advantages-app__txt Несомненным преимужеством мобильного приложения - быстрая и удобная онлайн оплата. В отличае от полноценного сайта, в приложении не нужно вводить платежные данные каждый раз.
+							.advantages-app__item
+								.advantages-app__article Фидбэк
+								.advantages-app__txt Обратная связь является одним из ключевых моментов. Вы должны уметь поддерживать ее со своим клиентом, и приложение Вам в этом поможет.
+					.advantages-app__right
+						.advantages-app__img 
+							image(src="./img/app.png" alt="")
+		.advertising-price.advertising-price--landing.advertising-price--corporate(style="background-image: url(./img/decor/dec15.png)")
+			.advertising-price__container.container
+				.advertising-price__title.title-3 Варианты разработки продукта
+				.advertising-price__cover
+					.advertising-price__items
+						a(href="javascript:void(0);").advertising-price__item.mf-show
+							.advertising-price__top
+								.advertising-price__header Создание приложения на конструкторе
+								.advertising-price__period от 7 дней на разработку
+							.advertising-price__note Готовим контент и делаем одностраничник на популярном конструкторе
+							.advertising-price__list
+								.advertising-price__ref Готовые решения на 1С-Битрикс;
+								.advertising-price__ref Конструкторы Tilda и PlatformaLP.
+							.advertising-price__bottom
+								.advertising-price__price от 200 000₽
+								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+						a(href="javascript:void(0);").advertising-price__item 
+							.advertising-price__top
+								.advertising-price__header Индивидуальная разработка
+								.advertising-price__period от 7 дней на разработку
+							.advertising-price__note Полный цикл производства
+							.advertising-price__list
+								.advertising-price__ref Сбор требований и концепция страницы;
+								.advertising-price__ref Дизайн, пользовательские сценарии;
+								.advertising-price__ref Адаптивная вёрстка;
+								.advertising-price__ref Программирование и тестирование;
+								.advertising-price__ref Интеграция с CRM и системами аналитики.
+							.advertising-price__bottom
+								.advertising-price__price от 450 000₽
+								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+		.include.include--special-btn  
+			.include__container.container
+				.include__title.title-3 Хотите собственное крутое приложение?
+				.include__txt Мы готовы Вам помочь и создать уникальное мобильное приложение. Привлекайте новых клиентов, сокращайте расходы на рекламу и повышайте средний чек!
+				a(href="https://uralmedias.ru/articles/").btn.btn--special
+					.btn__special
+						span Заказать проект
+					.btn__text Заказать проект
+		include ../modules/seo-slider
+		include ../modules/call
+block script

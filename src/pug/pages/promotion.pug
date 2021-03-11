@@ -5,14 +5,21 @@ block variables
 	- var setTitle = 'Мы разрабатываем и продвигаем веб-сайты для всех сфер бизнеса';
 	- var include = 'btn';
 	- var quote = 'promotion';
-	- var bildboard_include = 'promotion'
+	- var bildboard_include = 'special-btn'
 	- var bildboard_img = "background-image: url(img/dataBild/img10.jpg);"
 	- var includeBloc = 'promotion';
 	- var request = 'audit';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
-		include ../modules/bildboard
+		.bildboard-data.bildboard-data--special-btn.bildboard-data--left(style=`${bildboard_img}`)
+			.bildboard-data__container.container
+				.bildboard-data__title.title-1 #{setTitle}
+				.bildboard-data__quote Наше агентство не просто продвигает сайт в топ поисковой выдачи, а делает из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google.
+				a(href="https://uralmedias.ru/articles/").btn.btn--special
+					.btn__special
+						span Отправить заявку менеджеру
+					.btn__text Отправить заявку менеджеру
 		include ../modules/breadcrumbs
 		include ../modules/quote
 		include ../modules/include

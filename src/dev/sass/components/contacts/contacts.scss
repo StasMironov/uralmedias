@@ -2,7 +2,7 @@
     margin-top: 65px;
 
     @media(max-width: 620px) {
-        margin-top: 37px;
+        margin-top: 35px;
     }
 
     &__pic {
@@ -14,11 +14,21 @@
         &--active {
             transform: none;
         }
+
+        path {
+            fill: #cbcbcb;
+            transition: .4s ease-in-out;
+        }
     }
 
     &__right {
         .contacts__text {
             color: $black;
+
+            @media(max-width: 620px) {
+                color: $grey-6;
+                transition: .4s ease-in-out;
+            }
         }
 
         .contacts__item {
@@ -30,9 +40,7 @@
         }
     }
 
-    &__wrp {
-        margin-top: 21px;
-    }
+
 
     &__panel {
         justify-content: space-between;
@@ -67,6 +75,22 @@
         .contacts__article {
             @media(max-width: 620px) {
                 display: none;
+            }
+        }
+    }
+
+    &__wrp {
+        margin-top: 21px;
+
+        @media(max-width: 620px) {
+            margin-top: 14px;
+        }
+
+        .contacts__article {
+            @media(max-width: 620px) {
+                color: $black;
+                display: block;
+                font-weight: 500;
             }
         }
     }
@@ -126,6 +150,7 @@
         @media(max-width: 620px) {
             font-size: 16px;
             margin-top: 3px;
+            transition: .4s ease-in-out;
         }
     }
 
@@ -200,17 +225,14 @@
 
             @media(max-width: 620px) {
                 margin-top: 0;
+                max-width: 200px;
             }
         }
     }
 
     &__left {
         @media(max-width: 620px) {
-            margin-top: 35px;
-        }
-
-        .contacts__pic path {
-            fill: #cbcbcb;
+            margin-top: 20px;
         }
     }
 
@@ -219,12 +241,28 @@
 
         @media(max-width: 620px) {
             margin-right: 5px;
+            transition: .4s ease-in-out;
         }
     }
 
     &+.place {
         @media(max-width: 620px) {
             margin-top: 71px;
+        }
+    }
+
+    .is-open {
+        .contacts__text {
+            color: $black;
+        }
+
+        &+.contacts__list .contacts__txt {
+            color: $red-2;
+        }
+
+
+        .contacts__pic path {
+            fill: $black;
         }
     }
 }
