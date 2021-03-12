@@ -50,4 +50,60 @@
         line-height: 21px;
         margin-top: 10px;
     }
+
+    &--magazine {
+        margin-top: 83px;
+        padding: 80px 0 81px;
+
+        .demand {
+
+            &__num {
+                font-size: 48px;
+                font-weight: 500;
+                color: $green-1;
+            }
+
+            &__item {
+                width: calc(33.333% - 190px);
+                margin-left: 190px;
+                padding-left: 0;
+                margin-top: 46px;
+
+                &:after {
+                    content: none;
+                }
+            }
+
+            &__items {
+                margin-left: -190px;
+                margin-top: -46px;
+            }
+
+            &__cover {
+                position: relative;
+                max-width: initial;
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    background-image: url(../img/decor/points2.svg);
+                    width: 1192px;
+                    height: 258px;
+                    background-repeat: no-repeat;
+                    top: 86px;
+                    left: 31px;
+                    right: 0;
+                    margin: auto;
+
+                }
+            }
+
+            &__header {
+                margin-top: 22px;
+                line-height: 29px;
+                max-width: 220px;
+                width: 100%;
+            }
+        }
+    }
 }

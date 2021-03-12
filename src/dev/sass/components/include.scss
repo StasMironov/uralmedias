@@ -756,4 +756,149 @@
         }
     }
 
+    &--magazine {
+        margin-top: 80px;
+        padding: 68px 0 90px;
+
+        .include {
+
+            &__left {
+                padding-top: 12px;
+            }
+
+            &__txt {
+                text-align: left;
+                font-size: 14px;
+                line-height: 22px;
+                margin-top: 9px;
+            }
+
+            &__items {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -70px;
+                margin-top: -60px;
+            }
+
+            &__item {
+                display: flex;
+                width: calc(50% - 70px);
+                margin-left: 70px;
+                margin-top: 60px;
+
+                &:nth-child(3) {
+                    .include__pic {
+                        background-position-y: 100%;
+                    }
+                }
+
+                &:nth-child(2) {
+                    .include__pic {
+                        background-position-x: 100%;
+                    }
+                }
+
+                &:nth-child(4) {
+                    .include__pic {
+                        background-position-y: 100%;
+                        background-position-x: 100%;
+                    }
+                }
+            }
+
+            &__pic {
+                width: 73px;
+                height: 73px;
+                margin-right: 26px;
+            }
+
+            &__header {
+                font-size: 18px;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            &__cover {
+                max-width: 1060px;
+                margin: 59px auto 0;
+            }
+
+            &__quote {
+                text-align: center;
+                margin: 0 auto;
+                max-width: 1000px;
+                line-height: 25px;
+            }
+
+            &__title {
+                position: relative;
+                padding-bottom: 34px;
+                margin-bottom: 34px;
+
+                @media(max-width: 1024px) {
+                    line-height: 35px;
+                    margin-bottom: 30px;
+                    padding-bottom: 30px;
+                }
+
+                @media(max-width: 620px) {
+                    text-align: left;
+                    padding-bottom: 15px;
+                    margin-bottom: 12px;
+                    line-height: 30px;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    top: auto;
+                    margin: auto;
+                    max-width: 80px;
+                    width: 100%;
+                    background-color: $red-2;
+                    height: 2px;
+
+                    @media(max-width: 620px) {
+                        right: auto;
+                        max-width: 48px;
+                    }
+                }
+            }
+        }
+    }
+
+    &--call {
+        margin-top: 148px;
+        padding-bottom: 71px;
+
+        .include {
+            &__note {
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: 2px;
+                opacity: 0.45;
+            }
+
+            &__title {
+                margin-top: 23px;
+                max-width: 940px;
+                padding-bottom: 0;
+                margin-bottom: 0;
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+
+        .btn {
+            margin: 26px auto 0;
+        }
+    }
 }

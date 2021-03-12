@@ -188,6 +188,14 @@ if ($('.blog__item').exists()) {
   });
 }
 
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 79) {
+    $(".header__inner").addClass("header--scroll");
+  } else {
+    $(".header__inner").removeClass("header--scroll");
+  }
+});
+
 if ($('.header__inner').exists) {
   try {
     var $window = $(window),
@@ -196,7 +204,7 @@ if ($('.header__inner').exists) {
     $window.on('scroll', function () {
       var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop - 10 > $h) {
+      if (scrollTop > $h) {
         $target.addClass("mf-fixed");
         return;
       } else {
@@ -512,12 +520,12 @@ function init() {
   });
 }
 
-function checkPage() {// if (window.location.pathname == '/') {
-  //     $('.header').removeClass('mf-style');
-  // }
-  // else {
-  //     $('.header').addClass('mf-style');
-  // }
+function checkPage() {
+  if (window.location.pathname == '/index.html' || window.location.pathname == '/index.html') {
+    $('.header').removeClass('mf-style');
+  } else {
+    $('.header').addClass('mf-style');
+  }
 }
 
 window.addEventListener('load', function () {
@@ -852,4 +860,21 @@ $(window).on('resize load', function () {
   } else {
     Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
   }
+});
+$(function () {
+  $('a').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+
+      if ($target.length) {
+        var targetOffset = $target.offset().top - 140;
+        $('html,body').animate({
+          scrollTop: targetOffset
+        }, 500); //скорость прокрутки
+
+        return false;
+      }
+    }
+  });
 });

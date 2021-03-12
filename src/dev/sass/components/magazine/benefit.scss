@@ -1,0 +1,171 @@
+.benefit {
+    margin-top: 80px;
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 67px;
+        max-width: 1238px;
+        width: 100%;
+        margin: 58px auto 0;
+    }
+
+    &__bloc {
+        &:not(:first-child) {
+            margin-top: 102px;
+        }
+    }
+
+    &__item {
+        width: 33.333%;
+
+        &:nth-child(1) {
+            position: relative;
+            padding-top: 44px;
+
+
+            .benefit__bloc {
+                &:first-child {
+                    .benefit__header {
+                        &:after {
+                            left: 0;
+                            background-image: url('../img/decor/line.svg');
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .benefit__txt {
+                        max-width: 269px;
+                        width: 100%;
+                    }
+
+                    .benefit__header {
+                        &:after {
+                            left: 0;
+                            background-image: url('../img/decor/line2.svg');
+                        }
+                    }
+                }
+            }
+        }
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            position: relative;
+            max-width: 343px;
+            width: 100%;
+        }
+
+        &:nth-child(2) {
+            position: relative;
+            z-index: -1;
+        }
+
+        &:nth-child(3) {
+            padding-top: 17px;
+
+            .benefit__bloc {
+
+                &:first-child {
+                    .benefit__header {
+                        &:after {
+                            right: -58px;
+                            background-image: url(../img/decor/line3.svg);
+                            top: 30px;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    margin-top: 143px;
+
+                    .benefit__header {
+                        &:after {
+                            right: -53px;
+                            background-image: url(../img/decor/line4.svg);
+                            top: -28px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        img {
+            position: absolute;
+            left: -49%;
+        }
+    }
+
+    &__txt {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__header {
+        position: relative;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        margin-bottom: 13px;
+
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 112px;
+            width: 521px;
+            top: 29px;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__quote {
+        text-align: center;
+        max-width: 864px;
+        margin: 0 auto;
+        line-height: 23px;
+    }
+
+    &__title {
+        position: relative;
+        padding-bottom: 46px;
+        margin-bottom: 36px;
+
+        @media(max-width: 1024px) {
+            line-height: 35px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+        }
+
+        @media(max-width: 620px) {
+            text-align: left;
+            padding-bottom: 15px;
+            margin-bottom: 12px;
+            line-height: 30px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: auto;
+            margin: auto;
+            max-width: 80px;
+            width: 100%;
+            background-color: $red-2;
+            height: 2px;
+
+            @media(max-width: 620px) {
+                right: auto;
+                max-width: 48px;
+            }
+        }
+    }
+}

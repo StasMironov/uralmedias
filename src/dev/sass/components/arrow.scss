@@ -25,6 +25,8 @@
         cursor: pointer;
         box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
         transform-origin: center;
+        opacity: 0.4;
+        transition: linear .3s;
 
         .b-svg {
             width: 100%;
@@ -32,8 +34,14 @@
             fill: $red-2;
         }
 
+        &:hover {
+            opacity: 1;
+        }
+
         &--prev {
             transform: scale(-1, 1);
         }
     }
+
+
 }

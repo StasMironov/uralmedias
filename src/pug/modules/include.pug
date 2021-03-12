@@ -55,7 +55,6 @@ case includeBloc
                     .include__item 
                         .include__header Ценовой сегмент
                         .include__text Какой ценовой сегмент у Ваших товаров/услуг?
-
   when 'landing'
     .include.include--landing
         .include__container.container
@@ -74,7 +73,6 @@ case includeBloc
                     .include__item 
                         .include__header Кто хочет собрать контакты пользователей
                         .include__txt Рано или поздно Ваш бизнес может столкнуться с проблемой нехватки имеющейся базы пользователей. Как собирать контакты потенциальных клиентов? С помощью лендинга, на котором присутствуют формы обратной связи.
-  
   when 'vacancy'
     .include.include--vacancy
         .include__container.container
@@ -111,7 +109,6 @@ case includeBloc
                         .include__right
                             .include__header Различные проекты
                             .include__txt Работаем с крупным и малым бизнесом из самых разных отраслей.
-
   when 'promotion'
     .include.include--promotion
         .include__container.container
@@ -212,3 +209,44 @@ case includeBloc
                                 .include__info Первый вопрос, который интересует клиента: “Сколько это будет стоить?”. Следующий за ним: “Когда будет готово мобильное приложение?”. Чтобы ответить на оба вопроса, наше агентство проводит оценку и составляет план работ. На этом этапе к проекту обычно присоединяется менеджер проекта. Он может выступать со стороны заказчика или со стороны команды разработчиков. Задачи менеджера проекта: координировать работу команды и общаться с заказчиком.
                             .include__right
                                 .include__info Но что же означает загадочное слово “оценка”? На этом этапе мы изучаем техническую документацию. Рассчитываем, сколько времени потребуется на разработку и тестирование. Выявляем не описанные сценарии и узкие места в ТЗ.
+  when 'magazine'
+    .include.include--magazine
+        .include__container.container
+            .include__title.title-4 Секреты создания проектов
+            .include__quote Мы разрабатываем не просто сайты, а готовые отлаженные системы. Одним из главных секретов нашей команды является умение постановки правильных целей и их качественная реализация. Но это не единственный серкет:
+            .include__cover 
+                .include__items 
+                    .include__item 
+                        .include__left
+                            .include__pic(style="background-image: url(./img/icon/set-secrets.svg)")
+                        .include__right
+                            .include__header Личный менеджер
+                            .include__txt Каждый проект проходит через нашего менеджера. Он всегда на связи с заказчиков и также заинтересован в запуске качественного сайта.
+                    .include__item 
+                        .include__left
+                            .include__pic(style="background-image: url(./img/icon/set-secrets.svg)")
+                        .include__right
+                            .include__header Прозрачность разработки
+                            .include__txt Абсолютно все задачи мы координируем в корпоративной системе Битрикс24, которая помогает нам следить за процессом и соблюдать все сроки.
+                    .include__item 
+                        .include__left
+                            .include__pic(style="background-image: url(./img/icon/set-secrets.svg)")
+                        .include__right
+                            .include__header Системная работа
+                            .include__txt Только комплексный подход выдает наилучший результат. Наша компания всегда поддерживает отлаженный процесс.
+                    .include__item 
+                        .include__left
+                            .include__pic(style="background-image: url(./img/icon/set-secrets.svg)")
+                        .include__right
+                            .include__header точная аналитика
+                            .include__txt Для привленечяия большего потока клиентов в Ваш бизнес, мы анализируем и измеряем эффективность сайта.
+  when 'call'
+    .include.include--transparent.include--call
+        .include__container.container
+            .include__note мы поможем
+            .include__title.title-3 Хотите свой интернет-магазин? Запишитесь&nbsp;на&nbsp;басплатную&nbsp;консультацию!
+            a(href="https://uralmedias.ru/articles/").btn.btn--special
+                    .btn__special
+                        span Оставить заявку
+                    .btn__text Оставить заявку
+    

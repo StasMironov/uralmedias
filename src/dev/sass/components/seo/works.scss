@@ -52,7 +52,7 @@
 
     &__content {
         padding: 25px 30px 40px;
-        min-height: 225px;
+        min-height: 209px;
         display: flex;
         flex-direction: column;
         margin-top: 10px;
@@ -79,6 +79,7 @@
 
     &__unit {
         font-size: 12px;
+        color: $grey-6;
 
         @media(max-width: 620px) {
             font-size: 10px;
@@ -89,8 +90,8 @@
     &__article {
         font-size: 18px;
         line-height: 18px;
-        font-weight: 700;
-        margin-top: 27px;
+        font-weight: 500;
+        margin-top: 30px;
 
         @media(max-width: 1024px) {
             font-size: 16px;
@@ -102,7 +103,7 @@
 
     &__txt {
         font-size: 14px;
-        margin-top: 6px;
+        margin-top: 10px;
 
         @media(max-width: 1024px) {
             font-size: 12px;
@@ -120,10 +121,6 @@
         opacity: 0;
         transition: opacity .3s;
         font-family: 'OpenSans', sans-serif;
-    }
-
-    &__pic {
-        background-color: #1F2B2F;
     }
 
     &__bottom {

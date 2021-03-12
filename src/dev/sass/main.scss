@@ -175,7 +175,7 @@ input::-ms-clear {
   height: 200vh;
   pointer-events: none;
   background-color: #FFF6ED;
-  z-index: 1;
+  z-index: 9999;
   visibility: hidden;
   opacity: 0;
 }
@@ -311,22 +311,29 @@ input::-ms-clear {
   @media(max-width: 620px) {
     margin-top: 42px;
   }
-}
 
-.swiper-pagination-bullet {
-  background-color: $grey-6;
-  opacity: 1;
-  margin: 0 9px !important;
+  .swiper-pagination-bullet {
+    background-color: $grey-6;
+    opacity: 1;
+    margin: 0 9px !important;
+    transition: linear .3s;
 
-  @media(max-width: 620px) {
-    width: 9px;
-    height: 9px;
+    @media(max-width: 620px) {
+      width: 9px;
+      height: 9px;
+    }
+
+    &:hover {
+      background-color: $red-2;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $red-2;
   }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: $red-2;
-}
+
 
 .scrollbar-track {
   opacity: 0 !important;
@@ -434,5 +441,10 @@ input::-ms-clear {
 @import "./components/helper.scss";
 @import "./components/chart/chart.scss";
 @import "./components/mobile/advantages-app.scss";
+@import "./components/magazine/benefit.scss";
+@import "./components/article/article.scss";
+@import "./components/content.scss";
+@import "./components/article/writer.scss";
+@import "./components/share.scss";
 @import "./link.scss";
 @import "./btn.scss";

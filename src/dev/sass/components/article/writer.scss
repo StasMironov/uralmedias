@@ -1,0 +1,48 @@
+.writer {
+    &__pic {
+        flex-shrink: 0;
+        width: 104px;
+        height: 104px;
+        background-position: center;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        margin-right: 1.31em;
+    }
+
+    &__wrapper {
+        display: flex;
+    }
+
+
+    &__header {
+        text-transform: uppercase;
+    }
+
+    &__name {
+        font-weight: 700;
+    }
+
+    &__content {
+        margin-top: 0;
+        padding: 1.56em 0 2.31em;
+    }
+
+    &__job {
+        margin-top: 0.83em;
+        font-size: 0.75rem;
+    }
+
+    &__box {
+        max-width: 780px;
+        width: 100%;
+        margin-top: 2.43em;
+    }
+
+    &__txt {
+        line-height: 1.5em;
+
+        &:not(:first-child) {
+            margin-top: 1.875em;
+        }
+    }
+}

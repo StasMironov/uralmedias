@@ -1,0 +1,30 @@
+.share {
+    margin-top: 3.625em;
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__items {
+        display: flex;
+        margin-top: 1.31em;
+    }
+
+    &__item {
+        display: block;
+
+        path {
+            transition: linear .3s;
+        }
+
+        &:not(:last-child) {
+            margin-right: 22px;
+        }
+
+        &:hover {
+            .fill {
+                fill: $green-1;
+            }
+        }
+    }
+}
