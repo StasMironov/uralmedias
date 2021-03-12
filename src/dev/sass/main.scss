@@ -34,25 +34,22 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1260px;
   margin: auto;
-  padding: 0 330px 0px;
   box-sizing: border-box;
 
-  @media (max-width:1600px) {
-    padding: 0 40px 0px;
+  @include max1300 {
+    width: 90%;
   }
 
-  @media (max-width:1024px) {
-    padding: 0 20px 0px;
-  }
-
-  @media (max-width:620px) {
-    padding: 0 15px 0px;
+  @include mobile {
+    width: 100%;
+    padding: 0 15px;
   }
 }
 
 img {
+  max-width: 100%;
   vertical-align: bottom;
 }
 
@@ -436,3 +433,4 @@ input::-ms-clear {
 @import "./components/mobile/advantages-app.scss";
 @import "./link.scss";
 @import "./btn.scss";
+@import "./components/case/case.scss";

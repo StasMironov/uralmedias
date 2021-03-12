@@ -1,0 +1,131 @@
+extends ../layout/main
+
+block variables
+    - var title = 'Победа'
+    - var pageClass = 'index-page';
+    - var setTitle = 'Победа';
+    - var prototype_img = "background-image: url(img/case/pobeda/img-prototype.png);";
+
+block content
+
+    div(data-barba="container" data-barba-namespace="about")
+        .bildboard.bildboard--pobeda
+            picture
+                source(media="(max-width: 899px)" srcset="img/case/pobeda/bg-top-mobile.jpg")
+                source(media="(min-width: 900px)" srcset="img/case/pobeda/bg-top.jpg")
+                img(src="img/case/pobeda/bg-top.jpg" alt="pobeda" title="")
+            .bildboard__container.container
+                .bildboard__grid
+                    include ../modules/breadcrumbs-case
+                    h1.bildboard__title МГКА «Победа»
+
+    .case__section
+        .container
+            h2.case__title Задача
+            .case__text.
+                Московская Городская Коллегия Адвокатов «ПОБЕДА» является одним из многофункциональных юридических
+                адвокатских образований, расположенным на территории Москвы и зарегистрированным в Адвокатской Палате
+                Московской области. Перед командой Uralmedias стояла задача: разработать корпоративный сайт на
+                индивидуальном решении, представляющий организацию в интернете, с помощью которого заказчик будет
+                демонстрировать серьезность коллегии и рассказать о направлениях, по которым оказываются услуги.
+
+
+    .case__section.case__section--colored
+        .container
+            .case__prototype(style=`${prototype_img}`)
+                .case__block.case__block--right
+                    .case__title.case__title--white.case__title--text-left Решение
+                    .case__text.case__text--white.case__text--text-left.
+                        После погружения в бизнес-процессы, выявления потребностей заказчика и брифинга, мы приступили
+                        к разработке дизайн-концепта.  Именно он помог нам визуально передать первичные идеи.
+
+                .case__block.case__block--img
+                    img(src="img/case/pobeda/img-prototype-mobile.png" alt="prototype" title="")
+
+    .case__section.case__section--design
+        .container
+            h2.case__title Дизайн готового сайта
+            .case__text.case__text--short.
+                Оформление контента было выполнено в строгом дизайнерском решении. Все сделано для того, чтобы
+                пользователь не отвлекался на лишние детали и сконцентрировался на содержимом сайта.
+
+        .swiper-container.case__slider.case__slider--1
+            .swiper-wrapper
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide1.jpg")
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide2.jpg")
+
+        .swiper-container.case__slider.case__slider--2(dir="rtl")
+            .swiper-wrapper
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide4.jpg")
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide3.jpg")
+
+        .swiper-container.case__slider.case__slider--3
+            .swiper-wrapper
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide5.jpg")
+                .swiper-slide.case-slide
+                    img.case-slide__img(src="img/case/pobeda/slide6.jpg")
+
+    .case__section.case__section--mobile
+        picture
+            source(media="(max-width: 899px)" srcset="img/case/pobeda/bg-mobiledev-mobile.png")
+            source(media="(min-width: 900px)" srcset="img/case/pobeda/bg-mobiledev.jpg")
+            img(src="img/case/pobeda/bg-mobiledev.jpg" alt="pobeda" title="")
+        .container
+
+            h2.case__title.case__title--text-left Мобильная адаптация
+            .case__block
+                .case__text.case__text--text-left.
+                    Чтобы компания не потеряла потенциального клиента, мы адаптировали сайт под мобильные устройства
+                    и позаботились об удобстве его использования.
+
+    .case__section.case__section--typography
+        .container
+            h2.case__title Типографика и цвет
+            .case__text.
+                В качестве основных цветов выбрали респектабельные, сложные оттенки коричневого и простой белый,
+                а в качестве акцентного — оттенок желтого. Так как коллегия предоставляет качественные юридические
+                услуги, а в штате — адвокаты с многолетним опытом, которые готовы браться за самые сложные случаи,
+                такое цветовое решение будет вызывать доверие у клиента.
+
+            .case__fonts
+                .case__font-big Aa
+                .case__font-small Lato
+
+            .case__colors
+                .case__color.case__color--white(style="background-color:#FFFFFF;") #FFFFFF
+                .case__color(style="background-color:#F2EEEC;") #F2EEEC
+                .case__color(style="background-color:#917B72;") #917B72
+                .case__color(style="background-color:#5E5662;") #2E2E2E
+                .case__color(style="background-color:#FFC664;") #FFC664
+
+    .case__section.case__section--summary
+        .container
+            h2.case__title Подведем итоги
+            .case-summary
+                div
+                    h3.case-summary__title Отзыв заказчика и рекламные кампании
+                    .case-summary__text.
+                        Дизайн понравился заказчику, и оставалось провести еще ряд работ до тестирования и запуска.
+                        В результате получился сайт, представляющий серьезную коллегию адвокатов, отвечающий всем
+                        требованиям как заказчика, так и пользователя. Для того, чтобы сайт начал получать первый
+                        трафик, мы запустили рекламные кампании в Яндекс и Google.
+                .case-summary__img
+                    img(src="img/case/pobeda/img-summary-1.png" alt="summary" title="")
+
+            .case-summary
+                div
+                    h3.case-summary__title Затраченное время
+                    .case-summary__text.
+                        Стильный дизайн, наличие всей необходимой информации и простота взаимодействия — ключевые
+                        показатели успешного сайта, которые мы использовали. К слову, разработали мы этот сайт
+                        за 2 месяца. Основное время ушло на создание прототипа и его дизайна.
+
+                .case-summary__img
+                    img(src="img/case/pobeda/img-summary-2.png" alt="summary" title="")
+
+block script
