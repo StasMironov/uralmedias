@@ -220,9 +220,7 @@ if ($('.header__inner').exists) {
 
 checkPage();
 
-var Slider =
-/*#__PURE__*/
-function () {
+var Slider = /*#__PURE__*/function () {
   function Slider(init, name, view, space, column, ratio) {
     var pagination = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
     var arrow = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
@@ -435,9 +433,7 @@ function init() {
         namespace: ['index']
       },
       leave: function leave() {
-        return _asyncToGenerator(
-        /*#__PURE__*/
-        regeneratorRuntime.mark(function _callee() {
+        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
           return regeneratorRuntime.wrap(function _callee$(_context) {
             while (1) {
               switch (_context.prev = _context.next) {
@@ -464,9 +460,7 @@ function init() {
         namespace: ['blog']
       },
       leave: function leave() {
-        return _asyncToGenerator(
-        /*#__PURE__*/
-        regeneratorRuntime.mark(function _callee2() {
+        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
           return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
               switch (_context2.prev = _context2.next) {
@@ -493,9 +487,7 @@ function init() {
         namespace: ['about']
       },
       leave: function leave() {
-        return _asyncToGenerator(
-        /*#__PURE__*/
-        regeneratorRuntime.mark(function _callee3() {
+        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
           return regeneratorRuntime.wrap(function _callee3$(_context3) {
             while (1) {
               switch (_context3.prev = _context3.next) {
@@ -679,24 +671,6 @@ if ($('.btn--special').exists()) {
 }
 
 $('#certificate').lightGallery();
-var partners = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination'
-  },
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  },
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar'
-  }
-});
 gsap.set('.place__bg', {
   yPercent: 0,
   transformOrigin: 'left center'
@@ -861,20 +835,30 @@ $(window).on('resize load', function () {
     Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
   }
 });
-$(function () {
-  $('a').click(function () {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var $target = $(this.hash);
-      $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
-
-      if ($target.length) {
-        var targetOffset = $target.offset().top - 140;
-        $('html,body').animate({
-          scrollTop: targetOffset
-        }, 500); //скорость прокрутки
-
-        return false;
-      }
+var caseSlider1 = new Swiper('.case__slider--1', {
+  slidesPerView: 'auto',
+  spaceBetween: 30,
+  breakpoints: {
+    1200: {
+      spaceBetween: 65
     }
-  });
+  }
+});
+var caseSlider2 = new Swiper('.case__slider--2', {
+  slidesPerView: 'auto',
+  spaceBetween: 30,
+  breakpoints: {
+    1200: {
+      spaceBetween: 65
+    }
+  }
+});
+var caseSlider3 = new Swiper('.case__slider--3', {
+  slidesPerView: 'auto',
+  spaceBetween: 30,
+  breakpoints: {
+    1200: {
+      spaceBetween: 65
+    }
+  }
 });

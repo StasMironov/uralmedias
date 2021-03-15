@@ -752,28 +752,6 @@ if ($('.btn--special').exists()) {
 
 $('#certificate').lightGallery();
 
-var partners = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-})
-
 gsap.set('.place__bg', {
     yPercent: 0,
     transformOrigin: 'left center',
@@ -976,19 +954,34 @@ $(window).on('resize load', function () {
     }
 });
 
-$(function () {
-    $('a').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-            && location.hostname == this.hostname) {
-            var $target = $(this.hash);
-            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
-            if ($target.length) {
-                var targetOffset = $target.offset().top - 140;
-                $('html,body').animate({ scrollTop: targetOffset }, 500);//скорость прокрутки
-                return false;
-            }
+var caseSlider1 = new Swiper('.case__slider--1', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    breakpoints: {
+        1200: {
+            spaceBetween: 65,
         }
-    });
+    }
+});
+
+var caseSlider2 = new Swiper('.case__slider--2', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    breakpoints: {
+        1200: {
+            spaceBetween: 65,
+        }
+    }
+});
+
+var caseSlider3 = new Swiper('.case__slider--3', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    breakpoints: {
+        1200: {
+            spaceBetween: 65,
+        }
+    }
 });
 
 

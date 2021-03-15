@@ -6,7 +6,7 @@ module.exports = function() {
 		.pipe($.gp.sass())
 	//autoprefixer
 		.pipe($.gp.autoprefixer({
-			browsers: ['last 10 versions']
+            overrideBrowserslist: ['last 10 versions']
 		}))
 	//error message
 		.on("error", $.gp.notify.onError({
