@@ -3,9 +3,6 @@ jQuery.fn.exists = function () {
 }
 
 const projectFunc = {
-    hidePopup: function () {
-        console.log(1);
-    },
     showBlogPopup: function (element) {
         let blogPopup = $(element).find('.blog__popup');
         let blogText = $(element).find('.blog__txt');
@@ -55,7 +52,6 @@ const projectFunc = {
 
         popupBlog.play();
     },
-
     hiddenTabs: function (index) {
         if ($('.include--app').exists()) {
             try {
@@ -75,7 +71,6 @@ const projectFunc = {
             }
         }
     },
-
     showTabs: function (index) {
         if ($('.include--app').exists()) {
             try {
@@ -87,8 +82,28 @@ const projectFunc = {
                 console.log(err);
             }
         }
+    },
+    getScrollbarWidth: function () {
+        let div, width = projectFunc.getScrollbarWidth.width;
+        if (width === undefined) {
+            div = document.createElement('div');
+            div.innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>';
+            div = div.firstChild;
+            document.body.appendChild(div);
+
+            width = projectFunc.getScrollbarWidth.width = div.offsetWidth - div.clientWidth;
+            document.body.removeChild(div);
+        }
+        return width;
     }
 };
+
+
+window.addEventListener('load', () => {
+    let locked = document.querySelector('html');
+    locked.style.setProperty('--wScroll', projectFunc.getScrollbarWidth() + 'px');
+});
+
 
 if ($('.include__btn').exists()) {
     try {
@@ -450,65 +465,65 @@ function init() {
 
     });
 
-    barba.init({
-        debug: true,
-        transitions: [{
-            name: 'index',
-            to: {
-                namespace: ['index']
-            },
+    // barba.init({
+    //     debug: true,
+    //     transitions: [{
+    //         name: 'index',
+    //         to: {
+    //             namespace: ['index']
+    //         },
 
-            async leave() {
-                await loaderIn();
+    //         async leave() {
+    //             await loaderIn();
 
-            },
-            enter() {
-                checkPage();
-                loaderAway();
-                animateBildboard();
-            }
-        },
-        {
-            name: 'blog',
-            to: {
-                namespace: ['blog']
-            },
+    //         },
+    //         enter() {
+    //             checkPage();
+    //             loaderAway();
+    //             animateBildboard();
+    //         }
+    //     },
+    //     {
+    //         name: 'blog',
+    //         to: {
+    //             namespace: ['blog']
+    //         },
 
-            async leave() {
-                await loaderIn();
+    //         async leave() {
+    //             await loaderIn();
 
-            },
-            enter() {
-                checkPage();
-                loaderAway();
-                animateBildboard();
-            }
+    //         },
+    //         enter() {
+    //             checkPage();
+    //             loaderAway();
+    //             animateBildboard();
+    //         }
 
-        },
-        {
-            name: 'about',
-            to: {
-                namespace: ['about']
-            },
+    //     },
+    //     {
+    //         name: 'about',
+    //         to: {
+    //             namespace: ['about']
+    //         },
 
-            async leave() {
-                await loaderIn();
+    //         async leave() {
+    //             await loaderIn();
 
-            },
-            enter() {
-                checkPage();
-                loaderAway();
-                animateBildboard();
-            }
+    //         },
+    //         enter() {
+    //             checkPage();
+    //             loaderAway();
+    //             animateBildboard();
+    //         }
 
-        },
-        ]
-    })
+    //     },
+    //     ]
+    // })
 
 }
 
 function checkPage() {
-    if ((window.location.pathname == '/index.html') || (window.location.pathname == '/index.html')) {
+    if ((window.location.pathname == '/index.html') || (window.location.pathname == '/')) {
         $('.header').removeClass('mf-style');
     }
     else {
@@ -742,13 +757,7 @@ if ($('.btn--special').exists()) {
             'width': widthhEl + 39 + 'px'
         });
     });
-
-
-    // console.log(widthhEl);
 }
-
-
-
 
 $('#certificate').lightGallery();
 
@@ -953,6 +962,297 @@ $(window).on('resize load', function () {
         Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
 });
+
+if ($('.burger').exists()) {
+    try {
+        let header = document.querySelector('.header');
+        const burgerBtn = header.querySelector('.burger');
+
+        const panelEl = header.querySelector('.js-nav');
+
+        const panelHideTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.6 }
+        });
+
+        const panelShowTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.6 }
+        });
+
+        panelHideTl
+            .to(
+                panelEl,
+                {
+                    autoAlpha: 0,
+                    xPercent: 100,
+                    ease: Cubic.easeOut
+                }
+            )
+
+        panelShowTl
+            .fromTo(
+                panelEl,
+                {
+                    autoAlpha: 0,
+                    xPercent: 100
+                },
+                {
+                    autoAlpha: 1,
+                    xPercent: 0,
+                    ease: Cubic.easeOut
+                }
+            )
+
+        burgerBtn.addEventListener('click', function () {
+            this.classList.toggle('opened'); this.setAttribute('aria-expanded', this.classList.contains('opened'));
+
+            if (this.classList.contains('opened')) {
+                panelHideTl.reverse();
+                panelShowTl.play();
+            }
+            else {
+                panelShowTl.reverse();
+                panelHideTl.play();
+            }
+        });
+
+        $(window).on('resize load', function () {
+            if ($(this).width() > 1024) {
+                if (burgerBtn.classList.contains('opened')) {
+                    burgerBtn.classList.remove('opened');
+                    hideMenu('.js-dropMenu');
+                    panelShowTl.reverse();
+                    panelHideTl.play();
+                }
+            }
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
+
+// this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))
+
+const getHeight = (elem) => {
+    const heightRes = $(elem).outerHeight();
+    return heightRes;
+}
+
+const showMenu = (element, heightEl) => {
+    const menutl = new TimelineMax({
+        defaults: { duration: 0.3 }
+    });
+
+    menutl
+        .to(
+            element,
+            {
+                height: heightEl,
+                ease: "power1.out",
+            }
+        )
+        .to(
+            element,
+            {
+                autoAlpha: 1,
+            },
+            '-=0.1'
+        )
+}
+
+const hideMenu = (element) => {
+    const menutl = new TimelineMax({
+        defaults: { duration: 0.3 }
+    });
+
+    menutl
+        .to(
+            element,
+            {
+                autoAlpha: 0,
+            }
+        )
+        .to(
+            element,
+            {
+                height: 0,
+                ease: "power1.out",
+            },
+            '-=0.1'
+        )
+}
+
+
+
+if ($('.js-list').exists()) {
+    const navPanel = document.querySelector('.header__nav--tablet');
+    const btnList = navPanel.querySelector('.js-list');
+
+    btnList.addEventListener('click', function () {
+        this.classList.toggle('active');
+
+        if (this.classList.contains('active')) {
+            const heightDropList = getHeight('.js-in');
+            showMenu('.js-dropMenu', heightDropList);
+        }
+        else {
+            hideMenu('.js-dropMenu');
+        }
+    });
+}
+
+const lockedDOM = (status) => {
+    if (status) {
+        $('html').css('overflow', 'hidden');
+    }
+    else {
+        $('html').css('overflow', 'auto');
+    }
+}
+
+const showOverlay = (status) => {
+    if ($('.js-overlay').exists()) {
+
+        const overlayEl = document.querySelector('.js-overlay');
+
+        const showOvTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.6 },
+            // onComplete: lockedDOM(true),
+            onComplete: formShow,
+            onCompleteParams: ['.js-form-request', true]
+        });
+
+        const hideOvTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.3 },
+            // onComplete: lockedDOM(false),
+            onStart: formShow,
+            onStartParams: ['.js-form-request', false]
+        });
+
+        showOvTl
+            .to(
+                overlayEl,
+                {
+                    autoAlpha: 1,
+                    ease: "power2.out"
+                }
+            )
+
+        hideOvTl
+            .to(
+                overlayEl,
+                {
+                    autoAlpha: 0,
+                    ease: "power2.out"
+                },
+                '+=0.6'
+            )
+
+        if (status) {
+            showOvTl.reverse();
+            showOvTl.play();
+        }
+        else {
+            hideOvTl.reverse();
+            hideOvTl.play();
+        }
+    }
+}
+
+const formShow = (element, status) => {
+    if ($(element).exists()) {
+        const element = document.querySelector('.js-form-request');
+        const formShowTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.5 }
+        });
+
+        const formHideTl = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.8 }
+        });
+
+        formHideTl
+            .fromTo(
+                element,
+                {
+                    yPercent: -50,
+                    xPercent: -50,
+                    autoAlpha: 1
+                },
+                {
+                    yPercent: -200,
+                    ease: "power2.out"
+                }
+            )
+            .to(
+                element,
+                {
+                    autoAlpha: 0,
+                }
+            )
+
+        formShowTl
+            .fromTo(
+                element,
+                {
+                    yPercent: -100,
+                    xPercent: -50,
+                    autoAlpha: 0
+                },
+                {
+                    autoAlpha: 1,
+                    yPercent: -50,
+                    ease: "power2.out"
+                },
+                '-=0.2'
+            )
+
+
+        if (status) {
+            formHideTl.reverse();
+            formShowTl.play();
+        }
+        else {
+            formShowTl.reverse();
+            formHideTl.play();
+        }
+    }
+}
+
+
+if ($('.js-form-call').exists()) {
+    try {
+        let header = document.querySelector('.header');
+        const formBtn = header.querySelector('.js-form-call');
+
+        formBtn.addEventListener('click', () => {
+            showOverlay(true);
+        });
+    }
+    catch (err) {
+        console.log(err)
+    }
+}
+
+if ($('.js-overlay').exists()) {
+    $('.js-overlay').on('click', () => {
+        showOverlay(false);
+    });
+}
+
+
+
 
 var caseSlider1 = new Swiper('.case__slider--1', {
     slidesPerView: 'auto',

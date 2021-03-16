@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  font-family: 'Gotham Pro', sans-serif;
+  font-family: 'GothamPro', sans-serif;
   color: $black;
-  font-weight: 300;
+  font-weight: normal;
   overflow: hidden;
   font-size: 16px;
   background-color: #fff;
@@ -42,7 +42,12 @@ body {
     width: 90%;
   }
 
-  @include mobile {
+  @include max1024 {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  @include mobile620 {
     width: 100%;
     padding: 0 15px;
   }
