@@ -963,6 +963,21 @@ $(window).on('resize load', function () {
     }
 });
 
+$(function () {
+    $('a').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            && location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top - 140;
+                $('html,body').animate({ scrollTop: targetOffset }, 500);//скорость прокрутки
+                return false;
+            }
+        }
+    });
+});
+
 if ($('.burger').exists()) {
     try {
         let header = document.querySelector('.header');
@@ -1123,7 +1138,8 @@ const showOverlay = (status) => {
             reversed: true,
             paused: true,
             defaults: { duration: 0.6 },
-            // onComplete: lockedDOM(true),
+            onComplete: lockedDOM(true),
+            onCompleteParams: [true],
             onComplete: formShow,
             onCompleteParams: ['.js-form-request', true]
         });

@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -807,6 +809,23 @@ $(window).on('resize load', function () {
     Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
   }
 });
+$(function () {
+  $('a').click(function () {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+
+      if ($target.length) {
+        var targetOffset = $target.offset().top - 140;
+        $('html,body').animate({
+          scrollTop: targetOffset
+        }, 500); //скорость прокрутки
+
+        return false;
+      }
+    }
+  });
+});
 
 if ($('.burger').exists()) {
   try {
@@ -926,17 +945,18 @@ var lockedDOM = function lockedDOM(status) {
 
 var showOverlay = function showOverlay(status) {
   if ($('.js-overlay').exists()) {
+    var _TimelineMax;
+
     var overlayEl = document.querySelector('.js-overlay');
-    var showOvTl = new TimelineMax({
+    var showOvTl = new TimelineMax((_TimelineMax = {
       reversed: true,
       paused: true,
       defaults: {
         duration: 0.6
       },
-      // onComplete: lockedDOM(true),
-      onComplete: formShow,
-      onCompleteParams: ['.js-form-request', true]
-    });
+      onComplete: lockedDOM(true),
+      onCompleteParams: [true]
+    }, _defineProperty(_TimelineMax, "onComplete", formShow), _defineProperty(_TimelineMax, "onCompleteParams", ['.js-form-request', true]), _TimelineMax));
     var hideOvTl = new TimelineMax({
       reversed: true,
       paused: true,

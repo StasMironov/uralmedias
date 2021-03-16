@@ -1,8 +1,7 @@
 .advertising-price {
     margin-top: 80px;
     background-color: $ochre;
-    padding: 85px 0 0px;
-    background-position: bottom;
+    padding: 85px 0 97px;
     background-repeat: no-repeat;
 
     &__container {
@@ -12,8 +11,6 @@
     &__href {
         opacity: 0;
         transition: opacity .3s ease-in;
-        margin-top: 42px;
-        text-transform: uppercase;
     }
 
     &__bg {
@@ -37,9 +34,10 @@
         margin-left: 40px;
         min-height: 468px;
         background-color: white;
+        padding: 28px 35px;
         box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
         border-radius: 12px;
-        padding: 28px 35px 37px;
+        padding-bottom: 90px;
         cursor: pointer;
 
         &:hover {
@@ -50,7 +48,7 @@
     }
 
     &__cover {
-        margin-top: 44px;
+        margin-top: 40px;
     }
 
     &__header {
@@ -72,7 +70,7 @@
         margin-top: 24px;
         max-width: 321px;
         width: 100%;
-        margin-bottom: 17px;
+        margin-bottom: 40px;
     }
 
     &__ref {
