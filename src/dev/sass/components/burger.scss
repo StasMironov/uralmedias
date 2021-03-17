@@ -8,14 +8,17 @@
 
   @media(max-width: 1024px) {
     display: flex;
+    margin-right: -8px;
   }
 
   @media(max-width: 620px) {
     margin-right: -9px;
+  }
 
-    svg {
-      width: 43px;
-      height: 34px;
+  svg {
+    @media(max-width: 620px) {
+      width: 36px;
+      height: 30px
     }
   }
 

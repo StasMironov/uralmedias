@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  font-family: 'Gotham Pro', sans-serif;
+  font-family: 'GothamPro', sans-serif;
   color: $black;
-  font-weight: 300;
+  font-weight: normal;
   overflow: hidden;
   font-size: 16px;
   background-color: #fff;
@@ -34,25 +34,27 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1260px;
   margin: auto;
-  padding: 0 330px 0px;
   box-sizing: border-box;
 
-  @media (max-width:1600px) {
-    padding: 0 40px 0px;
+  @include max1300 {
+    width: 90%;
   }
 
-  @media (max-width:1024px) {
-    padding: 0 20px 0px;
+  @include max1024 {
+    width: 100%;
+    padding: 0 20px;
   }
 
-  @media (max-width:620px) {
-    padding: 0 15px 0px;
+  @include mobile620 {
+    width: 100%;
+    padding: 0 15px;
   }
 }
 
 img {
+  max-width: 100%;
   vertical-align: bottom;
 }
 
@@ -448,3 +450,4 @@ input::-ms-clear {
 @import "./components/share.scss";
 @import "./link.scss";
 @import "./btn.scss";
+@import "./components/case/case.scss";

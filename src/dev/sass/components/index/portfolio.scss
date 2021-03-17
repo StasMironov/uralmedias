@@ -291,6 +291,10 @@
                         display: block !important;
                     }
                 }
+
+                img {
+                    max-width: initial;
+                }
             }
 
             .portfolio__element {

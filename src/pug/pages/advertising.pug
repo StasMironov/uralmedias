@@ -4,9 +4,10 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'Найдём новых клиентов для вашего бизнеса';
 	- var include = 'link';
-	- var quote = 'advertising'
+	- var quote = 'advertising';
 	- var bildboard_img = "background-image: url(img/dataBild/img7.jpg);";
-	- var bildboard_include = 'special-btn'
+	- var bildboard_include = 'special-btn';
+	- var bildboard_quote = 'Опыт, профессионализм и персональная работа с каждым своим заказчиком – вот составляющие нашей успешной рекламной стратегии.';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -46,7 +47,7 @@ block content
 								.advertising-price__ref Внедряем рекомендации по результатам аудита.
 							.advertising-price__bottom
 								.advertising-price__price бесплатно
-								.advertising-price__href 
+								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
 						.advertising-price__item 
 							.advertising-price__top
 								.advertising-price__header Настройка и запуск рекламных кампаний
@@ -57,7 +58,7 @@ block content
 								.advertising-price__ref Подключаем систему автоматической регулировки ставок Marilyn.
 							.advertising-price__bottom
 								.advertising-price__price от 10 000₽
-								.advertising-price__href 
+								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
 						.advertising-price__item 
 							.advertising-price__top
 								.advertising-price__header Ведение рекламной кампании и оптимизация
@@ -69,13 +70,13 @@ block content
 								.advertising-price__ref Ежемесячный отчет.
 							.advertising-price__bottom
 								.advertising-price__price от 4 000₽/мес
-								.advertising-price__href 
+								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
 		
 		.include 
 			.include__container.container
 				.include__title Если у Вас уже настроена контекстная реклама, но эффекта нет
 				.include__txt Мы с удовольствием исследуем Ваши рекламные кампании и качество трафика, используя данные статистики. Предоставьте гостевой доступ в метрику и Analytics и отправьте Вашу заявку на аудит
-				a(href="https://uralmedias.ru/articles/").btn.btn--special
+				a(href="#").btn.btn--special
 					.btn__special
 						span Заказать проект
 					.btn__text Заказать проект
