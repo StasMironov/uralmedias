@@ -1,5 +1,5 @@
 .request-popup.js-form-request
-    .request-popup__close
+    .request-popup__close.js-close-form
     .request-popup__inner
         .request-popup__left
             .request-popup__title Время покорять новые вершины!
@@ -12,7 +12,10 @@
                     //- .request-popup__list
                 input.request-popup__field(placeholder="Ваше имя")
                 input.request-popup__field(placeholder="Ваш телефон")
-                a(href="#").btn.btn--submit Отправить заявку
+                a(href="#").btn.btn--special
+                    .btn__special
+                        span Заказать проект
+                    .btn__text Заказать проект
             .request-popup__quote Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a>
         .request-popup__right(style="background-image: url(img/bg.jpg)")
 

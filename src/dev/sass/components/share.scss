@@ -1,6 +1,10 @@
 .share {
     margin-top: 3.625em;
 
+    @media(max-width: 620px) {
+        margin-top: 2.857em;
+    }
+
     &__title {
         font-weight: 500;
     }
@@ -19,6 +23,10 @@
 
         &:not(:last-child) {
             margin-right: 22px;
+
+            @media(max-width: 620px) {
+                margin-right: 25px;
+            }
         }
 
         &:hover {

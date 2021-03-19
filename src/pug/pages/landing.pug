@@ -9,42 +9,15 @@ block variables
 	- var includeBloc = 'landing';
 	- var include = "landing";
 	- var bildboard_include = 'special';
+	- var priceList = '2'; 
+	- var priceBg = 'background-color: #f6f6f6';
 
 block content
 	div(data-barba="container" data-barba-namespace="about")
 		include ../modules/bildboard
 		include ../modules/breadcrumbs
 		include ../modules/quote
-		.advertising-price.advertising-price--landing(style="background-image: url(./img/decor/dec15.png)")
-			.advertising-price__container.container
-				.advertising-price__title.title-3 Варианты разработки продукта
-				.advertising-price__cover
-					.advertising-price__items
-						a(href="javascript:void(0);").advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Создание лендинга на конструкторе
-								.advertising-price__period от 7 дней на разработку
-							.advertising-price__note Готовим контент и делаем одностраничник на популярном конструкторе
-							.advertising-price__list
-								.advertising-price__ref Готовые решения на 1С-Битрикс;
-								.advertising-price__ref Конструкторы Tilda и PlatformaLP.
-							.advertising-price__bottom
-								.advertising-price__price от 60 000₽
-								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
-						a(href="javascript:void(0);").advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Индивидуальная разработка
-								.advertising-price__period от 7 дней на разработку
-							.advertising-price__note Полный цикл производства
-							.advertising-price__list
-								.advertising-price__ref Сбор требований и концепция страницы;
-								.advertising-price__ref Дизайн, пользовательские сценарии;
-								.advertising-price__ref Адаптивная вёрстка;
-								.advertising-price__ref Программирование и тестирование;
-								.advertising-price__ref Интеграция с CRM и системами аналитики.
-							.advertising-price__bottom
-								.advertising-price__price от 100 000₽
-								.advertising-price__href.lik.link--detail ЗАКАЗАТЬ разработку сайта
+		include ../modules/price
 		.landing-stages
 			.landing-stages__container.container
 				.landing-stages__title.title-3 Этапы разработки

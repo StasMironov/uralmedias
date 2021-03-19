@@ -7,6 +7,19 @@
         border-radius: 50%;
         background-repeat: no-repeat;
         margin-right: 1.31em;
+        background-size: cover;
+        background-position: center;
+
+        @media(max-width: 1024px) {
+            width: 90px;
+            height: 90px;
+        }
+
+        @media(max-width: 620px) {
+            width: 45px;
+            height: 45px;
+            margin-right: 0.92em;
+        }
     }
 
     &__wrapper {
@@ -20,26 +33,47 @@
 
     &__name {
         font-weight: 700;
+
+        @media(max-width: 620px) {
+            font-size: 1.14em;
+        }
     }
 
     &__content {
         margin-top: 0;
         padding: 1.56em 0 2.31em;
+
+        @media(max-width: 620px) {
+            padding: 0;
+            padding-top: 0.142em;
+        }
     }
 
     &__job {
         margin-top: 0.83em;
         font-size: 0.75rem;
+
+        @media(max-width: 620px) {
+            margin-top: 0.41em;
+        }
     }
 
     &__box {
         max-width: 780px;
         width: 100%;
         margin-top: 2.43em;
+
+        @media(max-width: 620px) {
+            margin-top: 1.428em;
+        }
     }
 
     &__txt {
         line-height: 1.5em;
+
+        @media(max-width: 620px) {
+            line-height: 1.78em;
+        }
 
         &:not(:first-child) {
             margin-top: 1.875em;

@@ -5,6 +5,10 @@
         margin-top: 70px;
     }
 
+    @media(max-width: 620px) {
+        margin-top: 50px;
+    }
+
     &__title {
         position: relative;
         text-align: center;

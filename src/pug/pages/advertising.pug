@@ -8,6 +8,8 @@ block variables
 	- var bildboard_img = "background-image: url(img/dataBild/img7.jpg);";
 	- var bildboard_include = 'special-btn';
 	- var bildboard_quote = 'Опыт, профессионализм и персональная работа с каждым своим заказчиком – вот составляющие нашей успешной рекламной стратегии.';
+	- var priceList = '3'; 
+	- var priceBg = 'background-color: #f6f6f6';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -31,57 +33,17 @@ block content
 						.advertising__item
 							.advertising__pic(style="background-image: url(./img/icon/set-adv.svg)")
 							.advertising__txt Показ рекламы аудтиории, уже заинтересованнной в опредленном Вашем товаре или услуге
-		.advertising-price(style="background-image: url(./img/decor/dec15.png)")
-			.advertising-price__container.container
-				.advertising-price__title.title-3 Стоимость контекстной рекламы
-				.advertising-price__cover
-					.advertising-price__items
-						.advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header ПОЛНЫЙ Аудит рекламных компаний
-								.advertising-price__period от 2 дней на разработку
-							.advertising-price__list
-								.advertising-price__ref Проверяем рекламные кампании по чек-листам Яндекс и Google;
-								.advertising-price__ref Составляем список рекомендаций по улучшению кампаний;
-								.advertising-price__ref Перераспределяем рекламный бюджет для результативности;
-								.advertising-price__ref Внедряем рекомендации по результатам аудита.
-							.advertising-price__bottom
-								.advertising-price__price бесплатно
-								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
-						.advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Настройка и запуск рекламных кампаний
-								.advertising-price__period от 5 дней на разработку
-							.advertising-price__list
-								.advertising-price__ref Cогласовываем список поисковых запросов, объявления, посадочные страницы;
-								.advertising-price__ref Настраиваем рекламные кампании в Директ и/или AdWords;
-								.advertising-price__ref Подключаем систему автоматической регулировки ставок Marilyn.
-							.advertising-price__bottom
-								.advertising-price__price от 10 000₽
-								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
-						.advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Ведение рекламной кампании и оптимизация
-								.advertising-price__period от 5 дней на разработку
-							.advertising-price__list
-								.advertising-price__ref Используем брокер ставок и оптимизатор конверсий;
-								.advertising-price__ref Еженедельный контроль расходов и основных метрик;
-								.advertising-price__ref Расчет цены конверсии и корректировка рекламных настроек;
-								.advertising-price__ref Ежемесячный отчет.
-							.advertising-price__bottom
-								.advertising-price__price от 4 000₽/мес
-								a(href="javascript:void(0);").advertising-price__href.link.link--detail заказать проект
+		
+		include ../modules/price
 		
 		.include 
 			.include__container.container
-				.include__title Если у Вас уже настроена контекстная реклама, но эффекта нет
+				.include__title.title-3 Если у Вас уже настроена контекстная реклама, но эффекта нет
 				.include__txt Мы с удовольствием исследуем Ваши рекламные кампании и качество трафика, используя данные статистики. Предоставьте гостевой доступ в метрику и Analytics и отправьте Вашу заявку на аудит
 				a(href="#").btn.btn--special
 					.btn__special
 						span Заказать проект
 					.btn__text Заказать проект
-				
-
 		.quote
 			.quote__container.container
 				.quote__title.title-3 Контекстная реклама

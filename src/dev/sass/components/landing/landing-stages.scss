@@ -1,11 +1,28 @@
 .landing-stages {
     margin-top: 84px;
 
+    @media(max-width: 1024px) {
+        margin-top: 70px;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 50px;
+    }
+
     &__items {
         display: flex;
         flex-wrap: wrap;
         margin-left: -85px;
         margin-top: -60px;
+
+        @media(max-width: 1024px) {
+            margin-left: -20px;
+            margin-top: -35px;
+        }
+
+        @media(max-width: 990px) {
+            margin-top: -25px;
+        }
     }
 
     &__item {
@@ -18,9 +35,33 @@
         min-height: 300px;
         margin-top: 60px;
 
+        @media(max-width: 1024px) {
+            width: calc(33.333% - 20px);
+            margin-left: 20px;
+            margin-top: 35px;
+        }
+
+        @media(max-width: 990px) {
+            margin-top: 25px;
+        }
+
+        @media(max-width: 700px) {
+            width: calc(50% - 20px);
+            min-height: 244px;
+        }
+
+        @media(max-width: 500px) {
+            width: 100%;
+            min-height: 204px;
+        }
+
         &:nth-child(2) {
             .landing-stages__num {
                 margin-top: auto;
+
+                @media(max-width: 990px) {
+                    margin-top: initial;
+                }
             }
         }
 
@@ -28,6 +69,10 @@
         &:nth-child(6) {
             .landing-stages__num {
                 margin-top: auto;
+
+                @media(max-width: 990px) {
+                    margin-top: initial;
+                }
             }
         }
 
@@ -53,6 +98,10 @@
             top: 0;
             bottom: 0;
             margin: auto;
+
+            @media(max-width: 1024px) {
+                display: none;
+            }
 
             .element {
                 position: absolute;
@@ -84,6 +133,12 @@
         background-color: white;
         box-shadow: 1.90608px 3.81215px 3.81215px rgba(0, 0, 0, 0.1);
         border-radius: 50%;
+
+        @media(max-width: 1024px) {
+            width: 90px;
+            height: 90px;
+            font-size: 45px;
+        }
     }
 
     &__header {
@@ -92,11 +147,33 @@
         font-weight: 700;
         text-transform: uppercase;
         margin-top: 30px;
+
+        @media(max-width: 1235px) {
+            line-height: 25px;
+        }
+
+        @media(max-width: 1024px) {
+            margin-top: 25px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 23px;
+        }
     }
 
     &__txt {
         margin-top: 13px;
         font-size: 14px;
         line-height: 20px;
+
+        @media(max-width: 990px) {
+            margin-top: 10px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 5px;
+        }
     }
 }

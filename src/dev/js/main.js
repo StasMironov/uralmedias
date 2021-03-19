@@ -926,7 +926,6 @@ $(window).on('resize load', function () {
     }
 });
 
-
 $(window).on('resize load', function () {
     if ($(this).width() <= 1024) {
         if ($('.reach__cover').exists()) {
@@ -942,7 +941,6 @@ $(window).on('resize load', function () {
         }
     }
 });
-
 
 $(window).on('resize load', function () {
     if ($(this).width() <= 1100 && $(this).width() > 620) {
@@ -1027,14 +1025,17 @@ if ($('.burger').exists()) {
             if (this.classList.contains('opened')) {
                 panelHideTl.reverse();
                 panelShowTl.play();
+                lockedDOM(true);
             }
             else {
                 panelShowTl.reverse();
                 panelHideTl.play();
+                lockedDOM(false);
             }
         });
 
         $(window).on('resize load', function () {
+            changeHeightPage();
             if ($(this).width() > 1024) {
                 if (burgerBtn.classList.contains('opened')) {
                     burgerBtn.classList.remove('opened');
@@ -1101,8 +1102,6 @@ const hideMenu = (element) => {
         )
 }
 
-
-
 if ($('.js-list').exists()) {
     const navPanel = document.querySelector('.header__nav--tablet');
     const btnList = navPanel.querySelector('.js-list');
@@ -1129,6 +1128,17 @@ const lockedDOM = (status) => {
     }
 }
 
+const stateObject = (status) => {
+    if (status == 'start') {
+        formShow('.js-form-request', true);
+        lockedDOM(true);
+    }
+    else {
+        formShow('.js-form-request', false);
+        lockedDOM(false);
+    }
+}
+
 const showOverlay = (status) => {
     if ($('.js-overlay').exists()) {
 
@@ -1138,19 +1148,16 @@ const showOverlay = (status) => {
             reversed: true,
             paused: true,
             defaults: { duration: 0.6 },
-            onComplete: lockedDOM(true),
-            onCompleteParams: [true],
-            onComplete: formShow,
-            onCompleteParams: ['.js-form-request', true]
+            onComplete: stateObject,
+            onCompleteParams: ['start']
         });
 
         const hideOvTl = new TimelineMax({
             reversed: true,
             paused: true,
             defaults: { duration: 0.3 },
-            // onComplete: lockedDOM(false),
-            onStart: formShow,
-            onStartParams: ['.js-form-request', false]
+            onStart: stateObject,
+            onStartParams: ['end']
         });
 
         showOvTl
@@ -1246,7 +1253,6 @@ const formShow = (element, status) => {
     }
 }
 
-
 if ($('.js-form-call').exists()) {
     try {
         let header = document.querySelector('.header');
@@ -1267,8 +1273,23 @@ if ($('.js-overlay').exists()) {
     });
 }
 
+if ($('.js-close-form').exists()) {
+    $('.js-close-form').on('click', () => {
+        showOverlay(false);
+    });
+}
 
+const changeHeightPage = () => {
+    let footerHeight,
+        paddingBottom,
+        outerHeightEl;
 
+    footerHeight = document.querySelector('.footer').offsetHeight;
+    outerHeightEl = document.documentElement.clientHeight;
+    paddingBottom = outerHeightEl - (outerHeightEl - footerHeight);
+
+    $('.b-page').css('padding-bottom', paddingBottom);
+}
 
 var caseSlider1 = new Swiper('.case__slider--1', {
     slidesPerView: 'auto',

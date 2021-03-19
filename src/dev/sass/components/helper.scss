@@ -2,6 +2,10 @@
     background-color: white;
     color: $black;
 
+    @media(max-width: 620px) {
+        background-color: transparent;
+    }
+
     .btn--call {
         border-color: $red-2;
         color: $red-2;
@@ -15,12 +19,20 @@
     .burger {
         .line {
             stroke: $green-1;
+
+            @media(max-width: 620px) {
+                stroke: white;
+            }
         }
     }
 
     .header__logo {
         svg path {
             fill: $green-1;
+
+            @media(max-width:620px) {
+                fill: white;
+            }
         }
     }
 }

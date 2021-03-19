@@ -9,7 +9,7 @@
     @include max1200 {
       padding: 40px 0;
     }
-    
+
     @include mobile {
       padding: 54px 0 48px;
     }
@@ -233,14 +233,14 @@
       flex-direction: row-reverse;
       justify-content: space-between;
       height: auto;
-      background-image: none!important;
+      background-image: none !important;
     }
 
     @include max767 {
       flex-direction: column;
       justify-content: normal;
       height: auto;
-      background-image: none!important;
+      background-image: none !important;
     }
   }
 
@@ -269,7 +269,7 @@
         width: 100%;
       }
     }
-    
+
     &--img {
       display: none;
 
@@ -467,7 +467,7 @@
     &:nth-of-type(2n) {
       flex-direction: row-reverse;
 
-      @include max767{
+      @include max767 {
         flex-direction: column;
       }
     }
@@ -540,5 +540,9 @@
         margin: 10px -15px 0;
       }
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 }

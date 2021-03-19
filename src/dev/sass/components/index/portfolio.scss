@@ -292,9 +292,7 @@
                     }
                 }
 
-                img {
-                    max-width: initial;
-                }
+
             }
 
             .portfolio__element {
@@ -350,6 +348,10 @@
                         }
                     }
                 }
+            }
+
+            img {
+                max-width: initial;
             }
         }
     }

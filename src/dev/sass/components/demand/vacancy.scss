@@ -1,6 +1,14 @@
 .vacancy {
     margin-top: 76px;
 
+    @media(max-width:1024px) {
+        margin-top: 60px;
+    }
+
+    @media(max-width:620px) {
+        margin-top: 50px;
+    }
+
     &__title {
         text-align: center;
     }
@@ -122,7 +130,7 @@
         transition: opacity .3s ease-in;
         margin-top: auto;
 
-        @media(max-width: 620px) {
+        @media(max-width: 1024px) {
             opacity: 1;
         }
     }
@@ -131,5 +139,13 @@
 
     &__cover {
         margin-top: 44px;
+
+        @media(max-width: 1024px) {
+            margin-top: 40px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 30px;
+        }
     }
 }

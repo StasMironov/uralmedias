@@ -3,14 +3,32 @@
     background-color: $ochre;
     padding: 85px 0 97px;
     background-repeat: no-repeat;
+    background-position: bottom;
 
-    &__container {
-        padding-bottom: 91px;
+    @media(max-width: 1024px) {
+        margin-top: 70px;
+    }
+
+    @media(max-width: 768px) {
+        background-image: none !important;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 50px;
+        padding: 50px 0;
     }
 
     &__href {
         opacity: 0;
         transition: opacity .3s ease-in;
+
+        @media(max-width: 620px) {
+            opacity: 1;
+        }
+
+        @media(max-width: 500px) {
+            margin-top: 25px;
+        }
     }
 
     &__bg {
@@ -56,6 +74,11 @@
         font-weight: 700;
         text-transform: uppercase;
         line-height: 29px;
+
+        @media(max-width: 620px) {
+            font-size: 16px;
+            line-height: 27px;
+        }
     }
 
     &__period {
@@ -64,6 +87,11 @@
         font-weight: normal;
         color: $grey-9;
         text-transform: uppercase;
+
+        @media(max-width: 620px) {
+            font-size: 12px;
+            margin-top: 8px;
+        }
     }
 
     &__list {
@@ -71,6 +99,10 @@
         max-width: 321px;
         width: 100%;
         margin-bottom: 40px;
+
+        @media(max-width:1024px) {
+            margin-bottom: 30px;
+        }
     }
 
     &__ref {
@@ -101,6 +133,11 @@
 
     &__bottom {
         margin-top: auto;
+
+        @media(max-width: 1000px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
 
@@ -108,16 +145,58 @@
         margin-top: 84px;
         padding: 79px 0 92px;
 
+        @media(max-width: 1024px) {
+            margin-top: 70px;
+            padding: 60px 0 60px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 50px;
+            padding: 50px 0;
+        }
+
         .advertising-price {
             &__item {
                 width: calc(50% - 45px);
                 margin-left: 45px;
                 min-height: 368px;
                 padding: 26px 35px 31px;
+
+                @media(max-width: 1024px) {
+                    width: calc(50% - 20px);
+                    margin-left: 20px;
+                }
+
+                @media(max-width: 768px) {
+                    width: 100%;
+                    margin-left: 0;
+                    min-height: 300px;
+                    padding: 26px 33px 31px;
+                }
+
+                @media(max-width: 620px) {
+                    min-height: 262px;
+                    padding: 23px 20px 23px;
+                }
+
+
+                &:not(:first-child) {
+                    @media(max-width: 768px) {
+                        margin-top: 20px;
+                    }
+                }
             }
 
             &__items {
                 margin-left: -45px;
+
+                @media(max-width: 1024px) {
+                    margin-left: -20px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-left: 0;
+                }
             }
 
             &__cover {
@@ -130,10 +209,18 @@
                 font-size: 12px;
                 line-height: 23px;
                 margin-top: 26px;
+
+                @media(max-width: 620px) {
+                    margin-top: 20px;
+                }
             }
 
             &__list {
                 margin-top: 15px;
+
+                @media(max-width: 620px) {
+                    margin-top: 7px;
+                }
             }
 
             &__bottom {
@@ -142,15 +229,35 @@
                 align-items: center;
                 justify-content: space-between;
 
+                @media(max-width: 1000px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                @media(max-width: 768px) {
+                    flex-direction: row;
+                    align-items: initial
+                }
+
+                @media(max-width: 500px) {
+                    flex-direction: column;
+                    align-self: flex-start;
+                }
+
                 .link {
                     margin-top: initial;
                     text-transform: uppercase;
                     font-size: 10px;
-                    padding-top: 14px;
+                    align-self: flex-end;
                     font-weight: 700;
 
+                    @media(max-width: 500px) {
+                        margin-top: 25px;
+                        margin-right: auto;
+                    }
+
                     &:after {
-                        top: 14px;
+                        top: 0;
                     }
                 }
             }

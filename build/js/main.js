@@ -1,7 +1,5 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -866,12 +864,16 @@ if ($('.burger').exists()) {
       if (this.classList.contains('opened')) {
         panelHideTl.reverse();
         panelShowTl.play();
+        lockedDOM(true);
       } else {
         panelShowTl.reverse();
         panelHideTl.play();
+        lockedDOM(false);
       }
     });
     $(window).on('resize load', function () {
+      changeHeightPage();
+
       if ($(this).width() > 1024) {
         if (burgerBtn.classList.contains('opened')) {
           burgerBtn.classList.remove('opened');
@@ -943,29 +945,36 @@ var lockedDOM = function lockedDOM(status) {
   }
 };
 
+var stateObject = function stateObject(status) {
+  if (status == 'start') {
+    formShow('.js-form-request', true);
+    lockedDOM(true);
+  } else {
+    formShow('.js-form-request', false);
+    lockedDOM(false);
+  }
+};
+
 var showOverlay = function showOverlay(status) {
   if ($('.js-overlay').exists()) {
-    var _TimelineMax;
-
     var overlayEl = document.querySelector('.js-overlay');
-    var showOvTl = new TimelineMax((_TimelineMax = {
+    var showOvTl = new TimelineMax({
       reversed: true,
       paused: true,
       defaults: {
         duration: 0.6
       },
-      onComplete: lockedDOM(true),
-      onCompleteParams: [true]
-    }, _defineProperty(_TimelineMax, "onComplete", formShow), _defineProperty(_TimelineMax, "onCompleteParams", ['.js-form-request', true]), _TimelineMax));
+      onComplete: stateObject,
+      onCompleteParams: ['start']
+    });
     var hideOvTl = new TimelineMax({
       reversed: true,
       paused: true,
       defaults: {
         duration: 0.3
       },
-      // onComplete: lockedDOM(false),
-      onStart: formShow,
-      onStartParams: ['.js-form-request', false]
+      onStart: stateObject,
+      onStartParams: ['end']
     });
     showOvTl.to(overlayEl, {
       autoAlpha: 1,
@@ -1053,6 +1062,20 @@ if ($('.js-overlay').exists()) {
     showOverlay(false);
   });
 }
+
+if ($('.js-close-form').exists()) {
+  $('.js-close-form').on('click', function () {
+    showOverlay(false);
+  });
+}
+
+var changeHeightPage = function changeHeightPage() {
+  var footerHeight, paddingBottom, outerHeightEl;
+  footerHeight = document.querySelector('.footer').offsetHeight;
+  outerHeightEl = document.documentElement.clientHeight;
+  paddingBottom = outerHeightEl - (outerHeightEl - footerHeight);
+  $('.b-page').css('padding-bottom', paddingBottom);
+};
 
 var caseSlider1 = new Swiper('.case__slider--1', {
   slidesPerView: 'auto',
