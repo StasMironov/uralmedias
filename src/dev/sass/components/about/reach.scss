@@ -124,4 +124,14 @@
             margin-top: 27px;
         }
     }
+
+
+    .quote {
+        margin-top: 0;
+        color: white;
+
+        &__par {
+            max-width: 637px;
+        }
+    }
 }

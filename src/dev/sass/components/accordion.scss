@@ -124,10 +124,6 @@
 
     &__cover {
         margin-top: 32px;
-
-        @media(max-width: 1024px) {
-            margin-top: 45px;
-        }
     }
 
     &__item {

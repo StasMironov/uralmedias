@@ -397,6 +397,11 @@ input::-ms-clear {
   stroke-width: 6;
 }
 
+.slider {
+  opacity: 0;
+  transition: .4s ease;
+}
+
 @import "./components/rate.scss";
 @import "./components/request.scss";
 @import "./components/table.scss";

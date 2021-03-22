@@ -73,13 +73,6 @@
                 margin: initial;
                 top: 3px;
             }
-
-            @media(max-width:500px) {
-                width: 12px;
-                height: 12px;
-                margin: initial;
-                top: 2px;
-            }
         }
 
         &:not(:first-child) {

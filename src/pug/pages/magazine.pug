@@ -5,17 +5,26 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'Разработка интернет-магазина';
 	- var bildboard_quote = 'Яркий и удобный интернет-магазин с адаптацией подо все устройства.';
-	- var quote = 'magazine';
-	- var bildboard_img = "background-image: url(img/dataBild/img13.jpg);";
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var includeBloc = 'magazine';
 	- var include = "landing";
 	- var bildboard_include = 'special-btn';
 	- var partners_quote = 'true';
 	- var priceList = '2'; 
 
+	- var quote = 'h2';
+	- var quoteTitle = 'Что такое интернет магазин?';
+	- var quoteInfo = ['Корпоративный сайт – это портал для бизнеса, необходимый элемент успешной работы любой компании, будь то крупная международная организация или небольшое предприятие. Он содержит полный объем информации о самой компании, о сфере ее деятельности, предлагаемой продукции и услугах. Сайт представляет собой своеобразную рекламную площадку, призванную привлекать новых клиентов. Аудитория здесь только целевая, которая получает исчерпывающие ответы на все свои вопросы.'];
+
 block content
 	div(data-barba="container" data-barba-namespace="about")
-		.bildboard-data.bildboard-data--special-btn(style=`${bildboard_img}`)
+		.bildboard-data.bildboard-data--special-btn
+			<picture>
+				<source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+				<source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+				<source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+				<img src=#{bildboardImg[0]} alt="MDN">
+			</picture>
 			.bildboard-data__container.container
 				.bildboard-data__title.bildboard-data__title--short.title-1 Разработка <span>интернет-магазина</span>
 				.bildboard-data__quote #{bildboard_quote}
@@ -57,10 +66,11 @@ block content
 		include ../modules/price
 		include ../modules/include
 		.benefit
+			- var quote = 'h4';
+			- var quoteTitle = 'Основные преимущества интернет-магазина';
+			- var quoteInfo = ['Если у вас есть стационарная торговая точка, но вы еще не открыли интернет-магазин, мы советуем Вам об этом задуматься. Ведь on-line торговля станет серьезным подспорьем вашему бизнесу.'];
+			include ../modules/quote
 			.benefit__container.container 
-				.benefit__title.title-4 Основные преимущества интернет-магазина
-				.benefit__quote Если у вас есть стационарная торговая точка, но вы еще не открыли интернет-магазин, мы советуем Вам об этом задуматься. Ведь on-line торговля станет серьезным подспорьем вашему бизнесу.
-
 				.benefit__items
 					.benefit__item
 						.benefit__bloc

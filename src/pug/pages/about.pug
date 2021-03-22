@@ -5,8 +5,13 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'МЫ URALMEDIAS';
 	- var include = 'btn';
-	- var quote = 'about';
-	- var bildboard_img = "background-image: url(img/dataBild/img1.jpg);"
+	//- - var quote = 'about';
+
+	- var quote = 'h2';
+	- var quoteTitle = 'Digital-агентство полного цикла';
+	- var quoteInfo = ['Uralmedias - это креативное digital-агентство полного цикла, занимающееся разработкой фирменных сайтов, брендингом, развитием и продвижением проектов в digital-пространстве.', 'Мы верим, что хороший сайт рождается путем полного погружения в задачи заказчика, поиска лучших решений и сплоченной командной работы. Uralmedias является официальным партнером 1С-Битрикс и Битрикс 24. Наши ведущие специалисты прошли обучающие курсы на базе данных систем. Мы работаем более 7 лет. В нашей коллекции более 300 проектов. Наше агентство работает на таких CMS, как 1С Битрикс и modX.'];
+	- var bildboard_include = 'simple';
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 
 block content
 	div(data-barba="container" data-barba-namespace="about")
@@ -66,9 +71,12 @@ block content
 							.team__status Руководитель
 
 		.reach
+			- var quote = 'h4';
+			- var quoteTitle = 'Достижения студии';
+			- var quoteInfo = ['За все время существования агентство Uralmedias успешно реализовало множество проектов в различных областях.'];
+
+			include ../modules/quote
 			.reach__container.container
-				.reach__title.title-3 Достижения студии
-				.reach__text За все время существования агентство&nbsp;Uralmedias успешно реализовало множество проектов в&nbsp;различных областях.
 				scrollbar(id="inner-scrollbar").reach__cover
 					.reach__items.scroll-content
 						.reach__item
@@ -85,9 +93,12 @@ block content
 							.reach__txt Ежегодный рейтинг SEO-компаний по версии Рейтинга Рунета 2019
 
 		.client
+				- var quote = 'h4';
+				- var quoteTitle = 'Клиенты';
+				- var quoteInfo = ['Благодарственные письма некоторых компаний, с которыми мы сотрудничали'];
+
+				include ../modules/quote
 				.client__container.container
-					.client__title.title-3 Клиенты
-					.client__quote Благодарственные письма некоторых&nbsp;компаний, с которыми мы&nbsp;сотрудничали
 					.client__cover
 						.client__items#certificate
 							a(href="./img/certificate/c1.png").client__item

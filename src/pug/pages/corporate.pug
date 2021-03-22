@@ -4,14 +4,23 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'создание корпоративных сайтов';
 	- var include = 'link';
-	- var quote = 'corporate';
-	- var bildboard_img = "background-image: url(img/dataBild/img11.jpg);";
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var bildboard_include = 'special-btn';
 	- var includeBloc = 'corporate';
+	- var priceList = '2'; 
+	- var quote = 'h2';
+	- var quoteTitle = 'Что такое корпоративный сайт?';
+	- var quoteInfo = ['Корпоративный сайт – это портал для бизнеса, необходимый элемент успешной работы любой компании, будь то крупная международная организация или небольшое предприятие. Он содержит полный объем информации о самой компании, о сфере ее деятельности, предлагаемой продукции и услугах. Сайт представляет собой своеобразную рекламную площадку, призванную привлекать новых клиентов. Аудитория здесь только целевая, которая получает исчерпывающие ответы на все свои вопросы.']
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
-		.bildboard-data.bildboard-data--special-btn(style=`${bildboard_img}`)
+		.bildboard-data.bildboard-data--special-btn 
+			<picture>
+				<source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+				<source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+				<source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+				<img src=#{bildboardImg[0]} alt="MDN">
+			</picture>
 			.bildboard-data__container.container
 				.bildboard-data__title.title-1 создание корпоративных&nbsp;сайтов
 				.bildboard-data__quote Современный корпоративный портал высокого уровня, являющийся официальным представителем Вашей компании в интернете.
@@ -21,40 +30,12 @@ block content
 					.btn__text Отправить заявку менеджеру
 		include ../modules/breadcrumbs
 		include ../modules/quote
-
 		include ../modules/include
-		.advertising-price.advertising-price--landing.advertising-price--corporate(style="background-image: url(./img/decor/dec15.png)")
-			.advertising-price__container.container
-				.advertising-price__title.title-3 Варианты разработки продукта
-				.advertising-price__cover
-					.advertising-price__items
-						a(href="javascript:void(0);").advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Создание на конструкторе
-								.advertising-price__period от 7 дней на разработку
-							.advertising-price__note Готовим контент и делаем одностраничник на популярном конструкторе
-							.advertising-price__list
-								.advertising-price__ref Готовые решения на 1С-Битрикс;
-								.advertising-price__ref Конструкторы Tilda и PlatformaLP.
-							.advertising-price__bottom
-								.advertising-price__price от 100 000₽
-								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
-						a(href="javascript:void(0);").advertising-price__item 
-							.advertising-price__top
-								.advertising-price__header Индивидуальная разработка
-								.advertising-price__period от 7 дней на разработку
-							.advertising-price__note Полный цикл производства
-							.advertising-price__list
-								.advertising-price__ref Сбор требований и концепция страницы;
-								.advertising-price__ref Дизайн, пользовательские сценарии;
-								.advertising-price__ref Адаптивная вёрстка;
-								.advertising-price__ref Программирование и тестирование;
-								.advertising-price__ref Интеграция с CRM и системами аналитики.
-							.advertising-price__bottom
-								.advertising-price__price от 250 000₽
-								.advertising-price__href.link.link--detail ЗАКАЗАТЬ разработку сайта
+		include ../modules/price
 		.chart 
-			- var quote = 'chart'
+			- var quote = 'h4';
+			- var quoteTitle = 'Четкое распределение времени';
+			- var quoteInfo = ['Создание сайта - сложная многоэтапная работа, которая требует четкого разграничения времени. Именно поэтому мы максимально детализируем весь процесс и фиксируем в договоре точные сроки по каждому этапу.'];
 			include ../modules/quote
 			.chart__container.container
 				img(src="./img/chart.jpg" alt="" title="").chart__img
