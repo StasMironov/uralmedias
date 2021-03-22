@@ -4,6 +4,10 @@ block variables
 	- var title = 'Главная страница'
 	- var pageClass = 'index-page';
 
+	- var quote = 'h2';
+	- var quoteTitle = 'Лучшие работы';
+	- var quoteInfo = ['Наша компания с 2011 года реализовала более 300 проектов для бизнеса на основе данных и здравого смысла!'];
+
 block content
 	div(data-barba="container" data-barba-namespace="index")
 		.bildboard
@@ -14,9 +18,8 @@ block content
 			video(autoplay="true" loop="loop" muted="muted" poster="media/video.mp4" data-parallax="scroll" data-image-src="media/video.mp4").bildboard__video
 				<source src="media/video.mp4" type="video/mp4">
 		.portfolio
+			include ../modules/quote
 			.portfolio__container.container
-				h1.portfolio__title.title-2 Лучшие работы
-				.portfolio__quote Наша компания с 2011 года реализовала более 300 проектов для бизнеса на основе данных и здравого смысла!
 				.portfolio__items
 					.portfolio__item.portfolio__item--mm(style="background-image: url(img/decor/dec4.png)")
 						.portfolio__grid
@@ -160,9 +163,12 @@ block content
 								.services__article Шаблонная разработка
 								.services__content Используется в качестве готового решения для создания сайтов
 		.client
+			- var quote = 'h4';
+			- var quoteTitle = 'Клиенты';
+			- var quoteInfo = ['Благодарственные письма некоторых компаний, с которыми мы сотрудничали'];
+
+			include ../modules/quote
 			.client__container.container
-				.client__title.title-3 Клиенты
-				.client__quote Благодарственные письма некоторых компаний, с которыми мы сотрудничали
 				.client__cover
 					.client__items#certificate
 						a(href="./img/certificate/c1.png").client__item

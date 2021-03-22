@@ -4,12 +4,16 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'Найдём новых клиентов для вашего бизнеса';
 	- var include = 'link';
-	- var quote = 'advertising';
 	- var bildboard_img = "background-image: url(img/dataBild/img7.jpg);";
 	- var bildboard_include = 'special-btn';
 	- var bildboard_quote = 'Опыт, профессионализм и персональная работа с каждым своим заказчиком – вот составляющие нашей успешной рекламной стратегии.';
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var priceList = '3'; 
 	- var priceBg = 'background-color: #f6f6f6';
+
+	- var quote = 'h2';
+	- var quoteTitle = 'Контекстная реклама';
+	- var quoteInfo = ['Контекстная реклама по праву считается продуктивным механизмом для роста продаж и привлечения новых клиентов. Данный тип рекламы является текстовым объявлением, иногда может содержать в себе изображение. Реклама показывается человеку в поисковой выдаче на основе его запросов, а также на сайтах и ресурсах, учитывая ранее просмотренные страницы.'];
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -44,12 +48,12 @@ block content
 					.btn__special
 						span Заказать проект
 					.btn__text Заказать проект
-		.quote
-			.quote__container.container
-				.quote__title.title-3 Контекстная реклама
-				.quote__bloc
-					.quote__par В команде “Uralmedias” работает 10 специалистов, в нашем портфолио уже около 300 проектов. C 2011 года мы эффективно настраиваем и оказываем услуги по ведению кампаний контекстной рекламы в системах Яндекс Директ и Google Adwords для бизнеса различной направленности: от лендингов одной услуги до крупных интернет-магазинов.
-					.quote__par Digital-агентство “Uralmedias” является Партнером Google и Сертифицированным агентством Яндекса. Раз в три месяца мы проходим сертификацию. Сотрудники ежегодно сдают аттестационные экзамены Google и Яндекс.
+
+		- var quote = 'h4';
+		- var quoteTitle = 'О нашей команде';
+		- var quoteInfo = ['В команде “Uralmedias” работает 10 специалистов, в нашем портфолио уже около 300 проектов. C 2011 года мы эффективно настраиваем и оказываем услуги по ведению кампаний контекстной рекламы в системах Яндекс Директ и Google Adwords для бизнеса различной направленности: от лендингов одной услуги до крупных интернет-магазинов.',	'Digital-агентство “Uralmedias” является Партнером Google и Сертифицированным агентством Яндекса. Раз в три месяца мы проходим сертификацию. Сотрудники ежегодно сдают аттестационные экзамены Google и Яндекс.'];
+
+		include ../modules/quote
 		include ../modules/partners
 		include ../modules/place
 

@@ -259,96 +259,6 @@ if ($('.header__inner').exists) {
 
 checkPage();
 
-class Slider {
-    constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false) {
-        this.init = init;
-        this.name = name;
-        this.view = view;
-        this.space = space;
-        this.column = column;
-        this.ratio = ratio;
-        this.pagination = pagination;
-        this.arrow = arrow;
-        this.slider = '';
-        this.effect = effect;
-        this.custom = custom;
-    }
-
-    createSlider() {
-        if (this.pagination || this.arrow) {
-            let pagEl = $(this.name).find('.pagination');
-            let arrowNext = $(this.name).find('.arrow__link--next');
-            let arrowPrev = $(this.name).find('.arrow__link--prev');
-
-            let settings = {
-                slidesPerView: this.view,
-                spaceBetween: this.space,
-                slidesPerColumn: this.column,
-                slidesPerColumnFill: 'row',
-                touchRatio: this.ratio,
-                effect: this.effect,
-                navigation: {
-                    nextEl: arrowNext,
-                    prevEl: arrowPrev,
-                },
-                pagination: {
-                    el: pagEl,
-                    type: "custom",
-                    renderCustom: function (swiper, current, total) {
-                        let i = current ? current : 0;
-                        return `${("0" + i).slice(-2)} / ${("0" + total).slice(-2)}`;
-                    }
-                },
-            };
-
-            if (this.custom === true) {
-                console.log(this.custom);
-                this.slider = new Swiper(this.name, settings);
-            }
-            else {
-                this.slider = new Swiper(this.name, {
-                    slidesPerView: this.view,
-                    spaceBetween: this.space,
-                    slidesPerColumn: this.column,
-                    slidesPerColumnFill: 'row',
-                    touchRatio: this.ratio,
-                    effect: this.effect,
-                    pagination: {
-                        el: pagEl,
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: arrowNext,
-                        prevEl: arrowPrev,
-                    },
-                });
-            }
-        } else {
-            this.slider = new Swiper(this.name, {
-                slidesPerView: this.view,
-                spaceBetween: this.space,
-                slidesPerColumn: this.column,
-                slidesPerColumnFill: 'row',
-                touchRatio: this.ratio,
-            });
-        }
-        return this.slider;
-    }
-
-    updateSlider(props, res = '') {
-        switch (props) {
-            case 'space':
-                this.slider.params.spaceBetween = res;
-                this.slider.update();
-                break;
-            case 'view':
-                this.slider.params.slidesPerView = res;
-                this.slider.update();
-                break;
-        }
-    }
-}
-
 
 if ($('.js-rate').exists()) {
     let rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
@@ -375,7 +285,7 @@ if ($('.partners').exists()) {
 }
 
 if ($('.works').exists()) {
-    let workSlider = new Slider(true, '.js-works', 2, 48, 1, true, true, true);
+    let workSlider = new Slider(true, '.js-slider', 2, 40, 1, true, true, true);
     workSlider.createSlider();
 
     $(window).on('resize load', function () {

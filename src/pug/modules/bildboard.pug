@@ -1,11 +1,23 @@
 case bildboard_include
     when 'special'
-        .bildboard-data.bildboard-data--special(style=`${bildboard_img}`)
+        .bildboard-data.bildboard-data--special 
+            <picture>
+                <source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+                <source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+                <source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+                <img src=#{bildboardImg[0]} alt="MDN">
+            </picture>
             .bildboard-data__container.container
                 .bildboard-data__title.title-1 #{setTitle}
                 .bildboard-data__quote Опыт, профессионализм и персональная работа с каждым своим заказчиком – вот составляющие нашей успешной рекламной стратегии.
     when 'special-btn'
-        .bildboard-data.bildboard-data--special-btn(style=`${bildboard_img}`)
+        .bildboard-data.bildboard-data--special-btn 
+            <picture>
+                <source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+                <source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+                <source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+                <img src=#{bildboardImg[0]} alt="MDN">
+            </picture>
             .bildboard-data__container.container
                 .bildboard-data__title.title-1 #{setTitle}
                 .bildboard-data__quote #{bildboard_quote}
@@ -18,7 +30,13 @@ case bildboard_include
         .bildboard-data.bildboard-data--transparent
             .bildboard-data__container.container
                 .bildboard-data__title.title-1 #{setTitle}
-    default
-        .bildboard-data.bildboard-data--simple(style=`${bildboard_img}`)
+    when 'simple'
+        .bildboard-data.bildboard-data--simple 
+            <picture>
+                <source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+                <source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+                <source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+                <img src=#{bildboardImg[0]} alt="MDN">
+            </picture>
             .bildboard-data__container.container
                 .bildboard-data__title.title-1 #{setTitle}

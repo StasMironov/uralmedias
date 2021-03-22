@@ -6,13 +6,19 @@ block variables
 	- var include = 'btn';
 	- var quote = 'promotion';
 	- var bildboard_include = 'special-btn'
-	- var bildboard_img = "background-image: url(img/dataBild/img10.jpg);"
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var includeBloc = 'promotion';
 	- var request = 'audit';
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
-		.bildboard-data.bildboard-data--special-btn.bildboard-data--left(style=`${bildboard_img}`)
+		.bildboard-data.bildboard-data--special-btn.bildboard-data--left 
+			<picture>
+				<source srcset=#{bildboardImg[0]} media="(min-width: 1025px)">
+				<source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+				<source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+				<img src=#{bildboardImg[0]} alt="MDN">
+			</picture>
 			.bildboard-data__container.container
 				.bildboard-data__title.title-1 #{setTitle}
 				.bildboard-data__quote Наше агентство не просто продвигает сайт в топ поисковой выдачи, а делает из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google.

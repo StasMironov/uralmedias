@@ -4,10 +4,16 @@ block variables
 	- var title = 'Главная страница'
 	- var pageClass = 'index-page';
 	- var setTitle = 'Разработка лендингов и посадочных страниц';
-	- var quote = 'landing';
+	//- - var quote = 'landing';
+
+	- var quote = 'h2';
+	- var quoteTitle = 'Что такое лендинг?';
+	- var quoteInfo = ['Лендинг (landing page), одностраничный сайт — веб-страница, основной задачей которой является сбор контактных данных целевой аудитории. Обычно она посвящена продаже одной услуги или продукта. Цель любого лендинга — перевести клиента на следующий этап воронки продаж.'];
+
 	- var bildboard_img = "background-image: url(img/dataBild/img9.jpg);";
 	- var includeBloc = 'landing';
 	- var include = "landing";
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var bildboard_include = 'special';
 	- var priceList = '2'; 
 	- var priceBg = 'background-color: #f6f6f6';
@@ -60,65 +66,12 @@ block content
 								.landing-stages__txt Мы знакомимся с клиентом, проводим тщательный анализ товаров/услуг и подбираем индивидуальное решение задачи.
 		include ../modules/include
 		.seo-slider.seo-slider--landing
-			.seo-slider__container.container
-				.seo-slider__title.title-4 Примеры одностраничных сайтов
-				.seo-slider__note Мы стараемся удовлетворить абсолютно все требования заказчика и создать сайт, который радует глаз и приносит прибыль.
-				.works.js-works
-					.swiper-wrapper
-						a(href="javascript:void(0);").works__item.swiper-slide
-							.works__pic
-								img(src="./img/portfolio/p1.png" alt="")
-							.works__content
-								.works__top
-									.works__unit.works__unit--title Корпоративный сайт
-									.works__unit.works__unit--href mgkapobeda.com
-								.works__midle
-									.works__article МГКА “ПОБЕДА”
-									.works__txt Сайт для московской коллегии адвокатов
-								.works__bottom
-									.works__link СМОТРЕТЬ ПРОЕКТ
-						a(href="javascript:void(0);").works__item.swiper-slide
-							.works__pic
-								img(src="./img/portfolio/p1.png" alt="")
-							.works__content
-								.works__top
-									.works__unit.works__unit--title Корпоративный сайт
-									.works__unit.works__unit--href mgkapobeda.com
-								.works__midle
-									.works__article МГКА “ПОБЕДА”
-									.works__txt Сайт для московской коллегии адвокатов
-								.works__bottom
-									.works__link СМОТРЕТЬ ПРОЕКТ
-						a(href="javascript:void(0);").works__item.swiper-slide
-							.works__pic
-								img(src="./img/portfolio/p1.png" alt="")
-							.works__content
-								.works__top
-									.works__unit.works__unit--title Корпоративный сайт
-									.works__unit.works__unit--href mgkapobeda.com
-								.works__midle
-									.works__article МГКА “ПОБЕДА”
-									.works__txt Сайт для московской коллегии адвокатов
-								.works__bottom
-									.works__link СМОТРЕТЬ ПРОЕКТ
-						a(href="javascript:void(0);").works__item.swiper-slide
-							.works__pic
-								img(src="./img/portfolio/p1.png" alt="")
-							.works__content
-								.works__top
-									.works__unit.works__unit--title Корпоративный сайт
-									.works__unit.works__unit--href mgkapobeda.com
-								.works__midle
-									.works__article МГКА “ПОБЕДА”
-									.works__txt Сайт для московской коллегии адвокатов
-								.works__bottom
-									.works__link СМОТРЕТЬ ПРОЕКТ
-					.arrow
-						.arrow__link.arrow__link--prev
-							+svg('arr-slider')
-						.arrow__link.arrow__link--next
-							+svg('arr-slider')
-					.pagination
+				- var quote = 'h4';
+				- var quoteTitle = 'Примеры одностраничных сайтов';
+				- var quoteInfo = ['Мы стараемся удовлетворить абсолютно все требования заказчика и создать сайт, который радует глаз и приносит прибыль.'];
+				include ../modules/quote
+				.container
+					include ../modules/slider
 		include ../modules/accordion
 		include ../modules/call
 block script

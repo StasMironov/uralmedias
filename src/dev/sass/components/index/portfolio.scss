@@ -586,4 +586,12 @@
             }
         }
     }
+
+    .quote {
+        margin-top: 0;
+
+        &__bloc {
+            max-width: 611px;
+        }
+    }
 }

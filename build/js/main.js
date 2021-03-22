@@ -1,11 +1,5 @@
 "use strict";
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 jQuery.fn.exists = function () {
   return $(this).length;
 };
@@ -232,111 +226,6 @@ if ($('.header__inner').exists) {
 
 checkPage();
 
-var Slider = /*#__PURE__*/function () {
-  function Slider(init, name, view, space, column, ratio) {
-    var pagination = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : false;
-    var arrow = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : false;
-    var effect = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : '';
-    var custom = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : false;
-
-    _classCallCheck(this, Slider);
-
-    this.init = init;
-    this.name = name;
-    this.view = view;
-    this.space = space;
-    this.column = column;
-    this.ratio = ratio;
-    this.pagination = pagination;
-    this.arrow = arrow;
-    this.slider = '';
-    this.effect = effect;
-    this.custom = custom;
-  }
-
-  _createClass(Slider, [{
-    key: "createSlider",
-    value: function createSlider() {
-      if (this.pagination || this.arrow) {
-        var pagEl = $(this.name).find('.pagination');
-        var arrowNext = $(this.name).find('.arrow__link--next');
-        var arrowPrev = $(this.name).find('.arrow__link--prev');
-        var settings = {
-          slidesPerView: this.view,
-          spaceBetween: this.space,
-          slidesPerColumn: this.column,
-          slidesPerColumnFill: 'row',
-          touchRatio: this.ratio,
-          effect: this.effect,
-          navigation: {
-            nextEl: arrowNext,
-            prevEl: arrowPrev
-          },
-          pagination: {
-            el: pagEl,
-            type: "custom",
-            renderCustom: function renderCustom(swiper, current, total) {
-              var i = current ? current : 0;
-              return "".concat(("0" + i).slice(-2), " / ").concat(("0" + total).slice(-2));
-            }
-          }
-        };
-
-        if (this.custom === true) {
-          console.log(this.custom);
-          this.slider = new Swiper(this.name, settings);
-        } else {
-          this.slider = new Swiper(this.name, {
-            slidesPerView: this.view,
-            spaceBetween: this.space,
-            slidesPerColumn: this.column,
-            slidesPerColumnFill: 'row',
-            touchRatio: this.ratio,
-            effect: this.effect,
-            pagination: {
-              el: pagEl,
-              clickable: true
-            },
-            navigation: {
-              nextEl: arrowNext,
-              prevEl: arrowPrev
-            }
-          });
-        }
-      } else {
-        this.slider = new Swiper(this.name, {
-          slidesPerView: this.view,
-          spaceBetween: this.space,
-          slidesPerColumn: this.column,
-          slidesPerColumnFill: 'row',
-          touchRatio: this.ratio
-        });
-      }
-
-      return this.slider;
-    }
-  }, {
-    key: "updateSlider",
-    value: function updateSlider(props) {
-      var res = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-
-      switch (props) {
-        case 'space':
-          this.slider.params.spaceBetween = res;
-          this.slider.update();
-          break;
-
-        case 'view':
-          this.slider.params.slidesPerView = res;
-          this.slider.update();
-          break;
-      }
-    }
-  }]);
-
-  return Slider;
-}();
-
 if ($('.js-rate').exists()) {
   var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
   rateSlider.createSlider();
@@ -360,7 +249,7 @@ if ($('.partners').exists()) {
 }
 
 if ($('.works').exists()) {
-  var workSlider = new Slider(true, '.js-works', 2, 48, 1, true, true, true);
+  var workSlider = new Slider(true, '.js-slider', 2, 40, 1, true, true, true);
   workSlider.createSlider();
   $(window).on('resize load', function () {
     if ($(this).width() <= 1300) {

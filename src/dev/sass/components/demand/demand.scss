@@ -155,5 +155,9 @@
                 width: 100%;
             }
         }
+
+        &+.price {
+            margin-top: 0;
+        }
     }
 }
