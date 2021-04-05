@@ -4,7 +4,6 @@
             .call__left
                 .call__top
                     .call__title.title-4 Оставьте заявку
-                    //- .call__note для консультации
                     .call__txt для консультации
                 .call__bottom
                     .call__img
@@ -13,23 +12,23 @@
                     .call__status Руководитель компании
             .call__right
                 form.call__form
-                    .call__group
-                        .call__unit
-                            .call__label Какая услуга Вас интересует?
-                            input.call__field(placeholder="Веб")
-                        .call__unit
-                            .call__label Контактный телефон
-                            input.call__field(placeholder="+7 (___) ___-__-__")
-                    .call__group
-                        .call__unit
-                            .call__label Ваше имя
-                            input.call__field(placeholder="Введите имя")
-                        .call__unit
-                            .call__label Ваша почта
-                            input.call__field(placeholder="Email")
-                    .call__group.call__group--textarea
-                        .call__label Комментарий
-                        textarea(placeholder="Дополнительная информация")
+                    .call__bloc
+                        .form-group
+                            .form-group__label Какая услуга Вас интересует?
+                            input(type="text" placeholder="Веб").form-group__input
+                        .form-group
+                            .form-group__label Ваше имя
+                            input(type="text" placeholder="Введите имя").form-group__input
+                        .form-group
+                            .form-group__label Контактный телефон
+                            input(type="tel" placeholder="+7 (___) ___-__-__").form-group__input
+                        .form-group
+                            .form-group__label Ваша почта
+                            input(type="text" placeholder="Email").form-group__input
+                    .form-group
+                        .form-group__label Комментарий
+                        textarea(rows="3" placeholder="Дополнительная информация").form-group__input
+
                 a(href="#").btn.btn--special
                     .btn__special
                         span Отправить заявку

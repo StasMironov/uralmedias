@@ -1,6 +1,97 @@
 .brief {
+    min-height: 75vh;
+    padding-bottom: 90px;
+    background: url('../img/decor/mountains.png') no-repeat bottom right;
+
+    @media(max-width: 1366px) {
+        background-size: 75%;
+    }
+
+    @media(max-width: 768px) {
+        background-size: 100%;
+    }
+
+    @media(max-width: 320px) {
+        padding-bottom: 200px;
+        background: url('../img/decor/mountains-320.png') no-repeat bottom;
+    }
+
+    &__content {
+        max-width: 1024px;
+        width: 100%;
+        margin: 36px auto 0;
+    }
+
     &__quote {
         font-size: 12px;
         color: $grey-6;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 35px;
+        line-height: 1.2;
+        margin-top: 20px;
+
+        @media (max-width: 620px) {
+            font-size: 28px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 35px;
+
+        @media (max-width: 620px) {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 25px;
+        }
+    }
+
+    &__bloc {
+        max-width: 575px;
+        width: 100%;
+        margin-top: 60px;
+
+        @media (max-width: 620px) {
+            margin-top: 50px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.2;
+
+        @media (max-width: 620px) {
+            font-size: 26px;
+        }
+    }
+
+    &__header {
+        font-size: 16px;
+        margin-top: 20px;
+
+        @media (max-width: 620px) {
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    }
+
+    &__items {
+        margin-top: 15px;
+    }
+
+    &__form {
+
+        .btn {
+            margin: 60px 0 0;
+
+            @media (max-width: 620px) {
+                margin: 25px 0 0;
+            }
+        }
     }
 }

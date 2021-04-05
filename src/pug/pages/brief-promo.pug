@@ -1,0 +1,109 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Бриф на продвижение сайта';
+	- var include = 'btn';
+	- var quote = 'services'
+	- var bildboard_include = 'simple';
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		.brief
+			.brief__container.container
+				.brief__content
+					.brief__quote Бриф на продвижение сайта
+					.brief__title Анкета для заказа услуг по продвижению сайта
+					.brief__text Бриф на продвижение сайта нужен для выявления целей и задач продвижения, расчета бюджета. Анализ полученной информации поможет нам узнать Вашу компанию, изучить конкурентов и спрос на Ваши товары/услуги в сети.
+
+					form.brief__form
+						.brief__bloc
+							.brief__subtitle Контактная информация
+							.form-group
+								.form-group__label Контактное лицо*
+								input(type="text" placeholder="Будем рады, если Вы представитесь").form-group__input
+							.form-group
+								.form-group__label E-mail*
+								input(type="text" placeholder="Электронный адрес").form-group__input
+							.form-group
+								.form-group__label Телефон*
+								input(type="tel" placeholder="Номер телефона").form-group__input
+						.brief__bloc
+							.brief__subtitle Информация о компании
+							.form-group
+								.form-group__label Название организации (Бренд)*
+								input(type="text" placeholder="Полное или сокращенное название Вашей компании").form-group__input
+							.form-group
+								.form-group__label Сайт Вашей компании
+								input(type="text" placeholder="Адрес сайта").form-group__input
+							.form-group
+								.form-group__label Область деятельности компании
+								input(type="text" placeholder="Напишите, в какой сфере Вы работаете").form-group__input
+							.form-group
+								.form-group__label Продвигаемый товар/услуга
+								textarea(placeholder="Опишите товар/услугу, которой требуется продвижение").form-group__input
+							.brief__header Ценовой сегмент Ваших товаров/услуг
+							.brief__items
+								label(for="check-1").checkbox
+									input(id="check-1" type="checkbox" name="check" value="1").checkbox__input
+									.checkbox__label Бюджетный
+								label(for="check-2").checkbox
+									input(id="check-2" type="checkbox" name="check" value="2").checkbox__input
+									.checkbox__label Средний
+								label(for="check-3").checkbox
+									input(id="check-3" type="checkbox" name="check" value="3").checkbox__input
+									.checkbox__label Высокий
+							.form-group
+								.form-group__label Адреса сайтов или компании конкурентов
+								textarea(placeholder="Опишите основных конкурентов, их преимущества или недостатки").form-group__input
+						.brief__bloc
+							.brief__subtitle Особенности продвижения
+							.form-group
+								.form-group__label Опишите кратко цель продвижения
+								textarea(placeholder="Например, получать по 50 заявок в день, повысить узнаваемость бренда, увеличить посещаемость сайта и т.п.").form-group__input
+							.form-group
+								.form-group__label Приоритетные направления для продвижения
+								textarea(placeholder="Например, продажа автомобиля и т.д.").form-group__input
+							.brief__header Тип продвижения (где бы Вам хотелось рекламироваться)
+							.brief__items
+								label(for="check-4").checkbox
+									input(id="check-4" type="checkbox" name="check" value="1").checkbox__input
+									.checkbox__label Поисковая выдача (SEO оптимизация)
+								label(for="check-5").checkbox
+									input(id="check-5" type="checkbox" name="check" value="2").checkbox__input
+									.checkbox__label Яндекс Директ, Google Ads
+								label(for="check-6").checkbox
+									input(id="check-6" type="checkbox" name="check" value="3").checkbox__input
+									.checkbox__label Баннерная реклама (КМС, РСЯ, Ретаргетинг)
+								label(for="check-7").checkbox
+									input(id="check-7" type="checkbox" name="check" value="4").checkbox__input
+									.checkbox__label На почте gmail
+								label(for="check-8").checkbox
+									input(id="check-8" type="checkbox" name="check" value="5").checkbox__input
+									.checkbox__label ВК
+								label(for="check-9").checkbox
+									input(id="check-9" type="checkbox" name="check" value="6").checkbox__input
+									.checkbox__label Instagram
+								label(for="check-10").checkbox
+									input(id="check-10" type="checkbox" name="check" value="6").checkbox__input
+									.checkbox__label Нужна консультация
+								label(for="check-11").checkbox
+									input(id="check-11" type="checkbox" name="check" value="6").checkbox__input
+									.checkbox__label Другое:
+										input(type="text").checkbox__text-input
+							.form-group
+								.form-group__label Регион продвижения сайта
+								textarea(placeholder="Например, Россия, Москва, Челябинская область").form-group__input
+							.form-group
+								.form-group__label Предполагаемый бюджет на продвижение
+								input(type="text" placeholder="Укажите предполагаемый бюджет ").form-group__input
+
+						button(type="submit" name="submit").btn.btn--special
+							.btn__special
+								span Отправить бриф
+							.btn__text Отправить бриф
+
+block script

@@ -1,0 +1,72 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Вакансия';
+	- var include = 'btn';
+	- var quote = 'services'
+	- var bildboard_include = 'simple';
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
+
+block content
+	div(data-barba="container" data-barba-namespace="blog")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+
+		.vacancy-detail
+			.vacancy-detail__container.container
+				.vacancy-detail__content
+					.vacancy-detail__body
+
+						p В Digital-агентство Uralmedias требуется веб-программист на полный рабочий день (в офис).
+						p Uralmedias занимается разработкой технологически сложных сайтов, интернет-магазинов, онлайн-бирж.
+						p Среди клиентов числятся Магнитогорский Металл, Рода Ветров, МБФ и многие другие крупные компании.
+						p Веб-программист у нас — ключевой человек, наносящий основное добро в проекте. Ему предстоит четко реализовать все, что придумали до него менеджеры и дизайнеры. Программист окружен интересными задачами, уважением коллег и ореолом героя.
+						p Требуемый опыт работы: 1–3 года <br> Полная занятость, гибкий график
+
+						p
+							b Обязанности:
+
+						ul
+							li Серверная и клиентская веб-разработка;
+							li Интересные проекты для крупных компаний. Потребуется применение современных средств командной разработки, систем контроля версий;
+							li Работа в профессиональном коллективе, растущие задачи, развитие.
+
+						p
+							b Требования:
+
+						ul
+							li Опыт разработки проектов, высокая программистская квалификация, знание php, понимание основ баз данных, понимание особенностей веба;
+							li На собеседовании расскажете о своем опыте, мы проверим знания, обсудим будущее;
+							li Хорошего программиста (например, из мира C#, 1C или Java) готовы принять без опыта в вебе.
+
+						p
+							b Условия:
+
+						ul
+							li Стабильная растущая зарплата, хороший коллектив, обучение и корпоративные развлечения.
+
+					form.vacancy-detail__form
+						.vacancy-detail__title Хочу присоединиться к команде
+						.form-group
+							.form-group__label Имя, фамилия*
+							input(type="text" placeholder="Будем рады, если Вы представитесь").form-group__input
+						.form-group
+							.form-group__label E-mail*
+							input(type="text" placeholder="Электронный адрес").form-group__input
+						.form-group
+							.form-group__label Телефон*
+							input(type="tel" placeholder="Номер телефона").form-group__input
+						.form-group
+							.form-group__label Откуда узнали о вакансии
+							input(type="tel" placeholder="Выберите пункт из списка").form-group__input
+						.form-group
+							.form-group__label Комментарий
+							textarea(placeholder="Комментарий").form-group__input
+
+						button(type="submit" name="submit").btn.btn--special
+							.btn__special
+								span Отправить
+							.btn__text Отправить
+
+block script

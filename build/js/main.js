@@ -8,7 +8,6 @@ var projectFunc = {
   showBlogPopup: function showBlogPopup(element) {
     var blogPopup = $(element).find('.blog__popup');
     var blogText = $(element).find('.blog__txt');
-    console.log(blogPopup);
     var popupBlog = gsap.timeline({
       paused: true
     });
@@ -164,7 +163,6 @@ if ($('.js-ac-contacts').exists()) {
         this.classList.toggle('is-open');
         $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
         var content = this.nextElementSibling;
-        console.log(content);
 
         if (!content.style.maxHeight) {
           content.style.maxHeight = content.scrollHeight + "px";
@@ -816,13 +814,16 @@ if ($('.js-list').exists()) {
   var btnList = navPanel.querySelector('.js-list');
   btnList.addEventListener('click', function () {
     this.classList.toggle('active');
+    $('.js-dropMenu').toggle(400);
+  });
+}
 
-    if (this.classList.contains('active')) {
-      var heightDropList = getHeight('.js-in');
-      showMenu('.js-dropMenu', heightDropList);
-    } else {
-      hideMenu('.js-dropMenu');
-    }
+if ($('.include-menu').exists()) {
+  var menu = $('.include-menu__menu');
+  var btn = $('.js-menuBtn');
+  btn.click(function () {
+    $(this).toggleClass('active');
+    menu.toggleClass('active');
   });
 }
 
