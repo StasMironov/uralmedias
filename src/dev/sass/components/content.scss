@@ -3,6 +3,7 @@
     font-size: 1rem;
     max-width: 1024px;
     width: 100%;
+    margin: 42px auto 0;
 
     @media(max-width: 1024px) {
         font-size: 0.875rem;
@@ -66,8 +67,6 @@
 
     p {
         line-height: 1.5em;
-        max-width: 985px;
-        width: 100%;
 
         @media(max-width: 1024px) {
             font-size: 14px;

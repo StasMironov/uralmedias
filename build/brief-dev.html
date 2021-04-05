@@ -2,7 +2,7 @@
 <html lang="ru-RU">
   <head>
     <meta charset="utf-8">
-    <title>Главная страница</title><!--[if IE]>
+    <title></title><!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE = edge"><![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="">
@@ -71,7 +71,7 @@
           <div class="header__contacts"><a class="header__info header__info--phone" href="tel:+7(908)064-35-63">+7 (908) 064-35-63</a><a class="header__info header__info--mail" href="mailto:info@uralmedias.ru">info@uralmedias.ru</a></div>
         </div>
       </header>
-      <div data-barba="container" data-barba-namespace="about">
+      <div data-barba="container" data-barba-namespace="blog">
         <div class="bildboard-data bildboard-data--simple"><picture>
 <source srcset=img/dataBild/img1.jpg media="(min-width: 1025px)">
 <source media="(min-width: 621px)" srcset=img/dataBild/img_tablet1.jpg>
@@ -79,132 +79,141 @@
 <img src=img/dataBild/img1.jpg alt="MDN">
 </picture>
           <div class="bildboard-data__container container">
-            <div class="bildboard-data__title title-1">Вакансии</div>
+            <div class="bildboard-data__title title-1">Бриф на разработку сайта</div>
           </div>
         </div>
         <div class="breadcrumbs">
           <div class="breadcrumbs__container container"><a class="breadcrumbs__link link link--crumbs link--active" href="javascript:void(0);">Главная</a><a class="breadcrumbs__link link link--crumbs" href="javascript:void(0);">О нас</a></div>
         </div>
-        <div class="quote">
-          <div class="quote__container container">
-            <h2 class="quote__title title-2">Мы - одно из ведущих агенств в городе!</h2>
-            <div class="quote__bloc">
-              <div class="quote__par">Наша компания работает со многими клиентами, например, “Магнитогорский Металл”, “Роза Ветров”, “МБФ”. Мы стараемся решать только интересные задачи и закрывать их точно в срок! </div>
-              <div class="quote__par">Uralmedias с теплотой и вниманием относится к молодым сотрудникам и помогает адаптироваться на новом рабочем месте. Все участники нашей компании стараются постоянно самосовершенствоваться и достигать новых высот, а Uralmedias безусловно помогает им в этом!</div>
+        <div class="brief">
+          <div class="brief__container container">
+            <div class="brief__content">
+              <div class="brief__quote">Бриф на разработку сайта</div>
+              <div class="brief__title">Анкета для заказа услуг по созданию сайта</div>
+              <div class="brief__text">Для более четкого определения целей, стоящих перед будущим сайтом, необходимо заполнить анкету максимально подробно. Ваши ответы помогут сформировать представление о Вас, Ваших клиентах, а также собственных предпочтениях и вкусах.</div>
+              <form class="brief__form">
+                <div class="brief__bloc">
+                  <div class="brief__subtitle">Общая информация</div>
+                  <div class="form-group">
+                    <div class="form-group__label">Контактное лицо*</div>
+                    <input class="form-group__input" type="text" placeholder="Будем рады, если Вы представитесь">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">E-mail*</div>
+                    <input class="form-group__input" type="text" placeholder="Электронный адрес">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Телефон*</div>
+                    <input class="form-group__input" type="tel" placeholder="Номер телефона">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Название организации (Бренд)*</div>
+                    <input class="form-group__input" type="text" placeholder="Полное или сокращенное название Вашей компании">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Действующий сайт, если имеется</div>
+                    <input class="form-group__input" type="text" placeholder="Адрес сайта">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Область деятельности компании</div>
+                    <input class="form-group__input" type="text" placeholder="Напишите, в какой сфере Вы работаете">
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Опишите кратко задачу</div>
+                    <textarea class="form-group__input" placeholder="Например: разработать новый сайт для оптового направления, редизайн действующего сайта и т.д."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Предполагаемый бюджет проекта*</div>
+                    <input class="form-group__input" type="text" placeholder="Укажите планируемый бюджет на разработку">
+                  </div>
+                </div>
+                <div class="brief__bloc">
+                  <div class="brief__subtitle">Подробнее о задаче</div>
+                  <div class="brief__header">Тип Сайта, который вам нужен</div>
+                  <div class="brief__items">
+                    <label class="checkbox" for="check-1">
+                      <input class="checkbox__input" id="check-1" type="checkbox" name="check" value="1">
+                      <div class="checkbox__label">Интернет-магазин</div>
+                    </label>
+                    <label class="checkbox" for="check-2">
+                      <input class="checkbox__input" id="check-2" type="checkbox" name="check" value="2">
+                      <div class="checkbox__label">Каталог товаров (Без корзины, Личного кабинета и онлайн оплаты)</div>
+                    </label>
+                    <label class="checkbox" for="check-3">
+                      <input class="checkbox__input" id="check-3" type="checkbox" name="check" value="3">
+                      <div class="checkbox__label">Промо сайт/лендинг</div>
+                    </label>
+                    <label class="checkbox" for="check-4">
+                      <input class="checkbox__input" id="check-4" type="checkbox" name="check" value="4">
+                      <div class="checkbox__label">Корпоративный сайт</div>
+                    </label>
+                    <label class="checkbox" for="check-5">
+                      <input class="checkbox__input" id="check-5" type="checkbox" name="check" value="5">
+                      <div class="checkbox__label">Сервис/Портал</div>
+                    </label>
+                    <label class="checkbox" for="check-6">
+                      <input class="checkbox__input" id="check-6" type="checkbox" name="check" value="6">
+                      <div class="checkbox__label">Другое:
+                        <input class="checkbox__text-input" type="text">
+                      </div>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Адреса сайтов или компании конкурентов</div>
+                    <textarea class="form-group__input" placeholder="Опишите основных конкурентов, их преимущества или недостатки"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Предположительное количество товаров/услуг на сайте</div>
+                    <input class="form-group__input" type="text" placeholder="Укажите количество товаров/услуг на сайте">
+                  </div>
+                  <div class="brief__header">Ценовой сегмент Ваших товаров/услуг</div>
+                  <div class="brief__items">
+                    <label class="checkbox" for="check-7">
+                      <input class="checkbox__input" id="check-7" type="checkbox" name="check" value="1">
+                      <div class="checkbox__label">Бюджетный</div>
+                    </label>
+                    <label class="checkbox" for="check-8">
+                      <input class="checkbox__input" id="check-8" type="checkbox" name="check" value="2">
+                      <div class="checkbox__label">Средний</div>
+                    </label>
+                    <label class="checkbox" for="check-9">
+                      <input class="checkbox__input" id="check-9" type="checkbox" name="check" value="3">
+                      <div class="checkbox__label">Высокий</div>
+                    </label>
+                  </div>
+                  <div class="brief__header">Нужна ли мобильная версия Вашего сайта или адаптивный дизайн</div>
+                  <div class="brief__items">
+                    <label class="radio" for="radio-1">
+                      <input class="radio__input" id="radio-1" type="radio" name="radio" value="1">
+                      <div class="radio__label">Нет, не нужна</div>
+                    </label>
+                    <label class="radio" for="radio-2">
+                      <input class="radio__input" id="radio-2" type="radio" name="radio" value="2">
+                      <div class="radio__label">Нужна мобильная версия сайта</div>
+                    </label>
+                    <label class="radio" for="radio-3">
+                      <input class="radio__input" id="radio-3" type="radio" name="radio" value="3">
+                      <div class="radio__label">Адаптивный дизайн</div>
+                    </label>
+                  </div>
+                </div>
+                <div class="brief__bloc">
+                  <div class="brief__subtitle">Дизайн сайта</div>
+                  <div class="form-group">
+                    <div class="form-group__label">Укажите сайты, которые Вам нравятся функционально или визуально</div>
+                    <textarea class="form-group__input" placeholder="Форма подачи информации, принципы взаимодействия с аудиторией посетителей и т.п."></textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group__label">Основные требования и пожелания по дизайну сайта</div>
+                    <textarea class="form-group__input" placeholder="Опишите требования и пожелания по дизайну, которые Вы бы хотели увидеть на сайте компании"></textarea>
+                  </div>
+                </div>
+                <button class="btn btn--special" type="submit" name="submit">
+                  <div class="btn__special"><span>Отправить бриф</span></div>
+                  <div class="btn__text">Отправить бриф</div>
+                </button>
+              </form>
             </div>
-          </div>
-        </div>
-        <div class="include include--vacancy">
-          <div class="include__container container">
-            <div class="include__title title-3">Плюшки, которые тебя ждут</div>
-            <div class="include__cover">
-              <div class="include__items">
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">Различные проекты</div>
-                    <div class="include__txt">Работаем с крупным и малым бизнесом из самых разных отраслей.</div>
-                  </div>
-                </div>
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">полная занятость </div>
-                    <div class="include__txt">Рабочий день с понедельника по пятницу с 9:00-18:00.</div>
-                  </div>
-                </div>
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">Различные проекты</div>
-                    <div class="include__txt">Работаем с крупным и малым бизнесом из самых разных отраслей.</div>
-                  </div>
-                </div>
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">Различные проекты</div>
-                    <div class="include__txt">Работаем с крупным и малым бизнесом из самых разных отраслей.</div>
-                  </div>
-                </div>
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">Различные проекты</div>
-                    <div class="include__txt">Работаем с крупным и малым бизнесом из самых разных отраслей.</div>
-                  </div>
-                </div>
-                <div class="include__item"> 
-                  <div class="include__pic" style="background-image: url(./img/icon/set-job.svg)"></div>
-                  <div class="include__right">
-                    <div class="include__header">Различные проекты</div>
-                    <div class="include__txt">Работаем с крупным и малым бизнесом из самых разных отраслей.</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="demand">
-          <div class="demand__container container">
-            <div class="demand__title title-3">Мы ждем тебя, если ты </div>
-            <div class="demand__cover">
-              <div class="demand__items">
-                <div class="demand__item">
-                  <div class="demand__header">Целеустремленный</div>
-                  <div class="demand__txt">Постоянно стремишься узнать что-то новое, незнакомые задачи кажутся тебе приключением, а не припятствием. </div>
-                </div>
-                <div class="demand__item">
-                  <div class="demand__header">отвественный</div>
-                  <div class="demand__txt">Если берешься за какое-то задание и обещаешь сделать его в срок, то вовремя завершаешь задачу. </div>
-                </div>
-                <div class="demand__item">
-                  <div class="demand__header">открытый</div>
-                  <div class="demand__txt">Всегда готов к командной работе. Не боишься попросить помощь или оказать ее другим участникам агентства.</div>
-                </div>
-                <div class="demand__item">
-                  <div class="demand__header">обучаемый</div>
-                  <div class="demand__txt">Ты быстро учишься и никогда не задаешь дважды один и тот же вопрос.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="vacancy">
-          <div class="vacancy__container container">
-            <div class="vacancy__title title-4">Открытые вакансии</div>
-            <div class="vacancy__cover">
-              <div class="vacancy__items"><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">Web-разработчик</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">UX-дизайнер</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">Интернет-маркетолог</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">Front-end разработчик</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">SEO-специалист</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a><a class="vacancy__item" href="javascript:void(0);">
-                  <div class="vacancy__article">проектировщик</div>
-                  <div class="vacancy__txt">Город: Магнитогорск</div>
-                  <div class="vacancy__href link link--detail">узнать подробнее о вакансии</div></a></div>
-            </div>
-          </div>
-        </div>
-        <div class="place place--vacancy">
-          <div class="place__bg" style="background-image: url(img/decor/dec1.png)"></div>
-          <div class="place__container container">
-            <div class="place__title title-4">Не нашли вакансию, но хотите работать с нами? Отправьте нам свое резюме!</div>
-            <div class="place__text">Если Вы не нашли подходящую специальность, но Вы крутой специалист, которого мы очень ждали, прикрепляйте свое резюме, и мы обязательно свяжемся с вами.</div><a class="btn btn--special" href="#">
-              <div class="btn__special"><span>Заказать проект</span></div>
-              <div class="btn__text">Заказать проект</div></a><a class="place__file" href="#">Прикрепите файл форматах .pdf, .doc, .docx, .ppt, .pptx.
-              <input type="file"></a>
-            <div class="place__note">Или пишите нам на почту: <a href="mailto:info@uralmedias.ru">info@uralmedias.ru</a></div>
           </div>
         </div>
       </div>

@@ -1,4 +1,7 @@
 .btn {
+    padding: 0;
+    background-color: transparent;
+
     &--call {
         padding: 7px 21px;
         border: 2px solid white;
@@ -56,6 +59,7 @@
                 padding-right: 23px;
                 color: #fff;
                 transition: .3s;
+                cursor: pointer;
 
                 span {
                     position: relative;
