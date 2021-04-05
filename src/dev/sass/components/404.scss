@@ -1,0 +1,213 @@
+.not-found {
+    min-height: calc(100vh - 85px);
+    padding-top: 180px;
+    padding-bottom: 245px;
+    background-color: #fff;
+
+    &__number {
+        font-weight: 700;
+        font-size: 253px;
+        line-height: 0.78;
+        color: #00a4ad;
+
+        @media (max-width: 1235px) {
+            font-size: 225px;
+        }
+
+        @media (max-width: 1024px) {
+            font-size: 205px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 115px;
+        }
+
+        span {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: inline;
+            }
+        }
+
+        &--mf {
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    &__left {
+        margin-right: 35px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 100%;
+            margin-right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+
+        @media (max-width: 768px){
+            max-width :485px;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 47px;
+        line-height: 1.11;
+
+        @media (max-width: 1235px){
+            font-size: 40px;
+        }
+        @media (max-width: 1024px){
+            font-size: 35px;
+        }
+        @media (max-width: 768px){
+            text-align: center;
+        }
+        @media (max-width: 600px){
+            font-size: 25px;
+        }
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 1.31;
+        margin-top: 17px;
+
+        @media (max-width: 1235px){
+            font-size: 21px;
+            line-height: 26px;
+        }
+        @media (max-width: 768px){
+            text-align: center;
+        }
+        @media (max-width: 600px){
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &__icon {
+        height: 32px;
+        width: 32px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-right: 7px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 45px;
+        margin: 35px -10px -10px;
+
+        @media (max-width: 1235px){
+            margin-top: 25px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.5;
+
+        &--inst {
+            background-image: linear-gradient(19.85deg, #fd5 6.62%, #ff543e 50.06%, #c837ab 93.5%);
+            color: transparent;
+            background-clip: text;
+        }
+
+        &--face {
+            color: #1f4f9b;
+        }
+
+        &--vk {
+             color: #4a76a8;
+         }
+
+        &--tw {
+            color: #00acee;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        margin-left: 15px;
+        margin-top: 13px;
+
+        @media (max-width: 768px){
+            margin-left: 0;
+        }
+    }
+
+    &__pic {
+        height: 505px;
+        width :440px;
+
+        @media (max-width: 1235px){
+            width: 375px;
+        }
+
+        @media (max-width: 1024px){
+            width: 275px;
+        }
+
+        @media (max-width: 768px){
+            display: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .b-button {
+        margin-top: 45px;
+        margin-left: initial;
+
+        @media (max-width: 1024px){
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px){
+            margin: 35px auto 0;
+        }
+
+        &:hover {
+
+            .b-button__circle {
+                width: 95%;
+            }
+        }
+
+        .b-button__circle {
+            :after {
+                left: 166px;
+            }
+        }
+    }
+}

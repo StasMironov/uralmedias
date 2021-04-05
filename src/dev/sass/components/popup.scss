@@ -125,29 +125,12 @@
     &__form {
         max-width: 294px;
         width: 100%;
+        margin-top: 22px;
 
         @media(max-width: 620px) {
             max-width: initial;
             width: 100%;
         }
-    }
-
-    &__field {
-        height: 46px;
-        padding: 15px;
-        border: 1px solid $grey-7;
-
-        &:not(:first-child) {
-            margin-top: 20px;
-
-            @media(max-width: 620px) {
-                margin-top: 15px;
-            }
-        }
-    }
-
-    &__form {
-        margin-top: 22px;
 
         .btn {
             margin-top: 30px;

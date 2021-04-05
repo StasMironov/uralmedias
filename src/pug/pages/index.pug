@@ -21,60 +21,57 @@ block content
 			include ../modules/quote
 			.portfolio__container.container
 				.portfolio__items
-					.portfolio__item.portfolio__item--mm(style="background-image: url(img/decor/dec4.png)")
+					.portfolio__item
+						picture
+							source(media="(max-width: 500px)" srcset="img/projects/magmetall-290.jpg")
+							source(media="(max-width: 768px)" srcset="img/projects/magmetall-728.jpg")
+							source(media="(min-width: 769px)" srcset="img/projects/magmetall-1260.jpg")
+							img(src="img/projects/magmetall-1260.jpg" alt="mm" title="mm")
 						.portfolio__grid
-							.portfolio__right
+							.portfolio__left
 								.portfolio__header.title-3 Магнитогорский металл
 								.portfolio__content
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
-								a(href="javascript:void(0);").link.link--look 
+									p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+									p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+								a(href="javascript:void(0);").link.link--look
 									.link__txt смотреть проект
 									.link__icon
 										+svg('arrow-small')
-							.portfolio__left
-								.portfolio__elements
-									.portfolio__element
-										img(src="./img/decor/dec5.png" alt="")
-									.portfolio__element
-										img(src="./img/decor/dec6.png" alt="")
-									.portfolio__element
-										img(src="./img/decor/dec7.png" alt="")
-									.portfolio__element
-										img(src="./img/decor/dec8.png" alt="")
-					.portfolio__item.portfolio__item--mbf(style="background-image: url(img/decor/dec9.png)")
+
+					.portfolio__item
+						picture
+							source(media="(max-width: 500px)" srcset="img/projects/mbf-290.jpg")
+							source(media="(max-width: 768px)" srcset="img/projects/mbf-728.jpg")
+							source(media="(min-width: 769px)" srcset="img/projects/mbf-1260.jpg")
+							img(src="img/projects/mbf-1260.jpg" alt="mbf" title="mbf")
 						.portfolio__grid
-							.portfolio__right
+							.portfolio__left
 								.portfolio__header.title-3 МБФ
 								.portfolio__content
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
-								a(href="javascript:void(0);").link.link--look 
+									p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+									p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+								a(href="javascript:void(0);").link.link--look
 									.link__txt смотреть проект
 									.link__icon
 										+svg('arrow-small')
-							.portfolio__left
-								.portfolio__elements
-									.portfolio__element
-										img(src="./img/decor/dec10.png" alt="")
-					.portfolio__item.portfolio__item--rose(style="background-image: url(img/decor/dec12.png)")
+
+					.portfolio__item(style="background-image: url(img/decor/dec12.png)")
+						picture
+							source(media="(max-width: 500px)" srcset="img/projects/roza-vetrov-290.jpg")
+							source(media="(max-width: 768px)" srcset="img/projects/roza-vetrov-728.jpg")
+							source(media="(min-width: 769px)" srcset="img/projects/roza-vetrov-1260.jpg")
+							img(src="img/projects/magmetall-1260.jpg" alt="roza-vetrov" title="roza-vetrov")
 						.portfolio__grid
-							.portfolio__right
+							.portfolio__left
 								.portfolio__header.title-3 Роза ветров
 								.portfolio__content
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
-									.portfolio__par Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
-								a(href="javascript:void(0);").link.link--look 
+									p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+									p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+								a(href="javascript:void(0);").link.link--look
 									.link__txt смотреть проект
 									.link__icon
 										+svg('arrow-small')
-							.portfolio__left
-								.portfolio__elements
-									.portfolio__element
-										img(src="./img/decor/dec11.png" alt="").portfolio__img.portfolio__img--pc
-										img(src="./img/decor/dec14.png" alt="" style="display:none").portfolio__img.portfolio__img--mobile
-									.portfolio__element
-										img(src="./img/decor/dec13.png" alt="")
+
 		.services
 			.services__container.container
 				.services__title.title-3 Спектр наших услуг

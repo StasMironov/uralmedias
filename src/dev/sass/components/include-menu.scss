@@ -8,6 +8,8 @@
     }
 
     &__menu {
+        display: flex;
+        align-items: center;
         max-width: max-content;
         width: 100%;
         margin: 0 auto;
@@ -19,10 +21,15 @@
             width: 100%;
             left: 0;
             right: 0;
-            opacity: 0;
             background-color: $ochre;
             max-width: 100%;
-            padding: 0px 15px 10px;
+            padding: 0 15px 10px;
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        &.active {
+            opacity: 1;
         }
     }
 
@@ -42,9 +49,19 @@
     &__icon {
         width: 0;
         height: 0;
-        border-style: solid;
-        border-width: 4px 3px 0 3px;
-        border-color: $grey-10 transparent transparent transparent;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 4px solid $grey-10;
+    }
+
+    .js-menuBtn {
+
+        &.active {
+
+            .include-menu__icon {
+                transform: rotate(-180deg);
+            }
+        }
     }
 
     &__text {
@@ -57,50 +74,71 @@
 
     &__link {
         position: relative;
+        display: flex;
+        justify-content: center;
         font-size: 14px;
         color: $black;
         transition: .3s ease-in;
         padding-bottom: 4px;
+        cursor: pointer;
 
         @media(max-width: 1024px) {
+            width: 100%;
             font-size: 12px;
             padding-bottom: 0;
         }
 
-        &:after {
+        &.checked {
             position: absolute;
-            content: "";
-            width: 0%;
-            height: 1px;
-            transition: .3s ease-in;
-            background-color: $green-1;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-
-            @media(max-width: 1024px) {
-                content: none;
-            }
+            top: -34px;
+            justify-content: normal;
+            padding: 0 15px;
         }
 
-        &--active {
-            color: $green-1;
+        span {
 
             &:after {
-                width: 100%;
+                position: absolute;
+                content: "";
+                width: 0;
+                height: 1px;
+                transition: .3s ease-in;
+                background-color: $green-1;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+
+                @media(max-width: 1024px) {
+                    content: none;
+                }
             }
         }
 
-        &:hover {
-            &:after {
-                width: 100%;
-            }
+        & > input {
 
+            &:checked {
+
+                & + span {
+                    color: $green-1;
+
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
         }
 
-        &:hover {
-            color: $green-1;
+        &:hover,
+        &:focus {
+
+            span {
+                color: $green-1;
+
+                &:after {
+                    width: 100%;
+                }
+            }
         }
 
         &:not(:last-child) {

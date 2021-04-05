@@ -1,9 +1,17 @@
 .include-menu
     .include-menu__btn.js-menuBtn
-        .include-menu__text Все
+        .include-menu__text
         .include-menu__icon
     .include-menu__menu
-        a(href="javascript:void(0);").include-menu__link.include-menu__link--active Статьи
-        a(href="javascript:void(0);").include-menu__link Кейсы
-        a(href="javascript:void(0);").include-menu__link События
-        a(href="javascript:void(0);").include-menu__link Все
+        label(for="f1").include-menu__link
+            input(type="radio" name="radio" id="f1")
+            span Статьи
+        label(for="f2").include-menu__link
+            input(type="radio" name="radio" id="f2")
+            span Кейсы
+        label(for="f3").include-menu__link
+            input(type="radio" name="radio" id="f3")
+            span События
+        label(for="f4").include-menu__link
+            input(type="radio" name="radio" id="f4")
+            span Все

@@ -135,8 +135,6 @@
         }
     }
 
-
-
     &__cover {
         margin-top: 44px;
 
@@ -146,6 +144,113 @@
 
         @media(max-width: 620px) {
             margin-top: 30px;
+        }
+    }
+
+    &-detail {
+        min-height: 75vh;
+        padding-bottom: 90px;
+        background: url('../img/decor/mountains.png') no-repeat bottom right;
+
+        @media(max-width: 1366px) {
+            background-size: 75%;
+        }
+
+        @media(max-width: 768px) {
+            background-size: 100%;
+        }
+
+        @media(max-width: 320px) {
+            padding-bottom: 200px;
+            background: url('../img/decor/mountains-320.png') no-repeat bottom;
+        }
+
+        &__content {
+            max-width: 1024px;
+            width: 100%;
+            margin: 60px auto 0;
+
+            @media (max-width: 620px) {
+                margin-top: 36px;
+            }
+        }
+
+        &__body {
+
+            p {
+                line-height: 1.5;
+
+                & + p {
+                    margin-top: 25px;
+                }
+            }
+
+            ul {
+                margin-top: 20px;
+
+                li {
+                    display: flex;
+                    line-height: 1.5;
+
+                    &::before {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 100%;
+                        background-color: $green-1;
+                        margin-right: 13px;
+                        margin-top: 0.5em;
+                        flex-shrink: 0;
+                    }
+
+                    & + li {
+                        margin-top: 10px;
+                    }
+                }
+
+                & + p {
+                    margin-top: 40px;
+
+                    @media (max-width: 620px) {
+                        margin-top: 25px;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1.2;
+            margin-bottom: 35px;
+
+            @media (max-width: 620px) {
+                font-size: 26px;
+            }
+        }
+
+        &__form {
+            max-width: 700px;
+            margin-top: 100px;
+
+            @media (max-width: 620px) {
+                margin-top: 40px;
+            }
+
+            .btn {
+                margin: 60px 0 0;
+
+                @media (max-width: 620px) {
+                    margin: 25px 0 0;
+                }
+            }
+        }
+
+        .form-group {
+
+            textarea {
+                height: 17em;
+            }
         }
     }
 }

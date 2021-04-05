@@ -7,8 +7,6 @@ const projectFunc = {
         let blogPopup = $(element).find('.blog__popup');
         let blogText = $(element).find('.blog__txt');
 
-        console.log(blogPopup);
-
         const popupBlog = gsap.timeline({
             paused: true
         });
@@ -191,7 +189,6 @@ if ($('.js-ac-contacts').exists()) {
 
 
                 let content = this.nextElementSibling;
-                console.log(content);
 
                 if (!content.style.maxHeight) {
                     content.style.maxHeight = content.scrollHeight + "px";
@@ -1018,14 +1015,17 @@ if ($('.js-list').exists()) {
 
     btnList.addEventListener('click', function () {
         this.classList.toggle('active');
+        $('.js-dropMenu').toggle(400);
+    });
+}
 
-        if (this.classList.contains('active')) {
-            const heightDropList = getHeight('.js-in');
-            showMenu('.js-dropMenu', heightDropList);
-        }
-        else {
-            hideMenu('.js-dropMenu');
-        }
+if ($('.include-menu').exists()) {
+    var menu = $('.include-menu__menu');
+    var btn = $('.js-menuBtn');
+
+    btn.click(function () {
+        $(this).toggleClass('active');
+        menu.toggleClass('active');
     });
 }
 

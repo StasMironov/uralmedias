@@ -1,0 +1,119 @@
+extends ../layout/main
+
+block variables
+    - var pageClass = 'index-page';
+    - var setTitle = 'Бриф на разработку сайта';
+    - var include = 'btn';
+    - var quote = 'services'
+    - var bildboard_include = 'simple';
+    - var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
+
+block content
+    div(data-barba="container" data-barba-namespace="blog")
+        include ../modules/bildboard
+        include ../modules/breadcrumbs
+        .brief
+            .brief__container.container
+                .brief__content
+                    .brief__quote Бриф на разработку сайта
+                    .brief__title Анкета для заказа услуг по созданию сайта
+                    .brief__text Для более четкого определения целей, стоящих перед будущим сайтом, необходимо заполнить анкету максимально подробно. Ваши ответы помогут сформировать представление о Вас, Ваших клиентах, а также собственных предпочтениях и вкусах.
+
+                    form.brief__form
+                        .brief__bloc
+                            .brief__subtitle Общая информация
+                            .form-group
+                                .form-group__label Контактное лицо*
+                                input(type="text" placeholder="Будем рады, если Вы представитесь").form-group__input
+                            .form-group
+                                .form-group__label E-mail*
+                                input(type="text" placeholder="Электронный адрес").form-group__input
+                            .form-group
+                                .form-group__label Телефон*
+                                input(type="tel" placeholder="Номер телефона").form-group__input
+                            .form-group
+                                .form-group__label Название организации (Бренд)*
+                                input(type="text" placeholder="Полное или сокращенное название Вашей компании").form-group__input
+                            .form-group
+                                .form-group__label Действующий сайт, если имеется
+                                input(type="text" placeholder="Адрес сайта").form-group__input
+                            .form-group
+                                .form-group__label Область деятельности компании
+                                input(type="text" placeholder="Напишите, в какой сфере Вы работаете").form-group__input
+                            .form-group
+                                .form-group__label Опишите кратко задачу
+                                textarea(placeholder="Например: разработать новый сайт для оптового направления, редизайн действующего сайта и т.д.").form-group__input
+                            .form-group
+                                .form-group__label Предполагаемый бюджет проекта*
+                                input(type="text" placeholder="Укажите планируемый бюджет на разработку").form-group__input
+
+                        .brief__bloc
+                            .brief__subtitle Подробнее о задаче
+                            .brief__header Тип Сайта, который вам нужен
+                            .brief__items
+                                label(for="check-1").checkbox
+                                    input(id="check-1" type="checkbox" name="check" value="1").checkbox__input
+                                    .checkbox__label Интернет-магазин
+                                label(for="check-2").checkbox
+                                    input(id="check-2" type="checkbox" name="check" value="2").checkbox__input
+                                    .checkbox__label Каталог товаров (Без корзины, Личного кабинета и онлайн оплаты)
+                                label(for="check-3").checkbox
+                                    input(id="check-3" type="checkbox" name="check" value="3").checkbox__input
+                                    .checkbox__label Промо сайт/лендинг
+                                label(for="check-4").checkbox
+                                    input(id="check-4" type="checkbox" name="check" value="4").checkbox__input
+                                    .checkbox__label Корпоративный сайт
+                                label(for="check-5").checkbox
+                                    input(id="check-5" type="checkbox" name="check" value="5").checkbox__input
+                                    .checkbox__label Сервис/Портал
+                                label(for="check-6").checkbox
+                                    input(id="check-6" type="checkbox" name="check" value="6").checkbox__input
+                                    .checkbox__label Другое:
+                                        input(type="text").checkbox__text-input
+
+                            .form-group
+                                .form-group__label Адреса сайтов или компании конкурентов
+                                textarea(placeholder="Опишите основных конкурентов, их преимущества или недостатки").form-group__input
+                            .form-group
+                                .form-group__label Предположительное количество товаров/услуг на сайте
+                                input(type="text" placeholder="Укажите количество товаров/услуг на сайте").form-group__input
+
+                            .brief__header Ценовой сегмент Ваших товаров/услуг
+                            .brief__items
+                                label(for="check-7").checkbox
+                                    input(id="check-7" type="checkbox" name="check" value="1").checkbox__input
+                                    .checkbox__label Бюджетный
+                                label(for="check-8").checkbox
+                                    input(id="check-8" type="checkbox" name="check" value="2").checkbox__input
+                                    .checkbox__label Средний
+                                label(for="check-9").checkbox
+                                    input(id="check-9" type="checkbox" name="check" value="3").checkbox__input
+                                    .checkbox__label Высокий
+
+                            .brief__header Нужна ли мобильная версия Вашего сайта или адаптивный дизайн
+                            .brief__items
+                                label(for="radio-1").radio
+                                    input(id="radio-1" type="radio" name="radio" value="1").radio__input
+                                    .radio__label Нет, не нужна
+                                label(for="radio-2").radio
+                                    input(id="radio-2" type="radio" name="radio" value="2").radio__input
+                                    .radio__label Нужна мобильная версия сайта
+                                label(for="radio-3").radio
+                                    input(id="radio-3" type="radio" name="radio" value="3").radio__input
+                                    .radio__label Адаптивный дизайн
+
+                        .brief__bloc
+                            .brief__subtitle Дизайн сайта
+                            .form-group
+                                .form-group__label Укажите сайты, которые Вам нравятся функционально или визуально
+                                textarea(placeholder="Форма подачи информации, принципы взаимодействия с аудиторией посетителей и т.п.").form-group__input
+                            .form-group
+                                .form-group__label Основные требования и пожелания по дизайну сайта
+                                textarea(placeholder="Опишите требования и пожелания по дизайну, которые Вы бы хотели увидеть на сайте компании").form-group__input
+
+                        button(type="submit" name="submit").btn.btn--special
+                            .btn__special
+                                span Отправить бриф
+                            .btn__text Отправить бриф
+
+block script
