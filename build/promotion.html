@@ -1146,48 +1146,77 @@
             </div>
           </div>
         </div>
-        <div class="call" id="request">
+        <div class="call call--special" id="request">
           <div class="call__container container">
             <div class="call__grid">
               <div class="call__left">
                 <div class="call__top">
                   <div class="call__title title-4">Оставьте заявку</div>
-                  <div class="call__txt">для консультации</div>
+                  <div class="call__txt">на <span>бесплатный</span> аудит сайта</div>
                 </div>
                 <div class="call__bottom">
-                  <div class="call__img"><img src="img/team/t1.png" alt=""></div>
-                  <div class="call__name">Константин</div>
-                  <div class="call__status">Руководитель компании</div>
+                  <div class="call__img"><img src="img/team/p6.png" alt=""></div>
+                  <div class="call__name">Елизавета</div>
+                  <div class="call__status">Менеджер компании</div>
                 </div>
               </div>
               <div class="call__right">
-                <form class="call__form">
-                  <div class="call__bloc">
-                    <div class="form-group">
-                      <div class="form-group__label">Какая услуга Вас интересует?</div>
-                      <input class="form-group__input" type="text" placeholder="Веб">
-                    </div>
-                    <div class="form-group">
-                      <div class="form-group__label">Ваше имя</div>
-                      <input class="form-group__input" type="text" placeholder="Введите имя">
-                    </div>
-                    <div class="form-group">
-                      <div class="form-group__label">Контактный телефон</div>
-                      <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__">
-                    </div>
-                    <div class="form-group">
-                      <div class="form-group__label">Ваша почта</div>
-                      <input class="form-group__input" type="text" placeholder="Email">
-                    </div>
+                <form class="call__form call__form--grid">
+                  <div class="form-group form-group--name">
+                    <div class="form-group__label">Ваше имя</div>
+                    <input class="form-group__input" type="text" placeholder="Введите имя">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group form-group--phone">
+                    <div class="form-group__label">Ваш телефон или e-mail</div>
+                    <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__">
+                  </div>
+                  <div class="form-group form-group--adres">
+                    <div class="form-group__label">Адрес сайта</div>
+                    <input class="form-group__input" type="text" placeholder="Email">
+                  </div>
+                  <div class="form-group form-group--comment">
                     <div class="form-group__label">Комментарий</div>
-                    <textarea class="form-group__input" rows="3" placeholder="Дополнительная информация"></textarea>
+                    <textarea class="form-group__input" placeholder="Дополнительная информация"></textarea>
                   </div>
-                </form><a class="btn btn--special" href="#">
-                  <div class="btn__special"><span>Отправить заявку</span></div>
-                  <div class="btn__text">Отправить заявку</div></a>
-                <div class="call__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
+                  <div class="form-group form-group--service">
+                    <div class="selection">
+                      <div class="selection__title">Дополнительные услуги</div>
+                      <div class="selection__list">
+                        <label class="checkbox" for="check-1">
+                          <input class="checkbox__input" id="check-1" type="checkbox" name="check" value="1">
+                          <div class="checkbox__label">Оптимизация сайта (SEO)</div>
+                        </label>
+                        <label class="checkbox" for="check-2">
+                          <input class="checkbox__input" id="check-2" type="checkbox" name="check" value="2">
+                          <div class="checkbox__label">Разовая отимизация</div>
+                        </label>
+                        <label class="checkbox" for="check-3">
+                          <input class="checkbox__input" id="check-3" type="checkbox" name="check" value="3">
+                          <div class="checkbox__label">Бесплатная консультация</div>
+                        </label>
+                        <label class="checkbox" for="check-4">
+                          <input class="checkbox__input" id="check-4" type="checkbox" name="check" value="4">
+                          <div class="checkbox__label">Аудит сайта</div>
+                        </label>
+                        <label class="checkbox" for="check-5">
+                          <input class="checkbox__input" id="check-5" type="checkbox" name="check" value="5">
+                          <div class="checkbox__label">SEO-оптимизация</div>
+                        </label>
+                        <label class="checkbox" for="check-6">
+                          <input class="checkbox__input" id="check-6" type="checkbox" name="check" value="6">
+                          <div class="checkbox__label">Сопровождение разработки</div>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group form-group--request">
+                    <button class="btn btn--special" type="submit">
+                      <div class="btn__special"><span>Отправить заявку</span></div>
+                      <div class="btn__text">Отправить заявку</div>
+                    </button>
+                    <div class="call__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

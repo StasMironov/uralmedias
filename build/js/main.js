@@ -976,6 +976,14 @@ if ($('.js-form-call').exists()) {
 if ($('.js-overlay').exists()) {
   $('.js-overlay').on('click', function () {
     showOverlay(false);
+
+    if ($('.request-popup__wrapper').exists()) {
+      try {
+        $('.request-popup__wrapper').removeClass('active');
+      } catch (err) {
+        console.log(err);
+      }
+    }
   });
 }
 
