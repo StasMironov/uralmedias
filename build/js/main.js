@@ -967,6 +967,35 @@ var changeHeightPage = function changeHeightPage() {
   $('.b-page').css('padding-bottom', paddingBottom);
 };
 
+if ($('#request').exists()) {
+  try {
+    $('a[href^="#"]').each(function () {
+      $(this).on('click', function (e) {
+        e.preventDefault();
+        var el = $(this);
+        var dest = el.attr('href'); // получаем направление
+
+        if (dest !== undefined && dest !== '') {
+          // проверяем существование
+          $('html').animate({
+            scrollTop: $(dest).offset().top - 130 // прокручиваем страницу к требуемому элементу
+
+          }, {
+            duration: 1000,
+            // по умолчанию «400» 
+            easing: "linear" // по умолчанию «swing» 
+
+          });
+        }
+
+        return false;
+      });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 var caseSlider1 = new Swiper('.case__slider--1', {
   slidesPerView: 'auto',
   spaceBetween: 30,
