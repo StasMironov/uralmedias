@@ -133,6 +133,7 @@
         }
 
         .btn {
+            width: 224px;
             margin-top: 30px;
             margin-left: 0;
         }
@@ -148,6 +149,10 @@
 
         a {
             color: $black;
+
+            &:hover {
+                color: $red-2;
+            }
         }
     }
 

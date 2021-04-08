@@ -192,12 +192,7 @@
     }
 
     &__more {
-        align-self: center;
-        margin-top: 51px;
+        margin: 53px auto 0;
         text-transform: uppercase;
-
-        @media(max-width: 620px) {
-            margin-top: 53px;
-        }
     }
 }

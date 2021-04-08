@@ -5,12 +5,14 @@ case include
             .place__container.container
                 .place__title.title-4 Не нашли вакансию, но хотите работать с нами? Отправьте нам свое резюме!
                 .place__text Если Вы не нашли подходящую специальность, но Вы крутой специалист, которого мы очень ждали, прикрепляйте свое резюме, и мы обязательно свяжемся с вами.
-                a(href="#").btn.btn--special
-                    .btn__special
-                        span Заказать проект
-                    .btn__text Заказать проект
-                a(href="#").place__file Прикрепите файл форматах .pdf, .doc, .docx, .ppt, .pptx.
-                    input(type='file')
+                form
+                    button(type="submit").btn.btn--special
+                        .btn__special
+                            span Отправить резюме
+                        .btn__text Отправить резюме
+                    label(for="file").file
+                        input(id="file" type="file" accept=".pdf, .doc, .docx, .ppt, .pptx").file__input
+                        .file__label Прикрепите файл формата .pdf, .doc, .docx, .ppt, .pptx.
                 .place__note Или пишите нам на почту: <a href="mailto:info@uralmedias.ru">info@uralmedias.ru</a>
                
     

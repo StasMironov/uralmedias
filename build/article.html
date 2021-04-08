@@ -53,8 +53,8 @@
         </div>
         <div class="header__nav--tablet js-nav">
           <ul class="header__bloc">
-            <li class="header__btn header__item"><a class="header__txt link">Услуги</a>
-              <ul class="header__list">
+            <li class="header__btn header__item"><a class="header__txt link js-list">Услуги</a>
+              <ul class="header__list js-dropMenu">
                 <li class="header__ref header__ref--active"><a href="javascript:(void);">Услуга 1</a></li>
                 <li class="header__ref"><a href="javascript:(void);">Услуга 2</a></li>
                 <li class="header__ref"><a href="javascript:(void);">Услуга 3</a></li>
@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="breadcrumbs">
-          <div class="breadcrumbs__container container"><a class="breadcrumbs__link link link--crumbs link--active" href="javascript:void(0);">Главная</a><a class="breadcrumbs__link link link--crumbs" href="javascript:void(0);">О нас</a></div>
+          <div class="breadcrumbs__container container"><a class="breadcrumbs__link link link--crumbs active" href="javascript:void(0);">Главная</a><a class="breadcrumbs__link link link--crumbs" href="javascript:void(0);">О нас</a></div>
         </div>
         <div class="article"> 
           <div class="article__container container">
@@ -231,6 +231,13 @@
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
+                <div class="form-group">
+                  <select class="select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
                 </div>

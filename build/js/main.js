@@ -242,8 +242,23 @@ if ($('.js-info-slider').exists()) {
 }
 
 if ($('.partners').exists()) {
-  var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);
+  var partnerSlider = new Slider(false, '.partners', 4, 82, 8, false, false, false);
   partnerSlider.createSlider();
+  $(window).on('resize load', function () {
+    if ($(this).width() <= 1300) {
+      partnerSlider.updateSlider('space', 50);
+    }
+
+    if ($(this).width() <= 1023) {
+      partnerSlider.updateSlider('space', 40);
+      partnerSlider.updateSlider('view', 3);
+    }
+
+    if ($(this).width() <= 500) {
+      partnerSlider.updateSlider('space', 20);
+      partnerSlider.updateSlider('view', 2);
+    }
+  });
 }
 
 if ($('.works').exists()) {
@@ -621,7 +636,7 @@ $(window).on('load', function () {
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
         // Своё изображение иконки метки.
-        iconImageHref: '/img/icon/marker.svg',
+        iconImageHref: '/images/icons/marker.svg',
         // Размеры метки.
         iconImageSize: [48, 64],
         // Смещение левого верхнего угла иконки относительно
@@ -812,7 +827,8 @@ var hideMenu = function hideMenu(element) {
 if ($('.js-list').exists()) {
   var navPanel = document.querySelector('.header__nav--tablet');
   var btnList = navPanel.querySelector('.js-list');
-  btnList.addEventListener('click', function () {
+  btnList.addEventListener('click', function (e) {
+    e.preventDefault();
     this.classList.toggle('active');
     $('.js-dropMenu').toggle(400);
   });
@@ -934,17 +950,9 @@ var formShow = function formShow(element, status) {
 };
 
 if ($('.js-form-call').exists()) {
-  try {
-    var _header = document.querySelector('.header');
-
-    var formBtn = _header.querySelector('.js-form-call');
-
-    formBtn.addEventListener('click', function () {
-      showOverlay(true);
-    });
-  } catch (err) {
-    console.log(err);
-  }
+  $('.js-form-call').on('click', function () {
+    showOverlay(true);
+  });
 }
 
 if ($('.js-overlay').exists()) {
@@ -993,4 +1001,42 @@ var caseSlider3 = new Swiper('.case__slider--3', {
       spaceBetween: 65
     }
   }
+});
+
+function checkPacket() {
+  if ($('.rate__item').exists()) {
+    $('.rate__item').each(function () {
+      if ($(this).find('.switch').is(':checked')) {
+        $(this).find('.rate__right').addClass('rate__right--active');
+      } else {
+        $(this).find('.rate__right').removeClass('rate__right--active');
+      }
+    });
+  }
+}
+
+checkPacket();
+$('.rate__item .switch').on('click', function () {
+  checkPacket();
+}); //custom file input
+
+$(function () {
+  $('input[type="file"]').change(function () {
+    var label = $('.file .file__label');
+
+    if (typeof this.files != 'undefined') {
+      if (this.files.length == 0) {
+        label.removeClass('withFile').text(label.data('default'));
+      } else {
+        var file = this.files[0];
+        var name = file.name;
+        label.addClass('withFile').text(name);
+      }
+    } else {
+      var name = this.value.split("\\");
+      label.addClass('withFile').text(name[name.length - 1]);
+    }
+
+    return false;
+  });
 });

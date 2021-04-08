@@ -35,10 +35,6 @@
         }
     }
 
-    &__box {
-        display: flex;
-    }
-
     &__info {
         margin: 0 auto;
         text-align: center;
@@ -319,6 +315,8 @@
     }
 
     &__box {
+        display: flex;
+
         &:last-child {
             margin-top: 16px;
         }
@@ -364,19 +362,15 @@
         .switch+label:after {
             content: '';
             position: absolute;
-            background-image: url("../icon/sw.png");
-            transition: .2s;
             top: 0;
-            bottom: 0;
-            margin: auto;
-            right: auto;
-            left: 5px;
-            width: 10px;
-            height: 9px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+            left: 6px;
+            width: 4px;
+            height: 10px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
             opacity: 0;
+            transition: .2s;
         }
 
         .switch:checked+label:before {
