@@ -343,6 +343,11 @@
         padding-bottom: 84px;
         padding-top: 66px;
 
+        @media(max-width: 1024px) {
+            padding:  55px 0;
+            margin-top: 70px;
+        }
+
         .include {
             &__items {
                 display: flex;
@@ -352,6 +357,20 @@
 
                 @media(max-width: 1700px) {
                     margin-left: -50px;
+                }
+
+                @media(max-width: 1024px) {
+                    margin-top: -35px;
+                    margin-left: -35px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: -30px;
+                }
+
+                @media(max-width:620px) {
+                    margin-left: 0;
+                    margin-top: -25px;
                 }
             }
 
@@ -366,16 +385,51 @@
                     width: calc(33.333% - 50px);
                     margin-left: 50px;
                 }
+
+                @media(max-width: 1024px) {
+                    width: calc(50% - 35px);
+                    margin-top: 35px;
+                    margin-left: 35px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: 30px;
+                }
+
+                @media(max-width: 620px) {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-top: 25px;
+                }
             }
 
             &__num {
                 font-size: 48px;
                 font-weight: 700;
+
+                @media(max-width: 1024px) {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+
+                @media(max-width: 768px) {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+
+                @media(max-width: 620px) {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
             }
 
             &__cover {
                 position: relative;
                 margin-top: 49px;
+
+                @media(max-width: 1024px) {
+                    margin-top: 40px;
+                }
             }
 
             &__header {
@@ -385,12 +439,31 @@
                 line-height: 28px;
                 max-width: 254px;
                 width: 100%;
+
+                @media(max-width: 1024px) {
+                    margin-top: 15px;
+                }
+
+                @media(max-width: 620px) {
+                    max-width: initial;
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-top: 10px;
+                }
             }
 
             &__text {
                 margin-top: 15px;
                 font-size: 14px;
                 line-height: 21px;
+
+                @media(max-width: 1024px) {
+                    margin-top: 10px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: 5px;
+                }
             }
         }
 

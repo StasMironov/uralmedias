@@ -225,8 +225,25 @@ if ($('.header__inner').exists) {
 checkPage();
 
 if ($('.js-rate').exists()) {
-  var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
+  //  constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false, loop = true, direction = 'horizontal') {
+  var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, true, false, '', false, false);
   rateSlider.createSlider();
+  $(window).on('resize load', function () {
+    if ($(this).width() <= 1300) {
+      rateSlider.updateSlider('space', 20);
+      rateSlider.updateSlider('view', 2);
+      rateSlider.updateSlider('ratio', true);
+    }
+
+    if ($(this).width() <= 1024) {
+      rateSlider.updateSlider('space', 20);
+    }
+
+    if ($(this).width() <= 800) {
+      rateSlider.updateSlider('view', 1);
+    } else {//  rateSlider.updateSlider('view', 3);
+    }
+  });
 }
 
 if ($('.js-info-slider').exists()) {

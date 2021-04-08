@@ -1,6 +1,14 @@
 .request {
     margin-top: 78px;
 
+    @media(max-width: 1024px) {
+       margin-top: 70px;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 50px;
+    }
+
     &__note {
         text-align: center;
         font-size: 14px;
@@ -14,6 +22,13 @@
         margin-top: 27px;
         line-height: 60px;
 
+        @media(max-width: 1024px) {
+            line-height: 43px;
+        }
+
+        @media(max-width: 620px) {
+            line-height: 35px;
+        }
 
     }
 
