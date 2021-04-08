@@ -249,14 +249,40 @@
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
+                <div class="request-popup__wrapper">
+                  <div class="request-popup__btn js-drop-btn">
+                    <div class="request-popup__txt js-rp-txt">Разработка сайтов</div>
+                    <div class="request-popup__icon">
+                            <svg class="b-svg svg-arr ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                            </svg>
+                    </div>
+                  </div>
+                  <div class="request-popup__menu">
+                    <label class="request-popup__link" for="s1">
+                      <input type="radio" name="radio" id="s1" value="article"><span>Статьи</span>
+                    </label>
+                    <label class="request-popup__link" for="s2">
+                      <input type="radio" name="radio" id="s2" value="case"><span>Кейсы</span>
+                    </label>
+                    <label class="request-popup__link" for="s3">
+                      <input type="radio" name="radio" id="s3" value="change"><span>События</span>
+                    </label>
+                    <label class="request-popup__link" for="s4">
+                      <input type="radio" name="radio" id="s4" value="all"><span>Все</span>
+                    </label>
+                  </div>
+                </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
                 </div>
                 <div class="form-group">
-                  <input class="form-group__input" type="tel" placeholder="Ваш телефон">
-                </div><a class="btn btn--special" href="#">
+                  <input class="form-group__input js-phone-mask" type="tel" placeholder="Ваш телефон">
+                </div>
+                <button class="btn btn--special" type="submit">
                   <div class="btn__special"><span>Заказать проект</span></div>
-                  <div class="btn__text">Заказать проект</div></a>
+                  <div class="btn__text">Заказать проект</div>
+                </button>
               </form>
               <div class="request-popup__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
             </div>
@@ -273,6 +299,7 @@
     <script src="js/libs-min.js"></script>
     <script src="js/lightgallery.js"></script>
     <script src="js/smooth-scrollbar.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
     <script src="js/Slider.js"></script>
     <script src="js/main-min.js"></script>
   </body>

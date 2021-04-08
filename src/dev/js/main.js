@@ -1201,6 +1201,47 @@ const changeHeightPage = () => {
     $('.b-page').css('padding-bottom', paddingBottom);
 }
 
+if ($('.js-form-request').exists()) {
+    let popupRequest = document.querySelector('.js-form-request'),
+        btnDropMenu = popupRequest.querySelector('.js-drop-btn'),
+        menuWrapper = popupRequest.querySelector('.request-popup__wrapper'),
+        radioEl = popupRequest.querySelectorAll('.request-popup__link input'),
+        labelEl = popupRequest.querySelectorAll('.request-popup__link'),
+        labelTxt = '',
+        textBtn = popupRequest.querySelector('.js-rp-txt');
+
+
+    for (let i = 0; i < labelEl.length; i++) {
+        labelEl[i].addEventListener('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            if (radioEl[i].checked) {
+                textBtn.textContent = labelEl[i].querySelector('span').textContent;
+            }
+        });
+    }
+
+    btnDropMenu.addEventListener('click', () => {
+        menuWrapper.classList.toggle('active');
+    });
+
+    $('.request-popup').mouseup(function (e) {
+        const container = $('.request-popup__wrapper');
+
+        if (container.has(e.target).length === 0) {
+            container.removeClass('active');
+        }
+    });
+}
+
+if ($('.js-phone-mask').exists()) {
+    let phoneEl = document.querySelectorAll('.js-phone-mask');
+
+    for (let i = 0; i < phoneEl.length; i++) {
+        $(phoneEl[i]).mask("+7(999) 999-9999");
+    }
+}
+
 var caseSlider1 = new Swiper('.case__slider--1', {
     slidesPerView: 'auto',
     spaceBetween: 30,

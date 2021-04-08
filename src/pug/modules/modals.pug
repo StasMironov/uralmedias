@@ -4,16 +4,29 @@
         .request-popup__left
             .request-popup__title Время покорять новые вершины!
             form.request-popup__form
-                //-   .request-popup__wrapper
-                    .request-popup__btn
-                        .request-popup__txt Разработка сайтов
+                .request-popup__wrapper
+                    .request-popup__btn.js-drop-btn
+                        .request-popup__txt.js-rp-txt Разработка сайтов
                         .request-popup__icon
                             +svg('arr')
+                    .request-popup__menu
+                        label(for="s1").request-popup__link
+                            input(type="radio" name="radio" id="s1" value='article')
+                            span Статьи
+                        label(for="s2").request-popup__link
+                            input(type="radio" name="radio" id="s2" value='case')
+                            span Кейсы
+                        label(for="s3").request-popup__link
+                            input(type="radio" name="radio" id="s3" value='change')
+                            span События
+                        label(for="s4").request-popup__link
+                            input(type="radio" name="radio" id="s4" value="all")
+                            span Все
                 .form-group
                     input.form-group__input(type="text" placeholder="Ваше имя")
                 .form-group
-                    input.form-group__input(type="tel" placeholder="Ваш телефон")
-                a(href="#").btn.btn--special
+                    input.form-group__input(type="tel" placeholder="Ваш телефон").js-phone-mask
+                button(type="submit").btn.btn--special
                     .btn__special
                         span Заказать проект
                     .btn__text Заказать проект

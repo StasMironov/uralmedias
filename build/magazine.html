@@ -102,33 +102,27 @@
             <div class="demand__cover">
               <div class="demand__items">
                 <div class="demand__item">
-                  <div class="demand__num">1</div>
-                  <div class="demand__header">предпроектное исследование</div>
+                  <div class="demand__header"><span class="demand__num">1</span> предпроектное исследование</div>
                   <div class="demand__txt">Изучаем Ваш бизнес, анализируем ресурсы конкурентов, выбираем структуру сайта.</div>
                 </div>
                 <div class="demand__item">
-                  <div class="demand__num">2</div>
-                  <div class="demand__header">создание прототипа</div>
+                  <div class="demand__header"><span class="demand__num">2</span> создание прототипа</div>
                   <div class="demand__txt">Создаем протротипы интерфейса, придумываем общую структуру интернет-магазина.</div>
                 </div>
                 <div class="demand__item">
-                  <div class="demand__num">3</div>
-                  <div class="demand__header">разработка дизайна</div>
+                  <div class="demand__header"><span class="demand__num">3</span> разработка дизайна</div>
                   <div class="demand__txt">Отрисовываем все необходимые страницы и модулируем интерфейс.</div>
                 </div>
                 <div class="demand__item">
-                  <div class="demand__num">4</div>
-                  <div class="demand__header">работы по разработке</div>
+                  <div class="demand__header"><span class="demand__num">4</span> работы по разработке</div>
                   <div class="demand__txt">Разрабатываем адаптивную верстку, программируем будущий сайт.</div>
                 </div>
                 <div class="demand__item">
-                  <div class="demand__num">5</div>
-                  <div class="demand__header">проведение тестирования</div>
+                  <div class="demand__header"><span class="demand__num">5</span> проведение тестирования</div>
                   <div class="demand__txt">Проверяем, наполняем контентом, настраиваем аналитику.</div>
                 </div>
                 <div class="demand__item">
-                  <div class="demand__num">6</div>
-                  <div class="demand__header">запуск интернет-магазина</div>
+                  <div class="demand__header"><span class="demand__num">6</span> запуск интернет-магазина</div>
                   <div class="demand__txt">Сдаем готовый сайт с налаженной системой продаж.</div>
                 </div>
               </div>
@@ -233,8 +227,8 @@
             </div>
           </div>
           <div class="benefit__container container"> 
-            <div class="benefit__items">
-              <div class="benefit__item">
+            <div class="benefit__wrapper">
+              <div class="benefit__decor">
                 <div class="benefit__bloc">
                   <div class="benefit__header">популярность</div>
                   <div class="benefit__txt">популярность интернет-магазинов все больше и больше растет среди потребителей из-за экономии времени, легкости поиска нужного товара, конфиденциальности покупок, доступности в любое время суток</div>
@@ -243,9 +237,6 @@
                   <div class="benefit__header">удобство</div>
                   <div class="benefit__txt">Он доступен покупателю 24 часа в сутки, 7 дней в неделю, что позволяет вам не упустить клиентов в нерабочие часы.</div>
                 </div>
-              </div>
-              <div class="benefit__item"><img src="./img/pc.png" alt=""></div>
-              <div class="benefit__item">
                 <div class="benefit__bloc">
                   <div class="benefit__header">доступность</div>
                   <div class="benefit__txt">Ваш бизнес не привязан к конкретному региону – Вы можете осуществлять торговлю не только в своем городе, но и во всей стране, и даже на международном уровне.</div>
@@ -255,6 +246,7 @@
                   <div class="benefit__txt">не нужно арендовать или покупать торговую площадь, можно обойтись просто складом для товаров, из которого и отгружать их напрямую</div>
                 </div>
               </div>
+              <div class="benefit__img"><img src="./img/pc.png" alt=""></div>
             </div>
           </div>
         </div>
@@ -395,7 +387,7 @@
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Контактный телефон</div>
-                      <input class="form-group__input" type="tel" placeholder="+7 (___) ___-__-__">
+                      <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__">
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Ваша почта</div>
@@ -456,14 +448,40 @@
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
+                <div class="request-popup__wrapper">
+                  <div class="request-popup__btn js-drop-btn">
+                    <div class="request-popup__txt js-rp-txt">Разработка сайтов</div>
+                    <div class="request-popup__icon">
+                            <svg class="b-svg svg-arr ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                            </svg>
+                    </div>
+                  </div>
+                  <div class="request-popup__menu">
+                    <label class="request-popup__link" for="s1">
+                      <input type="radio" name="radio" id="s1" value="article"><span>Статьи</span>
+                    </label>
+                    <label class="request-popup__link" for="s2">
+                      <input type="radio" name="radio" id="s2" value="case"><span>Кейсы</span>
+                    </label>
+                    <label class="request-popup__link" for="s3">
+                      <input type="radio" name="radio" id="s3" value="change"><span>События</span>
+                    </label>
+                    <label class="request-popup__link" for="s4">
+                      <input type="radio" name="radio" id="s4" value="all"><span>Все</span>
+                    </label>
+                  </div>
+                </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
                 </div>
                 <div class="form-group">
-                  <input class="form-group__input" type="tel" placeholder="Ваш телефон">
-                </div><a class="btn btn--special" href="#">
+                  <input class="form-group__input js-phone-mask" type="tel" placeholder="Ваш телефон">
+                </div>
+                <button class="btn btn--special" type="submit">
                   <div class="btn__special"><span>Заказать проект</span></div>
-                  <div class="btn__text">Заказать проект</div></a>
+                  <div class="btn__text">Заказать проект</div>
+                </button>
               </form>
               <div class="request-popup__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
             </div>
@@ -480,6 +498,7 @@
     <script src="js/libs-min.js"></script>
     <script src="js/lightgallery.js"></script>
     <script src="js/smooth-scrollbar.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
     <script src="js/Slider.js"></script>
     <script src="js/main-min.js"></script>
   </body>

@@ -40,28 +40,22 @@ block content
 				.demand__cover
 					.demand__items
 						.demand__item
-							.demand__num 1
-							.demand__header предпроектное исследование
+							.demand__header <span class="demand__num">1</span> предпроектное исследование
 							.demand__txt Изучаем Ваш бизнес, анализируем ресурсы конкурентов, выбираем структуру сайта.
 						.demand__item
-							.demand__num 2
-							.demand__header создание прототипа
+							.demand__header <span class="demand__num">2</span> создание прототипа
 							.demand__txt Создаем протротипы интерфейса, придумываем общую структуру интернет-магазина.
 						.demand__item
-							.demand__num 3
-							.demand__header разработка дизайна
+							.demand__header <span class="demand__num">3</span> разработка дизайна
 							.demand__txt Отрисовываем все необходимые страницы и модулируем интерфейс.
 						.demand__item
-							.demand__num 4
-							.demand__header работы по разработке
+							.demand__header <span class="demand__num">4</span> работы по разработке
 							.demand__txt Разрабатываем адаптивную верстку, программируем будущий сайт.
 						.demand__item
-							.demand__num 5
-							.demand__header проведение тестирования
+							.demand__header <span class="demand__num">5</span> проведение тестирования
 							.demand__txt Проверяем, наполняем контентом, настраиваем аналитику.
 						.demand__item
-							.demand__num 6
-							.demand__header запуск интернет-магазина
+							.demand__header <span class="demand__num">6</span> запуск интернет-магазина
 							.demand__txt Сдаем готовый сайт с налаженной системой продаж.
 		include ../modules/price
 		include ../modules/include
@@ -71,23 +65,24 @@ block content
 			- var quoteInfo = ['Если у вас есть стационарная торговая точка, но вы еще не открыли интернет-магазин, мы советуем Вам об этом задуматься. Ведь on-line торговля станет серьезным подспорьем вашему бизнесу.'];
 			include ../modules/quote
 			.benefit__container.container 
-				.benefit__items
-					.benefit__item
+				.benefit__wrapper
+					.benefit__decor
 						.benefit__bloc
 							.benefit__header популярность
 							.benefit__txt популярность интернет-магазинов все больше и больше растет среди потребителей из-за экономии времени, легкости поиска нужного товара, конфиденциальности покупок, доступности в любое время суток
 						.benefit__bloc
 							.benefit__header удобство
 							.benefit__txt Он доступен покупателю 24 часа в сутки, 7 дней в неделю, что позволяет вам не упустить клиентов в нерабочие часы.
-					.benefit__item
-						img(src="./img/pc.png" alt="")
-					.benefit__item
 						.benefit__bloc
 							.benefit__header доступность
 							.benefit__txt Ваш бизнес не привязан к конкретному региону – Вы можете осуществлять торговлю не только в своем городе, но и во всей стране, и даже на международном уровне.
 						.benefit__bloc
 							.benefit__header экономия
 							.benefit__txt не нужно арендовать или покупать торговую площадь, можно обойтись просто складом для товаров, из которого и отгружать их напрямую
+					.benefit__img
+						img(src="./img/pc.png" alt="")
+					
+						
 		- var includeBloc = "call";
 		include ../modules/include
 		include ../modules/seo-slider
