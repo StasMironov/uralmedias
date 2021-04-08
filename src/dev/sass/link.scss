@@ -1,4 +1,6 @@
 .link {
+    cursor: pointer;
+
     &--crumbs {
         display: inline-flex;
         font-size: 12px;
@@ -18,15 +20,21 @@
 
         &::after {
             position: absolute;
+            bottom: 0;
+            right: 0;
             content: "";
             background-image: url(../img/icon/arrow-small.svg);
+            background-repeat: no-repeat;
             width: 11px;
             height: 9px;
-            background-repeat: no-repeat;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            right: 0;
+            transition: 0.2s;
+        }
+
+        &:hover {
+
+            &::after {
+                right: -0.5em;
+            }
         }
     }
 

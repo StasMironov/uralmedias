@@ -53,7 +53,7 @@
         </div>
         <div class="header__nav--tablet js-nav">
           <ul class="header__bloc">
-            <li class="header__btn header__item js-list"><a class="header__txt link">Услуги</a>
+            <li class="header__btn header__item"><a class="header__txt link js-list">Услуги</a>
               <ul class="header__list js-dropMenu">
                 <li class="header__ref header__ref--active"><a href="javascript:(void);">Услуга 1</a></li>
                 <li class="header__ref"><a href="javascript:(void);">Услуга 2</a></li>
@@ -289,6 +289,22 @@
             <div class="client__cover">
               <div class="client__items" id="certificate"><a class="client__item" href="./img/certificate/c1.png"><img src="./img/certificate/c1.png"></a><a class="client__item" href="./img/certificate/c1.png"><img src="./img/certificate/c1.png"></a><a class="client__item" href="./img/certificate/c1.png"><img src="./img/certificate/c1.png"></a><a class="client__item" href="./img/certificate/c1.png"><img src="./img/certificate/c1.png"></a><a class="client__item" href="./img/certificate/c1.png"><img src="./img/certificate/c1.png"></a></div>
             </div>
+            <div class="partners">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/partners/l1.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l2.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l3.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l4.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l5.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l6.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l7.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l8.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l9.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l10.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l11.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l12.svg" alt=""></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="place place--transparent">
@@ -325,7 +341,7 @@
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Контактный телефон</div>
-                      <input class="form-group__input" type="tel" placeholder="+7 (___) ___-__-__">
+                      <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__">
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Ваша почта</div>
@@ -386,14 +402,40 @@
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
+                <div class="request-popup__wrapper">
+                  <div class="request-popup__btn js-drop-btn">
+                    <div class="request-popup__txt js-rp-txt">Разработка сайтов</div>
+                    <div class="request-popup__icon">
+                            <svg class="b-svg svg-arr ">
+                              <use xlink:href="svg/symbol/sprite.svg#arr"></use>
+                            </svg>
+                    </div>
+                  </div>
+                  <div class="request-popup__menu">
+                    <label class="request-popup__link" for="s1">
+                      <input type="radio" name="radio" id="s1" value="article"><span>Статьи</span>
+                    </label>
+                    <label class="request-popup__link" for="s2">
+                      <input type="radio" name="radio" id="s2" value="case"><span>Кейсы</span>
+                    </label>
+                    <label class="request-popup__link" for="s3">
+                      <input type="radio" name="radio" id="s3" value="change"><span>События</span>
+                    </label>
+                    <label class="request-popup__link" for="s4">
+                      <input type="radio" name="radio" id="s4" value="all"><span>Все</span>
+                    </label>
+                  </div>
+                </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
                 </div>
                 <div class="form-group">
-                  <input class="form-group__input" type="tel" placeholder="Ваш телефон">
-                </div><a class="btn btn--special" href="#">
+                  <input class="form-group__input js-phone-mask" type="tel" placeholder="Ваш телефон">
+                </div>
+                <button class="btn btn--special" type="submit">
                   <div class="btn__special"><span>Заказать проект</span></div>
-                  <div class="btn__text">Заказать проект</div></a>
+                  <div class="btn__text">Заказать проект</div>
+                </button>
               </form>
               <div class="request-popup__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
             </div>
@@ -410,6 +452,7 @@
     <script src="js/libs-min.js"></script>
     <script src="js/lightgallery.js"></script>
     <script src="js/smooth-scrollbar.js"></script>
+    <script src="js/jquery.maskedinput.js"></script>
     <script src="js/Slider.js"></script>
     <script src="js/main-min.js"></script>
   </body>

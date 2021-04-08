@@ -338,3 +338,38 @@
     }
   }
 }
+
+.file {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: $grey-6;
+    transition: 0.2s;
+
+    @media(max-width: 1024px) {
+      margin-top: 40px;
+    }
+
+    &:hover {
+      color: $grey-8;
+    }
+
+    &.withFile {
+
+      &::after {
+        content: 'X';
+        margin-left: 10px;
+      }
+    }
+  }
+}

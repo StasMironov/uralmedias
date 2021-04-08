@@ -1,6 +1,77 @@
 .benefit {
     margin-top: 80px;
 
+    @media(max-width: 1024px) {
+        margin-top: 70px;
+    }
+
+    @media(max-width: 620px) {
+        margin-top: 55px;
+    }
+
+    &__img {
+        height: 563px;
+
+        @media(max-width: 1300px) {
+            height: 390px;
+        }
+
+        @media(max-width: 1236px) {
+            height: 315px;
+        }
+
+        @media(max-width: 768px) {
+            display: none;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            transform: translateX(-36px);
+
+            @media(max-width: 1300px) {
+                transform: translateX(0px) translateY(45px);
+            }
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        margin-top: 57px;
+
+        @media(max-width: 1236px) {
+            max-width: 922px;
+            width: 100%;
+            margin: 57px auto 0;
+        }
+
+        @media(max-width: 1024px) {
+            margin-top: 45px;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        @media(max-width: 768px) {
+            position: relative;
+            height: initial;
+            width: initial;
+            top: initial;
+            bottom: initial;
+            left: initial;
+            right: initial;
+        }
+    }
+
     &__items {
         display: flex;
         justify-content: space-between;
@@ -11,8 +82,144 @@
     }
 
     &__bloc {
+        position: absolute;
+
+        @media(max-width: 768px) {
+            position: relative;
+        }
+
         &:not(:first-child) {
-            margin-top: 102px;
+            @media(max-width: 768px) {
+                margin-top: 30px;
+            }
+        }
+
+        &:nth-child(1) {
+            max-width: 334px;
+            width: 100%;
+            left: -20px;
+            top: 43px;
+
+            @media(max-width: 1300px) {
+                left: 0;
+            }
+
+            @media(max-width: 1236px) {
+                max-width: 283px;
+                top: 0;
+            }
+
+            @media(max-width: 768px) {
+                max-width: initial;
+                width: 100%;
+                left: initial;
+                top: initial;
+            }
+
+            .benefit__header {
+                &:after {
+                    left: 0;
+                    background-image: url('../img/decor/line.svg');
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            max-width: 270px;
+            width: 100%;
+            left: -19px;
+            top: 289px;
+
+            @media(max-width: 1300px) {
+                top: 245px;
+                left: 0;
+            }
+
+            @media(max-width: 768px) {
+                max-width: initial;
+                width: 100%;
+                left: initial;
+                top: initial;
+            }
+
+            .benefit__header {
+                &:after {
+                    left: 0;
+                    background-image: url('../img/decor/line2.svg');
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            max-width: 333px;
+            width: 100%;
+            right: 43px;
+            top: 17px;
+
+            @media(max-width: 1300px) {
+                right: 0;
+                top: 43px;
+            }
+
+            @media(max-width: 1236px) {
+                max-width: 283px;
+                top: 0;
+            }
+
+            @media(max-width: 768px) {
+                max-width: initial;
+                width: 100%;
+                left: initial;
+                right: initial;
+                top: initial;
+            }
+
+            .benefit__header {
+                &:after {
+                    right: -58px;
+                    background-image: url(../img/decor/line3.svg);
+                    top: 30px;
+                }
+            }
+        }
+
+        &:nth-child(4) {
+            max-width: 322px;
+            width: 100%;
+            right: 54px;
+            bottom: 157px;
+
+            @media(max-width: 1300px) {
+                right: 0;
+                max-width: 333px;
+                bottom: auto;
+                top: 245px;
+            }
+
+            @media(max-width: 1236px) {
+                max-width: 283px;
+            }
+
+            @media(max-width: 1024px) {
+                bottom: 27px;
+            }
+
+            @media(max-width: 768px) {
+                max-width: initial;
+                width: 100%;
+                left: initial;
+                right: initial;
+                top: initial;
+                bottom: initial;
+            }
+
+            .benefit__header {
+                &:after {
+                    right: -53px;
+                    background-image: url(../img/decor/line4.svg);
+                    top: -28px;
+                }
+            }
         }
     }
 
@@ -97,6 +304,7 @@
             position: absolute;
             left: -49%;
             max-width: initial;
+            max-height: initial;
         }
     }
 
@@ -113,6 +321,11 @@
         padding-bottom: 10px;
         margin-bottom: 13px;
 
+        @media(max-width: 768px) {
+            padding-bottom: 0;
+            margin-bottom: 10px;
+        }
+
 
         &:after {
             position: absolute;
@@ -121,6 +334,10 @@
             width: 521px;
             top: 29px;
             background-repeat: no-repeat;
+
+            @media(max-width: 1300px) {
+                content: none;
+            }
         }
     }
 

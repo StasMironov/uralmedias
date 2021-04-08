@@ -258,8 +258,27 @@ checkPage();
 
 
 if ($('.js-rate').exists()) {
-    let rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
+    //  constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false, loop = true, direction = 'horizontal') {
+    let rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, true, false, '', false, false);
     rateSlider.createSlider();
+
+    $(window).on('resize load', function () {
+        if ($(this).width() <= 1300) {
+            rateSlider.updateSlider('space', 20);
+            rateSlider.updateSlider('view', 2);
+            rateSlider.updateSlider('ratio', true);
+        }
+        if ($(this).width() <= 1024) {
+            rateSlider.updateSlider('space', 20);
+        }
+        if ($(this).width() <= 800) {
+            rateSlider.updateSlider('view', 1);
+
+        }
+        else {
+            //  rateSlider.updateSlider('view', 3);
+        }
+    });
 }
 
 if ($('.js-info-slider').exists()) {
@@ -277,8 +296,22 @@ if ($('.js-info-slider').exists()) {
 
 
 if ($('.partners').exists()) {
-    let partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);
+    let partnerSlider = new Slider(false, '.partners', 4, 82, 8, false, false, false);
     partnerSlider.createSlider();
+
+    $(window).on('resize load', function () {
+        if ($(this).width() <= 1300) {
+            partnerSlider.updateSlider('space', 50);
+        }
+        if ($(this).width() <= 1023) {
+            partnerSlider.updateSlider('space', 40);
+            partnerSlider.updateSlider('view', 3);
+        }
+        if ($(this).width() <= 500) {
+            partnerSlider.updateSlider('space', 20);
+            partnerSlider.updateSlider('view', 2);
+        }
+    });
 }
 
 if ($('.works').exists()) {
@@ -788,7 +821,7 @@ $(window).on('load', function () {
                     // Необходимо указать данный тип макета.
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
-                    iconImageHref: '/img/icon/marker.svg',
+                    iconImageHref: '/images/icons/marker.svg',
                     // Размеры метки.
                     iconImageSize: [48, 64],
                     // Смещение левого верхнего угла иконки относительно
@@ -1013,7 +1046,8 @@ if ($('.js-list').exists()) {
     const navPanel = document.querySelector('.header__nav--tablet');
     const btnList = navPanel.querySelector('.js-list');
 
-    btnList.addEventListener('click', function () {
+    btnList.addEventListener('click', function (e) {
+        e.preventDefault();
         this.classList.toggle('active');
         $('.js-dropMenu').toggle(400);
     });
@@ -1164,17 +1198,10 @@ const formShow = (element, status) => {
 }
 
 if ($('.js-form-call').exists()) {
-    try {
-        let header = document.querySelector('.header');
-        const formBtn = header.querySelector('.js-form-call');
-
-        formBtn.addEventListener('click', () => {
-            showOverlay(true);
-        });
-    }
-    catch (err) {
-        console.log(err)
-    }
+    $('.js-form-call').on('click', (event) => {
+        event.preventDefault();
+        showOverlay(true);
+    });
 }
 
 if ($('.js-overlay').exists()) {
@@ -1230,6 +1257,46 @@ if ($('#request').exists()) {
         console.log(err);
     }
 }
+if ($('.js-form-request').exists()) {
+    let popupRequest = document.querySelector('.js-form-request'),
+        btnDropMenu = popupRequest.querySelector('.js-drop-btn'),
+        menuWrapper = popupRequest.querySelector('.request-popup__wrapper'),
+        radioEl = popupRequest.querySelectorAll('.request-popup__link input'),
+        labelEl = popupRequest.querySelectorAll('.request-popup__link'),
+        labelTxt = '',
+        textBtn = popupRequest.querySelector('.js-rp-txt');
+
+
+    for (let i = 0; i < labelEl.length; i++) {
+        labelEl[i].addEventListener('click', function () {
+            $(this).addClass('active').siblings().removeClass('active');
+
+            if (radioEl[i].checked) {
+                textBtn.textContent = labelEl[i].querySelector('span').textContent;
+            }
+        });
+    }
+
+    btnDropMenu.addEventListener('click', () => {
+        menuWrapper.classList.toggle('active');
+    });
+
+    $('.request-popup').mouseup(function (e) {
+        const container = $('.request-popup__wrapper');
+
+        if (container.has(e.target).length === 0) {
+            container.removeClass('active');
+        }
+    });
+}
+
+if ($('.js-phone-mask').exists()) {
+    let phoneEl = document.querySelectorAll('.js-phone-mask');
+
+    for (let i = 0; i < phoneEl.length; i++) {
+        $(phoneEl[i]).mask("+7(999) 999-9999");
+    }
+}
 
 var caseSlider1 = new Swiper('.case__slider--1', {
     slidesPerView: 'auto',
@@ -1261,7 +1328,44 @@ var caseSlider3 = new Swiper('.case__slider--3', {
     }
 });
 
+function checkPacket() {
+    if ($('.rate__item').exists()) {
+        $('.rate__item').each(function () {
+            if ($(this).find('.switch').is(':checked')) {
+                $(this).find('.rate__right').addClass('rate__right--active');
+            } else {
+                $(this).find('.rate__right').removeClass('rate__right--active');
+            }
+        });
+    }
+}
+checkPacket();
 
+$('.rate__item .switch').on('click', function () {
+    checkPacket();
+});
+
+//custom file input
+$(function () {
+    $('input[type="file"]').change(function () {
+        let label = $('.file .file__label');
+        if (typeof (this.files) != 'undefined') {
+            if (this.files.length == 0) {
+                label.removeClass('withFile').text(label.data('default'));
+            }
+            else {
+                let file = this.files[0];
+                let name = file.name;
+                label.addClass('withFile').text(name);
+            }
+        }
+        else {
+            let name = this.value.split("\\");
+            label.addClass('withFile').text(name[name.length - 1]);
+        }
+        return false;
+    });
+});
 
 
 

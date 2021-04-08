@@ -116,8 +116,11 @@ class Slider {
             case 'controller':
                 this.slider.params.controller = res;
                 this.slider.update();
-                console.log(this.slider.params.controller);
                 break;
+            case 'ratio':
+                this.slider.params.touchRatio = res;
+                this.slider.update();
+            break;
         }
     }
 }

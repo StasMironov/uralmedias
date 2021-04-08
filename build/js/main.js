@@ -225,8 +225,25 @@ if ($('.header__inner').exists) {
 checkPage();
 
 if ($('.js-rate').exists()) {
-  var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, false, false);
+  //  constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false, loop = true, direction = 'horizontal') {
+  var rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, true, false, '', false, false);
   rateSlider.createSlider();
+  $(window).on('resize load', function () {
+    if ($(this).width() <= 1300) {
+      rateSlider.updateSlider('space', 20);
+      rateSlider.updateSlider('view', 2);
+      rateSlider.updateSlider('ratio', true);
+    }
+
+    if ($(this).width() <= 1024) {
+      rateSlider.updateSlider('space', 20);
+    }
+
+    if ($(this).width() <= 800) {
+      rateSlider.updateSlider('view', 1);
+    } else {//  rateSlider.updateSlider('view', 3);
+    }
+  });
 }
 
 if ($('.js-info-slider').exists()) {
@@ -242,8 +259,23 @@ if ($('.js-info-slider').exists()) {
 }
 
 if ($('.partners').exists()) {
-  var partnerSlider = new Slider(false, '.partners', 4, 82, 3, false, false, false);
+  var partnerSlider = new Slider(false, '.partners', 4, 82, 8, false, false, false);
   partnerSlider.createSlider();
+  $(window).on('resize load', function () {
+    if ($(this).width() <= 1300) {
+      partnerSlider.updateSlider('space', 50);
+    }
+
+    if ($(this).width() <= 1023) {
+      partnerSlider.updateSlider('space', 40);
+      partnerSlider.updateSlider('view', 3);
+    }
+
+    if ($(this).width() <= 500) {
+      partnerSlider.updateSlider('space', 20);
+      partnerSlider.updateSlider('view', 2);
+    }
+  });
 }
 
 if ($('.works').exists()) {
@@ -621,7 +653,7 @@ $(window).on('load', function () {
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
         // Своё изображение иконки метки.
-        iconImageHref: '/img/icon/marker.svg',
+        iconImageHref: '/images/icons/marker.svg',
         // Размеры метки.
         iconImageSize: [48, 64],
         // Смещение левого верхнего угла иконки относительно
@@ -812,7 +844,8 @@ var hideMenu = function hideMenu(element) {
 if ($('.js-list').exists()) {
   var navPanel = document.querySelector('.header__nav--tablet');
   var btnList = navPanel.querySelector('.js-list');
-  btnList.addEventListener('click', function () {
+  btnList.addEventListener('click', function (e) {
+    e.preventDefault();
     this.classList.toggle('active');
     $('.js-dropMenu').toggle(400);
   });
@@ -934,17 +967,10 @@ var formShow = function formShow(element, status) {
 };
 
 if ($('.js-form-call').exists()) {
-  try {
-    var _header = document.querySelector('.header');
-
-    var formBtn = _header.querySelector('.js-form-call');
-
-    formBtn.addEventListener('click', function () {
-      showOverlay(true);
-    });
-  } catch (err) {
-    console.log(err);
-  }
+  $('.js-form-call').on('click', function (event) {
+    event.preventDefault();
+    showOverlay(true);
+  });
 }
 
 if ($('.js-overlay').exists()) {
@@ -996,6 +1022,51 @@ if ($('#request').exists()) {
   }
 }
 
+if ($('.js-form-request').exists()) {
+  (function () {
+    var popupRequest = document.querySelector('.js-form-request'),
+        btnDropMenu = popupRequest.querySelector('.js-drop-btn'),
+        menuWrapper = popupRequest.querySelector('.request-popup__wrapper'),
+        radioEl = popupRequest.querySelectorAll('.request-popup__link input'),
+        labelEl = popupRequest.querySelectorAll('.request-popup__link'),
+        labelTxt = '',
+        textBtn = popupRequest.querySelector('.js-rp-txt');
+
+    var _loop = function _loop(_i) {
+      labelEl[_i].addEventListener('click', function () {
+        $(this).addClass('active').siblings().removeClass('active');
+
+        if (radioEl[_i].checked) {
+          textBtn.textContent = labelEl[_i].querySelector('span').textContent;
+        }
+      });
+    };
+
+    for (var _i = 0; _i < labelEl.length; _i++) {
+      _loop(_i);
+    }
+
+    btnDropMenu.addEventListener('click', function () {
+      menuWrapper.classList.toggle('active');
+    });
+    $('.request-popup').mouseup(function (e) {
+      var container = $('.request-popup__wrapper');
+
+      if (container.has(e.target).length === 0) {
+        container.removeClass('active');
+      }
+    });
+  })();
+}
+
+if ($('.js-phone-mask').exists()) {
+  var phoneEl = document.querySelectorAll('.js-phone-mask');
+
+  for (var _i2 = 0; _i2 < phoneEl.length; _i2++) {
+    $(phoneEl[_i2]).mask("+7(999) 999-9999");
+  }
+}
+
 var caseSlider1 = new Swiper('.case__slider--1', {
   slidesPerView: 'auto',
   spaceBetween: 30,
@@ -1022,4 +1093,43 @@ var caseSlider3 = new Swiper('.case__slider--3', {
       spaceBetween: 65
     }
   }
+});
+
+function checkPacket() {
+  if ($('.rate__item').exists()) {
+    $('.rate__item').each(function () {
+      if ($(this).find('.switch').is(':checked')) {
+        $(this).find('.rate__right').addClass('rate__right--active');
+      } else {
+        $(this).find('.rate__right').removeClass('rate__right--active');
+      }
+    });
+  }
+}
+
+checkPacket();
+$('.rate__item .switch').on('click', function () {
+  checkPacket();
+}); //custom file input
+
+$(function () {
+  $('input[type="file"]').change(function () {
+    var label = $('.file .file__label');
+
+    if (typeof this.files != 'undefined') {
+      if (this.files.length == 0) {
+        label.removeClass('withFile').text(label.data('default'));
+      } else {
+        var file = this.files[0];
+        var name = file.name;
+        label.addClass('withFile').text(name);
+      }
+    } else {
+      var _name = this.value.split("\\");
+
+      label.addClass('withFile').text(_name[_name.length - 1]);
+    }
+
+    return false;
+  });
 });

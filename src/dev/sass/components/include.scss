@@ -343,6 +343,11 @@
         padding-bottom: 84px;
         padding-top: 66px;
 
+        @media(max-width: 1024px) {
+            padding:  55px 0;
+            margin-top: 70px;
+        }
+
         .include {
             &__items {
                 display: flex;
@@ -352,6 +357,20 @@
 
                 @media(max-width: 1700px) {
                     margin-left: -50px;
+                }
+
+                @media(max-width: 1024px) {
+                    margin-top: -35px;
+                    margin-left: -35px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: -30px;
+                }
+
+                @media(max-width:620px) {
+                    margin-left: 0;
+                    margin-top: -25px;
                 }
             }
 
@@ -366,16 +385,51 @@
                     width: calc(33.333% - 50px);
                     margin-left: 50px;
                 }
+
+                @media(max-width: 1024px) {
+                    width: calc(50% - 35px);
+                    margin-top: 35px;
+                    margin-left: 35px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: 30px;
+                }
+
+                @media(max-width: 620px) {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-top: 25px;
+                }
             }
 
             &__num {
                 font-size: 48px;
                 font-weight: 700;
+
+                @media(max-width: 1024px) {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+
+                @media(max-width: 768px) {
+                    font-size: 30px;
+                    line-height: 30px;
+                }
+
+                @media(max-width: 620px) {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
             }
 
             &__cover {
                 position: relative;
                 margin-top: 49px;
+
+                @media(max-width: 1024px) {
+                    margin-top: 40px;
+                }
             }
 
             &__header {
@@ -385,12 +439,31 @@
                 line-height: 28px;
                 max-width: 254px;
                 width: 100%;
+
+                @media(max-width: 1024px) {
+                    margin-top: 15px;
+                }
+
+                @media(max-width: 620px) {
+                    max-width: initial;
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-top: 10px;
+                }
             }
 
             &__text {
                 margin-top: 15px;
                 font-size: 14px;
                 line-height: 21px;
+
+                @media(max-width: 1024px) {
+                    margin-top: 10px;
+                }
+
+                @media(max-width: 768px) {
+                    margin-top: 5px;
+                }
             }
         }
 
@@ -973,10 +1046,22 @@
         margin-top: 55px;
         padding: 68px 0 90px;
 
+        @media(max-width: 1024px) {
+            padding: 55px 0 55px;
+        }
+
+        @media(max-width: 1024px) {
+            margin-top: 0;
+        }
+
         .include {
 
             &__left {
                 padding-top: 12px;
+
+                @media(max-width: 1024px) {
+                    padding-top: 0;
+                }
             }
 
             &__txt {
@@ -991,6 +1076,16 @@
                 flex-wrap: wrap;
                 margin-left: -70px;
                 margin-top: -60px;
+
+                @media(max-width: 1024px) {
+                    margin-left: -40px;
+                    margin-top: -50px;
+                }
+
+                @media(max-width: 620px) {
+                    margin-left: 0;
+                    margin-top: -35px;
+                }
             }
 
             &__item {
@@ -999,15 +1094,43 @@
                 margin-left: 70px;
                 margin-top: 60px;
 
+                @media(max-width: 1024px) {
+                    width: calc(50% - 40px);
+                    margin-left: 40px;
+                    margin-top: 50px;
+                }
+
+                @media(max-width: 620px) {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-top: 35px;
+                }
+
+                &:nth-child(1) {
+                    .include__pic {
+                        @media(max-width: 1024px) {
+                            background-position-y: 4%;
+                        }
+                    }
+                }
+
                 &:nth-child(3) {
                     .include__pic {
                         background-position-y: 100%;
+
+                        @media(max-width: 1024px) {
+                            background-position-y: 96%;
+                        }
                     }
                 }
 
                 &:nth-child(2) {
                     .include__pic {
                         background-position-x: 100%;
+
+                        @media(max-width: 1024px) {
+                            background-position-y: 4%;
+                        }
                     }
                 }
 
@@ -1015,6 +1138,10 @@
                     .include__pic {
                         background-position-y: 100%;
                         background-position-x: 100%;
+
+                        @media(max-width: 1024px) {
+                            background-position-y: 96%;
+                        }
                     }
                 }
             }
@@ -1023,6 +1150,13 @@
                 width: 73px;
                 height: 73px;
                 margin-right: 26px;
+
+                @media(max-width: 1024px) {
+                    width: 52px;
+                    height: 52px;
+                    background-size: 890% 330%;
+                    margin-right: 15px;
+                }
             }
 
             &__header {
@@ -1034,6 +1168,10 @@
             &__cover {
                 max-width: 1060px;
                 margin: 59px auto 0;
+
+                @media(max-width: 620px) {
+                    margin: 45px auto 0;
+                }
             }
 
             &__quote {
@@ -1095,6 +1233,14 @@
     &--call {
         margin-top: 148px;
         padding-bottom: 71px;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 55px;
+        }
+
+        @media(max-width: 620px) {
+            margin-top: 55px;
+        }
 
         .include {
             &__note {

@@ -4,11 +4,15 @@ block variables
 	- var pageClass = 'index-page';
 	- var setTitle = 'Мы разрабатываем и продвигаем веб-сайты для всех сфер бизнеса';
 	- var include = 'btn';
-	- var quote = 'promotion';
+	
 	- var bildboard_include = 'special-btn'
 	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 	- var includeBloc = 'promotion';
 	- var request = 'audit';
+	- var quoteInfo = ['Мы не просто продвигаем сайт в топ поисковой выдачи, а делаем из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-Задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google. ', 'Наша компания привлекает в Ваш бизнес новых клиентов из поисковых и социальных систем, а также повышает узнаваемость бренда. Именно поэтому сайт выходит на первые места в поиске, реклама дает заказы, вашу компанию начинают узнавать, а ваш бизнес получает прибыль!'];
+	- var quote = 'h2';
+	- var quoteTitle = 'Выводим сайт в ТОП';
+
 
 block content
 	div(data-barba="container" data-barba-namespace="blog")
@@ -22,7 +26,7 @@ block content
 			.bildboard-data__container.container
 				.bildboard-data__title.title-1 #{setTitle}
 				.bildboard-data__quote Наше агентство не просто продвигает сайт в топ поисковой выдачи, а делает из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google.
-				a(href="#").btn.btn--special
+				a(href="#request").btn.btn--special
 					.btn__special
 						span Отправить заявку менеджеру
 					.btn__text Отправить заявку менеджеру
@@ -96,7 +100,7 @@ block content
 										.rate__left
 											.rate__txt Стоимость без услуг:
 											.rate__number 48 000₽
-										.rate__right.rate__right--active
+										.rate__right
 											.rate__txt Стоимость с услугами:
 											.rate__number 38 400₽
 							.swiper-slide.rate__item
@@ -131,6 +135,7 @@ block content
 										.rate__right
 											.rate__txt Стоимость с услугами:
 											.rate__number 92 800₽
+						.pagination
 		.promotion-works(style="background-image: url(img/pic.jpg);")
 			.promotion-works__container.container
 				.promotion-works__grid
