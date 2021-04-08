@@ -273,10 +273,10 @@ if ($('.js-rate').exists()) {
         }
         if ($(this).width() <= 800) {
             rateSlider.updateSlider('view', 1);
-            
+
         }
         else {
-          //  rateSlider.updateSlider('view', 3);
+            //  rateSlider.updateSlider('view', 3);
         }
     });
 }
@@ -1198,7 +1198,8 @@ const formShow = (element, status) => {
 }
 
 if ($('.js-form-call').exists()) {
-    $('.js-form-call').on('click', () => {
+    $('.js-form-call').on('click', (event) => {
+        event.preventDefault();
         showOverlay(true);
     });
 }
@@ -1227,6 +1228,35 @@ const changeHeightPage = () => {
     $('.b-page').css('padding-bottom', paddingBottom);
 }
 
+if ($('#request').exists()) {
+    try {
+
+        $('a[href^="#"]').each(function () {
+            $(this).on('click', function (e) {
+                e.preventDefault();
+                var el = $(this);
+                var dest = el.attr('href'); // получаем направление
+
+                if (dest !== undefined && dest !== '') {
+                    // проверяем существование
+                    $('html').animate({
+                        scrollTop: $(dest).offset().top - 130 // прокручиваем страницу к требуемому элементу
+
+                    }, {
+                        duration: 1000,   // по умолчанию «400» 
+                        easing: "linear" // по умолчанию «swing» 
+                    }
+                    );
+                }
+
+                return false;
+            });
+        });
+    }
+    catch (err) {
+        console.log(err);
+    }
+}
 if ($('.js-form-request').exists()) {
     let popupRequest = document.querySelector('.js-form-request'),
         btnDropMenu = popupRequest.querySelector('.js-drop-btn'),
@@ -1316,22 +1346,22 @@ $('.rate__item .switch').on('click', function () {
 });
 
 //custom file input
-$(function(){
-    $('input[type="file"]').change(function(){
-        var label = $('.file .file__label');
-        if(typeof(this.files) !='undefined'){
-            if(this.files.length == 0){
+$(function () {
+    $('input[type="file"]').change(function () {
+        let label = $('.file .file__label');
+        if (typeof (this.files) != 'undefined') {
+            if (this.files.length == 0) {
                 label.removeClass('withFile').text(label.data('default'));
             }
-            else{
-                var file = this.files[0];
-                var name = file.name;
+            else {
+                let file = this.files[0];
+                let name = file.name;
                 label.addClass('withFile').text(name);
             }
         }
-        else{
-            var name = this.value.split("\\");
-            label.addClass('withFile').text(name[name.length-1]);
+        else {
+            let name = this.value.split("\\");
+            label.addClass('withFile').text(name[name.length - 1]);
         }
         return false;
     });

@@ -967,7 +967,8 @@ var formShow = function formShow(element, status) {
 };
 
 if ($('.js-form-call').exists()) {
-  $('.js-form-call').on('click', function () {
+  $('.js-form-call').on('click', function (event) {
+    event.preventDefault();
     showOverlay(true);
   });
 }
@@ -991,6 +992,35 @@ var changeHeightPage = function changeHeightPage() {
   paddingBottom = outerHeightEl - (outerHeightEl - footerHeight);
   $('.b-page').css('padding-bottom', paddingBottom);
 };
+
+if ($('#request').exists()) {
+  try {
+    $('a[href^="#"]').each(function () {
+      $(this).on('click', function (e) {
+        e.preventDefault();
+        var el = $(this);
+        var dest = el.attr('href'); // получаем направление
+
+        if (dest !== undefined && dest !== '') {
+          // проверяем существование
+          $('html').animate({
+            scrollTop: $(dest).offset().top - 130 // прокручиваем страницу к требуемому элементу
+
+          }, {
+            duration: 1000,
+            // по умолчанию «400» 
+            easing: "linear" // по умолчанию «swing» 
+
+          });
+        }
+
+        return false;
+      });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
 
 if ($('.js-form-request').exists()) {
   (function () {
@@ -1095,8 +1125,9 @@ $(function () {
         label.addClass('withFile').text(name);
       }
     } else {
-      var name = this.value.split("\\");
-      label.addClass('withFile').text(name[name.length - 1]);
+      var _name = this.value.split("\\");
+
+      label.addClass('withFile').text(_name[_name.length - 1]);
     }
 
     return false;
