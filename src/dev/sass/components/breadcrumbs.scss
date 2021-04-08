@@ -22,8 +22,6 @@
         position: relative;
         color: $grey-8;
 
-
-
         &:not(:last-child) {
             padding-right: 7px;
             margin-right: 5px;
@@ -40,6 +38,13 @@
                 margin: auto;
             }
         }
+
+        &.active {
+
+            &:hover {
+                color: $green-1;
+            }
+        }
     }
 
     &--case {
@@ -49,10 +54,6 @@
             &__link {
                 font-size: 14px;
                 color: rgba(51, 51, 51, 0.92);
-
-                &:hover {
-                    color:#00a4ad;
-                }
 
                 &:not(:last-child) {
                     margin-right: 15px;

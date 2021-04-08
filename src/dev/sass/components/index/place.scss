@@ -21,25 +21,6 @@
         padding-bottom: 233px;
     }
 
-    &__file {
-        position: relative;
-        overflow: hidden;
-        display: block;
-        text-align: center;
-
-        @media(max-width: 620px) {
-            text-align: left;
-            max-width: 200px;
-        }
-
-        input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
-    }
-
     &__bg {
         position: absolute;
         content: "";
@@ -226,21 +207,6 @@
 
                 @media(max-width: 1024px) {
                     line-height: 30px;
-                }
-            }
-
-            &__file {
-                margin-top: 20px;
-                font-size: 12px;
-                color: $grey-6;
-                cursor: pointer;
-
-                @media(max-width: 1024px) {
-                    margin-top: 40px;
-                }
-
-                input {
-                    cursor: pointer;
                 }
             }
 

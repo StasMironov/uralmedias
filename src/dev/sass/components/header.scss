@@ -153,6 +153,7 @@
   }
 
   &__list {
+    display: none;
     flex-direction: column;
     padding-top: 20px;
     padding-left: 20px;
@@ -233,8 +234,15 @@
         margin-left: 5px;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
-        border-bottom: 3px solid $black;
-        transition: linear 0.3s;
+        border-top: 3px solid $black;
+        transition: 0.3s;
+      }
+
+      &.active {
+
+        &:after {
+          transform: rotate(180deg);
+        }
       }
     }
 
@@ -246,7 +254,7 @@
         .header__txt {
 
           &:after {
-            border-bottom-color: $green-1;
+            border-top-color: $green-1;
           }
         }
       }
