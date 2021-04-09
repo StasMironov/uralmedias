@@ -1071,7 +1071,7 @@ if ($('.js-phone-mask').exists()) {
   var phoneEl = document.querySelectorAll('.js-phone-mask');
 
   for (var _i2 = 0; _i2 < phoneEl.length; _i2++) {
-    $(phoneEl[_i2]).mask("+7(999) 999-9999");
+    $(phoneEl[_i2]).mask("+7(999) 999-99-99");
   }
 }
 
