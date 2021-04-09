@@ -60,6 +60,12 @@
 
     &__quote {
         text-align: center;
+
+        @media(max-width: 620px) {
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+        }
     }
 
     &+.call {

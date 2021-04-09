@@ -258,8 +258,8 @@ if ($('.js-info-slider').exists()) {
   }
 }
 
-if ($('.partners').exists()) {
-  var partnerSlider = new Slider(false, '.partners', 4, 82, 8, false, false, false);
+if ($('.js-slider-partners').exists()) {
+  var partnerSlider = new Slider(false, '.js-slider-partners', 4, 82, 8, false, false, false);
   partnerSlider.createSlider();
   $(window).on('resize load', function () {
     if ($(this).width() <= 1300) {
@@ -404,11 +404,14 @@ function init() {
 }
 
 function checkPage() {
-  if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
-    $('.header').removeClass('mf-style');
-  } else {
-    $('.header').addClass('mf-style');
-  }
+  var pagesArr = ['/', '/index.html'];
+  pagesArr.filter(function (s) {
+    if (s.indexOf(window.location.pathname) === 0) {
+      $('.header').removeClass('mf-style');
+    } else {
+      $('.header').addClass('mf-style');
+    }
+  });
 }
 
 window.addEventListener('load', function () {

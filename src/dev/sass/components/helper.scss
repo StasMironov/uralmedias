@@ -6,6 +6,17 @@
         background-color: transparent;
     }
 
+    .header__item--menu {
+        &:after {
+            border-top-color: $black;
+        }
+
+        &:hover:after {
+            border-top-color: $green-1;
+        }
+    }
+
+
     .btn--call {
         border-color: $red-2;
         color: $red-2;

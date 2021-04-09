@@ -121,7 +121,7 @@
         }
 
         &__item {
-          i > .b-svg {
+          i>.b-svg {
             fill: $black;
           }
 
@@ -156,7 +156,7 @@
     display: none;
     flex-direction: column;
     padding-top: 20px;
-    padding-left: 20px;
+    transform: translateX(20px);
   }
 
   &__cover {
@@ -321,8 +321,8 @@
         height: 0;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
-        border-top: 3px solid $black;
-        transition: linear 0.3s;
+        border-top: 3px solid white;
+        transition: linear .3s;
       }
 
       &:hover {
