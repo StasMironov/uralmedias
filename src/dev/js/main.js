@@ -1211,6 +1211,15 @@ if ($('.js-form-call').exists()) {
 if ($('.js-overlay').exists()) {
     $('.js-overlay').on('click', () => {
         showOverlay(false);
+
+        if ($('.request-popup__wrapper').exists()) {
+            try {
+                $('.request-popup__wrapper').removeClass('active');
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
     });
 }
 
@@ -1298,7 +1307,7 @@ if ($('.js-phone-mask').exists()) {
     let phoneEl = document.querySelectorAll('.js-phone-mask');
 
     for (let i = 0; i < phoneEl.length; i++) {
-        $(phoneEl[i]).mask("+7(999) 999-9999");
+        $(phoneEl[i]).mask("+7(999) 999-99-99");
     }
 }
 
@@ -1372,5 +1381,9 @@ $(function () {
 });
 
 
-
+if ($('.js-example-basic-single').exists()) {
+    $('.js-example-basic-single').select2({
+        minimumResultsForSearch: Infinity
+    });
+}
 

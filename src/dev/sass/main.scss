@@ -402,6 +402,10 @@ input::-ms-clear {
   transition: .4s ease;
 }
 
+.select2-dropdown {
+  border: 1px solid $grey-7;
+}
+
 @import "./components/rate.scss";
 @import "./components/request.scss";
 @import "./components/table.scss";

@@ -15,7 +15,15 @@
                     .call__bloc
                         .form-group
                             .form-group__label Какая услуга Вас интересует?
-                            input(type="text" placeholder="Веб").form-group__input
+                            <select class="js-example-basic-single" name="state">
+                                <option value="LEND">Лендинг</option>
+                                <option value="CORP">Корпоративный сайт</option>
+                                <option value="SHOP">Интернет-магазин</option>
+                                <option value="APP">Мобильное приложение</option>
+                                <option value="SEO">SEO-оптимизация</option>
+                                <option value="PROM">Продвижение</option>
+                                <option value="ADVERT">Реклама</option>
+                            </select>
                         .form-group
                             .form-group__label Ваше имя
                             input(type="text" placeholder="Введите имя").form-group__input
