@@ -51,6 +51,11 @@
         margin-top: 0;
 
         .breadcrumbs {
+
+            &__container {
+                justify-content: normal;
+            }
+
             &__link {
                 font-size: 14px;
                 color: rgba(51, 51, 51, 0.92);
