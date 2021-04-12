@@ -406,6 +406,20 @@ input::-ms-clear {
   border: 1px solid $grey-7;
 }
 
+.select2-container--default .select2-results__option--selected {
+  background-color: #ddd !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: #ddd !important;
+  color: #333 !important;
+}
+
+.select2-results__option {
+  transition: linear .3s;
+}
+
+
 @import "./components/rate.scss";
 @import "./components/request.scss";
 @import "./components/table.scss";
