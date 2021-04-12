@@ -1079,11 +1079,9 @@ const lockedDOM = (status) => {
 const stateObject = (status) => {
     if (status == 'start') {
         formShow('.js-form-request', true);
-        lockedDOM(true);
     }
     else {
         formShow('.js-form-request', false);
-        lockedDOM(false);
     }
 }
 
@@ -1096,8 +1094,10 @@ const showOverlay = (status) => {
             reversed: true,
             paused: true,
             defaults: { duration: 0.6 },
+            onStart: lockedDOM,
+            onStartParams: [true],
             onComplete: stateObject,
-            onCompleteParams: ['start']
+            onCompleteParams: ['start'],
         });
 
         const hideOvTl = new TimelineMax({
@@ -1105,7 +1105,9 @@ const showOverlay = (status) => {
             paused: true,
             defaults: { duration: 0.3 },
             onStart: stateObject,
-            onStartParams: ['end']
+            onStartParams: ['end'],
+            onComplete: lockedDOM,
+            onCompleteParams: [false]
         });
 
         showOvTl
@@ -1139,6 +1141,9 @@ const showOverlay = (status) => {
 }
 
 const formShow = (element, status) => {
+
+    console.log(element);
+
     if ($(element).exists()) {
         const element = document.querySelector('.js-form-request');
         const formShowTl = new TimelineMax({
@@ -1150,45 +1155,36 @@ const formShow = (element, status) => {
         const formHideTl = new TimelineMax({
             reversed: true,
             paused: true,
-            defaults: { duration: 0.8 }
+            defaults: { duration: 0.5 }
         });
 
         formHideTl
-            .fromTo(
-                element,
-                {
-                    yPercent: -50,
-                    xPercent: -50,
-                    autoAlpha: 1
-                },
-                {
-                    yPercent: -200,
-                    ease: "power2.out"
-                }
-            )
             .to(
                 element,
                 {
                     autoAlpha: 0,
+                    yPercent: -100,
+                    xPercent: -50,
+                    ease: "power2.out"
                 }
             )
 
         formShowTl
-            .fromTo(
+            .set(
+                element, {
+                yPercent: -100,
+                xPercent: -50,
+            }
+            )
+            .to(
                 element,
-                {
-                    yPercent: -100,
-                    xPercent: -50,
-                    autoAlpha: 0
-                },
                 {
                     autoAlpha: 1,
                     yPercent: -50,
+                    //xPercent: -50,
                     ease: "power2.out"
-                },
-                '-=0.2'
+                }
             )
-
 
         if (status) {
             formHideTl.reverse();
