@@ -89,15 +89,17 @@
             max-width: 206px;
         }
 
+        @media(max-width: 1024px) {
+            margin-top: 10px;
+        }
+
         @media(max-width: 940px) {
             max-width: 100%;
-            margin-top: 27px;
         }
 
         @media(max-width: 620px) {
             font-size: 12px;
             line-height: 17px;
-            margin-top: 19px;
         }
     }
 
@@ -170,6 +172,11 @@
         margin: 0 auto;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @media(max-width: 1024px) {
+            max-width: 52px;
+            height: 52px;
+        }
     }
 
     .mCSB_horizontal.mCSB_inside>.mCSB_container {
@@ -177,11 +184,11 @@
     }
 
     .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-        background-color: white;
+        background-color: transparent;
     }
 
     .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
-        background-color: white;
+        background-color: transparent;
     }
 
     .mCSB_horizontal.mCSB_inside>.mCSB_container {

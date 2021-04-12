@@ -207,7 +207,7 @@
 
         &--line {
             flex-direction: row;
-            align-items: baseline;
+            align-items: center;
             justify-content: space-between;
 
             @media(max-width: 990px) {
@@ -233,6 +233,8 @@
                         background-image: url('../img/icon/arrow-big.svg');
                         width: 33px;
                         height: 16px;
+                        top: 0;
+                        margin: auto;
                     }
                 }
             }

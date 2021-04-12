@@ -107,15 +107,30 @@
             }
 
             .vacancy {
-                &__href {
-                    opacity: 1;
-                }
 
                 &__article,
                 &__txt,
                 &__href {
                     @media(max-width: 620px) {
                         color: white;
+                    }
+                }
+            }
+
+            & .link-detail {
+                opacity: 1;
+
+                @media(max-width: 1024px) {
+
+
+                    &__txt {
+                        color: white
+                    }
+
+                    &__ic {
+                        &>.b-svg {
+                            fill: white;
+                        }
                     }
                 }
             }
@@ -180,7 +195,7 @@
             p {
                 line-height: 1.5;
 
-                & + p {
+                &+p {
                     margin-top: 25px;
                 }
             }
@@ -203,12 +218,12 @@
                         flex-shrink: 0;
                     }
 
-                    & + li {
+                    &+li {
                         margin-top: 10px;
                     }
                 }
 
-                & + p {
+                &+p {
                     margin-top: 40px;
 
                     @media (max-width: 620px) {

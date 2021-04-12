@@ -344,21 +344,25 @@
           </div>
         </div>
         <div class="partners partners--magazine">
-          <div class="partners__title title-4">Наши клиенты</div>
-          <div class="partners__quote">Нам доверяют множество компаний, которым мы оказали помощь при создании сайта.</div>
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="img/partners/l1.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l2.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l3.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l4.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l5.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l6.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l7.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l8.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l9.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l10.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l11.svg" alt=""></div>
-            <div class="swiper-slide"><img src="img/partners/l12.svg" alt=""></div>
+          <div class="container">
+            <div class="partners__title title-4">Наши клиенты</div>
+            <div class="partners__quote">Нам доверяют множество компаний, которым мы оказали помощь при создании сайта.</div>
+            <div class="partners__slider js-slider-partners">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/partners/l1.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l2.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l3.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l4.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l5.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l6.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l7.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l8.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l9.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l10.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l11.svg" alt=""></div>
+                <div class="swiper-slide"><img src="img/partners/l12.svg" alt=""></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="call" id="request">
@@ -378,31 +382,40 @@
               <div class="call__right">
                 <form class="call__form">
                   <div class="call__bloc">
-                    <div class="form-group">
-                      <div class="form-group__label">Какая услуга Вас интересует?</div>
-                      <input class="form-group__input" type="text" placeholder="Веб">
+                    <div class="form-group select">
+                      <div class="form-group__label">Какая услуга Вас интересует?</div><select class="js-example-basic-single" name="state">
+<option value="LEND">Лендинг</option>
+<option value="CORP">Корпоративный сайт</option>
+<option value="SHOP">Интернет-магазин</option>
+<option value="APP">Мобильное приложение</option>
+<option value="SEO">SEO-оптимизация</option>
+<option value="PROM">Продвижение</option>
+<option value="ADVERT">Реклама</option>
+</select>
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Ваше имя</div>
-                      <input class="form-group__input" type="text" placeholder="Введите имя">
+                      <input class="form-group__input" type="text" placeholder="Введите имя" name="">
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Контактный телефон</div>
-                      <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__">
+                      <input class="form-group__input js-phone-mask" type="tel" placeholder="+7 (___) ___-__-__" name="">
                     </div>
                     <div class="form-group">
                       <div class="form-group__label">Ваша почта</div>
-                      <input class="form-group__input" type="text" placeholder="Email">
+                      <input class="form-group__input" type="text" placeholder="Email" name="">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="form-group__label">Комментарий</div>
-                    <textarea class="form-group__input" rows="3" placeholder="Дополнительная информация"></textarea>
+                    <textarea class="form-group__input" rows="3" placeholder="Дополнительная информация" name=""></textarea>
                   </div>
-                </form><a class="btn btn--special" href="#">
-                  <div class="btn__special"><span>Отправить заявку</span></div>
-                  <div class="btn__text">Отправить заявку</div></a>
-                <div class="call__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
+                  <button class="btn btn--special" type="submit">
+                    <div class="btn__special"><span>Отправить заявку</span></div>
+                    <div class="btn__text">Отправить заявку</div>
+                  </button>
+                  <div class="call__quote">Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a></div>
+                </form>
               </div>
             </div>
           </div>
@@ -449,29 +462,15 @@
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
-                <div class="request-popup__wrapper">
-                  <div class="request-popup__btn js-drop-btn">
-                    <div class="request-popup__txt js-rp-txt">Разработка сайтов</div>
-                    <div class="request-popup__icon">
-                            <svg class="b-svg svg-arr ">
-                              <use xlink:href="svg/symbol/sprite.svg#arr"></use>
-                            </svg>
-                    </div>
-                  </div>
-                  <div class="request-popup__menu">
-                    <label class="request-popup__link" for="s1">
-                      <input type="radio" name="radio" id="s1" value="article"><span>Статьи</span>
-                    </label>
-                    <label class="request-popup__link" for="s2">
-                      <input type="radio" name="radio" id="s2" value="case"><span>Кейсы</span>
-                    </label>
-                    <label class="request-popup__link" for="s3">
-                      <input type="radio" name="radio" id="s3" value="change"><span>События</span>
-                    </label>
-                    <label class="request-popup__link" for="s4">
-                      <input type="radio" name="radio" id="s4" value="all"><span>Все</span>
-                    </label>
-                  </div>
+                <div class="form-group select"><select class="js-example-basic-single" name="state">
+<option value="LEND">Лендинг</option>
+<option value="CORP">Корпоративный сайт</option>
+<option value="SHOP">Интернет-магазин</option>
+<option value="APP">Мобильное приложение</option>
+<option value="SEO">SEO-оптимизация</option>
+<option value="PROM">Продвижение</option>
+<option value="ADVERT">Реклама</option>
+</select>
                 </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
@@ -500,6 +499,7 @@
     <script src="js/lightgallery.js"></script>
     <script src="js/smooth-scrollbar.js"></script>
     <script src="js/jquery.maskedinput.js"></script>
+    <script src="js/select2.min.js"></script>
     <script src="js/Slider.js"></script>
     <script src="js/main-min.js"></script>
   </body>

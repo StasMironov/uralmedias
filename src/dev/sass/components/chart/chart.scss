@@ -2,11 +2,7 @@
     margin-top: 85px;
 
     @media(max-width: 1024px) {
-        margin-top: 70px;
-    }
-
-    @media(max-width: 620px) {
-        margin-top: 55px;
+        margin-top: 0;
     }
 
     &__img {
