@@ -60,6 +60,7 @@
 .checkbox {
   display: block;
   margin-top: 15px;
+  cursor: pointer;
 
   &__input {
     position: absolute;
@@ -205,6 +206,7 @@
 .radio {
   display: block;
   margin-top: 15px;
+  cursor: pointer;
 
   &__input {
     position: absolute;
