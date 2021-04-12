@@ -874,10 +874,8 @@ var lockedDOM = function lockedDOM(status) {
 var stateObject = function stateObject(status) {
   if (status == 'start') {
     formShow('.js-form-request', true);
-    lockedDOM(true);
   } else {
     formShow('.js-form-request', false);
-    lockedDOM(false);
   }
 };
 
@@ -890,6 +888,8 @@ var showOverlay = function showOverlay(status) {
       defaults: {
         duration: 0.6
       },
+      onStart: lockedDOM,
+      onStartParams: [true],
       onComplete: stateObject,
       onCompleteParams: ['start']
     });
@@ -900,7 +900,9 @@ var showOverlay = function showOverlay(status) {
         duration: 0.3
       },
       onStart: stateObject,
-      onStartParams: ['end']
+      onStartParams: ['end'],
+      onComplete: lockedDOM,
+      onCompleteParams: [false]
     });
     showOvTl.to(overlayEl, {
       autoAlpha: 1,
@@ -922,6 +924,8 @@ var showOverlay = function showOverlay(status) {
 };
 
 var formShow = function formShow(element, status) {
+  console.log(element);
+
   if ($(element).exists()) {
     var _element = document.querySelector('.js-form-request');
 
@@ -936,28 +940,24 @@ var formShow = function formShow(element, status) {
       reversed: true,
       paused: true,
       defaults: {
-        duration: 0.8
+        duration: 0.5
       }
     });
-    formHideTl.fromTo(_element, {
-      yPercent: -50,
-      xPercent: -50,
-      autoAlpha: 1
-    }, {
-      yPercent: -200,
-      ease: "power2.out"
-    }).to(_element, {
-      autoAlpha: 0
-    });
-    formShowTl.fromTo(_element, {
+    formHideTl.to(_element, {
+      autoAlpha: 0,
       yPercent: -100,
       xPercent: -50,
-      autoAlpha: 0
-    }, {
+      ease: "power2.out"
+    });
+    formShowTl.set(_element, {
+      yPercent: -100,
+      xPercent: -50
+    }).to(_element, {
       autoAlpha: 1,
       yPercent: -50,
+      //xPercent: -50,
       ease: "power2.out"
-    }, '-=0.2');
+    });
 
     if (status) {
       formHideTl.reverse();

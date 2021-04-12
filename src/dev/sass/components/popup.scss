@@ -6,11 +6,11 @@
     height: 1px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -100%);
     z-index: 302;
     border-radius: 10px;
     opacity: 0;
-    visibility: hidden;
+visibility: hidden;
 
     @media(max-width: 1235px) {
         max-width: 870px;
