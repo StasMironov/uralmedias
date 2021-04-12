@@ -1380,10 +1380,16 @@ $(function () {
     });
 });
 
-
 if ($('.js-example-basic-single').exists()) {
     $('.js-example-basic-single').select2({
         minimumResultsForSearch: Infinity
+    }).on("select2:open", function () {
+        $('.select2-results__options').niceScroll({
+            scrollspeed: 60, // scrolling speed
+            mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
+            cursorcolor: "#00A4AD"
+        });
     });
 }
+
 

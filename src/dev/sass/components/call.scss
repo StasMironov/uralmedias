@@ -447,5 +447,13 @@
         height: 100%;
     }
 
+    .select2-container .select2-selection--single .select2-selection__rendered {
+        padding-right: 46px;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        width: 46px;
+    }
+
 
 }
