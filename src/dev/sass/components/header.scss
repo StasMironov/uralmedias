@@ -476,6 +476,20 @@
     }
 
     .header {
+      &__item {
+        &--menu {
+          &:after {
+            border-top: 3px solid #333;
+          }
+
+          &:hover {
+            &:after {
+              border-top-color: $green-1;
+            }
+          }
+        }
+      }
+
       &__inner {
         background-color: white;
       }

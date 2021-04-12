@@ -80,6 +80,7 @@
         // transition   : 'background'.3s ease-in;
         margin-top: 20px;
         opacity: 0;
+        transition: none;
 
         @media(max-width: 1890px) {
             width: calc(33.333% - 20px);
