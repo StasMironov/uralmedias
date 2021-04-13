@@ -2,6 +2,7 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+
 const projectFunc = {
     showBlogPopup: function (element) {
         let blogPopup = $(element).find('.blog__popup');
