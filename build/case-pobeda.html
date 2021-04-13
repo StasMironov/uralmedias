@@ -246,34 +246,20 @@
           </div>
         </div>
         <div class="request-popup js-form-request">
-          <div class="request-popup__close js-close-form"></div>
           <div class="request-popup__inner">
+            <div class="request-popup__close js-close-form"></div>
             <div class="request-popup__left">
               <div class="request-popup__title">Время покорять новые вершины!</div>
               <form class="request-popup__form">
-                <div class="request-popup__wrapper">
-                  <div class="request-popup__btn js-drop-btn">
-                    <div class="request-popup__txt js-rp-txt">Разработка сайтов</div>
-                    <div class="request-popup__icon">
-                            <svg class="b-svg svg-arr ">
-                              <use xlink:href="svg/symbol/sprite.svg#arr"></use>
-                            </svg>
-                    </div>
-                  </div>
-                  <div class="request-popup__menu">
-                    <label class="request-popup__link" for="s1">
-                      <input type="radio" name="radio" id="s1" value="article"><span>Статьи</span>
-                    </label>
-                    <label class="request-popup__link" for="s2">
-                      <input type="radio" name="radio" id="s2" value="case"><span>Кейсы</span>
-                    </label>
-                    <label class="request-popup__link" for="s3">
-                      <input type="radio" name="radio" id="s3" value="change"><span>События</span>
-                    </label>
-                    <label class="request-popup__link" for="s4">
-                      <input type="radio" name="radio" id="s4" value="all"><span>Все</span>
-                    </label>
-                  </div>
+                <div class="form-group select"><select class="js-example-basic-single" name="state">
+<option value="LEND">Лендинг</option>
+<option value="CORP">Корпоративный сайт</option>
+<option value="SHOP">Интернет-магазин</option>
+<option value="APP">Мобильное приложение</option>
+<option value="SEO">SEO-оптимизация</option>
+<option value="PROM">Продвижение</option>
+<option value="ADVERT">Реклама</option>
+</select>
                 </div>
                 <div class="form-group">
                   <input class="form-group__input" type="text" placeholder="Ваше имя">
@@ -291,6 +277,15 @@
             <div class="request-popup__right" style="background-image: url(img/bg.jpg)"></div>
           </div>
         </div>
+        <!--
+        .grace-popup__inner
+            .request-popup__close.js-close-form
+            .grace-popup__pic
+                +svg('heart')
+            .grace-popup__title Ваше сообщение отправлено!
+            .grace-popup__quote В ближайшее время наш менеджер свяжется с Вами.
+            .link.link--detail.js-close-form закрыть
+        -->
         <div class="overlay js-overlay"></div>
       </footer>
     </div><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>

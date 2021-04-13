@@ -1,27 +1,20 @@
 .request-popup.js-form-request
-    .request-popup__close.js-close-form
+
     .request-popup__inner
+        .request-popup__close.js-close-form
         .request-popup__left
             .request-popup__title Время покорять новые вершины!
             form.request-popup__form
-                .request-popup__wrapper
-                    .request-popup__btn.js-drop-btn
-                        .request-popup__txt.js-rp-txt Разработка сайтов
-                        .request-popup__icon
-                            +svg('arr')
-                    .request-popup__menu
-                        label(for="s1").request-popup__link
-                            input(type="radio" name="radio" id="s1" value='article')
-                            span Статьи
-                        label(for="s2").request-popup__link
-                            input(type="radio" name="radio" id="s2" value='case')
-                            span Кейсы
-                        label(for="s3").request-popup__link
-                            input(type="radio" name="radio" id="s3" value='change')
-                            span События
-                        label(for="s4").request-popup__link
-                            input(type="radio" name="radio" id="s4" value="all")
-                            span Все
+                .form-group.select
+                    <select class="js-example-basic-single" name="state">
+                    <option value="LEND">Лендинг</option>
+                    <option value="CORP">Корпоративный сайт</option>
+                    <option value="SHOP">Интернет-магазин</option>
+                    <option value="APP">Мобильное приложение</option>
+                    <option value="SEO">SEO-оптимизация</option>
+                    <option value="PROM">Продвижение</option>
+                    <option value="ADVERT">Реклама</option>
+                    </select>
                 .form-group
                     input.form-group__input(type="text" placeholder="Ваше имя")
                 .form-group
@@ -32,13 +25,15 @@
                     .btn__text Заказать проект
             .request-popup__quote Нажимая кнопку “Заказать проект”, вы принимаете условия <a href="javascript:void(0);">пользовательского соглашения</a>
         .request-popup__right(style="background-image: url(img/bg.jpg)")
+//
+    .grace-popup__inner
+        .request-popup__close.js-close-form
+        .grace-popup__pic
+            +svg('heart')
+        .grace-popup__title Ваше сообщение отправлено!
+        .grace-popup__quote В ближайшее время наш менеджер свяжется с Вами.
+        .link.link--detail.js-close-form закрыть
 
-//- .grace-popup
-//-     .grace-popup__close
-//-     .grace-popup__inner
-//-         .grace-popup__pic
-//-             +svg('heart')
-//-         .grace-popup__title Ваше сообщение отправлено!
-//-         .grace-popup__quote В ближайшее время наш менеджер свяжется с Вами.
+
 
 

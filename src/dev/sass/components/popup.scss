@@ -1,45 +1,15 @@
 .request-popup {
     position: fixed;
-    max-width: 1011px;
-    width: 100%;
-    min-height: 587px;
-    height: 1px;
     top: 50%;
     left: 50%;
-    // transform: translate(-50%, -100%);
     z-index: 302;
     border-radius: 10px;
     opacity: 0;
-visibility: hidden;
-
-    @media(max-width: 1235px) {
-        max-width: 870px;
-    }
-
-    @media(max-width: 1024px) {
-        max-width: 660px;
-        min-height: 530px;
-    }
+    visibility: hidden;
 
     @media(max-width: 768px) {
-        max-width: 555px;
+        width: 90%;
     }
-
-    @media(max-width: 768px) {
-        max-width: 540px;
-        min-height: 514px;
-    }
-
-    @media(max-width: 620px) {
-        height: auto;
-        max-width: 90vw;
-        max-height: 85vh;
-        overflow: auto;
-    }
-
-    // @media(max-width: 500px) {
-    //     max-width: 300px;
-    // }
 
     &__link {
         cursor: pointer;
@@ -64,23 +34,22 @@ visibility: hidden;
     }
 
     &__left {
-        max-width: 505px;
-        width: calc(100% - 506px);
+        width: 505px;
         background-color: white;
         padding: 78px 87px 79px 68px;
 
         @media(max-width: 1235px) {
             padding: 78px 50px 79px 50px;
-            width: calc(100% - 425px);
+            width: 425px;
         }
 
         @media(max-width: 1024px) {
-            width: calc(100% - 280px);
+            width: 370px;
             padding: 50px 30px 50px;
         }
 
         @media(max-width: 768px) {
-            width: calc(100% - 185px);
+            width: 50%;
         }
 
         @media(max-width: 620px) {
@@ -95,7 +64,7 @@ visibility: hidden;
     }
 
     &__right {
-        width: 506px;
+        width: 505px;
         background-size: cover;
         background-position: center;
 
@@ -104,11 +73,11 @@ visibility: hidden;
         }
 
         @media(max-width: 1024px) {
-            width: 280px;
+            width: 370px;
         }
 
         @media(max-width: 768px) {
-            width: 185px;
+            width: 50%;
         }
 
         @media(max-width:620px) {
@@ -118,10 +87,10 @@ visibility: hidden;
     }
 
     &__inner {
+        position: relative;
         display: flex;
         height: 100%;
         border-radius: 10px;
-        overflow: hidden;
 
         @media(max-width: 620px) {
             flex-direction: column-reverse;
@@ -226,6 +195,11 @@ visibility: hidden;
             top: 0;
             bottom: 0;
             margin: auto;
+            transition: 0.2s;
+
+            @media (max-width: 620px) {
+                background-color: $grey-2;
+            }
         }
 
         &:after {
@@ -234,6 +208,14 @@ visibility: hidden;
 
         &::before {
             transform: rotate(-45deg);
+        }
+
+        &:hover {
+
+            &:after,
+            &:before {
+                opacity: 0.5;
+            }
         }
     }
 
@@ -293,5 +275,67 @@ visibility: hidden;
         label>input {
             display: none;
         }
+    }
+}
+.grace-popup {
+
+    &__inner {
+        display: none;
+        text-align: center;
+        flex-direction: column;
+        height: 100%;
+        padding: 70px 24px 80px;
+        max-width: 500px;
+        background: #fff;
+        border-radius: 10px;
+        margin: auto;
+
+        @media(max-width: 620px) {
+            padding: 50px 24px;
+        }
+
+        .link--detail {
+            display: inline-flex;
+            margin: 50px auto 0;
+            color: $green-1;
+            text-transform: uppercase;
+
+            &::after {
+                filter: invert(1);
+            }
+        }
+    }
+
+    &__pic {
+
+        .b-svg {
+            width: 100%;
+        }
+
+        svg * {
+            fill: $green-1;
+        }
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-top: 30px;
+
+        @media(max-width: 1024px) {
+            font-size: 29px;
+        }
+
+        @media(max-width: 620px) {
+            font-size: 22px;
+        }
+    }
+
+    &__quote {
+        width: 80%;
+        font-size: 16px;
+        line-height: 1.7;
+        margin: 30px auto 0;
     }
 }
