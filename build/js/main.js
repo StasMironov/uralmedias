@@ -531,26 +531,6 @@ ScrollTrigger.create({
   end: 'bottom',
   animation: uncover,
   scrub: true
-}); //portfolio__item
-
-gsap.set('.portfolio__item', {
-  yPercent: -7,
-  autoAlpha: 0
-});
-var itemW = gsap.timeline({
-  paused: true
-});
-itemW.to('.portfolio__item', {
-  yPercent: 0,
-  autoAlpha: 1,
-  stagger: 1
-});
-ScrollTrigger.create({
-  trigger: '.portfolio',
-  start: 'top-=40% top',
-  end: 'bottom-=40%',
-  animation: itemW,
-  scrub: true
 });
 
 if ($('.btn--special').exists()) {
@@ -1156,5 +1136,75 @@ if ($('.js-example-basic-single').exists()) {
       // scrolling speed with mouse wheel (pixel)
       cursorcolor: "#00A4AD"
     });
+  });
+}
+
+initImageParallax();
+initPinSteps();
+
+function initImageParallax() {
+  // select all sections .with-parallax
+  gsap.utils.toArray('.with-parallax').forEach(function (section) {
+    // get the image
+    var image = section.querySelector('picture'); // create tween for the image
+
+    gsap.to(image, {
+      yPercent: 20,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top bottom',
+        scrub: true // markers: true
+
+      }
+    });
+  });
+}
+
+function updateBodyColor(color) {
+  // gsap.to('.fill-background', { backgroundColor: color, ease: 'none'});
+  document.documentElement.style.setProperty('--bcg-fill-color', color);
+}
+
+function initPinSteps() {
+  var getVh = function getVh() {
+    var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    return vh;
+  };
+
+  gsap.utils.toArray('.portfolio__item').forEach(function (stage, index) {
+    ScrollTrigger.create({
+      trigger: stage,
+      start: 'top center',
+      end: function end() {
+        return "+=".concat(stage.clientHeight + getVh() / 10);
+      },
+      onEnter: function onEnter() {
+        return updateBodyColor(stage.dataset.color);
+      },
+      onEnterBack: function onEnterBack() {
+        return updateBodyColor(stage.dataset.color);
+      }
+    });
+  });
+  var pWrapper = document.querySelector('.portfolio');
+  ScrollTrigger.create({
+    trigger: pWrapper,
+    start: 'top center',
+    end: 'bottom-=200',
+    onEnter: function onEnter() {
+      return updateBodyColor(gsap.utils.toArray('.portfolio__item')[0].dataset.color);
+    },
+    onLeave: function onLeave() {
+      return updateBodyColor(pWrapper.dataset.color);
+    },
+    onLeaveBack: function onLeaveBack() {
+      return updateBodyColor(pWrapper.dataset.color);
+    },
+    toggleClass: {
+      targets: '.portfolio',
+      className: 'mf-bg-portfolio'
+    },
+    markers: true
   });
 }

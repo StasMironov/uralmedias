@@ -663,30 +663,6 @@ ScrollTrigger.create({
     scrub: true,
 });
 
-//portfolio__item
-gsap.set('.portfolio__item', {
-    yPercent: -7,
-    autoAlpha: 0
-});
-
-const itemW = gsap.timeline({
-    paused: true
-});
-
-itemW
-    .to('.portfolio__item', {
-        yPercent: 0,
-        autoAlpha: 1,
-        stagger: 1
-    });
-
-ScrollTrigger.create({
-    trigger: '.portfolio',
-    start: 'top-=40% top',
-    end: 'bottom-=40%',
-    animation: itemW,
-    scrub: true,
-});
 
 if ($('.btn--special').exists()) {
 
@@ -1388,5 +1364,78 @@ if ($('.js-example-basic-single').exists()) {
         });
     });
 }
+
+initImageParallax();
+initPinSteps();
+
+
+function initImageParallax() {
+
+    // select all sections .with-parallax
+    gsap.utils.toArray('.with-parallax').forEach(section => {
+
+        // get the image
+        const image = section.querySelector('picture');
+
+        // create tween for the image
+        gsap.to(image, {
+            yPercent: 20,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                scrub: true,
+                // markers: true
+            }
+        });
+
+    });
+
+}
+
+function updateBodyColor(color) {
+    // gsap.to('.fill-background', { backgroundColor: color, ease: 'none'});
+    document.documentElement.style.setProperty('--bcg-fill-color', color);
+}
+
+function initPinSteps() {
+    const getVh = () => {
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        return vh;
+    }
+
+    gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
+
+        ScrollTrigger.create({
+            trigger: stage,
+            start: 'top center',
+            end: () => `+=${stage.clientHeight + getVh() / 10}`,
+            onEnter: () => updateBodyColor(stage.dataset.color),
+            onEnterBack: () => updateBodyColor(stage.dataset.color),
+        });
+
+    });
+
+    const pWrapper = document.querySelector('.portfolio');
+
+    ScrollTrigger.create({
+        trigger: pWrapper,
+        start: 'top center',
+        end: 'bottom-=200',
+        onEnter: () => updateBodyColor(gsap.utils.toArray('.portfolio__item')[0].dataset.color),
+        onLeave: () => updateBodyColor(pWrapper.dataset.color),
+        onLeaveBack: () => updateBodyColor(pWrapper.dataset.color),
+        toggleClass: {
+            targets: '.portfolio',
+            className: 'mf-bg-portfolio'
+        },
+        markers: true
+    });
+
+
+
+}
+
+
 
 
