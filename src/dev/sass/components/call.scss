@@ -420,43 +420,4 @@
             }
         }
     }
-
-    .select2 {
-        margin-top: 15px;
-        width: 100% !important;
-    }
-
-    .select2-selection {
-        min-height: 44px;
-        border-radius: 0;
-        border: 1px solid $grey-7;
-    }
-
-
-
-    .select2-selection__rendered {
-        height: 100%;
-    }
-
-    .select2-container .select2-selection--single .select2-selection__rendered {
-        display: flex;
-        align-items: center;
-    }
-
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        height: 100%;
-    }
-
-    .select2-container .select2-selection--single .select2-selection__rendered {
-        padding-right: 46px;
-    }
-
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        width: 46px;
-    }
-
-
-
-
-
 }

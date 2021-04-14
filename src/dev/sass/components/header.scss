@@ -6,7 +6,7 @@
   z-index: 300;
   min-height: 79px;
   color: white;
-  padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+  // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 
   @media(max-width: 1024px) {
     min-height: 66px;
@@ -449,7 +449,7 @@
   &--scroll {
     background-color: white;
     color: $black;
-    padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+    // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 
     @media(max-width: 620px) {
       box-shadow: 0 2px 5px rgba(0, 0, 0, .15);

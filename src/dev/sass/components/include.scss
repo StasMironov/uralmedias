@@ -900,6 +900,11 @@
                 @media(max-width: 1024px) {
                     margin: 45px auto 0;
                 }
+
+                @media(max-width: 768px) {
+                    margin: 45px 0 0 -15px;
+                    overflow-x: scroll;
+                }
             }
 
             &__txt {
@@ -943,6 +948,10 @@
                 flex-direction: column;
                 align-items: center;
                 cursor: pointer;
+
+                @media(max-width: 768px) {
+                    margin: 0 15px;
+                }
 
                 &:hover {
                     .include {
@@ -1232,14 +1241,18 @@
     }
 
     &--call {
-        margin-top: 148px;
+        margin-top: 0;
         padding-bottom: 71px;
+
+        @media(max-width: 1300px) {
+            margin-top: 90px;
+        }
 
         @media(max-width: 1024px) {
             padding-bottom: 55px;
         }
 
-        @media(max-width: 620px) {
+        @media(max-width: 768px) {
             margin-top: 55px;
         }
 

@@ -10,7 +10,7 @@
 }
 
 :root {
-  --bcg-white: white;
+  --bcg-white: transparent;
   --bcg-fill-color: var(--bcg-white);
 }
 
@@ -19,7 +19,7 @@ html {
   min-width: 320px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-  padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+  // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 }
 
 body {
@@ -191,6 +191,7 @@ input::-ms-clear {
   min-height: 100vh;
   position: relative;
   padding-bottom: 271px;
+  z-index: 1;
 
   @media(max-width: 1024px) {
     padding-bottom: 205px;
@@ -320,6 +321,10 @@ input::-ms-clear {
     margin-top: 42px;
   }
 
+  &.swiper-pagination-lock {
+    display: none;
+  }
+
   .swiper-pagination-bullet {
     background-color: $grey-6;
     opacity: 1;
@@ -434,6 +439,15 @@ input::-ms-clear {
   background-color: var(--bcg-fill-color);
   transition: background-color 0.3s linear;
   z-index: -1;
+}
+
+#viewport {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 @import "./components/rate.scss";

@@ -227,13 +227,6 @@ if ($('.blog__item').exists()) {
     });
 }
 
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 79) {
-        $(".header__inner").addClass("header--scroll");
-    } else {
-        $(".header__inner").removeClass("header--scroll");
-    }
-});
 
 if ($('.header__inner').exists) {
     try {
@@ -682,107 +675,104 @@ if ($('.btn--special').exists()) {
 
 $('#certificate').lightGallery();
 
-gsap.set('.place__bg', {
-    yPercent: 0,
-    transformOrigin: 'left center',
-});
-
-const place = gsap.timeline({
-    paused: true
-});
-
-const placeContent = gsap.timeline({
-    paused: true
-});
-
-gsap.set('.place__title', {
-    yPercent: -40,
-    autoAlpha: 0
-});
-
-gsap.set('.place__text', {
-    autoAlpha: 0
-})
-
-
-placeContent
-    .to('.place__title', {
+const showPlace = () => {
+    gsap.set('.place__bg', {
         yPercent: 0,
-        autoAlpha: 1,
-        duration: 1
+        transformOrigin: 'left center',
+    });
+
+    const place = gsap.timeline({
+        paused: true
+    });
+
+    const placeContent = gsap.timeline({
+        paused: true
+    });
+
+    gsap.set('.place__title', {
+        yPercent: -40,
+        autoAlpha: 0
+    });
+
+    gsap.set('.place__text', {
+        autoAlpha: 0
     })
-    .to('.place__text', {
-        autoAlpha: 1
+
+
+    placeContent
+        .to('.place__title', {
+            yPercent: 0,
+            autoAlpha: 1,
+            duration: 1
+        })
+        .to('.place__text', {
+            autoAlpha: 1
+        });
+
+    ScrollTrigger.create({
+        trigger: '.place',
+        start: 'top-=150% top',
+        end: 'bottom-=80',
+        animation: placeContent,
+    });
+}
+
+
+
+const showService = () => {
+    gsap.set('.services__item', {
+        xPercent: -5,
+        autoAlpha: 0
     });
 
-ScrollTrigger.create({
-    trigger: '.place',
-    start: 'top-=150% top',
-    end: 'bottom-=80',
-    animation: placeContent,
-});
-
-gsap.set('.services__item', {
-    xPercent: -5,
-    autoAlpha: 0
-});
-
-const service = gsap.timeline({
-    paused: true
-});
-
-service
-    .to('.services__item', {
-        xPercent: 0,
-        autoAlpha: 1,
-        stagger: 0.3,
-        duration: 0.5
-
+    const service = gsap.timeline({
+        paused: true
     });
 
-ScrollTrigger.create({
-    trigger: '.services__items',
-    start: 'top-=230% top',
-    end: 'bottom',
-    animation: service,
-    // scrub: true,
-});
+    service
+        .to('.services__item', {
+            xPercent: 0,
+            autoAlpha: 1,
+            stagger: 0.3,
+            duration: 0.5
 
-//place
+        });
 
-gsap.set('.call__grid', {
-    xPercent: -100,
-    autoAlpha: 0,
-    duration: 1
-});
+    ScrollTrigger.create({
+        trigger: '.services__items',
+        start: 'top-=230% top',
+        end: 'bottom',
+        animation: service,
+        // scrub: true,
+    });
+}
 
-const call = gsap.timeline({
-    paused: true
-});
-
-call
-    .to('.call__grid', {
-        xPercent: 0,
-        autoAlpha: 1,
-        duration: 2,
-        ease: Back.easeOut.config(1.7)
+const showCallForm = () => {
+    gsap.set('.call__grid', {
+        xPercent: -100,
+        autoAlpha: 0,
+        duration: 1
     });
 
-ScrollTrigger.create({
-    trigger: '.call',
-    start: 'top-=80% top',
-    end: 'bottom',
-    animation: call,
-});
+    const call = gsap.timeline({
+        paused: true
+    });
 
+    call
+        .to('.call__grid', {
+            xPercent: 0,
+            autoAlpha: 1,
+            duration: 2,
+            ease: Back.easeOut.config(1.7)
+        });
 
-
-// if ($('.request-popup__close').exists()) {
-//     $('.request-popup__close').on('click', function () {
-//         projectFunc.hidePopup();
-//     });
-// }
-
+    ScrollTrigger.create({
+        trigger: '.call',
+        start: 'top-=80% top',
+        end: 'bottom',
+        animation: call,
+    });
+}
 
 $(window).on('load', function () {
     if ($('#map').exists()) {
@@ -1243,38 +1233,6 @@ if ($('#request').exists()) {
         console.log(err);
     }
 }
-if ($('.js-form-request').exists()) {
-    let popupRequest = document.querySelector('.js-form-request'),
-        btnDropMenu = popupRequest.querySelector('.js-drop-btn'),
-        menuWrapper = popupRequest.querySelector('.request-popup__wrapper'),
-        radioEl = popupRequest.querySelectorAll('.request-popup__link input'),
-        labelEl = popupRequest.querySelectorAll('.request-popup__link'),
-        labelTxt = '',
-        textBtn = popupRequest.querySelector('.js-rp-txt');
-
-
-    for (let i = 0; i < labelEl.length; i++) {
-        labelEl[i].addEventListener('click', function () {
-            $(this).addClass('active').siblings().removeClass('active');
-
-            if (radioEl[i].checked) {
-                textBtn.textContent = labelEl[i].querySelector('span').textContent;
-            }
-        });
-    }
-
-    btnDropMenu.addEventListener('click', () => {
-        menuWrapper.classList.toggle('active');
-    });
-
-    $('.request-popup').mouseup(function (e) {
-        const container = $('.request-popup__wrapper');
-
-        if (container.has(e.target).length === 0) {
-            container.removeClass('active');
-        }
-    });
-}
 
 if ($('.js-phone-mask').exists()) {
     let phoneEl = document.querySelectorAll('.js-phone-mask');
@@ -1325,14 +1283,14 @@ function checkPacket() {
         });
     }
 }
-checkPacket();
+
 
 $('.rate__item .switch').on('click', function () {
     checkPacket();
 });
 
 //custom file input
-$(function () {
+const checkInput = () => {
     $('input[type="file"]').change(function () {
         let label = $('.file .file__label');
         if (typeof (this.files) != 'undefined') {
@@ -1351,7 +1309,8 @@ $(function () {
         }
         return false;
     });
-});
+}
+
 
 if ($('.js-example-basic-single').exists()) {
     $('.js-example-basic-single').select2({
@@ -1365,10 +1324,6 @@ if ($('.js-example-basic-single').exists()) {
     });
 }
 
-initImageParallax();
-initPinSteps();
-
-
 function initImageParallax() {
 
     // select all sections .with-parallax
@@ -1379,7 +1334,7 @@ function initImageParallax() {
 
         // create tween for the image
         gsap.to(image, {
-            yPercent: 20,
+            yPercent: 25,
             ease: 'none',
             scrollTrigger: {
                 trigger: section,
@@ -1404,37 +1359,85 @@ function initPinSteps() {
         return vh;
     }
 
-    gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
+    if ($('.portfolio').exists()) {
+        try {
+            gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
 
-        ScrollTrigger.create({
-            trigger: stage,
-            start: 'top center',
-            end: () => `+=${stage.clientHeight + getVh() / 10}`,
-            onEnter: () => updateBodyColor(stage.dataset.color),
-            onEnterBack: () => updateBodyColor(stage.dataset.color),
-        });
+                ScrollTrigger.create({
+                    trigger: stage,
+                    start: 'top center',
+                    end: () => `+=${stage.clientHeight + getVh() / 10}`,
+                    onEnter: () => updateBodyColor(stage.dataset.color),
+                    onEnterBack: () => updateBodyColor(stage.dataset.color),
+                });
 
-    });
+            });
 
-    const pWrapper = document.querySelector('.portfolio');
+            const pWrapper = document.querySelector('.portfolio');
 
-    ScrollTrigger.create({
-        trigger: pWrapper,
-        start: 'top center',
-        end: 'bottom-=200',
-        onEnter: () => updateBodyColor(gsap.utils.toArray('.portfolio__item')[0].dataset.color),
-        onLeave: () => updateBodyColor(pWrapper.dataset.color),
-        onLeaveBack: () => updateBodyColor(pWrapper.dataset.color),
-        toggleClass: {
-            targets: '.portfolio',
-            className: 'mf-bg-portfolio'
-        },
-        markers: true
-    });
-
-
+            ScrollTrigger.create({
+                trigger: pWrapper,
+                start: 'top center',
+                end: 'bottom-=200',
+                onEnter: () => updateBodyColor(gsap.utils.toArray('.portfolio__item')[0].dataset.color),
+                onLeave: () => updateBodyColor(pWrapper.dataset.color),
+                onLeaveBack: () => updateBodyColor(pWrapper.dataset.color),
+                toggleClass: {
+                    targets: '.portfolio',
+                    className: 'mf-bg-portfolio'
+                },
+                pinReparent: true,
+                pinSpacing: false
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
 
 }
+
+function initSmoothScrollBar() {
+    let bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), { damping: 0.04, delegateTo: document });
+
+    bodyScrollBar.track.xAxis.element.remove();
+
+    ScrollTrigger.scrollerProxy('#viewport', {
+        scrollTop(value) {
+            console.log(bodyScrollBar.scrollTop);
+
+            if (bodyScrollBar.scrollTop > 79) {
+                $(".header__inner").addClass("header--scroll");
+            } else {
+                $(".header__inner").removeClass("header--scroll");
+            }
+
+            if (arguments.length) {
+
+                bodyScrollBar.scrollTop = value; // setter
+            }
+            return bodyScrollBar.scrollTop;    // getter
+        }
+    });
+    bodyScrollBar.addListener(ScrollTrigger.update);
+}
+
+ScrollTrigger.defaults({ scroller: '#viewport' });
+
+
+
+function initContent() {
+    initSmoothScrollBar();
+    initImageParallax();
+    initPinSteps();
+    checkPacket();
+    checkInput();
+    showCallForm();
+    showPlace();
+    showService();
+}
+
+initContent();
 
 
 

@@ -210,6 +210,10 @@
             align-items: center;
             justify-content: space-between;
 
+            @media(max-width: 990px) {
+                align-items: center;
+            }
+
             .price__href {
                 margin-top: 0;
             }
