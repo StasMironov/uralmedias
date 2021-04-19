@@ -2,6 +2,10 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
+setGallery();
+
+
+
 const projectFunc = {
     showBlogPopup: function (element) {
         let blogPopup = $(element).find('.blog__popup');
@@ -424,79 +428,142 @@ function init() {
         });
     }
 
+    $('#certificate').lightGallery();
+
+    barba.hooks.beforeEnter((data) => {
+        ScrollTrigger.update();
+        ScrollTrigger.refresh(true);
+        checkPage();
+        animateBildboard();
+        initContent();
+        initSmoothScrollBar(true);
+    });
     barba.init({
-        debug: true,
-        transitions: [{
-            name: 'index',
-            to: {
-                namespace: ['index']
+        views: [{
+            namespace: 'index',
+            beforeLeave() {
+                console.log('beforeLeave index');
             },
-
-            async leave() {
-                await loaderIn();
-
-            },
-            enter() {
-                loaderAway();
-                setTimeout(() => {
-                    ScrollTrigger.update();
-                    ScrollTrigger.refresh(true);
-                    checkPage();
-                    animateBildboard();
-                    initContent();
-                    initSmoothScrollBar(true);
-                }, 10);
-
+            afterEnter() {
+                console.log('afterEnter blog');
+                ScrollTrigger.update();
+                ScrollTrigger.refresh(true);
+                checkPage();
+                animateBildboard();
+                initContent();
+                initSmoothScrollBar(true);
             }
         },
         {
-            name: 'blog',
-            to: {
-                namespace: ['blog']
-            },
-
-            async leave() {
-                await loaderIn();
-
-            },
-            enter() {
-                loaderAway();
-                setTimeout(() => {
-                    ScrollTrigger.update();
-                    ScrollTrigger.refresh(true);
-                    checkPage();
-                    animateBildboard();
-                    initContent();
-                    initSmoothScrollBar(true);
-                }, 10);
-
-            }
-        },
-        {
-            name: 'contacts',
-            to: {
-                namespace: ['contacts']
-            },
-
-            async leave() {
-                await loaderIn();
-
-            },
-            enter() {
-                loaderAway();
-                setTimeout(() => {
-                    ScrollTrigger.update();
-                    ScrollTrigger.refresh(true);
-                    checkPage();
-                    animateBildboard();
-                    initContent();
-                    initSmoothScrollBar(true);
-                }, 10);
-
+            namespace: 'blog',
+            afterEnter() {
+                console.log('afterEnter index');
+                ScrollTrigger.update();
+                ScrollTrigger.refresh(true);
+                checkPage();
+                animateBildboard();
+                initContent();
+                initSmoothScrollBar(true);;
             }
         }
+        ],
+        transitions: [
+            {
+                name: 'Amazing transition',
+                enter(data) {
+                    console.log('Amazing transition has been applied!');
+                }
+            }
         ]
     });
+
+    // barba.init({
+    //     // sync: true,
+    //     debug: true,
+
+    //     transitions: [
+    //         {
+    //             name: 'index',
+    //             to: {
+    //                 namespace: ['index']
+    //             },
+    //             async before() {
+    //                 setGallery();
+    //             },
+    //             async leave() {
+    //                 await loaderIn();
+    //             },
+    //             async enter() {
+    //                 loaderAway();
+    //                 setTimeout(() => {
+    //                     ScrollTrigger.update();
+    //                     ScrollTrigger.refresh(true);
+    //                     checkPage();
+    //                     animateBildboard();
+    //                     initContent();
+    //                     initSmoothScrollBar(true);
+
+    //                 }, 10);
+
+    //             },
+
+    //             async once(data) {
+    //                 ScrollTrigger.update();
+    //                 ScrollTrigger.refresh(true);
+    //                 checkPage();
+    //                 animateBildboard();
+    //                 initContent();
+    //                 initSmoothScrollBar(true);
+    //             }
+    //         },
+    //         {
+    //             name: 'blog',
+    //             to: {
+    //                 namespace: ['blog']
+    //             },
+
+    //             async leave() {
+    //                 await loaderIn();
+
+    //             },
+    //             enter() {
+    //                 loaderAway();
+    //                 setTimeout(() => {
+    //                     ScrollTrigger.update();
+    //                     ScrollTrigger.refresh(true);
+    //                     checkPage();
+    //                     animateBildboard();
+    //                     initContent();
+    //                     initSmoothScrollBar(true);
+    //                 }, 10);
+
+    //             }
+    //         },
+    //         {
+    //             name: 'contacts',
+    //             to: {
+    //                 namespace: ['contacts']
+    //             },
+
+    //             async leave() {
+    //                 await loaderIn();
+
+    //             },
+    //             enter() {
+    //                 loaderAway();
+    //                 setTimeout(() => {
+    //                     ScrollTrigger.update();
+    //                     ScrollTrigger.refresh(true);
+    //                     checkPage();
+    //                     animateBildboard();
+    //                     initContent();
+    //                     initSmoothScrollBar(true);
+    //                 }, 10);
+
+    //             }
+    //         }
+    //     ]
+    // });
 
     initContent();
 
@@ -701,7 +768,7 @@ const setWidthBtn = () => {
     }
 }
 
-const setGallery = () => {
+function setGallery() {
     if ($('#certificate').exists()) {
         $('#certificate').lightGallery();
     }
@@ -1393,34 +1460,7 @@ const checkInput = () => {
     });
 }
 
-const setSelect = () => {
-    if ($('.call .js-example-basic-single').exists()) {
-        var dropdownParentEl = $('.call .select');
-        $('.call .js-example-basic-single').select2({
-            minimumResultsForSearch: Infinity,
-            dropdownParent: dropdownParentEl,
-        }).on("select2:open", function () {
 
-            $('.select2-results__options').niceScroll({
-                scrollspeed: 60, // scrolling speed
-                mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
-            });
-        });
-    }
-
-    if ($('.js-example-basic-single').exists()) {
-        $('.js-example-basic-single').select2({
-            minimumResultsForSearch: Infinity
-        }).on("select2:open", function () {
-            $('.select2-results__options').niceScroll({
-                scrollspeed: 60, // scrolling speed
-                mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
-            });
-        });
-    }
-}
 
 function initImageParallax() {
 
@@ -1559,7 +1599,38 @@ const moveMainBildboard = () => {
     });
 }
 
+const setSelect = () => {
+    if ($('.call .js-example-basic-single').exists()) {
+        const dropdownParentEl = $('.call .select');
+
+        $('.call .js-example-basic-single').select2({
+            minimumResultsForSearch: Infinity,
+            dropdownParent: dropdownParentEl,
+        }).on("select2:open", function () {
+
+            $('.select2-results__options').niceScroll({
+                scrollspeed: 60, // scrolling speed
+                mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
+                cursorcolor: "#00A4AD"
+            });
+        });
+    }
+
+    if ($('.request-popup .js-example-basic-single').exists()) {
+        $('.request-popup .js-example-basic-single').select2({
+            minimumResultsForSearch: Infinity
+        }).on("select2:open", function () {
+            $('.select2-results__options').niceScroll({
+                scrollspeed: 60, // scrolling speed
+                mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
+                cursorcolor: "#00A4AD"
+            });
+        });
+    }
+}
+
 function initContent() {
+    setSelect();
     initSmoothScrollBar();
     initImageParallax();
     initPinSteps();
@@ -1570,8 +1641,7 @@ function initContent() {
     showService();
     moveMainBildboard();
     setWidthBtn();
-    setGallery();
-    setSelect();
+
     setSlider();
     setCursor();
     setMap();

@@ -1,13 +1,10 @@
 "use strict";
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 jQuery.fn.exists = function () {
   return $(this).length;
 };
 
+setGallery();
 var projectFunc = {
   showBlogPopup: function showBlogPopup(element) {
     var blogPopup = $(element).find('.blog__popup');
@@ -387,109 +384,127 @@ function init() {
     });
   }
 
+  $('#certificate').lightGallery();
+  barba.hooks.beforeEnter(function (data) {
+    ScrollTrigger.update();
+    ScrollTrigger.refresh(true);
+    checkPage();
+    animateBildboard();
+    initContent();
+    initSmoothScrollBar(true);
+  });
   barba.init({
-    debug: true,
+    views: [{
+      namespace: 'index',
+      beforeLeave: function beforeLeave() {
+        console.log('beforeLeave index');
+      },
+      afterEnter: function afterEnter() {
+        console.log('afterEnter blog');
+        ScrollTrigger.update();
+        ScrollTrigger.refresh(true);
+        checkPage();
+        animateBildboard();
+        initContent();
+        initSmoothScrollBar(true);
+      }
+    }, {
+      namespace: 'blog',
+      afterEnter: function afterEnter() {
+        console.log('afterEnter index');
+        ScrollTrigger.update();
+        ScrollTrigger.refresh(true);
+        checkPage();
+        animateBildboard();
+        initContent();
+        initSmoothScrollBar(true);
+        ;
+      }
+    }],
     transitions: [{
-      name: 'index',
-      to: {
-        namespace: ['index']
-      },
-      leave: function leave() {
-        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-          return regeneratorRuntime.wrap(function _callee$(_context) {
-            while (1) {
-              switch (_context.prev = _context.next) {
-                case 0:
-                  _context.next = 2;
-                  return loaderIn();
-
-                case 2:
-                case "end":
-                  return _context.stop();
-              }
-            }
-          }, _callee);
-        }))();
-      },
-      enter: function enter() {
-        loaderAway();
-        setTimeout(function () {
-          ScrollTrigger.update();
-          ScrollTrigger.refresh(true);
-          checkPage();
-          animateBildboard();
-          initContent();
-          initSmoothScrollBar(true);
-        }, 10);
-      }
-    }, {
-      name: 'blog',
-      to: {
-        namespace: ['blog']
-      },
-      leave: function leave() {
-        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-          return regeneratorRuntime.wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  _context2.next = 2;
-                  return loaderIn();
-
-                case 2:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2);
-        }))();
-      },
-      enter: function enter() {
-        loaderAway();
-        setTimeout(function () {
-          ScrollTrigger.update();
-          ScrollTrigger.refresh(true);
-          checkPage();
-          animateBildboard();
-          initContent();
-          initSmoothScrollBar(true);
-        }, 10);
-      }
-    }, {
-      name: 'contacts',
-      to: {
-        namespace: ['contacts']
-      },
-      leave: function leave() {
-        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-          return regeneratorRuntime.wrap(function _callee3$(_context3) {
-            while (1) {
-              switch (_context3.prev = _context3.next) {
-                case 0:
-                  _context3.next = 2;
-                  return loaderIn();
-
-                case 2:
-                case "end":
-                  return _context3.stop();
-              }
-            }
-          }, _callee3);
-        }))();
-      },
-      enter: function enter() {
-        loaderAway();
-        setTimeout(function () {
-          ScrollTrigger.update();
-          ScrollTrigger.refresh(true);
-          checkPage();
-          animateBildboard();
-          initContent();
-          initSmoothScrollBar(true);
-        }, 10);
+      name: 'Amazing transition',
+      enter: function enter(data) {
+        console.log('Amazing transition has been applied!');
       }
     }]
-  });
+  }); // barba.init({
+  //     // sync: true,
+  //     debug: true,
+  //     transitions: [
+  //         {
+  //             name: 'index',
+  //             to: {
+  //                 namespace: ['index']
+  //             },
+  //             async before() {
+  //                 setGallery();
+  //             },
+  //             async leave() {
+  //                 await loaderIn();
+  //             },
+  //             async enter() {
+  //                 loaderAway();
+  //                 setTimeout(() => {
+  //                     ScrollTrigger.update();
+  //                     ScrollTrigger.refresh(true);
+  //                     checkPage();
+  //                     animateBildboard();
+  //                     initContent();
+  //                     initSmoothScrollBar(true);
+  //                 }, 10);
+  //             },
+  //             async once(data) {
+  //                 ScrollTrigger.update();
+  //                 ScrollTrigger.refresh(true);
+  //                 checkPage();
+  //                 animateBildboard();
+  //                 initContent();
+  //                 initSmoothScrollBar(true);
+  //             }
+  //         },
+  //         {
+  //             name: 'blog',
+  //             to: {
+  //                 namespace: ['blog']
+  //             },
+  //             async leave() {
+  //                 await loaderIn();
+  //             },
+  //             enter() {
+  //                 loaderAway();
+  //                 setTimeout(() => {
+  //                     ScrollTrigger.update();
+  //                     ScrollTrigger.refresh(true);
+  //                     checkPage();
+  //                     animateBildboard();
+  //                     initContent();
+  //                     initSmoothScrollBar(true);
+  //                 }, 10);
+  //             }
+  //         },
+  //         {
+  //             name: 'contacts',
+  //             to: {
+  //                 namespace: ['contacts']
+  //             },
+  //             async leave() {
+  //                 await loaderIn();
+  //             },
+  //             enter() {
+  //                 loaderAway();
+  //                 setTimeout(() => {
+  //                     ScrollTrigger.update();
+  //                     ScrollTrigger.refresh(true);
+  //                     checkPage();
+  //                     animateBildboard();
+  //                     initContent();
+  //                     initSmoothScrollBar(true);
+  //                 }, 10);
+  //             }
+  //         }
+  //     ]
+  // });
+
   initContent();
 }
 
@@ -624,11 +639,11 @@ var setWidthBtn = function setWidthBtn() {
   }
 };
 
-var setGallery = function setGallery() {
+function setGallery() {
   if ($('#certificate').exists()) {
     $('#certificate').lightGallery();
   }
-};
+}
 
 var showPlace = function showPlace() {
   gsap.set('.place__bg', {
@@ -1207,38 +1222,6 @@ var checkInput = function checkInput() {
   });
 };
 
-var setSelect = function setSelect() {
-  if ($('.call .js-example-basic-single').exists()) {
-    var dropdownParentEl = $('.call .select');
-    $('.call .js-example-basic-single').select2({
-      minimumResultsForSearch: Infinity,
-      dropdownParent: dropdownParentEl
-    }).on("select2:open", function () {
-      $('.select2-results__options').niceScroll({
-        scrollspeed: 60,
-        // scrolling speed
-        mousescrollstep: 10,
-        // scrolling speed with mouse wheel (pixel)
-        cursorcolor: "#00A4AD"
-      });
-    });
-  }
-
-  if ($('.js-example-basic-single').exists()) {
-    $('.js-example-basic-single').select2({
-      minimumResultsForSearch: Infinity
-    }).on("select2:open", function () {
-      $('.select2-results__options').niceScroll({
-        scrollspeed: 60,
-        // scrolling speed
-        mousescrollstep: 10,
-        // scrolling speed with mouse wheel (pixel)
-        cursorcolor: "#00A4AD"
-      });
-    });
-  }
-};
-
 function initImageParallax() {
   // select all sections .with-parallax
   gsap.utils.toArray('.with-parallax').forEach(function (section) {
@@ -1367,7 +1350,40 @@ var moveMainBildboard = function moveMainBildboard() {
   });
 };
 
+var setSelect = function setSelect() {
+  if ($('.call .js-example-basic-single').exists()) {
+    var dropdownParentEl = $('.call .select');
+    $('.call .js-example-basic-single').select2({
+      minimumResultsForSearch: Infinity,
+      dropdownParent: dropdownParentEl
+    }).on("select2:open", function () {
+      $('.select2-results__options').niceScroll({
+        scrollspeed: 60,
+        // scrolling speed
+        mousescrollstep: 10,
+        // scrolling speed with mouse wheel (pixel)
+        cursorcolor: "#00A4AD"
+      });
+    });
+  }
+
+  if ($('.request-popup .js-example-basic-single').exists()) {
+    $('.request-popup .js-example-basic-single').select2({
+      minimumResultsForSearch: Infinity
+    }).on("select2:open", function () {
+      $('.select2-results__options').niceScroll({
+        scrollspeed: 60,
+        // scrolling speed
+        mousescrollstep: 10,
+        // scrolling speed with mouse wheel (pixel)
+        cursorcolor: "#00A4AD"
+      });
+    });
+  }
+};
+
 function initContent() {
+  setSelect();
   initSmoothScrollBar();
   initImageParallax();
   initPinSteps();
@@ -1378,8 +1394,6 @@ function initContent() {
   showService();
   moveMainBildboard();
   setWidthBtn();
-  setGallery();
-  setSelect();
   setSlider();
   setCursor();
   setMap();
