@@ -2,7 +2,7 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-setGallery();
+// setGallery();
 
 
 
@@ -386,6 +386,10 @@ const setSlider = () => {
     }
 }
 
+$('.client__item').fancybox({
+            
+});
+
 function init() {
 
     const loader = document.querySelector('.loader');
@@ -428,142 +432,82 @@ function init() {
         });
     }
 
-    $('#certificate').lightGallery();
+    barba.hooks.after(() => {
+        console.log('after');
+        $('.client__item').fancybox({
+            
+           });
+      });
 
-    barba.hooks.beforeEnter((data) => {
-        ScrollTrigger.update();
-        ScrollTrigger.refresh(true);
-        checkPage();
-        animateBildboard();
-        initContent();
-        initSmoothScrollBar(true);
-    });
     barba.init({
-        views: [{
-            namespace: 'index',
-            beforeLeave() {
-                console.log('beforeLeave index');
-            },
-            afterEnter() {
-                console.log('afterEnter blog');
-                ScrollTrigger.update();
-                ScrollTrigger.refresh(true);
-                checkPage();
-                animateBildboard();
-                initContent();
-                initSmoothScrollBar(true);
-            }
-        },
-        {
-            namespace: 'blog',
-            afterEnter() {
-                console.log('afterEnter index');
-                ScrollTrigger.update();
-                ScrollTrigger.refresh(true);
-                checkPage();
-                animateBildboard();
-                initContent();
-                initSmoothScrollBar(true);;
-            }
-        }
-        ],
+        // sync: true,
+        debug: true,
+        prevent: ({ el }) => {
+            console.log(el);
+            el.classList && el.classList.contains('.client__item')},
+       
+
         transitions: [
             {
-                name: 'Amazing transition',
-                enter(data) {
-                    console.log('Amazing transition has been applied!');
+                name: 'index',
+                to: {
+                    namespace: ['index']
+                },
+                async leave() {
+                    await loaderIn();
+                },
+                async enter() {
+                    $('.client__item').fancybox({
+            
+                    });
+                    loaderAway();
+                    setTimeout(() => {
+                        // ScrollTrigger.update();
+                        // ScrollTrigger.refresh(true);
+                        checkPage();
+                        animateBildboard();
+                        initContent();
+                        initSmoothScrollBar(true);
+
+                    }, 10);
+
+                },
+
+                async once(data) {
+                    // ScrollTrigger.update();
+                    // ScrollTrigger.refresh(true);
+                    // checkPage();
+                    // animateBildboard();
+                    // initContent();
+                    // initSmoothScrollBar(true);
                 }
-            }
+            },
+            {
+                name: 'blog',
+                to: {
+                    namespace: ['blog']
+                },
+
+                async leave() {
+                    await loaderIn();
+
+                },
+                enter() {
+                    loaderAway();
+                    // setTimeout(() => {
+                    //     ScrollTrigger.update();
+                    //     ScrollTrigger.refresh(true);
+                    //     checkPage();
+                    //     animateBildboard();
+                    //     initContent();
+                    //     initSmoothScrollBar(true);
+                    // }, 10);
+
+                }
+            },
+         
         ]
     });
-
-    // barba.init({
-    //     // sync: true,
-    //     debug: true,
-
-    //     transitions: [
-    //         {
-    //             name: 'index',
-    //             to: {
-    //                 namespace: ['index']
-    //             },
-    //             async before() {
-    //                 setGallery();
-    //             },
-    //             async leave() {
-    //                 await loaderIn();
-    //             },
-    //             async enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-
-    //                 }, 10);
-
-    //             },
-
-    //             async once(data) {
-    //                 ScrollTrigger.update();
-    //                 ScrollTrigger.refresh(true);
-    //                 checkPage();
-    //                 animateBildboard();
-    //                 initContent();
-    //                 initSmoothScrollBar(true);
-    //             }
-    //         },
-    //         {
-    //             name: 'blog',
-    //             to: {
-    //                 namespace: ['blog']
-    //             },
-
-    //             async leave() {
-    //                 await loaderIn();
-
-    //             },
-    //             enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-    //                 }, 10);
-
-    //             }
-    //         },
-    //         {
-    //             name: 'contacts',
-    //             to: {
-    //                 namespace: ['contacts']
-    //             },
-
-    //             async leave() {
-    //                 await loaderIn();
-
-    //             },
-    //             enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-    //                 }, 10);
-
-    //             }
-    //         }
-    //     ]
-    // });
 
     initContent();
 
@@ -770,7 +714,7 @@ const setWidthBtn = () => {
 
 function setGallery() {
     if ($('#certificate').exists()) {
-        $('#certificate').lightGallery();
+     //   $('#certificate').lightGallery();
     }
 }
 

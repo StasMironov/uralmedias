@@ -9,7 +9,7 @@ block variables
 	- var quoteInfo = ['Наша компания с 2011 года реализовала более 300 проектов для бизнеса на основе данных и здравого смысла!'];
 
 block content
-	div(data-barba="container" data-barba-namespace="index")
+	div(data-barba="container" data-barba-namespace="index" class="barba-container")
 		.bildboard
 			.bildboard__container.container
 				.bildboard__text Магнитогорское Digital-агентство 
@@ -167,7 +167,7 @@ block content
 			include ../modules/quote
 			.client__container.container
 				.client__cover
-					.client__items#certificate
+					.client__items#certificate(data-barba-prevent="all")
 						a(href="./img/certificate/c1.png").client__item
 							img(src="./img/certificate/c1.png")
 						a(href="./img/certificate/c1.png").client__item
