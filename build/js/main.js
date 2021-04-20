@@ -384,15 +384,15 @@ function init() {
     });
   }
 
-  $('#certificate').lightGallery();
-  barba.hooks.beforeEnter(function (data) {
-    ScrollTrigger.update();
-    ScrollTrigger.refresh(true);
-    checkPage();
-    animateBildboard();
-    initContent();
-    initSmoothScrollBar(true);
-  });
+  $('#certificate').lightGallery(); // barba.hooks.beforeEnter((data) => {
+  //     ScrollTrigger.update();
+  //     ScrollTrigger.refresh(true);
+  //     checkPage();
+  //     animateBildboard();
+  //     initContent();
+  //     initSmoothScrollBar(true);
+  // });
+
   barba.init({
     views: [{
       namespace: 'index',
@@ -400,25 +400,22 @@ function init() {
         console.log('beforeLeave index');
       },
       afterEnter: function afterEnter() {
-        console.log('afterEnter blog');
-        ScrollTrigger.update();
-        ScrollTrigger.refresh(true);
-        checkPage();
-        animateBildboard();
-        initContent();
-        initSmoothScrollBar(true);
+        console.log('afterEnter blog'); // ScrollTrigger.update();
+        // ScrollTrigger.refresh(true);
+        // checkPage();
+        // animateBildboard();
+        // initContent();
+        //initSmoothScrollBar(true);
       }
     }, {
       namespace: 'blog',
       afterEnter: function afterEnter() {
-        console.log('afterEnter index');
-        ScrollTrigger.update();
-        ScrollTrigger.refresh(true);
-        checkPage();
-        animateBildboard();
-        initContent();
-        initSmoothScrollBar(true);
-        ;
+        console.log('afterEnter index'); //ScrollTrigger.update();
+        //ScrollTrigger.refresh(true);
+        //checkPage();
+        //animateBildboard();
+        //initContent();
+        //initSmoothScrollBar(true);
       }
     }],
     transitions: [{

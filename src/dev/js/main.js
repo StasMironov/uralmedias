@@ -430,14 +430,15 @@ function init() {
 
     $('#certificate').lightGallery();
 
-    barba.hooks.beforeEnter((data) => {
-        ScrollTrigger.update();
-        ScrollTrigger.refresh(true);
-        checkPage();
-        animateBildboard();
-        initContent();
-        initSmoothScrollBar(true);
-    });
+    // barba.hooks.beforeEnter((data) => {
+    //     ScrollTrigger.update();
+    //     ScrollTrigger.refresh(true);
+    //     checkPage();
+    //     animateBildboard();
+    //     initContent();
+    //     initSmoothScrollBar(true);
+    // });
+
     barba.init({
         views: [{
             namespace: 'index',
@@ -446,24 +447,24 @@ function init() {
             },
             afterEnter() {
                 console.log('afterEnter blog');
-                ScrollTrigger.update();
-                ScrollTrigger.refresh(true);
-                checkPage();
-                animateBildboard();
-                initContent();
-                initSmoothScrollBar(true);
+                // ScrollTrigger.update();
+                // ScrollTrigger.refresh(true);
+                // checkPage();
+                // animateBildboard();
+                // initContent();
+                //initSmoothScrollBar(true);
             }
         },
         {
             namespace: 'blog',
             afterEnter() {
                 console.log('afterEnter index');
-                ScrollTrigger.update();
-                ScrollTrigger.refresh(true);
-                checkPage();
-                animateBildboard();
-                initContent();
-                initSmoothScrollBar(true);;
+                //ScrollTrigger.update();
+                //ScrollTrigger.refresh(true);
+                //checkPage();
+                //animateBildboard();
+                //initContent();
+                //initSmoothScrollBar(true);
             }
         }
         ],
