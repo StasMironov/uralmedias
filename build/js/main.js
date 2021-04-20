@@ -1,10 +1,14 @@
 "use strict";
 
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 jQuery.fn.exists = function () {
   return $(this).length;
-};
+}; // setGallery();
 
-setGallery();
+
 var projectFunc = {
   showBlogPopup: function showBlogPopup(element) {
     var blogPopup = $(element).find('.blog__popup');
@@ -108,39 +112,35 @@ if ($('.include__btn').exists()) {
   }
 }
 
-setTimeout(function () {
-  $('.contacts__grid').css('opacity', '1');
-}, 500);
-
 var setAccordion = function setAccordion() {
   //=======Accordion-Contacts===========
   if ($('.js-ac-contacts').exists()) {
     try {
-      var accordions = document.querySelectorAll(".contacts__panel");
-      $(window).on('resize load', function () {
-        if ($(this).width() > 620) {
-          accordions.forEach(function (element, index) {
-            var content = element.nextElementSibling;
+      var accordions = document.querySelectorAll(".contacts__panel"); //console.log($(window))
 
-            if (!content.style.maxHeight) {
-              content.style.maxHeight = content.scrollHeight + "px";
-              console.log('accordion');
-            } else {
-              content.style.maxHeight = null;
-            }
-          });
-        } else {
-          accordions.forEach(function (element, index) {
-            var content = element.nextElementSibling;
+      if (window.matchMedia("(min-width: 620px)").matches) {
+        console.log(true);
+        accordions.forEach(function (element, index) {
+          var content = element.nextElementSibling;
 
-            if (!content.style.maxHeight) {
-              content.style.maxHeight = null;
-            } else {
-              content.style.maxHeight = content.scrollHeight + "px";
-            }
-          });
-        }
-      });
+          if (!content.style.maxHeight) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            console.log('accordion');
+          } else {
+            content.style.maxHeight = null;
+          }
+        });
+      } else {
+        accordions.forEach(function (element, index) {
+          var content = element.nextElementSibling;
+
+          if (!content.style.maxHeight) {
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        });
+      }
 
       for (var i = 0; i < accordions.length; i++) {
         accordions[i].onclick = function () {
@@ -178,6 +178,10 @@ var setAccordion = function setAccordion() {
       };
     }
   }
+
+  setTimeout(function () {
+    $('.contacts__grid').css('opacity', '1');
+  }, 500);
 };
 
 if ($('.blog__item').exists()) {
@@ -258,29 +262,47 @@ var setSlider = function setSlider() {
   if ($('.js-slider-partners').exists()) {
     var partnerSlider = new Slider(false, '.js-slider-partners', 4, 82, 8, false, false, false);
     partnerSlider.createSlider();
-    $(window).on('resize load', function () {
-      if ($(this).width() <= 1300) {
-        partnerSlider.updateSlider('space', 50);
-      }
 
-      if ($(this).width() <= 1023) {
-        partnerSlider.updateSlider('space', 40);
-        partnerSlider.updateSlider('view', 3);
-      }
+    if (window.matchMedia("(min-width: 1300px)").matches) {
+      partnerSlider.updateSlider('space', 50);
+      console.log('1300');
+    }
 
-      if ($(this).width() <= 500) {
-        partnerSlider.updateSlider('space', 20);
-        partnerSlider.updateSlider('view', 2);
-      }
-    });
+    if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches) {
+      partnerSlider.updateSlider('space', 40);
+      partnerSlider.updateSlider('view', 3);
+      console.log('1024');
+    }
+
+    if (window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches) {
+      partnerSlider.updateSlider('space', 20);
+      partnerSlider.updateSlider('view', 2);
+    }
   }
 
   if ($('.works').exists()) {
     var workSlider = new Slider(true, '.js-slider', 2, 40, 1, true, true, true);
-    workSlider.createSlider();
+    workSlider.createSlider(); //if (window.matchMedia("(min-width: 1300px)").matches) {
+
+    if (window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches) {
+      workSlider.updateSlider('space', 30);
+      console.log('1300');
+    }
+
+    if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches) {
+      workSlider.updateSlider('space', 20);
+      console.log('1024');
+    }
+
+    if (window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 321px)").matches) {
+      workSlider.updateSlider('view', 1);
+    } else {
+      workSlider.updateSlider('view', 2);
+    }
+
     $(window).on('resize load', function () {
       if ($(this).width() <= 1300) {
-        workSlider.updateSlider('space', 30);
+        workSlider.updateSlider('space', 30); // console.log('test');
       }
 
       if ($(this).width() <= 1024) {
@@ -384,124 +406,57 @@ function init() {
     });
   }
 
-  $('#certificate').lightGallery(); // barba.hooks.beforeEnter((data) => {
-  //     ScrollTrigger.update();
-  //     ScrollTrigger.refresh(true);
-  //     checkPage();
-  //     animateBildboard();
-  //     initContent();
-  //     initSmoothScrollBar(true);
-  // });
-
+  barba.hooks.enter(function () {
+    setTimeout(function () {
+      ScrollTrigger.update();
+      ScrollTrigger.refresh(true);
+      checkPage();
+      animateBildboard();
+      initContent();
+      initSmoothScrollBar(true);
+    }, 10);
+  });
   barba.init({
-    views: [{
-      namespace: 'index',
-      beforeLeave: function beforeLeave() {
-        console.log('beforeLeave index');
-      },
-      afterEnter: function afterEnter() {
-        console.log('afterEnter blog'); // ScrollTrigger.update();
-        // ScrollTrigger.refresh(true);
-        // checkPage();
-        // animateBildboard();
-        // initContent();
-        //initSmoothScrollBar(true);
-      }
-    }, {
-      namespace: 'blog',
-      afterEnter: function afterEnter() {
-        console.log('afterEnter index'); //ScrollTrigger.update();
-        //ScrollTrigger.refresh(true);
-        //checkPage();
-        //animateBildboard();
-        //initContent();
-        //initSmoothScrollBar(true);
-      }
-    }],
     transitions: [{
-      name: 'Amazing transition',
-      enter: function enter(data) {
-        console.log('Amazing transition has been applied!');
+      name: 'page',
+      to: {
+        namespace: ['page']
+      },
+      leave: function leave() {
+        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return loaderIn();
+
+                case 2:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }))();
+      },
+      enter: function enter() {
+        return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+          return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  loaderAway();
+
+                case 1:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }))();
       }
     }]
-  }); // barba.init({
-  //     // sync: true,
-  //     debug: true,
-  //     transitions: [
-  //         {
-  //             name: 'index',
-  //             to: {
-  //                 namespace: ['index']
-  //             },
-  //             async before() {
-  //                 setGallery();
-  //             },
-  //             async leave() {
-  //                 await loaderIn();
-  //             },
-  //             async enter() {
-  //                 loaderAway();
-  //                 setTimeout(() => {
-  //                     ScrollTrigger.update();
-  //                     ScrollTrigger.refresh(true);
-  //                     checkPage();
-  //                     animateBildboard();
-  //                     initContent();
-  //                     initSmoothScrollBar(true);
-  //                 }, 10);
-  //             },
-  //             async once(data) {
-  //                 ScrollTrigger.update();
-  //                 ScrollTrigger.refresh(true);
-  //                 checkPage();
-  //                 animateBildboard();
-  //                 initContent();
-  //                 initSmoothScrollBar(true);
-  //             }
-  //         },
-  //         {
-  //             name: 'blog',
-  //             to: {
-  //                 namespace: ['blog']
-  //             },
-  //             async leave() {
-  //                 await loaderIn();
-  //             },
-  //             enter() {
-  //                 loaderAway();
-  //                 setTimeout(() => {
-  //                     ScrollTrigger.update();
-  //                     ScrollTrigger.refresh(true);
-  //                     checkPage();
-  //                     animateBildboard();
-  //                     initContent();
-  //                     initSmoothScrollBar(true);
-  //                 }, 10);
-  //             }
-  //         },
-  //         {
-  //             name: 'contacts',
-  //             to: {
-  //                 namespace: ['contacts']
-  //             },
-  //             async leave() {
-  //                 await loaderIn();
-  //             },
-  //             enter() {
-  //                 loaderAway();
-  //                 setTimeout(() => {
-  //                     ScrollTrigger.update();
-  //                     ScrollTrigger.refresh(true);
-  //                     checkPage();
-  //                     animateBildboard();
-  //                     initContent();
-  //                     initSmoothScrollBar(true);
-  //                 }, 10);
-  //             }
-  //         }
-  //     ]
-  // });
-
+  });
   initContent();
 }
 
@@ -509,6 +464,14 @@ animateBildboard();
 
 function checkPage() {
   var pagesArr = ['/', '/index.html'];
+  var pagesTr = ['/portfolio', '/vacancy'];
+  pagesTr.filter(function (s) {
+    console.log(window.location.pathname.indexOf(s));
+
+    if (window.location.pathname.indexOf(s) === 0) {
+      $('.header').addClass('mf-transparent');
+    }
+  });
   pagesArr.filter(function (s) {
     if (s.indexOf(window.location.pathname) === 0) {
       $('.header').removeClass('mf-style');
@@ -773,7 +736,7 @@ var showCallForm = function showCallForm() {
   });
 };
 
-var setMap = function setMap() {
+var setMap = function setMap(draw) {
   if ($('#map').exists()) {
     var _init = function _init() {
       // Создание карты.
@@ -788,7 +751,7 @@ var setMap = function setMap() {
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
         // Своё изображение иконки метки.
-        iconImageHref: '/images/icons/marker.svg',
+        iconImageHref: '/img/icon/marker.svg',
         // Размеры метки.
         iconImageSize: [48, 64],
         // Смещение левого верхнего угла иконки относительно
@@ -802,6 +765,10 @@ var setMap = function setMap() {
       myMap.geoObjects.add(myPlacemark);
       myMap.behaviors.disable('scrollZoom');
       myMap.behaviors.disable('drag');
+
+      if (draw) {
+        myMap.container.fitToViewport();
+      }
     };
 
     ymaps.ready(_init);
@@ -830,36 +797,6 @@ $(window).on('resize load', function () {
     }
   } else {
     $(".seo-result__items").mCustomScrollbar('destroy');
-  }
-});
-$(window).on('resize load', function () {
-  if ($(this).width() <= 1024) {
-    if ($('.reach__cover').exists()) {
-      try {
-        Scrollbar.init(document.querySelector('#inner-scrollbar'), {
-          damping: 0.3,
-          alwaysShowTracks: false
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  }
-});
-$(window).on('resize load', function () {
-  if ($(this).width() <= 1100 && $(this).width() > 620) {
-    if ($('.progress__cover').exists()) {
-      try {
-        Scrollbar.init(document.querySelector('#progress-scrollbar'), {
-          damping: 0.3,
-          alwaysShowTracks: false
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    }
-  } else {
-    Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
   }
 });
 $(function () {
@@ -1296,6 +1233,38 @@ function initPinSteps() {
 }
 
 function initSmoothScrollBar(position) {
+  if (window.matchMedia("(max-width:1300px)").matches) {
+    console.log('reach');
+
+    if ($('.reach__cover').exists()) {
+      try {
+        Scrollbar.init(document.querySelector('#inner-scrollbar'), {
+          damping: 0.3,
+          alwaysShowTracks: false
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+
+  if (window.matchMedia("(max-width:1100px)").matches && window.matchMedia("(min-width:620px)").matches) {
+    if ($('.progress__cover').exists()) {
+      try {
+        Scrollbar.init(document.querySelector('#progress-scrollbar'), {
+          damping: 0.3,
+          alwaysShowTracks: false
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  } else {
+    Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
+  }
+
+  if (window.matchMedia("(min-width:620px)").matches) {}
+
   var bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
     damping: 0.04,
     delegateTo: document
@@ -1391,9 +1360,10 @@ function initContent() {
   showService();
   moveMainBildboard();
   setWidthBtn();
+  setGallery();
   setSlider();
   setCursor();
-  setMap();
+  setMap(true);
   setPhoneMask();
   setAccordion();
 }

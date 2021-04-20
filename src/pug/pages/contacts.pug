@@ -10,7 +10,7 @@ block variables
 	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 
 block content
-	div(data-barba="container" data-barba-namespace="contacts")
+	div(data-barba="container" data-barba-namespace="page")
 		include ../modules/bildboard
 		include ../modules/breadcrumbs
 		
@@ -72,8 +72,8 @@ block content
 										.contacts__unit
 											.contacts__article Телефон
 											.contacts__txt +7 (908) 064-35-63
-				.map#map.js-map
-
+			.map#map.js-map
+			.contacts__container.container
 				.contacts__info
 					.contacts__header Реквизиты
 					.contacts__cover

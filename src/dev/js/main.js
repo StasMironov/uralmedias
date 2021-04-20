@@ -2,7 +2,7 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-setGallery();
+// setGallery();
 
 
 
@@ -127,9 +127,7 @@ if ($('.include__btn').exists()) {
     }
 }
 
-setTimeout(() => {
-    $('.contacts__grid').css('opacity', '1');
-}, 500);
+
 
 
 
@@ -140,34 +138,30 @@ const setAccordion = () => {
         try {
             let accordions = document.querySelectorAll(".contacts__panel");
 
+            //console.log($(window))
+            if (window.matchMedia("(min-width: 620px)").matches) {
+                console.log(true);
+                accordions.forEach((element, index) => {
+                    let content = element.nextElementSibling;
 
-            $(window).on('resize load', function () {
-                if ($(this).width() > 620) {
-                    accordions.forEach((element, index) => {
-                        let content = element.nextElementSibling;
+                    if (!content.style.maxHeight) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        console.log('accordion');
+                    } else {
+                        content.style.maxHeight = null;
+                    }
+                });
+            } else {
+                accordions.forEach((element, index) => {
+                    let content = element.nextElementSibling;
 
-                        if (!content.style.maxHeight) {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                            console.log('accordion');
-                        } else {
-                            content.style.maxHeight = null;
-                        }
-                    });
-                }
-                else {
-                    accordions.forEach((element, index) => {
-                        let content = element.nextElementSibling;
-
-                        if (!content.style.maxHeight) {
-                            content.style.maxHeight = null;
-                        } else {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                        }
-                    });
-                }
-            });
-
-
+                    if (!content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
 
             for (var i = 0; i < accordions.length; i++) {
                 accordions[i].onclick = function () {
@@ -211,6 +205,10 @@ const setAccordion = () => {
             }
         }
     }
+
+    setTimeout(() => {
+        $('.contacts__grid').css('opacity', '1');
+    }, 500);
 }
 
 
@@ -298,28 +296,49 @@ const setSlider = () => {
         let partnerSlider = new Slider(false, '.js-slider-partners', 4, 82, 8, false, false, false);
         partnerSlider.createSlider();
 
-        $(window).on('resize load', function () {
-            if ($(this).width() <= 1300) {
-                partnerSlider.updateSlider('space', 50);
-            }
-            if ($(this).width() <= 1023) {
-                partnerSlider.updateSlider('space', 40);
-                partnerSlider.updateSlider('view', 3);
-            }
-            if ($(this).width() <= 500) {
-                partnerSlider.updateSlider('space', 20);
-                partnerSlider.updateSlider('view', 2);
-            }
-        });
+        if (window.matchMedia("(min-width: 1300px)").matches) {
+            partnerSlider.updateSlider('space', 50);
+            console.log('1300');
+        }
+        if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches) {
+            partnerSlider.updateSlider('space', 40);
+            partnerSlider.updateSlider('view', 3);
+            console.log('1024');
+        }
+        if (window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches) {
+            partnerSlider.updateSlider('space', 20);
+            partnerSlider.updateSlider('view', 2);
+        }
     }
 
     if ($('.works').exists()) {
         let workSlider = new Slider(true, '.js-slider', 2, 40, 1, true, true, true);
         workSlider.createSlider();
 
+        //if (window.matchMedia("(min-width: 1300px)").matches) {
+
+        if (window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches) {
+            workSlider.updateSlider('space', 30);
+            console.log('1300');
+        }
+
+        if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches) {
+            workSlider.updateSlider('space', 20);
+            console.log('1024');
+        }
+
+        if (window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 321px)").matches) {
+            workSlider.updateSlider('view', 1);
+        }
+
+        else {
+            workSlider.updateSlider('view', 2);
+        }
+
         $(window).on('resize load', function () {
             if ($(this).width() <= 1300) {
                 workSlider.updateSlider('space', 30);
+                // console.log('test');
             }
             if ($(this).width() <= 1024) {
                 workSlider.updateSlider('space', 20);
@@ -386,6 +405,8 @@ const setSlider = () => {
     }
 }
 
+
+
 function init() {
 
     const loader = document.querySelector('.loader');
@@ -428,143 +449,33 @@ function init() {
         });
     }
 
-    $('#certificate').lightGallery();
-
-    // barba.hooks.beforeEnter((data) => {
-    //     ScrollTrigger.update();
-    //     ScrollTrigger.refresh(true);
-    //     checkPage();
-    //     animateBildboard();
-    //     initContent();
-    //     initSmoothScrollBar(true);
-    // });
+    barba.hooks.enter(() => {
+        setTimeout(() => {
+            ScrollTrigger.update();
+            ScrollTrigger.refresh(true);
+            checkPage();
+            animateBildboard();
+            initContent();
+            initSmoothScrollBar(true);
+        }, 10);
+    });
 
     barba.init({
-        views: [{
-            namespace: 'index',
-            beforeLeave() {
-                console.log('beforeLeave index');
-            },
-            afterEnter() {
-                console.log('afterEnter blog');
-                // ScrollTrigger.update();
-                // ScrollTrigger.refresh(true);
-                // checkPage();
-                // animateBildboard();
-                // initContent();
-                //initSmoothScrollBar(true);
-            }
-        },
-        {
-            namespace: 'blog',
-            afterEnter() {
-                console.log('afterEnter index');
-                //ScrollTrigger.update();
-                //ScrollTrigger.refresh(true);
-                //checkPage();
-                //animateBildboard();
-                //initContent();
-                //initSmoothScrollBar(true);
-            }
-        }
-        ],
         transitions: [
             {
-                name: 'Amazing transition',
-                enter(data) {
-                    console.log('Amazing transition has been applied!');
-                }
+                name: 'page',
+                to: {
+                    namespace: ['page']
+                },
+                async leave() {
+                    await loaderIn();
+                },
+                async enter() {
+                    loaderAway();
+                },
             }
         ]
     });
-
-    // barba.init({
-    //     // sync: true,
-    //     debug: true,
-
-    //     transitions: [
-    //         {
-    //             name: 'index',
-    //             to: {
-    //                 namespace: ['index']
-    //             },
-    //             async before() {
-    //                 setGallery();
-    //             },
-    //             async leave() {
-    //                 await loaderIn();
-    //             },
-    //             async enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-
-    //                 }, 10);
-
-    //             },
-
-    //             async once(data) {
-    //                 ScrollTrigger.update();
-    //                 ScrollTrigger.refresh(true);
-    //                 checkPage();
-    //                 animateBildboard();
-    //                 initContent();
-    //                 initSmoothScrollBar(true);
-    //             }
-    //         },
-    //         {
-    //             name: 'blog',
-    //             to: {
-    //                 namespace: ['blog']
-    //             },
-
-    //             async leave() {
-    //                 await loaderIn();
-
-    //             },
-    //             enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-    //                 }, 10);
-
-    //             }
-    //         },
-    //         {
-    //             name: 'contacts',
-    //             to: {
-    //                 namespace: ['contacts']
-    //             },
-
-    //             async leave() {
-    //                 await loaderIn();
-
-    //             },
-    //             enter() {
-    //                 loaderAway();
-    //                 setTimeout(() => {
-    //                     ScrollTrigger.update();
-    //                     ScrollTrigger.refresh(true);
-    //                     checkPage();
-    //                     animateBildboard();
-    //                     initContent();
-    //                     initSmoothScrollBar(true);
-    //                 }, 10);
-
-    //             }
-    //         }
-    //     ]
-    // });
 
     initContent();
 
@@ -573,6 +484,14 @@ animateBildboard();
 
 function checkPage() {
     let pagesArr = ['/', '/index.html'];
+    let pagesTr = ['/portfolio', '/vacancy'];
+
+    pagesTr.filter(s => {
+        console.log(window.location.pathname.indexOf(s));
+        if (window.location.pathname.indexOf(s) === 0) {
+            $('.header').addClass('mf-transparent');
+        }
+    });
 
     pagesArr.filter(s => {
         if (s.indexOf(window.location.pathname) === 0) {
@@ -948,7 +867,7 @@ const showCallForm = () => {
     });
 }
 
-const setMap = () => {
+const setMap = (draw) => {
     if ($('#map').exists()) {
         ymaps.ready(init);
 
@@ -966,7 +885,7 @@ const setMap = () => {
                     // Необходимо указать данный тип макета.
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
-                    iconImageHref: '/images/icons/marker.svg',
+                    iconImageHref: '/img/icon/marker.svg',
                     // Размеры метки.
                     iconImageSize: [48, 64],
                     // Смещение левого верхнего угла иконки относительно
@@ -981,8 +900,14 @@ const setMap = () => {
             myMap.geoObjects.add(myPlacemark);
             myMap.behaviors.disable('scrollZoom');
             myMap.behaviors.disable('drag');
+
+            if (draw) {
+                myMap.container.fitToViewport();
+            }
         }
     }
+
+
 }
 
 $(window).on('resize load', function () {
@@ -1011,40 +936,6 @@ $(window).on('resize load', function () {
     }
 });
 
-$(window).on('resize load', function () {
-    if ($(this).width() <= 1024) {
-        if ($('.reach__cover').exists()) {
-            try {
-                Scrollbar.init(document.querySelector('#inner-scrollbar'), {
-                    damping: 0.3,
-                    alwaysShowTracks: false
-                });
-            }
-            catch (err) {
-                console.log(err);
-            }
-        }
-    }
-});
-
-$(window).on('resize load', function () {
-    if ($(this).width() <= 1100 && $(this).width() > 620) {
-        if ($('.progress__cover').exists()) {
-            try {
-                Scrollbar.init(document.querySelector('#progress-scrollbar'), {
-                    damping: 0.3,
-                    alwaysShowTracks: false
-                });
-            }
-            catch (err) {
-                console.log(err);
-            }
-        }
-    }
-    else {
-        Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
-    }
-});
 
 $(function () {
     $('a').click(function () {
@@ -1548,6 +1439,43 @@ function initPinSteps() {
 }
 
 function initSmoothScrollBar(position) {
+
+    if (window.matchMedia("(max-width:1300px)").matches) {
+        console.log('reach');
+        if ($('.reach__cover').exists()) {
+            try {
+                Scrollbar.init(document.querySelector('#inner-scrollbar'), {
+                    damping: 0.3,
+                    alwaysShowTracks: false
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    }
+
+    if (window.matchMedia("(max-width:1100px)").matches && window.matchMedia("(min-width:620px)").matches) {
+        if ($('.progress__cover').exists()) {
+            try {
+                Scrollbar.init(document.querySelector('#progress-scrollbar'), {
+                    damping: 0.3,
+                    alwaysShowTracks: false
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+    }
+    else {
+        Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
+    }
+
+    if (window.matchMedia("(min-width:620px)").matches) {
+
+    }
+
     let bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), { damping: 0.04, delegateTo: document });
 
     if (position) {
@@ -1574,6 +1502,7 @@ function initSmoothScrollBar(position) {
     });
     bodyScrollBar.addListener(ScrollTrigger.update);
     ScrollTrigger.defaults({ scroller: '#viewport' });
+
 }
 
 const moveMainBildboard = () => {
@@ -1642,10 +1571,10 @@ function initContent() {
     showService();
     moveMainBildboard();
     setWidthBtn();
-
+    setGallery();
     setSlider();
     setCursor();
-    setMap();
+    setMap(true);
     setPhoneMask();
     setAccordion();
 }
