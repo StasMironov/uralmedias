@@ -305,7 +305,7 @@ const setSlider = () => {
             console.log('1300');
         }
         if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches) {
-            partnerSlider.updateSlider('space', 40);
+            partnerSlider.updateSlider('space', 30);
             partnerSlider.updateSlider('view', 3);
             console.log('1024');
         }
@@ -453,34 +453,34 @@ function init() {
         });
     }
 
-    barba.hooks.enter(() => {
-        setTimeout(() => {
-            ScrollTrigger.update();
-            ScrollTrigger.refresh(true);
-            checkPage();
-            animateBildboard();
-            initContent();
-            initSmoothScrollBar(true);
-        }, 10);
-    });
+    // barba.hooks.enter(() => {
+    //     setTimeout(() => {
+    //         ScrollTrigger.update();
+    //         ScrollTrigger.refresh(true);
+    //         checkPage();
+    //         animateBildboard();
+    //         initContent();
+    //         initSmoothScrollBar(true);
+    //     }, 10);
+    // });
 
 
-    barba.init({
-        transitions: [
-            {
-                name: 'page',
-                to: {
-                    namespace: ['page']
-                },
-                async leave() {
-                    await loaderIn();
-                },
-                async enter() {
-                    loaderAway();
-                },
-            }
-        ]
-    });
+    // barba.init({
+    //     transitions: [
+    //         {
+    //             name: 'page',
+    //             to: {
+    //                 namespace: ['page']
+    //             },
+    //             async leave() {
+    //                 await loaderIn();
+    //             },
+    //             async enter() {
+    //                 loaderAway();
+    //             },
+    //         }
+    //     ]
+    // });
 
     initContent();
 
