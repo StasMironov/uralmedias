@@ -14,7 +14,7 @@
         justify-content: center;
 
         @media(max-width: 620px) {
-            justify-content: flex-start;
+            display: block;
         }
     }
 

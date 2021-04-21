@@ -1,5 +1,11 @@
 .article {
-    margin-top: 37px;
+    margin-top: 35px;
+
+    &__container {
+        max-width: 1024px;
+        width: 100%;
+        margin: auto;
+    }
 
     &__info {
         font-size: 12px;
