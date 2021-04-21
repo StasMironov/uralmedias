@@ -613,6 +613,7 @@
                 position: relative;
                 padding-bottom: 34px;
                 margin-bottom: 36px;
+                word-break: break-word;
 
                 @media(max-width: 1024px) {
                     padding-bottom: 30px;
@@ -623,6 +624,7 @@
                     text-align: left;
                     padding-bottom: 15px;
                     margin-bottom: 12px;
+
                 }
 
                 &:after {

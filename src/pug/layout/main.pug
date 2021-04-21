@@ -12,6 +12,7 @@ html(lang="ru-RU")
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 		link(rel="stylesheet" type='text/css' href="css/main.css")
+		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css")
 		<script src="https://api-maps.yandex.ru/2.1/?apikey=b2343068-3f02-4bb4-81ac-42b7707547a9&lang=ru_RU" type="text/javascript"></script>
 		<!--[if lt IE 9]>
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
@@ -28,22 +29,27 @@ html(lang="ru-RU")
 		<div class="cursor"></div>
 		<div class="cursor-follower"></div>
 		<div class="loader"></div>
-		.b-page
-			include ../modules/header
-			block content
-			include ../modules/footer
+		include ../modules/header
+		#viewport
+			.b-page
+				block content
+				include ../modules/footer
+		include ../modules/modals
+		.overlay.js-overlay
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.6/dist/barba.umd.min.js"></script>
 		
+		<script src="https://unpkg.com/@barba/core"></script>
 		script(src="js/libs-min.js")
-		script(src="js/lightgallery.js")
 		script(src="js/smooth-scrollbar.js")
 		script(src="js/jquery.maskedinput.js")
 		script(src="js/select2.min.js")
 		script(src="js/Slider.js")
+		script(src="js/lightgallery.js")
 		script(src="js/main-min.js")
+		
 		
 		block script

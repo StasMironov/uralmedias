@@ -225,6 +225,8 @@
                 width: 0;
                 pointer-events: none;
                 color: transparent;
+                overflow: hidden;
+                padding-right: 34px;
             }
 
             &.link--detail {

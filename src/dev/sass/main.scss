@@ -9,12 +9,17 @@
   outline: none !important;
 }
 
+:root {
+  --bcg-white: transparent;
+  --bcg-fill-color: var(--bcg-white);
+}
+
 html {
   height: 100%;
   min-width: 320px;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
-  padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+  // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 }
 
 body {
@@ -176,7 +181,7 @@ input::-ms-clear {
   width: 100vw;
   height: 200vh;
   pointer-events: none;
-  background-color: #FFF6ED;
+  background-color: $green-1;
   z-index: 9999;
   visibility: hidden;
   opacity: 0;
@@ -186,6 +191,8 @@ input::-ms-clear {
   min-height: 100vh;
   position: relative;
   padding-bottom: 271px;
+  z-index: 1;
+  background-color: white;
 
   @media(max-width: 1024px) {
     padding-bottom: 205px;
@@ -222,65 +229,7 @@ input::-ms-clear {
 }
 
 
-.cursor {
-  position: fixed;
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  border-radius: 100%;
-  z-index: 1;
-  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
-  user-select: none;
-  pointer-events: none;
-  z-index: 10000;
-  transform: scale(1);
 
-  &.active {
-    opacity: 1;
-    transform: scale(0);
-  }
-
-  &.menu-active {
-    opacity: 1;
-    transform: scale(0);
-  }
-
-  &.hovered {
-    opacity: 1;
-  }
-}
-
-.cursor-follower {
-  position: fixed;
-  border: 1px solid white;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  z-index: 1;
-  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background;
-  user-select: none;
-  pointer-events: none;
-  z-index: 10000;
-  transform: translate(2px, 2px);
-  //overflow: hidden;
-
-  &.active {
-    opacity: 1;
-    transform: scale(3);
-  }
-
-  &.menu-active {
-    opacity: 1;
-    transform: scale(3);
-  }
-
-  &.hovered {
-    opacity: 1;
-  }
-
-}
 
 .sad-link {
   position: relative;
@@ -358,7 +307,7 @@ input::-ms-clear {
 }
 
 .scrollbar-track {
-  opacity: 0 !important;
+  // opacity: 0 !important;
 }
 
 .lg-backdrop {
@@ -441,6 +390,114 @@ input::-ms-clear {
   transition: linear .3s;
 }
 
+.fill-background {
+  will-change: background-color;
+  background-color: var(--bcg-fill-color);
+  transition: background-color 0.3s linear;
+  z-index: -1;
+  padding-top: 74px;
+  padding-bottom: 80px;
+
+  @media(max-width: 1024px) {
+    padding: 50px 0;
+  }
+}
+
+#viewport {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .scrollbar-track {
+    background-color: #f6f6f6;
+
+    @media(max-width: 1024px) {
+      opacity: 0;
+    }
+  }
+
+  .scrollbar-thumb {
+    background-color: #333;
+  }
+}
+
+
+.cursor {
+  position: fixed;
+  z-index: 499;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(1);
+
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+
+  background:
+    radial-gradient(#fff 95%, #fff 95%) calc(var(--x) - .75em) calc(var(--y) - .75em)/12em 12em fixed no-repeat;
+  mix-blend-mode: difference;
+
+  &.active {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  &.menu-active {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  &.hovered {
+    opacity: 1;
+  }
+
+  @media(max-width: 1024px) {
+    display: none;
+  }
+}
+
+.cursor-follower {
+  position: fixed;
+  z-index: 499;
+  background-color: transparent;
+  // box-shadow: 0 1px 3px rgba(255, 254, 254, 0.27);
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  mix-blend-mode: difference;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(2px, 2px);
+  overflow: hidden;
+
+
+  &.active {
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  &.menu-active {
+    opacity: 1;
+    transform: scale(2);
+  }
+
+  &.hovered {
+    opacity: 1;
+  }
+
+  @media(max-width: 1024px) {
+    display: none;
+  }
+
+}
 
 @import "./components/rate.scss";
 @import "./components/request.scss";

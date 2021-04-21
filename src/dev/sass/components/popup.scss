@@ -7,6 +7,18 @@
     opacity: 0;
     visibility: hidden;
 
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    // z-index: 302;
+    // border-radius: 10px;
+    // opacity: 0;
+    // visibility: hidden;
+    // width: 100wh;
+    // height: 100vh;
+
     @media(max-width: 768px) {
         width: 90%;
     }
@@ -277,6 +289,7 @@
         }
     }
 }
+
 .grace-popup {
 
     &__inner {

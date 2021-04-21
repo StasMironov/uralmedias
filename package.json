@@ -17,11 +17,13 @@
     "lightgallery.js": "^1.4.0",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
     "object-fit-polyfill": "^0.1.0",
+    "smooth-scrollbar": "^8.6.1",
     "svgxuse": "^1.2.6",
     "swiper": "^5.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-transform-runtime": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "babel-core": "^6.26.3",
@@ -37,6 +39,7 @@
     "gulp-cheerio": "^0.6.3",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
+    "gulp-js-import": "^1.0.6",
     "gulp-load-plugins": "^1.6.0",
     "gulp-minify": "^3.1.0",
     "gulp-notify": "^3.2.0",

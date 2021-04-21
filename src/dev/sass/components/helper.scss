@@ -48,6 +48,26 @@
     }
 }
 
+.mf-transparent {
+    .header__logo {
+        svg path {
+            @media(max-width:620px) {
+                fill: $green-1;
+            }
+        }
+    }
+
+    .burger {
+        .line {
+            stroke: $green-1;
+
+            @media(max-width: 620px) {
+                stroke: $green-1;
+            }
+        }
+    }
+}
+
 .mf-fixed {
     position: fixed;
     left: 0;
@@ -60,4 +80,16 @@
 
 .svg-transparent {
     fill: none;
+}
+
+.mf-bg-portfolio {
+    .quote {
+        color: white;
+    }
+
+    .portfolio {
+        &__item {
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+        }
+    }
 }

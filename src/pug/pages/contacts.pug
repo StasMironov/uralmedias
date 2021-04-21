@@ -10,7 +10,7 @@ block variables
 	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
 
 block content
-	div(data-barba="container" data-barba-namespace="about")
+	div(data-barba="container" data-barba-namespace="page")
 		include ../modules/bildboard
 		include ../modules/breadcrumbs
 		
@@ -72,8 +72,9 @@ block content
 										.contacts__unit.contacts__bloc--color
 											.contacts__article Телефон
 											a(href="tel:+79080643563").contacts__txt +7 (908) 064-35-63
-				.map#map.js-map
 
+			.map#map.js-map
+			.contacts__container.container
 				.contacts__info
 					.contacts__header Реквизиты
 					.contacts__cover
@@ -81,14 +82,6 @@ block content
 						.contacts__word р/с 40802810100000653596 | к/с 30101810145250000974
 						.contacts__word БИК 044525974 в АО "ТИНЬКОФФ БАНК"
 
-
-		
-
-		
 		include ../modules/place
-	   
 
-
-
-		
 block script

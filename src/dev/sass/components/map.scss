@@ -1,8 +1,9 @@
 .map {
     height: 441px;
-    width: calc(100% + 660px);
+    width: 100%;
     margin-top: 80px;
-    margin-left: -330px;
+    // margin-left: -330px;
+    // margin-right: -330px;
 
     @media(max-width:620px) {
         margin-top: 40px;

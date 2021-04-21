@@ -1,5 +1,4 @@
 .services {
-    margin-top: 80px;
     background-color: $black-3;
     color: white;
 
@@ -80,7 +79,6 @@
         // transition   : 'background'.3s ease-in;
         margin-top: 20px;
         opacity: 0;
-        transition: none;
 
         @media(max-width: 1890px) {
             width: calc(33.333% - 20px);
@@ -123,9 +121,9 @@
                 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             }
 
-            .services__content {
-                color: white;
-            }
+            // .services__content {
+            //     color: white;
+            // }
         }
     }
 
