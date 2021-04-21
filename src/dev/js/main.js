@@ -453,34 +453,34 @@ function init() {
         });
     }
 
-    barba.hooks.enter(() => {
-        setTimeout(() => {
-            ScrollTrigger.update();
-            ScrollTrigger.refresh(true);
-            checkPage();
-            animateBildboard();
-            initContent();
-            initSmoothScrollBar(true);
-        }, 10);
-    });
+    // barba.hooks.enter(() => {
+    //     setTimeout(() => {
+    //         ScrollTrigger.update();
+    //         ScrollTrigger.refresh(true);
+    //         checkPage();
+    //         animateBildboard();
+    //         initContent();
+    //         initSmoothScrollBar(true);
+    //     }, 10);
+    // });
 
 
-    barba.init({
-        transitions: [
-            {
-                name: 'page',
-                to: {
-                    namespace: ['page']
-                },
-                async leave() {
-                    await loaderIn();
-                },
-                async enter() {
-                    loaderAway();
-                },
-            }
-        ]
-    });
+    // barba.init({
+    //     transitions: [
+    //         {
+    //             name: 'page',
+    //             to: {
+    //                 namespace: ['page']
+    //             },
+    //             async leave() {
+    //                 await loaderIn();
+    //             },
+    //             async enter() {
+    //                 loaderAway();
+    //             },
+    //         }
+    //     ]
+    // });
 
     initContent();
 
@@ -547,7 +547,6 @@ const setCursor = () => {
 
             document.body.style.setProperty('--x', (mouseX) + 'px');
             document.body.style.setProperty('--y', (mouseY) + 'px');
-
         }
     });
 
