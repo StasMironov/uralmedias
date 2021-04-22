@@ -652,7 +652,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         w,
         _,
         S = function S(t) {
-      if (t === d && j) return j;
+      if (t === d && P) return P;
       if (!v && t in O) return O[t];
 
       switch (t) {
@@ -672,14 +672,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         T = !1,
         O = t.prototype,
         A = O[m] || O["@@iterator"] || d && O[d],
-        j = !v && A || S(d),
-        P = "Array" == e && O.entries || A;
+        P = !v && A || S(d),
+        j = "Array" == e && O.entries || A;
 
-    if (P && (b = i(P.call(new t())), h !== Object.prototype && b.next && (f || i(b) === h || (a ? a(b, h) : "function" != typeof b[m] && c(b, m, y)), s(b, E, !0, !0), f && (p[E] = y))), "values" == d && A && "values" !== A.name && (T = !0, j = function j() {
+    if (j && (b = i(j.call(new t())), h !== Object.prototype && b.next && (f || i(b) === h || (a ? a(b, h) : "function" != typeof b[m] && c(b, m, y)), s(b, E, !0, !0), f && (p[E] = y))), "values" == d && A && "values" !== A.name && (T = !0, P = function P() {
       return A.call(this);
-    }), f && !x || O[m] === j || c(O, m, j), p[e] = j, d) if (w = {
+    }), f && !x || O[m] === P || c(O, m, P), p[e] = P, d) if (w = {
       values: S("values"),
-      keys: g ? j : S("keys"),
+      keys: g ? P : S("keys"),
       entries: S("entries")
     }, x) for (_ in w) {
       (v || T || !(_ in O)) && u(O, _, w[_]);
@@ -1975,17 +1975,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return null != t && "object" == _typeof(t);
   };
 
-  var j = function j(t) {
+  var P = function P(t) {
     return "symbol" == _typeof(t) || A(t) && "[object Symbol]" == O(t);
   },
-      P = /^[-+]0x[0-9a-f]+$/i,
+      j = /^[-+]0x[0-9a-f]+$/i,
       k = /^0b[01]+$/i,
       M = /^0o[0-7]+$/i,
       L = parseInt;
 
   var C = function C(t) {
     if ("number" == typeof t) return t;
-    if (j(t)) return NaN;
+    if (P(t)) return NaN;
 
     if (d(t)) {
       var e = "function" == typeof t.valueOf ? t.valueOf() : t;
@@ -1995,7 +1995,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if ("string" != typeof t) return 0 === t ? t : +t;
     t = p(t);
     var n = k.test(t);
-    return n || M.test(t) ? L(t.slice(2), n ? 2 : 8) : P.test(t) ? NaN : +t;
+    return n || M.test(t) ? L(t.slice(2), n ? 2 : 8) : j.test(t) ? NaN : +t;
   };
 
   var z = function z(t, e, n) {
@@ -2045,8 +2045,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var R = function R() {
     return m.Date.now();
   },
-      q = Math.max,
-      N = Math.min;
+      N = Math.max,
+      q = Math.min;
 
   var H = function H(t, e, n) {
     var r,
@@ -2081,7 +2081,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (m(t)) return g(t);
       s = setTimeout(y, function (t) {
         var n = e - (t - c);
-        return f ? N(n, i - (t - u)) : n;
+        return f ? q(n, i - (t - u)) : n;
       }(t));
     }
 
@@ -2101,7 +2101,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === s && (s = setTimeout(y, e)), a;
     }
 
-    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? q(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), x.cancel = function () {
+    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? N(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), x.cancel = function () {
       void 0 !== s && clearTimeout(s), u = 0, r = c = o = s = void 0;
     }, x.flush = function () {
       return void 0 === s ? a : g(R());
@@ -3050,11 +3050,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     })(t);
   }
 
-  function jt(t, e) {
+  function Pt(t, e) {
     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
   }
 
-  function Pt(t, e) {
+  function jt(t, e) {
     for (var n = 0; n < e.length; n++) {
       var r = e[n];
       r.enumerable = r.enumerable || !1, r.configurable = !0, "value" in r && (r.writable = !0), Object.defineProperty(t, r.key, r);
@@ -3136,7 +3136,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         o = Mt(i);
 
     function i() {
-      return jt(this, i), o.apply(this, arguments);
+      return Pt(this, i), o.apply(this, arguments);
     }
 
     return e = i, (n = [{
@@ -3147,7 +3147,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           y: 0
         } : t;
       }
-    }]) && Pt(e.prototype, n), r && Pt(e, r), i;
+    }]) && jt(e.prototype, n), r && jt(e, r), i;
   }(lt);
 
   Ct(zt, "pluginName", "modal"), Ct(zt, "defaultOptions", {
@@ -3229,9 +3229,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   })), $(".header__inner").exists) try {
     var It = $(window),
         Rt = $(".header__inner"),
-        qt = Rt.offset().top;
+        Nt = Rt.offset().top;
     It.on("scroll", function () {
-      (window.pageYOffset || document.documentElement.scrollTop) > qt ? Rt.addClass("mf-fixed") : Rt.removeClass("mf-fixed");
+      (window.pageYOffset || document.documentElement.scrollTop) > Nt ? Rt.addClass("mf-fixed") : Rt.removeClass("mf-fixed");
     });
   } catch (t) {
     console.log(t);
@@ -3242,7 +3242,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     0 === t.indexOf(window.location.pathname) ? $(".header").removeClass("mf-style") : $(".header").addClass("mf-style");
   });
 
-  function Nt() {
+  function qt() {
     var t,
         e,
         n,
@@ -3305,7 +3305,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       var e = Ot.init(document.querySelector("#viewport"), {
         damping: .04,
-        delegateTo: document
+        delegateTo: document,
+        renderByPixel: !0,
+        continuousScrolling: !0
       });
       if ($(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
         t.preventDefault(), Wt(!0), e.updatePluginOptions("modal", {
@@ -3319,6 +3321,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } catch (t) {
           console.log(t);
         }
+      }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
+        Wt(!1), e.updatePluginOptions("modal", {
+          open: !1
+        });
       }), $(".burger").exists()) try {
         var n = document.querySelector(".header"),
             r = n.querySelector(".burger"),
@@ -3370,15 +3376,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-      t && e.setPosition(0, 0), $("a").click(function () {
-        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
-          var t = $(this.hash);
-          if ((t = t.length && t || $("[name=" + this.hash.slice(1) + "]")).length) return t.offset().top, e.scrollIntoView(document.querySelector("#request"), {
-            offsetBottom: 100,
-            alignToTop: !1,
-            onlyScrollIfNeeded: !0
+      t && e.setPosition(0, 0), $('a[href^="#"]').each(function () {
+        $(this).on("click", function (t) {
+          var n = $(this).attr("href").substring(1),
+              r = $("body").find('[data-anchor="'.concat(n, '"]'))[0];
+          return void 0 !== n && "" !== n && e.scrollIntoView(r, {
+            offsetLeft: 0,
+            offsetRight: 0,
+            alignToTop: !0,
+            offsetTop: 130
           }), !1;
-        }
+        });
       }), e.track.xAxis.element.remove(), ScrollTrigger.scrollerProxy("#viewport", {
         scrollTop: function scrollTop(t) {
           return e.scrollTop > 79 ? $(".header__inner").addClass("header--scroll") : $(".header__inner").removeClass("header--scroll"), arguments.length && (e.scrollTop = t), e.scrollTop;
@@ -3792,7 +3800,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       duration: 1
     }, "-=1");
   }(), window.addEventListener("load", function () {
-    Nt();
+    qt();
   });
   $(window).on("resize load", function () {
     $(this).width() <= 500 && $(".seo-result__items").exists() && $(function () {
@@ -3891,9 +3899,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   };
 
-  $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
-    Wt(!1);
-  });
   if ($("#request").exists()) try {
     $('a[href^="#"]').each(function () {
       $(this).on("click", function (t) {

@@ -1162,11 +1162,7 @@ const formShow = (element, status) => {
 
 
 
-if ($('.js-close-form').exists()) {
-    $('.js-close-form').on('click', () => {
-        showOverlay(false);
-    });
-}
+
 
 const changeHeightPage = () => {
     let footerHeight,
@@ -1381,7 +1377,12 @@ function initSmoothScrollBar(position) {
         Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
 
-    let bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), { damping: 0.04, delegateTo: document });
+    let bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
+        damping: 0.04,
+        delegateTo: document,
+        renderByPixel: true,
+        continuousScrolling: true,
+    });
 
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {
@@ -1404,6 +1405,13 @@ function initSmoothScrollBar(position) {
                     console.log(err);
                 }
             }
+        });
+    }
+
+    if ($('.js-close-form').exists()) {
+        $('.js-close-form').on('click', () => {
+            showOverlay(false);
+            bodyScrollBar.updatePluginOptions('modal', { open: false })
         });
     }
 
@@ -1487,23 +1495,56 @@ function initSmoothScrollBar(position) {
         bodyScrollBar.setPosition(0, 0);
     }
 
-    $('a').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-            && location.hostname == this.hostname) {
-            var $target = $(this.hash);
-            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+    // $('a').click(function (event) {
+    //     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    //         && location.hostname == this.hostname) {
+    //         var $target = $(this.hash);
+    //         $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
 
-            if ($target.length) {
-                var targetOffset = $target.offset().top - 140;
-                bodyScrollBar.scrollIntoView(document.querySelector('#request'), {
-                    // offsetLeft: 34,
-                    offsetBottom: 100,
-                    alignToTop: false,
-                    onlyScrollIfNeeded: true,
+    //         if ($target.length) {
+    //             var targetOffset = $target.offset().top - 140;
+    //             bodyScrollBar.scrollIntoView(document.querySelector(targetOffset), {
+    //                 // offsetLeft: 34,
+    //                 offsetBottom: 100,
+    //                 alignToTop: false,
+    //                 onlyScrollIfNeeded: true,
+    //             })
+    //             return false;
+    //         }
+    //     }
+    // });
+
+    $('a[href^="#"]').each(function () {
+        $(this).on('click', function (event) {
+            var el = $(this);
+            var dest = el.attr('href').substring(1); // получаем направление
+            var elAnchor = $('body').find(`[data-anchor="${dest}"]`)[0];
+            //console.log(elAnchor.offset().top)
+
+            if (dest !== undefined && dest !== '') {
+                // проверяем существование
+                // $('html').animate({
+                //     scrollTop: $(dest).offset().top - 130 // прокручиваем страницу к требуемому элементу
+
+                // }, {
+                //     duration: 1000,   // по умолчанию «400» 
+                //     easing: "linear" // по умолчанию «swing» 
+                // }
+                // );
+                // bodyScrollBar.scrollTo(0, elAnchor.offset().top - 200, 1500);
+
+                bodyScrollBar.scrollIntoView(elAnchor, {
+                    offsetLeft: 0,
+                    offsetRight: 0,
+                    alignToTop: true,
+                    offsetTop: 130,
+                    // alignToTop: false,
+                    // onlyScrollIfNeeded: true,
                 })
-                return false;
             }
-        }
+
+            return false;
+        });
     });
 
     bodyScrollBar.track.xAxis.element.remove();
