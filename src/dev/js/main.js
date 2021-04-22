@@ -2,8 +2,22 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-// setGallery();
 
+import Scrollbar, { ScrollbarPlugin } from 'smooth-scrollbar';
+
+class ModalPlugin extends ScrollbarPlugin {
+    static pluginName = 'modal';
+
+    static defaultOptions = {
+        open: false,
+    };
+
+    transformDelta(delta) {
+        return this.options.open ? { x: 0, y: 0 } : delta;
+    }
+}
+
+Scrollbar.use(ModalPlugin, /* OverscrollPlugin */);
 
 
 const projectFunc = {
@@ -944,82 +958,6 @@ $(window).on('resize load', function () {
 });
 
 
-
-if ($('.burger').exists()) {
-    try {
-        let header = document.querySelector('.header');
-        const burgerBtn = header.querySelector('.burger');
-
-        const panelEl = header.querySelector('.js-nav');
-
-        const panelHideTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.6 }
-        });
-
-        const panelShowTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.6 }
-        });
-
-        panelHideTl
-            .to(
-                panelEl,
-                {
-                    autoAlpha: 0,
-                    xPercent: 100,
-                    ease: Cubic.easeOut
-                }
-            )
-
-        panelShowTl
-            .fromTo(
-                panelEl,
-                {
-                    autoAlpha: 0,
-                    xPercent: 100
-                },
-                {
-                    autoAlpha: 1,
-                    xPercent: 0,
-                    ease: Cubic.easeOut
-                }
-            )
-
-        burgerBtn.addEventListener('click', function () {
-            this.classList.toggle('opened'); this.setAttribute('aria-expanded', this.classList.contains('opened'));
-
-            if (this.classList.contains('opened')) {
-                panelHideTl.reverse();
-                panelShowTl.play();
-                lockedDOM(true);
-            }
-            else {
-                panelShowTl.reverse();
-                panelHideTl.play();
-                lockedDOM(false);
-            }
-        });
-
-        $(window).on('resize load', function () {
-            changeHeightPage();
-            if ($(this).width() > 1024) {
-                if (burgerBtn.classList.contains('opened')) {
-                    burgerBtn.classList.remove('opened');
-                    hideMenu('.js-dropMenu');
-                    panelShowTl.reverse();
-                    panelHideTl.play();
-                }
-            }
-        });
-    }
-    catch (err) {
-        console.log(err);
-    }
-}
-
 const getHeight = (elem) => {
     const heightRes = $(elem).outerHeight();
     return heightRes;
@@ -1222,20 +1160,7 @@ const formShow = (element, status) => {
 
 
 
-if ($('.js-overlay').exists()) {
-    $('.js-overlay').on('click', () => {
-        showOverlay(false);
 
-        if ($('.request-popup__wrapper').exists()) {
-            try {
-                $('.request-popup__wrapper').removeClass('active');
-            }
-            catch (err) {
-                console.log(err);
-            }
-        }
-    });
-}
 
 if ($('.js-close-form').exists()) {
     $('.js-close-form').on('click', () => {
@@ -1423,12 +1348,6 @@ function initPinSteps() {
 }
 
 
-
-
-
-
-
-
 function initSmoothScrollBar(position) {
 
     if (window.matchMedia("(max-width:1300px)").matches) {
@@ -1468,7 +1387,99 @@ function initSmoothScrollBar(position) {
         $('.js-form-call').on('click', (event) => {
             event.preventDefault();
             showOverlay(true);
+            bodyScrollBar.updatePluginOptions('modal', { open: true })
         });
+    }
+
+    if ($('.js-overlay').exists()) {
+        $('.js-overlay').on('click', () => {
+            showOverlay(false);
+            bodyScrollBar.updatePluginOptions('modal', { open: false })
+
+            if ($('.request-popup__wrapper').exists()) {
+                try {
+                    $('.request-popup__wrapper').removeClass('active');
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            }
+        });
+    }
+
+    if ($('.burger').exists()) {
+        try {
+            let header = document.querySelector('.header');
+            const burgerBtn = header.querySelector('.burger');
+
+            const panelEl = header.querySelector('.js-nav');
+
+            const panelHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.6 }
+            });
+
+            const panelShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.6 }
+            });
+
+            panelHideTl
+                .to(
+                    panelEl,
+                    {
+                        autoAlpha: 0,
+                        xPercent: 100,
+                        ease: Cubic.easeOut
+                    }
+                )
+
+            panelShowTl
+                .fromTo(
+                    panelEl,
+                    {
+                        autoAlpha: 0,
+                        xPercent: 100
+                    },
+                    {
+                        autoAlpha: 1,
+                        xPercent: 0,
+                        ease: Cubic.easeOut
+                    }
+                )
+
+            burgerBtn.addEventListener('click', function () {
+                this.classList.toggle('opened'); this.setAttribute('aria-expanded', this.classList.contains('opened'));
+
+                if (this.classList.contains('opened')) {
+                    panelHideTl.reverse();
+                    panelShowTl.play();
+                    bodyScrollBar.updatePluginOptions('modal', { open: true })
+                }
+                else {
+                    panelShowTl.reverse();
+                    panelHideTl.play();
+                    bodyScrollBar.updatePluginOptions('modal', { open: false })
+                }
+            });
+
+            $(window).on('resize load', function () {
+                changeHeightPage();
+                if ($(this).width() > 1024) {
+                    if (burgerBtn.classList.contains('opened')) {
+                        burgerBtn.classList.remove('opened');
+                        hideMenu('.js-dropMenu');
+                        panelShowTl.reverse();
+                        panelHideTl.play();
+                    }
+                }
+            });
+        }
+        catch (err) {
+            console.log(err);
+        }
     }
 
 
@@ -1484,9 +1495,6 @@ function initSmoothScrollBar(position) {
 
             if ($target.length) {
                 var targetOffset = $target.offset().top - 140;
-
-                // console.log(targetOffset);
-                // $('html,body').animate({ scrollTop: targetOffset }, 500);//скорость прокрутки
                 bodyScrollBar.scrollIntoView(document.querySelector('#request'), {
                     // offsetLeft: 34,
                     offsetBottom: 100,
@@ -1595,6 +1603,8 @@ function initContent() {
     setAccordion();
     setTabs();
 }
+
+
 
 
 

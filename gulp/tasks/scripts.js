@@ -1,3 +1,8 @@
+var rename = require('gulp-rename'),
+	uglify = require('gulp-uglify'),
+	webpack = require('webpack'),
+	webpackStream = require('webpack-stream');
+
 module.exports = function () {
 	var babel = require("gulp-babel"),
 		minify = require('gulp-minify'),
@@ -15,6 +20,27 @@ module.exports = function () {
 
 	$.gulp.task('scripts', function () {
 		return $.gulp.src(['src/dev/js/**/*.js'])
+			.pipe(
+				webpackStream({
+					output: {
+						filename: 'main.js',
+					},
+					module: {
+						rules: [
+							{
+								test: /\.js$/,
+								exclude: /(node_modules|bower_components)/,
+								use: {
+									loader: 'babel-loader',
+									options: {
+										presets: ['@babel/preset-env']
+									}
+								}
+							}
+						]
+					}
+				})
+			)
 			.pipe(concat('main.js'))
 			.pipe(babel())
 			.pipe(minify())
