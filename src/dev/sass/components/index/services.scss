@@ -130,6 +130,11 @@
     &__pic {
         width: 52px;
         height: 50px;
+        margin-top: 5px;
+
+        @media(max-width: 620px) {
+            margin-top: 0;
+        }
 
         .b-svg,
         svg {
@@ -153,28 +158,6 @@
 
     &__left {
         margin-right: 14px;
-        min-width: 45px;
-        width: 45px;
-
-        @media(max-width: 1400px) {
-            min-width: 40px;
-            width: 40px;
-        }
-
-        @media(max-width: 1300px) {
-            min-width: 45px;
-            width: 45px;
-        }
-
-        @media(max-width: 767px) {
-            min-width: 34px;
-            width: 34px;
-        }
-
-        @media(max-width: 620px) {
-            min-width: 45px;
-            width: 45px;
-        }
     }
 
     &__right {

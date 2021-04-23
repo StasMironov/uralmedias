@@ -94,6 +94,7 @@
       .header {
         &__ref {
           display: block;
+          font-size: 20px;
         }
 
         &__item {
@@ -354,7 +355,7 @@
   }
 
   &__ref {
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1;
     color: $black;
 
