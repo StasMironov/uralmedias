@@ -10,11 +10,19 @@ block variables
 
 block content
 	div(data-barba="container" data-barba-namespace="page")
-		.bildboard
+		.bildboard.bildboard--main
 			.bildboard__container.container
 				.bildboard__text Магнитогорское Digital-агентство 
 				.bildboard__title.title-1 Разработка<br> и продвижение
-				.bildboard__quote Мы проектируем и создаем <br/> <a href="corporate.html" class="sad-link">корпоративные сайты</a> , <a href="magazine.html" class="sad-link">интернет-магазины</a> , <a href="app.html" class="sad-link">мобильные приложения</a> и многое другое
+				.bildboard__quote.
+					Мы проектируем и создаем <br/> <a href="corporate.html" class="sad-link">корпоративные сайты</a>,
+					<a href="magazine.html" class="sad-link">интернет-магазины</a>,
+					<a href="app.html" class="sad-link">мобильные приложения</a>
+					<div class="bildboard__more">и многое другое</div>
+				.rating
+					.rating__title Рейтинг Рунета по Уралу 2020
+					.rating__text 32 место по разработке сайтов
+					.rating__text 34 место по продвижению сайтов
 			video(autoplay="true" loop="loop" muted="muted" poster="media/video.mp4" data-parallax="scroll" data-image-src="media/video.mp4").bildboard__video
 				<source src="media/video.mp4" type="video/mp4">
 		.fill-background

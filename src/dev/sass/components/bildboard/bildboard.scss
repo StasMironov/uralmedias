@@ -107,6 +107,14 @@
         }
     }
 
+    &__more {
+        display: inline;
+
+        @media(max-width: 620px) {
+            display: none;
+        }
+    }
+
     &__video {
         position: absolute;
         height: 100%;
@@ -118,6 +126,20 @@
         bottom: 0;
         margin: auto;
         z-index: 0;
+    }
+
+    &--main {
+
+        .bildboard {
+
+            &__container {
+
+                @media (max-width: 620px) {
+                    padding-top: 120px;
+                    padding-bottom: 60px;
+                }
+            }
+        }
     }
 
     &--pobeda {
