@@ -2,8 +2,7 @@
 
 jQuery.fn.exists = function () {
   return $(this).length;
-}; // setGallery();
-
+};
 
 var projectFunc = {
   showBlogPopup: function showBlogPopup(element) {
@@ -726,7 +725,7 @@ var setMap = function setMap(draw) {
         // Необходимо указать данный тип макета.
         iconLayout: 'default#image',
         // Своё изображение иконки метки.
-        iconImageHref: '/img/icon/marker.svg',
+        iconImageHref: '/images/icons/marker.svg',
         // Размеры метки.
         iconImageSize: [48, 64],
         // Смещение левого верхнего угла иконки относительно
@@ -1037,8 +1036,8 @@ if ($('#request').exists()) {
 
           }, {
             duration: 1000,
-            // по умолчанию «400» 
-            easing: "linear" // по умолчанию «swing» 
+            // по умолчанию «400»
+            easing: "linear" // по умолчанию «swing»
 
           });
         }
@@ -1299,7 +1298,8 @@ var setSelect = function setSelect() {
         // scrolling speed
         mousescrollstep: 10,
         // scrolling speed with mouse wheel (pixel)
-        cursorcolor: "#00A4AD"
+        cursorcolor: "#00A4AD",
+        autohidemode: false
       });
     });
   }
@@ -1313,11 +1313,16 @@ var setSelect = function setSelect() {
         // scrolling speed
         mousescrollstep: 10,
         // scrolling speed with mouse wheel (pixel)
-        cursorcolor: "#00A4AD"
+        cursorcolor: "#00A4AD",
+        autohidemode: false
       });
     });
   }
 };
+
+$(window).resize(function () {
+  setSelect();
+}).resize();
 
 function initContent() {
   setSelect();

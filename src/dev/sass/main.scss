@@ -209,6 +209,23 @@ input::-ms-clear {
   @media(max-width: 580px) {
     padding-bottom: 483px;
   }
+
+  &--portfolio {
+
+    .mf-style {
+
+      .header__logo svg path {
+
+        @media(max-width: 620px) {
+          fill: $green-1;
+        }
+      }
+
+      .burger .line {
+        stroke: $green-1;
+      }
+    }
+  }
 }
 
 
@@ -289,13 +306,14 @@ input::-ms-clear {
   }
 }
 
-
-
 .scrollbar-track {
   // opacity: 0 !important;
 }
 
-
+.lg-backdrop {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,.5);
+}
 
 
 
@@ -353,23 +371,6 @@ input::-ms-clear {
 .slider {
   opacity: 0;
   transition: .4s ease;
-}
-
-.select2-dropdown {
-  border: 1px solid $grey-7;
-}
-
-.select2-container--default .select2-results__option--selected {
-  background-color: #ddd !important;
-}
-
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-  background-color: #ddd !important;
-  color: #333 !important;
-}
-
-.select2-results__option {
-  transition: linear .3s;
 }
 
 .fill-background {
@@ -522,6 +523,7 @@ input::-ms-clear {
 @import "./components/index/client.scss";
 @import "./components/index/services.scss";
 @import "./components/index/portfolio";
+@import "./components/index/rating";
 @import "./components/bildboard/bildboard.scss";
 @import "./components/header.scss";
 @import "./components/footer.scss";

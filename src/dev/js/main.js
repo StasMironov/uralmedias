@@ -2,10 +2,6 @@ jQuery.fn.exists = function () {
     return $(this).length;
 }
 
-// setGallery();
-
-
-
 const projectFunc = {
     showBlogPopup: function (element) {
         let blogPopup = $(element).find('.blog__popup');
@@ -891,7 +887,7 @@ const setMap = (draw) => {
                     // Необходимо указать данный тип макета.
                     iconLayout: 'default#image',
                     // Своё изображение иконки метки.
-                    iconImageHref: '/img/icon/marker.svg',
+                    iconImageHref: '/images/icons/marker.svg',
                     // Размеры метки.
                     iconImageSize: [48, 64],
                     // Смещение левого верхнего угла иконки относительно
@@ -1269,8 +1265,8 @@ if ($('#request').exists()) {
                         scrollTop: $(dest).offset().top - 130 // прокручиваем страницу к требуемому элементу
 
                     }, {
-                        duration: 1000,   // по умолчанию «400» 
-                        easing: "linear" // по умолчанию «swing» 
+                        duration: 1000,   // по умолчанию «400»
+                        easing: "linear" // по умолчанию «swing»
                     }
                     );
                 }
@@ -1556,7 +1552,8 @@ const setSelect = () => {
             $('.select2-results__options').niceScroll({
                 scrollspeed: 60, // scrolling speed
                 mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
+                cursorcolor: "#00A4AD",
+                autohidemode: false,
             });
         });
     }
@@ -1568,11 +1565,16 @@ const setSelect = () => {
             $('.select2-results__options').niceScroll({
                 scrollspeed: 60, // scrolling speed
                 mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
+                cursorcolor: "#00A4AD",
+                autohidemode: false,
             });
         });
     }
 }
+
+$(window).resize(function () {
+    setSelect();
+}).resize();
 
 function initContent() {
     setSelect();

@@ -47,31 +47,6 @@
       height: 100%;
       fill: white;
     }
-
-    .text {
-      @media(max-width: 600px) {
-        display: none;
-      }
-    }
-
-    @media(max-width: 620px) {
-      height: 27px;
-      width: 39px;
-    }
-
-    .logo-desktop {
-      @media(max-width: 620px) {
-        display: none;
-      }
-    }
-
-    .logo-mobile {
-      display: none;
-
-      @media(max-width: 620px) {
-        display: block;
-      }
-    }
   }
 
   &__nav {
@@ -104,7 +79,7 @@
         right: 0;
         padding: 47px 70px 52px 45px;
         max-height: calc(100vh - 25px);
-        top: calc(0px + 59px);
+        top: calc(0px + 66px);
         box-shadow: -1px 3px 7px rgba(0, 0, 0, 0.1);
         opacity: 0;
       }
@@ -113,6 +88,7 @@
         padding: 38px 15px 40px 15px;
         height: 100vh;
         max-width: 100%;
+        top: calc(0px + 60px);
       }
 
       .header {
@@ -155,6 +131,7 @@
   &__list {
     display: none;
     flex-direction: column;
+    width: calc(100% - 20px);
     padding-top: 20px;
     transform: translateX(20px);
   }
@@ -428,10 +405,6 @@
     }
 
     @media(max-width: 620px) {
-      margin-right: 20px;
-    }
-
-    @media(max-width: 600px) {
       display: none;
     }
 
@@ -441,7 +414,7 @@
   }
 
   .btn {
-    @media(max-width: 600px) {
+    @media(max-width: 620px) {
       display: none;
     }
   }

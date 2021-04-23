@@ -40,8 +40,6 @@
         }
     }
 
-
-
     &__panel {
         justify-content: space-between;
         align-items: center;
@@ -157,10 +155,6 @@
     &__unit {
         &:not(:first-child) {
             margin-top: 7px;
-        }
-
-        .contacts__txt {
-            color: $grey-6;
         }
     }
 
