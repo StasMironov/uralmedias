@@ -373,23 +373,6 @@ input::-ms-clear {
   transition: .4s ease;
 }
 
-.select2-dropdown {
-  border: 1px solid $grey-7;
-}
-
-.select2-container--default .select2-results__option--selected {
-  background-color: #ddd !important;
-}
-
-.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
-  background-color: #ddd !important;
-  color: #333 !important;
-}
-
-.select2-results__option {
-  transition: linear .3s;
-}
-
 .fill-background {
   will-change: background-color;
   background-color: var(--bcg-fill-color);

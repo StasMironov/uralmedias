@@ -1,6 +1,8 @@
 .form {
 
   &-group {
+    display: flex;
+    flex-direction: column;
     margin-top: 25px;
 
     @media (max-width: 620px) {
@@ -378,15 +380,58 @@
 
 .select {
 
-  .select2 {
+  select + .select2-container {
     margin-top: 15px;
-    width: 100% !important;
+
+    @media (max-width: 620px) {
+      margin-top: 10px;
+    }
   }
 
-  .select2-selection {
-    min-height: 44px;
-    border-radius: 0;
+  .select2-container .select2-selection--single {
+    height: 48px;
+
+    @media (max-width: 620px) {
+      height: 52px;
+    }
+  }
+
+  .select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 17px;
+
+    @media (max-width: 620px) {
+      padding-left: 10px;
+    }
+  }
+
+  .select2-container--default .select2-selection--single {
+    background-color: #fff;
     border: 1px solid $grey-7;
+    border-radius: 0;
+    transition: 0.2s;
+
+    &:hover {
+      border-color: $grey-8;
+    }
+  }
+
+  .select2-container--open .select2-selection--single {
+    border-color: $grey-8;
+    border-bottom-color: transparent;
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+  }
+
+  .select2-container--open.select2-container--above .select2-selection--single {
+    border-top-color: transparent;
+    border-bottom-color: $grey-8;
+
+    &:hover {
+      border-top-color: transparent;
+      border-bottom-color: $grey-8;
+    }
   }
 
   .select2-selection__rendered {
@@ -409,4 +454,44 @@
   .select2-container--default .select2-selection--single .select2-selection__arrow {
     width: 46px;
   }
+}
+
+.select2-dropdown {
+  border: 1px solid $grey-8;
+  border-radius: 0;
+}
+
+.select2-dropdown--below {
+  margin-top: -1px;
+}
+
+.select2-dropdown--above {
+  margin-top: 1px;
+}
+
+.select2-results__options {
+  padding-bottom: 10px;
+}
+
+.select2-results__option {
+  padding: 6px 17px;
+  transition: 0.2s;
+
+  @media (max-width: 620px) {
+    padding: 6px 10px;
+  }
+}
+
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: 400px;
+}
+
+.select2-container--default .select2-results__option--selected {
+  background-color: transparent;
+  color: $green-1;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: transparent;
+  color: $green-1;
 }

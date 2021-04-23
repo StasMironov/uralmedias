@@ -285,5 +285,9 @@
         &:hover {
             color: $green-1;
         }
+
+        &[target="_blank"] {
+            text-decoration: underline;
+        }
     }
 }

@@ -449,34 +449,34 @@ function init() {
         });
     }
 
-    barba.hooks.enter(() => {
-        setTimeout(() => {
-            ScrollTrigger.update();
-            ScrollTrigger.refresh(true);
-            checkPage();
-            animateBildboard();
-            initContent();
-            initSmoothScrollBar(true);
-        }, 10);
-    });
+    // barba.hooks.enter(() => {
+    //     setTimeout(() => {
+    //         ScrollTrigger.update();
+    //         ScrollTrigger.refresh(true);
+    //         checkPage();
+    //         animateBildboard();
+    //         initContent();
+    //         initSmoothScrollBar(true);
+    //     }, 10);
+    // });
 
 
-    barba.init({
-        transitions: [
-            {
-                name: 'page',
-                to: {
-                    namespace: ['page']
-                },
-                async leave() {
-                    await loaderIn();
-                },
-                async enter() {
-                    loaderAway();
-                },
-            }
-        ]
-    });
+    // barba.init({
+    //     transitions: [
+    //         {
+    //             name: 'page',
+    //             to: {
+    //                 namespace: ['page']
+    //             },
+    //             async leave() {
+    //                 await loaderIn();
+    //             },
+    //             async enter() {
+    //                 loaderAway();
+    //             },
+    //         }
+    //     ]
+    // });
 
     initContent();
 
@@ -543,7 +543,6 @@ const setCursor = () => {
 
             document.body.style.setProperty('--x', (mouseX) + 'px');
             document.body.style.setProperty('--y', (mouseY) + 'px');
-
         }
     });
 
@@ -1553,7 +1552,8 @@ const setSelect = () => {
             $('.select2-results__options').niceScroll({
                 scrollspeed: 60, // scrolling speed
                 mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
+                cursorcolor: "#00A4AD",
+                autohidemode: false,
             });
         });
     }
@@ -1565,11 +1565,16 @@ const setSelect = () => {
             $('.select2-results__options').niceScroll({
                 scrollspeed: 60, // scrolling speed
                 mousescrollstep: 10, // scrolling speed with mouse wheel (pixel)
-                cursorcolor: "#00A4AD"
+                cursorcolor: "#00A4AD",
+                autohidemode: false,
             });
         });
     }
 }
+
+$(window).resize(function () {
+    setSelect();
+}).resize();
 
 function initContent() {
     setSelect();

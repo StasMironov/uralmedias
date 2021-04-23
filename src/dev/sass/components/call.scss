@@ -213,6 +213,22 @@
 
             &.select {
                 position: relative;
+
+                .select2-container .select2-selection--single {
+                    height: 44px;
+
+                    @media (max-width: 620px) {
+                        height: 38px;
+                    }
+                }
+
+                .select2-container .select2-selection--single .select2-selection__rendered {
+                    padding-left: 15px;
+
+                    @media (max-width: 620px) {
+                        padding-left: 10px;
+                    }
+                }
             }
         }
     }
@@ -424,17 +440,4 @@
             }
         }
     }
-
-    .select2+.select2-container {
-        position: absolute;
-        top: 77px !important;
-        left: 0px !important;
-    }
-
-
-
-}
-
-.select2-container.select2-container--default.select2-container--open {
-    z-index: 5000;
 }
