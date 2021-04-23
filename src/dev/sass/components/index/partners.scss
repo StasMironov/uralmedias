@@ -6,6 +6,8 @@
 
 
 
+
+
     .swiper-slide {
         display: flex;
         align-items: center;
@@ -16,6 +18,16 @@
             height: auto;
             width: auto;
             object-fit: contain;
+        }
+    }
+
+    &__slider {
+        @media(max-width: 1024px) {
+            max-width: 90vw;
+        }
+
+        @media(max-width: 620px) {
+            max-width: calc(95vw - 35px);
         }
     }
 
