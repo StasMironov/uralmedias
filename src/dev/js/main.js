@@ -26,7 +26,8 @@ const projectFunc = {
         let blogText = $(element).find('.blog__txt');
 
         const popupBlog = gsap.timeline({
-            paused: true
+            paused: true,
+            reversed: true
         });
 
         popupBlog
@@ -51,7 +52,8 @@ const projectFunc = {
 
 
         const popupBlog = gsap.timeline({
-            paused: true
+            paused: true,
+            reversed: true
         });
 
         popupBlog
@@ -60,11 +62,13 @@ const projectFunc = {
                 duration: 1,
                 ease: "power2.out"
             })
-            .to(blogText, {
-                autoAlpha: 0,
-                y: -20,
-                ease: "power2.out"
-            });
+            .to(blogText,
+                {
+                    autoAlpha: 0,
+                    y: -20,
+                    ease: "power2.out"
+                },
+                '-=1');
 
         popupBlog.play();
     },
@@ -141,13 +145,6 @@ const setTabs = () => {
         }
     }
 }
-
-
-
-
-
-
-
 
 
 const setAccordion = () => {
@@ -232,22 +229,102 @@ const setAccordion = () => {
 
 if ($('.blog__item').exists()) {
 
-    gsap.to(
-        '.blog__item', {
-        autoAlpha: 1,
-        stagger: 1,
-        duration: 1
+
+
+    const blogItem = gsap.utils.toArray('.blog__item');
+
+    const hoverEffectBlog = (state, element) => {
+        const overlay = element.querySelector('.blog__popup');
+        const info = element.querySelector('.blog__txt');
+
+
+        const showInfo = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.6 },
+            ease: "power2.out"
+        })
+
+        const hideInfo = new TimelineMax({
+            reversed: true,
+            paused: true,
+            defaults: { duration: 0.6 },
+            ease: "power2.out"
+        })
+
+            .set(
+                ['.blog__txt'],
+                {
+                    autoAlpha: 0,
+                    y: 30
+                }
+            )
+
+
+        if (state) {
+
+
+            showInfo
+                .to(
+                    overlay,
+                    {
+                        x: 0,
+                        xPercent: 0,
+                        ease: Sine.easeInOut
+                    }
+                )
+                .to(
+                    info,
+                    0.3,
+                    {
+                        autoAlpha: 1,
+                        ease: Sine.easeInOut
+                    })
+
+            hideInfo.reverse();
+            showInfo.play();
+
+        }
+        else {
+            hideInfo
+                .to(
+                    overlay,
+                    {
+                        //x: -100,
+                        xPercent: -100,
+                        ease: Sine.easeInOut
+                    }
+                )
+                .to(
+                    info, 0.5,
+                    {
+                        autoAlpha: 0,
+                        ease: Sine.easeInOut
+                    })
+
+
+
+            showInfo.reverse();
+            hideInfo.play();
+
+        }
+
     }
-    )
-    $('.blog__item').each(function () {
-        $(this).on('mouseenter', function () {
-            projectFunc.showBlogPopup(this);
+
+
+
+
+    blogItem.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            hoverEffectBlog(true, element);
         });
 
-        $(this).on('mouseleave', function () {
-            projectFunc.hideBlogPopup(this);
+        element.addEventListener('mouseleave', () => {
+            hoverEffectBlog(false, element);
         });
-    });
+    })
+
+    console.log(blogItem);
 }
 
 if ($('.header__inner').exists) {
@@ -580,10 +657,13 @@ const setCursor = () => {
 }
 
 function animateBildboard() {
-    let bildboardTL = new TimelineMax({});
+    let bildboardTL = new TimelineMax({
+        ease: "power2.out",
+        defaults: { duration: 1 }
+    });
 
     gsap.set(
-        ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'], {
+        ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container', '.rating'], {
         autoAlpha: 0
     }
     );
@@ -611,53 +691,22 @@ function animateBildboard() {
         video.load();
     }
 
-
-
     bildboardTL
-        .set(
-            ['.bildboard__video', '.bildboard__text', '.bildboard__title', '.bildboard__quote', '.header__container'], {
-            autoAlpha: 0
-        }
-        )
-        .set(
-            '.bildboard__text', {
-            y: -20
-        }
-        )
-        .set(
-            '.bildboard__title', {
-            x: -70
-        }
-        )
-
-        .set(
-            '.bildboard__quote', {
-            y: -20
-        }
-        )
         .to(
-            '.bildboard__video', {
-            autoAlpha: 1,
-            duration: 4,
-            ease: "power2.out",
-        },
-            "+=1"
+            '.bildboard__video',
+            {
+                duration: 1.5,
+                autoAlpha: 1,
+
+            },
+            "+=0.7"
         )
         .to(
             '.header__container', {
             autoAlpha: 1,
             duration: 1,
-            ease: "power2.out",
         },
-            "-=3"
-        )
-        .to(
-            '.bildboard__container', {
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power2.out",
-        },
-            "-=3"
+            "-=1"
         )
         .to(
             '.bildboard__text', {
@@ -665,26 +714,30 @@ function animateBildboard() {
             y: 0,
             ease: "power2.out",
         },
-            "-=2.5"
+            "-=0.5"
         )
         .to(
             '.bildboard__title', {
             autoAlpha: 1,
             x: 0,
-            ease: "power2.out",
-            duration: 1,
         },
-            "-=2"
+            "-=1"
         )
         .to(
             '.bildboard__quote', {
             autoAlpha: 1,
             y: 0,
-            ease: "power2.out",
-            duration: 1,
         },
-            "-=1"
-        );
+            "-=0.7"
+        )
+        .to(
+            '.rating',
+            {
+                autoAlpha: 1,
+
+            },
+            "-=0.3"
+        )
 
 
 

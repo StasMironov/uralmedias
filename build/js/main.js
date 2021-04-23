@@ -2002,7 +2002,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return void 0 === n && (n = e, e = void 0), void 0 !== n && (n = (n = C(n)) == n ? n : 0), void 0 !== e && (e = (e = C(e)) == e ? e : 0), c(C(t), e, n);
   };
 
-  function D(t, e) {
+  function I(t, e) {
     return void 0 === t && (t = -1 / 0), void 0 === e && (e = 1 / 0), function (n, r) {
       var o = "_" + r;
       Object.defineProperty(n, r, {
@@ -2023,7 +2023,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }
 
-  function I(t, e) {
+  function D(t, e) {
     var n = "_" + e;
     Object.defineProperty(t, e, {
       get: function get() {
@@ -2143,7 +2143,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       },
       enumerable: !0,
       configurable: !0
-    }), a([D(0, 1)], t.prototype, "damping", void 0), a([D(0, 1 / 0)], t.prototype, "thumbMinSize", void 0), a([I], t.prototype, "renderByPixels", void 0), a([I], t.prototype, "alwaysShowTracks", void 0), a([I], t.prototype, "continuousScrolling", void 0), t;
+    }), a([I(0, 1)], t.prototype, "damping", void 0), a([I(0, 1 / 0)], t.prototype, "thumbMinSize", void 0), a([D], t.prototype, "renderByPixels", void 0), a([D], t.prototype, "alwaysShowTracks", void 0), a([D], t.prototype, "continuousScrolling", void 0), t;
   }(),
       G = new WeakMap();
 
@@ -3153,12 +3153,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   Ct(zt, "pluginName", "modal"), Ct(zt, "defaultOptions", {
     open: !1
   }), Ot.use(zt);
-  var Dt = {
+  var It = {
     showBlogPopup: function showBlogPopup(t) {
       var e = $(t).find(".blog__popup"),
           n = $(t).find(".blog__txt"),
           r = gsap.timeline({
-        paused: !0
+        paused: !0,
+        reversed: !0
       });
       r.to(e, {
         x: 0,
@@ -3176,7 +3177,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var e = $(t).find(".blog__popup"),
           n = $(t).find(".blog__txt"),
           r = gsap.timeline({
-        paused: !0
+        paused: !0,
+        reversed: !0
       });
       r.to(e, {
         xPercent: -100,
@@ -3186,7 +3188,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         autoAlpha: 0,
         y: -20,
         ease: "power2.out"
-      }), r.play();
+      }, "-=1"), r.play();
     },
     hiddenTabs: function hiddenTabs(t) {
       if ($(".include--app").exists()) try {
@@ -3209,29 +3211,69 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     },
     getScrollbarWidth: function getScrollbarWidth() {
       var t,
-          e = Dt.getScrollbarWidth.width;
-      return void 0 === e && ((t = document.createElement("div")).innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>', t = t.firstChild, document.body.appendChild(t), e = Dt.getScrollbarWidth.width = t.offsetWidth - t.clientWidth, document.body.removeChild(t)), e;
+          e = It.getScrollbarWidth.width;
+      return void 0 === e && ((t = document.createElement("div")).innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>', t = t.firstChild, document.body.appendChild(t), e = It.getScrollbarWidth.width = t.offsetWidth - t.clientWidth, document.body.removeChild(t)), e;
     }
   };
   window.addEventListener("load", function () {
-    document.querySelector("html").style.setProperty("--wScroll", Dt.getScrollbarWidth() + "px");
+    document.querySelector("html").style.setProperty("--wScroll", It.getScrollbarWidth() + "px");
   });
-  if ($(".blog__item").exists() && (gsap.to(".blog__item", {
-    autoAlpha: 1,
-    stagger: 1,
-    duration: 1
-  }), $(".blog__item").each(function () {
-    $(this).on("mouseenter", function () {
-      Dt.showBlogPopup(this);
-    }), $(this).on("mouseleave", function () {
-      Dt.hideBlogPopup(this);
-    });
-  })), $(".header__inner").exists) try {
-    var It = $(window),
-        Rt = $(".header__inner"),
-        Nt = Rt.offset().top;
-    It.on("scroll", function () {
-      (window.pageYOffset || document.documentElement.scrollTop) > Nt ? Rt.addClass("mf-fixed") : Rt.removeClass("mf-fixed");
+
+  if ($(".blog__item").exists()) {
+    var Dt = gsap.utils.toArray(".blog__item"),
+        Rt = function Rt(t, e) {
+      var n = e.querySelector(".blog__popup"),
+          r = e.querySelector(".blog__txt"),
+          o = new TimelineMax({
+        reversed: !0,
+        paused: !0,
+        defaults: {
+          duration: .6
+        },
+        ease: "power2.out"
+      }),
+          i = new TimelineMax({
+        reversed: !0,
+        paused: !0,
+        defaults: {
+          duration: .6
+        },
+        ease: "power2.out"
+      }).set([".blog__txt"], {
+        autoAlpha: 0,
+        y: 30
+      });
+      t ? (o.to(n, {
+        x: 0,
+        xPercent: 0,
+        ease: Sine.easeInOut
+      }).to(r, .3, {
+        autoAlpha: 1,
+        ease: Sine.easeInOut
+      }), i.reverse(), o.play()) : (i.to(n, {
+        xPercent: -100,
+        ease: Sine.easeInOut
+      }).to(r, .5, {
+        autoAlpha: 0,
+        ease: Sine.easeInOut
+      }), o.reverse(), i.play());
+    };
+
+    Dt.forEach(function (t) {
+      t.addEventListener("mouseenter", function () {
+        Rt(!0, t);
+      }), t.addEventListener("mouseleave", function () {
+        Rt(!1, t);
+      });
+    }), console.log(Dt);
+  }
+
+  if ($(".header__inner").exists) try {
+    var Nt = $(window),
+        qt = $(".header__inner"),
+        Ht = qt.offset().top;
+    Nt.on("scroll", function () {
+      (window.pageYOffset || document.documentElement.scrollTop) > Ht ? qt.addClass("mf-fixed") : qt.removeClass("mf-fixed");
     });
   } catch (t) {
     console.log(t);
@@ -3242,7 +3284,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     0 === t.indexOf(window.location.pathname) ? $(".header").removeClass("mf-style") : $(".header").addClass("mf-style");
   });
 
-  function qt() {
+  function Bt() {
     var t,
         e,
         n,
@@ -3258,7 +3300,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       yPercent: -50,
       transformOrigin: "left center",
       autoAlpha: 1
-    }), Ut(), function (t) {
+    }), Qt(), function (t) {
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
         Ot.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
@@ -3286,11 +3328,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         continuousScrolling: !0
       });
       if ($(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
-        t.preventDefault(), Wt(!0), e.updatePluginOptions("modal", {
+        t.preventDefault(), Vt(!0), e.updatePluginOptions("modal", {
           open: !0
         });
       }), $(".js-overlay").exists() && $(".js-overlay").on("click", function () {
-        if (Wt(!1), e.updatePluginOptions("modal", {
+        if (Vt(!1), e.updatePluginOptions("modal", {
           open: !1
         }), $(".request-popup__wrapper").exists()) try {
           $(".request-popup__wrapper").removeClass("active");
@@ -3298,7 +3340,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           console.log(t);
         }
       }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
-        Wt(!1), e.updatePluginOptions("modal", {
+        Vt(!1), e.updatePluginOptions("modal", {
           open: !1
         });
       }), $(".burger").exists()) try {
@@ -3391,10 +3433,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
             },
             onEnter: function onEnter() {
-              return Xt(t.dataset.color);
+              return Yt(t.dataset.color);
             },
             onEnterBack: function onEnterBack() {
-              return Xt(t.dataset.color);
+              return Yt(t.dataset.color);
             }
           });
         });
@@ -3404,13 +3446,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top center",
           end: "bottom-=200",
           onEnter: function onEnter() {
-            gsap.utils.toArray(".portfolio__item").length > 0 && Xt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+            gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Xt(t.dataset.color);
+            return Yt(t.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Xt(t.dataset.color);
+            return Yt(t.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
@@ -3422,7 +3464,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-    }(), Vt(), $('input[type="file"]').change(function () {
+    }(), Ut(), $('input[type="file"]').change(function () {
       var t = $(".file .file__label");
       if (void 0 !== this.files) {
         if (0 == this.files.length) t.removeClass("withFile").text(t.data("default"));else {
@@ -3713,9 +3755,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }(), function () {
       if ($(".include__btn").exists()) try {
         var t = document.querySelector(".include--app").querySelectorAll(".include__btn");
-        Dt.hiddenTabs(0), t.forEach(function (t, e) {
+        It.hiddenTabs(0), t.forEach(function (t, e) {
           t.addEventListener("click", function () {
-            this.classList.add("mf-active"), Dt.showTabs(e), Dt.hiddenTabs(e);
+            this.classList.add("mf-active"), It.showTabs(e), It.hiddenTabs(e);
           });
         });
       } catch (t) {
@@ -3725,9 +3767,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   !function () {
-    var t = new TimelineMax({});
+    var t = new TimelineMax({
+      ease: "power2.out",
+      defaults: {
+        duration: 1
+      }
+    });
 
-    if (gsap.set([".bildboard__video", ".bildboard__text", ".bildboard__title", ".bildboard__quote", ".header__container"], {
+    if (gsap.set([".bildboard__video", ".bildboard__text", ".bildboard__title", ".bildboard__quote", ".header__container", ".rating"], {
       autoAlpha: 0
     }), gsap.set(".bildboard__text", {
       y: -20
@@ -3740,43 +3787,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       e.currentTime = 0, e.load();
     }
 
-    t.set([".bildboard__video", ".bildboard__text", ".bildboard__title", ".bildboard__quote", ".header__container"], {
-      autoAlpha: 0
-    }).set(".bildboard__text", {
-      y: -20
-    }).set(".bildboard__title", {
-      x: -70
-    }).set(".bildboard__quote", {
-      y: -20
-    }).to(".bildboard__video", {
+    t.to(".bildboard__video", {
+      duration: 1.5,
+      autoAlpha: 1
+    }, "+=0.7").to(".header__container", {
       autoAlpha: 1,
-      duration: 4,
-      ease: "power2.out"
-    }, "+=1").to(".header__container", {
-      autoAlpha: 1,
-      duration: 1,
-      ease: "power2.out"
-    }, "-=3").to(".bildboard__container", {
-      autoAlpha: 1,
-      duration: 1,
-      ease: "power2.out"
-    }, "-=3").to(".bildboard__text", {
+      duration: 1
+    }, "-=1").to(".bildboard__text", {
       autoAlpha: 1,
       y: 0,
       ease: "power2.out"
-    }, "-=2.5").to(".bildboard__title", {
+    }, "-=0.5").to(".bildboard__title", {
       autoAlpha: 1,
-      x: 0,
-      ease: "power2.out",
-      duration: 1
-    }, "-=2").to(".bildboard__quote", {
+      x: 0
+    }, "-=1").to(".bildboard__quote", {
       autoAlpha: 1,
-      y: 0,
-      ease: "power2.out",
-      duration: 1
-    }, "-=1");
+      y: 0
+    }, "-=0.7").to(".rating", {
+      autoAlpha: 1
+    }, "-=0.3");
   }(), window.addEventListener("load", function () {
-    qt();
+    Bt();
   });
   $(window).on("resize load", function () {
     $(this).width() <= 500 && $(".seo-result__items").exists() && $(function () {
@@ -3796,19 +3827,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 
   if ($(".include-menu").exists()) {
-    var Ht = $(".include-menu__menu");
+    var Ft = $(".include-menu__menu");
     $(".js-menuBtn").click(function () {
-      $(this).toggleClass("active"), Ht.toggleClass("active");
+      $(this).toggleClass("active"), Ft.toggleClass("active");
     });
   }
 
-  var Bt = function Bt(t) {
+  var Wt = function Wt(t) {
     t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
   },
-      Ft = function Ft(t) {
-    Gt(".js-form-request", "start" == t);
+      Gt = function Gt(t) {
+    Xt(".js-form-request", "start" == t);
   },
-      Wt = function Wt(t) {
+      Vt = function Vt(t) {
     if ($(".js-overlay").exists()) {
       var e = document.querySelector(".js-overlay"),
           n = new TimelineMax({
@@ -3817,9 +3848,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .6
         },
-        onStart: Bt,
+        onStart: Wt,
         onStartParams: [!0],
-        onComplete: Ft,
+        onComplete: Gt,
         onCompleteParams: ["start"]
       }),
           r = new TimelineMax({
@@ -3828,9 +3859,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .3
         },
-        onStart: Ft,
+        onStart: Gt,
         onStartParams: ["end"],
-        onComplete: Bt,
+        onComplete: Wt,
         onCompleteParams: [!1]
       });
       n.to(e, {
@@ -3842,7 +3873,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, "+=0.6"), t ? (n.reverse(), n.play()) : (r.reverse(), r.play());
     }
   },
-      Gt = function Gt(t, e) {
+      Xt = function Xt(t, e) {
     if (console.log(t), $(t).exists()) {
       var n = document.querySelector(".js-form-request"),
           r = new TimelineMax({
@@ -3892,7 +3923,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(t);
   }
 
-  function Vt() {
+  function Ut() {
     $(".rate__item").exists() && $(".rate__item").each(function () {
       $(this).find(".switch").is(":checked") ? $(this).find(".rate__right").addClass("rate__right--active") : $(this).find(".rate__right").removeClass("rate__right--active");
     });
@@ -3900,17 +3931,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   if ($(".rate__item .switch").exists()) try {
     $(".rate__item .switch").on("click", function () {
-      Vt();
+      Ut();
     });
   } catch (t) {
     console.log(t);
   }
 
-  function Xt(t) {
+  function Yt(t) {
     document.documentElement.style.setProperty("--bcg-fill-color", t);
   }
 
-  var Ut = function Ut() {
+  var Qt = function Qt() {
     if ($(".call .js-example-basic-single").exists()) {
       var t = $(".call .select");
       $(".call .js-example-basic-single").select2({
@@ -3939,6 +3970,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   $(window).resize(function () {
-    Ut();
+    Qt();
   }).resize();
 }]);

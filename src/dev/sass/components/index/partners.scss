@@ -4,9 +4,14 @@
     margin: 0 auto;
     margin-top: 78px;
 
+    @media(max-width: 1024px) {
+        max-width: 845px;
+        margin-top: 50px;
+    }
 
-
-
+    @media(max-width: 768px) {
+        max-width: 672px;
+    }
 
     .swiper-slide {
         display: flex;
@@ -19,6 +24,54 @@
             width: auto;
             object-fit: contain;
         }
+    }
+
+    &__item {
+        @media(max-width:1024px) {
+            height: 30px;
+            width: auto;
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: minmax(134px, 1fr) minmax(243px, 1fr) minmax(211px, 1fr) minmax(166px, 1fr);
+        grid-template-rows: repeat(3, auto);
+        grid-column-gap: 113px;
+        grid-row-gap: 83px;
+        justify-items: center;
+        align-items: center;
+
+        @media(max-width: 1600px) {
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            grid-column-gap: 50px;
+            grid-row-gap: 55px;
+        }
+
+        @media(max-width: 1024px) {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            //  grid-template-rows: repeat(3, 30px);
+            grid-column-gap: 29px;
+            grid-row-gap: 40px;
+        }
+
+        @media(max-width: 767px) {
+            grid-column-gap: 35px;
+            grid-row-gap: 35px;
+        }
+
+        @media(max-width: 620px) {
+            grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+            margin-top: 30px;
+        }
+
+        @media(max-width: 500px) {
+            grid-column-gap: 14px;
+            grid-row-gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        }
+
+
     }
 
     &__slider {
@@ -84,11 +137,17 @@
         margin-top: 90px;
     }
 
-    &--magazine {
+    &--special {
         margin: 76px auto 0;
 
-        .swiper-wrapper {
-            margin-top: 58px;
+        .partners {
+            &__items {
+                margin-top: 58px;
+
+                @media(max-width: 620px) {
+                    margin-top: 30px;
+                }
+            }
         }
     }
 }
