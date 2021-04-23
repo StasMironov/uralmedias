@@ -2,7 +2,7 @@
     margin-top: 65px;
 
     @media(max-width: 620px) {
-        margin-top: 35px;
+        margin-top: 30px;
     }
 
     &__pic {
@@ -22,20 +22,17 @@
     }
 
     &__right {
+
+        @media(max-width: 620px) {
+            margin-top: 22px;
+        }
+
         .contacts__text {
             color: $black;
 
             @media(max-width: 620px) {
                 color: $grey-6;
                 transition: .4s ease-in-out;
-            }
-        }
-
-        .contacts__item {
-            .contacts__txt {
-                @media(max-width: 620px) {
-                    color: $red-2;
-                }
             }
         }
     }
@@ -69,35 +66,19 @@
         overflow: hidden;
         transition: .4s ease-in-out;
         background-color: #fff;
-
-        .contacts__article {
-            @media(max-width: 620px) {
-                display: none;
-            }
-        }
     }
 
     &__wrp {
         margin-top: 21px;
 
         @media(max-width: 620px) {
-            margin-top: 14px;
-        }
-
-        .contacts__article {
-            @media(max-width: 620px) {
-                color: $black;
-                display: block;
-                font-weight: 500;
-            }
+            margin-top: 10px;
         }
     }
 
     &__grid {
-        max-width: 977px;
         width: 100%;
         display: flex;
-        justify-content: space-between;
         opacity: 0;
         transition: .3s;
 
@@ -107,7 +88,7 @@
 
         a {
             &:hover {
-                color: #333;
+                color: $black;
             }
         }
     }
@@ -117,6 +98,18 @@
         line-height: 28px;
         color: $grey-6;
         font-weight: 300;
+
+        @media(max-width: 620px) {
+            font-weight: 500;
+            color: $black;
+        }
+
+        &--name {
+
+            @media(max-width: 620px) {
+                display: none;
+            }
+        }
     }
 
     &__bloc {
@@ -124,12 +117,16 @@
 
         &:first-child {
             @media(max-width: 620px) {
-                margin-top: 13px;
+                margin-top: 10px;
             }
         }
 
         &:not(:first-child) {
             margin-top: 22px;
+
+            @media(max-width: 620px) {
+                margin-top: 10px;
+            }
         }
 
         &--color {
@@ -148,13 +145,14 @@
         @media(max-width: 620px) {
             font-size: 16px;
             margin-top: 3px;
+            color: $red-2;
             transition: .4s ease-in-out;
         }
     }
 
     &__unit {
         &:not(:first-child) {
-            margin-top: 7px;
+            margin-top: 12px;
         }
     }
 
@@ -207,10 +205,10 @@
     &__item {
 
         &:not(:first-child) {
-            margin-top: 55px;
+            margin-top: 38px;
 
             @media(max-width: 620px) {
-                margin-top: 20px;
+                margin-top: 18px;
             }
         }
 
@@ -219,14 +217,39 @@
 
             @media(max-width: 620px) {
                 margin-top: 0;
-                max-width: 200px;
+            }
+        }
+
+        &--main {
+
+            .contacts {
+
+                &__list {
+                    max-height: none;
+                    overflow: auto;
+                }
             }
         }
     }
 
     &__left {
+        width: 40%;
+        max-width: 400px;
+        margin-right: 80px;
+        flex-shrink: 0;
+
+        @media(max-width: 1024px) {
+            width: 45%;
+            margin-right: 40px;
+        }
+
+        @media(max-width: 768px) {
+            margin-right: 20px;
+        }
+
         @media(max-width: 620px) {
-            margin-top: 20px;
+            width: 100%;
+            margin-right: 0;
         }
     }
 
