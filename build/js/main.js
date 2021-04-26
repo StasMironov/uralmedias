@@ -3607,8 +3607,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if ($(".js-rate").exists()) {
         var t = new Slider(!0, ".js-rate", 3, 40, 1, !1, !0, !1, "", !1, !1);
         t.createSlider(), $(window).on("resize load", function () {
-          $(this).width() <= 1300 && (t.updateSlider("space", 20), t.updateSlider("view", 2), t.updateSlider("ratio", !0)), $(this).width() <= 1024 && t.updateSlider("space", 20), $(this).width() <= 800 && t.updateSlider("view", 1);
-        });
+          $(this).width() <= 1300 && (t.updateSlider("space", 20), t.updateSlider("view", 2), t.updateSlider("ratio", !0)), $(this).width() <= 1024 && t.updateSlider("space", 20), $(this).width() <= 700 && t.updateSlider("view", 1);
+        }).resize();
       }
 
       if ($(".js-info-slider").exists()) {
@@ -3627,7 +3627,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if ($(".works").exists()) {
         var o = new Slider(!0, ".js-slider", 2, 40, 1, !0, !0, !0);
-        o.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && (o.updateSlider("space", 30), console.log("1300")), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && (o.updateSlider("space", 20), console.log("1024")), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 321px)").matches ? o.updateSlider("view", 1) : o.updateSlider("view", 2), $(window).on("resize load", function () {
+        o.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && (o.updateSlider("space", 30), console.log("1300")), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && (o.updateSlider("space", 20), console.log("1024")), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches ? o.updateSlider("view", 1) : o.updateSlider("view", 2), $(window).on("resize load", function () {
           $(this).width() <= 1300 && o.updateSlider("space", 30), $(this).width() <= 1024 && o.updateSlider("space", 20), $(this).width() <= 620 ? o.updateSlider("view", 1) : o.updateSlider("view", 2);
         });
       }

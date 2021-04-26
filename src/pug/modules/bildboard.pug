@@ -8,7 +8,7 @@ case bildboard_include
                 <img src=#{bildboardImg[0]} alt="MDN">
             </picture>
             .bildboard-data__container.container
-                .bildboard-data__title.title-1 #{setTitle}
+                h1.bildboard-data__title.title-1 #{setTitle}
                 .bildboard-data__quote Опыт, профессионализм и персональная работа с каждым своим заказчиком – вот составляющие нашей успешной рекламной стратегии.
     when 'special-btn'
         .bildboard-data.bildboard-data--special-btn
@@ -19,7 +19,7 @@ case bildboard_include
                 <img src=#{bildboardImg[0]} alt="MDN">
             </picture>
             .bildboard-data__container.container
-                .bildboard-data__title.title-1 #{setTitle}
+                h1.bildboard-data__title.title-1 #{setTitle}
                 .bildboard-data__quote #{bildboard_quote}
                 a(href="#").btn.btn--special
                     .btn__special
@@ -29,7 +29,7 @@ case bildboard_include
     when 'transparent'
         .bildboard-data.bildboard-data--transparent
             .bildboard-data__container.container
-                .bildboard-data__title.title-1 #{setTitle}
+                h1.bildboard-data__title.title-1 #{setTitle}
     when 'simple'
         .bildboard-data.bildboard-data--simple
             <picture>
@@ -39,4 +39,4 @@ case bildboard_include
                 <img src=#{bildboardImg[0]} alt="MDN">
             </picture>
             .bildboard-data__container.container
-                .bildboard-data__title.title-1 #{setTitle}
+                h1.bildboard-data__title.title-1 #{setTitle}
