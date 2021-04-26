@@ -995,12 +995,12 @@ $(window).on('resize load', function () {
                 csObj.mouseWheel = {
                     invert: true
                 };
-                //  $(".seo-result__items").mCustomScrollbar(csObj);
+                $(".seo-result__items").mCustomScrollbar(csObj);
             });
         }
     }
     else {
-        // $(".seo-result__items").mCustomScrollbar('destroy');
+        $(".seo-result__items").mCustomScrollbar('destroy');
     }
 });
 
