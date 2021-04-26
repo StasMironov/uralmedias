@@ -3808,7 +3808,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     Bt();
   });
   $(window).on("resize load", function () {
-    $(this).width() <= 500 && $(".seo-result__items").exists() && $(function () {
+    $(this).width() <= 500 ? $(".seo-result__items").exists() && $(function () {
       var t = new Object();
       t.axis = "x", t.theme = "my-theme", t.advanced = {
         autoExpandHorizontalScroll: !0
@@ -3817,8 +3817,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         scrollAmount: 300
       }, t.mouseWheel = {
         invert: !0
-      };
-    });
+      }, $(".seo-result__items").mCustomScrollbar(t);
+    }) : $(".seo-result__items").mCustomScrollbar("destroy");
   });
   $(".js-list").exists() && document.querySelector(".header__nav--tablet").querySelector(".js-list").addEventListener("click", function (t) {
     t.preventDefault(), this.classList.toggle("active"), $(".js-dropMenu").toggle(400);
