@@ -160,8 +160,8 @@
         color: white;
         max-width: 275px;
         width: 100%;
-        // opacity: 0;
-        transform: translateY(-20px);
+        opacity: 0;
+        transform: translateY(20px);
 
         @media(max-width: 1024px) {
             font-size: 12px;

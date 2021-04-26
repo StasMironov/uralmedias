@@ -405,10 +405,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     })))) b = n.getConstructor(e, t, v, y), s.REQUIRED = !0;else if (i(t, !0)) {
       var S = new b(),
           E = S[y](m ? {} : -0, 1) != S,
-          T = f(function () {
+          O = f(function () {
         S.has(1);
       }),
-          O = p(function (t) {
+          T = p(function (t) {
         new g(t);
       }),
           A = !m && f(function () {
@@ -418,14 +418,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         return !t.has(-0);
       });
-      O || ((b = e(function (e, n) {
+      T || ((b = e(function (e, n) {
         u(e, b, t);
         var r = h(new g(), e, b);
         return null != n && c(n, r[y], {
           that: r,
           AS_ENTRIES: v
         }), r;
-      })).prototype = x, x.constructor = b), (T || A) && (_("delete"), _("has"), v && _("get")), (A || E) && _(y), m && x.clear && delete x.clear;
+      })).prototype = x, x.constructor = b), (O || A) && (_("delete"), _("has"), v && _("get")), (A || E) && _(y), m && x.clear && delete x.clear;
     }
     return w[t] = b, r({
       global: !0,
@@ -653,7 +653,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         _,
         S = function S(t) {
       if (t === d && P) return P;
-      if (!v && t in O) return O[t];
+      if (!v && t in T) return T[t];
 
       switch (t) {
         case "keys":
@@ -669,24 +669,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       };
     },
         E = e + " Iterator",
-        T = !1,
-        O = t.prototype,
-        A = O[m] || O["@@iterator"] || d && O[d],
+        O = !1,
+        T = t.prototype,
+        A = T[m] || T["@@iterator"] || d && T[d],
         P = !v && A || S(d),
-        j = "Array" == e && O.entries || A;
+        j = "Array" == e && T.entries || A;
 
-    if (j && (b = i(j.call(new t())), h !== Object.prototype && b.next && (f || i(b) === h || (a ? a(b, h) : "function" != typeof b[m] && c(b, m, y)), s(b, E, !0, !0), f && (p[E] = y))), "values" == d && A && "values" !== A.name && (T = !0, P = function P() {
+    if (j && (b = i(j.call(new t())), h !== Object.prototype && b.next && (f || i(b) === h || (a ? a(b, h) : "function" != typeof b[m] && c(b, m, y)), s(b, E, !0, !0), f && (p[E] = y))), "values" == d && A && "values" !== A.name && (O = !0, P = function P() {
       return A.call(this);
-    }), f && !x || O[m] === P || c(O, m, P), p[e] = P, d) if (w = {
+    }), f && !x || T[m] === P || c(T, m, P), p[e] = P, d) if (w = {
       values: S("values"),
       keys: g ? P : S("keys"),
       entries: S("entries")
     }, x) for (_ in w) {
-      (v || T || !(_ in O)) && u(O, _, w[_]);
+      (v || O || !(_ in T)) && u(T, _, w[_]);
     } else r({
       target: e,
       proto: !0,
-      forced: v || T
+      forced: v || O
     }, w);
     return w;
   };
@@ -1654,8 +1654,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         p = 7 == t,
         d = 5 == t || f;
     return function (h, v, m, y) {
-      for (var g, x, b = i(h), w = o(b), _ = r(v, m, 3), S = a(w.length), E = 0, T = y || s, O = e ? T(h, S) : n || p ? T(h, 0) : void 0; S > E; E++) {
-        if ((d || E in w) && (x = _(g = w[E], E, b), t)) if (e) O[E] = x;else if (x) switch (t) {
+      for (var g, x, b = i(h), w = o(b), _ = r(v, m, 3), S = a(w.length), E = 0, O = y || s, T = e ? O(h, S) : n || p ? O(h, 0) : void 0; S > E; E++) {
+        if ((d || E in w) && (x = _(g = w[E], E, b), t)) if (e) T[E] = x;else if (x) switch (t) {
           case 3:
             return !0;
 
@@ -1666,17 +1666,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             return E;
 
           case 2:
-            c.call(O, g);
+            c.call(T, g);
         } else switch (t) {
           case 4:
             return !1;
 
           case 7:
-            c.call(O, g);
+            c.call(T, g);
         }
       }
 
-      return f ? -1 : u || l ? l : O;
+      return f ? -1 : u || l ? l : T;
     };
   };
 
@@ -1965,10 +1965,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var E = function E(t) {
     return S.call(t);
   },
-      T = y ? y.toStringTag : void 0;
+      O = y ? y.toStringTag : void 0;
 
-  var O = function O(t) {
-    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : T && T in Object(t) ? _(t) : E(t);
+  var T = function T(t) {
+    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : O && O in Object(t) ? _(t) : E(t);
   };
 
   var A = function A(t) {
@@ -1976,7 +1976,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   var P = function P(t) {
-    return "symbol" == _typeof(t) || A(t) && "[object Symbol]" == O(t);
+    return "symbol" == _typeof(t) || A(t) && "[object Symbol]" == T(t);
   },
       j = /^[-+]0x[0-9a-f]+$/i,
       k = /^0b[01]+$/i,
@@ -2976,7 +2976,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }(),
       Et = !1;
 
-  function Tt() {
+  function Ot() {
     if (!Et && "undefined" != typeof window) {
       var t = document.createElement("style");
       t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Et = !0;
@@ -2992,7 +2992,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
    */
 
 
-  var Ot = function (t) {
+  var Tt = function (t) {
     function e() {
       return null !== t && t.apply(this, arguments) || this;
     }
@@ -3005,7 +3005,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _o(t, e), t.prototype = null === e ? Object.create(e) : (n.prototype = e.prototype, new n());
     }(e, t), e.init = function (t, e) {
       if (!t || 1 !== t.nodeType) throw new TypeError("expect element to be DOM Element, but got " + t);
-      return Tt(), _t.has(t) ? _t.get(t) : new St(t, e);
+      return Ot(), _t.has(t) ? _t.get(t) : new St(t, e);
     }, e.initAll = function (t) {
       return Array.from(document.querySelectorAll("[data-scrollbar]"), function (n) {
         return e.init(n, t);
@@ -3031,7 +3031,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return pt.apply(void 0, t);
     }, e.attachStyle = function () {
-      return Tt();
+      return Ot();
     }, e.detachStyle = function () {
       return function () {
         if (Et && "undefined" != typeof window) {
@@ -3152,7 +3152,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   Ct(zt, "pluginName", "modal"), Ct(zt, "defaultOptions", {
     open: !1
-  }), Ot.use(zt);
+  }), Tt.use(zt);
   var It = {
     showBlogPopup: function showBlogPopup(t) {
       var e = $(t).find(".blog__popup"),
@@ -3223,25 +3223,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var Dt = gsap.utils.toArray(".blog__item"),
         Rt = function Rt(t, e) {
       var n = e.querySelector(".blog__popup"),
-          r = e.querySelector(".blog__txt"),
-          o = new TimelineMax({
+          r = e.querySelector(".blog__txt");
+      console.log(r);
+      var o = new TimelineMax({
         reversed: !0,
         paused: !0,
         defaults: {
           duration: .6
         },
-        ease: "power2.out"
+        ease: Sine.easeInOut
       }),
           i = new TimelineMax({
         reversed: !0,
         paused: !0,
         defaults: {
           duration: .6
-        },
-        ease: "power2.out"
-      }).set([".blog__txt"], {
-        autoAlpha: 0,
-        y: 30
+        }
       });
       t ? (o.to(n, {
         x: 0,
@@ -3255,7 +3252,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         ease: Sine.easeInOut
       }).to(r, .5, {
         autoAlpha: 0,
-        ease: Sine.easeInOut
+        ease: Sine.easeInOut,
+        duration: .3
       }), o.reverse(), i.play());
     };
 
@@ -3302,7 +3300,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       autoAlpha: 1
     }), Qt(), function (t) {
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
-        Ot.init(document.querySelector("#inner-scrollbar"), {
+        Tt.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
           alwaysShowTracks: !1
         });
@@ -3312,16 +3310,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if (window.matchMedia("(max-width:1100px)").matches && window.matchMedia("(min-width:620px)").matches) {
         if ($(".progress__cover").exists()) try {
-          Ot.init(document.querySelector("#progress-scrollbar"), {
+          Tt.init(document.querySelector("#progress-scrollbar"), {
             damping: .3,
             alwaysShowTracks: !1
           });
         } catch (t) {
           console.log(t);
         }
-      } else Ot.destroy(document.querySelector("#progress-scrollbar"));
+      } else Tt.destroy(document.querySelector("#progress-scrollbar"));
 
-      var e = Ot.init(document.querySelector("#viewport"), {
+      var e = Tt.init(document.querySelector("#viewport"), {
         damping: .04,
         delegateTo: document,
         renderByPixel: !0,

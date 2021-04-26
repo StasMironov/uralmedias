@@ -237,28 +237,22 @@ if ($('.blog__item').exists()) {
         const overlay = element.querySelector('.blog__popup');
         const info = element.querySelector('.blog__txt');
 
+        console.log(info);
+
 
         const showInfo = new TimelineMax({
             reversed: true,
             paused: true,
             defaults: { duration: 0.6 },
-            ease: "power2.out"
+            ease: Sine.easeInOut
         })
 
         const hideInfo = new TimelineMax({
             reversed: true,
             paused: true,
-            defaults: { duration: 0.6 },
-            ease: "power2.out"
+            defaults: { duration: 0.6 }
         })
 
-            .set(
-                ['.blog__txt'],
-                {
-                    autoAlpha: 0,
-                    y: 30
-                }
-            )
 
 
         if (state) {
@@ -299,7 +293,8 @@ if ($('.blog__item').exists()) {
                     info, 0.5,
                     {
                         autoAlpha: 0,
-                        ease: Sine.easeInOut
+                        ease: Sine.easeInOut,
+                        duration: 0.3
                     })
 
 
