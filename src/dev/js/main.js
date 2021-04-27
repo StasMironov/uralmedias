@@ -227,18 +227,13 @@ const setAccordion = () => {
 }
 
 
-if ($('.blog__item').exists()) {
-
-
+/*if ($('.blog__item').exists()) {
 
     const blogItem = gsap.utils.toArray('.blog__item');
 
     const hoverEffectBlog = (state, element) => {
         const overlay = element.querySelector('.blog__popup');
         const info = element.querySelector('.blog__txt');
-
-        console.log(info);
-
 
         const showInfo = new TimelineMax({
             reversed: true,
@@ -253,10 +248,7 @@ if ($('.blog__item').exists()) {
             defaults: { duration: 0.6 }
         })
 
-
-
         if (state) {
-
 
             showInfo
                 .to(
@@ -277,7 +269,6 @@ if ($('.blog__item').exists()) {
 
             hideInfo.reverse();
             showInfo.play();
-
         }
         else {
             hideInfo
@@ -297,17 +288,10 @@ if ($('.blog__item').exists()) {
                         duration: 0.3
                     })
 
-
-
             showInfo.reverse();
             hideInfo.play();
-
         }
-
     }
-
-
-
 
     blogItem.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -318,9 +302,7 @@ if ($('.blog__item').exists()) {
             hoverEffectBlog(false, element);
         });
     })
-
-    console.log(blogItem);
-}
+}*/
 
 if ($('.header__inner').exists) {
     try {
