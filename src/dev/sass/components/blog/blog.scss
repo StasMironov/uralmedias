@@ -72,8 +72,20 @@
         }
 
         &:hover {
-            .blog__ref {
-                opacity: 1;
+
+            .blog {
+
+                &__popup {
+                    transform: translateX(0%);
+                }
+
+                &__txt {
+                    opacity: 1;
+                }
+
+                &__ref {
+                    opacity: 1;
+                }
             }
         }
     }
@@ -128,6 +140,7 @@
         padding: 30px;
         padding-top: 25px;
         transform: translateX(-100%);
+        transition: 0.5s ease;
 
         @media(max-width: 1024px) {
             padding: 21px 20px 30px;
@@ -162,6 +175,7 @@
         width: 100%;
         opacity: 0;
         transform: translateY(20px);
+        transition: 1s ease;
 
         @media(max-width: 1024px) {
             font-size: 12px;
