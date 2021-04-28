@@ -7,11 +7,13 @@
 * {
   box-sizing: border-box;
   outline: none !important;
+  cursor: none !important;
 }
 
 :root {
   --bcg-white: transparent;
   --bcg-fill-color: var(--bcg-white);
+
 }
 
 html {
@@ -312,7 +314,7 @@ input::-ms-clear {
 
 .lg-backdrop {
   backdrop-filter: blur(10px);
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, .5);
 }
 
 
@@ -481,6 +483,8 @@ input::-ms-clear {
   }
 
 }
+
+
 
 @import "./components/rate.scss";
 @import "./components/request.scss";
