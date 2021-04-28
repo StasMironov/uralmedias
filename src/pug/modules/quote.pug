@@ -9,14 +9,14 @@ case quote
   when 'h3'
     .quote
         .quote__container.container
-            h3.quote__title.title-3 #{quoteTitle}
+            h2.quote__title.title-3 #{quoteTitle}
             .quote__bloc
                 each val in quoteInfo
                     .quote__par #{val}
   when 'h4'
     .quote
         .quote__container.container
-            h4.quote__title.title-4 #{quoteTitle}
+            h2.quote__title.title-4 #{quoteTitle}
             .quote__bloc
                 each val in quoteInfo
                     .quote__par #{val}

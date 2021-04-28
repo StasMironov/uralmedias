@@ -1,5 +1,6 @@
 class Slider {
-    constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false, loop = true, direction = 'horizontal') {
+    constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false,
+                loop = false, direction = 'horizontal', watchOverflow = true) {
         this.init = init;
         this.name = name;
         this.view = view;
@@ -13,6 +14,7 @@ class Slider {
         this.custom = custom;
         this.loop = loop;
         this.direction = direction;
+        this.watchOverflow = watchOverflow;
     }
 
     createSlider() {
@@ -28,6 +30,7 @@ class Slider {
                 slidesPerColumnFill: 'row',
                 touchRatio: this.ratio,
                 effect: this.effect,
+                watchOverflow: this.watchOverflow,
                 navigation: {
                     nextEl: arrowNext,
                     prevEl: arrowPrev,
@@ -57,6 +60,7 @@ class Slider {
                     fade: { crossFade: true },
                     loop: this.loop,
                     direction: this.direction,
+                    watchOverflow: this.watchOverflow,
                     pagination: {
                         el: pagEl,
                         clickable: true,
@@ -78,6 +82,7 @@ class Slider {
                 slidesPerColumn: this.column,
                 slidesPerColumnFill: 'row',
                 touchRatio: this.ratio,
+                watchOverflow: this.watchOverflow,
             });
         }
         return this.slider;
@@ -120,7 +125,7 @@ class Slider {
             case 'ratio':
                 this.slider.params.touchRatio = res;
                 this.slider.update();
-            break;
+                break;
         }
     }
 }
