@@ -3726,12 +3726,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     if (gsap.set([".bildboard__video", ".bildboard__text", ".bildboard__title", ".bildboard__quote", ".header__container", ".rating"], {
       autoAlpha: 0
-    }), gsap.set(".bildboard__text", {
-      y: -20
     }), gsap.set(".bildboard__title", {
       x: -70
-    }), gsap.set(".bildboard__quote", {
+    }), gsap.set([".bildboard__quote", ".rating", ".bildboard__text"], {
       y: -20
+    }), gsap.set([".rating"], {
+      y: 20
     }), $(".bildboard__video").exists()) {
       var e = document.querySelector(".bildboard__video");
       e.currentTime = 0, e.load();
@@ -3754,7 +3754,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       autoAlpha: 1,
       y: 0
     }, "-=0.7").to(".rating", {
-      autoAlpha: 1
+      autoAlpha: 1,
+      y: 0
     }, "-=0.3");
   }(), window.addEventListener("load", function () {
     Ht();

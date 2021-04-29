@@ -645,21 +645,24 @@ function animateBildboard() {
     );
 
     gsap.set(
-        '.bildboard__text', {
-        y: -20
-    }
-    );
-    gsap.set(
         '.bildboard__title', {
         x: -70
     }
     );
 
     gsap.set(
-        '.bildboard__quote', {
+        ['.bildboard__quote', '.rating', '.bildboard__text'], {
         y: -20
     }
     );
+
+    gsap.set(
+        ['.rating'], {
+        y: 20
+    }
+    );
+
+
 
     if ($('.bildboard__video').exists()) {
         let video = document.querySelector('.bildboard__video');
@@ -710,6 +713,7 @@ function animateBildboard() {
             '.rating',
             {
                 autoAlpha: 1,
+                y:0
 
             },
             "-=0.3"

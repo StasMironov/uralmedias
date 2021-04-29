@@ -13,7 +13,7 @@
   }
 
   @media(max-width: 620px) {
-    min-height: 60px;
+    min-height: 57px;
   }
 
   &__inner {
@@ -28,7 +28,7 @@
     }
 
     @media(max-width: 620px) {
-      min-height: 60px;
+      min-height: 57px;
       box-shadow: none;
     }
   }
@@ -385,7 +385,7 @@
     }
 
     @media(max-width: 620px) {
-      padding: 15px;
+      padding: 8px 15px;
     }
 
     @media(max-width: 600px) {
