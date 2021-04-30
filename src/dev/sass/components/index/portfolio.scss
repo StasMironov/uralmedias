@@ -84,6 +84,7 @@
         position: relative;
         min-height: 550px;
         height: auto;
+        border-radius: 12px;
         overflow: hidden;
 
         @media(max-width: 1235px) {
@@ -97,6 +98,7 @@
         @media(max-width: 620px) {
             height: 1px;
             min-height: 402px;
+            border-radius: 8px;
         }
 
         &:not(:first-child) {

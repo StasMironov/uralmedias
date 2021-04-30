@@ -157,14 +157,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return y.call(v, t);
     };
   } else {
-    var x = p("state");
-    d[x] = !0, r = function r(t, e) {
-      if (l(t, x)) throw new TypeError("Object already initialized");
-      return e.facade = t, u(t, x, e), e;
+    var b = p("state");
+    d[b] = !0, r = function r(t, e) {
+      if (l(t, b)) throw new TypeError("Object already initialized");
+      return e.facade = t, u(t, b, e), e;
     }, o = function o(t) {
-      return l(t, x) ? t[x] : {};
+      return l(t, b) ? t[b] : {};
     }, i = function i(t) {
-      return l(t, x);
+      return l(t, b);
     };
   }
 
@@ -382,12 +382,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = -1 !== t.indexOf("Weak"),
         y = v ? "set" : "add",
         g = o[t],
-        x = g && g.prototype,
-        b = g,
+        b = g && g.prototype,
+        x = g,
         w = {},
         _ = function _(t) {
-      var e = x[t];
-      a(x, t, "add" == t ? function (t) {
+      var e = b[t];
+      a(b, t, "add" == t ? function (t) {
         return e.call(this, 0 === t ? 0 : t), this;
       } : "delete" == t ? function (t) {
         return !(m && !l(t)) && e.call(this, 0 === t ? 0 : t);
@@ -400,12 +400,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     };
 
-    if (i(t, "function" != typeof g || !(m || x.forEach && !f(function () {
+    if (i(t, "function" != typeof g || !(m || b.forEach && !f(function () {
       new g().entries().next();
-    })))) b = n.getConstructor(e, t, v, y), s.REQUIRED = !0;else if (i(t, !0)) {
-      var S = new b(),
-          E = S[y](m ? {} : -0, 1) != S,
-          T = f(function () {
+    })))) x = n.getConstructor(e, t, v, y), s.REQUIRED = !0;else if (i(t, !0)) {
+      var S = new x(),
+          T = S[y](m ? {} : -0, 1) != S,
+          E = f(function () {
         S.has(1);
       }),
           O = p(function (t) {
@@ -418,19 +418,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         return !t.has(-0);
       });
-      O || ((b = e(function (e, n) {
-        u(e, b, t);
-        var r = h(new g(), e, b);
+      O || ((x = e(function (e, n) {
+        u(e, x, t);
+        var r = h(new g(), e, x);
         return null != n && c(n, r[y], {
           that: r,
           AS_ENTRIES: v
         }), r;
-      })).prototype = x, x.constructor = b), (T || A) && (_("delete"), _("has"), v && _("get")), (A || E) && _(y), m && x.clear && delete x.clear;
+      })).prototype = b, b.constructor = x), (E || A) && (_("delete"), _("has"), v && _("get")), (A || T) && _(y), m && b.clear && delete b.clear;
     }
-    return w[t] = b, r({
+    return w[t] = x, r({
       global: !0,
-      forced: b != g
-    }, w), d(b, t), m || n.setStrong(b, t, v), b;
+      forced: x != g
+    }, w), d(x, t), m || n.setStrong(x, t, v), x;
   };
 }, function (t, e, n) {
   var r = n(4),
@@ -522,17 +522,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m,
         y = n && n.that,
         g = !(!n || !n.AS_ENTRIES),
-        x = !(!n || !n.IS_ITERATOR),
-        b = !(!n || !n.INTERRUPTED),
-        w = a(e, y, 1 + g + b),
+        b = !(!n || !n.IS_ITERATOR),
+        x = !(!n || !n.INTERRUPTED),
+        w = a(e, y, 1 + g + x),
         _ = function _(t) {
       return l && c(l), new u(!0, t);
     },
         S = function S(t) {
-      return g ? (r(t), b ? w(t[0], t[1], _) : w(t[0], t[1])) : b ? w(t, _) : w(t);
+      return g ? (r(t), x ? w(t[0], t[1], _) : w(t[0], t[1])) : x ? w(t, _) : w(t);
     };
 
-    if (x) l = t;else {
+    if (b) l = t;else {
       if ("function" != typeof (f = s(t))) throw TypeError("Target is not iterable");
 
       if (o(f)) {
@@ -645,10 +645,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return this;
   };
 
-  t.exports = function (t, e, n, l, d, g, x) {
+  t.exports = function (t, e, n, l, d, g, b) {
     o(n, e, l);
 
-    var b,
+    var x,
         w,
         _,
         S = function S(t) {
@@ -668,25 +668,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return new n(this);
       };
     },
-        E = e + " Iterator",
-        T = !1,
+        T = e + " Iterator",
+        E = !1,
         O = t.prototype,
         A = O[m] || O["@@iterator"] || d && O[d],
         j = !v && A || S(d),
         P = "Array" == e && O.entries || A;
 
-    if (P && (b = i(P.call(new t())), h !== Object.prototype && b.next && (f || i(b) === h || (a ? a(b, h) : "function" != typeof b[m] && c(b, m, y)), s(b, E, !0, !0), f && (p[E] = y))), "values" == d && A && "values" !== A.name && (T = !0, j = function j() {
+    if (P && (x = i(P.call(new t())), h !== Object.prototype && x.next && (f || i(x) === h || (a ? a(x, h) : "function" != typeof x[m] && c(x, m, y)), s(x, T, !0, !0), f && (p[T] = y))), "values" == d && A && "values" !== A.name && (E = !0, j = function j() {
       return A.call(this);
-    }), f && !x || O[m] === j || c(O, m, j), p[e] = j, d) if (w = {
+    }), f && !b || O[m] === j || c(O, m, j), p[e] = j, d) if (w = {
       values: S("values"),
       keys: g ? j : S("keys"),
       entries: S("entries")
-    }, x) for (_ in w) {
-      (v || T || !(_ in O)) && u(O, _, w[_]);
+    }, b) for (_ in w) {
+      (v || E || !(_ in O)) && u(O, _, w[_]);
     } else r({
       target: e,
       proto: !0,
-      forced: v || T
+      forced: v || E
     }, w);
     return w;
   };
@@ -1503,8 +1503,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var m = v.prototype,
         y = m["delete"],
         g = m.has,
-        x = m.get,
-        b = m.set;
+        b = m.get,
+        x = m.set;
     i(m, {
       "delete": function _delete(t) {
         if (u(t) && !d(t)) {
@@ -1525,16 +1525,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       get: function get(t) {
         if (u(t) && !d(t)) {
           var e = l(this);
-          return e.frozen || (e.frozen = new r()), g.call(this, t) ? x.call(this, t) : e.frozen.get(t);
+          return e.frozen || (e.frozen = new r()), g.call(this, t) ? b.call(this, t) : e.frozen.get(t);
         }
 
-        return x.call(this, t);
+        return b.call(this, t);
       },
       set: function set(t, e) {
         if (u(t) && !d(t)) {
           var n = l(this);
-          n.frozen || (n.frozen = new r()), g.call(this, t) ? b.call(this, t, e) : n.frozen.set(t, e);
-        } else b.call(this, t, e);
+          n.frozen || (n.frozen = new r()), g.call(this, t) ? x.call(this, t, e) : n.frozen.set(t, e);
+        } else x.call(this, t, e);
 
         return this;
       }
@@ -1563,7 +1563,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       g = function g() {
     this.entries = [];
   },
-      x = function x(t, e) {
+      b = function b(t, e) {
     return h(t.entries, function (t) {
       return t[0] === e;
     });
@@ -1571,14 +1571,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   g.prototype = {
     get: function get(t) {
-      var e = x(this, t);
+      var e = b(this, t);
       if (e) return e[1];
     },
     has: function has(t) {
-      return !!x(this, t);
+      return !!b(this, t);
     },
     set: function set(t, e) {
-      var n = x(this, t);
+      var n = b(this, t);
       n ? n[1] = e : this.entries.push([t, e]);
     },
     "delete": function _delete(t) {
@@ -1654,8 +1654,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         p = 7 == t,
         d = 5 == t || f;
     return function (h, v, m, y) {
-      for (var g, x, b = i(h), w = o(b), _ = r(v, m, 3), S = a(w.length), E = 0, T = y || s, O = e ? T(h, S) : n || p ? T(h, 0) : void 0; S > E; E++) {
-        if ((d || E in w) && (x = _(g = w[E], E, b), t)) if (e) O[E] = x;else if (x) switch (t) {
+      for (var g, b, x = i(h), w = o(x), _ = r(v, m, 3), S = a(w.length), T = 0, E = y || s, O = e ? E(h, S) : n || p ? E(h, 0) : void 0; S > T; T++) {
+        if ((d || T in w) && (b = _(g = w[T], T, x), t)) if (e) O[T] = b;else if (b) switch (t) {
           case 3:
             return !0;
 
@@ -1663,7 +1663,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             return g;
 
           case 6:
-            return E;
+            return T;
 
           case 2:
             c.call(O, g);
@@ -1744,14 +1744,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = arguments.length,
         y = m > 1 ? arguments[1] : void 0,
         g = void 0 !== y,
-        x = u(h),
-        b = 0;
-    if (g && (y = r(y, m > 2 ? arguments[2] : void 0, 2)), null == x || v == Array && a(x)) for (n = new v(e = s(h.length)); e > b; b++) {
-      d = g ? y(h[b], b) : h[b], c(n, b, d);
-    } else for (p = (f = x.call(h)).next, n = new v(); !(l = p.call(f)).done; b++) {
-      d = g ? i(f, y, [l.value, b], !0) : l.value, c(n, b, d);
+        b = u(h),
+        x = 0;
+    if (g && (y = r(y, m > 2 ? arguments[2] : void 0, 2)), null == b || v == Array && a(b)) for (n = new v(e = s(h.length)); e > x; x++) {
+      d = g ? y(h[x], x) : h[x], c(n, x, d);
+    } else for (p = (f = b.call(h)).next, n = new v(); !(l = p.call(f)).done; x++) {
+      d = g ? i(f, y, [l.value, x], !0) : l.value, c(n, x, d);
     }
-    return n.length = b, n;
+    return n.length = x, n;
   };
 }, function (t, e, n) {
   var r = n(6),
@@ -1944,12 +1944,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       m = h.a || v || Function("return this")(),
       y = m.Symbol,
       g = Object.prototype,
-      x = g.hasOwnProperty,
-      b = g.toString,
+      b = g.hasOwnProperty,
+      x = g.toString,
       w = y ? y.toStringTag : void 0;
 
   var _ = function _(t) {
-    var e = x.call(t, w),
+    var e = b.call(t, w),
         n = t[w];
 
     try {
@@ -1957,18 +1957,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var r = !0;
     } catch (t) {}
 
-    var o = b.call(t);
+    var o = x.call(t);
     return r && (e ? t[w] = n : delete t[w]), o;
   },
       S = Object.prototype.toString;
 
-  var E = function E(t) {
+  var T = function T(t) {
     return S.call(t);
   },
-      T = y ? y.toStringTag : void 0;
+      E = y ? y.toStringTag : void 0;
 
   var O = function O(t) {
-    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : T && T in Object(t) ? _(t) : E(t);
+    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : E && E in Object(t) ? _(t) : T(t);
   };
 
   var A = function A(t) {
@@ -2046,9 +2046,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return m.Date.now();
   },
       N = Math.max,
-      H = Math.min;
+      q = Math.min;
 
-  var q = function q(t, e, n) {
+  var B = function B(t, e, n) {
     var r,
         o,
         i,
@@ -2081,7 +2081,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (m(t)) return g(t);
       s = setTimeout(y, function (t) {
         var n = e - (t - c);
-        return f ? H(n, i - (t - u)) : n;
+        return f ? q(n, i - (t - u)) : n;
       }(t));
     }
 
@@ -2089,7 +2089,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return s = void 0, p && r ? h(t) : (r = o = void 0, a);
     }
 
-    function x() {
+    function b() {
       var t = R(),
           n = m(t);
 
@@ -2101,14 +2101,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === s && (s = setTimeout(y, e)), a;
     }
 
-    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? N(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), x.cancel = function () {
+    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? N(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), b.cancel = function () {
       void 0 !== s && clearTimeout(s), u = 0, r = c = o = s = void 0;
-    }, x.flush = function () {
+    }, b.flush = function () {
       return void 0 === s ? a : g(R());
-    }, x;
+    }, b;
   };
 
-  function B() {
+  function F() {
     for (var t = [], e = 0; e < arguments.length; e++) {
       t[e] = arguments[e];
     }
@@ -2118,14 +2118,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return {
         get: function get() {
           return this.hasOwnProperty(n) || Object.defineProperty(this, n, {
-            value: q.apply(void 0, s([o], t))
+            value: B.apply(void 0, s([o], t))
           }), this[n];
         }
       };
     };
   }
 
-  var F,
+  var H,
       W = function () {
     function t(t) {
       var e = this;
@@ -2148,7 +2148,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       G = new WeakMap();
 
   function V() {
-    if (void 0 !== F) return F;
+    if (void 0 !== H) return H;
     var t = !1;
 
     try {
@@ -2162,7 +2162,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       window.addEventListener("testPassive", e, n), window.removeEventListener("testPassive", e, n);
     } catch (t) {}
 
-    return F = !!t && {
+    return H = !!t && {
       passive: !1
     };
   }
@@ -2377,7 +2377,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       this.xAxis.update(n.x, e.container.width, e.content.width), this.yAxis.update(n.y, e.container.height, e.content.height);
     }, t.prototype.autoHideOnIdle = function () {
       this._scrollbar.options.alwaysShowTracks || (this.xAxis.hide(), this.yAxis.hide());
-    }, a([B(300)], t.prototype, "autoHideOnIdle", null), t;
+    }, a([F(300)], t.prototype, "autoHideOnIdle", null), t;
   }();
 
   var it = new WeakMap();
@@ -2562,7 +2562,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function vt(t) {
-    X(t)(window, "resize", q(t.update.bind(t), 300));
+    X(t)(window, "resize", B(t.update.bind(t), 300));
   }
 
   function mt(t) {
@@ -2651,18 +2651,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }(t.deltaMode);
 
           return {
-            x: t.deltaX / xt * e,
-            y: t.deltaY / xt * e
+            x: t.deltaX / bt * e,
+            y: t.deltaY / bt * e
           };
         }
 
         if ("wheelDeltaX" in t) return {
-          x: t.wheelDeltaX / bt,
-          y: t.wheelDeltaY / bt
+          x: t.wheelDeltaX / xt,
+          y: t.wheelDeltaY / xt
         };
         return {
           x: 0,
-          y: t.wheelDelta / bt
+          y: t.wheelDelta / xt
         };
       }(e),
           r = n.x,
@@ -2679,8 +2679,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }(st || (st = {})), function (t) {
     t[t.X = 0] = "X", t[t.Y = 1] = "Y";
   }(ct || (ct = {}));
-  var xt = 1,
-      bt = -3,
+  var bt = 1,
+      xt = -3,
       wt = [1, 28, 500];
 
   var _t = new Map(),
@@ -2866,8 +2866,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           var g = e.getBoundingClientRect();
 
           if (!s || !t.isVisible(e)) {
-            var x = i ? g.top - v.top - u : g.bottom - v.bottom + d;
-            t.setMomentum(g.left - v.left - f, z(x, -m.y, y.y - m.y));
+            var b = i ? g.top - v.top - u : g.bottom - v.bottom + d;
+            t.setMomentum(g.left - v.left - f, z(b, -m.y, y.y - m.y));
           }
         }
       }(this, t, e);
@@ -2970,16 +2970,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         momentum: a,
         position: o + i - a
       };
-    }, a([B(100, {
+    }, a([F(100, {
       leading: !0
     })], t.prototype, "_updateDebounced", null), t;
   }(),
-      Et = !1;
+      Tt = !1;
 
-  function Tt() {
-    if (!Et && "undefined" != typeof window) {
+  function Et() {
+    if (!Tt && "undefined" != typeof window) {
       var t = document.createElement("style");
-      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Et = !0;
+      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Tt = !0;
     }
   }
   /*!
@@ -3005,7 +3005,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _o(t, e), t.prototype = null === e ? Object.create(e) : (n.prototype = e.prototype, new n());
     }(e, t), e.init = function (t, e) {
       if (!t || 1 !== t.nodeType) throw new TypeError("expect element to be DOM Element, but got " + t);
-      return Tt(), _t.has(t) ? _t.get(t) : new St(t, e);
+      return Et(), _t.has(t) ? _t.get(t) : new St(t, e);
     }, e.initAll = function (t) {
       return Array.from(document.querySelectorAll("[data-scrollbar]"), function (n) {
         return e.init(n, t);
@@ -3031,12 +3031,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return pt.apply(void 0, t);
     }, e.attachStyle = function () {
-      return Tt();
+      return Et();
     }, e.detachStyle = function () {
       return function () {
-        if (Et && "undefined" != typeof window) {
+        if (Tt && "undefined" != typeof window) {
           var t = document.getElementById("smooth-scrollbar-style");
-          t && t.parentNode && (t.parentNode.removeChild(t), Et = !1);
+          t && t.parentNode && (t.parentNode.removeChild(t), Tt = !1);
         }
       }();
     }, e.version = "8.6.1", e.ScrollbarPlugin = lt, e;
@@ -3228,13 +3228,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   } catch (t) {
     console.log(t);
   }
-  ["/portfolio"].filter(function (t) {
-    console.log(window.location.pathname.indexOf(t)), 0 === window.location.pathname.indexOf(t) ? $(".header").addClass("mf-transparent") : $(".header").removeClass("mf-transparent");
-  }), ["/", "/index.html"].filter(function (t) {
-    0 === t.indexOf(window.location.pathname) ? $(".header").removeClass("mf-style") : $(".header").addClass("mf-style");
-  });
+  var qt, Bt;
 
-  function Ht() {
+  function Ft() {
     var t,
         e,
         n,
@@ -3250,7 +3246,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       yPercent: -50,
       transformOrigin: "left center",
       autoAlpha: 1
-    }), Ut(), function (t) {
+    }), Qt(), function (t) {
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
         Ot.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
@@ -3278,11 +3274,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         continuousScrolling: !0
       });
       if ($(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
-        t.preventDefault(), Wt(!0), e.updatePluginOptions("modal", {
+        t.preventDefault(), Vt(!0), e.updatePluginOptions("modal", {
           open: !0
         });
       }), $(".js-overlay").exists() && $(".js-overlay").on("click", function () {
-        if (Wt(!1), e.updatePluginOptions("modal", {
+        if (Vt(!1), e.updatePluginOptions("modal", {
           open: !1
         }), $(".request-popup__wrapper").exists()) try {
           $(".request-popup__wrapper").removeClass("active");
@@ -3290,7 +3286,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           console.log(t);
         }
       }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
-        Wt(!1), e.updatePluginOptions("modal", {
+        Vt(!1), e.updatePluginOptions("modal", {
           open: !1
         });
       }), $(".burger").exists()) try {
@@ -3383,10 +3379,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
             },
             onEnter: function onEnter() {
-              return Xt(t.dataset.color);
+              return Yt(t.dataset.color);
             },
             onEnterBack: function onEnterBack() {
-              return Xt(t.dataset.color);
+              return Yt(t.dataset.color);
             }
           });
         });
@@ -3396,13 +3392,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top center",
           end: "bottom-=200",
           onEnter: function onEnter() {
-            gsap.utils.toArray(".portfolio__item").length > 0 && Xt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+            gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Xt(t.dataset.color);
+            return Yt(t.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Xt(t.dataset.color);
+            return Yt(t.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
@@ -3414,7 +3410,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-    }(), Vt(), $('input[type="file"]').change(function () {
+    }(), Ut(), $('input[type="file"]').change(function () {
       var t = $(".file .file__label");
       if (void 0 !== this.files) {
         if (0 == this.files.length) t.removeClass("withFile").text(t.data("default"));else {
@@ -3666,39 +3662,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         $(t[e]).mask("+7(999) 999-99-99");
       }
     }(), function () {
-      if ($(".js-ac-contacts").exists()) try {
-        var t = document.querySelectorAll(".contacts__panel");
-        window.matchMedia("(min-width: 620px)").matches ? (console.log(!0), t.forEach(function (t, e) {
-          var n = t.nextElementSibling;
-          n.style.maxHeight ? n.style.maxHeight = null : (n.style.maxHeight = n.scrollHeight + "px", console.log("accordion"));
-        })) : t.forEach(function (t, e) {
-          var n = t.nextElementSibling;
-          n.style.maxHeight ? n.style.maxHeight = n.scrollHeight + "px" : n.style.maxHeight = null;
+      if ($(".js-ac-contacts").exists() && $(".contacts__item").each(function () {
+        var t = $(this).find($(".contacts__panel")),
+            e = $(this).find($(".contacts__list")),
+            n = $(this).find($(".contacts__pic"));
+        t.click(function () {
+          n.toggleClass("contacts__pic--active"), e.toggleClass("is-open");
         });
-
-        for (var e = 0; e < t.length; e++) {
-          t[e].onclick = function () {
-            this.classList.toggle("is-open"), $(this).find(".contacts__pic").toggleClass("contacts__pic--active");
-            var t = this.nextElementSibling;
-            t.style.maxHeight ? t.style.maxHeight = null : t.style.maxHeight = t.scrollHeight + "px";
-          };
-        }
-      } catch (t) {
-        console.log(t);
+      }), $(".accordion__panel").exists()) for (var t = document.getElementsByClassName("accordion__panel"), e = 0; e < t.length; e++) {
+        t[e].onclick = function () {
+          this.classList.toggle("is-open"), $(this).find(".accordion__pic").toggleClass("accordion__pic--active");
+          var t = this.nextElementSibling;
+          t.style.maxHeight ? t.style.maxHeight = null : t.style.maxHeight = t.scrollHeight + "px";
+        };
       }
-
-      if ($(".accordion__panel").exists()) {
-        var n = document.getElementsByClassName("accordion__panel");
-
-        for (e = 0; e < n.length; e++) {
-          n[e].onclick = function () {
-            this.classList.toggle("is-open"), $(this).find(".accordion__pic").toggleClass("accordion__pic--active");
-            var t = this.nextElementSibling;
-            t.style.maxHeight ? t.style.maxHeight = null : t.style.maxHeight = t.scrollHeight + "px";
-          };
-        }
-      }
-
       setTimeout(function () {
         $(".contacts__grid").css("opacity", "1");
       }, 500);
@@ -3757,8 +3734,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       autoAlpha: 1,
       y: 0
     }, "-=0.3");
-  }(), window.addEventListener("load", function () {
-    Ht();
+  }(), qt = $("body"), Bt = qt.find("header"), qt.find(".b-page--no-bildboard").exists() && Bt.addClass("mf-transparent mf-style"), window.addEventListener("load", function () {
+    Ft();
   });
   $(window).on("resize load", function () {
     $(this).width() <= 500 ? $(".seo-result__items").exists() && $(function () {
@@ -3778,19 +3755,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 
   if ($(".include-menu").exists()) {
-    var qt = $(".include-menu__menu");
+    var Ht = $(".include-menu__menu");
     $(".js-menuBtn").click(function () {
-      $(this).toggleClass("active"), qt.toggleClass("active");
+      $(this).toggleClass("active"), Ht.toggleClass("active");
     });
   }
 
-  var Bt = function Bt(t) {
+  var Wt = function Wt(t) {
     t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
   },
-      Ft = function Ft(t) {
-    Gt(".js-form-request", "start" == t);
+      Gt = function Gt(t) {
+    Xt(".js-form-request", "start" == t);
   },
-      Wt = function Wt(t) {
+      Vt = function Vt(t) {
     if ($(".js-overlay").exists()) {
       var e = document.querySelector(".js-overlay"),
           n = new TimelineMax({
@@ -3799,9 +3776,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .6
         },
-        onStart: Bt,
+        onStart: Wt,
         onStartParams: [!0],
-        onComplete: Ft,
+        onComplete: Gt,
         onCompleteParams: ["start"]
       }),
           r = new TimelineMax({
@@ -3810,9 +3787,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .3
         },
-        onStart: Ft,
+        onStart: Gt,
         onStartParams: ["end"],
-        onComplete: Bt,
+        onComplete: Wt,
         onCompleteParams: [!1]
       });
       n.to(e, {
@@ -3824,7 +3801,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, "+=0.6"), t ? (n.reverse(), n.play()) : (r.reverse(), r.play());
     }
   },
-      Gt = function Gt(t, e) {
+      Xt = function Xt(t, e) {
     if (console.log(t), $(t).exists()) {
       var n = document.querySelector(".js-form-request"),
           r = new TimelineMax({
@@ -3874,7 +3851,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(t);
   }
 
-  function Vt() {
+  function Ut() {
     $(".rate__item").exists() && $(".rate__item").each(function () {
       $(this).find(".switch").is(":checked") ? $(this).find(".rate__right").addClass("rate__right--active") : $(this).find(".rate__right").removeClass("rate__right--active");
     });
@@ -3882,17 +3859,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   if ($(".rate__item .switch").exists()) try {
     $(".rate__item .switch").on("click", function () {
-      Vt();
+      Ut();
     });
   } catch (t) {
     console.log(t);
   }
 
-  function Xt(t) {
+  function Yt(t) {
     document.documentElement.style.setProperty("--bcg-fill-color", t);
   }
 
-  var Ut = function Ut() {
+  var Qt = function Qt() {
     if ($(".call .js-example-basic-single").exists()) {
       var t = $(".call .select");
       $(".call .js-example-basic-single").select2({
@@ -3921,6 +3898,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   $(window).resize(function () {
-    Ut();
+    Qt();
   }).resize();
 }]);

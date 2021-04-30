@@ -7,7 +7,7 @@
 * {
   box-sizing: border-box;
   outline: none !important;
-  cursor: none !important;
+  //cursor: none !important;
 }
 
 :root {
@@ -211,27 +211,7 @@ input::-ms-clear {
   @media(max-width: 580px) {
     padding-bottom: 483px;
   }
-
-  &--portfolio {
-
-    .mf-style {
-
-      .header__logo svg path {
-
-        @media(max-width: 620px) {
-          fill: $green-1;
-        }
-      }
-
-      .burger .line {
-        stroke: $green-1;
-      }
-    }
-  }
 }
-
-
-
 
 .sad-link {
   position: relative;
@@ -483,7 +463,6 @@ input::-ms-clear {
   }
 
 }
-
 
 
 @import "./components/rate.scss";

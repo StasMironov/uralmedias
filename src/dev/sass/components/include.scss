@@ -887,39 +887,37 @@
                 max-width: 1138px;
                 width: 100%;
                 margin: 0 auto;
-
-                @media(max-width: 1024px) {
-                    max-width: 800px;
-                }
             }
 
             &__header {
                 display: flex;
-                margin: 0 auto;
+                flex-wrap: wrap;
+                margin: 62px auto 0;
                 justify-content: space-between;
-                margin-top: 62px;
 
-                @media(max-width: 1024px) {
+                @media(max-width: 1200px) {
                     margin: 45px auto 0;
                 }
 
-                @media(max-width: 768px) {
-                    margin: 45px 0 0 -15px;
-                    overflow-x: scroll;
+                @media(max-width: 900px) {
+                    justify-content: normal;
+                    margin: 45px -14px -14px;
+                }
+
+                @media(max-width: 640px) {
+                    margin: 35px -17px -15px;
                 }
             }
 
             &__txt {
+                max-width: 128px;
                 text-align: center;
-                width: 100%;
                 line-height: 21px;
                 margin: 25px auto 0;
                 font-size: 14px;
                 font-weight: 500;
                 text-transform: uppercase;
                 color: white;
-                max-width: 128px;
-                width: 100%;
                 transition: linear .3s;
             }
 
@@ -937,12 +935,6 @@
                 border: 2.2px solid rgba(255, 255, 255, 0.8);
                 box-sizing: border-box;
                 transition: linear .3s;
-
-                @media(max-width: 1024px) {
-                    font-size: 30px;
-                    height: 64px;
-                    width: 64px;
-                }
             }
 
             &__btn {
@@ -951,8 +943,18 @@
                 align-items: center;
                 cursor: pointer;
 
-                @media(max-width: 768px) {
-                    margin: 0 15px;
+                @media(max-width: 900px) {
+                    width: calc(25% - 28px);
+                    margin: 14px;
+                }
+
+                @media(max-width: 640px) {
+                    width: calc(33.33% - 34px);
+                    margin: 15px 17px;
+                }
+
+                @media(max-width: 500px) {
+                    width: calc(50% - 34px);
                 }
 
                 &:hover {
