@@ -1,31 +1,52 @@
 case quote
-  when 'h2'
-    .quote
-        .quote__container.container
-            h2.quote__title.title-2 #{quoteTitle}
-            .quote__bloc
-                each val in quoteInfo
-                    .quote__par #{val}
-  when 'h3'
-    .quote
-        .quote__container.container
-            h2.quote__title.title-3 #{quoteTitle}
-            .quote__bloc
-                each val in quoteInfo
-                    .quote__par #{val}
-  when 'h4'
-    .quote
-        .quote__container.container
-            h2.quote__title.title-4 #{quoteTitle}
-            .quote__bloc
-                each val in quoteInfo
-                    .quote__par #{val}
+    when 'h2'
+        .quote
+            .quote__container.container
+                h2.quote__title.title-2 #{quoteTitle}
+                .quote__bloc
+                    each val in quoteInfo
+                        .quote__par #{val}
+    when 'h3'
+        .quote
+            .quote__container.container
+                h2.quote__title.title-3 #{quoteTitle}
+                .quote__bloc
+                    each val in quoteInfo
+                        .quote__par #{val}
+    when 'h4'
+        .quote
+            .quote__container.container
+                h2.quote__title.title-4 #{quoteTitle}
+                .quote__bloc
+                    each val in quoteInfo
+                        .quote__par #{val}
 
-  
+    when 'about'
+        .quote
+            .quote__container.container
+                h2.quote__title.title-2 #{quoteTitle}
+                .quote__bloc
+                    each val in quoteInfo
+                        .quote__par #{val}
+        .progress
+            .progress__container.container
+                .progress__items
+                    .progress__item
+                        .progress__num 10
+                        .progress__text сертифицированных специалистов в&nbsp;штабе
+                    .progress__item
+                        .progress__num 300
+                        .progress__text разработанных проектов за&nbsp;все время
+                    .progress__item
+                        .progress__num 9
+                        .progress__text лет мы создаем сайты для&nbsp;наших клиентов
+                    .progress__item
+                        .progress__num 100
+                        .progress__text миллионов строк кода написано сегодня
 
-  
-  default
-    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. A eos placeat ab, recusandae ea soluta nemo iusto incidunt aliquam perspiciatis obcaecati animi nam deserunt, quasi id ex reprehenderit expedita est!
+
+    default
+        p Lorem ipsum dolor sit amet consectetur, adipisicing elit. A eos placeat ab, recusandae ea soluta nemo iusto incidunt aliquam perspiciatis obcaecati animi nam deserunt, quasi id ex reprehenderit expedita est!
 
 
 //- case quote
@@ -68,7 +89,7 @@ case quote
 //-             .quote__bloc
 //-                 .quote__par Наша компания работает со многими клиентами, например, “Магнитогорский Металл”, “Роза Ветров”, “МБФ”. Мы стараемся решать только интересные задачи и закрывать их точно в срок! 
 //-                 .quote__par Uralmedias с теплотой и вниманием относится к молодым сотрудникам и помогает адаптироваться на новом рабочем месте. Все участники нашей компании стараются постоянно самосовершенствоваться и достигать новых высот, а Uralmedias безусловно помогает им в этом!
-  
+
 //-   when 'promotion'
 //-     .quote.quote--promotion
 //-         .quote__container.container
@@ -76,7 +97,7 @@ case quote
 //-             .quote__bloc
 //-                 .quote__par Мы не просто продвигаем сайт в топ поисковой выдачи, а делаем из него канал привлечения заказов. Десятки наших клиентов в Магнитогорске и в других городах России успешно решают свои бизнес-Задачи с помощью SEO-продвижения. Гарантируем соблюдение всех требований Яндекс и Google. 
 //-                 .quote__par Наша компания привлекает в Ваш бизнес новых клиентов из поисковых и социальных систем, а также повышает узнаваемость бренда. Именно поэтому сайт выходит на первые места в поиске, реклама дает заказы, вашу компанию начинают узнавать, а ваш бизнес получает прибыль!
- 
+
 //-   when 'corporate'
 //-     .quote.quote--corporate
 //-         .quote__container.container

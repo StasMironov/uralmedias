@@ -150,54 +150,16 @@ const setTabs = () => {
 const setAccordion = () => {
     //=======Accordion-Contacts===========
     if ($('.js-ac-contacts').exists()) {
-        try {
-            let accordions = document.querySelectorAll(".contacts__panel");
 
-            //console.log($(window))
-            if (window.matchMedia("(min-width: 620px)").matches) {
-                console.log(true);
-                accordions.forEach((element, index) => {
-                    let content = element.nextElementSibling;
-
-                    if (!content.style.maxHeight) {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                        console.log('accordion');
-                    } else {
-                        content.style.maxHeight = null;
-                    }
-                });
-            } else {
-                accordions.forEach((element, index) => {
-                    let content = element.nextElementSibling;
-
-                    if (!content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
-
-            for (var i = 0; i < accordions.length; i++) {
-                accordions[i].onclick = function () {
-                    this.classList.toggle('is-open');
-                    $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
-
-
-                    let content = this.nextElementSibling;
-
-                    if (!content.style.maxHeight) {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    } else {
-                        content.style.maxHeight = null;
-                    }
-                }
-            }
-
-        }
-        catch (err) {
-            console.log(err);
-        }
+        $('.contacts__item').each(function () {
+            var accordionHead = $(this).find($('.contacts__panel'));
+            var accordionBody = $(this).find($('.contacts__list'));
+            var accordionIcon = $(this).find($('.contacts__pic'));
+            accordionHead.click(function () {
+                accordionIcon.toggleClass('contacts__pic--active');
+                accordionBody.toggleClass('is-open');
+            });
+        });
     }
 
     //===========Accordion=============
@@ -323,8 +285,6 @@ if ($('.header__inner').exists) {
         console.log(err);
     }
 }
-
-checkPage();
 
 const setSlider = () => {
     if ($('.js-rate').exists()) {
@@ -555,27 +515,17 @@ function init() {
 animateBildboard();
 
 function checkPage() {
-    let pagesArr = ['/', '/index.html'];
-    let pagesTr = ['/portfolio'];
 
-    pagesTr.filter(s => {
-        console.log(window.location.pathname.indexOf(s));
-        if (window.location.pathname.indexOf(s) === 0) {
-            $('.header').addClass('mf-transparent');
-        } else {
-            $('.header').removeClass('mf-transparent');
-        }
-    });
+    let body = $('body');
+    let header = body.find('header');
+    let page = body.find('.b-page--no-bildboard');
 
-    pagesArr.filter(s => {
-        if (s.indexOf(window.location.pathname) === 0) {
-            $('.header').removeClass('mf-style');
-        }
-        else {
-            $('.header').addClass('mf-style');
-        }
-    });
+    if (page.exists()) {
+        header.addClass('mf-transparent mf-style');
+    }
 }
+
+checkPage();
 
 window.addEventListener('load', function () {
     init();
