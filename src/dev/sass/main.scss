@@ -7,7 +7,7 @@
 * {
   box-sizing: border-box;
   outline: none !important;
-  cursor: none !important;
+  // cursor: none !important;
 }
 
 :root {
@@ -546,3 +546,4 @@ input::-ms-clear {
 @import "./components/404.scss";
 @import "./components/form.scss";
 @import "./components/link-detail.scss";
+@import "./components/about/rating-map.scss";
