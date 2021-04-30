@@ -1,12 +1,13 @@
 .link {
 
     &--crumbs {
-        display: inline-flex;
+        display: inline;
         font-size: 12px;
-        line-height: 25px;
+        line-height: 2;
 
         @media (max-width: 620px) {
             font-size: 11px;
+            line-height: 1.5;
         }
     }
 

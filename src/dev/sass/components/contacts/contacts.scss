@@ -6,17 +6,21 @@
     }
 
     &__pic {
-        padding-bottom: 6px;
+        display: inline-flex;
+        width: 6px;
+        height: 4px;
+        margin-left: 4px;
         transform: scale(1, -1);
         transform-origin: center;
         transition: .4s ease-in-out;
 
         &--active {
             transform: none;
+            margin-top: 2px;
         }
 
         path {
-            fill: #cbcbcb;
+            fill: $grey-15;
             transition: .4s ease-in-out;
         }
     }
@@ -24,55 +28,28 @@
     &__right {
 
         @media(max-width: 620px) {
-            margin-top: 22px;
-        }
-
-        .contacts__text {
-            color: $black;
-
-            @media(max-width: 620px) {
-                color: $grey-6;
-                transition: .4s ease-in-out;
-            }
+            margin-top: 30px;
         }
     }
 
     &__panel {
-        justify-content: space-between;
+        display: flex;
         align-items: center;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 142%;
-        color: #2d2d2d;
         background-color: #fff;
         cursor: pointer;
         transition: .4s ease-in-out;
-        display: none;
-
-        @media(max-width: 620px) {
-            display: inline-flex;
-            font-size: 14px;
-            line-height: 14px;
-            color: #2d2d2d;
-            padding: 0px 0 5px;
-        }
     }
 
     &__list {
-        font-weight: 300;
         font-size: 14px;
         line-height: 25px;
         max-height: 0;
         overflow: hidden;
-        transition: .4s ease-in-out;
+        transition: .3s ease-in-out;
         background-color: #fff;
-    }
 
-    &__wrp {
-        margin-top: 21px;
-
-        @media(max-width: 620px) {
-            margin-top: 10px;
+        &.is-open {
+            max-height: 100vh;
         }
     }
 
@@ -85,22 +62,14 @@
         @media(max-width: 620px) {
             flex-direction: column;
         }
-
-        a {
-            &:hover {
-                color: $black;
-            }
-        }
     }
 
     &__article {
         font-size: 14px;
-        line-height: 28px;
-        color: $grey-6;
-        font-weight: 300;
+        line-height: 2;
+        color: $grey-15;
 
         @media(max-width: 620px) {
-            font-weight: 500;
             color: $black;
         }
 
@@ -113,52 +82,49 @@
     }
 
     &__bloc {
-        font-weight: 700;
+        margin-top: 18px;
 
-        &:first-child {
-            @media(max-width: 620px) {
-                margin-top: 10px;
-            }
-        }
-
-        &:not(:first-child) {
-            margin-top: 22px;
-
-            @media(max-width: 620px) {
-                margin-top: 10px;
-            }
-        }
-
-        &--color {
-            .contacts__txt {
-                color: $red-2;
-            }
+        @media(max-width: 620px) {
+            margin-top: 7px;
         }
     }
 
     &__txt {
-        display: block;
-        margin-top: 8px;
+        margin-top: 6px;
         font-size: 18px;
-        font-weight: 500;
+        line-height: 1.17;
 
         @media(max-width: 620px) {
-            font-size: 16px;
             margin-top: 3px;
+            font-size: 16px;
+            line-height: 1.31;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: 4px;
+        font-size: 18px;
+        line-height: 1.17;
+
+        @media(max-width: 620px) {
+            margin-top: 0;
+            font-size: 16px;
+            line-height: 1.31;
+        }
+
+        &:hover {
             color: $red-2;
-            transition: .4s ease-in-out;
         }
     }
 
     &__unit {
         &:not(:first-child) {
-            margin-top: 12px;
-        }
-    }
+            margin-top: 20px;
 
-    &__block {
-        &:not(:first-child) {
-            margin-top: 55px;
+            @media(max-width: 620px) {
+                margin-top: 10px;
+            }
         }
     }
 
@@ -205,18 +171,10 @@
     &__item {
 
         &:not(:first-child) {
-            margin-top: 38px;
+            margin-top: 42px;
 
             @media(max-width: 620px) {
-                margin-top: 18px;
-            }
-        }
-
-        .contacts__txt {
-            margin-top: 3px;
-
-            @media(max-width: 620px) {
-                margin-top: 0;
+                margin-top: 26px;
             }
         }
 
@@ -254,7 +212,9 @@
     }
 
     &__text {
-        color: $grey-6;
+        font-size: 14px;
+        line-height: 2;
+        color: $grey-15;
 
         @media(max-width: 620px) {
             margin-right: 5px;
@@ -265,21 +225,6 @@
     &+.place {
         @media(max-width: 620px) {
             margin-top: 71px;
-        }
-    }
-
-    .is-open {
-        .contacts__text {
-            color: $black;
-        }
-
-        &+.contacts__list .contacts__txt {
-            color: $red-2;
-        }
-
-
-        .contacts__pic path {
-            fill: $black;
         }
     }
 }
