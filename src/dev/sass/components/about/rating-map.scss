@@ -7,6 +7,20 @@
         padding-top: 67px;
     }
 
+    &__left {
+        max-width: 542px;
+        width: 100%;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: calc(50%);
+    }
+
     .quote {
         margin-top: 0;
 
