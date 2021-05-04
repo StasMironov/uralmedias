@@ -1,24 +1,67 @@
 .rating-map {
     background-color: $black-3;
     color: white;
-    margin-top: 81;
+    margin-top: 79px;
+
+    &__txt {
+        margin-top: 14px;
+        line-height: 1.5;
+    }
+
+    &__title {
+        font-size: 25px;
+        font-weight: 700;
+        margin-top: 27px;
+    }
 
     &__container {
         padding-top: 67px;
     }
 
     &__left {
-        max-width: 542px;
+        max-width: 485px;
         width: 100%;
+        padding-bottom: 87px;
+        margin-top: 43px;
+    }
+
+    &__right {
+        position: relative;
+        width: calc(100% - 485px);
+    }
+
+    &__obj {
+        height: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: calc(100% + 330px);
+
+        svg {
+            position: relative;
+            top: -100px;
+            right: 30px;
+        }
     }
 
     &__items {
         display: flex;
         flex-wrap: wrap;
+        margin-left: -50px;
+        margin-top: -40px;
     }
 
     &__item {
-        width: calc(50%);
+        width: calc(50% - 50px);
+        margin-left: 50px;
+        margin-top: 40px;
+    }
+
+    &__grid {
+        display: flex;
+        margin-top: 0px;
     }
 
     .quote {
