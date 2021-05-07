@@ -7,7 +7,7 @@
 * {
   box-sizing: border-box;
   outline: none !important;
-  cursor: none !important;
+ // cursor: none !important;
 }
 
 :root {
@@ -462,6 +462,14 @@ input::-ms-clear {
     display: none;
   }
 
+}
+
+.mobile-hidden {
+  display: inline;
+
+  @media(max-width: 620px) {
+    display: none;
+  }
 }
 
 

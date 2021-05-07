@@ -134,6 +134,11 @@
     width: calc(100% - 20px);
     padding-top: 25px;
     transform: translateX(20px);
+
+    @media(max-width: 620px) {
+      padding-top: 20px;
+      padding-bottom: 7px;
+    }
   }
 
   &__cover {
@@ -164,7 +169,7 @@
   }
 
   &__contacts {
-    margin-top: 45px;
+    margin-top: 28px;
   }
 
   &__soc {
@@ -271,8 +276,13 @@
     }
 
     &:not(:first-child) {
+
       @media(max-width: 1024px) {
         margin-top: 35px;
+      }
+
+      @media(max-width: 620px) {
+        margin-top: 16px;
       }
     }
 
@@ -361,6 +371,10 @@
 
     &:not(:first-child) {
       margin-top: 28px;
+
+      @media(max-width: 620px) {
+        margin-top: 23px;
+      }
     }
 
     &:hover {
