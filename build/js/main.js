@@ -3228,9 +3228,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   } catch (t) {
     console.log(t);
   }
-  var qt, Bt;
 
-  function Ft() {
+  function qt() {
     var t,
         e,
         n,
@@ -3238,15 +3237,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         o,
         i,
         a,
-        s = document.querySelector(".loader");
-    gsap.set(s, {
+        s,
+        c,
+        u,
+        l = document.querySelector(".loader");
+    gsap.set(l, {
       scaleX: 0,
       rotation: 10,
       xPercent: -5,
       yPercent: -50,
       transformOrigin: "left center",
       autoAlpha: 1
-    }), Qt(), function (t) {
+    }), s = document.querySelector(".footer").offsetHeight, u = document.documentElement.clientHeight, c = u - (u - s), $(".b-page").css("padding-bottom", c), Yt(), function (t) {
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
         Ot.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
@@ -3274,11 +3276,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         continuousScrolling: !0
       });
       if ($(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
-        t.preventDefault(), Vt(!0), e.updatePluginOptions("modal", {
+        t.preventDefault(), Gt(!0), e.updatePluginOptions("modal", {
           open: !0
         });
       }), $(".js-overlay").exists() && $(".js-overlay").on("click", function () {
-        if (Vt(!1), e.updatePluginOptions("modal", {
+        if (Gt(!1), e.updatePluginOptions("modal", {
           open: !1
         }), $(".request-popup__wrapper").exists()) try {
           $(".request-popup__wrapper").removeClass("active");
@@ -3286,7 +3288,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           console.log(t);
         }
       }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
-        Vt(!1), e.updatePluginOptions("modal", {
+        Gt(!1), e.updatePluginOptions("modal", {
           open: !1
         });
       }), $(".burger").exists()) try {
@@ -3324,15 +3326,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           })) : (a.reverse(), i.play(), e.updatePluginOptions("modal", {
             open: !1
           }));
-        }), $(window).on("resize load", function () {
-          var t, e, n, o;
-          t = document.querySelector(".footer").offsetHeight, n = document.documentElement.clientHeight, e = n - (n - t), $(".b-page").css("padding-bottom", e), $(this).width() > 1024 && r.classList.contains("opened") && (r.classList.remove("opened"), o = ".js-dropMenu", new TimelineMax({
+        }), $(window).on("load resize ", function () {
+          var t;
+          $(this).width() > 1024 && r.classList.contains("opened") && (r.classList.remove("opened"), t = ".js-dropMenu", new TimelineMax({
             defaults: {
               duration: .3
             }
-          }).to(o, {
+          }).to(t, {
             autoAlpha: 0
-          }).to(o, {
+          }).to(t, {
             height: 0,
             ease: "power1.out"
           }, "-=0.1"), a.reverse(), i.play());
@@ -3379,10 +3381,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
             },
             onEnter: function onEnter() {
-              return Yt(t.dataset.color);
+              return Ut(t.dataset.color);
             },
             onEnterBack: function onEnterBack() {
-              return Yt(t.dataset.color);
+              return Ut(t.dataset.color);
             }
           });
         });
@@ -3392,13 +3394,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top center",
           end: "bottom-=200",
           onEnter: function onEnter() {
-            gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+            gsap.utils.toArray(".portfolio__item").length > 0 && Ut(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Yt(t.dataset.color);
+            return Ut(t.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Yt(t.dataset.color);
+            return Ut(t.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
@@ -3410,7 +3412,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-    }(), Ut(), $('input[type="file"]').change(function () {
+    }(), Xt(), $('input[type="file"]').change(function () {
       var t = $(".file .file__label");
       if (void 0 !== this.files) {
         if (0 == this.files.length) t.removeClass("withFile").text(t.data("default"));else {
@@ -3690,7 +3692,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-    }();
+    }(), Bt();
+  }
+
+  function Bt() {
+    var t = $("body"),
+        e = t.find("header");
+    t.find(".b-page--no-bildboard").exists() && e.addClass("mf-transparent mf-style");
   }
 
   !function () {
@@ -3734,8 +3742,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       autoAlpha: 1,
       y: 0
     }, "-=0.3");
-  }(), qt = $("body"), Bt = qt.find("header"), qt.find(".b-page--no-bildboard").exists() && Bt.addClass("mf-transparent mf-style"), window.addEventListener("load", function () {
-    Ft();
+  }(), Bt(), window.addEventListener("load", function () {
+    qt();
   });
   $(window).on("resize load", function () {
     $(this).width() <= 500 ? $(".seo-result__items").exists() && $(function () {
@@ -3755,19 +3763,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 
   if ($(".include-menu").exists()) {
-    var Ht = $(".include-menu__menu");
+    var Ft = $(".include-menu__menu");
     $(".js-menuBtn").click(function () {
-      $(this).toggleClass("active"), Ht.toggleClass("active");
+      $(this).toggleClass("active"), Ft.toggleClass("active");
     });
   }
 
-  var Wt = function Wt(t) {
+  var Ht = function Ht(t) {
     t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
   },
-      Gt = function Gt(t) {
-    Xt(".js-form-request", "start" == t);
+      Wt = function Wt(t) {
+    Vt(".js-form-request", "start" == t);
   },
-      Vt = function Vt(t) {
+      Gt = function Gt(t) {
     if ($(".js-overlay").exists()) {
       var e = document.querySelector(".js-overlay"),
           n = new TimelineMax({
@@ -3776,9 +3784,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .6
         },
-        onStart: Wt,
+        onStart: Ht,
         onStartParams: [!0],
-        onComplete: Gt,
+        onComplete: Wt,
         onCompleteParams: ["start"]
       }),
           r = new TimelineMax({
@@ -3787,9 +3795,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .3
         },
-        onStart: Gt,
+        onStart: Wt,
         onStartParams: ["end"],
-        onComplete: Wt,
+        onComplete: Ht,
         onCompleteParams: [!1]
       });
       n.to(e, {
@@ -3801,7 +3809,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, "+=0.6"), t ? (n.reverse(), n.play()) : (r.reverse(), r.play());
     }
   },
-      Xt = function Xt(t, e) {
+      Vt = function Vt(t, e) {
     if (console.log(t), $(t).exists()) {
       var n = document.querySelector(".js-form-request"),
           r = new TimelineMax({
@@ -3851,7 +3859,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(t);
   }
 
-  function Ut() {
+  function Xt() {
     $(".rate__item").exists() && $(".rate__item").each(function () {
       $(this).find(".switch").is(":checked") ? $(this).find(".rate__right").addClass("rate__right--active") : $(this).find(".rate__right").removeClass("rate__right--active");
     });
@@ -3859,17 +3867,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   if ($(".rate__item .switch").exists()) try {
     $(".rate__item .switch").on("click", function () {
-      Ut();
+      Xt();
     });
   } catch (t) {
     console.log(t);
   }
 
-  function Yt(t) {
+  function Ut(t) {
     document.documentElement.style.setProperty("--bcg-fill-color", t);
   }
 
-  var Qt = function Qt() {
+  var Yt = function Yt() {
     if ($(".call .js-example-basic-single").exists()) {
       var t = $(".call .select");
       $(".call .js-example-basic-single").select2({
@@ -3898,6 +3906,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   $(window).resize(function () {
-    Qt();
+    Yt();
   }).resize();
 }]);

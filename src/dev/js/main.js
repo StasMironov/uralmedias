@@ -529,6 +529,7 @@ checkPage();
 
 window.addEventListener('load', function () {
     init();
+
 });
 
 const setCursor = () => {
@@ -1455,8 +1456,8 @@ function initSmoothScrollBar(position) {
                 }
             });
 
-            $(window).on('resize load', function () {
-                changeHeightPage();
+            $(window).on('load resize ', function () {
+
                 if ($(this).width() > 1024) {
                     if (burgerBtn.classList.contains('opened')) {
                         burgerBtn.classList.remove('opened');
@@ -1581,6 +1582,7 @@ $(window).resize(function () {
 }).resize();
 
 function initContent() {
+    changeHeightPage();
     setSelect();
     initSmoothScrollBar();
     initImageParallax();
@@ -1599,6 +1601,7 @@ function initContent() {
     setPhoneMask();
     setAccordion();
     setTabs();
+    checkPage();
 }
 
 
