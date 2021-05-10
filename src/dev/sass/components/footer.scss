@@ -95,6 +95,10 @@
         @media(max-width: 580px) {
             margin-top: 23px;
         }
+
+        &:hover {
+            color: $green-1;
+        }
     }
 
     &__top {
