@@ -94,8 +94,15 @@
         line-height: 1.56em;
         font-weight: 500;
         color: #00a4ad;
-        padding: 2.06em 15px 2.37em;
+        padding: 2.06em 0 2.37em;
         margin-top: 2.47em;
+        width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
+
+        @media(max-width: 1024px) {
+            padding: 2.06em 20px 2.37em;
+        }
 
         @media(max-width: 620px) {
             line-height: 1.8em;
@@ -121,6 +128,17 @@
 
             @media(max-width: 620px) {
                 margin-top: 3em;
+            }
+        }
+
+        .article__container {
+
+            @media(max-width: 1300px) {
+                max-width: 922px;
+            }
+
+            @media(max-width: 1024px) {
+                max-width: 100%;
             }
         }
     }

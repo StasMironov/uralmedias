@@ -52,7 +52,8 @@
 
       @media(max-width: 620px) {
         display: inline-block;
-        margin-top: 6px;
+        max-width: 111px;
+        margin: 6px auto 0;
         line-height: 1.5;
       }
     }
@@ -91,10 +92,17 @@
       margin-left: 10px;
     }
 
-    
     @media(max-width: 620px) {
       width: calc(50% - 32px);
       margin-left: 32px;
+    }
+
+    &:hover {
+
+      .rating__img {
+        background: url("../img/rating-silver.png") no-repeat center;
+        background-size: contain;
+      }
     }
 
     &--hide {
@@ -106,9 +114,14 @@
 
   &__img {
     width: 45px;
+    height: 86px;
+    background: url("../img/rating-gold.png") no-repeat center;
+    background-size: contain;
+    transition: 0.2s ease-in-out;
 
     @media(max-width: 1024px) {
       width: 36px;
+      height: 70px;
     }
   }
 }
