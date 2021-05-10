@@ -663,7 +663,7 @@ function animateBildboard() {
             '.rating',
             {
                 autoAlpha: 1,
-                y:0
+                y: 0
 
             },
             "-=0.3"
