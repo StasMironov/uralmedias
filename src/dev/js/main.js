@@ -152,12 +152,22 @@ const setAccordion = () => {
     if ($('.js-ac-contacts').exists()) {
 
         $('.contacts__item').each(function () {
-            var accordionHead = $(this).find($('.contacts__panel'));
-            var accordionBody = $(this).find($('.contacts__list'));
-            var accordionIcon = $(this).find($('.contacts__pic'));
+            const accordionHead = $(this).find($('.contacts__panel'));
+            const accordionBody = $(this).find($('.contacts__list'));
+            const accordionIcon = $(this).find($('.contacts__pic'));
             accordionHead.click(function () {
-                accordionIcon.toggleClass('contacts__pic--active');
-                accordionBody.toggleClass('is-open');
+
+                this.classList.toggle('is-open');
+                $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
+
+                console.log($(this));
+                let content = this.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
             });
         });
     }

@@ -2108,7 +2108,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }, b;
   };
 
-  function F() {
+  function H() {
     for (var t = [], e = 0; e < arguments.length; e++) {
       t[e] = arguments[e];
     }
@@ -2125,7 +2125,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }
 
-  var H,
+  var F,
       W = function () {
     function t(t) {
       var e = this;
@@ -2148,7 +2148,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       G = new WeakMap();
 
   function V() {
-    if (void 0 !== H) return H;
+    if (void 0 !== F) return F;
     var t = !1;
 
     try {
@@ -2162,7 +2162,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       window.addEventListener("testPassive", e, n), window.removeEventListener("testPassive", e, n);
     } catch (t) {}
 
-    return H = !!t && {
+    return F = !!t && {
       passive: !1
     };
   }
@@ -2377,7 +2377,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       this.xAxis.update(n.x, e.container.width, e.content.width), this.yAxis.update(n.y, e.container.height, e.content.height);
     }, t.prototype.autoHideOnIdle = function () {
       this._scrollbar.options.alwaysShowTracks || (this.xAxis.hide(), this.yAxis.hide());
-    }, a([F(300)], t.prototype, "autoHideOnIdle", null), t;
+    }, a([H(300)], t.prototype, "autoHideOnIdle", null), t;
   }();
 
   var it = new WeakMap();
@@ -2970,7 +2970,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         momentum: a,
         position: o + i - a
       };
-    }, a([F(100, {
+    }, a([H(100, {
       leading: !0
     })], t.prototype, "_updateDebounced", null), t;
   }(),
@@ -3665,11 +3665,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }(), function () {
       if ($(".js-ac-contacts").exists() && $(".contacts__item").each(function () {
-        var t = $(this).find($(".contacts__panel")),
-            e = $(this).find($(".contacts__list")),
-            n = $(this).find($(".contacts__pic"));
-        t.click(function () {
-          n.toggleClass("contacts__pic--active"), e.toggleClass("is-open");
+        var t = $(this).find($(".contacts__panel"));
+        $(this).find($(".contacts__list")), $(this).find($(".contacts__pic")), t.click(function () {
+          this.classList.toggle("is-open"), $(this).find(".contacts__pic").toggleClass("contacts__pic--active"), console.log($(this));
+          var t = this.nextElementSibling;
+          t.style.maxHeight ? t.style.maxHeight = null : t.style.maxHeight = t.scrollHeight + "px";
         });
       }), $(".accordion__panel").exists()) for (var t = document.getElementsByClassName("accordion__panel"), e = 0; e < t.length; e++) {
         t[e].onclick = function () {
@@ -3763,13 +3763,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 
   if ($(".include-menu").exists()) {
-    var Ft = $(".include-menu__menu");
+    var Ht = $(".include-menu__menu");
     $(".js-menuBtn").click(function () {
-      $(this).toggleClass("active"), Ft.toggleClass("active");
+      $(this).toggleClass("active"), Ht.toggleClass("active");
     });
   }
 
-  var Ht = function Ht(t) {
+  var Ft = function Ft(t) {
     t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
   },
       Wt = function Wt(t) {
@@ -3784,7 +3784,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         defaults: {
           duration: .6
         },
-        onStart: Ht,
+        onStart: Ft,
         onStartParams: [!0],
         onComplete: Wt,
         onCompleteParams: ["start"]
@@ -3797,7 +3797,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         },
         onStart: Wt,
         onStartParams: ["end"],
-        onComplete: Ht,
+        onComplete: Ft,
         onCompleteParams: [!1]
       });
       n.to(e, {
