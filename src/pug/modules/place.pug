@@ -6,14 +6,14 @@ case include
                 h2.place__title.title-4 Не нашли вакансию, но хотите работать с нами? Отправьте нам свое резюме!
                 .place__text Если Вы не нашли подходящую специальность, но Вы крутой специалист, которого мы очень ждали, прикрепляйте свое резюме, и мы обязательно свяжемся с вами.
                 form
-                    button(type="submit").btn.btn--special
+                    button(type="submit").btn.btn--special.link
                         .btn__special
                             span Отправить резюме
                         .btn__text Отправить резюме
-                    label(for="file").file
+                    label(for="file").file.link
                         input(id="file" type="file" accept=".pdf, .doc, .docx, .ppt, .pptx").file__input
                         .file__label Прикрепите файл формата .pdf, .doc, .docx, .ppt, .pptx.
-                .place__note Или пишите нам на почту: <a href="mailto:info@uralmedias.ru">info@uralmedias.ru</a>
+                .place__note Или пишите нам на почту: <a class="link" href="mailto:info@uralmedias.ru">info@uralmedias.ru</a>
                
     
     default 
@@ -23,7 +23,7 @@ case include
                 h2.place__title.title-4 Хотите свой сайт? Оставьте заявку
                 .place__text Мы находим лучшие решения для Вас. Ваши пожелания и мнения будут учтены на всех этапах разработки проекта. Мы придерживаемся среднего ценового сегмента по рынку – это позволяет нам создавать качественный и доступный продукт. Заказывая разработку сайта любой сложности в Uralmedias, вы принимаете правильное решение.
                 if include == 'btn'
-                    a(href="#").btn.btn--special.js-form-call
+                    a(href="#").btn.btn--special.js-form-call.link
                         .btn__special
                             span Заказать проект
                         .btn__text Заказать проект

@@ -3067,7 +3067,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     })(t, e);
   }
 
-  function Mt(t) {
+  function $t(t) {
     var e = function () {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
@@ -3089,11 +3089,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         n = Reflect.construct(r, arguments, o);
       } else n = r.apply(this, arguments);
 
-      return $t(this, n);
+      return Mt(this, n);
     };
   }
 
-  function $t(t, e) {
+  function Mt(t, e) {
     return !e || "object" !== At(e) && "function" != typeof e ? function (t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
@@ -3133,7 +3133,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var e,
         n,
         r,
-        o = Mt(i);
+        o = $t(i);
 
     function i() {
       return jt(this, i), o.apply(this, arguments);
@@ -3639,9 +3639,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }), $(document).on("mousemove", function (t) {
       i = t.clientX, a = t.clientY;
     }), $(".link").on("mouseenter", function () {
-      e.addClass("active"), n.addClass("active");
+      n.addClass("active");
     }), $(".link").on("mouseleave", function () {
-      e.removeClass("active"), n.removeClass("active");
+      n.removeClass("active");
+    }), $(".link").on("click", function () {
+      var t = this;
+      e.addClass("active"), setTimeout(function () {
+        var n;
+        n = $(t)[0], console.log(n.href), e.removeClass("active");
+      }, 1500);
     }), t = !0, $("#map").exists() && ymaps.ready(function () {
       var e = new ymaps.Map("map", {
         center: [53.377146, 58.985573],

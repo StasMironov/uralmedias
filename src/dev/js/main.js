@@ -583,13 +583,26 @@ const setCursor = () => {
     });
     // yellow circle
     $(".link").on("mouseenter", function () {
-        cursor.addClass("active");
+        //  cursor.addClass("active");
         follower.addClass("active");
     });
     $(".link").on("mouseleave", function () {
-        cursor.removeClass("active");
+        //   cursor.removeClass("active");
         follower.removeClass("active");
     });
+
+    $(".link").on("click", function () {
+        cursor.addClass("active");
+        setTimeout(() => {
+            onAnimationComplete($(this)[0])
+            cursor.removeClass("active");
+        }, 1500);
+    });
+}
+
+function onAnimationComplete(link) {
+    // window.location = link.href;
+    console.log(link.href);
 }
 
 function animateBildboard() {
