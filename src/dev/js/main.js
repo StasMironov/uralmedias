@@ -160,7 +160,6 @@ const setAccordion = () => {
                 this.classList.toggle('is-open');
                 $(this).find('.contacts__pic').toggleClass('contacts__pic--active');
 
-                console.log($(this));
                 let content = this.nextElementSibling;
 
                 if (content.style.maxHeight) {
@@ -1095,8 +1094,6 @@ const showOverlay = (status) => {
 }
 
 const formShow = (element, status) => {
-
-    console.log(element);
 
     if ($(element).exists()) {
         const element = document.querySelector('.js-form-request');

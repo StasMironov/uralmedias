@@ -3667,7 +3667,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if ($(".js-ac-contacts").exists() && $(".contacts__item").each(function () {
         var t = $(this).find($(".contacts__panel"));
         $(this).find($(".contacts__list")), $(this).find($(".contacts__pic")), t.click(function () {
-          this.classList.toggle("is-open"), $(this).find(".contacts__pic").toggleClass("contacts__pic--active"), console.log($(this));
+          this.classList.toggle("is-open"), $(this).find(".contacts__pic").toggleClass("contacts__pic--active");
           var t = this.nextElementSibling;
           t.style.maxHeight ? t.style.maxHeight = null : t.style.maxHeight = t.scrollHeight + "px";
         });
@@ -3810,7 +3810,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   },
       Vt = function Vt(t, e) {
-    if (console.log(t), $(t).exists()) {
+    if ($(t).exists()) {
       var n = document.querySelector(".js-form-request"),
           r = new TimelineMax({
         reversed: !0,
