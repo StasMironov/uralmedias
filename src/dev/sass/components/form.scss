@@ -459,6 +459,7 @@
 .select2-dropdown {
   border: 1px solid $grey-8;
   border-radius: 0;
+  z-index: 400;
 }
 
 .select2-dropdown--below {

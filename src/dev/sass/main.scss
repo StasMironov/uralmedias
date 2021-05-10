@@ -464,6 +464,14 @@ input::-ms-clear {
 
 }
 
+.mobile-hidden {
+  display: inline;
+
+  @media(max-width: 620px) {
+    display: none;
+  }
+}
+
 
 @import "./components/rate.scss";
 @import "./components/request.scss";

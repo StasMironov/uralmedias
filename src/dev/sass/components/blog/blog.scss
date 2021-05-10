@@ -37,6 +37,8 @@
     }
 
     &__cover {
+        position: relative;
+        z-index: 1;
         margin-top: 47px;
 
         @media(max-width: 620px) {
