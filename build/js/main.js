@@ -3372,7 +3372,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       });
     }), function () {
-      if ($(".portfolio").exists()) try {
+      if ($(".js-pin-portfolio").exists()) try {
         gsap.utils.toArray(".portfolio__item").forEach(function (t, e) {
           ScrollTrigger.create({
             trigger: t,
@@ -3409,6 +3409,49 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           pinReparent: !0,
           pinSpacing: !1
         });
+      } catch (t) {
+        console.log(t);
+      }
+    }(), function () {
+      if ($(".js-pin").exists()) try {
+        var t;
+        gsap.utils.toArray(".portfolio__item").forEach(function (t, e) {
+          ScrollTrigger.create({
+            trigger: t,
+            start: "top+=95 center",
+            end: function end() {
+              return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
+            },
+            onEnter: function onEnter() {
+              return Ut(t.dataset.color);
+            },
+            onEnterBack: function onEnterBack() {
+              return Ut(t.dataset.color);
+            }
+          });
+        });
+        var e = document.querySelector(".js-pin");
+        ScrollTrigger.create((Ct(t = {
+          trigger: e,
+          start: "top top",
+          end: "bottom bottom+=400",
+          onEnter: function onEnter() {
+            gsap.utils.toArray(".portfolio__item").length > 0 && Ut(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+          },
+          onLeave: function onLeave() {
+            return Ut(e.dataset.color);
+          },
+          onLeaveBack: function onLeaveBack() {
+            return Ut(e.dataset.color);
+          },
+          toggleClass: {
+            targets: ".portfolio",
+            className: "mf-bg-portfolio"
+          }
+        }, "toggleClass", {
+          targets: ".js-pin",
+          className: "mf-pin-color"
+        }), Ct(t, "pinReparent", !0), Ct(t, "pinSpacing", !1), t));
       } catch (t) {
         console.log(t);
       }

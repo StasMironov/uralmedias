@@ -366,6 +366,10 @@ input::-ms-clear {
   @media(max-width: 1024px) {
     padding: 50px 0;
   }
+
+  &--portfolio {
+    padding: 0;
+  }
 }
 
 #viewport {
@@ -495,6 +499,7 @@ input::-ms-clear {
 @import "./components/seo/seo.scss";
 @import "./components/brief/brief.scss";
 @import "./components/portfolio/case.scss";
+@import "./components/portfolio/portfolio-iclude.scss";
 @import "./components/include-menu.scss";
 @import "./components/blog/blog.scss";
 @import "./components/map.scss";
