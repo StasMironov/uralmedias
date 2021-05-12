@@ -1302,7 +1302,7 @@ function initPinSteps() {
     }
 
 
-    if ($('.portfolio').exists()) {
+    if ($('.js-pin-portfolio').exists()) {
         try {
             gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
 
@@ -1334,7 +1334,67 @@ function initPinSteps() {
                     className: 'mf-bg-portfolio'
                 },
                 pinReparent: true,
-                pinSpacing: false
+                pinSpacing: false,
+                // markers: true
+            });
+
+
+
+        }
+        catch (err) {
+            console.log(err);
+        }
+    }
+}
+
+function initPinPortfolio() {
+    const getVh = () => {
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        return vh;
+    }
+
+
+    if ($('.js-pin').exists()) {
+        try {
+            gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
+
+                ScrollTrigger.create({
+                    trigger: stage,
+                    start: 'top+=95 center',
+                    end: () => `+=${stage.clientHeight + getVh() / 10}`,
+                    onEnter: () => updateBodyColor(stage.dataset.color),
+                    onEnterBack: () => updateBodyColor(stage.dataset.color),
+                    // onLeaveBack: () => updateBodyColor(pWrapper.dataset.color),
+                    // markers: true
+                });
+
+            });
+
+            const pWrapper = document.querySelector('.js-pin');
+
+            const pin = ScrollTrigger.create({
+                trigger: pWrapper,
+                start: 'top top',
+                end: 'bottom bottom+=400',
+
+                onEnter: () => {
+                    if (gsap.utils.toArray('.portfolio__item').length > 0) {
+                        updateBodyColor(gsap.utils.toArray('.portfolio__item')[0].dataset.color);
+                    }
+                },
+                onLeave: () => updateBodyColor(pWrapper.dataset.color),
+                onLeaveBack: () => updateBodyColor(pWrapper.dataset.color),
+                toggleClass: {
+                    targets: '.portfolio',
+                    className: 'mf-bg-portfolio'
+                },
+                toggleClass: {
+                    targets: '.js-pin',
+                    className: 'mf-pin-color'
+                },
+                pinReparent: true,
+                pinSpacing: false,
+                // markers: true
             });
 
 
@@ -1607,6 +1667,7 @@ function initContent() {
     initSmoothScrollBar();
     initImageParallax();
     initPinSteps();
+    initPinPortfolio();
     checkPacket();
     checkInput();
     showCallForm();

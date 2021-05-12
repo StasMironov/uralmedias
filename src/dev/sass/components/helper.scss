@@ -88,8 +88,22 @@
     }
 
     .portfolio {
-        &__item {
-            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
-        }
+        // &__item {
+ //     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.15));
+ // }
+    }
+}
+
+.mf-pin-color {
+    .bildboard-data__title {
+        color: white;
+    }
+
+    .breadcrumbs__link {
+        color: white;
+    }
+
+    .include-menu__link {
+        color: white;
     }
 }

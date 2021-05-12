@@ -1,0 +1,155 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'НАШЕ Портфолио';
+	- var include = 'btn';
+	- var quote = 'services';
+	- var bildboard_include = 'transparent'
+	- var bildboard_img = "background-image: url(img/dataBild/.jpg);"
+
+block content
+	div(data-barba="container" data-barba-namespace="page" class="js-pin fill-background" data-color="#fff")
+		include ../modules/bildboard
+		include ../modules/breadcrumbs
+		.portfolio-iclude
+			.portfolio-iclude__container.container
+				include ../modules/include-menu
+		.fill-background--portfolio
+			.portfolio.portfolio--page
+				.portfolio__container.container
+					.portfolio__items
+						.portfolio__item.with-parallax(data-color="#0E4F95")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/magmetall-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/magmetall-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/magmetall-1260.jpg")
+								img(src="img/projects/magmetall-1260.jpg" alt="mm" title="mm")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Магнитогорский металл
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+
+						.portfolio__item.with-parallax(data-color="#1E202C")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/mbf-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/mbf-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/mbf-1260.jpg")
+								img(src="img/projects/mbf-1260.jpg" alt="mbf" title="mbf")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 МБФ
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#D73336")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/roza-vetrov-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/roza-vetrov-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/roza-vetrov-1260.jpg")
+								img(src="img/projects/magmetall-1260.jpg" alt="roza-vetrov" title="roza-vetrov")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#9e8a81")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/pobeda-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/pobeda-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/pobeda-1260.jpg")
+								img(src="img/projects/pobeda-1260.jpg" alt="pobeda" title="pobeda")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#34558B")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/banki-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/banki-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/banki-1260.jpg")
+								img(src="img/projects/banki-1260.jpg" alt="banki" title="banki")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#333333")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/indmach-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/indmach-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/indmach-1260.jpg")
+								img(src="img/projects/indmach-1260.jpg" alt="banki" title="banki")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#008B1C")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/sab-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/sab-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/sab-1260.jpg")
+								img(src="img/projects/sab-1260.jpg" alt="sabway" title="sab")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#52A3DC")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/astram-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/astram-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/astram-1260.jpg")
+								img(src="img/projects/astram-1260.jpg" alt="astram" title="astram")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+		include ../modules/place
+		
+
+block script
