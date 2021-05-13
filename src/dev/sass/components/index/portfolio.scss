@@ -264,8 +264,21 @@
         text-align: center;
     }
 
+    &--main {
+        padding: 74px 0 80px;
+
+        @media(max-width: 1024px) {
+            padding: 50px 0;
+        }
+    }
+
     &--page {
-        padding: 49px 0;
+        padding: 50px 0;
+        margin: 0;
+
+        @media (max-width: 620px) {
+            padding: 25px 0 50px;
+        }
 
         .portfolio {
             &__items {

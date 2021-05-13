@@ -10,6 +10,13 @@
   cursor: none !important;
 }
 
+.bitrix-include-areas {
+
+  * {
+    cursor: auto!important;
+  }
+}
+
 :root {
   --bcg-white: transparent;
   --bcg-fill-color: var(--bcg-white);
@@ -360,16 +367,6 @@ input::-ms-clear {
   background-color: var(--bcg-fill-color);
   transition: background-color 0.3s linear;
   z-index: -1;
-  padding-top: 74px;
-  padding-bottom: 80px;
-
-  @media(max-width: 1024px) {
-    padding: 50px 0;
-  }
-
-  &--portfolio {
-    padding: 0;
-  }
 }
 
 #viewport {
@@ -499,7 +496,7 @@ input::-ms-clear {
 @import "./components/seo/seo.scss";
 @import "./components/brief/brief.scss";
 @import "./components/portfolio/case.scss";
-@import "./components/portfolio/portfolio-iclude.scss";
+@import "components/portfolio/portfolio-include";
 @import "./components/include-menu.scss";
 @import "./components/blog/blog.scss";
 @import "./components/map.scss";
