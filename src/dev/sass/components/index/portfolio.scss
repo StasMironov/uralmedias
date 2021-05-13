@@ -268,7 +268,11 @@
         padding: 74px 0 80px;
 
         @media(max-width: 1024px) {
-            padding: 50px 0;
+            padding: 5px 0;
+        }
+
+        @media(max-width: 620px) {
+            padding: 0;
         }
     }
 
