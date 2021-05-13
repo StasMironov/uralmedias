@@ -104,6 +104,8 @@
     }
 
     .include-menu__link {
-        color: white;
+        @media (min-width: 1025px) {
+            color: white;
+        }
     }
 }
