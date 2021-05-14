@@ -30,7 +30,6 @@
         color: white;
         padding-top: 171px;
         padding-bottom: 145px;
-        //opacity: 0;
 
         @media(max-width: 1024px) {
             padding-top: 72px;
@@ -85,15 +84,15 @@
 
             @media(max-width: 1024px) {
                 display: inline-block;
-                max-width: 100%;
                 line-height: 66px;
-                margin-top: 26px;
+                margin-top: 20px;
                 text-align: center;
                 max-width: 462px;
             }
 
             @media(max-width:620px) {
                 line-height: 1.3;
+                margin-top: 27px;
             }
         }
     }
@@ -148,10 +147,14 @@
         .bildboard {
 
             &__container {
+                padding-bottom: 40px;
+
+                @media(max-width: 1024px) {
+                    padding-bottom: 22px;
+                }
 
                 @media (max-width: 620px) {
                     padding-top: 67px;
-                    padding-bottom: 41px;
                 }
             }
         }

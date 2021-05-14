@@ -69,8 +69,7 @@
       @media(max-width: 1024px) {
         display: block;
         z-index: -1;
-        position: fixed;
-        bottom: auto;
+        position: absolute;
         width: 100%;
         max-width: 425px;
         height: auto;
@@ -79,16 +78,15 @@
         right: 0;
         padding: 37px 70px 52px 45px;
         max-height: calc(100vh - 66px);
-        top: calc(0px + 66px);
+        top: 100%;
         box-shadow: -1px 3px 7px rgba(0, 0, 0, 0.1);
         opacity: 0;
       }
 
       @media(max-width: 620px) {
         padding: 20px 15px 40px 15px;
-        height: 100vh;
+        max-height: calc(100vh - 57px);
         max-width: 100%;
-        top: calc(0px + 71px);
       }
 
       .header {

@@ -31,6 +31,8 @@
     }
 
     &__date {
+        display: flex;
+        align-items: center;
         font-size: 12px;
         line-height: 25px;
         color: $grey-6;
@@ -122,6 +124,8 @@
         height: 1px;
         border-radius: 12px 12px 0px 0px;
         overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         @media(max-width: 1300px) {
             min-height: 200px;
@@ -195,6 +199,19 @@
         @media(max-width: 1024px) {
             font-size: 16px;
             line-height: 26px;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        padding: 10px;
+        margin: -10px;
+        margin-top: 44px;
+
+        .blog__item {
+            width: auto;
+            margin: 0;
         }
     }
 }
