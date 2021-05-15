@@ -92,6 +92,86 @@ block content
 										.link__txt смотреть проект
 										.link__icon
 											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#9e8a81")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/pobeda-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/pobeda-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/pobeda-1260.jpg")
+								img(src="img/projects/pobeda-1260.jpg" alt="pobeda" title="pobeda")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#34558B")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/banki-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/banki-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/banki-1260.jpg")
+								img(src="img/projects/banki-1260.jpg" alt="banki" title="banki")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#333333")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/indmach-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/indmach-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/indmach-1260.jpg")
+								img(src="img/projects/indmach-1260.jpg" alt="banki" title="banki")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#008B1C")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/sab-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/sab-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/sab-1260.jpg")
+								img(src="img/projects/sab-1260.jpg" alt="sabway" title="sab")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
+						.portfolio__item.with-parallax(style="background-image: url(img/decor/dec12.png)" data-color="#52A3DC")
+							picture
+								source(media="(max-width: 500px)" srcset="img/projects/astram-290.jpg")
+								source(media="(max-width: 768px)" srcset="img/projects/astram-728.jpg")
+								source(media="(min-width: 769px)" srcset="img/projects/astram-1260.jpg")
+								img(src="img/projects/astram-1260.jpg" alt="astram" title="astram")
+							.portfolio__grid
+								.portfolio__left
+									h3.portfolio__header.title-3 Роза ветров
+									.portfolio__content
+										p Господа, современная методология разработки в значительной степени обусловливает важность системы обучения кадров, соответствующей насущным потребностям. Повседневная практика показывает.
+										p Господа, современная методология разработки в значительной степени обусловливает важность такой системы обучения кадров.
+									a(href="javascript:void(0);").link.link--look
+										.link__txt смотреть проект
+										.link__icon
+											+svg('arrow-small')
 		.services
 			.services__container.container
 				h2.services__title.title-3 Спектр наших услуг
@@ -186,18 +266,31 @@ block content
 
 			include ../modules/quote
 			.client__container.container
-				.client__cover
-					.client__items#certificate(data-barba-prevent="all")
-						a(href="./img/certificate/c1.png").client__item.link
+				.client__slider.slider.js-slider 
+					.swiper-wrapper#certificate 
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
-						a(href="./img/certificate/c1.png").client__item.link
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
-						a(href="./img/certificate/c1.png").client__item.link
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
-						a(href="./img/certificate/c1.png").client__item.link
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
-						a(href="./img/certificate/c1.png").client__item.link
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
+					.pagination
+				//- .client__cover
+				//- 	.client__items
+				//- 		.client__item.link
+				//- 			
+				//- 		a(href="./img/certificate/c1.png").client__item.link
+				//- 			img(src="./img/certificate/c1.png")
+				//- 		a(href="./img/certificate/c1.png").client__item.link
+				//- 			img(src="./img/certificate/c1.png")
+				//- 		a(href="./img/certificate/c1.png").client__item.link
+				//- 			img(src="./img/certificate/c1.png")
+				//- 		a(href="./img/certificate/c1.png").client__item.link
+				//- 			img(src="./img/certificate/c1.png")
 				include ../modules/partners
 		.place.place--transparent
 			.place__bg(style="background-image: url(img/decor/dec1.png)")
