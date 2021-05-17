@@ -11,8 +11,25 @@
 <!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
-  <body data-barba="wrapper"><div class="cursor"></div>
-<div class="cursor-follower"></div>
+  <body data-barba="wrapper"><div class="cursor">
+<div class="cursor__circle cursor__circle--big ">
+<svg height="60" width="60">
+<circle id="bigCircle" cx="30" cy="30"  r="18" stroke-width="0.8"></circle>
+</svg>
+</div>
+<div class="cursor_circle cursor__circle--small">
+<svg height="10" width="10">
+<circle id="smallCircle" cx="4" cy="4" r="3" stroke-width="0"></circle>
+</svg>
+</div>
+<div class="cursor__plus">
+<svg class="cursor__plus--area" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<g stroke-width="1">
+<path d="M12.5,1.87037037 L12.5,11.4993704 L22.5,11.5 L22.5,12.5 L12.5,12.4993704 L12.5,22.1296296 L11.5,22.1296296 L11.5,12.4993704 L1.5,12.5 L1.5,11.5 L11.5,11.4993704 L11.5,1.87037037 L12.5,1.87037037 Z"></path>
+</g>
+</svg>
+</div>
+</div>
 <div class="loader"></div>
     <header class="header">
       <div class="header__inner">
