@@ -1375,7 +1375,6 @@ function initImageParallax() {
                 trigger: section,
                 start: 'top bottom',
                 scrub: true,
-                // markers: true
             }
         });
 
@@ -1405,7 +1404,6 @@ function initPinSteps() {
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    // markers: true
                 });
 
             });
