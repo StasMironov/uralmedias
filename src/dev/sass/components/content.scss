@@ -18,19 +18,43 @@
     p {
         line-height: 1.5;
         margin: 1.5em 0;
-
-        @media(max-width: 1024px) {
-            font-size: 14px;
-        }
-
-        @media(max-width: 620px) {
-            line-height: 1.8em;
-        }
     }
 
     ul,
     ol {
-        margin-top: 2em;
+        line-height: 1.5;
+        margin: 1.5em 0;
+    }
+
+    ul {
+
+        li {
+            position: relative;
+            padding-left: 0.875em;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0.6em;
+                left: 3px;
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: $black;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: section;
+
+        li {
+            counter-increment: section;
+
+            &::before {
+                content: counter(section) ". ";
+            }
+        }
     }
 
     .toc {
