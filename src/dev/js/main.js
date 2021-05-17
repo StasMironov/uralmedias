@@ -605,69 +605,11 @@ window.addEventListener('load', function () {
 });
 
 const setCursor = () => {
-    // var cursor = $(".cursor"),
-    //     follower = $(".cursor-follower");
-
-    // var posX = 0,
-    //     posY = 0;
-
-    // var mouseX = 0,
-    //     mouseY = 0;
-
-    // TweenMax.to({}, 0.01, {
-    //     repeat: -1,
-    //     onRepeat: function () {
-    //         posX += (mouseX - posX) / 9;
-    //         posY += (mouseY - posY) / 9;
-
-
-    //         TweenMax.set(follower, {
-    //             css: {
-    //                 left: posX - 12,
-    //                 top: posY - 12
-    //             }
-    //         });
-
-    //         TweenMax.set(cursor, {
-    //             css: {
-    //                 left: mouseX,
-    //                 top: mouseY
-    //             }
-    //         });
-
-    //         document.body.style.setProperty('--x', (mouseX) + 'px');
-    //         document.body.style.setProperty('--y', (mouseY) + 'px');
-    //     }
-    // });
-
-    // $(document).on("mousemove", function (e) {
-    //     mouseX = e.clientX;
-    //     mouseY = e.clientY;
-    // });
-    // // yellow circle
-    // $(".link").on("mouseenter", function () {
-    //     //  cursor.addClass("active");
-    //     follower.addClass("active");
-    // });
-    // $(".link").on("mouseleave", function () {
-    //     //   cursor.removeClass("active");
-    //     follower.removeClass("active");
-    // });
-
-    // $(".link").on("click", function () {
-    //     cursor.addClass("active");
-    //     setTimeout(() => {
-    //         onAnimationComplete($(this)[0])
-    //         cursor.removeClass("active");
-    //     }, 1500);
-    // });
-
     const $bigCircle = document.querySelector('.cursor__circle--big');
     const $smallCircle = document.querySelector('.cursor__circle--small');
     const $smallPlus = document.querySelector('.cursor__plus');
     const $smallPlusArea = document.querySelector('.cursor__plus--area')
     const $hoverables = document.querySelectorAll('.link');
-    const hoverablesArea = document.querySelectorAll('.hoverable');
 
     // Listeners
     document.body.addEventListener('mousemove', onMouseMove);
@@ -677,18 +619,13 @@ const setCursor = () => {
         $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
     }
 
-    for (let i = 0; i < hoverablesArea.length; i++) {
-        hoverablesArea[i].addEventListener('mouseenter', onMouseHoverArea);
-        hoverablesArea[i].addEventListener('mouseleave', onMouseHoverAreaOut);
-    }
-
     // Move the cursor
     function onMouseMove(e) {
-        gsap.to($bigCircle, .4, {
+        gsap.to($bigCircle, .5, {
             x: e.clientX,
             y: e.clientY
         })
-        gsap.to($smallCircle, .1, {
+        gsap.to($smallCircle, 0.001, {
             x: e.clientX,
             y: e.clientY
         })
@@ -702,16 +639,31 @@ const setCursor = () => {
     function onMouseHover() {
         gsap.to('#bigCircle', {
             attr: {
-                r: 25
+                r: 20,
+                fill: 'white'
             }
-        })
+        });
+
+        gsap.to('#smallCircle', {
+            attr: {
+                r: 0,
+            }
+        });
     }
+
     function onMouseHoverOut() {
         gsap.to('#bigCircle', {
             attr: {
-                r: 18
+                r: 15,
+                fill: 'transparent'
             }
-        })
+        });
+
+        gsap.to('#smallCircle', {
+            attr: {
+                r: 3,
+            }
+        });
     }
 
     // Hover img an element
@@ -1453,7 +1405,7 @@ function initPinSteps() {
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    markers: true
+                    // markers: true
                 });
 
             });
@@ -1477,7 +1429,7 @@ function initPinSteps() {
                 },
                 pinReparent: true,
                 pinSpacing: false,
-                markers: true
+                // markers: true
             });
 
 
@@ -1512,7 +1464,7 @@ function initPinPortfolio() {
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    markers: true
+                    // markers: true
                 });
 
             });
