@@ -357,7 +357,6 @@ const setTabs = () => {
     }
 }
 
-
 const setAccordion = () => {
     //=======Accordion-Contacts===========
     if ($('.js-ac-contacts').exists()) {
