@@ -193,7 +193,6 @@
         &__body {
 
             p {
-                line-height: 1.5;
 
                 &+p {
                     margin-top: 25px;
@@ -205,7 +204,6 @@
 
                 li {
                     display: flex;
-                    line-height: 1.5;
 
                     &::before {
                         content: '';
@@ -214,8 +212,12 @@
                         border-radius: 100%;
                         background-color: $green-1;
                         margin-right: 13px;
-                        margin-top: 0.5em;
+                        margin-top: 0.55em;
                         flex-shrink: 0;
+
+                        @media (max-width: 620px) {
+                            margin-top: 0.65em;
+                        }
                     }
 
                     &+li {
@@ -241,6 +243,7 @@
 
             @media (max-width: 620px) {
                 font-size: 26px;
+                line-height: 1.6;
             }
         }
 

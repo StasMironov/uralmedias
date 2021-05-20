@@ -200,16 +200,6 @@
                 padding-top: 3.93em;
             }
         }
-
-        &+.breadcrumbs {
-            @media(max-width: 620px) {
-                margin-top: 16px;
-            }
-
-            .breadcrumbs__container {
-                justify-content: center;
-            }
-        }
     }
 
     picture {

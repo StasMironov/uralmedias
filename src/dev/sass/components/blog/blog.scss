@@ -1,5 +1,6 @@
 .blog {
     margin-top: 58px;
+    padding-bottom: 60px;
 
     @media(max-width: 1024px) {
         margin-top: 41px;
@@ -125,6 +126,7 @@
         border-radius: 12px 12px 0px 0px;
         overflow: hidden;
         background-repeat: no-repeat;
+        background-position: center;
         background-size: cover;
 
         @media(max-width: 1300px) {

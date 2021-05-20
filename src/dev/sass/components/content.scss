@@ -1,11 +1,5 @@
 .content {
-    line-height: 1.2;
-    font-size: 1rem;
     margin-top: 18px;
-
-    @media(max-width: 1024px) {
-        font-size: 0.875rem;
-    }
 
     h2,
     h3,
@@ -16,21 +10,65 @@
     }
 
     p {
-        line-height: 1.5;
         margin: 1.5em 0;
-
-        @media(max-width: 1024px) {
-            font-size: 14px;
-        }
-
-        @media(max-width: 620px) {
-            line-height: 1.8em;
-        }
     }
 
     ul,
     ol {
-        margin-top: 2em;
+        margin: 1.5em 0;
+    }
+
+    ul {
+
+        li {
+            position: relative;
+            padding-left: 0.875em;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0.65em;
+                left: 0;
+                width: 5px;
+                height: 5px;
+                border-radius: 100%;
+                background: $black;
+
+                @media (max-width: 620px) {
+                    top: 0.75em;
+                }
+            }
+
+            p {
+                &:first-of-type {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    ol {
+        counter-reset: section;
+
+        li {
+            position: relative;
+            padding-left: 1.5em;
+            counter-increment: section;
+
+            &::before {
+                position: absolute;
+                content: counter(section) ". ";
+                top: 0;
+                left: 0;
+                font-weight: 500;
+            }
+
+            p {
+                &:first-of-type {
+                    font-weight: 500;
+                }
+            }
+        }
     }
 
     .toc {
@@ -43,11 +81,9 @@
 
         @media(max-width: 620px) {
             margin-top: 2.3em;
-            font-size: 1rem;
         }
 
         &__header {
-            font-size: 1rem;
             font-weight: 500;
         }
 
@@ -66,7 +102,7 @@
             &:after {
                 position: absolute;
                 content: "";
-                width: 0%;
+                width: 0;
                 height: 2px;
                 background-color: $green-1;
                 left: 0;
@@ -91,7 +127,7 @@
 
     .quote {
         position: relative;
-        line-height: 1.56em;
+        line-height: 1.56;
         font-weight: 500;
         color: #00a4ad;
         padding: 2.06em 0 2.37em;
@@ -105,8 +141,9 @@
         }
 
         @media(max-width: 620px) {
-            line-height: 1.8em;
-            padding: 2.642em 15px;
+            line-height: 1.9;
+            padding: 32px 15px;
+            margin-top: 32px;
         }
 
         &:after {
@@ -127,7 +164,7 @@
             margin-top: 2.4em;
 
             @media(max-width: 620px) {
-                margin-top: 3em;
+                margin-top: 32px;
             }
         }
 
@@ -155,7 +192,6 @@
         }
 
         &__info {
-            line-height: 1.5em;
             margin-top: 1.375em;
 
             @media(max-width: 1024px) {
@@ -163,8 +199,7 @@
             }
 
             @media(max-width: 620px) {
-                margin-top: 0.785em;
-                line-height: 1.8em;
+                margin-top: 14px;
             }
         }
 
@@ -177,7 +212,7 @@
                 }
 
                 @media(max-width: 620px) {
-                    margin-top: 2.42em;
+                    margin-top: 26px;
                 }
             }
         }
