@@ -184,6 +184,7 @@
         max-width: 502px;
         width: 100%;
         position: relative;
+        transform: translateY(100%);
 
         @media(max-width: 1200px) {
             max-width: 400px;

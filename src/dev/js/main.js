@@ -646,7 +646,7 @@ const setCursor = () => {
 
         gsap.to('#smallCircle', {
             attr: {
-                r: 0,
+                r: 3,
             }
         });
     }
@@ -980,7 +980,7 @@ const showCallForm = () => {
 
     ScrollTrigger.create({
         trigger: '.call',
-        start: 'top-=80% top',
+        start: 'top-=130% top',
         end: 'bottom',
         animation: call,
     });
@@ -1361,11 +1361,17 @@ const checkInput = () => {
 
 function initImageParallax() {
 
+    const getVh = () => {
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        return vh;
+    }
+
     // select all sections .with-parallax
     gsap.utils.toArray('.with-parallax').forEach(section => {
 
         // get the image
         const image = section.querySelector('picture');
+        const info = section.querySelector('.portfolio__left');
 
         // create tween for the image
         gsap.to(image, {
@@ -1378,6 +1384,17 @@ function initImageParallax() {
             }
         });
 
+        gsap.to(info, 5, {
+            yPercent: -160,
+            ease: "slow(0.1, 0.1, false)",
+            scrollTrigger: {
+                trigger: info,
+                start: 'top bottom+=250',
+                end: () => `+=${info.clientHeight + getVh()}`,
+                scrub: true,
+                markers: true,
+            }
+        });
     });
 
 }
@@ -1458,11 +1475,10 @@ function initPinPortfolio() {
                 ScrollTrigger.create({
                     trigger: stage,
                     start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
-                    // start: 'top center',
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    // markers: true
+                    markers: true
                 });
 
             });
@@ -1472,7 +1488,7 @@ function initPinPortfolio() {
             const pin = ScrollTrigger.create({
                 trigger: pWrapper,
                 start: 'top top',
-                end: 'bottom bottom',
+                end: 'bottom-=200',
 
                 onEnter: () => {
                     if (gsap.utils.toArray('.portfolio__item').length > 0) {
@@ -1491,7 +1507,7 @@ function initPinPortfolio() {
                 },
                 pinReparent: true,
                 pinSpacing: false,
-                // markers: true
+                markers: true
             });
         }
         catch (err) {
