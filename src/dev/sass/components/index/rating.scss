@@ -97,11 +97,11 @@
       margin: 0 2px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
 
       .rating__img {
-        background: url("../img/rating-silver.png") no-repeat center;
-        background-size: contain;
+        filter: brightness(10);
       }
     }
   }
@@ -109,7 +109,7 @@
   &__img {
     width: 45px;
     height: 86px;
-    background: url("../img/rating-gold.png") no-repeat center;
+    background: url("../img/icon/rating-gold.svg") no-repeat center;
     background-size: contain;
     transition: 0.2s ease-in-out;
 
