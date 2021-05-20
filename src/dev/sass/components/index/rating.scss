@@ -25,7 +25,8 @@
     }
 
     @media(max-width: 620px) {
-      font-size: 18px;
+      font-size: 15px;
+      margin-top: 15px;
     }
   }
 
@@ -55,7 +56,9 @@
         display: inline-block;
         max-width: 111px;
         margin: 6px auto 0;
-        line-height: 1.5;
+        font-size: 11px;
+        line-height: 1.7;
+        letter-spacing: -0.03em;
       }
     }
   }
@@ -73,7 +76,7 @@
     }
 
     @media(max-width: 620px) {
-      margin: 40px -21px 0;
+      margin: 90px -2px 0;
     }
   }
 
@@ -90,21 +93,15 @@
     }
 
     @media(max-width: 620px) {
-      width: calc(50% - 42px);
-      margin: 0 21px;
+      width: calc(33.33% - 4px);
+      margin: 0 2px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
 
       .rating__img {
-        background: url("../img/rating-silver.png") no-repeat center;
-        background-size: contain;
-      }
-    }
-
-    &--hide {
-      @media(max-width: 620px) {
-        display: none;
+        filter: brightness(10);
       }
     }
   }
@@ -112,13 +109,18 @@
   &__img {
     width: 45px;
     height: 86px;
-    background: url("../img/rating-gold.png") no-repeat center;
+    background: url("../img/icon/rating-gold.svg") no-repeat center;
     background-size: contain;
     transition: 0.2s ease-in-out;
 
     @media(max-width: 1024px) {
       width: 36px;
       height: 70px;
+    }
+
+    @media(max-width: 620px) {
+      width: 32px;
+      height: 62px;
     }
   }
 

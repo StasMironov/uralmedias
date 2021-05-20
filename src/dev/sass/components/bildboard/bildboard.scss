@@ -117,7 +117,7 @@
         @media(max-width: 620px) {
             font-size: 18px;
             line-height: 28px;
-            margin-top: 14px;
+            margin-top: 24px;
         }
     }
 
@@ -143,6 +143,12 @@
     }
 
     &--main {
+
+        @media (max-width: 620px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
         .bildboard {
 

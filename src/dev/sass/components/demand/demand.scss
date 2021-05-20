@@ -78,13 +78,17 @@
             border-radius: 50%;
             background-color: $red-2;
             left: 0;
-            top: 0;
+            top: 0.45em;
             margin: auto;
+
+            @media(max-width: 1024px) {
+                top: 0.65em;
+            }
 
             @media(max-width: 620px) {
                 width: 9px;
                 height: 9px;
-                top: 5px;
+                top: 0.75em;
             }
         }
     }

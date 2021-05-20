@@ -72,3 +72,13 @@
         }
     }
 }
+
+.b-page--portfolio {
+
+    .breadcrumbs__container {
+
+        @media(max-width: 620px) {
+            display: flex;
+        }
+    }
+}
