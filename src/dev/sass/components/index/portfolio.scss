@@ -9,6 +9,12 @@
         margin-top: 33px;
     }
 
+    &__type {
+        color: white;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
     &__title {
         position: relative;
         letter-spacing: 0;
@@ -82,6 +88,7 @@
 
     &__item {
         position: relative;
+        display: block;
         min-height: 550px;
         height: auto;
         border-radius: 12px;
@@ -110,7 +117,7 @@
             }
 
             @media(max-width: 620px) {
-                margin-top: 17px;
+                margin-top: 80px;
             }
         }
 
@@ -139,7 +146,7 @@
         }
 
         @media(max-width:620px) {
-            margin-top: 18px;
+            margin-top: 32px;
         }
     }
 
@@ -159,7 +166,7 @@
         }
 
         @media(max-width: 620px) {
-            padding: 22px 15px 27px;
+            padding: 22px 25px 27px;
         }
     }
 
@@ -199,6 +206,12 @@
             width: auto;
             align-self: flex-start;
             color: white;
+
+            &--look {
+                @media(max-width: 620px) {
+                    display: none;
+                }
+            }
         }
     }
 

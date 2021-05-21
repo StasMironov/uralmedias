@@ -1384,17 +1384,30 @@ function initImageParallax() {
             }
         });
 
-        gsap.to(info, 10, {
-            yPercent: -50,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: section,
-                start: 'top bottom',
-                scrub: true,
+        $(window).resize(function () {
+            if ($(this).width() > 620) {
+                gsap.to(info, 10, {
+                    yPercent: -50,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top bottom',
+                        scrub: true,
+                    }
+                });
             }
-        });
-
-
+            if ($(this).width() <= 620) {
+                gsap.to(info, 10, {
+                    yPercent: -30,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: section,
+                        start: 'top bottom',
+                        scrub: true,
+                    }
+                });
+            }
+        }).resize();
     });
 
 }
@@ -1518,6 +1531,7 @@ function initPinPortfolio() {
 
 
 function initSmoothScrollBar(position) {
+    let bodyScrollBar;
 
     if (window.matchMedia("(max-width:1300px)").matches) {
         if ($('.reach__cover').exists()) {
@@ -1550,12 +1564,32 @@ function initSmoothScrollBar(position) {
         Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
 
-    let bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
-        damping: 0.04,
-        delegateTo: document,
-        renderByPixel: true,
-        continuousScrolling: true,
-    });
+
+
+    $(window).on('resize load', function () {
+        if ($(this).width() > 620) {
+            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
+                damping: 0.04,
+                delegateTo: document,
+                renderByPixel: true,
+                continuousScrolling: true,
+            });
+        }
+
+        if ($(this).width() <= 620) {
+            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
+                //easing: 'easeInOutQuart',
+                damping: 0.1,
+                delegateTo: document,
+                renderByPixel: true,
+                continuousScrolling: true,
+            });
+        }
+
+
+    }).resize();
+
+
 
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {

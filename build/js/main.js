@@ -3267,7 +3267,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }(),
     isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(o.navigator.userAgent)
   };
-  var N = {
+  var B = {
     name: "browser",
     proto: {
       browser: H
@@ -3276,7 +3276,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       browser: H
     }
   },
-      B = {
+      N = {
     name: "resize",
     create: function create() {
       var e = this;
@@ -4852,7 +4852,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
   };
-  var de = [D, j, N, B, R, V, q, {
+  var de = [D, j, B, N, R, V, q, {
     name: "mousewheel",
     params: {
       mousewheel: {
@@ -7064,8 +7064,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var H = function H() {
     return v.Date.now();
   },
-      N = Math.max,
-      B = Math.min;
+      B = Math.max,
+      N = Math.min;
 
   var G = function G(e, t, i) {
     var s,
@@ -7100,7 +7100,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (v(e)) return y(e);
       o = setTimeout(g, function (e) {
         var i = t - (e - l);
-        return u ? B(i, r - (e - c)) : i;
+        return u ? N(i, r - (e - c)) : i;
       }(e));
     }
 
@@ -7120,7 +7120,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === o && (o = setTimeout(g, t)), a;
     }
 
-    return t = A(t) || 0, h(i) && (d = !!i.leading, r = (u = "maxWait" in i) ? N(A(i.maxWait) || 0, t) : r, p = "trailing" in i ? !!i.trailing : p), b.cancel = function () {
+    return t = A(t) || 0, h(i) && (d = !!i.leading, r = (u = "maxWait" in i) ? B(A(i.maxWait) || 0, t) : r, p = "trailing" in i ? !!i.trailing : p), b.cancel = function () {
       void 0 !== o && clearTimeout(o), c = 0, s = l = n = o = void 0;
     }, b.flush = function () {
       return void 0 === o ? a : y(H());
@@ -8321,10 +8321,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   if ($(".header__inner").exists) try {
     var He = $(window),
-        Ne = $(".header__inner"),
-        Be = Ne.offset().top;
+        Be = $(".header__inner"),
+        Ne = Be.offset().top;
     He.on("scroll", function () {
-      (window.pageYOffset || document.documentElement.scrollTop) > Be ? Ne.addClass("mf-fixed") : Ne.removeClass("mf-fixed");
+      (window.pageYOffset || document.documentElement.scrollTop) > Ne ? Be.addClass("mf-fixed") : Be.removeClass("mf-fixed");
     });
   } catch (e) {
     console.log(e);
@@ -8344,6 +8344,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       transformOrigin: "left center",
       autoAlpha: 1
     }), t = document.querySelector(".footer").offsetHeight, s = document.documentElement.clientHeight, i = s - (s - t), $(".b-page").css("padding-bottom", i), Ke(), function (e) {
+      var t;
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
         $e.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
@@ -8364,13 +8365,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       } else $e.destroy(document.querySelector("#progress-scrollbar"));
 
-      var t = $e.init(document.querySelector("#viewport"), {
-        damping: .04,
-        delegateTo: document,
-        renderByPixel: !0,
-        continuousScrolling: !0
-      });
-      if ($(".js-form-call").exists() && $(".js-form-call").on("click", function (e) {
+      if ($(window).on("resize load", function () {
+        $(this).width() > 620 && (t = $e.init(document.querySelector("#viewport"), {
+          damping: .04,
+          delegateTo: document,
+          renderByPixel: !0,
+          continuousScrolling: !0
+        })), $(this).width() <= 620 && (t = $e.init(document.querySelector("#viewport"), {
+          damping: .1,
+          delegateTo: document,
+          renderByPixel: !0,
+          continuousScrolling: !0
+        }));
+      }).resize(), $(".js-form-call").exists() && $(".js-form-call").on("click", function (e) {
         e.preventDefault(), qe(!0), t.updatePluginOptions("modal", {
           open: !0
         });
@@ -8466,15 +8473,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top bottom",
           scrub: !0
         }
-      }), gsap.to(i, 10, {
-        yPercent: -50,
-        ease: "none",
-        scrollTrigger: {
-          trigger: e,
-          start: "top bottom",
-          scrub: !0
-        }
-      });
+      }), $(window).resize(function () {
+        $(this).width() > 620 && gsap.to(i, 10, {
+          yPercent: -50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: e,
+            start: "top bottom",
+            scrub: !0
+          }
+        }), $(this).width() <= 620 && gsap.to(i, 10, {
+          yPercent: -30,
+          ease: "none",
+          scrollTrigger: {
+            trigger: e,
+            start: "top bottom",
+            scrub: !0
+          }
+        });
+      }).resize();
     }), function () {
       if ($(".js-pin-portfolio").exists()) try {
         gsap.utils.toArray(".portfolio__item").forEach(function (e, t) {
