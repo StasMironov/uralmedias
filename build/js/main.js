@@ -97,7 +97,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var s = i(0),
       n = i(52),
       r = i(3),
-      a = i(31),
+      a = i(32),
       o = i(57),
       l = i(80),
       c = n("wks"),
@@ -129,7 +129,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var s = i(7),
       n = i(48),
       r = i(6),
-      a = i(26),
+      a = i(27),
       o = Object.defineProperty;
   t.f = s ? o : function (e, t, i) {
     if (r(e), t = a(t, !0), r(i), n) try {
@@ -157,7 +157,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   var s = i(7),
       n = i(5),
-      r = i(14);
+      r = i(15);
   e.exports = s ? function (e, t, i) {
     return n.f(e, t, r(1, i));
   } : function (e, t, i) {
@@ -172,9 +172,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       l = i(2),
       c = i(8),
       d = i(3),
-      u = i(28),
-      p = i(29),
-      h = i(17),
+      u = i(29),
+      p = i(30),
+      h = i(18),
       f = o.WeakMap;
 
   if (a) {
@@ -224,7 +224,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var s = i(0),
       n = i(8),
       r = i(3),
-      a = i(27),
+      a = i(28),
       o = i(50),
       l = i(9),
       c = l.get,
@@ -241,552 +241,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 }, function (e, t) {
   e.exports = {};
-}, function (e, t, i) {
-  var s = i(0),
-      n = i(46).f,
-      r = i(8),
-      a = i(11),
-      o = i(27),
-      l = i(71),
-      c = i(55);
-
-  e.exports = function (e, t) {
-    var i,
-        d,
-        u,
-        p,
-        h,
-        f = e.target,
-        m = e.global,
-        v = e.stat;
-    if (i = m ? s : v ? s[f] || o(f, {}) : (s[f] || {}).prototype) for (d in t) {
-      if (p = t[d], u = e.noTargetGet ? (h = n(i, d)) && h.value : i[d], !c(m ? d : f + (v ? "." : "#") + d, e.forced) && void 0 !== u) {
-        if (_typeof(p) == _typeof(u)) continue;
-        l(p, u);
-      }
-
-      (e.sham || u && u.sham) && r(p, "sham", !0), a(i, d, p, e);
-    }
-  };
-}, function (e, t) {
-  e.exports = function (e, t) {
-    return {
-      enumerable: !(1 & e),
-      configurable: !(2 & e),
-      writable: !(4 & e),
-      value: t
-    };
-  };
-}, function (e, t, i) {
-  var s = i(24),
-      n = i(25);
-
-  e.exports = function (e) {
-    return s(n(e));
-  };
-}, function (e, t) {
-  var i = {}.toString;
-
-  e.exports = function (e) {
-    return i.call(e).slice(8, -1);
-  };
-}, function (e, t) {
-  e.exports = {};
-}, function (e, t, i) {
-  var s = i(10),
-      n = i(0),
-      r = function r(e) {
-    return "function" == typeof e ? e : void 0;
-  };
-
-  e.exports = function (e, t) {
-    return arguments.length < 2 ? r(s[e]) || r(n[e]) : s[e] && s[e][t] || n[e] && n[e][t];
-  };
-}, function (e, t, i) {
-  var s = i(32),
-      n = Math.min;
-
-  e.exports = function (e) {
-    return e > 0 ? n(s(e), 9007199254740991) : 0;
-  };
-}, function (e, t, i) {
-  var s = i(17),
-      n = i(2),
-      r = i(3),
-      a = i(5).f,
-      o = i(31),
-      l = i(76),
-      c = o("meta"),
-      d = 0,
-      u = Object.isExtensible || function () {
-    return !0;
-  },
-      p = function p(e) {
-    a(e, c, {
-      value: {
-        objectID: "O" + ++d,
-        weakData: {}
-      }
-    });
-  },
-      h = e.exports = {
-    REQUIRED: !1,
-    fastKey: function fastKey(e, t) {
-      if (!n(e)) return "symbol" == _typeof(e) ? e : ("string" == typeof e ? "S" : "P") + e;
-
-      if (!r(e, c)) {
-        if (!u(e)) return "F";
-        if (!t) return "E";
-        p(e);
-      }
-
-      return e[c].objectID;
-    },
-    getWeakData: function getWeakData(e, t) {
-      if (!r(e, c)) {
-        if (!u(e)) return !0;
-        if (!t) return !1;
-        p(e);
-      }
-
-      return e[c].weakData;
-    },
-    onFreeze: function onFreeze(e) {
-      return l && h.REQUIRED && u(e) && !r(e, c) && p(e), e;
-    }
-  };
-
-  s[c] = !0;
-}, function (e, t, i) {
-  var s = i(81);
-
-  e.exports = function (e, t, i) {
-    if (s(e), void 0 === t) return e;
-
-    switch (i) {
-      case 0:
-        return function () {
-          return e.call(t);
-        };
-
-      case 1:
-        return function (i) {
-          return e.call(t, i);
-        };
-
-      case 2:
-        return function (i, s) {
-          return e.call(t, i, s);
-        };
-
-      case 3:
-        return function (i, s, n) {
-          return e.call(t, i, s, n);
-        };
-    }
-
-    return function () {
-      return e.apply(t, arguments);
-    };
-  };
-}, function (e, t, i) {
-  var s = i(25);
-
-  e.exports = function (e) {
-    return Object(s(e));
-  };
-}, function (e, t, i) {
-  "use strict";
-
-  var s = i(13),
-      n = i(0),
-      r = i(55),
-      a = i(11),
-      o = i(20),
-      l = i(34),
-      c = i(36),
-      d = i(2),
-      u = i(4),
-      p = i(61),
-      h = i(37),
-      f = i(82);
-
-  e.exports = function (e, t, i) {
-    var m = -1 !== e.indexOf("Map"),
-        v = -1 !== e.indexOf("Weak"),
-        g = m ? "set" : "add",
-        y = n[e],
-        b = y && y.prototype,
-        w = y,
-        x = {},
-        S = function S(e) {
-      var t = b[e];
-      a(b, e, "add" == e ? function (e) {
-        return t.call(this, 0 === e ? 0 : e), this;
-      } : "delete" == e ? function (e) {
-        return !(v && !d(e)) && t.call(this, 0 === e ? 0 : e);
-      } : "get" == e ? function (e) {
-        return v && !d(e) ? void 0 : t.call(this, 0 === e ? 0 : e);
-      } : "has" == e ? function (e) {
-        return !(v && !d(e)) && t.call(this, 0 === e ? 0 : e);
-      } : function (e, i) {
-        return t.call(this, 0 === e ? 0 : e, i), this;
-      });
-    };
-
-    if (r(e, "function" != typeof y || !(v || b.forEach && !u(function () {
-      new y().entries().next();
-    })))) w = i.getConstructor(t, e, m, g), o.REQUIRED = !0;else if (r(e, !0)) {
-      var E = new w(),
-          T = E[g](v ? {} : -0, 1) != E,
-          C = u(function () {
-        E.has(1);
-      }),
-          $ = p(function (e) {
-        new y(e);
-      }),
-          M = !v && u(function () {
-        for (var e = new y(), t = 5; t--;) {
-          e[g](t, t);
-        }
-
-        return !e.has(-0);
-      });
-      $ || ((w = t(function (t, i) {
-        c(t, w, e);
-        var s = f(new y(), t, w);
-        return null != i && l(i, s[g], {
-          that: s,
-          AS_ENTRIES: m
-        }), s;
-      })).prototype = b, b.constructor = w), (C || M) && (S("delete"), S("has"), m && S("get")), (M || T) && S(g), v && b.clear && delete b.clear;
-    }
-    return x[e] = w, s({
-      global: !0,
-      forced: w != y
-    }, x), h(w, e), v || i.setStrong(w, e, m), w;
-  };
-}, function (e, t, i) {
-  var s = i(4),
-      n = i(16),
-      r = "".split;
-  e.exports = s(function () {
-    return !Object("z").propertyIsEnumerable(0);
-  }) ? function (e) {
-    return "String" == n(e) ? r.call(e, "") : Object(e);
-  } : Object;
-}, function (e, t) {
-  e.exports = function (e) {
-    if (null == e) throw TypeError("Can't call method on " + e);
-    return e;
-  };
-}, function (e, t, i) {
-  var s = i(2);
-
-  e.exports = function (e, t) {
-    if (!s(e)) return e;
-    var i, n;
-    if (t && "function" == typeof (i = e.toString) && !s(n = i.call(e))) return n;
-    if ("function" == typeof (i = e.valueOf) && !s(n = i.call(e))) return n;
-    if (!t && "function" == typeof (i = e.toString) && !s(n = i.call(e))) return n;
-    throw TypeError("Can't convert object to primitive value");
-  };
-}, function (e, t, i) {
-  var s = i(0),
-      n = i(8);
-
-  e.exports = function (e, t) {
-    try {
-      n(s, e, t);
-    } catch (i) {
-      s[e] = t;
-    }
-
-    return t;
-  };
-}, function (e, t, i) {
-  var s = i(0),
-      n = i(27),
-      r = s["__core-js_shared__"] || n("__core-js_shared__", {});
-  e.exports = r;
-}, function (e, t, i) {
-  var s = i(52),
-      n = i(31),
-      r = s("keys");
-
-  e.exports = function (e) {
-    return r[e] || (r[e] = n(e));
-  };
-}, function (e, t) {
-  e.exports = !1;
-}, function (e, t) {
-  var i = 0,
-      s = Math.random();
-
-  e.exports = function (e) {
-    return "Symbol(" + String(void 0 === e ? "" : e) + ")_" + (++i + s).toString(36);
-  };
-}, function (e, t) {
-  var i = Math.ceil,
-      s = Math.floor;
-
-  e.exports = function (e) {
-    return isNaN(e = +e) ? 0 : (e > 0 ? s : i)(e);
-  };
-}, function (e, t) {
-  e.exports = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "valueOf"];
-}, function (e, t, i) {
-  var s = i(6),
-      n = i(56),
-      r = i(19),
-      a = i(21),
-      o = i(58),
-      l = i(60),
-      c = function c(e, t) {
-    this.stopped = e, this.result = t;
-  };
-
-  e.exports = function (e, t, i) {
-    var d,
-        u,
-        p,
-        h,
-        f,
-        m,
-        v,
-        g = i && i.that,
-        y = !(!i || !i.AS_ENTRIES),
-        b = !(!i || !i.IS_ITERATOR),
-        w = !(!i || !i.INTERRUPTED),
-        x = a(t, g, 1 + y + w),
-        S = function S(e) {
-      return d && l(d), new c(!0, e);
-    },
-        E = function E(e) {
-      return y ? (s(e), w ? x(e[0], e[1], S) : x(e[0], e[1])) : w ? x(e, S) : x(e);
-    };
-
-    if (b) d = e;else {
-      if ("function" != typeof (u = o(e))) throw TypeError("Target is not iterable");
-
-      if (n(u)) {
-        for (p = 0, h = r(e.length); h > p; p++) {
-          if ((f = E(e[p])) && f instanceof c) return f;
-        }
-
-        return new c(!1);
-      }
-
-      d = u.call(e);
-    }
-
-    for (m = d.next; !(v = m.call(d)).done;) {
-      try {
-        f = E(v.value);
-      } catch (e) {
-        throw l(d), e;
-      }
-
-      if ("object" == _typeof(f) && f && f instanceof c) return f;
-    }
-
-    return new c(!1);
-  };
-}, function (e, t, i) {
-  var s = {};
-  s[i(1)("toStringTag")] = "z", e.exports = "[object z]" === String(s);
-}, function (e, t) {
-  e.exports = function (e, t, i) {
-    if (!(e instanceof t)) throw TypeError("Incorrect " + (i ? i + " " : "") + "invocation");
-    return e;
-  };
-}, function (e, t, i) {
-  var s = i(5).f,
-      n = i(3),
-      r = i(1)("toStringTag");
-
-  e.exports = function (e, t, i) {
-    e && !n(e = i ? e : e.prototype, r) && s(e, r, {
-      configurable: !0,
-      value: t
-    });
-  };
-}, function (e, t, i) {
-  var s,
-      n = i(6),
-      r = i(84),
-      a = i(33),
-      o = i(17),
-      l = i(85),
-      c = i(49),
-      d = i(29),
-      u = d("IE_PROTO"),
-      p = function p() {},
-      h = function h(e) {
-    return "<script>" + e + "<\/script>";
-  },
-      _f = function f() {
-    try {
-      s = document.domain && new ActiveXObject("htmlfile");
-    } catch (e) {}
-
-    var e, t;
-    _f = s ? function (e) {
-      e.write(h("")), e.close();
-      var t = e.parentWindow.Object;
-      return e = null, t;
-    }(s) : ((t = c("iframe")).style.display = "none", l.appendChild(t), t.src = String("javascript:"), (e = t.contentWindow.document).open(), e.write(h("document.F=Object")), e.close(), e.F);
-
-    for (var i = a.length; i--;) {
-      delete _f.prototype[a[i]];
-    }
-
-    return _f();
-  };
-
-  o[u] = !0, e.exports = Object.create || function (e, t) {
-    var i;
-    return null !== e ? (p.prototype = n(e), i = new p(), p.prototype = null, i[u] = e) : i = _f(), void 0 === t ? i : r(i, t);
-  };
-}, function (e, t, i) {
-  var s = i(11);
-
-  e.exports = function (e, t, i) {
-    for (var n in t) {
-      s(e, n, t[n], i);
-    }
-
-    return e;
-  };
-}, function (e, t, i) {
-  "use strict";
-
-  var s = i(13),
-      n = i(86),
-      r = i(66),
-      a = i(62),
-      o = i(37),
-      l = i(8),
-      c = i(11),
-      d = i(1),
-      u = i(30),
-      p = i(12),
-      h = i(65),
-      f = h.IteratorPrototype,
-      m = h.BUGGY_SAFARI_ITERATORS,
-      v = d("iterator"),
-      g = function g() {
-    return this;
-  };
-
-  e.exports = function (e, t, i, d, h, y, b) {
-    n(i, t, d);
-
-    var w,
-        x,
-        S,
-        E = function E(e) {
-      if (e === h && P) return P;
-      if (!m && e in $) return $[e];
-
-      switch (e) {
-        case "keys":
-        case "values":
-        case "entries":
-          return function () {
-            return new i(this, e);
-          };
-      }
-
-      return function () {
-        return new i(this);
-      };
-    },
-        T = t + " Iterator",
-        C = !1,
-        $ = e.prototype,
-        M = $[v] || $["@@iterator"] || h && $[h],
-        P = !m && M || E(h),
-        k = "Array" == t && $.entries || M;
-
-    if (k && (w = r(k.call(new e())), f !== Object.prototype && w.next && (u || r(w) === f || (a ? a(w, f) : "function" != typeof w[v] && l(w, v, g)), o(w, T, !0, !0), u && (p[T] = g))), "values" == h && M && "values" !== M.name && (C = !0, P = function P() {
-      return M.call(this);
-    }), u && !b || $[v] === P || l($, v, P), p[t] = P, h) if (x = {
-      values: E("values"),
-      keys: y ? P : E("keys"),
-      entries: E("entries")
-    }, b) for (S in x) {
-      (m || C || !(S in $)) && c($, S, x[S]);
-    } else s({
-      target: t,
-      proto: !0,
-      forced: m || C
-    }, x);
-    return x;
-  };
-}, function (e, t, i) {
-  var s = i(35),
-      n = i(11),
-      r = i(89);
-  s || n(Object.prototype, "toString", r, {
-    unsafe: !0
-  });
-}, function (e, t, i) {
-  "use strict";
-
-  var s = i(90).charAt,
-      n = i(9),
-      r = i(40),
-      a = n.set,
-      o = n.getterFor("String Iterator");
-  r(String, "String", function (e) {
-    a(this, {
-      type: "String Iterator",
-      string: String(e),
-      index: 0
-    });
-  }, function () {
-    var e,
-        t = o(this),
-        i = t.string,
-        n = t.index;
-    return n >= i.length ? {
-      value: void 0,
-      done: !0
-    } : (e = s(i, n), t.index += e.length, {
-      value: e,
-      done: !1
-    });
-  });
-}, function (e, t, i) {
-  var s = i(0),
-      n = i(91),
-      r = i(92),
-      a = i(8),
-      o = i(1),
-      l = o("iterator"),
-      c = o("toStringTag"),
-      d = r.values;
-
-  for (var u in n) {
-    var p = s[u],
-        h = p && p.prototype;
-
-    if (h) {
-      if (h[l] !== d) try {
-        a(h, l, d);
-      } catch (e) {
-        h[l] = d;
-      }
-      if (h[c] || a(h, c, u), n[u]) for (var f in r) {
-        if (h[f] !== r[f]) try {
-          a(h, f, r[f]);
-        } catch (e) {
-          h[f] = r[f];
-        }
-      }
-    }
-  }
 }, function (e, t, i) {
   "use strict";
 
@@ -2907,13 +2361,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           _d3 && !_u2 ? r.removeClass("".concat(n.containerModifierClass, "multirow ").concat(n.containerModifierClass, "multirow-column")) : !_d3 && _u2 && (r.addClass(n.containerModifierClass + "multirow"), "column" === _c2.slidesPerColumnFill && r.addClass(n.containerModifierClass + "multirow-column"));
 
           var _h2 = _c2.direction && _c2.direction !== n.direction,
-              _f2 = n.loop && (_c2.slidesPerView !== n.slidesPerView || _h2);
+              _f = n.loop && (_c2.slidesPerView !== n.slidesPerView || _h2);
 
           _h2 && i && e.changeDirection(), p.extend(e.params, _c2), p.extend(e, {
             allowTouchMove: e.params.allowTouchMove,
             allowSlideNext: e.params.allowSlideNext,
             allowSlidePrev: e.params.allowSlidePrev
-          }), e.currentBreakpoint = o, _f2 && i && (e.loopDestroy(), e.loopCreate(), e.updateSlides(), e.slideTo(t - s + e.loopedSlides, 0, !1)), e.emit("breakpoint", _c2);
+          }), e.currentBreakpoint = o, _f && i && (e.loopDestroy(), e.loopCreate(), e.updateSlides(), e.slideTo(t - s + e.loopedSlides, 0, !1)), e.emit("breakpoint", _c2);
         }
       },
       getBreakpoint: function getBreakpoint(e) {
@@ -3002,8 +2456,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   },
       A = {};
 
-  var I = /*#__PURE__*/function (_f3) {
-    _inherits(I, _f3);
+  var I = /*#__PURE__*/function (_f2) {
+    _inherits(I, _f2);
 
     var _super = _createSuper(I);
 
@@ -4642,12 +4096,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var _h3 = Math.max(Math.min(_t46[0].progress, 1), -1);
 
-        var _f4 = 0,
+        var _f3 = 0,
             _m = 0,
             _v = 0;
-        _s32 % 4 == 0 ? (_f4 = 4 * -_u3 * a, _v = 0) : (_s32 - 1) % 4 == 0 ? (_f4 = 0, _v = 4 * -_u3 * a) : (_s32 - 2) % 4 == 0 ? (_f4 = a + 4 * _u3 * a, _v = a) : (_s32 - 3) % 4 == 0 && (_f4 = -a, _v = 3 * a + 4 * a * _u3), r && (_f4 = -_f4), l || (_m = _f4, _f4 = 0);
+        _s32 % 4 == 0 ? (_f3 = 4 * -_u3 * a, _v = 0) : (_s32 - 1) % 4 == 0 ? (_f3 = 0, _v = 4 * -_u3 * a) : (_s32 - 2) % 4 == 0 ? (_f3 = a + 4 * _u3 * a, _v = a) : (_s32 - 3) % 4 == 0 && (_f3 = -a, _v = 3 * a + 4 * a * _u3), r && (_f3 = -_f3), l || (_m = _f3, _f3 = 0);
 
-        var _g = "rotateX(".concat(l ? 0 : -_n31, "deg) rotateY(").concat(l ? _n31 : 0, "deg) translate3d(").concat(_f4, "px, ").concat(_m, "px, ").concat(_v, "px)");
+        var _g = "rotateX(".concat(l ? 0 : -_n31, "deg) rotateY(").concat(l ? _n31 : 0, "deg) translate3d(").concat(_f3, "px, ").concat(_m, "px, ").concat(_v, "px)");
 
         if (_h3 <= 1 && _h3 > -1 && (p = 90 * _s32 + 90 * _h3, r && (p = 90 * -_s32 - 90 * _h3)), _t46.transform(_g), o.slideShadows) {
           var _e73 = l ? _t46.find(".swiper-slide-shadow-left") : _t46.find(".swiper-slide-shadow-top"),
@@ -4750,7 +4204,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var _p = a ? d * _o10 : 0,
             _h4 = a ? 0 : d * _o10,
-            _f5 = -u * Math.abs(_o10),
+            _f4 = -u * Math.abs(_o10),
             _m2 = r.stretch;
 
         "string" == typeof _m2 && -1 !== _m2.indexOf("%") && (_m2 = parseFloat(r.stretch) / 100 * _s35);
@@ -4759,9 +4213,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             _g2 = a ? _m2 * _o10 : 0,
             _y = 1 - (1 - r.scale) * Math.abs(_o10);
 
-        Math.abs(_g2) < .001 && (_g2 = 0), Math.abs(_v2) < .001 && (_v2 = 0), Math.abs(_f5) < .001 && (_f5 = 0), Math.abs(_p) < .001 && (_p = 0), Math.abs(_h4) < .001 && (_h4 = 0), Math.abs(_y) < .001 && (_y = 0);
+        Math.abs(_g2) < .001 && (_g2 = 0), Math.abs(_v2) < .001 && (_v2 = 0), Math.abs(_f4) < .001 && (_f4 = 0), Math.abs(_p) < .001 && (_p = 0), Math.abs(_h4) < .001 && (_h4 = 0), Math.abs(_y) < .001 && (_y = 0);
 
-        var _b = "translate3d(".concat(_g2, "px,").concat(_v2, "px,").concat(_f5, "px)  rotateX(").concat(_h4, "deg) rotateY(").concat(_p, "deg) scale(").concat(_y, ")");
+        var _b = "translate3d(".concat(_g2, "px,").concat(_v2, "px,").concat(_f4, "px)  rotateX(").concat(_h4, "deg) rotateY(").concat(_p, "deg) scale(").concat(_y, ")");
 
         if (_t50.transform(_b), _t50[0].style.zIndex = 1 - Math.abs(Math.round(_o10)), r.slideShadows) {
           var _e78 = a ? _t50.find(".swiper-slide-shadow-left") : _t50.find(".swiper-slide-shadow-top"),
@@ -5770,6 +5224,552 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }();
 
   t["default"] = he;
+}, function (e, t, i) {
+  var s = i(0),
+      n = i(46).f,
+      r = i(8),
+      a = i(11),
+      o = i(28),
+      l = i(71),
+      c = i(55);
+
+  e.exports = function (e, t) {
+    var i,
+        d,
+        u,
+        p,
+        h,
+        f = e.target,
+        m = e.global,
+        v = e.stat;
+    if (i = m ? s : v ? s[f] || o(f, {}) : (s[f] || {}).prototype) for (d in t) {
+      if (p = t[d], u = e.noTargetGet ? (h = n(i, d)) && h.value : i[d], !c(m ? d : f + (v ? "." : "#") + d, e.forced) && void 0 !== u) {
+        if (_typeof(p) == _typeof(u)) continue;
+        l(p, u);
+      }
+
+      (e.sham || u && u.sham) && r(p, "sham", !0), a(i, d, p, e);
+    }
+  };
+}, function (e, t) {
+  e.exports = function (e, t) {
+    return {
+      enumerable: !(1 & e),
+      configurable: !(2 & e),
+      writable: !(4 & e),
+      value: t
+    };
+  };
+}, function (e, t, i) {
+  var s = i(25),
+      n = i(26);
+
+  e.exports = function (e) {
+    return s(n(e));
+  };
+}, function (e, t) {
+  var i = {}.toString;
+
+  e.exports = function (e) {
+    return i.call(e).slice(8, -1);
+  };
+}, function (e, t) {
+  e.exports = {};
+}, function (e, t, i) {
+  var s = i(10),
+      n = i(0),
+      r = function r(e) {
+    return "function" == typeof e ? e : void 0;
+  };
+
+  e.exports = function (e, t) {
+    return arguments.length < 2 ? r(s[e]) || r(n[e]) : s[e] && s[e][t] || n[e] && n[e][t];
+  };
+}, function (e, t, i) {
+  var s = i(33),
+      n = Math.min;
+
+  e.exports = function (e) {
+    return e > 0 ? n(s(e), 9007199254740991) : 0;
+  };
+}, function (e, t, i) {
+  var s = i(18),
+      n = i(2),
+      r = i(3),
+      a = i(5).f,
+      o = i(32),
+      l = i(76),
+      c = o("meta"),
+      d = 0,
+      u = Object.isExtensible || function () {
+    return !0;
+  },
+      p = function p(e) {
+    a(e, c, {
+      value: {
+        objectID: "O" + ++d,
+        weakData: {}
+      }
+    });
+  },
+      h = e.exports = {
+    REQUIRED: !1,
+    fastKey: function fastKey(e, t) {
+      if (!n(e)) return "symbol" == _typeof(e) ? e : ("string" == typeof e ? "S" : "P") + e;
+
+      if (!r(e, c)) {
+        if (!u(e)) return "F";
+        if (!t) return "E";
+        p(e);
+      }
+
+      return e[c].objectID;
+    },
+    getWeakData: function getWeakData(e, t) {
+      if (!r(e, c)) {
+        if (!u(e)) return !0;
+        if (!t) return !1;
+        p(e);
+      }
+
+      return e[c].weakData;
+    },
+    onFreeze: function onFreeze(e) {
+      return l && h.REQUIRED && u(e) && !r(e, c) && p(e), e;
+    }
+  };
+
+  s[c] = !0;
+}, function (e, t, i) {
+  var s = i(81);
+
+  e.exports = function (e, t, i) {
+    if (s(e), void 0 === t) return e;
+
+    switch (i) {
+      case 0:
+        return function () {
+          return e.call(t);
+        };
+
+      case 1:
+        return function (i) {
+          return e.call(t, i);
+        };
+
+      case 2:
+        return function (i, s) {
+          return e.call(t, i, s);
+        };
+
+      case 3:
+        return function (i, s, n) {
+          return e.call(t, i, s, n);
+        };
+    }
+
+    return function () {
+      return e.apply(t, arguments);
+    };
+  };
+}, function (e, t, i) {
+  var s = i(26);
+
+  e.exports = function (e) {
+    return Object(s(e));
+  };
+}, function (e, t, i) {
+  "use strict";
+
+  var s = i(14),
+      n = i(0),
+      r = i(55),
+      a = i(11),
+      o = i(21),
+      l = i(35),
+      c = i(37),
+      d = i(2),
+      u = i(4),
+      p = i(61),
+      h = i(38),
+      f = i(82);
+
+  e.exports = function (e, t, i) {
+    var m = -1 !== e.indexOf("Map"),
+        v = -1 !== e.indexOf("Weak"),
+        g = m ? "set" : "add",
+        y = n[e],
+        b = y && y.prototype,
+        w = y,
+        x = {},
+        S = function S(e) {
+      var t = b[e];
+      a(b, e, "add" == e ? function (e) {
+        return t.call(this, 0 === e ? 0 : e), this;
+      } : "delete" == e ? function (e) {
+        return !(v && !d(e)) && t.call(this, 0 === e ? 0 : e);
+      } : "get" == e ? function (e) {
+        return v && !d(e) ? void 0 : t.call(this, 0 === e ? 0 : e);
+      } : "has" == e ? function (e) {
+        return !(v && !d(e)) && t.call(this, 0 === e ? 0 : e);
+      } : function (e, i) {
+        return t.call(this, 0 === e ? 0 : e, i), this;
+      });
+    };
+
+    if (r(e, "function" != typeof y || !(v || b.forEach && !u(function () {
+      new y().entries().next();
+    })))) w = i.getConstructor(t, e, m, g), o.REQUIRED = !0;else if (r(e, !0)) {
+      var E = new w(),
+          T = E[g](v ? {} : -0, 1) != E,
+          C = u(function () {
+        E.has(1);
+      }),
+          $ = p(function (e) {
+        new y(e);
+      }),
+          M = !v && u(function () {
+        for (var e = new y(), t = 5; t--;) {
+          e[g](t, t);
+        }
+
+        return !e.has(-0);
+      });
+      $ || ((w = t(function (t, i) {
+        c(t, w, e);
+        var s = f(new y(), t, w);
+        return null != i && l(i, s[g], {
+          that: s,
+          AS_ENTRIES: m
+        }), s;
+      })).prototype = b, b.constructor = w), (C || M) && (S("delete"), S("has"), m && S("get")), (M || T) && S(g), v && b.clear && delete b.clear;
+    }
+    return x[e] = w, s({
+      global: !0,
+      forced: w != y
+    }, x), h(w, e), v || i.setStrong(w, e, m), w;
+  };
+}, function (e, t, i) {
+  var s = i(4),
+      n = i(17),
+      r = "".split;
+  e.exports = s(function () {
+    return !Object("z").propertyIsEnumerable(0);
+  }) ? function (e) {
+    return "String" == n(e) ? r.call(e, "") : Object(e);
+  } : Object;
+}, function (e, t) {
+  e.exports = function (e) {
+    if (null == e) throw TypeError("Can't call method on " + e);
+    return e;
+  };
+}, function (e, t, i) {
+  var s = i(2);
+
+  e.exports = function (e, t) {
+    if (!s(e)) return e;
+    var i, n;
+    if (t && "function" == typeof (i = e.toString) && !s(n = i.call(e))) return n;
+    if ("function" == typeof (i = e.valueOf) && !s(n = i.call(e))) return n;
+    if (!t && "function" == typeof (i = e.toString) && !s(n = i.call(e))) return n;
+    throw TypeError("Can't convert object to primitive value");
+  };
+}, function (e, t, i) {
+  var s = i(0),
+      n = i(8);
+
+  e.exports = function (e, t) {
+    try {
+      n(s, e, t);
+    } catch (i) {
+      s[e] = t;
+    }
+
+    return t;
+  };
+}, function (e, t, i) {
+  var s = i(0),
+      n = i(28),
+      r = s["__core-js_shared__"] || n("__core-js_shared__", {});
+  e.exports = r;
+}, function (e, t, i) {
+  var s = i(52),
+      n = i(32),
+      r = s("keys");
+
+  e.exports = function (e) {
+    return r[e] || (r[e] = n(e));
+  };
+}, function (e, t) {
+  e.exports = !1;
+}, function (e, t) {
+  var i = 0,
+      s = Math.random();
+
+  e.exports = function (e) {
+    return "Symbol(" + String(void 0 === e ? "" : e) + ")_" + (++i + s).toString(36);
+  };
+}, function (e, t) {
+  var i = Math.ceil,
+      s = Math.floor;
+
+  e.exports = function (e) {
+    return isNaN(e = +e) ? 0 : (e > 0 ? s : i)(e);
+  };
+}, function (e, t) {
+  e.exports = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "valueOf"];
+}, function (e, t, i) {
+  var s = i(6),
+      n = i(56),
+      r = i(20),
+      a = i(22),
+      o = i(58),
+      l = i(60),
+      c = function c(e, t) {
+    this.stopped = e, this.result = t;
+  };
+
+  e.exports = function (e, t, i) {
+    var d,
+        u,
+        p,
+        h,
+        f,
+        m,
+        v,
+        g = i && i.that,
+        y = !(!i || !i.AS_ENTRIES),
+        b = !(!i || !i.IS_ITERATOR),
+        w = !(!i || !i.INTERRUPTED),
+        x = a(t, g, 1 + y + w),
+        S = function S(e) {
+      return d && l(d), new c(!0, e);
+    },
+        E = function E(e) {
+      return y ? (s(e), w ? x(e[0], e[1], S) : x(e[0], e[1])) : w ? x(e, S) : x(e);
+    };
+
+    if (b) d = e;else {
+      if ("function" != typeof (u = o(e))) throw TypeError("Target is not iterable");
+
+      if (n(u)) {
+        for (p = 0, h = r(e.length); h > p; p++) {
+          if ((f = E(e[p])) && f instanceof c) return f;
+        }
+
+        return new c(!1);
+      }
+
+      d = u.call(e);
+    }
+
+    for (m = d.next; !(v = m.call(d)).done;) {
+      try {
+        f = E(v.value);
+      } catch (e) {
+        throw l(d), e;
+      }
+
+      if ("object" == _typeof(f) && f && f instanceof c) return f;
+    }
+
+    return new c(!1);
+  };
+}, function (e, t, i) {
+  var s = {};
+  s[i(1)("toStringTag")] = "z", e.exports = "[object z]" === String(s);
+}, function (e, t) {
+  e.exports = function (e, t, i) {
+    if (!(e instanceof t)) throw TypeError("Incorrect " + (i ? i + " " : "") + "invocation");
+    return e;
+  };
+}, function (e, t, i) {
+  var s = i(5).f,
+      n = i(3),
+      r = i(1)("toStringTag");
+
+  e.exports = function (e, t, i) {
+    e && !n(e = i ? e : e.prototype, r) && s(e, r, {
+      configurable: !0,
+      value: t
+    });
+  };
+}, function (e, t, i) {
+  var s,
+      n = i(6),
+      r = i(84),
+      a = i(34),
+      o = i(18),
+      l = i(85),
+      c = i(49),
+      d = i(30),
+      u = d("IE_PROTO"),
+      p = function p() {},
+      h = function h(e) {
+    return "<script>" + e + "<\/script>";
+  },
+      _f5 = function f() {
+    try {
+      s = document.domain && new ActiveXObject("htmlfile");
+    } catch (e) {}
+
+    var e, t;
+    _f5 = s ? function (e) {
+      e.write(h("")), e.close();
+      var t = e.parentWindow.Object;
+      return e = null, t;
+    }(s) : ((t = c("iframe")).style.display = "none", l.appendChild(t), t.src = String("javascript:"), (e = t.contentWindow.document).open(), e.write(h("document.F=Object")), e.close(), e.F);
+
+    for (var i = a.length; i--;) {
+      delete _f5.prototype[a[i]];
+    }
+
+    return _f5();
+  };
+
+  o[u] = !0, e.exports = Object.create || function (e, t) {
+    var i;
+    return null !== e ? (p.prototype = n(e), i = new p(), p.prototype = null, i[u] = e) : i = _f5(), void 0 === t ? i : r(i, t);
+  };
+}, function (e, t, i) {
+  var s = i(11);
+
+  e.exports = function (e, t, i) {
+    for (var n in t) {
+      s(e, n, t[n], i);
+    }
+
+    return e;
+  };
+}, function (e, t, i) {
+  "use strict";
+
+  var s = i(14),
+      n = i(86),
+      r = i(66),
+      a = i(62),
+      o = i(38),
+      l = i(8),
+      c = i(11),
+      d = i(1),
+      u = i(31),
+      p = i(12),
+      h = i(65),
+      f = h.IteratorPrototype,
+      m = h.BUGGY_SAFARI_ITERATORS,
+      v = d("iterator"),
+      g = function g() {
+    return this;
+  };
+
+  e.exports = function (e, t, i, d, h, y, b) {
+    n(i, t, d);
+
+    var w,
+        x,
+        S,
+        E = function E(e) {
+      if (e === h && P) return P;
+      if (!m && e in $) return $[e];
+
+      switch (e) {
+        case "keys":
+        case "values":
+        case "entries":
+          return function () {
+            return new i(this, e);
+          };
+      }
+
+      return function () {
+        return new i(this);
+      };
+    },
+        T = t + " Iterator",
+        C = !1,
+        $ = e.prototype,
+        M = $[v] || $["@@iterator"] || h && $[h],
+        P = !m && M || E(h),
+        k = "Array" == t && $.entries || M;
+
+    if (k && (w = r(k.call(new e())), f !== Object.prototype && w.next && (u || r(w) === f || (a ? a(w, f) : "function" != typeof w[v] && l(w, v, g)), o(w, T, !0, !0), u && (p[T] = g))), "values" == h && M && "values" !== M.name && (C = !0, P = function P() {
+      return M.call(this);
+    }), u && !b || $[v] === P || l($, v, P), p[t] = P, h) if (x = {
+      values: E("values"),
+      keys: y ? P : E("keys"),
+      entries: E("entries")
+    }, b) for (S in x) {
+      (m || C || !(S in $)) && c($, S, x[S]);
+    } else s({
+      target: t,
+      proto: !0,
+      forced: m || C
+    }, x);
+    return x;
+  };
+}, function (e, t, i) {
+  var s = i(36),
+      n = i(11),
+      r = i(89);
+  s || n(Object.prototype, "toString", r, {
+    unsafe: !0
+  });
+}, function (e, t, i) {
+  "use strict";
+
+  var s = i(90).charAt,
+      n = i(9),
+      r = i(41),
+      a = n.set,
+      o = n.getterFor("String Iterator");
+  r(String, "String", function (e) {
+    a(this, {
+      type: "String Iterator",
+      string: String(e),
+      index: 0
+    });
+  }, function () {
+    var e,
+        t = o(this),
+        i = t.string,
+        n = t.index;
+    return n >= i.length ? {
+      value: void 0,
+      done: !0
+    } : (e = s(i, n), t.index += e.length, {
+      value: e,
+      done: !1
+    });
+  });
+}, function (e, t, i) {
+  var s = i(0),
+      n = i(91),
+      r = i(92),
+      a = i(8),
+      o = i(1),
+      l = o("iterator"),
+      c = o("toStringTag"),
+      d = r.values;
+
+  for (var u in n) {
+    var p = s[u],
+        h = p && p.prototype;
+
+    if (h) {
+      if (h[l] !== d) try {
+        a(h, l, d);
+      } catch (e) {
+        h[l] = d;
+      }
+      if (h[c] || a(h, c, u), n[u]) for (var f in r) {
+        if (h[f] !== r[f]) try {
+          a(h, f, r[f]);
+        } catch (e) {
+          h[f] = r[f];
+        }
+      }
+    }
+  }
 }, function (e, t) {
   var i;
 
@@ -5787,9 +5787,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   var s = i(7),
       n = i(47),
-      r = i(14),
-      a = i(15),
-      o = i(26),
+      r = i(15),
+      a = i(16),
+      o = i(27),
       l = i(3),
       c = i(48),
       d = Object.getOwnPropertyDescriptor;
@@ -5832,7 +5832,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return a ? r.createElement(e) : {};
   };
 }, function (e, t, i) {
-  var s = i(28),
+  var s = i(29),
       n = Function.toString;
   "function" != typeof s.inspectSource && (s.inspectSource = function (e) {
     return n.call(e);
@@ -5843,8 +5843,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       r = s.WeakMap;
   e.exports = "function" == typeof r && /native code/.test(n(r));
 }, function (e, t, i) {
-  var s = i(30),
-      n = i(28);
+  var s = i(31),
+      n = i(29);
   (e.exports = function (e, t) {
     return n[e] || (n[e] = void 0 !== t ? t : {});
   })("versions", []).push({
@@ -5854,9 +5854,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
 }, function (e, t, i) {
   var s = i(3),
-      n = i(15),
+      n = i(16),
       r = i(74).indexOf,
-      a = i(17);
+      a = i(18);
 
   e.exports = function (e, t) {
     var i,
@@ -5916,8 +5916,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if (null != e) return e[r] || e["@@iterator"] || n[s(e)];
   };
 }, function (e, t, i) {
-  var s = i(35),
-      n = i(16),
+  var s = i(36),
+      n = i(17),
       r = i(1)("toStringTag"),
       a = "Arguments" == n(function () {
     return arguments;
@@ -5999,15 +5999,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   "use strict";
 
   var s = i(5).f,
-      n = i(38),
-      r = i(39),
-      a = i(21),
-      o = i(36),
-      l = i(34),
-      c = i(40),
+      n = i(39),
+      r = i(40),
+      a = i(22),
+      o = i(37),
+      l = i(35),
+      c = i(41),
       d = i(88),
       u = i(7),
-      p = i(20).fastKey,
+      p = i(21).fastKey,
       h = i(9),
       f = h.set,
       m = h.getterFor;
@@ -6134,7 +6134,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 }, function (e, t, i) {
   var s = i(53),
-      n = i(33);
+      n = i(34);
 
   e.exports = Object.keys || function (e) {
     return s(e, n);
@@ -6150,7 +6150,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       l = i(8),
       c = i(3),
       d = i(1),
-      u = i(30),
+      u = i(31),
       p = d("iterator"),
       h = !1;
   [].keys && ("next" in (r = [].keys()) ? (n = o(o(r))) !== Object.prototype && (s = n) : h = !0);
@@ -6166,8 +6166,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 }, function (e, t, i) {
   var s = i(3),
-      n = i(22),
-      r = i(29),
+      n = i(23),
+      r = i(30),
       a = i(87),
       o = r("IE_PROTO"),
       l = Object.prototype;
@@ -6182,15 +6182,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     t.a = i;
   }).call(this, i(45));
 }, function (e, t, i) {
-  i(110), e.exports = i(44);
+  i(110), e.exports = i(13);
 }, function (e, t, i) {
-  i(70), i(41), i(42), i(43);
+  i(70), i(42), i(43), i(44);
   var s = i(10);
   e.exports = s.Map;
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(23),
+  var s = i(24),
       n = i(63);
   e.exports = s("Map", function (e) {
     return function () {
@@ -6210,7 +6210,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   };
 }, function (e, t, i) {
-  var s = i(18),
+  var s = i(19),
       n = i(73),
       r = i(54),
       a = i(6);
@@ -6222,14 +6222,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 }, function (e, t, i) {
   var s = i(53),
-      n = i(33).concat("length", "prototype");
+      n = i(34).concat("length", "prototype");
 
   t.f = Object.getOwnPropertyNames || function (e) {
     return s(e, n);
   };
 }, function (e, t, i) {
-  var s = i(15),
-      n = i(19),
+  var s = i(16),
+      n = i(20),
       r = i(75),
       a = function a(e) {
     return function (t, i, a) {
@@ -6255,7 +6255,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     indexOf: a(!1)
   };
 }, function (e, t, i) {
-  var s = i(32),
+  var s = i(33),
       n = Math.max,
       r = Math.min;
 
@@ -6269,7 +6269,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return Object.isExtensible(Object.preventExtensions({}));
   });
 }, function (e, t, i) {
-  var s = i(16),
+  var s = i(17),
       n = i(0);
   e.exports = "process" == s(n.process);
 }, function (e, t, i) {
@@ -6282,7 +6282,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       c = l && l.v8;
   c ? n = (s = c.split("."))[0] + s[1] : a && (!(s = a.match(/Edge\/(\d+)/)) || s[1] >= 74) && (s = a.match(/Chrome\/(\d+)/)) && (n = s[1]), e.exports = n && +n;
 }, function (e, t, i) {
-  var s = i(18);
+  var s = i(19);
   e.exports = s("navigator", "userAgent") || "";
 }, function (e, t, i) {
   var s = i(57);
@@ -6322,15 +6322,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return e;
   };
 }, function (e, t, i) {
-  var s = i(18);
+  var s = i(19);
   e.exports = s("document", "documentElement");
 }, function (e, t, i) {
   "use strict";
 
   var s = i(65).IteratorPrototype,
-      n = i(38),
-      r = i(14),
-      a = i(37),
+      n = i(39),
+      r = i(15),
+      a = i(38),
       o = i(12),
       l = function l() {
     return this;
@@ -6352,7 +6352,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(18),
+  var s = i(19),
       n = i(5),
       r = i(1),
       a = i(7),
@@ -6371,14 +6371,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(35),
+  var s = i(36),
       n = i(59);
   e.exports = s ? {}.toString : function () {
     return "[object " + n(this) + "]";
   };
 }, function (e, t, i) {
-  var s = i(32),
-      n = i(25),
+  var s = i(33),
+      n = i(26),
       r = function r(e) {
     return function (t, i) {
       var r,
@@ -6431,11 +6431,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(15),
+  var s = i(16),
       n = i(93),
       r = i(12),
       a = i(9),
-      o = i(40),
+      o = i(41),
       l = a.set,
       c = a.getterFor("Array Iterator");
   e.exports = o(Array, "Array", function (e, t) {
@@ -6466,7 +6466,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }, "values"), r.Arguments = r.Array, n("keys"), n("values"), n("entries");
 }, function (e, t, i) {
   var s = i(1),
-      n = i(38),
+      n = i(39),
       r = i(5),
       a = s("unscopables"),
       o = Array.prototype;
@@ -6477,13 +6477,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     o[a][e] = !0;
   };
 }, function (e, t, i) {
-  i(95), i(41), i(42), i(43);
+  i(95), i(42), i(43), i(44);
   var s = i(10);
   e.exports = s.Set;
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(23),
+  var s = i(24),
       n = i(63);
   e.exports = s("Set", function (e) {
     return function () {
@@ -6491,7 +6491,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     };
   }, n);
 }, function (e, t, i) {
-  i(41), i(97), i(43);
+  i(42), i(97), i(44);
   var s = i(10);
   e.exports = s.WeakMap;
 }, function (e, t, i) {
@@ -6499,9 +6499,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   var s,
       n = i(0),
-      r = i(39),
-      a = i(20),
-      o = i(23),
+      r = i(40),
+      a = i(21),
+      o = i(24),
       l = i(98),
       c = i(2),
       d = i(9).enforce,
@@ -6560,12 +6560,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(39),
-      n = i(20).getWeakData,
+  var s = i(40),
+      n = i(21).getWeakData,
       r = i(6),
       a = i(2),
-      o = i(36),
-      l = i(34),
+      o = i(37),
+      l = i(35),
       c = i(99),
       d = i(3),
       u = i(9),
@@ -6656,10 +6656,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   };
 }, function (e, t, i) {
-  var s = i(21),
-      n = i(24),
-      r = i(22),
-      a = i(19),
+  var s = i(22),
+      n = i(25),
+      r = i(23),
+      a = i(20),
       o = i(100),
       l = [].push,
       c = function c(e) {
@@ -6717,17 +6717,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return n(e) && ("function" != typeof (i = e.constructor) || i !== Array && !n(i.prototype) ? s(i) && null === (i = i[r]) && (i = void 0) : i = void 0), new (void 0 === i ? Array : i)(0 === t ? 0 : t);
   };
 }, function (e, t, i) {
-  var s = i(16);
+  var s = i(17);
 
   e.exports = Array.isArray || function (e) {
     return "Array" == s(e);
   };
 }, function (e, t, i) {
-  i(42), i(103);
+  i(43), i(103);
   var s = i(10);
   e.exports = s.Array.from;
 }, function (e, t, i) {
-  var s = i(13),
+  var s = i(14),
       n = i(104);
   s({
     target: "Array",
@@ -6741,11 +6741,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(21),
-      n = i(22),
+  var s = i(22),
+      n = i(23),
       r = i(105),
       a = i(56),
-      o = i(19),
+      o = i(20),
       l = i(106),
       c = i(58);
 
@@ -6784,9 +6784,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 }, function (e, t, i) {
   "use strict";
 
-  var s = i(26),
+  var s = i(27),
       n = i(5),
-      r = i(14);
+      r = i(15);
 
   e.exports = function (e, t, i) {
     var a = s(t);
@@ -6797,7 +6797,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var s = i(10);
   e.exports = s.Object.assign;
 }, function (e, t, i) {
-  var s = i(13),
+  var s = i(14),
       n = i(109);
   s({
     target: "Object",
@@ -6814,8 +6814,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       r = i(64),
       a = i(54),
       o = i(47),
-      l = i(22),
-      c = i(24),
+      l = i(23),
+      c = i(25),
       d = Object.assign,
       u = Object.defineProperty;
   e.exports = !d || n(function () {
@@ -8058,7 +8058,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }();
     }, t.version = "8.6.1", t.ScrollbarPlugin = de, t;
   }(Ee),
-      Me = i(44);
+      Me = i(13);
 
   function Pe(e) {
     return (Pe = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (e) {
@@ -8233,45 +8233,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === t && ((e = document.createElement("div")).innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>', e = e.firstChild, document.body.appendChild(e), t = je.getScrollbarWidth.width = e.offsetWidth - e.clientWidth, document.body.removeChild(e)), t;
     },
     setSlider: function setSlider() {
-      if ($(".js-rate").exists()) {
-        var e = new Slider(!0, ".js-rate", 3, 40, 1, !1, !0, !1, "", !1, !1);
-        e.createSlider(), $(window).on("resize load", function () {
-          $(this).width() <= 1300 && (e.updateSlider("space", 20), e.updateSlider("view", 2), e.updateSlider("ratio", !0)), $(this).width() <= 1024 && e.updateSlider("space", 20), $(this).width() <= 700 && e.updateSlider("view", 1);
-        }).resize();
-      }
-
       if ($(".client__slider").exists() && $(".client__slider").exists()) {
-        var t = new Me["default"](".client__slider", 5, 36);
-        t.createSlider(), $(window).on("resize load", function () {
-          $(this).width() <= 1024 && $(this).width() >= 768 && t.updateSlider("space", 20), $(this).width() <= 768 && $(this).width() >= 621 && (t.updateSlider("pagination"), t.updateSlider("view", 4), t.updateSlider("space", 20)), $(this).width() <= 620 && $(this).width() >= 501 && (t.updateSlider("pagination"), t.updateSlider("view", 3), t.updateSlider("space", 20)), $(this).width() <= 500 && $(this).width() >= 21 && (t.updateSlider("pagination"), t.updateSlider("view", 2), t.updateSlider("space", 20));
+        var e = new Me["default"](".js-slider-client", 5, 36);
+        e.createSlider(), $(window).resize(function () {
+          $(this).width() <= 1024 && $(this).width() >= 768 && e.updateSlider("space", 20), $(this).width() <= 768 && $(this).width() >= 621 && (e.updateSlider("pagination"), e.updateSlider("view", 4), e.updateSlider("space", 20)), $(this).width() <= 620 && $(this).width() >= 501 && (e.updateSlider("pagination"), e.updateSlider("view", 3), e.updateSlider("space", 20)), $(this).width() <= 500 && (e.updateSlider("pagination"), e.updateSlider("view", 2), e.updateSlider("space", 20));
         }).resize();
-      }
-
-      if ($(".js-info-slider").exists()) {
-        var i = new Slider(!0, ".js-info-slider", 1, 10, 1, !0, !0, !0, "fade", !0);
-
-        if (i.createSlider(), $(".js-graph-slider").exists()) {
-          var s = new Slider(!0, ".js-graph-slider", 1, 10, 1, !0, !1, !0, "fade", !1);
-          s.createSlider(), s.slider.controller.control = i.slider, i.slider.controller.control = s.slider;
-        }
-      }
-
-      if ($(".js-slider-partners").exists()) {
-        var n = new Slider(!1, ".js-slider-partners", 4, 82, 8, !1, !1, !1);
-        n.createSlider(), window.matchMedia("(min-width: 1300px)").matches && n.updateSlider("space", 50), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches && (n.updateSlider("space", 30), n.updateSlider("view", 3)), window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches && (n.updateSlider("space", 20), n.updateSlider("view", 2));
       }
 
       if ($(".works").exists()) {
-        var r = new Slider(!0, ".js-slider", 2, 40, 1, !0, !0, !0);
-        r.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && r.updateSlider("space", 30), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && r.updateSlider("space", 20), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches ? r.updateSlider("view", 1) : r.updateSlider("view", 2), $(window).on("resize load", function () {
-          $(this).width() <= 1300 && r.updateSlider("space", 30), $(this).width() <= 1024 && r.updateSlider("space", 20), $(this).width() <= 620 ? r.updateSlider("view", 1) : r.updateSlider("view", 2);
-        });
+        var t = new Me["default"](".js-work-slider", 2, 40);
+        t.createSlider(), t.updateSlider("pagination"), t.updateSlider("arrow"), $(window).resize(function () {
+          $(this).width() <= 1300 && $(this).width() >= 1025 && t.updateSlider("space", 30), $(this).width() <= 1024 && $(this).width() >= 621 && t.updateSlider("space", 20), $(this).width() <= 620 && $(this).width() >= 320 ? t.updateSlider("view", 1) : t.updateSlider("view", 2);
+        }).resize();
       }
 
       if ($(".blog__slider").exists()) {
-        var a = new Slider(!0, ".js-slider", 3, 40, 1, !0, !0, !0);
-        a.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && a.updateSlider("space", 30), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && a.updateSlider("space", 20), window.matchMedia("(max-width: 768px)").matches && window.matchMedia("(min-width: 621px)").matches && a.updateSlider("view", 2), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches && a.updateSlider("view", 1), $(window).on("resize load", function () {
-          $(this).width() <= 1300 && a.updateSlider("space", 30), $(this).width() <= 1024 && a.updateSlider("space", 20), $(this).width() <= 768 && a.updateSlider("view", 2), $(this).width() <= 620 && a.updateSlider("view", 1);
+        var i = new Me["default"](".js-blog-slider", 3, 40);
+        i.createSlider(), i.updateSlider("pagination"), i.updateSlider("arrow"), $(window).resize(function () {
+          $(this).width() <= 1024 && $(this).width() >= 621 && (i.updateSlider("space", 20), i.updateSlider("view", 2)), $(this).width() <= 700 && $(this).width() >= 320 ? i.updateSlider("view", 1) : i.updateSlider("view", 2);
         }).resize();
       }
 
