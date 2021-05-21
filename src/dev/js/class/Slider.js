@@ -1,4 +1,3 @@
-import Swiper from 'swiper';
 class Slider {
     constructor(name, view, space) {
         this.init = true;
