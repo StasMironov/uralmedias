@@ -357,6 +357,7 @@ const setTabs = () => {
     }
 }
 
+
 const setAccordion = () => {
     //=======Accordion-Contacts===========
     if ($('.js-ac-contacts').exists()) {
@@ -1383,17 +1384,17 @@ function initImageParallax() {
             }
         });
 
-        gsap.to(info, 5, {
-            yPercent: -160,
-            ease: "slow(0.1, 0.1, false)",
+        gsap.to(info, 10, {
+            yPercent: -50,
+            ease: 'none',
             scrollTrigger: {
-                trigger: info,
-                start: 'top bottom+=250',
-                end: () => `+=${info.clientHeight + getVh()}`,
+                trigger: section,
+                start: 'top bottom',
                 scrub: true,
-                markers: true,
             }
         });
+
+
     });
 
 }
@@ -1477,7 +1478,7 @@ function initPinPortfolio() {
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    markers: true
+                    // markers: true
                 });
 
             });
@@ -1506,7 +1507,7 @@ function initPinPortfolio() {
                 },
                 pinReparent: true,
                 pinSpacing: false,
-                markers: true
+                // markers: true
             });
         }
         catch (err) {

@@ -8466,17 +8466,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top bottom",
           scrub: !0
         }
-      }), gsap.to(i, 5, {
-        yPercent: -160,
-        ease: "slow(0.1, 0.1, false)",
+      }), gsap.to(i, 10, {
+        yPercent: -50,
+        ease: "none",
         scrollTrigger: {
-          trigger: i,
-          start: "top bottom+=250",
-          end: function end() {
-            return "+=".concat(i.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0));
-          },
-          scrub: !0,
-          markers: !0
+          trigger: e,
+          start: "top bottom",
+          scrub: !0
         }
       });
     }), function () {
@@ -8537,8 +8533,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             },
             onEnterBack: function onEnterBack() {
               return Ue(e.dataset.color);
-            },
-            markers: !0
+            }
           });
         });
         var t = document.querySelector(".js-pin");
@@ -8562,7 +8557,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }, "toggleClass", {
           targets: ".js-pin",
           className: "mf-pin-color"
-        }), Ie(e, "pinReparent", !0), Ie(e, "pinSpacing", !1), Ie(e, "markers", !0), e));
+        }), Ie(e, "pinReparent", !0), Ie(e, "pinSpacing", !1), e));
       } catch (e) {
         console.log(e);
       }
