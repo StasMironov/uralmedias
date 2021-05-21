@@ -187,12 +187,10 @@ const projectFunc = {
 
             if (window.matchMedia("(min-width: 1300px)").matches) {
                 partnerSlider.updateSlider('space', 50);
-                console.log('1300');
             }
             if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches) {
                 partnerSlider.updateSlider('space', 30);
                 partnerSlider.updateSlider('view', 3);
-                console.log('1024');
             }
             if (window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches) {
                 partnerSlider.updateSlider('space', 20);
@@ -206,12 +204,10 @@ const projectFunc = {
 
             if (window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches) {
                 workSlider.updateSlider('space', 30);
-                console.log('1300');
             }
 
             if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches) {
                 workSlider.updateSlider('space', 20);
-                console.log('1024');
             }
 
             if (window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches) {
@@ -326,9 +322,7 @@ const projectFunc = {
             }
         }
     }
-
 };
-
 
 window.addEventListener('load', () => {
     let locked = document.querySelector('html');
@@ -694,8 +688,7 @@ const setCursor = () => {
 }
 
 function onAnimationComplete(link) {
-    // window.location = link.href;
-    console.log(link.href);
+
 }
 
 function animateBildboard() {
@@ -797,9 +790,6 @@ const setWidthBtn = () => {
 
         btnSpecial.forEach((element, _) => {
             let widthhEl = $(element).find('.btn__text').innerWidth();
-
-            console.log(widthhEl);
-
             $(element).css({
                 'width': widthhEl + 39 + 'px'
             });
@@ -938,7 +928,6 @@ const showService = () => {
             serviceBgLeave.reverse();
         }
         else {
-            console.log(1);
             serviceBgLeave.play();
             serviceBg.reverse();
         }
@@ -1292,7 +1281,6 @@ if ($('#request').exists()) {
                     }
                     );
                 }
-
                 return false;
             });
         });
@@ -1323,7 +1311,6 @@ function checkPacket() {
         });
     }
 }
-
 
 if ($('.rate__item .switch').exists()) {
     try {
@@ -1459,9 +1446,6 @@ function initPinSteps() {
                 pinSpacing: false,
                 // markers: true
             });
-
-
-
         }
         catch (err) {
             console.log(err);
