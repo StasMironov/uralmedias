@@ -8258,12 +8258,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if ($(".js-slider-partners").exists()) {
         var n = new Slider(!1, ".js-slider-partners", 4, 82, 8, !1, !1, !1);
-        n.createSlider(), window.matchMedia("(min-width: 1300px)").matches && (n.updateSlider("space", 50), console.log("1300")), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches && (n.updateSlider("space", 30), n.updateSlider("view", 3), console.log("1024")), window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches && (n.updateSlider("space", 20), n.updateSlider("view", 2));
+        n.createSlider(), window.matchMedia("(min-width: 1300px)").matches && n.updateSlider("space", 50), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches && (n.updateSlider("space", 30), n.updateSlider("view", 3)), window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches && (n.updateSlider("space", 20), n.updateSlider("view", 2));
       }
 
       if ($(".works").exists()) {
         var r = new Slider(!0, ".js-slider", 2, 40, 1, !0, !0, !0);
-        r.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && (r.updateSlider("space", 30), console.log("1300")), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && (r.updateSlider("space", 20), console.log("1024")), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches ? r.updateSlider("view", 1) : r.updateSlider("view", 2), $(window).on("resize load", function () {
+        r.createSlider(), window.matchMedia("(max-width: 1300px)").matches && window.matchMedia("(min-width: 1025px)").matches && r.updateSlider("space", 30), window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 621px)").matches && r.updateSlider("space", 20), window.matchMedia("(max-width: 620px)").matches && window.matchMedia("(min-width: 320px)").matches ? r.updateSlider("view", 1) : r.updateSlider("view", 2), $(window).on("resize load", function () {
           $(this).width() <= 1300 && r.updateSlider("space", 30), $(this).width() <= 1024 && r.updateSlider("space", 20), $(this).width() <= 620 ? r.updateSlider("view", 1) : r.updateSlider("view", 2);
         });
       }
@@ -8687,7 +8687,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }).to(i, {
           color: "#676767",
           ease: Back.easeOut.config(1.7)
-        }, "-=0.5"), _t52 ? (s.play(), n.reverse()) : (console.log(1), n.play(), s.reverse());
+        }, "-=0.5"), _t52 ? (s.play(), n.reverse()) : (n.play(), s.reverse());
       };
 
       gsap.utils.toArray(".services__item").forEach(function (e) {
@@ -8716,7 +8716,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     }(), $(".btn--special").exists() && document.querySelectorAll(".btn--special").forEach(function (e, t) {
       var i = $(e).find(".btn__text").innerWidth();
-      console.log(i), $(e).css({
+      $(e).css({
         width: i + 39 + "px"
       });
     }), $("#certificate").exists() && $("#certificate").lightGallery(), je.setSlider(), function () {
