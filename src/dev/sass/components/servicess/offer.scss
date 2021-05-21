@@ -142,8 +142,9 @@
             object-fit: contain;
 
             * {
-                fill: $green-1;
-                stroke: none;
+                fill: none;
+                stroke: $green-1;
+                stroke-width: 3px;
             }
         }
     }

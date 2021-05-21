@@ -1,8 +1,7 @@
 .partners {
     max-width: 990px;
     width: 100%;
-    margin: 0 auto;
-    margin-top: 34px;
+    margin: 34px auto 0;
 
     @media(max-width: 1024px) {
         max-width: 678px;
@@ -37,7 +36,6 @@
             width: 80%;
         }
     }
-
 
     &__items {
         display: grid;
@@ -86,8 +84,6 @@
             grid-template-columns: repeat(auto-fit, minmax(123px, 1fr));
             grid-auto-rows: 68px;
         }
-
-
     }
 
     &__slider {
@@ -153,8 +149,16 @@
         margin-top: 90px;
     }
 
+    &--about {
+        margin: 20px auto 37px;
+    }
+
     &--special {
         margin: 76px auto 0;
+
+        @media(max-width: 1024px) {
+            margin-top: 55px;
+        }
 
         .partners {
             &__items {
