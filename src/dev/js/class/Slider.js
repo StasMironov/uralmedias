@@ -12,7 +12,6 @@ class Slider {
             slidesPerView: this.view,
             spaceBetween: this.space,
         });
-
         setTimeout(() => {
             $(this.name).css('opacity', 1);
         }, 600);
