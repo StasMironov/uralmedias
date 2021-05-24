@@ -1,6 +1,10 @@
 .content {
     margin-top: 18px;
 
+    b {
+        font-weight: 500;
+    }
+
     h2,
     h3,
     h4,
@@ -11,6 +15,10 @@
 
     p {
         margin: 1.5em 0;
+
+        @media (max-width: 620px) {
+            margin: 1em 0;
+        }
     }
 
     ul,
@@ -169,6 +177,7 @@
         }
 
         .article__container {
+            padding-bottom: 0;
 
             @media(max-width: 1300px) {
                 max-width: 922px;

@@ -291,10 +291,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             this.slider.params.slidesPerGroupSkip = e, this.slider.update();
             break;
 
-          case "autoHeight":
-            this.slider.params.autoHeight = e, this.slider.update();
-            break;
-
           case "pagination":
             var n = $(this.name).find(".pagination")[0];
             this.settings.pagination = {
@@ -3325,8 +3321,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === e && ((t = document.createElement("div")).innerHTML = '<div style="width:50px;height:50px;position:absolute;left:-50px;top:-50px;overflow:auto;"><div style="width:1px;height:100px;"></div></div>', t = t.firstChild, document.body.appendChild(t), e = It.getScrollbarWidth.width = t.offsetWidth - t.clientWidth, document.body.removeChild(t)), e;
     },
     setSlider: function setSlider() {
-      if ($(".client__slider").exists() && $(".client__slider").exists()) {
-        var t = new At["default"](".js-slider-client", 5, 36);
+      if ($(".client__slider").exists()) {
+        var t = new At["default"](".js-client-slider", 5, 36);
         t.createSlider(), $(window).resize(function () {
           $(this).width() <= 1024 && $(this).width() >= 768 && t.updateSlider("space", 20), $(this).width() <= 768 && $(this).width() >= 621 && (t.updateSlider("pagination"), t.updateSlider("view", 4), t.updateSlider("space", 20)), $(this).width() <= 620 && $(this).width() >= 501 && (t.updateSlider("pagination"), t.updateSlider("view", 3), t.updateSlider("space", 20)), $(this).width() <= 500 && (t.updateSlider("pagination"), t.updateSlider("view", 2), t.updateSlider("space", 20));
         }).resize();
@@ -3340,9 +3336,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
 
       if ($(".blog__slider").exists()) {
-        var n = new At["default"](".js-blog-slider", 3, 40);
+        var n = new At["default"](".js-blog-slider", 3, 50);
         n.createSlider(), n.updateSlider("pagination"), n.updateSlider("arrow"), $(window).resize(function () {
-          $(this).width() <= 1024 && $(this).width() >= 621 && (n.updateSlider("space", 20), n.updateSlider("view", 2)), $(this).width() <= 700 && $(this).width() >= 320 ? n.updateSlider("view", 1) : n.updateSlider("view", 2);
+          $(this).width() <= 1024 && $(this).width() >= 621 && (n.updateSlider("space", 20), n.updateSlider("view", 2)), $(this).width() <= 620 && $(this).width() >= 320 && n.updateSlider("view", 1);
         }).resize();
       }
 

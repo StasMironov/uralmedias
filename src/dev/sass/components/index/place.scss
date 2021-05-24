@@ -2,7 +2,6 @@
     position: relative;
     min-height: 480px;
     overflow: hidden;
-    margin-top: 62px;
     padding-top: 73px;
     padding-bottom: 88px;
     background-color: white;
@@ -10,14 +9,12 @@
     @media(max-width: 1024px) {
         min-height: 375px;
         overflow: hidden;
-        margin-top: 60px;
         padding-top: 55px;
         padding-bottom: 27px;
     }
 
     @media(max-width: 620px) {
-        margin-top: 55px;
-        padding-top: 0px;
+        padding-top: 0;
         padding-bottom: 233px;
     }
 

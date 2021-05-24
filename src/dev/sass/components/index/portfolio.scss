@@ -10,9 +10,14 @@
     }
 
     &__type {
+        display: none;
         color: white;
         font-size: 14px;
         margin-top: 5px;
+
+        @media(max-width: 620px) {
+            display: block;
+        }
     }
 
     &__title {

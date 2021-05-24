@@ -72,10 +72,6 @@ class Slider {
                 this.slider.params.slidesPerGroupSkip = res;
                 this.slider.update();
                 break;
-            case 'autoHeight':
-                this.slider.params.autoHeight = res;
-                this.slider.update();
-                break;
             case 'pagination':
                 let pagEl = $(this.name).find('.pagination')[0];
                 this.settings.pagination = {

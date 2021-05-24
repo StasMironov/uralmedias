@@ -118,83 +118,32 @@ const projectFunc = {
         return width;
     },
     setSlider: function () {
-        // if ($('.js-rate').exists()) {
-        //     //  constructor(init, name, view, space, column, ratio, pagination = false, arrow = false, effect = '', custom = false, loop = true, direction = 'horizontal') {
-        //     let rateSlider = new Slider(true, '.js-rate', 3, 40, 1, false, true, false, '', false, false);
-        //     rateSlider.createSlider();
-
-        //     $(window).on('resize load', function () {
-        //         if ($(this).width() <= 1300) {
-        //             rateSlider.updateSlider('space', 20);
-        //             rateSlider.updateSlider('view', 2);
-        //             rateSlider.updateSlider('ratio', true);
-        //         }
-        //         if ($(this).width() <= 1024) {
-        //             rateSlider.updateSlider('space', 20);
-        //         }
-        //         if ($(this).width() <= 700) {
-        //             rateSlider.updateSlider('view', 1);
-        //         }
-        //     }).resize();
-        // }
 
         if ($('.client__slider').exists()) {
-            if ($('.client__slider').exists()) {
-                const SliderObj = new Slider('.js-slider-client', 5, 36);
-                SliderObj.createSlider();
+            const SliderObj = new Slider('.js-client-slider', 5, 36);
+            SliderObj.createSlider();
 
-                $(window).resize(function () {
-                    if ($(this).width() <= 1024 && $(this).width() >= 768) {
-                        SliderObj.updateSlider('space', 20);
-                    }
-                    if ($(this).width() <= 768 && $(this).width() >= 621) {
-                        SliderObj.updateSlider('pagination');
-                        SliderObj.updateSlider('view', 4);
-                        SliderObj.updateSlider('space', 20);
-                    }
-                    if ($(this).width() <= 620 && $(this).width() >= 501) {
-                        SliderObj.updateSlider('pagination');
-                        SliderObj.updateSlider('view', 3);
-                        SliderObj.updateSlider('space', 20);
-                    }
-                    if ($(this).width() <= 500) {
-                        SliderObj.updateSlider('pagination');
-                        SliderObj.updateSlider('view', 2);
-                        SliderObj.updateSlider('space', 20);
-                    }
-                }).resize();
-            }
+            $(window).resize(function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 768) {
+                    SliderObj.updateSlider('space', 20);
+                }
+                if ($(this).width() <= 768 && $(this).width() >= 621) {
+                    SliderObj.updateSlider('pagination');
+                    SliderObj.updateSlider('view', 4);
+                    SliderObj.updateSlider('space', 20);
+                }
+                if ($(this).width() <= 620 && $(this).width() >= 501) {
+                    SliderObj.updateSlider('pagination');
+                    SliderObj.updateSlider('view', 3);
+                    SliderObj.updateSlider('space', 20);
+                }
+                if ($(this).width() <= 500) {
+                    SliderObj.updateSlider('pagination');
+                    SliderObj.updateSlider('view', 2);
+                    SliderObj.updateSlider('space', 20);
+                }
+            }).resize();
         }
-
-        // if ($('.js-info-slider').exists()) {
-        //     var infoSlider = new Slider(true, '.js-info-slider', 1, 10, 1, true, true, true, 'fade', true);
-        //     infoSlider.createSlider();
-
-        //     if ($('.js-graph-slider').exists()) {
-        //         let graphSlider = new Slider(true, '.js-graph-slider', 1, 10, 1, true, false, true, 'fade', false);
-        //         graphSlider.createSlider();
-
-        //         graphSlider.slider.controller.control = infoSlider.slider;
-        //         infoSlider.slider.controller.control = graphSlider.slider;
-        //     }
-        // }
-
-        // if ($('.js-slider-partners').exists()) {
-        //     let partnerSlider = new Slider(false, '.js-slider-partners', 4, 82, 8, false, false, false);
-        //     partnerSlider.createSlider();
-
-        //     if (window.matchMedia("(min-width: 1300px)").matches) {
-        //         partnerSlider.updateSlider('space', 50);
-        //     }
-        //     if (window.matchMedia("(max-width: 1024px)").matches && window.matchMedia("(min-width: 501px)").matches) {
-        //         partnerSlider.updateSlider('space', 30);
-        //         partnerSlider.updateSlider('view', 3);
-        //     }
-        //     if (window.matchMedia("(max-width: 500px)").matches && window.matchMedia("(min-width: 319px)").matches) {
-        //         partnerSlider.updateSlider('space', 20);
-        //         partnerSlider.updateSlider('view', 2);
-        //     }
-        // }
 
         if ($('.works').exists()) {
             let SliderObj = new Slider('.js-work-slider', 2, 40);
@@ -219,7 +168,7 @@ const projectFunc = {
         }
 
         if ($('.blog__slider').exists()) {
-            let SliderObj = new Slider('.js-blog-slider', 3, 40);
+            let SliderObj = new Slider('.js-blog-slider', 3, 50);
             SliderObj.createSlider();
             SliderObj.updateSlider('pagination');
             SliderObj.updateSlider('arrow');
@@ -229,11 +178,8 @@ const projectFunc = {
                     SliderObj.updateSlider('space', 20);
                     SliderObj.updateSlider('view', 2);
                 }
-                if ($(this).width() <= 700 && $(this).width() >= 320) {
+                if ($(this).width() <= 620 && $(this).width() >= 320) {
                     SliderObj.updateSlider('view', 1);
-                }
-                else {
-                    SliderObj.updateSlider('view', 2);
                 }
             }).resize();
         }

@@ -153,14 +153,16 @@
         .bildboard {
 
             &__container {
+                padding-top: 183px;
                 padding-bottom: 40px;
 
                 @media(max-width: 1024px) {
+                    padding-top: 120px;
                     padding-bottom: 22px;
                 }
 
                 @media (max-width: 620px) {
-                    padding-top: 67px;
+                    padding-top: 150px;
                 }
             }
         }
