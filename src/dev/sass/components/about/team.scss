@@ -1,8 +1,10 @@
 .team {
     margin-top: 76px;
+    padding-bottom: 76px;
 
     @media(max-width: 620px) {
         margin-top: 52px;
+        padding-bottom: 49px;
     }
 
     &__items {

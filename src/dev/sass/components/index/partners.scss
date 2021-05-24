@@ -10,6 +10,7 @@
 
     @media(max-width: 620px) {
         margin-top: 45px;
+        padding-bottom: 45px;
     }
 
     .swiper-slide {
@@ -150,7 +151,8 @@
     }
 
     &--about {
-        margin: 20px auto 37px;
+        margin: 20px auto 0;
+        padding-bottom: 0;
     }
 
     &--special {

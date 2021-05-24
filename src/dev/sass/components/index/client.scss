@@ -1,5 +1,6 @@
 .client {
     margin-top: 70px;
+    padding-bottom: 50px;
 
     @media(max-width: 1024px) {
         margin-top: 46px;
@@ -57,7 +58,6 @@
 
         @media(max-width: 620px) {
             margin-top: 20px;
-            min-height: 196px;
         }
 
 

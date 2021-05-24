@@ -1,5 +1,5 @@
 import Scrollbar, { ScrollbarPlugin } from 'smooth-scrollbar';
-import SliderN from './class/Slider.js';
+import Slider from './class/Slider.js';
 
 jQuery.fn.exists = function () {
     return $(this).length;
@@ -139,33 +139,30 @@ const projectFunc = {
         }
 
         if ($('.client__slider').exists()) {
-            if ($('.client__slider').exists()) {
-                const partnerSlider = new SliderN('.client__slider', 5, 36);
-                partnerSlider.createSlider();
+            const partnerSlider = new Slider('.client__slider', 5, 36);
+            partnerSlider.createSlider();
 
+            $(window).on('resize load', function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 768) {
+                    partnerSlider.updateSlider('space', 20);
+                }
+                if ($(this).width() <= 768 && $(this).width() >= 621) {
+                    partnerSlider.updateSlider('pagination');
+                    partnerSlider.updateSlider('view', 4);
+                    partnerSlider.updateSlider('space', 20);
+                }
+                if ($(this).width() <= 620 && $(this).width() >= 501) {
+                    partnerSlider.updateSlider('pagination');
+                    partnerSlider.updateSlider('view', 3);
+                    partnerSlider.updateSlider('space', 20);
 
-                $(window).on('resize load', function () {
-                    if ($(this).width() <= 1024 && $(this).width() >= 768) {
-                        partnerSlider.updateSlider('space', 20);
-                    }
-                    if ($(this).width() <= 768 && $(this).width() >= 621) {
-                        partnerSlider.updateSlider('pagination');
-                        partnerSlider.updateSlider('view', 4);
-                        partnerSlider.updateSlider('space', 20);
-                    }
-                    if ($(this).width() <= 620 && $(this).width() >= 501) {
-                        partnerSlider.updateSlider('pagination');
-                        partnerSlider.updateSlider('view', 3);
-                        partnerSlider.updateSlider('space', 20);
-
-                    }
-                    if ($(this).width() <= 500 && $(this).width() >= 21) {
-                        partnerSlider.updateSlider('pagination');
-                        partnerSlider.updateSlider('view', 2);
-                        partnerSlider.updateSlider('space', 20);
-                    }
-                }).resize();
-            }
+                }
+                if ($(this).width() <= 500 && $(this).width() >= 21) {
+                    partnerSlider.updateSlider('pagination');
+                    partnerSlider.updateSlider('view', 2);
+                    partnerSlider.updateSlider('space', 20);
+                }
+            }).resize();
         }
 
         if ($('.js-info-slider').exists()) {
@@ -273,6 +270,18 @@ const projectFunc = {
                 }
             }).resize();
         }
+
+/*        if ($('.blog__slider').exists()) {
+            try {
+                var blogSlider = new Swiper('.blog__slider', {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                });
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }*/
 
         if ($('.case__slider--1').exists()) {
             try {
@@ -646,7 +655,7 @@ const setCursor = () => {
 
         gsap.to('#smallCircle', {
             attr: {
-                r: 0,
+                r: 3,
             }
         });
     }
@@ -980,7 +989,7 @@ const showCallForm = () => {
 
     ScrollTrigger.create({
         trigger: '.call',
-        start: 'top-=80% top',
+        start: 'top-=130% top',
         end: 'bottom',
         animation: call,
     });
@@ -1361,11 +1370,17 @@ const checkInput = () => {
 
 function initImageParallax() {
 
+    const getVh = () => {
+        const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+        return vh;
+    }
+
     // select all sections .with-parallax
     gsap.utils.toArray('.with-parallax').forEach(section => {
 
         // get the image
         const image = section.querySelector('picture');
+        const info = section.querySelector('.portfolio__left');
 
         // create tween for the image
         gsap.to(image, {
@@ -1377,6 +1392,17 @@ function initImageParallax() {
                 scrub: true,
             }
         });
+
+        gsap.to(info, 10, {
+            yPercent: -50,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top bottom',
+                scrub: true,
+            }
+        });
+
 
     });
 
@@ -1458,7 +1484,6 @@ function initPinPortfolio() {
                 ScrollTrigger.create({
                     trigger: stage,
                     start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
-                    // start: 'top center',
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
@@ -1472,7 +1497,7 @@ function initPinPortfolio() {
             const pin = ScrollTrigger.create({
                 trigger: pWrapper,
                 start: 'top top',
-                end: 'bottom bottom',
+                end: 'bottom-=200',
 
                 onEnter: () => {
                     if (gsap.utils.toArray('.portfolio__item').length > 0) {
