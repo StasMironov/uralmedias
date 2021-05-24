@@ -1489,7 +1489,7 @@ function initSmoothScrollBar(position) {
         if ($(this).width() <= 620) {
             bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
                 //easing: 'easeInOutQuart',
-                damping: 0.1,
+                damping: 0.17,
                 delegateTo: document,
                 renderByPixel: true,
                 continuousScrolling: true,

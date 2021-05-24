@@ -3439,7 +3439,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           renderByPixel: !0,
           continuousScrolling: !0
         })), $(this).width() <= 620 && (e = Ot.init(document.querySelector("#viewport"), {
-          damping: .1,
+          damping: .17,
           delegateTo: document,
           renderByPixel: !0,
           continuousScrolling: !0
