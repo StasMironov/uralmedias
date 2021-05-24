@@ -1351,18 +1351,18 @@ function initImageParallax() {
         $(window).resize(function () {
             if ($(this).width() > 620) {
                 gsap.to(info, 10, {
-                    yPercent: -50,
+                    yPercent: -25,
                     ease: 'none',
                     scrollTrigger: {
                         trigger: section,
-                        start: 'top bottom',
-                        scrub: true,
+                        start: 'top center-=30',
+                        scrub: true
                     }
                 });
             }
             if ($(this).width() <= 620) {
                 gsap.to(info, 10, {
-                    yPercent: -30,
+                    yPercent: -25,
                     ease: 'none',
                     scrollTrigger: {
                         trigger: section,

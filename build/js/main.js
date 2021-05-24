@@ -3548,15 +3548,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       }), $(window).resize(function () {
         $(this).width() > 620 && gsap.to(n, 10, {
-          yPercent: -50,
+          yPercent: -25,
           ease: "none",
           scrollTrigger: {
             trigger: t,
-            start: "top bottom",
+            start: "top center-=30",
             scrub: !0
           }
         }), $(this).width() <= 620 && gsap.to(n, 10, {
-          yPercent: -30,
+          yPercent: -25,
           ease: "none",
           scrollTrigger: {
             trigger: t,
