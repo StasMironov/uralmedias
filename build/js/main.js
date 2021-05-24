@@ -223,7 +223,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     function t(e, n, r) {
       !function (t, e) {
         if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-      }(this, t), this.init = !0, this.name = e, this.view = n, this.space = r, this.settings = {};
+      }(this, t), this.init = !0, this.name = e, this.view = n, this.space = r, this.settings = {
+        slidesPerView: this.view,
+        spaceBetween: this.space
+      };
     }
 
     var e, n, o;
@@ -294,14 +297,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
           case "pagination":
             var n = $(this.name).find(".pagination")[0];
-            this.settings = {
-              slidesPerView: this.view,
-              spaceBetween: this.space,
-              slidesPerColumn: this.column,
-              pagination: {
-                el: n,
-                clickable: !0
-              }
+            this.settings.pagination = {
+              el: n,
+              clickable: !0
             }, this.slider.destroy(), this.slider = new Swiper(this.name, this.settings);
             break;
 
