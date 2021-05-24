@@ -1,11 +1,13 @@
-import Swiper from 'swiper';
 class Slider {
     constructor(name, view, space) {
         this.init = true;
         this.name = name;
         this.view = view;
         this.space = space;
-        this.settings = {};
+        this.settings = {
+            slidesPerView: this.view,
+            spaceBetween: this.space,
+        };
     }
 
     createSlider() {
@@ -72,14 +74,9 @@ class Slider {
                 break;
             case 'pagination':
                 let pagEl = $(this.name).find('.pagination')[0];
-                this.settings = {
-                    slidesPerView: this.view,
-                    spaceBetween: this.space,
-                    slidesPerColumn: this.column,
-                    pagination: {
-                        el: pagEl,
-                        clickable: true,
-                    },
+                this.settings.pagination = {
+                    el: pagEl,
+                    clickable: true
                 };
                 this.slider.destroy();
                 this.slider = new Swiper(this.name, this.settings);

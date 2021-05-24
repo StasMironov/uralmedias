@@ -74,26 +74,6 @@ block content
                         .include__abbr <span>CPС</span>min
                         .include__note Минимальная стоимость клика
 
-        include ../modules/price
-
-        .container
-            .slider.blog__slider.js-slider
-                .swiper-wrapper
-                    a.blog__item.swiper-slide.link(href="#") 1
-                    a.blog__item.swiper-slide.link(href="#") 2
-                    a.blog__item.swiper-slide.link(href="#") 3
-                    a.blog__item.swiper-slide.link(href="#") 4
-                .arrow
-                    .arrow__link.arrow__link--prev
-                        <svg class="b-svg svg-arr-slider">
-                        <use xlink:href="../svg/symbol/sprite.svg#arr-slider"></use>
-                        </svg>
-                    .arrow__link.arrow__link--next
-                        <svg class="b-svg svg-arr-slider">
-                        <use xlink:href="../svg/symbol/sprite.svg#arr-slider"></use>
-                        </svg>
-                .pagination
-
         .include
             .include__container.container
                 h2.include__title.title-3 Если у Вас уже настроена контекстная реклама, но эффекта нет
@@ -103,12 +83,72 @@ block content
                         span Заказать проект
                     .btn__text Заказать проект
 
-        - var quote = 'h4';
-        - var quoteTitle = 'О нашей команде';
-        - var quoteInfo = ['В команде “Uralmedias” работает 10 специалистов, в нашем портфолио уже около 300 проектов. C 2011 года мы эффективно настраиваем и оказываем услуги по ведению кампаний контекстной рекламы в системах Яндекс Директ и Google Adwords для бизнеса различной направленности: от лендингов одной услуги до крупных интернет-магазинов.',    'Digital-агентство “Uralmedias” является Партнером Google и Сертифицированным агентством Яндекса. Раз в три месяца мы проходим сертификацию. Сотрудники ежегодно сдают аттестационные экзамены Google и Яндекс.'];
-
-        include ../modules/quote
         include ../modules/partners
-        include ../modules/place
+
+        .seo-slider
+            .container
+                .slider.blog__slider.js-blog-slider
+                    .swiper-wrapper
+                        a.blog__item.swiper-slide.link(href="#")
+                            .blog__pic(style="background-image: url(./img/dataBild/img3.jpg);")
+                                .blog__popup
+                                    .blog__txt В этой статье разбираемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть "в тренде"
+                            .blog__content
+                                .blog__text Как сформировать доверие аудитории?
+                                .blog__bottom
+                                    .blog__date
+                                        span Статьи
+                                    .blog__ref
+                        a.blog__item.swiper-slide.link(href="#")
+                            .blog__pic(style="background-image: url(./img/dataBild/img3.jpg);")
+                                .blog__popup
+                                    .blog__txt В этой статье разбираемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть "в тренде"
+                            .blog__content
+                                .blog__text Как сформировать доверие аудитории?
+                                .blog__bottom
+                                    .blog__date
+                                        span Статьи
+                                    .blog__ref
+                        a.blog__item.swiper-slide.link(href="#")
+                            .blog__pic(style="background-image: url(./img/dataBild/img3.jpg);")
+                                .blog__popup
+                                    .blog__txt В этой статье разбираемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть "в тренде"
+                            .blog__content
+                                .blog__text Как сформировать доверие аудитории?
+                                .blog__bottom
+                                    .blog__date
+                                        span Статьи
+                                    .blog__ref
+                        a.blog__item.swiper-slide.link(href="#")
+                            .blog__pic(style="background-image: url(./img/dataBild/img3.jpg);")
+                                .blog__popup
+                                    .blog__txt В этой статье разбираемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть "в тренде"
+                            .blog__content
+                                .blog__text Как сформировать доверие аудитории?
+                                .blog__bottom
+                                    .blog__date
+                                        span Статьи
+                                    .blog__ref
+                        a.blog__item.swiper-slide.link(href="#")
+                            .blog__pic(style="background-image: url(./img/dataBild/img3.jpg);")
+                                .blog__popup
+                                    .blog__txt В этой статье разбираемся, зачем бизнесу контент-маркетинг, и какой контент публиковать, чтобы быть "в тренде"
+                            .blog__content
+                                .blog__text Как сформировать доверие аудитории?
+                                .blog__bottom
+                                    .blog__date
+                                        span Статьи
+                                    .blog__ref
+
+                    .arrow
+                        .arrow__link.arrow__link--prev
+                            <svg class="b-svg svg-arr-slider ">
+                            <use xlink:href="./svg/symbol/sprite.svg#arr-slider"></use>
+                            </svg>
+                        .arrow__link.arrow__link--next
+                            <svg class="b-svg svg-arr-slider ">
+                            <use xlink:href="./svg/symbol/sprite.svg#arr-slider"></use>
+                            </svg>
+                    .pagination
 
 block script
