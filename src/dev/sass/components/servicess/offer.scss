@@ -3,6 +3,7 @@
 
     @media(max-width: 620px) {
         margin-top: 33px;
+        padding-bottom: 45px;
     }
 
     &__items {
@@ -10,6 +11,7 @@
         flex-wrap: wrap;
         margin-left: -34px;
         margin-top: -34px;
+        margin-bottom: 10px;
 
         @media(max-width: 1300px) {
             margin-left: -25px;
@@ -108,7 +110,6 @@
                     opacity: 1;
                 }
             }
-
         }
 
         .b-svg,
@@ -188,7 +189,6 @@
         margin-top: auto;
     }
 
-
     .offer__item .offer__link {
         @media(max-width: 500px) {
             display: none;
@@ -198,6 +198,4 @@
     .offer__item .svg-transparent {
         fill: none;
     }
-
-
 }
