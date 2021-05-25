@@ -3518,7 +3518,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         $(this).on("click", function (t) {
           var n = $(this).attr("href").substring(1),
               r = $("body").find('[name= "'.concat(n, '"]'))[0];
-          return console.log(r), void 0 !== n && "" !== n && e.scrollIntoView(r, {
+          return void 0 !== n && "" !== n && e.scrollIntoView(r, {
             offsetLeft: 0,
             offsetRight: 0,
             alignToTop: !0,
@@ -3541,8 +3541,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         scrollTrigger: {
           trigger: t,
           start: "top bottom",
-          scrub: !0,
-          markers: !0
+          scrub: !0
         }
       }), $(window).resize(function () {
         $(this).width() > 620 && gsap.to(n, 10, {
@@ -3627,7 +3626,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if ($(".js-pin").exists()) try {
         var t;
         gsap.utils.toArray(".portfolio__item").forEach(function (t, e) {
-          console.log($(t).offset().top), ScrollTrigger.create({
+          ScrollTrigger.create({
             trigger: t,
             start: function start() {
               return "top ".concat($(gsap.utils.toArray(".portfolio__item")[0]).offset().top - 20);
@@ -3777,7 +3776,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }).to(n, {
           color: "#676767",
           ease: Back.easeOut.config(1.7)
-        }, "-=0.5"), _e ? (r.play(), o.reverse()) : (console.log(1), o.play(), r.reverse());
+        }, "-=0.5"), _e ? (r.play(), o.reverse()) : (o.play(), r.reverse());
       };
 
       gsap.utils.toArray(".services__item").forEach(function (t) {
@@ -3806,7 +3805,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
     }(), $(".btn--special").exists() && document.querySelectorAll(".btn--special").forEach(function (t, e) {
       var n = $(t).find(".btn__text").innerWidth();
-      console.log(n), $(t).css({
+      $(t).css({
         width: n + 39 + "px"
       });
     }), $("#certificate").exists() && $("#certificate").lightGallery(), It.setSlider(), function () {

@@ -604,8 +604,6 @@ const setCursor = () => {
 }
 
 function onAnimationComplete(link) {
-    // window.location = link.href;
-    console.log(link.href);
 }
 
 function animateBildboard() {
@@ -701,8 +699,6 @@ const setWidthBtn = () => {
 
         btnSpecial.forEach((element, _) => {
             let widthhEl = $(element).find('.btn__text').innerWidth();
-
-            console.log(widthhEl);
 
             $(element).css({
                 'width': widthhEl + 39 + 'px'
@@ -836,13 +832,11 @@ const showService = () => {
                 '-=0.5'
             )
 
-
         if (state) {
             serviceBg.play();
             serviceBgLeave.reverse();
         }
         else {
-            console.log(1);
             serviceBgLeave.play();
             serviceBg.reverse();
         }
@@ -1296,8 +1290,7 @@ function initImageParallax() {
                 trigger: section,
                 start: 'top bottom',
                 //start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
-                scrub: true,
-                markers: true
+                scrub: true
             }
         });
 
@@ -1427,11 +1420,6 @@ function initPinPortfolio() {
     if ($('.js-pin').exists()) {
         try {
             gsap.utils.toArray('.portfolio__item').forEach((stage, index) => {
-
-                // console.log(stage.clientHeight + getVh() / 10);
-
-                console.log($(stage).offset().top);
-
                 ScrollTrigger.create({
                     trigger: stage,
                     start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
@@ -1651,7 +1639,6 @@ function initSmoothScrollBar(position) {
             const dest = el.attr('href').substring(1); // получаем направление
             const elAnchor = $('body').find(`[name= "${dest}"]`)[0];
 
-            console.log(elAnchor);
             if (dest !== undefined && dest !== '') {
                 bodyScrollBar.scrollIntoView(elAnchor, {
                     offsetLeft: 0,
