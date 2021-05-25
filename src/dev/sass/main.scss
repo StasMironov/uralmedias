@@ -7,7 +7,7 @@
 * {
   box-sizing: border-box;
   outline: none !important;
-  // cursor: none !important;
+   cursor: none !important;
 }
 
 .bitrix-include-areas {
@@ -205,25 +205,8 @@ input::-ms-clear {
 .b-page {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 271px;
   z-index: 1;
   background-color: white;
-
-  @media(max-width: 1024px) {
-    padding-bottom: 205px;
-  }
-
-  @media(max-width: 768px) {
-    padding-bottom: 338px;
-  }
-
-  @media(max-width: 620px) {
-    padding-bottom: 257px;
-  }
-
-  @media(max-width: 580px) {
-    padding-bottom: 483px;
-  }
 }
 
 .sad-link {
