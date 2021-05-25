@@ -1,5 +1,6 @@
 .portfolio {
     // margin-top: 74px;
+    opacity: 0;
 
     @media(max-width: 1024px) {
         margin-top: 47px;
@@ -145,6 +146,7 @@
 
     &__items {
         margin-top: 41px;
+
 
         @media(max-width: 1024px) {
             margin-top: 24px;

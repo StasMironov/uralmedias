@@ -3517,8 +3517,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       t && e.setPosition(0, 0), $('a[href^="#"]').each(function () {
         $(this).on("click", function (t) {
           var n = $(this).attr("href").substring(1),
-              r = $("body").find('[data - anchor= "'.concat(n, '"]'))[0];
-          return void 0 !== n && "" !== n && e.scrollIntoView(r, {
+              r = $("body").find('[name= "'.concat(n, '"]'))[0];
+          return console.log(r), void 0 !== n && "" !== n && e.scrollIntoView(r, {
             offsetLeft: 0,
             offsetRight: 0,
             alignToTop: !0,
@@ -3541,7 +3541,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         scrollTrigger: {
           trigger: t,
           start: "top bottom",
-          scrub: !0
+          scrub: !0,
+          markers: !0
         }
       }), $(window).resize(function () {
         $(this).width() > 620 && gsap.to(n, 10, {
@@ -3557,12 +3558,31 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           ease: "none",
           scrollTrigger: {
             trigger: t,
-            start: "top bottom",
+            start: "top center-=30",
             scrub: !0
           }
         });
       }).resize();
     }), function () {
+      if ($(".portfolio").exists()) try {
+        var t = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .6
+          }
+        });
+        gsap.set(".portfolio", {
+          autoAlpha: 0
+        }), t.to(".portfolio", {
+          duration: .5,
+          autoAlpha: 1
+        }), setTimeout(function () {
+          t.play();
+        });
+      } catch (t) {
+        console.log("error");
+      }
       if ($(".js-pin-portfolio").exists()) try {
         gsap.utils.toArray(".portfolio__item").forEach(function (t, e) {
           ScrollTrigger.create({
@@ -3579,19 +3599,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             }
           });
         });
-        var t = document.querySelector(".portfolio");
+        var e = document.querySelector(".portfolio");
         ScrollTrigger.create({
-          trigger: t,
+          trigger: e,
           start: "top center",
           end: "bottom-=200",
           onEnter: function onEnter() {
             gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Yt(t.dataset.color);
+            return Yt(e.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Yt(t.dataset.color);
+            return Yt(e.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
