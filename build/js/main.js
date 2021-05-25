@@ -3433,17 +3433,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } else Ot.destroy(document.querySelector("#progress-scrollbar"));
 
       if ($(window).on("resize load", function () {
-        $(this).width() > 620 && (e = Ot.init(document.querySelector("#viewport"), {
+        if ($(this).width() > 620 && (e = Ot.init(document.querySelector("#viewport"), {
           damping: .04,
           delegateTo: document,
           renderByPixel: !0,
           continuousScrolling: !0
-        })), $(this).width() <= 620 && (e = Ot.init(document.querySelector("#viewport"), {
-          damping: .17,
-          delegateTo: document,
-          renderByPixel: !0,
-          continuousScrolling: !0
-        }));
+        })), $(this).width() <= 620) {
+          var t = {
+            speed: 400,
+            speedAsDuration: !0,
+            continuousScrolling: !1,
+            offset: (window.innerWidth, 90)
+          };
+          e = Ot.init(document.querySelector("#viewport"), t);
+        }
       }).resize(), $(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
         t.preventDefault(), Gt(!0), e.updatePluginOptions("modal", {
           open: !0
@@ -3824,7 +3827,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       function a() {
         gsap.to("#bigCircle", {
           attr: {
-            r: 15,
+            r: 13,
             fill: "transparent"
           }
         }), gsap.to("#smallCircle", {

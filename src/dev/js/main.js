@@ -564,7 +564,7 @@ const setCursor = () => {
     function onMouseHoverOut() {
         gsap.to('#bigCircle', {
             attr: {
-                r: 15,
+                r: 13,
                 fill: 'transparent'
             }
         });
@@ -638,8 +638,6 @@ function animateBildboard() {
     }
     );
 
-
-
     if ($('.bildboard__video').exists()) {
         let video = document.querySelector('.bildboard__video');
         video.currentTime = 0;
@@ -694,16 +692,12 @@ function animateBildboard() {
             },
             "-=0.3"
         )
-
-
-
 }
 
 const setWidthBtn = () => {
     if ($('.btn--special').exists()) {
 
         let btnSpecial = document.querySelectorAll('.btn--special');
-
 
         btnSpecial.forEach((element, _) => {
             let widthhEl = $(element).find('.btn__text').innerWidth();
@@ -1487,19 +1481,16 @@ function initSmoothScrollBar(position) {
         }
 
         if ($(this).width() <= 620) {
-            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
-                //easing: 'easeInOutQuart',
-                damping: 0.17,
-                delegateTo: document,
-                renderByPixel: true,
-                continuousScrolling: true,
-            });
+            const options = {
+                speed: 400,
+                speedAsDuration: true,
+                continuousScrolling: false,
+                offset: window.innerWidth < 621 ? 90 : 90
+            }
+
+            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), options);
         }
-
-
     }).resize();
-
-
 
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {
