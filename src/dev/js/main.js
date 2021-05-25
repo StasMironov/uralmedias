@@ -564,7 +564,7 @@ const setCursor = () => {
     function onMouseHoverOut() {
         gsap.to('#bigCircle', {
             attr: {
-                r: 15,
+                r: 13,
                 fill: 'transparent'
             }
         });
@@ -638,8 +638,6 @@ function animateBildboard() {
     }
     );
 
-
-
     if ($('.bildboard__video').exists()) {
         let video = document.querySelector('.bildboard__video');
         video.currentTime = 0;
@@ -694,16 +692,12 @@ function animateBildboard() {
             },
             "-=0.3"
         )
-
-
-
 }
 
 const setWidthBtn = () => {
     if ($('.btn--special').exists()) {
 
         let btnSpecial = document.querySelectorAll('.btn--special');
-
 
         btnSpecial.forEach((element, _) => {
             let widthhEl = $(element).find('.btn__text').innerWidth();
@@ -1284,13 +1278,26 @@ function initImageParallax() {
         const info = section.querySelector('.portfolio__left');
 
         // create tween for the image
+        // gsap.to(image, {
+        //     yPercent: 25,
+        //     ease: 'none',
+        //     scrollTrigger: {
+        //         trigger: section,
+        //         start: 'top bottom',
+        //         scrub: true,
+        //         markers: true
+        //     }
+        // });
+
         gsap.to(image, {
             yPercent: 25,
             ease: 'none',
             scrollTrigger: {
                 trigger: section,
                 start: 'top bottom',
+                //start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
                 scrub: true,
+                markers: true
             }
         });
 
@@ -1312,7 +1319,7 @@ function initImageParallax() {
                     ease: 'none',
                     scrollTrigger: {
                         trigger: section,
-                        start: 'top bottom',
+                        start: 'top center-=30',
                         scrub: true,
                     }
                 });
@@ -1333,6 +1340,38 @@ function initPinSteps() {
         return vh;
     }
 
+    if ($('.portfolio').exists()) {
+        try {
+            const showPortfolio = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.6 }
+            });
+
+            gsap.set(
+                '.portfolio',
+                {
+                    autoAlpha: 0
+                }
+            )
+
+            showPortfolio
+                .to(
+                    '.portfolio',
+                    {
+                        duration: 0.5,
+                        autoAlpha: 1,
+                    }
+                )
+
+            setTimeout(() => {
+                showPortfolio.play();
+            });
+        }
+        catch (err) {
+            console.log('error');
+        }
+    }
 
     if ($('.js-pin-portfolio').exists()) {
         try {
@@ -1370,8 +1409,6 @@ function initPinSteps() {
                 // markers: true
             });
 
-
-
         }
         catch (err) {
             console.log(err);
@@ -1400,8 +1437,7 @@ function initPinPortfolio() {
                     start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
-                    onEnterBack: () => updateBodyColor(stage.dataset.color),
-                    // markers: true
+                    onEnterBack: () => updateBodyColor(stage.dataset.color)
                 });
 
             });
@@ -1487,19 +1523,16 @@ function initSmoothScrollBar(position) {
         }
 
         if ($(this).width() <= 620) {
-            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
-                //easing: 'easeInOutQuart',
-                damping: 0.17,
-                delegateTo: document,
-                renderByPixel: true,
-                continuousScrolling: true,
-            });
+            const options = {
+                speed: 400,
+                speedAsDuration: true,
+                continuousScrolling: false,
+                offset: window.innerWidth < 621 ? 90 : 90
+            }
+
+            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), options);
         }
-
-
     }).resize();
-
-
 
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {
@@ -1614,12 +1647,12 @@ function initSmoothScrollBar(position) {
 
     $('a[href^="#"]').each(function () {
         $(this).on('click', function (event) {
-            var el = $(this);
-            var dest = el.attr('href').substring(1); // получаем направление
-            var elAnchor = $('body').find(`[data - anchor= "${dest}"]`)[0];
+            const el = $(this);
+            const dest = el.attr('href').substring(1); // получаем направление
+            const elAnchor = $('body').find(`[name= "${dest}"]`)[0];
 
+            console.log(elAnchor);
             if (dest !== undefined && dest !== '') {
-
                 bodyScrollBar.scrollIntoView(elAnchor, {
                     offsetLeft: 0,
                     offsetRight: 0,
