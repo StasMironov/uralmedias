@@ -147,4 +147,16 @@
             }
         }
     }
+
+    &--single {
+        padding-bottom: 90px;
+
+        @media(max-width: 1024px) {
+            padding-bottom: 80px;
+        }
+
+        @media(max-width: 320px) {
+            padding-bottom: 60px;
+        }
+    }
 }

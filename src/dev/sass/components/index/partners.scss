@@ -6,10 +6,12 @@
     @media(max-width: 1024px) {
         max-width: 678px;
         margin-top: 49px;
+        margin-bottom: 34px;
     }
 
     @media(max-width: 620px) {
         margin-top: 45px;
+        margin-bottom: 0;
         padding-bottom: 45px;
     }
 
@@ -152,6 +154,7 @@
 
     &--about {
         margin: 20px auto 0;
+        padding-bottom: 45px;
     }
 
     &--special {
@@ -159,6 +162,10 @@
 
         @media(max-width: 1024px) {
             margin-top: 55px;
+        }
+
+        @media(max-width: 620px) {
+            padding-bottom: 0;
         }
 
         .partners {

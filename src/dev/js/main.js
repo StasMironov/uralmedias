@@ -1152,13 +1152,7 @@ const formShow = (element, status) => {
     }
 }
 
-
-
-
-
-
-
-const changeHeightPage = () => {
+/*const changeHeightPage = () => {
     let footerHeight,
         paddingBottom,
         outerHeightEl;
@@ -1168,7 +1162,7 @@ const changeHeightPage = () => {
     paddingBottom = outerHeightEl - (outerHeightEl - footerHeight);
 
     $('.b-page').css('padding-bottom', paddingBottom);
-}
+}*/
 
 if ($('#request').exists()) {
     try {
@@ -1736,7 +1730,7 @@ $(window).resize(function () {
 }).resize();
 
 function initContent() {
-    changeHeightPage();
+   // changeHeightPage();
     setSelect();
     initSmoothScrollBar();
     initImageParallax();
