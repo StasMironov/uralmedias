@@ -81,4 +81,14 @@
             display: flex;
         }
     }
+
+    .breadcrumbs--case {
+
+        .breadcrumbs__container {
+
+            @media(max-width: 620px) {
+                display: block
+            }
+        }
+    }
 }
