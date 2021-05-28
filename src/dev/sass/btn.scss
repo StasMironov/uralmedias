@@ -41,8 +41,14 @@
         font-weight: 700;
         font-size: 14px;
         margin: 35px auto 0;
+        width: max-content;
 
         .btn {
+
+            &__text {
+                line-height: 1;
+            }
+
             &__special {
                 display: flex;
                 position: absolute;
@@ -65,6 +71,7 @@
                 span {
                     position: relative;
                     padding-right: 39px;
+                    line-height: 1;
 
                     &:after {
                         content: "";
@@ -73,7 +80,7 @@
                         width: 30px;
                         height: 10px;
                         background-repeat: no-repeat;
-                        top: 0px;
+                        top: 3px;
                         bottom: 0;
                         margin: auto;
                         right: 0px;
@@ -96,7 +103,7 @@
                     width: 30px;
                     height: 10px;
                     background-repeat: no-repeat;
-                    top: 0px;
+                    top: 3px;
                     bottom: 0;
                     margin: auto;
                     right: 0px;
@@ -107,7 +114,7 @@
 
         &:hover {
             .btn__special {
-                width: 100%;
+                width: calc(100% + 23px);
             }
         }
     }

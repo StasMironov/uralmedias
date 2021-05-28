@@ -692,21 +692,6 @@ function animateBildboard() {
         )
 }
 
-const setWidthBtn = () => {
-    if ($('.btn--special').exists()) {
-
-        let btnSpecial = document.querySelectorAll('.btn--special');
-
-        btnSpecial.forEach((element, _) => {
-            let widthhEl = $(element).find('.btn__text').innerWidth();
-
-            $(element).css({
-                'width': widthhEl + 39 + 'px'
-            });
-        });
-    }
-}
-
 function setGallery() {
     if ($('#certificate').exists()) {
         $('#certificate').lightGallery();
@@ -1730,7 +1715,7 @@ $(window).resize(function () {
 }).resize();
 
 function initContent() {
-   // changeHeightPage();
+    // changeHeightPage();
     setSelect();
     initSmoothScrollBar();
     initImageParallax();
@@ -1742,7 +1727,6 @@ function initContent() {
     showPlace();
     showService();
     moveMainBildboard();
-    setWidthBtn();
     setGallery();
     projectFunc.setSlider();
     setCursor();
