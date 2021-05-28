@@ -3800,12 +3800,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         animation: t,
         scrub: !0
       });
-    }(), $(".btn--special").exists() && document.querySelectorAll(".btn--special").forEach(function (t, e) {
-      var n = $(t).find(".btn__text").innerWidth();
-      $(t).css({
-        width: n + 39 + "px"
-      });
-    }), $("#certificate").exists() && $("#certificate").lightGallery(), It.setSlider(), function () {
+    }(), $("#certificate").exists() && $("#certificate").lightGallery(), It.setSlider(), function () {
       var t = document.querySelector(".cursor__circle--big"),
           e = document.querySelector(".cursor__circle--small"),
           n = document.querySelector(".cursor__plus"),
