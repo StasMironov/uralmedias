@@ -259,13 +259,6 @@
         }
     }
 
-    &__form {
-        .btn {
-            width: auto;
-        }
-    }
-
-
     &--special {
         .call {
 
@@ -427,9 +420,6 @@
                 @media(min-width: 883px) {
                     padding-top: 7px;
                 }
-
-
-
 
                 .btn {
                     margin: 3px 0 0;

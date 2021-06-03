@@ -1513,15 +1513,6 @@ function initSmoothScrollBar(position) {
         $('.js-overlay').on('click', () => {
             showOverlay(false);
             bodyScrollBar.updatePluginOptions('modal', { open: false })
-
-            if ($('.request-popup__wrapper').exists()) {
-                try {
-                    $('.request-popup__wrapper').removeClass('active');
-                }
-                catch (err) {
-                    console.log(err);
-                }
-            }
         });
     }
 

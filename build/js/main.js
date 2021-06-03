@@ -2150,8 +2150,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var R = function R() {
     return y.Date.now();
   },
-      q = Math.max,
-      N = Math.min;
+      N = Math.max,
+      q = Math.min;
 
   var B = function B(t, e, n) {
     var r,
@@ -2186,7 +2186,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       if (y(t)) return g(t);
       s = setTimeout(m, function (t) {
         var n = e - (t - c);
-        return f ? N(n, i - (t - u)) : n;
+        return f ? q(n, i - (t - u)) : n;
       }(t));
     }
 
@@ -2206,7 +2206,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === s && (s = setTimeout(m, e)), a;
     }
 
-    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? q(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), b.cancel = function () {
+    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? N(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), b.cancel = function () {
       void 0 !== s && clearTimeout(s), u = 0, r = c = o = s = void 0;
     }, b.flush = function () {
       return void 0 === s ? a : g(R());
@@ -3388,10 +3388,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   if ($(".header__inner").exists) try {
     var Rt = $(window),
-        qt = $(".header__inner"),
-        Nt = qt.offset().top;
+        Nt = $(".header__inner"),
+        qt = Nt.offset().top;
     Rt.on("scroll", function () {
-      (window.pageYOffset || document.documentElement.scrollTop) > Nt ? qt.addClass("mf-fixed") : qt.removeClass("mf-fixed");
+      (window.pageYOffset || document.documentElement.scrollTop) > qt ? Nt.addClass("mf-fixed") : Nt.removeClass("mf-fixed");
     });
   } catch (t) {
     console.log(t);
@@ -3449,13 +3449,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           open: !0
         });
       }), $(".js-overlay").exists() && $(".js-overlay").on("click", function () {
-        if (Gt(!1), e.updatePluginOptions("modal", {
+        Gt(!1), e.updatePluginOptions("modal", {
           open: !1
-        }), $(".request-popup__wrapper").exists()) try {
-          $(".request-popup__wrapper").removeClass("active");
-        } catch (t) {
-          console.log(t);
-        }
+        });
       }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
         Gt(!1), e.updatePluginOptions("modal", {
           open: !1
