@@ -488,8 +488,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = v ? "set" : "add",
         g = o[t],
         b = g && g.prototype,
-        x = g,
-        w = {},
+        w = g,
+        x = {},
         _ = function _(t) {
       var e = b[t];
       a(b, t, "add" == t ? function (t) {
@@ -507,13 +507,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     if (i(t, "function" != typeof g || !(y || b.forEach && !f(function () {
       new g().entries().next();
-    })))) x = n.getConstructor(e, t, v, m), s.REQUIRED = !0;else if (i(t, !0)) {
-      var S = new x(),
-          T = S[m](y ? {} : -0, 1) != S,
-          E = f(function () {
+    })))) w = n.getConstructor(e, t, v, m), s.REQUIRED = !0;else if (i(t, !0)) {
+      var S = new w(),
+          O = S[m](y ? {} : -0, 1) != S,
+          T = f(function () {
         S.has(1);
       }),
-          O = p(function (t) {
+          E = p(function (t) {
         new g(t);
       }),
           A = !y && f(function () {
@@ -523,19 +523,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         return !t.has(-0);
       });
-      O || ((x = e(function (e, n) {
-        u(e, x, t);
-        var r = h(new g(), e, x);
+      E || ((w = e(function (e, n) {
+        u(e, w, t);
+        var r = h(new g(), e, w);
         return null != n && c(n, r[m], {
           that: r,
           AS_ENTRIES: v
         }), r;
-      })).prototype = b, b.constructor = x), (E || A) && (_("delete"), _("has"), v && _("get")), (A || T) && _(m), y && b.clear && delete b.clear;
+      })).prototype = b, b.constructor = w), (T || A) && (_("delete"), _("has"), v && _("get")), (A || O) && _(m), y && b.clear && delete b.clear;
     }
-    return w[t] = x, r({
+    return x[t] = w, r({
       global: !0,
-      forced: x != g
-    }, w), d(x, t), y || n.setStrong(x, t, v), x;
+      forced: w != g
+    }, x), d(w, t), y || n.setStrong(w, t, v), w;
   };
 }, function (t, e, n) {
   var r = n(4),
@@ -628,13 +628,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = n && n.that,
         g = !(!n || !n.AS_ENTRIES),
         b = !(!n || !n.IS_ITERATOR),
-        x = !(!n || !n.INTERRUPTED),
-        w = a(e, m, 1 + g + x),
+        w = !(!n || !n.INTERRUPTED),
+        x = a(e, m, 1 + g + w),
         _ = function _(t) {
       return l && c(l), new u(!0, t);
     },
         S = function S(t) {
-      return g ? (r(t), x ? w(t[0], t[1], _) : w(t[0], t[1])) : x ? w(t, _) : w(t);
+      return g ? (r(t), w ? x(t[0], t[1], _) : x(t[0], t[1])) : w ? x(t, _) : x(t);
     };
 
     if (b) l = t;else {
@@ -753,12 +753,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   t.exports = function (t, e, n, l, d, g, b) {
     o(n, e, l);
 
-    var x,
-        w,
+    var w,
+        x,
         _,
         S = function S(t) {
-      if (t === d && P) return P;
-      if (!v && t in O) return O[t];
+      if (t === d && j) return j;
+      if (!v && t in E) return E[t];
 
       switch (t) {
         case "keys":
@@ -773,27 +773,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return new n(this);
       };
     },
-        T = e + " Iterator",
-        E = !1,
-        O = t.prototype,
-        A = O[y] || O["@@iterator"] || d && O[d],
-        P = !v && A || S(d),
-        j = "Array" == e && O.entries || A;
+        O = e + " Iterator",
+        T = !1,
+        E = t.prototype,
+        A = E[y] || E["@@iterator"] || d && E[d],
+        j = !v && A || S(d),
+        P = "Array" == e && E.entries || A;
 
-    if (j && (x = i(j.call(new t())), h !== Object.prototype && x.next && (f || i(x) === h || (a ? a(x, h) : "function" != typeof x[y] && c(x, y, m)), s(x, T, !0, !0), f && (p[T] = m))), "values" == d && A && "values" !== A.name && (E = !0, P = function P() {
+    if (P && (w = i(P.call(new t())), h !== Object.prototype && w.next && (f || i(w) === h || (a ? a(w, h) : "function" != typeof w[y] && c(w, y, m)), s(w, O, !0, !0), f && (p[O] = m))), "values" == d && A && "values" !== A.name && (T = !0, j = function j() {
       return A.call(this);
-    }), f && !b || O[y] === P || c(O, y, P), p[e] = P, d) if (w = {
+    }), f && !b || E[y] === j || c(E, y, j), p[e] = j, d) if (x = {
       values: S("values"),
-      keys: g ? P : S("keys"),
+      keys: g ? j : S("keys"),
       entries: S("entries")
-    }, b) for (_ in w) {
-      (v || E || !(_ in O)) && u(O, _, w[_]);
+    }, b) for (_ in x) {
+      (v || T || !(_ in E)) && u(E, _, x[_]);
     } else r({
       target: e,
       proto: !0,
-      forced: v || E
-    }, w);
-    return w;
+      forced: v || T
+    }, x);
+    return x;
   };
 }, function (t, e, n) {
   var r = n(36),
@@ -1609,7 +1609,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = y["delete"],
         g = y.has,
         b = y.get,
-        x = y.set;
+        w = y.set;
     i(y, {
       "delete": function _delete(t) {
         if (u(t) && !d(t)) {
@@ -1638,8 +1638,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       set: function set(t, e) {
         if (u(t) && !d(t)) {
           var n = l(this);
-          n.frozen || (n.frozen = new r()), g.call(this, t) ? x.call(this, t, e) : n.frozen.set(t, e);
-        } else x.call(this, t, e);
+          n.frozen || (n.frozen = new r()), g.call(this, t) ? w.call(this, t, e) : n.frozen.set(t, e);
+        } else w.call(this, t, e);
 
         return this;
       }
@@ -1759,8 +1759,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         p = 7 == t,
         d = 5 == t || f;
     return function (h, v, y, m) {
-      for (var g, b, x = i(h), w = o(x), _ = r(v, y, 3), S = a(w.length), T = 0, E = m || s, O = e ? E(h, S) : n || p ? E(h, 0) : void 0; S > T; T++) {
-        if ((d || T in w) && (b = _(g = w[T], T, x), t)) if (e) O[T] = b;else if (b) switch (t) {
+      for (var g, b, w = i(h), x = o(w), _ = r(v, y, 3), S = a(x.length), O = 0, T = m || s, E = e ? T(h, S) : n || p ? T(h, 0) : void 0; S > O; O++) {
+        if ((d || O in x) && (b = _(g = x[O], O, w), t)) if (e) E[O] = b;else if (b) switch (t) {
           case 3:
             return !0;
 
@@ -1768,20 +1768,20 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             return g;
 
           case 6:
-            return T;
+            return O;
 
           case 2:
-            c.call(O, g);
+            c.call(E, g);
         } else switch (t) {
           case 4:
             return !1;
 
           case 7:
-            c.call(O, g);
+            c.call(E, g);
         }
       }
 
-      return f ? -1 : u || l ? l : O;
+      return f ? -1 : u || l ? l : E;
     };
   };
 
@@ -1850,13 +1850,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         m = y > 1 ? arguments[1] : void 0,
         g = void 0 !== m,
         b = u(h),
-        x = 0;
-    if (g && (m = r(m, y > 2 ? arguments[2] : void 0, 2)), null == b || v == Array && a(b)) for (n = new v(e = s(h.length)); e > x; x++) {
-      d = g ? m(h[x], x) : h[x], c(n, x, d);
-    } else for (p = (f = b.call(h)).next, n = new v(); !(l = p.call(f)).done; x++) {
-      d = g ? i(f, m, [l.value, x], !0) : l.value, c(n, x, d);
+        w = 0;
+    if (g && (m = r(m, y > 2 ? arguments[2] : void 0, 2)), null == b || v == Array && a(b)) for (n = new v(e = s(h.length)); e > w; w++) {
+      d = g ? m(h[w], w) : h[w], c(n, w, d);
+    } else for (p = (f = b.call(h)).next, n = new v(); !(l = p.call(f)).done; w++) {
+      d = g ? i(f, m, [l.value, w], !0) : l.value, c(n, w, d);
     }
-    return n.length = x, n;
+    return n.length = w, n;
   };
 }, function (t, e, n) {
   var r = n(6),
@@ -2050,47 +2050,47 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       m = y.Symbol,
       g = Object.prototype,
       b = g.hasOwnProperty,
-      x = g.toString,
-      w = m ? m.toStringTag : void 0;
+      w = g.toString,
+      x = m ? m.toStringTag : void 0;
 
   var _ = function _(t) {
-    var e = b.call(t, w),
-        n = t[w];
+    var e = b.call(t, x),
+        n = t[x];
 
     try {
-      t[w] = void 0;
+      t[x] = void 0;
       var r = !0;
     } catch (t) {}
 
-    var o = x.call(t);
-    return r && (e ? t[w] = n : delete t[w]), o;
+    var o = w.call(t);
+    return r && (e ? t[x] = n : delete t[x]), o;
   },
       S = Object.prototype.toString;
 
-  var T = function T(t) {
+  var O = function O(t) {
     return S.call(t);
   },
-      E = m ? m.toStringTag : void 0;
+      T = m ? m.toStringTag : void 0;
 
-  var O = function O(t) {
-    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : E && E in Object(t) ? _(t) : T(t);
+  var E = function E(t) {
+    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : T && T in Object(t) ? _(t) : O(t);
   };
 
   var A = function A(t) {
     return null != t && "object" == _typeof(t);
   };
 
-  var P = function P(t) {
-    return "symbol" == _typeof(t) || A(t) && "[object Symbol]" == O(t);
+  var j = function j(t) {
+    return "symbol" == _typeof(t) || A(t) && "[object Symbol]" == E(t);
   },
-      j = /^[-+]0x[0-9a-f]+$/i,
+      P = /^[-+]0x[0-9a-f]+$/i,
       k = /^0b[01]+$/i,
       M = /^0o[0-7]+$/i,
       L = parseInt;
 
   var C = function C(t) {
     if ("number" == typeof t) return t;
-    if (P(t)) return NaN;
+    if (j(t)) return NaN;
 
     if (d(t)) {
       var e = "function" == typeof t.valueOf ? t.valueOf() : t;
@@ -2100,7 +2100,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if ("string" != typeof t) return 0 === t ? t : +t;
     t = p(t);
     var n = k.test(t);
-    return n || M.test(t) ? L(t.slice(2), n ? 2 : 8) : j.test(t) ? NaN : +t;
+    return n || M.test(t) ? L(t.slice(2), n ? 2 : 8) : P.test(t) ? NaN : +t;
   };
 
   var z = function z(t, e, n) {
@@ -2752,7 +2752,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var n = function (t) {
         if ("deltaX" in t) {
           var e = function (t) {
-            return wt[t] || wt[0];
+            return xt[t] || xt[0];
           }(t.deltaMode);
 
           return {
@@ -2762,12 +2762,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
 
         if ("wheelDeltaX" in t) return {
-          x: t.wheelDeltaX / xt,
-          y: t.wheelDeltaY / xt
+          x: t.wheelDeltaX / wt,
+          y: t.wheelDeltaY / wt
         };
         return {
           x: 0,
-          y: t.wheelDelta / xt
+          y: t.wheelDelta / wt
         };
       }(e),
           r = n.x,
@@ -2785,8 +2785,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     t[t.X = 0] = "X", t[t.Y = 1] = "Y";
   }(ct || (ct = {}));
   var bt = 1,
-      xt = -3,
-      wt = [1, 28, 500];
+      wt = -3,
+      xt = [1, 28, 500];
 
   var _t = new Map(),
       St = function () {
@@ -3079,12 +3079,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       leading: !0
     })], t.prototype, "_updateDebounced", null), t;
   }(),
-      Tt = !1;
+      Ot = !1;
 
-  function Et() {
-    if (!Tt && "undefined" != typeof window) {
+  function Tt() {
+    if (!Ot && "undefined" != typeof window) {
       var t = document.createElement("style");
-      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Tt = !0;
+      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Ot = !0;
     }
   }
   /*!
@@ -3097,7 +3097,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
    */
 
 
-  var Ot = function (t) {
+  var Et = function (t) {
     function e() {
       return null !== t && t.apply(this, arguments) || this;
     }
@@ -3110,7 +3110,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _o(t, e), t.prototype = null === e ? Object.create(e) : (n.prototype = e.prototype, new n());
     }(e, t), e.init = function (t, e) {
       if (!t || 1 !== t.nodeType) throw new TypeError("expect element to be DOM Element, but got " + t);
-      return Et(), _t.has(t) ? _t.get(t) : new St(t, e);
+      return Tt(), _t.has(t) ? _t.get(t) : new St(t, e);
     }, e.initAll = function (t) {
       return Array.from(document.querySelectorAll("[data-scrollbar]"), function (n) {
         return e.init(n, t);
@@ -3136,27 +3136,27 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return pt.apply(void 0, t);
     }, e.attachStyle = function () {
-      return Et();
+      return Tt();
     }, e.detachStyle = function () {
       return function () {
-        if (Tt && "undefined" != typeof window) {
+        if (Ot && "undefined" != typeof window) {
           var t = document.getElementById("smooth-scrollbar-style");
-          t && t.parentNode && (t.parentNode.removeChild(t), Tt = !1);
+          t && t.parentNode && (t.parentNode.removeChild(t), Ot = !1);
         }
       }();
     }, e.version = "8.6.1", e.ScrollbarPlugin = lt, e;
   }(St),
       At = n(13);
 
-  function Pt(t) {
-    return (Pt = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (t) {
+  function jt(t) {
+    return (jt = "function" == typeof Symbol && "symbol" == _typeof(Symbol.iterator) ? function (t) {
       return _typeof(t);
     } : function (t) {
       return t && "function" == typeof Symbol && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : _typeof(t);
     })(t);
   }
 
-  function jt(t, e) {
+  function Pt(t, e) {
     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
   }
 
@@ -3200,7 +3200,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   function Lt(t, e) {
-    return !e || "object" !== Pt(e) && "function" != typeof e ? function (t) {
+    return !e || "object" !== jt(e) && "function" != typeof e ? function (t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
     }(t) : e;
@@ -3242,7 +3242,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         o = Mt(i);
 
     function i() {
-      return jt(this, i), o.apply(this, arguments);
+      return Pt(this, i), o.apply(this, arguments);
     }
 
     return e = i, (n = [{
@@ -3258,7 +3258,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   zt(Dt, "pluginName", "modal"), zt(Dt, "defaultOptions", {
     open: !1
-  }), Ot.use(Dt);
+  }), Et.use(Dt);
   var It = {
     showBlogPopup: function showBlogPopup(t) {
       var e = $(t).find(".blog__popup"),
@@ -3381,6 +3381,78 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
+    },
+    formShow: function formShow(t, e) {
+      if ($(t).exists()) {
+        var n = document.querySelector(t),
+            r = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .5
+          }
+        }),
+            o = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .5
+          }
+        });
+        o.to(n, {
+          autoAlpha: 0,
+          yPercent: -100,
+          xPercent: -50,
+          ease: "power2.out"
+        }), r.set(n, {
+          yPercent: -100,
+          xPercent: -50
+        }).to(n, {
+          autoAlpha: 1,
+          yPercent: -50,
+          ease: "power2.out"
+        }), e ? (o.reverse(), r.play()) : (r.reverse(), o.play());
+      }
+    },
+    stateObject: function stateObject(t, e) {
+      "start" == e ? It.formShow(t, !0) : It.formShow(t, !1);
+    },
+    showOverlay: function showOverlay(t, e) {
+      if ($(".js-overlay").exists()) {
+        var n = document.querySelector(".js-overlay"),
+            r = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .6
+          },
+          onStart: It.lockedDOM,
+          onStartParams: [!0],
+          onComplete: It.stateObject,
+          onCompleteParams: [t, "start"]
+        }),
+            o = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .3
+          },
+          onStart: It.stateObject,
+          onStartParams: [t, "end"],
+          onComplete: It.lockedDOM,
+          onCompleteParams: [!1]
+        });
+        r.to(n, {
+          autoAlpha: 1,
+          ease: "power2.out"
+        }), o.to(n, {
+          autoAlpha: 0,
+          ease: "power2.out"
+        }, "+=0.6"), e ? (r.reverse(), r.play()) : (o.reverse(), o.play());
+      }
+    },
+    lockedDOM: function lockedDOM(t) {
+      t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
     }
   };
   window.addEventListener("load", function () {
@@ -3407,10 +3479,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       yPercent: -50,
       transformOrigin: "left center",
       autoAlpha: 1
-    }), Qt(), function (t) {
+    }), Gt(), function (t) {
       var e;
       if (window.matchMedia("(max-width:1300px)").matches && $(".reach__cover").exists()) try {
-        Ot.init(document.querySelector("#inner-scrollbar"), {
+        Et.init(document.querySelector("#inner-scrollbar"), {
           damping: .04,
           alwaysShowTracks: !1
         });
@@ -3420,17 +3492,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       if (window.matchMedia("(max-width:1100px)").matches && window.matchMedia("(min-width:620px)").matches) {
         if ($(".progress__cover").exists()) try {
-          Ot.init(document.querySelector("#progress-scrollbar"), {
+          Et.init(document.querySelector("#progress-scrollbar"), {
             damping: .3,
             alwaysShowTracks: !1
           });
         } catch (t) {
           console.log(t);
         }
-      } else Ot.destroy(document.querySelector("#progress-scrollbar"));
+      } else Et.destroy(document.querySelector("#progress-scrollbar"));
 
       if ($(window).on("resize load", function () {
-        if ($(this).width() > 620 && (e = Ot.init(document.querySelector("#viewport"), {
+        if ($(this).width() > 620 && (e = Et.init(document.querySelector("#viewport"), {
           damping: .04,
           delegateTo: document,
           renderByPixel: !0,
@@ -3442,14 +3514,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             continuousScrolling: !1,
             offset: (window.innerWidth, 90)
           };
-          e = Ot.init(document.querySelector("#viewport"), t);
+          e = Et.init(document.querySelector("#viewport"), t);
         }
       }).resize(), $(".js-form-call").exists() && $(".js-form-call").on("click", function (t) {
-        t.preventDefault(), Gt(!0), e.updatePluginOptions("modal", {
+        t.preventDefault(), It.showOverlay(".js-form-request", !0), e.updatePluginOptions("modal", {
+          open: !0
+        });
+      }), $(".js-btn-grace").exists() && $(".js-btn-grace").on("click", function (t) {
+        t.preventDefault(), It.showOverlay(".js-form-grace", !0), e.updatePluginOptions("modal", {
           open: !0
         });
       }), $(".js-overlay").exists() && $(".js-overlay").on("click", function () {
-        if (Gt(!1), e.updatePluginOptions("modal", {
+        if (It.showOverlay(".js-form-grace", !1), It.showOverlay(".js-form-request", !1), e.updatePluginOptions("modal", {
           open: !1
         }), $(".request-popup__wrapper").exists()) try {
           $(".request-popup__wrapper").removeClass("active");
@@ -3457,7 +3533,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           console.log(t);
         }
       }), $(".js-close-form").exists() && $(".js-close-form").on("click", function () {
-        Gt(!1), e.updatePluginOptions("modal", {
+        It.showOverlay(".js-form-grace", !1), It.showOverlay(".js-form-request", !1), e.updatePluginOptions("modal", {
           open: !1
         });
       }), $(".burger").exists()) try {
@@ -3588,10 +3664,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
             },
             onEnter: function onEnter() {
-              return Yt(t.dataset.color);
+              return Vt(t.dataset.color);
             },
             onEnterBack: function onEnterBack() {
-              return Yt(t.dataset.color);
+              return Vt(t.dataset.color);
             }
           });
         });
@@ -3601,13 +3677,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top center",
           end: "bottom-=200",
           onEnter: function onEnter() {
-            gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+            gsap.utils.toArray(".portfolio__item").length > 0 && Vt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Yt(e.dataset.color);
+            return Vt(e.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Yt(e.dataset.color);
+            return Vt(e.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
@@ -3632,10 +3708,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
               return "+=".concat(t.clientHeight + Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / 10);
             },
             onEnter: function onEnter() {
-              return Yt(t.dataset.color);
+              return Vt(t.dataset.color);
             },
             onEnterBack: function onEnterBack() {
-              return Yt(t.dataset.color);
+              return Vt(t.dataset.color);
             }
           });
         });
@@ -3645,13 +3721,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           start: "top top",
           end: "bottom-=200",
           onEnter: function onEnter() {
-            gsap.utils.toArray(".portfolio__item").length > 0 && Yt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
+            gsap.utils.toArray(".portfolio__item").length > 0 && Vt(gsap.utils.toArray(".portfolio__item")[0].dataset.color);
           },
           onLeave: function onLeave() {
-            return Yt(e.dataset.color);
+            return Vt(e.dataset.color);
           },
           onLeaveBack: function onLeaveBack() {
-            return Yt(e.dataset.color);
+            return Vt(e.dataset.color);
           },
           toggleClass: {
             targets: ".portfolio",
@@ -3664,7 +3740,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       } catch (t) {
         console.log(t);
       }
-    }(), Ut(), $('input[type="file"]').change(function () {
+    }(), Wt(), $('input[type="file"]').change(function () {
       var t = $(".file .file__label");
       if (void 0 !== this.files) {
         if (0 == this.files.length) t.removeClass("withFile").text(t.data("default"));else {
@@ -3974,79 +4050,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     });
   }
 
-  var Wt = function Wt(t) {
-    t ? $("html").css("overflow", "hidden") : $("html").css("overflow", "auto");
-  },
-      Vt = function Vt(t) {
-    Xt(".js-form-request", "start" == t);
-  },
-      Gt = function Gt(t) {
-    if ($(".js-overlay").exists()) {
-      var e = document.querySelector(".js-overlay"),
-          n = new TimelineMax({
-        reversed: !0,
-        paused: !0,
-        defaults: {
-          duration: .6
-        },
-        onStart: Wt,
-        onStartParams: [!0],
-        onComplete: Vt,
-        onCompleteParams: ["start"]
-      }),
-          r = new TimelineMax({
-        reversed: !0,
-        paused: !0,
-        defaults: {
-          duration: .3
-        },
-        onStart: Vt,
-        onStartParams: ["end"],
-        onComplete: Wt,
-        onCompleteParams: [!1]
-      });
-      n.to(e, {
-        autoAlpha: 1,
-        ease: "power2.out"
-      }), r.to(e, {
-        autoAlpha: 0,
-        ease: "power2.out"
-      }, "+=0.6"), t ? (n.reverse(), n.play()) : (r.reverse(), r.play());
-    }
-  },
-      Xt = function Xt(t, e) {
-    if ($(t).exists()) {
-      var n = document.querySelector(".js-form-request"),
-          r = new TimelineMax({
-        reversed: !0,
-        paused: !0,
-        defaults: {
-          duration: .5
-        }
-      }),
-          o = new TimelineMax({
-        reversed: !0,
-        paused: !0,
-        defaults: {
-          duration: .5
-        }
-      });
-      o.to(n, {
-        autoAlpha: 0,
-        yPercent: -100,
-        xPercent: -50,
-        ease: "power2.out"
-      }), r.set(n, {
-        yPercent: -100,
-        xPercent: -50
-      }).to(n, {
-        autoAlpha: 1,
-        yPercent: -50,
-        ease: "power2.out"
-      }), e ? (o.reverse(), r.play()) : (r.reverse(), o.play());
-    }
-  };
-
   if ($("#request").exists()) try {
     $('a[href^="#"]').each(function () {
       $(this).on("click", function (t) {
@@ -4064,7 +4067,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     console.log(t);
   }
 
-  function Ut() {
+  function Wt() {
     $(".rate__item").exists() && $(".rate__item").each(function () {
       $(this).find(".switch").is(":checked") ? $(this).find(".rate__right").addClass("rate__right--active") : $(this).find(".rate__right").removeClass("rate__right--active");
     });
@@ -4072,17 +4075,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   if ($(".rate__item .switch").exists()) try {
     $(".rate__item .switch").on("click", function () {
-      Ut();
+      Wt();
     });
   } catch (t) {
     console.log(t);
   }
 
-  function Yt(t) {
+  function Vt(t) {
     document.documentElement.style.setProperty("--bcg-fill-color", t);
   }
 
-  var Qt = function Qt() {
+  var Gt = function Gt() {
     if ($(".call .js-example-basic-single").exists()) {
       var t = $(".call .select");
       $(".call .js-example-basic-single").select2({
@@ -4111,6 +4114,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 
   $(window).resize(function () {
-    Qt();
+    Gt();
   }).resize();
 }]);
