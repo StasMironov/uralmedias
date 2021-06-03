@@ -1508,6 +1508,7 @@ function initSmoothScrollBar(position) {
         $('.js-btn-grace').on('click', (event) => {
             event.preventDefault();
             projectFunc.showOverlay('.js-form-grace', true);
+            projectFunc.formShow('.js-form-request', false);
             bodyScrollBar.updatePluginOptions('modal', { open: true })
         });
     }
