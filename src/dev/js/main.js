@@ -235,8 +235,131 @@ const projectFunc = {
                 console.log(err);
             }
         }
-    }
+    },
+    formShow: function (form, status) {
 
+        if ($(form).exists()) {
+            const element = document.querySelector(form);
+            const formShowTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            const formHideTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.5 }
+            });
+
+            formHideTl
+                .to(
+                    element,
+                    {
+                        autoAlpha: 0,
+                        yPercent: -100,
+                        xPercent: -50,
+                        ease: "power2.out"
+                    }
+                )
+
+            formShowTl
+                .set(
+                    element, {
+                    yPercent: -100,
+                    xPercent: -50,
+                }
+                )
+                .to(
+                    element,
+                    {
+                        autoAlpha: 1,
+                        yPercent: -50,
+                        //xPercent: -50,
+                        ease: "power2.out"
+                    }
+                )
+
+            if (status) {
+                formHideTl.reverse();
+                formShowTl.play();
+            }
+            else {
+                formShowTl.reverse();
+                formHideTl.play();
+            }
+        }
+    },
+    stateObject: function (form, status) {
+        if (status == 'start') {
+            projectFunc.formShow(form, true);
+        }
+        else {
+            projectFunc.formShow(form, false);
+        }
+    },
+    showOverlay: function (form, status) {
+        if ($('.js-overlay').exists()) {
+
+            const overlayEl = document.querySelector('.js-overlay');
+
+            const showOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.6 },
+                onStart: projectFunc.lockedDOM,
+                onStartParams: [true],
+                onComplete: projectFunc.stateObject,
+                onCompleteParams: [form, 'start'],
+            });
+
+            const hideOvTl = new TimelineMax({
+                reversed: true,
+                paused: true,
+                defaults: { duration: 0.3 },
+                onStart: projectFunc.stateObject,
+                onStartParams: [form, 'end'],
+                onComplete: projectFunc.lockedDOM,
+                onCompleteParams: [false]
+            });
+
+            showOvTl
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 1,
+                        ease: "power2.out"
+                    }
+                )
+
+            hideOvTl
+                .to(
+                    overlayEl,
+                    {
+                        autoAlpha: 0,
+                        ease: "power2.out"
+                    },
+                    '+=0.6'
+                )
+
+            if (status) {
+                showOvTl.reverse();
+                showOvTl.play();
+            }
+            else {
+                hideOvTl.reverse();
+                hideOvTl.play();
+            }
+        }
+    },
+    lockedDOM: function (status) {
+        if (status) {
+            $('html').css('overflow', 'hidden');
+        }
+        else {
+            $('html').css('overflow', 'auto');
+        }
+    }
 };
 
 
@@ -1009,134 +1132,6 @@ if ($('.include-menu').exists()) {
     });
 }
 
-const lockedDOM = (status) => {
-    if (status) {
-        $('html').css('overflow', 'hidden');
-    }
-    else {
-        $('html').css('overflow', 'auto');
-    }
-}
-
-const stateObject = (status) => {
-    if (status == 'start') {
-        formShow('.js-form-request', true);
-    }
-    else {
-        formShow('.js-form-request', false);
-    }
-}
-
-const showOverlay = (status) => {
-    if ($('.js-overlay').exists()) {
-
-        const overlayEl = document.querySelector('.js-overlay');
-
-        const showOvTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.6 },
-            onStart: lockedDOM,
-            onStartParams: [true],
-            onComplete: stateObject,
-            onCompleteParams: ['start'],
-        });
-
-        const hideOvTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.3 },
-            onStart: stateObject,
-            onStartParams: ['end'],
-            onComplete: lockedDOM,
-            onCompleteParams: [false]
-        });
-
-        showOvTl
-            .to(
-                overlayEl,
-                {
-                    autoAlpha: 1,
-                    ease: "power2.out"
-                }
-            )
-
-        hideOvTl
-            .to(
-                overlayEl,
-                {
-                    autoAlpha: 0,
-                    ease: "power2.out"
-                },
-                '+=0.6'
-            )
-
-        if (status) {
-            showOvTl.reverse();
-            showOvTl.play();
-        }
-        else {
-            hideOvTl.reverse();
-            hideOvTl.play();
-        }
-    }
-}
-
-const formShow = (element, status) => {
-
-    if ($(element).exists()) {
-        const element = document.querySelector('.js-form-request');
-        const formShowTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 }
-        });
-
-        const formHideTl = new TimelineMax({
-            reversed: true,
-            paused: true,
-            defaults: { duration: 0.5 }
-        });
-
-        formHideTl
-            .to(
-                element,
-                {
-                    autoAlpha: 0,
-                    yPercent: -100,
-                    xPercent: -50,
-                    ease: "power2.out"
-                }
-            )
-
-        formShowTl
-            .set(
-                element, {
-                yPercent: -100,
-                xPercent: -50,
-            }
-            )
-            .to(
-                element,
-                {
-                    autoAlpha: 1,
-                    yPercent: -50,
-                    //xPercent: -50,
-                    ease: "power2.out"
-                }
-            )
-
-        if (status) {
-            formHideTl.reverse();
-            formShowTl.play();
-        }
-        else {
-            formShowTl.reverse();
-            formHideTl.play();
-        }
-    }
-}
-
 /*const changeHeightPage = () => {
     let footerHeight,
         paddingBottom,
@@ -1504,21 +1499,31 @@ function initSmoothScrollBar(position) {
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {
             event.preventDefault();
-            showOverlay(true);
+            projectFunc.showOverlay('.js-form-request', true);
+            bodyScrollBar.updatePluginOptions('modal', { open: true })
+        });
+    }
+
+    if ($('.js-btn-grace').exists()) {
+        $('.js-btn-grace').on('click', (event) => {
+            event.preventDefault();
+            projectFunc.showOverlay('.js-form-grace', true);
             bodyScrollBar.updatePluginOptions('modal', { open: true })
         });
     }
 
     if ($('.js-overlay').exists()) {
         $('.js-overlay').on('click', () => {
-            showOverlay(false);
+            projectFunc.showOverlay('.js-form-grace', false);
+            projectFunc.showOverlay('.js-form-request', false);
             bodyScrollBar.updatePluginOptions('modal', { open: false })
         });
     }
 
     if ($('.js-close-form').exists()) {
         $('.js-close-form').on('click', () => {
-            showOverlay(false);
+            projectFunc.showOverlay('.js-form-grace', false);
+            projectFunc.showOverlay('.js-form-request', false);
             bodyScrollBar.updatePluginOptions('modal', { open: false })
         });
     }

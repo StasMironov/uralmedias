@@ -445,7 +445,7 @@
                       <div class="form-group__label">Что нам стоит знать?</div>
                       <textarea class="form-group__input" rows="3" placeholder="Дополнительная информация" name=""></textarea>
                     </div>
-                    <button class="btn btn--special link" type="submit">
+                    <button class="btn btn--special link js-btn-grace" type="submit">
                       <div class="btn__special"><span>Отправить заявку</span></div>
                       <div class="btn__text">Отправить заявку</div>
                     </button>
@@ -525,15 +525,19 @@
         <div class="request-popup__right" style="background-image: url(img/bg.jpg)"></div>
       </div>
     </div>
-    <!--
-    .grace-popup__inner
-        .request-popup__close.js-close-form
-        .grace-popup__pic
-            +svg('heart')
-        .grace-popup__title Ваше сообщение отправлено!
-        .grace-popup__quote В ближайшее время наш менеджер свяжется с Вами.
-        .link.link--detail.js-close-form закрыть
-    -->
+    <div class="grace-popup js-form-grace">
+      <div class="grace-popup__inner">
+        <div class="request-popup__close js-close-form"></div>
+        <div class="grace-popup__pic">
+              <svg class="b-svg svg-heart ">
+                <use xlink:href="svg/symbol/sprite.svg#heart"></use>
+              </svg>
+        </div>
+        <div class="grace-popup__title">Ваше сообщение отправлено!</div>
+        <div class="grace-popup__quote">В ближайшее время наш менеджер свяжется с Вами.</div>
+        <div class="link link--detail js-close-form">закрыть</div>
+      </div>
+    </div>
     <div class="overlay js-overlay"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script> 
