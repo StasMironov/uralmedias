@@ -207,6 +207,7 @@ input::-ms-clear {
   position: relative;
   z-index: 1;
   background-color: white;
+  min-height: calc(100% + 200px);
 }
 
 .sad-link {
