@@ -1030,8 +1030,6 @@ const setMap = (draw) => {
             }
         }
     }
-
-
 }
 
 $(window).on('resize load', function () {
