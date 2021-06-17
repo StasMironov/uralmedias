@@ -237,7 +237,6 @@ const projectFunc = {
         }
     },
     formShow: function (form, status) {
-
         if ($(form).exists()) {
             const element = document.querySelector(form);
             const formShowTl = new TimelineMax({
