@@ -161,6 +161,14 @@
                     padding-bottom: calc(57px + 3vh);
                 }
             }
+
+            &__title {
+                @media(max-width: 620px) {
+                    max-width: 420px;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 

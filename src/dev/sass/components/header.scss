@@ -46,6 +46,14 @@
       width: 100%;
       height: 100%;
       fill: white;
+
+      path {
+        transition: linear .3s;
+      }
+    }
+
+    .text {
+      transition: linear .3s;
     }
   }
 
@@ -84,9 +92,12 @@
       }
 
       @media(max-width: 620px) {
+        display: flex;
+        flex-direction: column;
         padding: 15px 15px 30px 15px;
         max-height: calc(100vh - 57px);
         max-width: 100%;
+        height: 100vh;
       }
 
       .header {
@@ -122,6 +133,18 @@
         &__bloc {
           display: flex;
           flex-direction: column;
+        }
+
+        &__soc {
+          @media(max-width: 620px) {
+            margin-top: auto;
+          }
+        }
+
+        &__contacts {
+          @media(max-width: 620px) {
+            margin-bottom: 20px;
+          }
         }
       }
     }
@@ -426,12 +449,15 @@
   }
 
   &--scroll {
-    background-color: white;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(25px);
     color: $black;
     // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 
+
     @media(max-width: 620px) {
       box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+      background-color: transparent;
     }
 
     .btn--call {
@@ -470,10 +496,21 @@
       }
 
       &__inner {
-        background-color: white;
+
+        // background-color: white;
+
+        // @media(max-width: 620px) {
+        //   background-color: red;
+        // }
       }
 
       &__logo {
+        .text {
+          @media(max-width: 620px) {
+            opacity: 0;
+          }
+        }
+
         svg * {
           fill: $green-1 !important;
         }
