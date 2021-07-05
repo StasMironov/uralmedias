@@ -3332,9 +3332,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     setSlider: function setSlider() {
       if ($(".client__slider").exists()) {
         var t = new At["default"](".js-client-slider", 5, 36);
-        t.createSlider(), t.updateSlider("loop", !0), t.updateSlider("center", !0), $(window).resize(function () {
-          $(this).width() <= 1024 && $(this).width() >= 768 && (t.updateSlider("space", 20), t.updateSlider("center", !1), t.updateSlider("pagination")), $(this).width() <= 768 && $(this).width() >= 621 && (t.updateSlider("pagination"), t.updateSlider("view", 4), t.updateSlider("space", 20)), $(this).width() <= 620 && $(this).width() >= 501 && (t.updateSlider("pagination"), t.updateSlider("view", 3), t.updateSlider("space", 20)), $(this).width() <= 500 && (t.updateSlider("pagination"), t.updateSlider("view", 2), t.updateSlider("space", 20));
-        }).resize();
+        t.createSlider(), t.updateSlider("loop", !0), t.updateSlider("center", !0), $(window).width() <= 1024 && $(window).width() >= 768 && (t.updateSlider("space", 20), t.updateSlider("center", !1), t.updateSlider("pagination")), $(window).width() <= 768 && $(window).width() >= 621 && (t.updateSlider("pagination"), t.updateSlider("view", 4), t.updateSlider("space", 20)), $(window).width() <= 620 && $(window).width() >= 501 && (t.updateSlider("pagination"), t.updateSlider("view", 3), t.updateSlider("space", 20)), $(window).width() <= 500 && (t.updateSlider("pagination"), t.updateSlider("view", 2), t.updateSlider("space", 20));
       }
 
       if ($(".works").exists()) {
