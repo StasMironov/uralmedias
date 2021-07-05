@@ -1581,11 +1581,12 @@ function initSmoothScrollBar(position) {
                 if (this.classList.contains('opened')) {
                     panelHideTl.reverse();
                     panelShowTl.play();
-                    // bodyScrollBar.updatePluginOptions('modal', { open: true })
+                    projectFunc.lockedDOM(true);
                 }
                 else {
                     panelShowTl.reverse();
                     panelHideTl.play();
+                    projectFunc.lockedDOM(false);
                     // bodyScrollBar.updatePluginOptions('modal', { open: false })
                 }
             });

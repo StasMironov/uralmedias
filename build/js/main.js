@@ -518,8 +518,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       new g().entries().next();
     })))) w = n.getConstructor(e, t, v, m), s.REQUIRED = !0;else if (i(t, !0)) {
       var S = new w(),
-          E = S[m](y ? {} : -0, 1) != S,
-          O = f(function () {
+          O = S[m](y ? {} : -0, 1) != S,
+          E = f(function () {
         S.has(1);
       }),
           T = p(function (t) {
@@ -539,7 +539,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           that: r,
           AS_ENTRIES: v
         }), r;
-      })).prototype = b, b.constructor = w), (O || A) && (_("delete"), _("has"), v && _("get")), (A || E) && _(m), y && b.clear && delete b.clear;
+      })).prototype = b, b.constructor = w), (E || A) && (_("delete"), _("has"), v && _("get")), (A || O) && _(m), y && b.clear && delete b.clear;
     }
     return x[t] = w, r({
       global: !0,
@@ -782,25 +782,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return new n(this);
       };
     },
-        E = e + " Iterator",
-        O = !1,
+        O = e + " Iterator",
+        E = !1,
         T = t.prototype,
         A = T[y] || T["@@iterator"] || d && T[d],
         j = !v && A || S(d),
         P = "Array" == e && T.entries || A;
 
-    if (P && (w = i(P.call(new t())), h !== Object.prototype && w.next && (f || i(w) === h || (a ? a(w, h) : "function" != typeof w[y] && c(w, y, m)), s(w, E, !0, !0), f && (p[E] = m))), "values" == d && A && "values" !== A.name && (O = !0, j = function j() {
+    if (P && (w = i(P.call(new t())), h !== Object.prototype && w.next && (f || i(w) === h || (a ? a(w, h) : "function" != typeof w[y] && c(w, y, m)), s(w, O, !0, !0), f && (p[O] = m))), "values" == d && A && "values" !== A.name && (E = !0, j = function j() {
       return A.call(this);
     }), f && !b || T[y] === j || c(T, y, j), p[e] = j, d) if (x = {
       values: S("values"),
       keys: g ? j : S("keys"),
       entries: S("entries")
     }, b) for (_ in x) {
-      (v || O || !(_ in T)) && u(T, _, x[_]);
+      (v || E || !(_ in T)) && u(T, _, x[_]);
     } else r({
       target: e,
       proto: !0,
-      forced: v || O
+      forced: v || E
     }, x);
     return x;
   };
@@ -1768,8 +1768,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         p = 7 == t,
         d = 5 == t || f;
     return function (h, v, y, m) {
-      for (var g, b, w = i(h), x = o(w), _ = r(v, y, 3), S = a(x.length), E = 0, O = m || s, T = e ? O(h, S) : n || p ? O(h, 0) : void 0; S > E; E++) {
-        if ((d || E in x) && (b = _(g = x[E], E, w), t)) if (e) T[E] = b;else if (b) switch (t) {
+      for (var g, b, w = i(h), x = o(w), _ = r(v, y, 3), S = a(x.length), O = 0, E = m || s, T = e ? E(h, S) : n || p ? E(h, 0) : void 0; S > O; O++) {
+        if ((d || O in x) && (b = _(g = x[O], O, w), t)) if (e) T[O] = b;else if (b) switch (t) {
           case 3:
             return !0;
 
@@ -1777,7 +1777,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             return g;
 
           case 6:
-            return E;
+            return O;
 
           case 2:
             c.call(T, g);
@@ -2076,13 +2076,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   },
       S = Object.prototype.toString;
 
-  var E = function E(t) {
+  var O = function O(t) {
     return S.call(t);
   },
-      O = m ? m.toStringTag : void 0;
+      E = m ? m.toStringTag : void 0;
 
   var T = function T(t) {
-    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : O && O in Object(t) ? _(t) : E(t);
+    return null == t ? void 0 === t ? "[object Undefined]" : "[object Null]" : E && E in Object(t) ? _(t) : O(t);
   };
 
   var A = function A(t) {
@@ -3088,12 +3088,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       leading: !0
     })], t.prototype, "_updateDebounced", null), t;
   }(),
-      Et = !1;
+      Ot = !1;
 
-  function Ot() {
-    if (!Et && "undefined" != typeof window) {
+  function Et() {
+    if (!Ot && "undefined" != typeof window) {
       var t = document.createElement("style");
-      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Et = !0;
+      t.id = "smooth-scrollbar-style", t.textContent = "\n[data-scrollbar] {\n  display: block;\n  position: relative;\n}\n\n.scroll-content {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n}\n\n.scrollbar-track {\n  position: absolute;\n  opacity: 0;\n  z-index: 1;\n  background: rgba(222, 222, 222, .75);\n  -webkit-user-select: none;\n     -moz-user-select: none;\n      -ms-user-select: none;\n          user-select: none;\n  -webkit-transition: opacity 0.5s 0.5s ease-out;\n          transition: opacity 0.5s 0.5s ease-out;\n}\n.scrollbar-track.show,\n.scrollbar-track:hover {\n  opacity: 1;\n  -webkit-transition-delay: 0s;\n          transition-delay: 0s;\n}\n\n.scrollbar-track-x {\n  bottom: 0;\n  left: 0;\n  width: 100%;\n  height: 8px;\n}\n.scrollbar-track-y {\n  top: 0;\n  right: 0;\n  width: 8px;\n  height: 100%;\n}\n.scrollbar-thumb {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 8px;\n  height: 8px;\n  background: rgba(0, 0, 0, .5);\n  border-radius: 4px;\n}\n", document.head && document.head.appendChild(t), Ot = !0;
     }
   }
   /*!
@@ -3119,7 +3119,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       _o(t, e), t.prototype = null === e ? Object.create(e) : (n.prototype = e.prototype, new n());
     }(e, t), e.init = function (t, e) {
       if (!t || 1 !== t.nodeType) throw new TypeError("expect element to be DOM Element, but got " + t);
-      return Ot(), _t.has(t) ? _t.get(t) : new St(t, e);
+      return Et(), _t.has(t) ? _t.get(t) : new St(t, e);
     }, e.initAll = function (t) {
       return Array.from(document.querySelectorAll("[data-scrollbar]"), function (n) {
         return e.init(n, t);
@@ -3145,12 +3145,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       return pt.apply(void 0, t);
     }, e.attachStyle = function () {
-      return Ot();
+      return Et();
     }, e.detachStyle = function () {
       return function () {
-        if (Et && "undefined" != typeof window) {
+        if (Ot && "undefined" != typeof window) {
           var t = document.getElementById("smooth-scrollbar-style");
-          t && t.parentNode && (t.parentNode.removeChild(t), Et = !1);
+          t && t.parentNode && (t.parentNode.removeChild(t), Ot = !1);
         }
       }();
     }, e.version = "8.6.1", e.ScrollbarPlugin = lt, e;
@@ -3549,7 +3549,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           xPercent: 0,
           ease: Cubic.easeOut
         }), n.addEventListener("click", function () {
-          this.classList.toggle("opened"), this.setAttribute("aria-expanded", this.classList.contains("opened")), this.classList.contains("opened") ? (o.reverse(), i.play()) : (i.reverse(), o.play());
+          this.classList.toggle("opened"), this.setAttribute("aria-expanded", this.classList.contains("opened")), this.classList.contains("opened") ? (o.reverse(), i.play(), It.lockedDOM(!0)) : (i.reverse(), o.play(), It.lockedDOM(!1));
         }), $(window).on("load resize ", function () {
           var t;
           $(this).width() > 1024 && n.classList.contains("opened") && (n.classList.remove("opened"), t = ".js-dropMenu", new TimelineMax({

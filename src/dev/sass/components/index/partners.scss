@@ -10,8 +10,8 @@
     }
 
     @media(max-width: 620px) {
-        margin-bottom: 0;
-        padding-bottom: 45px;
+        margin-bottom: 30px;
+        padding-bottom: 0;
     }
 
     .swiper-slide {
@@ -159,6 +159,17 @@
 
     &+.call {
         margin-top: 90px;
+        padding-top: 0;
+
+        @media(max-width: 620px) {
+            margin-top: 60px;
+        }
+
+
+        @media(max-width: 620px) {
+            margin-top: 40px;
+            padding-top: 0;
+        }
     }
 
     &--about {
