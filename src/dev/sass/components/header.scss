@@ -456,8 +456,9 @@
 
 
     @media(max-width: 620px) {
-      box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+      box-shadow: none;
       background-color: transparent;
+      backdrop-filter: blur(0px);
     }
 
     .btn--call {
