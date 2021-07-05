@@ -1,11 +1,11 @@
 .bildboard {
     position: relative;
-    min-height: calc(100vh - 373px - 188px);
+    min-height: 100vh;
     overflow: hidden;
 
-    @media(max-width: 1024px) {
-        min-height: calc(100vh - 737px);
-    }
+    // @media(max-width: 1024px) {
+    //     min-height: calc(100vh - 737px);
+    // }
 
     @media(max-width: 620px) {
         min-height: 100vh;

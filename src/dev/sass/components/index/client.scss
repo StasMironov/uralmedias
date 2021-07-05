@@ -23,14 +23,6 @@
         @media(max-width: 620px) {
             margin: 3px 0 30px;
         }
-
-        .pagination {
-            display: none;
-
-            @media(max-width: 1024px) {
-                display: flex;
-            }
-        }
     }
 
     &__items {

@@ -122,23 +122,21 @@ const projectFunc = {
         if ($('.client__slider').exists()) {
             const SliderObj = new Slider('.js-client-slider', 5, 36);
             SliderObj.createSlider();
+            SliderObj.updateSlider('pagination');
 
             $(window).resize(function () {
                 if ($(this).width() <= 1024 && $(this).width() >= 768) {
                     SliderObj.updateSlider('space', 20);
                 }
                 if ($(this).width() <= 768 && $(this).width() >= 621) {
-                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 4);
                     SliderObj.updateSlider('space', 20);
                 }
                 if ($(this).width() <= 620 && $(this).width() >= 501) {
-                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 3);
                     SliderObj.updateSlider('space', 20);
                 }
                 if ($(this).width() <= 500) {
-                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 2);
                     SliderObj.updateSlider('space', 20);
                 }
@@ -859,6 +857,7 @@ const showPlace = () => {
         start: 'top-=150% top',
         end: 'bottom-=80',
         animation: placeContent,
+        anticipatePin: 1
     });
 }
 
@@ -886,6 +885,7 @@ const showService = () => {
         start: 'top-=230% top',
         end: 'bottom',
         animation: service,
+        anticipatePin: 1
         // scrub: true,
     });
 
@@ -988,6 +988,7 @@ const showCallForm = () => {
         start: 'top-=130% top',
         end: 'bottom',
         animation: call,
+        anticipatePin: 1
     });
 }
 
@@ -1243,50 +1244,63 @@ function initImageParallax() {
         const info = section.querySelector('.portfolio__left');
 
         // create tween for the image
-        // gsap.to(image, {
-        //     yPercent: 25,
-        //     ease: 'none',
-        //     scrollTrigger: {
-        //         trigger: section,
-        //         start: 'top bottom',
-        //         scrub: true,
-        //         markers: true
-        //     }
-        // });
-
         gsap.to(image, {
             yPercent: 25,
             ease: 'none',
             scrollTrigger: {
                 trigger: section,
                 start: 'top bottom',
-                //start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
-                scrub: true
+                scrub: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+            }
+        });
+
+        // gsap.to(image, {
+        //     yPercent: 25,
+        //     ease: 'none',
+        //     scrollTrigger: {
+        //         trigger: section,
+        //         start: 'top bottom',
+        //         //start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
+        //         scrub: true
+        //     }
+        // });
+
+        gsap.to(info, 10, {
+            yPercent: -25,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: section,
+                start: 'top center-=30',
+                scrub: true,
+                anticipatePin: 1
             }
         });
 
         $(window).resize(function () {
+
             if ($(this).width() > 620) {
-                gsap.to(info, 10, {
-                    yPercent: -25,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center-=30',
-                        scrub: true
-                    }
-                });
+                // gsap.to(info, 10, {
+                //     yPercent: -25,
+                //     ease: 'none',
+                //     scrollTrigger: {
+                //         trigger: section,
+                //         start: 'top center-=30',
+                //         scrub: true
+                //     }
+                // });
             }
             if ($(this).width() <= 620) {
-                gsap.to(info, 10, {
-                    yPercent: -25,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: section,
-                        start: 'top center-=30',
-                        scrub: true,
-                    }
-                });
+                // gsap.to(info, 10, {
+                //     yPercent: -25,
+                //     ease: 'none',
+                //     scrollTrigger: {
+                //         trigger: section,
+                //         start: 'top center-=30',
+                //         scrub: true,
+                //     }
+                // });
             }
         }).resize();
     });
@@ -1347,6 +1361,7 @@ function initPinSteps() {
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
                     onEnterBack: () => updateBodyColor(stage.dataset.color),
+                    anticipatePin: 1
                 });
 
             });
@@ -1370,7 +1385,7 @@ function initPinSteps() {
                 },
                 pinReparent: true,
                 pinSpacing: false,
-                // markers: true
+                anticipatePin: 1,
             });
 
         }
@@ -1396,9 +1411,9 @@ function initPinPortfolio() {
                     start: () => `top ${$(gsap.utils.toArray('.portfolio__item')[0]).offset().top - 20}`,
                     end: () => `+=${stage.clientHeight + getVh() / 10}`,
                     onEnter: () => updateBodyColor(stage.dataset.color),
-                    onEnterBack: () => updateBodyColor(stage.dataset.color)
+                    onEnterBack: () => updateBodyColor(stage.dataset.color),
+                    anticipatePin: 1
                 });
-
             });
 
             const pWrapper = document.querySelector('.js-pin');
@@ -1425,6 +1440,7 @@ function initPinPortfolio() {
                 },
                 pinReparent: true,
                 pinSpacing: false,
+                anticipatePin: 1
                 // markers: true
             });
         }
@@ -1468,30 +1484,6 @@ function initSmoothScrollBar(position) {
     else {
         Scrollbar.destroy(document.querySelector('#progress-scrollbar'));
     }
-
-
-
-    $(window).on('resize load', function () {
-        if ($(this).width() > 620) {
-            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), {
-                damping: 0.04,
-                delegateTo: document,
-                renderByPixel: true,
-                continuousScrolling: true,
-            });
-        }
-
-        if ($(this).width() <= 620) {
-            const options = {
-                speed: 400,
-                speedAsDuration: true,
-                continuousScrolling: false,
-                offset: window.innerWidth < 621 ? 90 : 90
-            }
-
-            bodyScrollBar = Scrollbar.init(document.querySelector('#viewport'), options);
-        }
-    }).resize();
 
     if ($('.js-form-call').exists()) {
         $('.js-form-call').on('click', (event) => {
@@ -1601,11 +1593,6 @@ function initSmoothScrollBar(position) {
         }
     }
 
-
-    if (position) {
-        bodyScrollBar.setPosition(0, 0);
-    }
-
     $('a[href^="#"]').each(function () {
         $(this).on('click', function (event) {
             const el = $(this);
@@ -1613,38 +1600,22 @@ function initSmoothScrollBar(position) {
             const elAnchor = $('body').find(`[name= "${dest}"]`)[0];
 
             if (dest !== undefined && dest !== '') {
-                bodyScrollBar.scrollIntoView(elAnchor, {
-                    offsetLeft: 0,
-                    offsetRight: 0,
-                    alignToTop: true,
-                    offsetTop: 130,
-                })
+                $('html').animate({
+                    scrollTop: $(elAnchor).offset().top - 80 // прокручиваем страницу к требуемому элементу
+                }, 1000 // скорость прокрутки
+                );
             }
-
             return false;
         });
     });
 
-    bodyScrollBar.track.xAxis.element.remove();
-
-    ScrollTrigger.scrollerProxy('#viewport', {
-        scrollTop(value) {
-
-            if (bodyScrollBar.scrollTop > 79) {
-                $(".header__inner").addClass("header--scroll");
-            } else {
-                $(".header__inner").removeClass("header--scroll");
-            }
-
-            if (arguments.length) {
-
-                bodyScrollBar.scrollTop = value; // setter
-            }
-            return bodyScrollBar.scrollTop;    // getter
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 79) {
+            $(".header__inner").addClass("header--scroll");
+        } else {
+            $(".header__inner").removeClass("header--scroll");
         }
     });
-    bodyScrollBar.addListener(ScrollTrigger.update);
-    ScrollTrigger.defaults({ scroller: '#viewport' });
 
 }
 
@@ -1668,6 +1639,7 @@ const moveMainBildboard = () => {
         start: 'top top',
         end: 'bottom',
         animation: uncover,
+        anticipatePin: 1,
         scrub: true,
     });
 }
@@ -1730,14 +1702,3 @@ function initContent() {
     setTabs();
     checkPage();
 }
-
-
-
-
-
-
-
-
-
-
-
