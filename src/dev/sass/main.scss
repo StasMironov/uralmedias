@@ -211,35 +211,31 @@ input::-ms-clear {
 }
 
 .sad-link {
-  position: relative;
-  display: inline-block;
   color: white;
-  z-index: 1;
 
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    bottom: 0px;
-    left: -0.2em;
-    width: calc(100% + .3em);
-    height: .035em;
-    background: white;
-    transition: all .3s ease-in-out;
-    max-height: 35px;
+  span {
+    position: relative;
+    z-index: 1;
 
-    @media(max-width: 1024px) {
-      bottom: 3px;
-      max-height: 26px;
-    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      left: -0.15em;
+      width: calc(100% + .3em);
+      height: 2px;
+      background: white;
+      transition: all .3s ease-in-out;
 
-    @media(max-width: 620px) {
-      max-height: 20px;
+      @media(max-width: 1024px) {
+        height: 1px;
+      }
     }
   }
 
-  &:hover:after {
-    height: calc(100% + 0.3em);
+  &:hover span:after {
+    height: 100%;
   }
 
   &:hover {

@@ -66,7 +66,11 @@
                 padding-right: 23px;
                 color: #fff;
                 transition: .3s;
-                // cursor: pointer;
+
+                @media (max-width: 620px) {
+                    padding-left: 15px;
+                    padding-right: 0;
+                }
 
                 span {
                     position: relative;
@@ -96,6 +100,10 @@
                 padding-right: 39px;
                 color: $red-2;
 
+                @media (max-width: 620px) {
+                    padding-left: 15px;
+                }
+
                 &:after {
                     content: "";
                     position: absolute;
@@ -106,7 +114,7 @@
                     top: 3px;
                     bottom: 0;
                     margin: auto;
-                    right: 0px;
+                    right: 0;
                     display: block;
                 }
             }
@@ -115,6 +123,10 @@
         &:hover {
             .btn__special {
                 width: calc(100% + 23px);
+
+                @media (max-width: 620px) {
+                    width: calc(100% + 15px);
+                }
             }
         }
     }

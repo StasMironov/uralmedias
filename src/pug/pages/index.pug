@@ -13,13 +13,21 @@ block content
 		.bildboard.bildboard--main
 			.bildboard__container.container
 				h1.bildboard__title.title-1
-					span профессиональная
+					| РАЗРАБОТКА
 					|
-					| разработка сайтов
-				.bildboard__quote.
-					<div class="mobile-hidden">Мы проектируем и создаем </div>
-					<a href="magazine.html" class="sad-link link">интернет-магазины</a>,
-					<a href="app.html" class="sad-link link">мобильные приложения</a>
+					a.sad-link.link(href="magazine.html")
+						span интернет&nbsp;-
+						|
+						|
+						span магазинов
+					|
+					| и
+					|
+					a.sad-link.link(href="app.html")
+						span мобильных
+						|
+						|
+						span приложений
 				.rating
 					.rating__items
 						a(href="javascript:void(0);").rating__item.link

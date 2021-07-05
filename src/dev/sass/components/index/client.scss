@@ -39,14 +39,6 @@
         @media(max-width: 500px) {
             max-height: initial;
         }
-
-        .pagination {
-            display: none;
-
-            @media(max-width: 1024px) {
-                display: flex;
-            }
-        }
     }
 
     &__items {

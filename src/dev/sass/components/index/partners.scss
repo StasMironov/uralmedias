@@ -34,17 +34,14 @@
         height: 100%;
         width: 100%;
 
-        @media(max-width: 620px) {
-            display: none;
-        }
-
         @media(max-width: 500px) {
             width: 80%;
         }
 
-        &--mobile {
+        &:nth-of-type(n + 9) {
+
             @media(max-width: 620px) {
-                display: flex;
+                display: none;
             }
         }
     }
