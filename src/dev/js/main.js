@@ -122,21 +122,27 @@ const projectFunc = {
         if ($('.client__slider').exists()) {
             const SliderObj = new Slider('.js-client-slider', 5, 36);
             SliderObj.createSlider();
-            SliderObj.updateSlider('pagination');
+            SliderObj.updateSlider('loop', true);
+            SliderObj.updateSlider('center', true);
 
             $(window).resize(function () {
                 if ($(this).width() <= 1024 && $(this).width() >= 768) {
                     SliderObj.updateSlider('space', 20);
+                    SliderObj.updateSlider('center', false);
+                    SliderObj.updateSlider('pagination');
                 }
                 if ($(this).width() <= 768 && $(this).width() >= 621) {
+                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 4);
                     SliderObj.updateSlider('space', 20);
                 }
                 if ($(this).width() <= 620 && $(this).width() >= 501) {
+                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 3);
                     SliderObj.updateSlider('space', 20);
                 }
                 if ($(this).width() <= 500) {
+                    SliderObj.updateSlider('pagination');
                     SliderObj.updateSlider('view', 2);
                     SliderObj.updateSlider('space', 20);
                 }
@@ -631,7 +637,6 @@ checkPage();
 
 window.addEventListener('load', function () {
     init();
-
 });
 
 const setCursor = () => {
@@ -1253,11 +1258,12 @@ function initImageParallax() {
                 scrub: true,
                 anticipatePin: 1,
                 invalidateOnRefresh: true,
-            }
+            },
+            y: 0
         });
 
         // gsap.to(image, {
-        //     yPercent: 25,
+        //     yPercent: 20,
         //     ease: 'none',
         //     scrollTrigger: {
         //         trigger: section,
@@ -1489,7 +1495,7 @@ function initSmoothScrollBar(position) {
         $('.js-form-call').on('click', (event) => {
             event.preventDefault();
             projectFunc.showOverlay('.js-form-request', true);
-            bodyScrollBar.updatePluginOptions('modal', { open: true })
+            // bodyScrollBar.updatePluginOptions('modal', { open: true })
         });
     }
 
@@ -1498,7 +1504,7 @@ function initSmoothScrollBar(position) {
             event.preventDefault();
             projectFunc.showOverlay('.js-form-grace', true);
             projectFunc.formShow('.js-form-request', false);
-            bodyScrollBar.updatePluginOptions('modal', { open: true })
+            // bodyScrollBar.updatePluginOptions('modal', { open: true })
         });
     }
 
@@ -1506,7 +1512,16 @@ function initSmoothScrollBar(position) {
         $('.js-overlay').on('click', () => {
             projectFunc.showOverlay('.js-form-grace', false);
             projectFunc.showOverlay('.js-form-request', false);
-            bodyScrollBar.updatePluginOptions('modal', { open: false })
+            // bodyScrollBar.updatePluginOptions('modal', { open: false })
+
+            if ($('.request-popup__wrapper').exists()) {
+                try {
+                    $('.request-popup__wrapper').removeClass('active');
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            }
         });
     }
 
@@ -1514,7 +1529,7 @@ function initSmoothScrollBar(position) {
         $('.js-close-form').on('click', () => {
             projectFunc.showOverlay('.js-form-grace', false);
             projectFunc.showOverlay('.js-form-request', false);
-            bodyScrollBar.updatePluginOptions('modal', { open: false })
+            // bodyScrollBar.updatePluginOptions('modal', { open: false })
         });
     }
 
@@ -1567,12 +1582,13 @@ function initSmoothScrollBar(position) {
                 if (this.classList.contains('opened')) {
                     panelHideTl.reverse();
                     panelShowTl.play();
-                    bodyScrollBar.updatePluginOptions('modal', { open: true })
+                    projectFunc.lockedDOM(true);
                 }
                 else {
                     panelShowTl.reverse();
                     panelHideTl.play();
-                    bodyScrollBar.updatePluginOptions('modal', { open: false })
+                    projectFunc.lockedDOM(false);
+                    // bodyScrollBar.updatePluginOptions('modal', { open: false })
                 }
             });
 

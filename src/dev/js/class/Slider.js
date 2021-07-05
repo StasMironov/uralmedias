@@ -26,6 +26,11 @@ class Slider {
     updateSlider(props, res = '') {
 
         switch (props) {
+            case 'loop':
+                this.settings.loop = res;
+                this.slider.destroy();
+                this.slider = new Swiper(this.name, this.settings);
+                break;
             case 'space':
                 this.slider.params.spaceBetween = res;
                 this.slider.update();
@@ -92,6 +97,10 @@ class Slider {
                 this.slider = new Swiper(this.name, this.settings);
                 break;
         }
+
+        setTimeout(() => {
+            $(this.name).css('opacity', 1);
+        }, 600);
     }
 }
 

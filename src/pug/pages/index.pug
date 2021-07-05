@@ -5,7 +5,7 @@ block variables
 	- var pageClass = 'index-page';
 
 	- var quote = 'h2';
-	- var quoteTitle = 'Лучшие работы';
+	- var quoteTitle = 'Проекты';
 	- var quoteInfo = ['Наша компания с 2011 года реализовала более 300 проектов для бизнеса на основе данных и здравого смысла!'];
 
 block content
@@ -13,13 +13,21 @@ block content
 		.bildboard.bildboard--main
 			.bildboard__container.container
 				h1.bildboard__title.title-1
-					span профессиональная
+					| РАЗРАБОТКА
 					|
-					| разработка сайтов
-				.bildboard__quote.
-					<div class="mobile-hidden">Мы проектируем и создаем </div>
-					<a href="magazine.html" class="sad-link link">интернет-магазины</a>,
-					<a href="app.html" class="sad-link link">мобильные приложения</a>
+					a.sad-link.link(href="magazine.html")
+						span интернет&nbsp;-
+						|
+						|
+						span магазинов
+					|
+					| и
+					|
+					a.sad-link.link(href="app.html")
+						span мобильных
+						|
+						|
+						span приложений
 				.rating
 					.rating__items
 						a(href="javascript:void(0);").rating__item.link
@@ -214,13 +222,21 @@ block content
 								.services__content Используется в качестве готового решения для создания сайтов
 		.client
 			- var quote = 'h4';
-			- var quoteTitle = 'Клиенты';
+			- var quoteTitle = 'Отзывы наших клиентов';
 			- var quoteInfo = ['Благодарственные письма некоторых компаний, с которыми мы сотрудничали'];
 
 			include ../modules/quote
 			.client__container.container
-				.client__slider.js-client-slider
+				.client__slider.js-client-slider.slider
 					.swiper-wrapper#certificate 
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
+							img(src="./img/certificate/c1.png")
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
+							img(src="./img/certificate/c1.png")
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
+							img(src="./img/certificate/c1.png")
+						a(href="./img/certificate/c1.png").swiper-slide.client__item 
+							img(src="./img/certificate/c1.png")
 						a(href="./img/certificate/c1.png").swiper-slide.client__item 
 							img(src="./img/certificate/c1.png")
 						a(href="./img/certificate/c1.png").swiper-slide.client__item 
