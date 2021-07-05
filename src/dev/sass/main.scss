@@ -221,9 +221,9 @@ input::-ms-clear {
       content: '';
       position: absolute;
       z-index: -1;
-      bottom: 0;
+      bottom: -2px;
       left: -0.15em;
-      width: calc(100% + .3em);
+      width: calc(100% + 0.3em);
       height: 2px;
       background: white;
       transition: all .3s ease-in-out;
