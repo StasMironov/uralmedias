@@ -140,17 +140,17 @@
         .bildboard {
 
             &__container {
-                padding-top: 183px;
+                padding-top: 211px;
                 padding-bottom: 40px;
 
                 @media(max-width: 1024px) {
-                    padding-top: 120px;
+                    padding-top: 265px;
                     padding-bottom: 22px;
                 }
 
                 @media (max-width: 620px) {
-                    padding-top: calc(57px + 3vh);
-                    padding-bottom: calc(57px + 3vh);
+                    padding-top: calc(128px + 3vh);
+                    padding-bottom: calc(104px + 3vh);
                 }
             }
 
@@ -166,7 +166,7 @@
                     max-width: 420px;
                     width: 100%;
                     margin: 0 auto;
-                    font-size: 35px;
+                    font-size: 30px;
                 }
             }
         }

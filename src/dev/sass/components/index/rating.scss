@@ -64,15 +64,15 @@
   &__items {
     display: flex;
     flex-wrap: wrap;
-    margin: 135px -30px 0;
+    margin: 132px -30px 0;
 
     @media(max-width: 1024px) {
       justify-content: center;
-      margin: 102px -22px 0;
+      margin: 105px -22px 0;
     }
 
     @media(max-width: 620px) {
-      margin: 82px -10px 0;
+      margin: 79px -10px 0;
     }
   }
 
