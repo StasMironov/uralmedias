@@ -1,0 +1,115 @@
+.support {
+  padding: 80px 0;
+
+  @media (max-width: 1024px) {
+    padding: 50px 0;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px -45px -21px;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(50% - 90px);
+    margin: 21px 45px;
+
+    @media (max-width: 620px) {
+      width: 100%;
+    }
+  }
+
+  &__pic {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+    flex-shrink: 0;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $green-1;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  &--problem {
+    background: $ochre;
+
+    .support {
+
+      &__items {
+        margin: 22px -3px -31px;
+      }
+
+      &__item {
+        position: relative;
+        flex-direction: column;
+        width: calc(50% - 44px);
+        margin: 31px 22px;
+        padding-left: 24px;
+
+        @media (max-width: 620px) {
+          width: 100%;
+        }
+
+        &::before {
+          position: absolute;
+          top: 0.45em;
+          left: 0;
+          content: "";
+          width: 12px;
+          height: 12px;
+          border-radius: 100%;
+          background: $green-1;
+        }
+      }
+    }
+  }
+
+  &--team {
+
+    .support {
+
+      &__items {
+        margin: 32px -42px -22px;
+      }
+
+      &__item {
+        width: calc(33.33% - 84px);
+        margin: 26px 42px;
+        align-items: center;
+
+        @media (max-width: 620px) {
+          width: 100%;
+        }
+      }
+
+      &__pic {
+        width: 78px;
+        height: 78px;
+        margin-right: 0;
+      }
+
+      &__title {
+        font-size: 16px;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+}

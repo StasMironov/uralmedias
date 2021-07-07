@@ -7,7 +7,7 @@
 * {
   box-sizing: border-box;
   outline: none !important;
-  cursor: none !important;
+//  cursor: none !important;
 }
 
 .bitrix-include-areas {
@@ -564,3 +564,4 @@ input::-ms-clear {
 @import "./components/form.scss";
 @import "./components/link-detail.scss";
 @import "./components/about/rating-map.scss";
+@import "./components/support/support.scss";
