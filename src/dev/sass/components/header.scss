@@ -4,42 +4,61 @@
   left: 0;
   right: 0;
   z-index: 300;
-  min-height: 79px;
+  min-height: 63px;
   color: white;
   padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
 
   @media(max-width: 1024px) {
-    min-height: 66px;
+    min-height: 63px;
   }
 
   @media(max-width: 620px) {
-    min-height: 57px;
+    min-height: 66px;
   }
 
   &__inner {
     display: flex;
     align-items: center;
-    min-height: 79px;
+    min-height: 63px;
     transition: linear .3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    position: relative;
 
     @media(max-width: 1024px) {
-      min-height: 66px;
+      min-height: 63px;
     }
 
     @media(max-width: 620px) {
-      min-height: 57px;
+      min-height: 66px;
       box-shadow: none;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      backdrop-filter: blur(0px);
+      background: transparent;
+      z-index: -1;
+      transition: background linear .3s;
     }
   }
 
   &__logo {
-    height: 41px;
-    width: 165px;
-    margin-right: 40px;
+    height: 35px;
+    width: 144px;
+    margin-right: 61px;
 
     @media(max-width: 1235px) {
       margin-right: 25px;
+    }
+
+    @media(max-width: 620px) {
+      transform: translateY(-2px);
     }
 
     svg {
@@ -85,10 +104,12 @@
         background-color: #fff;
         right: 0;
         padding: 37px 70px 52px 45px;
-        max-height: calc(100vh - 66px);
+        max-height: calc(100vh - 63px);
         top: 100%;
         box-shadow: -1px 3px 7px rgba(0, 0, 0, 0.1);
         opacity: 0;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(25px);
       }
 
       @media(max-width: 620px) {
@@ -202,7 +223,7 @@
   &__sub {
     visibility: hidden;
     opacity: 0;
-    top: calc(100% + 10px);
+    top: calc(100% + 19px);
     position: absolute;
     height: auto;
     width: auto;
@@ -215,8 +236,21 @@
     align-items: flex-start;
     min-width: 238px;
     padding: 27px 22px 31px 24px;
-    background: #FFFFFF;
-    box-shadow: 0 4px 15px #0000000d;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+      backdrop-filter: blur(25px);
+    }
   }
 
   &__btn {
@@ -404,7 +438,6 @@
     align-items: center;
     justify-content: space-between;
     opacity: 0;
-    padding-bottom: 6px;
 
     @include max1235 {
       justify-content: space-between;
@@ -449,16 +482,18 @@
   }
 
   &--scroll {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(25px);
+    // backdrop-filter: blur(25px);
     color: $black;
     // padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+
+    &:after {
+      backdrop-filter: blur(25px);
+      background: rgba(255,255,255,.75);
+    }
 
 
     @media(max-width: 620px) {
       box-shadow: none;
-      background-color: transparent;
-      backdrop-filter: blur(0px);
     }
 
     .btn--call {
