@@ -2095,9 +2095,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       P = /^[-+]0x[0-9a-f]+$/i,
       k = /^0b[01]+$/i,
       M = /^0o[0-7]+$/i,
-      C = parseInt;
+      L = parseInt;
 
-  var L = function L(t) {
+  var C = function C(t) {
     if ("number" == typeof t) return t;
     if (j(t)) return NaN;
 
@@ -2109,11 +2109,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     if ("string" != typeof t) return 0 === t ? t : +t;
     t = p(t);
     var n = k.test(t);
-    return n || M.test(t) ? C(t.slice(2), n ? 2 : 8) : P.test(t) ? NaN : +t;
+    return n || M.test(t) ? L(t.slice(2), n ? 2 : 8) : P.test(t) ? NaN : +t;
   };
 
   var z = function z(t, e, n) {
-    return void 0 === n && (n = e, e = void 0), void 0 !== n && (n = (n = L(n)) == n ? n : 0), void 0 !== e && (e = (e = L(e)) == e ? e : 0), c(L(t), e, n);
+    return void 0 === n && (n = e, e = void 0), void 0 !== n && (n = (n = C(n)) == n ? n : 0), void 0 !== e && (e = (e = C(e)) == e ? e : 0), c(C(t), e, n);
   };
 
   function D(t, e) {
@@ -2215,7 +2215,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return void 0 === s && (s = setTimeout(m, e)), a;
     }
 
-    return e = L(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? q(L(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), b.cancel = function () {
+    return e = C(e) || 0, d(n) && (l = !!n.leading, i = (f = "maxWait" in n) ? q(C(n.maxWait) || 0, e) : i, p = "trailing" in n ? !!n.trailing : p), b.cancel = function () {
       void 0 !== s && clearTimeout(s), u = 0, r = c = o = s = void 0;
     }, b.flush = function () {
       return void 0 === s ? a : g(R());
@@ -3197,26 +3197,26 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     return function () {
       var n,
-          r = Lt(t);
+          r = Ct(t);
 
       if (e) {
-        var o = Lt(this).constructor;
+        var o = Ct(this).constructor;
         n = Reflect.construct(r, arguments, o);
       } else n = r.apply(this, arguments);
 
-      return Ct(this, n);
+      return Lt(this, n);
     };
   }
 
-  function Ct(t, e) {
+  function Lt(t, e) {
     return !e || "object" !== jt(e) && "function" != typeof e ? function (t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
     }(t) : e;
   }
 
-  function Lt(t) {
-    return (Lt = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+  function Ct(t) {
+    return (Ct = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
       return t.__proto__ || Object.getPrototypeOf(t);
     })(t);
   }
@@ -3523,25 +3523,32 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var e = document.querySelector(".header"),
             n = e.querySelector(".burger"),
             r = e.querySelector(".js-nav"),
-            o = new TimelineMax({
-          reversed: !0,
-          paused: !0,
-          defaults: {
-            duration: .6
-          }
-        }),
+            o = e.querySelector(".header__inner"),
             i = new TimelineMax({
           reversed: !0,
           paused: !0,
           defaults: {
             duration: .6
+          },
+          onStart: function onStart() {
+            o.classList.remove("mf-bg-header");
+          }
+        }),
+            a = new TimelineMax({
+          reversed: !0,
+          paused: !0,
+          defaults: {
+            duration: .6
+          },
+          onStart: function onStart() {
+            o.classList.add("mf-bg-header");
           }
         });
-        o.to(r, {
+        i.to(r, {
           autoAlpha: 0,
           xPercent: 100,
           ease: Cubic.easeOut
-        }), i.fromTo(r, {
+        }), a.fromTo(r, {
           autoAlpha: 0,
           xPercent: 100
         }, {
@@ -3549,7 +3556,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           xPercent: 0,
           ease: Cubic.easeOut
         }), n.addEventListener("click", function () {
-          this.classList.toggle("opened"), this.setAttribute("aria-expanded", this.classList.contains("opened")), this.classList.contains("opened") ? (o.reverse(), i.play(), It.lockedDOM(!0)) : (i.reverse(), o.play(), It.lockedDOM(!1));
+          this.classList.toggle("opened"), this.setAttribute("aria-expanded", this.classList.contains("opened")), this.classList.contains("opened") ? (i.reverse(), a.play(), It.lockedDOM(!0)) : (a.reverse(), i.play(), It.lockedDOM(!1));
         }), $(window).on("load resize ", function () {
           var t;
           $(this).width() > 1024 && n.classList.contains("opened") && (n.classList.remove("opened"), t = ".js-dropMenu", new TimelineMax({
@@ -3561,7 +3568,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           }).to(t, {
             height: 0,
             ease: "power1.out"
-          }, "-=0.1"), i.reverse(), o.play());
+          }, "-=0.1"), a.reverse(), i.play());
         });
       } catch (t) {
         console.log(t);
