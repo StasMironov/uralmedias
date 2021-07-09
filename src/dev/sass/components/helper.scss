@@ -54,31 +54,40 @@
     }
 
     &:after {
-        background: rgba(255,255,255,.75);
-        backdrop-filter: blur(25px);
+        background: rgba(255, 255, 255, 0.75);
+        filter: blur(0px);
 
         @media(max-width: 620px) {
             background: white;
-            backdrop-filter: blur(0px);
+            filter: blur(0px);
        }
     }
 
-   .header__logo svg * {
-        fill: #00a4ad;
+    &+.header__container {
+        .header__logo svg * {
+            fill: #00a4ad;
+        }
+    
+        .burger .line {
+            stroke: #00a4ad;
+        }
+    
+        .link--phone {
+            color: $black;
+        }
+    
+        .btn--call {
+            border-color: #ff7369;
+            color: #ff7369;
+
+            &:hover {
+                color: white;
+                background-color: #ff7369;
+            }
+        }
     }
 
-    .burger .line {
-        stroke: #00a4ad;
-    }
-
-    .link--phone {
-        color: $black;
-    }
-
-    .btn--call {
-        border-color: #ff7369;
-        color: #ff7369;
-    }
+   
 }
 
 .mf-transparent {

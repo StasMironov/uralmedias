@@ -1537,7 +1537,7 @@ function initSmoothScrollBar(position) {
             const burgerBtn = header.querySelector('.burger');
 
             const panelEl = header.querySelector('.js-nav');
-            const headerBg = header.querySelector('.header__inner');
+            const headerBg = header.querySelector('.header__bg');
 
             const panelHideTl = new TimelineMax({
                 reversed: true,

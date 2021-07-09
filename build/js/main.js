@@ -3523,7 +3523,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var e = document.querySelector(".header"),
             n = e.querySelector(".burger"),
             r = e.querySelector(".js-nav"),
-            o = e.querySelector(".header__inner"),
+            o = e.querySelector(".header__bg"),
             i = new TimelineMax({
           reversed: !0,
           paused: !0,
