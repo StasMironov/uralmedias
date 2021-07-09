@@ -1537,17 +1537,24 @@ function initSmoothScrollBar(position) {
             const burgerBtn = header.querySelector('.burger');
 
             const panelEl = header.querySelector('.js-nav');
+            const headerBg = header.querySelector('.header__inner');
 
             const panelHideTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.6 }
+                defaults: { duration: 0.6 },
+                onStart: ()=>{
+                    headerBg.classList.remove('mf-bg-header');
+                }
             });
 
             const panelShowTl = new TimelineMax({
                 reversed: true,
                 paused: true,
-                defaults: { duration: 0.6 }
+                defaults: { duration: 0.6 },
+                onStart: ()=>{
+                    headerBg.classList.add('mf-bg-header');
+                }
             });
 
             panelHideTl
