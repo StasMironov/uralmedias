@@ -1537,7 +1537,7 @@ function initSmoothScrollBar(position) {
             const burgerBtn = header.querySelector('.burger');
 
             const panelEl = header.querySelector('.js-nav');
-            const headerBg = header.querySelector('.header__inner');
+            const headerBg = header.querySelector('.header__bg');
 
             const panelHideTl = new TimelineMax({
                 reversed: true,
@@ -1695,6 +1695,27 @@ const setSelect = () => {
             });
         });
     }
+
+if ($('.include--app .include__box').exists()) {
+
+
+        if ($(window).width() > 768) {
+            $('.include__box').each(function(){
+                var highestBox = 0;
+                $('.include__item', this).each(function(){
+                    if($(this).height() > highestBox) {
+                        highestBox = $(this).height();
+                    }
+                });
+                $('.include__item',this).height(highestBox);
+            });
+        }
+        else {
+            $('.include__item').height('auto');
+        }
+
+}
+
 }
 
 $(window).resize(function () {
