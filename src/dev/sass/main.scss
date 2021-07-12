@@ -33,7 +33,6 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #333333cc white;
 
-
   &::-webkit-scrollbar {
     height: 100px;
     width: 8px;
@@ -60,29 +59,6 @@ html {
       background: transparent;
     }
   }
-
-  // scrollbar-width: none;
-  // /* Firefox */
-  // -ms-overflow-style: none;
-
-  // /* IE 10+ */
-  // &::-webkit-scrollbar-track {
-  //   -webkit-box-shadow: none !important;
-  //   background: transparent;
-  // }
-
-  // &::-webkit-scrollbar {
-  //   width: 8px !important;
-  //   height: 100px;
-  //   background: transparent;
-  // }
-
-  // &::-webkit-scrollbar-thumb {
-  //   background-color: #333;
-  //   height: 100px;
-  //   border-radius: 27px;
-  //   transition: linear .3s;
-  // }
 }
 
 body {
@@ -554,29 +530,6 @@ input::-ms-clear {
     }
   }
 }
-
-// .on-scrollbar {
-//   scrollbar-width: thin;
-//   /* Firefox */
-//   -ms-overflow-style: none;
-//   /* IE 10+ */
-// }
-
-// .on-scrollbar::-webkit-scrollbar-track {
-//   -webkit-box-shadow: none !important;
-//   background-color: transparent !important;
-// }
-
-// .on-scrollbar::-webkit-scrollbar {
-//   width: 8px !important;
-//   background-color: #F6F6F6;
-// }
-
-// .on-scrollbar::-webkit-scrollbar-thumb {
-//   background-color: #333333;
-// }
-
-
 
 @import "./components/rate.scss";
 @import "./components/request.scss";

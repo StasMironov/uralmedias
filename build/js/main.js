@@ -3464,7 +3464,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
   window.addEventListener("load", function () {
     var t = document.querySelector("html");
-    $(window).width() > 1024 ? t.style.setProperty("--wScroll", "8px") : (console.log("object"), t.style.setProperty("--wScroll", It.getScrollbarWidth() + "px"));
+    $(window).width() > 1024 ? t.style.setProperty("--wScroll", "8px") : t.style.setProperty("--wScroll", It.getScrollbarWidth() + "px");
   });
   if ($(".header__inner").exists) try {
     var Rt = $(window),
