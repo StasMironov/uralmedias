@@ -29,6 +29,36 @@ html {
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   padding: 0 calc(var(--wScroll) - (100vw - 100%)) 0 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: #333333cc white;
+
+  &::-webkit-scrollbar {
+    height: 100px;
+    width: 8px;
+
+    @media(max-width: 1024px) {
+      width: 0;
+    }
+  }
+
+
+  &::-webkit-scrollbar-track {
+    background: white;
+
+    @media(max-width: 1024px) {
+      background: transparent;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #333333cc;
+    border-radius: 27px;
+
+    @media(max-width: 1024px) {
+      background: transparent;
+    }
+  }
 }
 
 body {
@@ -50,6 +80,8 @@ body {
     line-height: 1.9;
   }
 }
+
+
 
 .container {
   width: 100%;
@@ -498,8 +530,6 @@ input::-ms-clear {
     }
   }
 }
-
-
 
 @import "./components/rate.scss";
 @import "./components/request.scss";
