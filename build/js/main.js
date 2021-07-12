@@ -3463,7 +3463,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
   };
   window.addEventListener("load", function () {
-    document.querySelector("html").style.setProperty("--wScroll", It.getScrollbarWidth() + "px");
+    var t = document.querySelector("html");
+    $(window).width() > 1024 ? t.style.setProperty("--wScroll", "8px") : (console.log("object"), t.style.setProperty("--wScroll", It.getScrollbarWidth() + "px"));
   });
   if ($(".header__inner").exists) try {
     var Rt = $(window),

@@ -363,10 +363,13 @@ const projectFunc = {
     }
 };
 
-
 window.addEventListener('load', () => {
     let locked = document.querySelector('html');
-    locked.style.setProperty('--wScroll', projectFunc.getScrollbarWidth() + 'px');
+    if ($(window).width() > 1024) {
+        locked.style.setProperty('--wScroll', 8 + 'px');
+    } else {
+        locked.style.setProperty('--wScroll', projectFunc.getScrollbarWidth() + 'px');
+    }
 });
 
 const setTabs = () => {
@@ -1543,7 +1546,7 @@ function initSmoothScrollBar(position) {
                 reversed: true,
                 paused: true,
                 defaults: { duration: 0.6 },
-                onStart: ()=>{
+                onStart: () => {
                     headerBg.classList.remove('mf-bg-header');
                 }
             });
@@ -1552,7 +1555,7 @@ function initSmoothScrollBar(position) {
                 reversed: true,
                 paused: true,
                 defaults: { duration: 0.6 },
-                onStart: ()=>{
+                onStart: () => {
                     headerBg.classList.add('mf-bg-header');
                 }
             });
