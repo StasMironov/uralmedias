@@ -87,11 +87,29 @@
         }
     }
 
+    &__note {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 15px;
+
+        @media (max-width: 620px) {
+            font-size: 12px;
+        }
+
+        span {
+            color: $green-1;
+        }
+    }
+
     &--support {
         margin-top: 0;
 
         table {
             margin-top: 50px;
+
+            @media (max-width: 620px) {
+                margin-top: 23px;
+            }
 
             th,
             td {
@@ -100,10 +118,6 @@
 
             th {
                 padding: 30px 15px;
-
-                @media(max-width: 1024px) {
-                    padding: 15px;
-                }
             }
 
             td {

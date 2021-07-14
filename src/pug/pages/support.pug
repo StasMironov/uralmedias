@@ -75,25 +75,25 @@ block content
 				.support__items
 					.support__item
 						.support__pic
-							+svg('tools')
+							+svg('hands')
 						.support__content
-							.support__title Как происходит процесс
+							.support__title Предварительное тестирование
 							.support__text.
-								Заключаем договор, Вы выбираете количество часов. После Вы ставите задачу, а мы приступаем к
-								выполнению на тестовом сервере. В конце месяца мы предоставляем подробный отчет о проделанной работе.
+								Заключаем договор, определяем оптимальное количество часов. После Вы ставите задачу,а мы приступаем
+								к выполнению на тестовом сервере. В конце месяца мы предоставляемподробный отчет о проделанной работе.
 					.support__item
 						.support__pic
 							+svg('call')
 						.support__content
-							.support__title Обратная связь
+							.support__title контроль и взаимодействие
 							.support__text.
 								Вам выделяется персональный менеджер, который доступен с 7 до 16 часов (МСК). Он следит за качеством
 								работы и соблюдением сроков, предоставляет регулярные отчеты и отвечает на все поступающие вопросы.
 					.support__item
 						.support__pic
-							+svg('hands')
+							+svg('tools')
 						.support__content
-							.support__title Наш идеальный заказчик
+							.support__title работаем под задачу
 							.support__text.
 								Мы работаем на входящие заявки, поэтому Вам необходимо предоставлять задачи и все необходимые
 								материалы для работы, а мы в свою очередь берем ответственность за выполнение данных задач.
@@ -111,69 +111,76 @@ block content
 				h2.title-3 Какие проблемы решает техническая поддержка?
 				.support__items
 					.support__item
-						.support__title Новые сайты
+						.support__title Некорректное отображение данных
 						.support__text.
 							Как правило, техническая поддержка нужна всем сайтам, которые только запустились, так
 							как в этом случае специалисты грамотно заполняют сайт контентом и избегают ошибок.
 					.support__item
-						.support__title Заброшенные сайты
+						.support__title Низкие позиции в поисковой выдаче
 						.support__text.
 							Сайтам, которые давно не обновлялись. В таком случае сайт теряет актуальность контента,
 							что приводит к потерям позиций в поисковых системах и, как следствие - входящего трафика.
 					.support__item
-						.support__title Если ваш сайт перестал приносить клиентов
+						.support__title отсутствие продаж при наличии трафика
 						.support__text.
 							Проблемы с функционалом, низкая конверсия. Данные вопросы также решаются посредством
 							техподдержки. Мы проведем аудит и предложим варианты по оптимизации Вашего сайта.
 					.support__item
-						.support__title Информационные ресурсы
+						.support__title несвоевременное обновление данных
 						.support__text.
-							Низкая оптимизация. Информационные блоки, интернет-магазины, каталоги, порталы, то есть
-							все те ресурсы, которые нуждаются в постоянном обновлении контента.
+							Отсутствие актуализации данных. Информационные блоки, интернет-магазины, каталоги, порталы,
+							то есть все те ресурсы, которые нуждаются в постоянном обновлении контента.
 
 		include ../modules/seo-slider
 
 		.support.support--team
 			.container
-				h2.title-4 Наш веб отдел по технической поддержке
-				.support__items
-					.support__item
-						.support__pic
-							+svg('people-1')
-						.support__content
-							.support__title Проект менеджер
-							.support__text Прием входящих запросов, обработка и постановка задач.
-					.support__item
-						.support__pic
-							+svg('people-2')
-						.support__content
-							.support__title Дизайнер
-							.support__text Разработает баннеры, дизайн новых страниц или целого сайта.
-					.support__item
-						.support__pic
-							+svg('people-3')
-						.support__content
-							.support__title Аналитик
-							.support__text Подготовит техническое задание и сделает прототипы.
-					.support__item
-						.support__pic
-							+svg('people-4')
-						.support__content
-							.support__title Программист
-							.support__text Работы по программированию и наполнению сайта.
-					.support__item
-						.support__pic
-							+svg('people-5')
-						.support__content
-							.support__title Front-end разработчик
-							.support__text Внедрит новый дизайн, сделает мобильную версию сайта.
-					.support__item
-						.support__pic
-							+svg('people-6')
-						.support__content
-							.support__title Интернет-маркетолог
-							.support__text Проведет аудит Вашего сайта, предложит способы оптимизации.
-
+				h2.title-4 Наш веб отдел по&nbsp;технической поддержке
+				.swiper-container.support__slider.js-support-slider
+					.swiper-wrapper
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-1')
+									.support__content
+										.support__title Проект менеджер
+										.support__text Прием входящих запросов, обработка и постановка задач.
+								.support__item
+									.support__pic
+										+svg('people-4')
+									.support__content
+										.support__title Программист
+										.support__text Работы по программированию и наполнению сайта.
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-2')
+									.support__content
+										.support__title Дизайнер
+										.support__text Разработает баннеры, дизайн новых страниц или целого сайта.
+								.support__item
+									.support__pic
+										+svg('people-5')
+									.support__content
+										.support__title Front-end разработчик
+										.support__text Внедрит новый дизайн, сделает мобильную версию сайта.
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-3')
+									.support__content
+										.support__title Аналитик
+										.support__text Подготовит техническое задание и сделает прототипы.
+								.support__item
+									.support__pic
+										+svg('people-6')
+									.support__content
+										.support__title Интернет-маркетолог
+										.support__text Проведет аудит Вашего сайта, предложит способы оптимизации.
+					.pagination
 		.table.table--support
 			.table__container.container
 				h2.title-4 Тарифы
@@ -234,12 +241,6 @@ block content
 							td
 								+svg("ok")
 						tr
-							td Выработка всех часов
-							td
-							td
-							td
-								+svg("ok")
-						tr
 							td Интернет-маркетолог. Разработка аудита и контент плана по продвижению
 							td
 							td
@@ -249,7 +250,12 @@ block content
 							td Подробнее о тарифе
 							td Быстрое реагирование в случае необходимости поддержки сайта 1&nbsp;500руб./час
 							td Работа на входящих заявках в рамках пакета: размещение статей, новостей, фотографий
-							td Полный комплекс работ, гарантия реализации всех часов в рамках предложенного аудита
-
+							td Комплексная реализация работ, проведенного аудита по выявлению точек роста.
+				.table__note
+					span *
+					|&nbsp;В&nbsp;тариф не&nbsp;включены расходы на&nbsp;оплату по&nbsp;продлению хостинга и домена.
+					|
+					span **
+					|&nbsp;Неиспользованные часы не&nbsp;переходят на&nbsp;след. месяц. Кроме тарифа “Продвижение”.
 		include ../modules/partners
 block script

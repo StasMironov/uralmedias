@@ -519,6 +519,76 @@
         @media(max-width: 1024px) {
            padding-top: 55px;
         }
+
+        @media(max-width: 700px) {
+            padding-top: 46px;
+        }
+
+        .include {
+
+            &__items {
+
+                @media(max-width: 700px) {
+                    margin-left: 0;
+                    margin-top: -40px;
+                }
+            }
+
+            &__item {
+
+                @media(max-width: 700px) {
+                    margin-left: 0;
+                    margin-top: 75px;
+                }
+
+                &:after {
+
+                    @media (max-width: 700px) {
+                        content: "";
+                        top: -17px;
+                        left: 42px;
+                    }
+                }
+            }
+
+            &__num {
+
+                @media(max-width: 700px) {
+                    position: absolute;
+                    top: -52px;
+                    bottom: auto;
+                    font-size: 45px;
+                    line-height: 1;
+                }
+            }
+
+            &__cover {
+
+            }
+
+            &__header {
+
+                @media(max-width: 700px) {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 22px;
+                    max-width: initial;
+                    margin-top: 10px;
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+
+            &__text {
+
+                @media (max-width: 700px) {
+                    font-size: 12px;
+                    line-height: 1.6;
+                }
+            }
+        }
     }
 
     &--transparent {

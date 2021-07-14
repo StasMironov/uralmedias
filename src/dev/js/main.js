@@ -186,6 +186,25 @@ const projectFunc = {
             }).resize();
         }
 
+        if ($('.support__slider').exists()) {
+            let SliderObj = new Slider('.js-support-slider', 3, 84);
+            SliderObj.createSlider();
+            SliderObj.updateSlider('pagination');
+            $('.support__slider').addClass('swiper-no-swiping');
+
+            $(window).resize(function () {
+                if ($(this).width() <= 1024 && $(this).width() >= 621) {
+                    SliderObj.updateSlider('space', 20);
+                    SliderObj.updateSlider('view', 2);
+                    $('.support__slider').removeClass('swiper-no-swiping');
+                }
+                if ($(this).width() <= 620) {
+                    SliderObj.updateSlider('view', 1);
+                    $('.support__slider').removeClass('swiper-no-swiping');
+                }
+            }).resize();
+        }
+
         if ($('.case__slider--1').exists()) {
             try {
                 var caseSlider1 = new Swiper('.case__slider--1', {

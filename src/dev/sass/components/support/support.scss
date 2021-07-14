@@ -9,6 +9,14 @@
     display: flex;
     flex-wrap: wrap;
     margin: 30px -45px -21px;
+
+    @media (max-width: 1024px) {
+      margin: 30px -15px -15px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 30px 0 -15px;
+    }
   }
 
   &__item {
@@ -16,8 +24,14 @@
     width: calc(50% - 90px);
     margin: 21px 45px;
 
-    @media (max-width: 620px) {
+    @media (max-width: 1024px) {
+      width: calc(50% - 30px);
+      margin: 15px;
+    }
+
+    @media (max-width: 768px) {
       width: 100%;
+      margin: 15px 0;
     }
   }
 
@@ -26,6 +40,12 @@
     height: 70px;
     margin-right: 20px;
     flex-shrink: 0;
+
+    @media (max-width: 620px) {
+      width: 90px;
+      height: 90px;
+      margin-right: 0;
+    }
 
     svg {
       width: 100%;
@@ -38,6 +58,11 @@
     font-weight: 500;
     font-size: 18px;
     text-transform: uppercase;
+
+    @media (max-width: 620px) {
+      font-size: 14px;
+      line-height: 1.4;
+    }
   }
 
   &__text {
@@ -45,13 +70,71 @@
     margin-top: 5px;
   }
 
+  &--standard {
+
+    @media (max-width: 620px) {
+      padding-bottom: 22px;
+    }
+
+    .support {
+
+      &__items {
+
+        @media (max-width: 620px) {
+          flex-wrap: nowrap;
+          margin: 45px -5px 0;
+          overflow: auto;
+        }
+      }
+
+      &__item {
+
+        @media (max-width: 620px) {
+          flex-direction: column;
+          align-items: center;
+          width: 167px;
+          margin: 0 5px;
+          flex-shrink: 0;
+        }
+      }
+
+      &__title {
+
+        @media (max-width: 620px) {
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+
+      &__text {
+
+        @media (max-width: 620px) {
+          display: none;
+        }
+      }
+    }
+  }
+
   &--problem {
     background: $ochre;
+
+    @media (max-width: 620px) {
+      background: #fff;
+      padding-top: 22px;
+    }
 
     .support {
 
       &__items {
         margin: 22px -3px -31px;
+
+        @media (max-width: 1024px) {
+          margin: 22px -15px -15px;
+        }
+
+        @media (max-width: 768px) {
+          margin: 22px 0 0;
+        }
       }
 
       &__item {
@@ -61,8 +144,16 @@
         margin: 31px 22px;
         padding-left: 24px;
 
-        @media (max-width: 620px) {
+        @media (max-width: 1024px) {
+          width: calc(50% - 30px);
+          margin: 15px;
+          padding-left: 16px;
+        }
+
+        @media (max-width: 768px) {
           width: 100%;
+          margin: 25px 0 0;
+          padding-left: 0;
         }
 
         &::before {
@@ -74,6 +165,23 @@
           height: 12px;
           border-radius: 100%;
           background: $green-1;
+
+          @media (max-width: 1024px) {
+            width: 8px;
+            height: 8px;
+          }
+
+          @media (max-width: 768px) {
+            content: none;
+          }
+        }
+      }
+
+      &__title {
+
+        @media (max-width: 1024px) {
+          font-size: 16px;
+          line-height: 1.5;
         }
       }
     }
@@ -83,17 +191,37 @@
 
     .support {
 
+      &__slider {
+        margin-top: 52px;
+
+        @media (max-width: 1024px) {
+          margin-top: 28px;
+        }
+
+        .pagination {
+          display: none;
+
+          @media (max-width: 1024px) {
+            display: flex;
+          }
+        }
+      }
+
       &__items {
-        margin: 32px -42px -22px;
+        margin: -27px 0;
+
+        @media (max-width: 620px) {
+          margin: -19px 0;
+        }
       }
 
       &__item {
-        width: calc(33.33% - 84px);
-        margin: 26px 42px;
         align-items: center;
+        width: 100%;
+        margin: 27px 0;
 
         @media (max-width: 620px) {
-          width: 100%;
+          margin: 19px 0;
         }
       }
 
@@ -101,14 +229,30 @@
         width: 78px;
         height: 78px;
         margin-right: 0;
+
+        @media (max-width: 620px) {
+          width: 54px;
+          margin-right: 13px;
+        }
       }
 
       &__title {
         font-size: 16px;
+
+        @media (max-width: 620px) {
+          font-size: 14px;
+          line-height: 1.8;
+        }
       }
 
       &__text {
         font-size: 16px;
+
+        @media (max-width: 620px) {
+          font-size: 12px;
+          line-height: 2;
+          margin-top: 0;
+        }
       }
     }
   }
