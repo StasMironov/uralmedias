@@ -52,6 +52,13 @@
       height: 100%;
       fill: $green-1;
     }
+
+    &--stroke {
+
+      svg {
+        stroke: #fff;
+      }
+    }
   }
 
   &__title {
