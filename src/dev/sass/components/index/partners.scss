@@ -194,5 +194,17 @@
                 }
             }
         }
+
+        &:last-child {
+            margin-bottom: 80px;
+
+            @media(max-width: 1024px) {
+                margin-bottom: 55px;
+            }
+
+            @media(max-width: 620px) {
+                margin-bottom: 20px;
+            }
+        }
     }
 }
