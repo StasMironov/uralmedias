@@ -1,0 +1,254 @@
+extends ../layout/main
+
+block variables
+	- var pageClass = 'index-page';
+	- var setTitle = 'Поддержка сайтов';
+	- var bildboard_include = 'special-btn';
+	- var bildboardImg = ['img/dataBild/img1.jpg', 'img/dataBild/img_tablet1.jpg', 'img/dataBild/img_mobile1.jpg'];
+	- var partners_quote = 'true';
+	- var quote = 'h2';
+	- var quoteTitle = 'Улучшаем. Обновляем. Наполняем.';
+	- var quoteInfo = ['Поддержка сайта — это гарант его стабильной работы 24/7. Бывают ситуации, когда экстренно необходимо устранить неполадку или сбой на сайте вызванный разного рода факторами. Приходится искать подрядчиков, если задачу не получается реализовать своими силами. Это не только лишняя трата времени (денег), но также риск испортить свою репутацию, ведь сайт это лицо компании. Выход есть! — Наше агентство осуществляет профессиональную техническую поддержку сайтов любых направлений. Стоимость поддержки сайта зависит от того, какой тарифный план выбрал клиент. В стоимость любого приобретенного пакета входят: прием входящих задач от клиента, работы по программированию и наполнению сайта, работы по дизайну, а также консультация по телефону и отчетность.'];
+
+block content
+	div(data-barba="container" data-barba-namespace="page")
+		.bildboard-data.bildboard-data--special-btn
+			<picture>
+				<source media="(min-width: 1025px)" srcset=#{bildboardImg[0]}>
+				<source media="(min-width: 621px)" srcset=#{bildboardImg[1]}>
+				<source media="(min-width: 320px)" srcset=#{bildboardImg[2]}>
+				<img src=#{bildboardImg[0]} alt="MDN">
+			</picture>
+			.bildboard-data__container.container
+				h1.bildboard-data__title.bildboard-data__title--short.title-1 Поддержка сайтов
+				a(href="#request").btn.btn--special.link
+					.btn__special
+						span Отправить заявку менеджеру
+					.btn__text Отправить заявку менеджеру
+		include ../modules/breadcrumbs
+		include ../modules/quote
+		.progress
+			.progress__container.container
+				.progress__items
+					.progress__item
+						.progress__num 10
+						.progress__text сертифицированных специалистов в&nbsp;штабе
+					.progress__item
+						.progress__num 300
+						.progress__text разработанных проектов за&nbsp;все время
+					.progress__item
+						.progress__num 7
+						.progress__text лет мы создаем сайты для&nbsp;наших клиентов
+					.progress__item
+						.progress__num 100
+						.progress__text миллионов строк кода написано сегодня
+		.include.include--promotion.include--support
+			.include__container.container
+				h2.include__title.title-3 Что входит в техническую поддержку?
+				.include__cover
+					.include__items
+						.include__item
+							.include__header <span class="include__num">1</span> Обновление <br>информации
+							.include__text Замена цен, описания, текстов, фото. Добавление новых разделов на сайт. Обновление движка сайта.
+						.include__item
+							.include__header <span class="include__num">2</span> Стабильная работа <br>сайта
+							.include__text Резервное копирование сайта. Защита от вирусов и взлома. Исправление сбоев в работе. Оптимизация Вашего сайта.
+						.include__item
+							.include__header <span class="include__num">3</span> Повышение <br>продаж
+							.include__text Базовая SEO оптимизация способствует поднятию позиций сайта. Подключение метрики.
+						.include__item
+							.include__header <span class="include__num">4</span> Проведение <br>технического аудита
+							.include__text Наши специалисты проведут технический аудит Вашего сайта для повышения конверсии и устранения недочетов.
+						.include__item
+							.include__header <span class="include__num">5</span> Доработка <br>сайта
+							.include__text IT-специалисты доработают функционал и внешний вид сайта, что позволит компании активно развиваться.
+						.include__item
+							.include__header <span class="include__num">6</span> Индивидуальный <br>пакет
+							.include__text Вы можете выбрать любой подходящий для Вашего сайта пакет по технической поддержке.
+		.support.support--standard
+			.container
+				h2.title-3 Стандарты обслуживания
+				.support__items
+					.support__item
+						.support__pic
+							+svg('hands')
+						.support__content
+							.support__title Предварительное тестирование
+							.support__text.
+								Заключаем договор, определяем оптимальное количество часов. После Вы ставите задачу,а мы приступаем
+								к выполнению на тестовом сервере. В конце месяца мы предоставляемподробный отчет о проделанной работе.
+					.support__item
+						.support__pic
+							+svg('call')
+						.support__content
+							.support__title контроль и взаимодействие
+							.support__text.
+								Вам выделяется персональный менеджер, который доступен с 7 до 16 часов (МСК). Он следит за качеством
+								работы и соблюдением сроков, предоставляет регулярные отчеты и отвечает на все поступающие вопросы.
+					.support__item
+						.support__pic
+							+svg('tools')
+						.support__content
+							.support__title работаем под задачу
+							.support__text.
+								Мы работаем на входящие заявки, поэтому Вам необходимо предоставлять задачи и все необходимые
+								материалы для работы, а мы в свою очередь берем ответственность за выполнение данных задач.
+					.support__item
+						.support__pic.support__pic--stroke
+							+svg('hand-star')
+						.support__content
+							.support__title Приоритетность
+							.support__text.
+								Мы работаем по приоритетности задач, то есть каждой задаче, обсудив с Вами, мы присваеваем важность
+								и порядок выполнения по времени. Это могут быть фатальные задачи, срочные или же мелкие неспешные.
+		.support.support--problem
+			.container
+				h2.title-3 Какие проблемы решает техническая поддержка?
+				.support__items
+					.support__item
+						.support__title Некорректное отображение данных
+						.support__text.
+							Как правило, техническая поддержка нужна всем сайтам, которые только запустились, так
+							как в этом случае специалисты грамотно заполняют сайт контентом и избегают ошибок.
+					.support__item
+						.support__title Низкие позиции в поисковой выдаче
+						.support__text.
+							Сайтам, которые давно не обновлялись. В таком случае сайт теряет актуальность контента,
+							что приводит к потерям позиций в поисковых системах и, как следствие - входящего трафика.
+					.support__item
+						.support__title отсутствие продаж при наличии трафика
+						.support__text.
+							Проблемы с функционалом, низкая конверсия. Данные вопросы также решаются посредством
+							техподдержки. Мы проведем аудит и предложим варианты по оптимизации Вашего сайта.
+					.support__item
+						.support__title несвоевременное обновление данных
+						.support__text.
+							Отсутствие актуализации данных. Информационные блоки, интернет-магазины, каталоги, порталы,
+							то есть все те ресурсы, которые нуждаются в постоянном обновлении контента.
+		include ../modules/seo-slider
+		.support.support--team
+			.container
+				h2.title-4 Наш веб отдел по&nbsp;технической поддержке
+				.swiper-container.support__slider.js-support-slider
+					.swiper-wrapper
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-1')
+									.support__content
+										.support__title Проект менеджер
+										.support__text Прием входящих запросов, обработка и постановка задач.
+								.support__item
+									.support__pic
+										+svg('people-4')
+									.support__content
+										.support__title Программист
+										.support__text Работы по программированию и наполнению сайта.
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-2')
+									.support__content
+										.support__title Дизайнер
+										.support__text Разработает баннеры, дизайн новых страниц или целого сайта.
+								.support__item
+									.support__pic
+										+svg('people-5')
+									.support__content
+										.support__title Front-end разработчик
+										.support__text Внедрит новый дизайн, сделает мобильную версию сайта.
+						.swiper-slide
+							.support__items
+								.support__item
+									.support__pic
+										+svg('people-3')
+									.support__content
+										.support__title Аналитик
+										.support__text Подготовит техническое задание и сделает прототипы.
+								.support__item
+									.support__pic
+										+svg('people-6')
+									.support__content
+										.support__title Интернет-маркетолог
+										.support__text Проведет аудит Вашего сайта, предложит способы оптимизации.
+					.pagination
+		.table.table--support
+			.table__container.container
+				h2.title-4 Тарифы
+				.table__inner
+					table
+						tr.table__header
+							th Название тарифа
+							th Базовый
+							th Контент
+							th Продвижение
+						tr.table__colaps
+							td
+							td
+								| 0 руб./мес.
+								span *договор на последующие работы
+							td
+								| от 3 000 руб./мес.
+								span 2 часа специалиста
+							td
+								| От 5 000 руб./мес.
+								span 3,5 часа специалиста
+						tr
+							td Договор на оказание услуг
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+						tr
+							td Входящие задачи от клиента
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+						tr
+							td Отчет о проделанной работе
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+						tr
+							td Первый приоритет
+							td
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+						tr
+							td Резервирование часов
+							td
+							td
+								+svg("ok")
+							td
+								+svg("ok")
+						tr
+							td Интернет-маркетолог. Разработка аудита и контент плана по продвижению
+							td
+							td
+							td
+								+svg("ok")
+						tr.table__colaps
+							td Подробнее о тарифе
+							td Быстрое реагирование в случае необходимости поддержки сайта 1&nbsp;500руб./час
+							td Работа на входящих заявках в рамках пакета: размещение статей, новостей, фотографий
+							td Комплексная реализация работ, проведенного аудита по выявлению точек роста.
+				.table__note
+					span *
+					|&nbsp;В&nbsp;тариф не&nbsp;включены расходы на&nbsp;оплату по&nbsp;продлению хостинга и домена.
+					|
+					span **
+					|&nbsp;Неиспользованные часы не&nbsp;переходят на&nbsp;след. месяц. Кроме тарифа “Продвижение”.
+		include ../modules/partners
+block script

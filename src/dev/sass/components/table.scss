@@ -1,6 +1,5 @@
 .table {
     margin-top: 77px;
-    overflow: auto;
 
     @media(max-width: 1024px) {
         margin-top: 70px;
@@ -8,6 +7,10 @@
 
     @media(max-width: 620px) {
         margin-top: 50px;
+    }
+
+    &__inner {
+        overflow: auto;
     }
 
     &__header {
@@ -43,7 +46,6 @@
             @media(max-width: 1024px) {
                 padding: 15px;
             }
-
 
             &:first-child {
                 width: 39%;
@@ -81,6 +83,102 @@
                 display: block;
                 width: 19px;
                 height: 15px;
+            }
+        }
+    }
+
+    &__note {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 15px;
+
+        @media (max-width: 620px) {
+            font-size: 12px;
+        }
+
+        span {
+            color: $green-1;
+        }
+    }
+
+    &--support {
+        margin-top: 0;
+
+        table {
+            margin-top: 50px;
+
+            @media (max-width: 620px) {
+                margin-top: 23px;
+            }
+
+            th,
+            td {
+                border: 0;
+            }
+
+            th {
+                padding: 30px 15px;
+            }
+
+            td {
+                padding: 15px;
+                line-height: 1.6;
+
+                svg {
+                    fill: $green-1;
+                }
+            }
+
+            th,
+            td {
+
+                &:first-child {
+                    width: 20%;
+                    padding-left: 24px;
+                }
+            }
+
+            span {
+                display: block;
+            }
+        }
+
+        .table {
+
+            &__header {
+                background: $black;
+            }
+
+            &__colaps {
+
+                td {
+                    font-weight: 400!important;
+                    text-align: center;
+                    padding: 15px 15px 10px;
+
+                    @media(max-width: 1024px) {
+                        padding: 15px;
+                    }
+
+                    &:first-child {
+                        font-weight: 700!important;
+                    }
+                }
+
+                &:last-child {
+
+                    td {
+                        padding: 18px 15px 23px;
+
+                        @media(max-width: 1024px) {
+                            padding: 15px;
+                        }
+
+                        &:first-child {
+                            padding-left: 24px;
+                        }
+                    }
+                }
             }
         }
     }
